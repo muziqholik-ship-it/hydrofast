@@ -5,16 +5,24 @@ export function CaseStudyCard({
   caseStudy,
   title,
   description,
+  imageCount = 0,
 }: {
   caseStudy: CaseStudy;
   title: string;
   description: string | null;
+  /** Total gallery size; a "+N" badge appears when the project has more photos than the cover. */
+  imageCount?: number;
 }) {
   const aspect = caseStudy.aspectRatio.replace("-", "/");
 
   return (
     <div className="group relative overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)]">
       <div className="relative w-full overflow-hidden bg-[var(--color-surface-alt)]" style={{ aspectRatio: aspect }}>
+        {imageCount > 1 && (
+          <span className="absolute right-2 top-2 z-10 rounded-[var(--radius-card)] bg-black/60 px-1.5 py-0.5 text-xs font-semibold text-white">
+            +{imageCount - 1}
+          </span>
+        )}
         {caseStudy.imagePath && (
           // eslint-disable-next-line @next/next/no-img-element
           <img

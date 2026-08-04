@@ -53,7 +53,8 @@ export function SiteFooter() {
           <Link href="/contact" className="hover:text-[var(--color-ink)] text-[var(--color-ink-soft)]">
             {tNav("contact")}
           </Link>
-          <Link href="/privacy" className="hover:text-[var(--color-ink)] text-[var(--color-ink-soft)]">
+          {/* Bold per Korean convention for 개인정보처리방침 links (PIPA §30-2) */}
+          <Link href="/privacy" className="font-bold text-[var(--color-ink)] hover:text-[var(--color-steel-light)]">
             {t("privacy")}
           </Link>
         </nav>

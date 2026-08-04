@@ -3,7 +3,7 @@ import { businessAreas } from "./business-areas";
 import { productCategories } from "./product-categories";
 import { manufacturers, manufacturerBusinessAreas } from "./manufacturers";
 import { products, productImages } from "./products";
-import { caseStudies } from "./case-studies";
+import { caseStudies, caseStudyImages } from "./case-studies";
 import { clientLogos } from "./client-logos";
 import { historyEvents } from "./history-events";
 import { certifications } from "./certifications";
@@ -77,10 +77,18 @@ export const productImagesRelations = relations(productImages, ({ one }) => ({
   }),
 }));
 
-export const caseStudiesRelations = relations(caseStudies, ({ one }) => ({
+export const caseStudiesRelations = relations(caseStudies, ({ one, many }) => ({
   businessArea: one(businessAreas, {
     fields: [caseStudies.businessAreaId],
     references: [businessAreas.id],
+  }),
+  images: many(caseStudyImages),
+}));
+
+export const caseStudyImagesRelations = relations(caseStudyImages, ({ one }) => ({
+  caseStudy: one(caseStudies, {
+    fields: [caseStudyImages.caseStudyId],
+    references: [caseStudies.id],
   }),
 }));
 
@@ -104,6 +112,7 @@ export const schema = {
   products,
   productImages,
   caseStudies,
+  caseStudyImages,
   clientLogos,
   historyEvents,
   certifications,

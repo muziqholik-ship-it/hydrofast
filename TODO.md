@@ -1,10 +1,26 @@
 # TODO
 
-## Case studies data-model fix (from docs/improvement-plan/02-workstream-quick-wins.md, Task 2.1)
+## Privacy policy — owner must fill in before launch (Task 6.1, workstream 06)
 
-> **Data-model fix (right solution):** add a `caseStudyImages` child table (or `imagePaths: jsonb` array on `caseStudies`) so one project holds many photos; update `admin/case-studies` forms and `/cases` page to render one card per project with an image count badge or first image. If this is too large for this session, create the dedupe only and copy this item verbatim into a `TODO.md` at repo root.
+- [ ] Replace the `{{PRIVACY_OFFICER_NAME}}` and `{{PRIVACY_OFFICER_TITLE}}` placeholders in `src/app/[locale]/privacy/policy-content.ts` (both the ko and en blocks) with the actual 개인정보 보호책임자. **Do not launch with placeholders visible.**
+- [ ] Have the company/legal review the full `/privacy` text — it is a compliant-structured draft, not legal advice. Confirm the 3-year retention period and the 시행일 (currently 2026-08-04) match company policy.
 
-Status: the code-level dedupe is in place in `src/app/[locale]/page.tsx` (`dedupeCaseStudies`); this data-model migration is still outstanding.
+## Inquiry email notification setup (Task 6.5, workstream 06)
+
+- [ ] Create a Resend account (resend.com), add and verify the `hydrofast.co.kr` domain (Domains → Add Domain → add the DKIM/SPF DNS records at the registrar).
+- [ ] Create an API key and set `RESEND_API_KEY` and `NOTIFY_FROM` (e.g. `HYDROFAST 홈페이지 <no-reply@hydrofast.co.kr>`) on Vercel, then redeploy. Until then, inquiries still land in `/admin/inquiries` and the server logs a warning instead of emailing.
+- [ ] Future: confirmation email to the submitter (deliberately skipped in this pass to avoid sender-reputation issues on an unwarmed domain).
+
+## Contact-form spam — future hardening (Task 6.3, workstream 06)
+
+- [ ] Current rate limit is per-email (max 3 inquiries / 10 min, counted from the `inquiries` table). IP-based limiting would need middleware + a store like Upstash Redis — revisit if spam volume grows.
+
+## Case-study data model (Task 6.6, workstream 06) — code shipped, DB steps pending
+
+- [x] `case_study_images` child table + admin multi-upload + `+N` card badge (shipped; see `docs/sql/003_compliance_and_case_study_images.md`).
+- [ ] Apply `docs/sql/003_compliance_and_case_study_images.md` in the Supabase SQL Editor.
+- [ ] Then run `npm run db:merge-case-studies` once to merge duplicate one-photo-per-row projects into single rows with galleries.
+- [ ] After verifying `/cases`, the `dedupeCaseStudies()` workaround in `src/app/[locale]/page.tsx` can be removed (harmless to keep).
 
 ## Search-engine registration checklist (from docs/improvement-plan/03-workstream-seo.md, Task 3.6 — human tasks, not code)
 

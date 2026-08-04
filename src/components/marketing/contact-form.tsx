@@ -2,13 +2,17 @@
 
 import { useState, useTransition } from "react";
 import { useTranslations } from "next-intl";
-import { submitInquiry } from "@/app/[locale]/contact/actions";
+import { Link } from "@/i18n/navigation";
+import { submitInquiry, type SubmitInquiryResult } from "@/app/[locale]/contact/actions";
 import type { BusinessArea } from "@/db/schema";
 
 export function ContactForm({ businessAreas }: { businessAreas: BusinessArea[] }) {
   const t = useTranslations("contactPage");
+  const tErrors = useTranslations("contactPage.errors");
   const [isPending, startTransition] = useTransition();
-  const [result, setResult] = useState<{ success: boolean; error?: string } | null>(null);
+  const [result, setResult] = useState<SubmitInquiryResult | null>(null);
+  // Time-gate stamp (spam hardening): submissions under 3s after render are rejected server-side.
+  const [renderedAt] = useState(() => Date.now());
 
   function handleSubmit(formData: FormData) {
     startTransition(async () => {
@@ -26,7 +30,7 @@ export function ContactForm({ businessAreas }: { businessAreas: BusinessArea[] }
   }
 
   return (
-    <form action={handleSubmit} className="flex flex-col gap-4">
+    <form action={handleSubmit} className="relative flex flex-col gap-4">
       <div className="grid grid-cols-2 gap-4">
         <input name="name" required placeholder={t("formName")} className="rounded-[var(--radius-card)] border border-[var(--color-border)] px-3 py-2.5 text-sm" />
         <input name="company" placeholder={t("formCompany")} className="rounded-[var(--radius-card)] border border-[var(--color-border)] px-3 py-2.5 text-sm" />
@@ -45,8 +49,33 @@ export function ContactForm({ businessAreas }: { businessAreas: BusinessArea[] }
       </select>
       <textarea name="message" required rows={5} placeholder={t("formMessage")} className="rounded-[var(--radius-card)] border border-[var(--color-border)] px-3 py-2.5 text-sm" />
 
-      {result?.error && <p className="text-sm text-[var(--color-safety-orange)]">{result.error}</p>}
-      {result?.success === false && !result.error && <p className="text-sm text-[var(--color-safety-orange)]">{t("formError")}</p>}
+      {/* Honeypot — visually hidden, ignored by humans, filled by naive bots. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label>
+          Website
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
+      <input type="hidden" name="renderedAt" value={renderedAt} />
+
+      <label className="flex items-start gap-2 text-sm">
+        <input type="checkbox" name="privacyConsent" required className="mt-0.5 accent-[var(--color-steel-light)]" />
+        <span>
+          {t.rich("formConsent", {
+            link: (chunks) => (
+              <Link href="/privacy" target="_blank" className="font-semibold underline underline-offset-2">
+                {chunks}
+              </Link>
+            ),
+          })}
+        </span>
+      </label>
+
+      {result?.success === false && (
+        <p className="text-sm text-[var(--color-safety-orange)]">
+          {result.errorCode ? tErrors(result.errorCode) : t("formError")}
+        </p>
+      )}
 
       <button
         type="submit"

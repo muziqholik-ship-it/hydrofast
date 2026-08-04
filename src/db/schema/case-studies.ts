@@ -18,5 +18,19 @@ export const caseStudies = pgTable("case_studies", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
+// One project = one case_studies row with many photos. caseStudies.imagePath
+// stays as the cover (first image) so list pages keep their single cheap query;
+// this table holds the full ordered gallery.
+export const caseStudyImages = pgTable("case_study_images", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  caseStudyId: uuid("case_study_id")
+    .notNull()
+    .references(() => caseStudies.id, { onDelete: "cascade" }),
+  imagePath: text("image_path").notNull(),
+  sortOrder: integer("sort_order").notNull().default(0),
+});
+
 export type CaseStudy = typeof caseStudies.$inferSelect;
 export type NewCaseStudy = typeof caseStudies.$inferInsert;
+export type CaseStudyImage = typeof caseStudyImages.$inferSelect;
+export type NewCaseStudyImage = typeof caseStudyImages.$inferInsert;

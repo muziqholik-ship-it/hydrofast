@@ -8,6 +8,7 @@ import { RevealGrid, RevealGridItem } from "@/components/marketing/reveal-grid";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
+import { getCaseStudyImageCounts } from "@/lib/case-study-images";
 
 export const dynamic = "force-dynamic";
 
@@ -22,6 +23,7 @@ export default async function CasesPage() {
   const t = await getTranslations("cases");
 
   const rows = await db.select().from(caseStudies).where(eq(caseStudies.isPublished, true)).orderBy(asc(caseStudies.sortOrder));
+  const imageCounts = await getCaseStudyImageCounts(rows.map((r) => r.id));
 
   return (
     <div className="mx-auto max-w-[1400px] px-6 py-16">
@@ -33,6 +35,7 @@ export default async function CasesPage() {
               caseStudy={cs}
               title={locale === "ko" ? cs.titleKo : cs.titleEn ?? cs.titleKo}
               description={locale === "ko" ? cs.descriptionKo : cs.descriptionEn ?? cs.descriptionKo}
+              imageCount={imageCounts[cs.id] ?? 0}
             />
           </RevealGridItem>
         ))}

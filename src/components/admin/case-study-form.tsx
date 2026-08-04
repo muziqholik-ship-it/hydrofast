@@ -2,22 +2,66 @@
 
 import { useState } from "react";
 import { publicImageUrl } from "@/lib/image-url";
-import type { CaseStudy, BusinessArea } from "@/db/schema";
+import type { CaseStudy, CaseStudyImage, BusinessArea } from "@/db/schema";
 
 const ASPECT_RATIOS = ["21-9", "16-10", "4-3", "9-16", "1-1"];
 
 export function CaseStudyForm({
   action,
   initial,
+  initialImages = [],
   businessAreas,
 }: {
   action: (formData: FormData) => Promise<void>;
   initial?: CaseStudy;
+  initialImages?: CaseStudyImage[];
   businessAreas: BusinessArea[];
 }) {
-  const [preview, setPreview] = useState<string | null>(
-    initial?.imagePath ? publicImageUrl("case-study-images", initial.imagePath) : null
-  );
+  // Ordered gallery paths; first = cover. Rows created before the
+  // case_study_images migration only have the single imagePath.
+  const [images, setImages] = useState<string[]>(() => {
+    if (initialImages.length > 0) return initialImages.map((img) => img.imagePath);
+    return initial?.imagePath ? [initial.imagePath] : [];
+  });
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+
+  async function handleFiles(files: FileList | null) {
+    if (!files || files.length === 0) return;
+    setUploading(true);
+    setUploadError(null);
+    try {
+      const uploaded: string[] = [];
+      for (const file of Array.from(files)) {
+        const fd = new FormData();
+        fd.append("file", file);
+        fd.append("bucket", "case-study-images");
+        const res = await fetch("/admin/api/upload", { method: "POST", body: fd });
+        const json = await res.json();
+        if (!res.ok) throw new Error(json.error ?? "업로드에 실패했습니다.");
+        uploaded.push(json.path);
+      }
+      setImages((prev) => [...prev, ...uploaded]);
+    } catch (err) {
+      setUploadError(err instanceof Error ? err.message : "업로드에 실패했습니다.");
+    } finally {
+      setUploading(false);
+    }
+  }
+
+  function removeImage(index: number) {
+    setImages((prev) => prev.filter((_, i) => i !== index));
+  }
+
+  function moveImage(index: number, delta: -1 | 1) {
+    setImages((prev) => {
+      const next = [...prev];
+      const target = index + delta;
+      if (target < 0 || target >= next.length) return prev;
+      [next[index], next[target]] = [next[target], next[index]];
+      return next;
+    });
+  }
 
   return (
     <form action={action} className="flex max-w-2xl flex-col gap-4">
@@ -90,23 +134,53 @@ export function CaseStudyForm({
       </div>
 
       <div>
-        <label className="mb-1 block text-sm font-medium">
-          이미지{initial ? " (변경 시에만 업로드)" : ""}
-        </label>
+        <label className="mb-1 block text-sm font-medium">이미지 (여러 장 선택 가능, 첫 번째가 대표 이미지)</label>
         <input
           type="file"
-          name="image"
           accept="image/*"
+          multiple
           onChange={(e) => {
-            const file = e.target.files?.[0];
-            if (file) setPreview(URL.createObjectURL(file));
+            void handleFiles(e.target.files);
+            e.target.value = "";
           }}
           className="w-full text-sm"
         />
-        {preview && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={preview} alt="preview" className="mt-2 h-32 w-auto rounded object-cover" />
+        {uploading && <p className="mt-1 text-xs text-[var(--color-ink-soft)]">업로드 중...</p>}
+        {uploadError && <p className="mt-1 text-xs text-[var(--color-safety-orange)]">{uploadError}</p>}
+        {images.length > 0 && (
+          <ul className="mt-2 grid grid-cols-3 gap-3">
+            {images.map((path, index) => (
+              <li key={path} className="rounded border border-[var(--color-border)] p-1.5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={publicImageUrl("case-study-images", path) ?? undefined}
+                  alt={`이미지 ${index + 1}`}
+                  className="h-24 w-full rounded object-cover"
+                />
+                <div className="mt-1 flex items-center justify-between text-xs">
+                  <span className="text-[var(--color-ink-soft)]">{index === 0 ? "대표" : `#${index + 1}`}</span>
+                  <span className="flex gap-1.5">
+                    <button type="button" onClick={() => moveImage(index, -1)} disabled={index === 0} className="disabled:opacity-30">
+                      ←
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => moveImage(index, 1)}
+                      disabled={index === images.length - 1}
+                      className="disabled:opacity-30"
+                    >
+                      →
+                    </button>
+                    <button type="button" onClick={() => removeImage(index)} className="text-[var(--color-safety-orange)]">
+                      삭제
+                    </button>
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ul>
         )}
+        <input type="hidden" name="imagePaths" value={JSON.stringify(images)} />
       </div>
 
       <div className="grid grid-cols-3 gap-4">
@@ -141,7 +215,8 @@ export function CaseStudyForm({
 
       <button
         type="submit"
-        className="mt-2 rounded-[var(--radius-card)] bg-[var(--color-steel-light)] py-2 text-sm font-semibold text-white"
+        disabled={uploading}
+        className="mt-2 rounded-[var(--radius-card)] bg-[var(--color-steel-light)] py-2 text-sm font-semibold text-white disabled:opacity-60"
       >
         저장
       </button>

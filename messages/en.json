@@ -70,9 +70,19 @@
     "formPhone": "Phone",
     "formBusinessArea": "Area of interest",
     "formMessage": "Message",
+    "formConsent": "[Required] I agree to the <link>collection and use of my personal information</link>.",
     "formSubmit": "Send inquiry",
     "formSuccess": "Your inquiry has been received. We'll get back to you shortly.",
-    "formError": "Something went wrong while sending. Please try again."
+    "formError": "Something went wrong while sending. Please try again.",
+    "errors": {
+      "missing_fields": "Please fill in all required fields.",
+      "consent_required": "Please agree to the collection and use of personal information.",
+      "invalid_email": "Please enter a valid email address.",
+      "too_long": "Your input exceeds the allowed length. Please shorten it and try again.",
+      "too_fast": "That was submitted too quickly. Please wait a moment and try again.",
+      "rate_limited": "Too many inquiries in a short period. Please try again later.",
+      "server_error": "Something went wrong while sending. Please try again."
+    }
   },
   "notFound": {
     "message": "The page you are looking for could not be found.",
@@ -80,8 +90,7 @@
     "searchProducts": "Browse Products"
   },
   "privacyPage": {
-    "title": "Privacy Policy",
-    "preparing": "Our privacy policy page is being prepared."
+    "title": "Privacy Policy"
   },
   "meta": {
     "titleDefault": "HYDROFAST — Precision & Power in Hydraulic",
