@@ -4,6 +4,8 @@ import { getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getAllAreas, getAreaContent } from "@/lib/areas";
 import { BusinessContent } from "@/components/marketing/business-content";
+import { JsonLd } from "@/components/json-ld";
+import { pageMetadata, localeUrl } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 // Content is CMS-managed (business_areas.content_json), so render per-request
@@ -21,7 +23,14 @@ export async function generateMetadata({
   if (!area) return {};
   const name = locale === "ko" ? area.name.ko : area.name.en ?? area.name.ko;
   const description = locale === "ko" ? area.summary.ko : area.summary.en ?? area.summary.ko;
-  return { title: name, description };
+  const image = area.cardImage || area.heroImage || undefined;
+  return pageMetadata({
+    locale,
+    path: `/business/${areaSlug}`,
+    title: name,
+    description: description || undefined,
+    images: image ? [image] : undefined,
+  });
 }
 
 export default async function BusinessAreaPage({
@@ -37,8 +46,23 @@ export default async function BusinessAreaPage({
   const L = (l: { ko: string; en?: string }) => (locale === "ko" ? l.ko : l.en ?? l.ko);
   const others = all.filter((a) => a.slug !== area.slug);
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: locale === "ko" ? "홈" : "Home",
+        item: localeUrl(locale, "/"),
+      },
+      { "@type": "ListItem", position: 2, name: L(area.name) },
+    ],
+  };
+
   return (
     <div>
+      <JsonLd data={breadcrumbJsonLd} />
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-[var(--color-border)]">
         {area.heroImage && (

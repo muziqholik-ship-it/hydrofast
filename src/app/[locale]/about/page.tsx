@@ -1,4 +1,4 @@
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { db } from "@/db/client";
 import { historyEvents, certifications } from "@/db/schema";
 import { asc } from "drizzle-orm";
@@ -10,8 +10,17 @@ import { Link } from "@/i18n/navigation";
 import { publicImageUrl } from "@/lib/image-url";
 import { getAllAreas } from "@/lib/areas";
 import type { Locale } from "@/i18n/routing";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import { COMPANY } from "@/lib/company";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = (await getLocale()) as Locale;
+  const t = await getTranslations("meta.about");
+  return pageMetadata({ locale, path: "/about", title: t("title"), description: t("description") });
+}
 
 const CATEGORY_LABEL: Record<string, { ko: string; en: string }> = {
   patent: { ko: "특허", en: "Patent" },
@@ -19,8 +28,8 @@ const CATEGORY_LABEL: Record<string, { ko: string; en: string }> = {
   award: { ko: "수상", en: "Award" },
 };
 
-const ADDRESS_KO = "인천광역시 부평구 부평대로 283, 우림라이온스밸리 C동 610호";
-const ADDRESS_EN = "C-610, Woolim Lions Valley, 283 Bupyeong-daero, Bupyeong-gu, Incheon, Korea";
+const ADDRESS_KO = COMPANY.addressKo;
+const ADDRESS_EN = COMPANY.addressEn;
 const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent("인천광역시 부평구 부평대로 283")}&z=16&output=embed`;
 
 export default async function AboutPage() {
@@ -35,12 +44,12 @@ export default async function AboutPage() {
 
   const profile: { label: string; value: string }[] = [
     { label: ko ? "회사명" : "Company", value: ko ? "(주)하이드로훼스트" : "Hydrofast Co., Ltd." },
-    { label: ko ? "대표자" : "CEO", value: ko ? "최수성" : "Choi Su-seong" },
+    { label: ko ? "대표자" : "CEO", value: ko ? COMPANY.ceoKo : COMPANY.ceoEn },
     { label: ko ? "설립" : "Founded", value: ko ? "1998년 5월" : "May 1998" },
-    { label: ko ? "사업자등록번호" : "Business Reg.", value: "122-86-10520" },
-    { label: ko ? "대표전화" : "Tel", value: "032-623-5015" },
-    { label: ko ? "팩스" : "Fax", value: "032-623-5017" },
-    { label: ko ? "이메일" : "Email", value: "hydrofast@hydrofast.co.kr" },
+    { label: ko ? "사업자등록번호" : "Business Reg.", value: COMPANY.registrationNumber },
+    { label: ko ? "대표전화" : "Tel", value: COMPANY.phone },
+    { label: ko ? "팩스" : "Fax", value: COMPANY.fax },
+    { label: ko ? "이메일" : "Email", value: COMPANY.email },
     { label: ko ? "홈페이지" : "Website", value: "www.hydrofast.co.kr" },
   ];
 
@@ -165,9 +174,9 @@ export default async function AboutPage() {
             </div>
             <div className="flex flex-col gap-4">
               <InfoRow icon="📍" label={ko ? "주소" : "Address"} value={ko ? ADDRESS_KO : ADDRESS_EN} />
-              <InfoRow icon="📞" label={ko ? "대표전화" : "Tel"} value="032-623-5015" />
-              <InfoRow icon="📠" label={ko ? "팩스" : "Fax"} value="032-623-5017" />
-              <InfoRow icon="✉️" label={ko ? "이메일" : "Email"} value="hydrofast@hydrofast.co.kr" />
+              <InfoRow icon="📞" label={ko ? "대표전화" : "Tel"} value={COMPANY.phone} />
+              <InfoRow icon="📠" label={ko ? "팩스" : "Fax"} value={COMPANY.fax} />
+              <InfoRow icon="✉️" label={ko ? "이메일" : "Email"} value={COMPANY.email} />
               <InfoRow
                 icon="🕘"
                 label={ko ? "영업시간" : "Hours"}

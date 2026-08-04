@@ -5,9 +5,32 @@ import { affiliates, affiliateSections } from "@/db/schema";
 import { eq, asc } from "drizzle-orm";
 import { publicImageUrl } from "@/lib/image-url";
 import type { Locale } from "@/i18n/routing";
+import type { Metadata } from "next";
 import { AffiliateSectionBlock } from "@/components/marketing/affiliate-section-block";
+import { pageMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const locale = (await getLocale()) as Locale;
+  const [affiliate] = await db.select().from(affiliates).where(eq(affiliates.slug, slug));
+  if (!affiliate) return {};
+  const name = locale === "ko" ? affiliate.nameKo : affiliate.nameEn ?? affiliate.nameKo;
+  const tagline = locale === "ko" ? affiliate.taglineKo : affiliate.taglineEn ?? affiliate.taglineKo;
+  const logo = publicImageUrl("site-media", affiliate.logoPath);
+  return pageMetadata({
+    locale,
+    path: `/affiliates/${slug}`,
+    title: name,
+    description: tagline ?? undefined,
+    images: logo ? [logo] : undefined,
+  });
+}
 
 export default async function AffiliateDetailPage({
   params,

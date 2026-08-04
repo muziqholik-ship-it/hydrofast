@@ -8,6 +8,8 @@ import { publicImageUrl } from "@/lib/image-url";
 import { ProductCard, type ProductCardData } from "@/components/marketing/product-card";
 import { RevealGrid, RevealGridItem } from "@/components/marketing/reveal-grid";
 import { SectionHeading } from "@/components/marketing/section-heading";
+import { JsonLd } from "@/components/json-ld";
+import { pageMetadata, localeUrl } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export const dynamic = "force-dynamic";
@@ -32,18 +34,15 @@ export async function generateMetadata({
     row.product.shortDescriptionKo ??
     undefined;
   const title = row.manufacturer ? `${name} — ${row.manufacturer.name}` : name;
+  const image = publicImageUrl("product-images", row.product.primaryImagePath);
 
-  return {
+  return pageMetadata({
+    locale,
+    path: `/products/${slug}`,
     title,
     description,
-    openGraph: {
-      title,
-      description,
-      images: row.product.primaryImagePath
-        ? [publicImageUrl("product-images", row.product.primaryImagePath)!]
-        : undefined,
-    },
-  };
+    images: image ? [image] : undefined,
+  });
 }
 
 export default async function ProductDetailPage({
@@ -54,6 +53,7 @@ export default async function ProductDetailPage({
   const { slug } = await params;
   const locale = (await getLocale()) as Locale;
   const tCommon = await getTranslations("common");
+  const tNav = await getTranslations("nav");
 
   const [row] = await db
     .select({
@@ -112,8 +112,38 @@ export default async function ProductDetailPage({
     teaser: null,
   }));
 
+  const shortDescription =
+    (locale === "ko" ? product.shortDescriptionKo : product.shortDescriptionEn) ??
+    product.shortDescriptionKo ??
+    description ??
+    undefined;
+  const productImage = publicImageUrl("product-images", product.primaryImagePath);
+
+  // Quote-based B2B: no price/offers on purpose — only fields we actually have.
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name,
+    ...(shortDescription ? { description: shortDescription } : {}),
+    ...(productImage ? { image: productImage } : {}),
+    ...(manufacturer ? { brand: { "@type": "Brand", name: manufacturer.name } } : {}),
+    ...(product.modelNo ? { model: product.modelNo } : {}),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: tNav("home"), item: localeUrl(locale, "/") },
+      { "@type": "ListItem", position: 2, name: tNav("products"), item: localeUrl(locale, "/products") },
+      { "@type": "ListItem", position: 3, name },
+    ],
+  };
+
   return (
     <div className="mx-auto max-w-[1400px] px-6 py-16">
+      <JsonLd data={productJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
         <div>
           <div className="aspect-square w-full overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface-alt)]">

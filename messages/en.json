@@ -74,14 +74,58 @@
     "formSuccess": "Your inquiry has been received. We'll get back to you shortly.",
     "formError": "Something went wrong while sending. Please try again."
   },
+  "notFound": {
+    "message": "The page you are looking for could not be found.",
+    "backHome": "Back to Home",
+    "searchProducts": "Browse Products"
+  },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "preparing": "Our privacy policy page is being prepared."
+  },
+  "meta": {
+    "titleDefault": "HYDROFAST — Precision & Power in Hydraulic",
+    "titleTemplate": "%s | HYDROFAST",
+    "description": "HYDROFAST Co., Ltd. supplies hydraulic tensioning equipment, ultra-high-pressure valves and fittings, and fire pumps, and provides custom hydraulic system design, manufacturing, and torque wrench calibration. Serving Korean industry from Incheon since 1998.",
+    "ogImageAlt": "HYDROFAST — Precision & Power in Hydraulic",
+    "products": {
+      "title": "Products",
+      "description": "Browse hydraulic tensioners, ultra-high-pressure valves and fittings, pumps, and more — search HYDROFAST's catalog by name, manufacturer, or spec."
+    },
+    "cases": {
+      "title": "Case Studies",
+      "description": "Custom hydraulic engineering projects by HYDROFAST — real examples covering consultation, design, manufacturing, installation, and maintenance."
+    },
+    "partners": {
+      "title": "Partners",
+      "description": "Global manufacturers HYDROFAST represents in Korea — brands in hydraulic tensioning, ultra-high-pressure components, and measurement."
+    },
+    "about": {
+      "title": "About",
+      "description": "Company profile of HYDROFAST Co., Ltd. — history since 1998, certifications and patents, and directions to our Incheon Bupyeong office."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Request a quote or technical consultation for hydraulic tensioning, ultra-high-pressure systems, custom hydraulic engineering, or torque wrench calibration."
+    },
+    "affiliates": {
+      "title": "Affiliates",
+      "description": "Affiliated companies of HYDROFAST Co., Ltd."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Privacy policy of HYDROFAST Co., Ltd."
+    }
+  },
   "footer": {
-    "ceo": "CEO: Choi Su-Seong",
-    "registration": "Business Registration: 122-86-10520",
-    "address": "Address: Woolim Lions Valley C-610, 283 Bupyeong-daero, Bupyeong-gu, Incheon, South Korea",
-    "phone": "Tel: 032-623-5015",
-    "fax": "Fax: 032-623-5017",
-    "email": "E-mail: hydrofast@hydrofast.co.kr",
+    "ceo": "CEO: {value}",
+    "registration": "Business Registration: {value}",
+    "address": "Address: {value}",
+    "phone": "Tel: {value}",
+    "fax": "Fax: {value}",
+    "email": "E-mail: {value}",
     "businessHours": "Business Hours: Weekdays 9AM - 6PM (Closed Sat/Sun/Holidays)",
+    "privacy": "Privacy Policy",
     "copyright": "© 2026 HYDROFAST Co., Ltd. All rights reserved."
   }
 }

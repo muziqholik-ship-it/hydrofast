@@ -8,8 +8,16 @@ import { RevealGrid, RevealGridItem } from "@/components/marketing/reveal-grid";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = (await getLocale()) as Locale;
+  const t = await getTranslations("meta.products");
+  return pageMetadata({ locale, path: "/products", title: t("title"), description: t("description") });
+}
 
 function buildTeaser(specSchema: SpecFieldDef[], specs: Record<string, unknown>, locale: Locale) {
   const teaserFields = specSchema.filter((f) => f.showInCardTeaser);

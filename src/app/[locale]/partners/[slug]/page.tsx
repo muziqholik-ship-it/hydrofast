@@ -8,8 +8,40 @@ import { ProductCard, type ProductCardData } from "@/components/marketing/produc
 import { RevealGrid, RevealGridItem } from "@/components/marketing/reveal-grid";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import type { Locale } from "@/i18n/routing";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
+
+/** First sentence-ish slice of the CMS description, sized for a meta description. */
+function oneLiner(text: string | null | undefined): string | undefined {
+  if (!text) return undefined;
+  const flat = text.replace(/\s+/g, " ").trim();
+  if (!flat) return undefined;
+  return flat.length > 160 ? `${flat.slice(0, 157)}…` : flat;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const locale = (await getLocale()) as Locale;
+  const [manufacturer] = await db.select().from(manufacturers).where(eq(manufacturers.slug, slug));
+  if (!manufacturer) return {};
+  const description = oneLiner(
+    locale === "ko" ? manufacturer.descriptionKo : manufacturer.descriptionEn ?? manufacturer.descriptionKo
+  );
+  const logo = publicImageUrl("partner-logos", manufacturer.logoPath);
+  return pageMetadata({
+    locale,
+    path: `/partners/${slug}`,
+    title: manufacturer.name,
+    description,
+    images: logo ? [logo] : undefined,
+  });
+}
 
 export default async function PartnerDetailPage({
   params,

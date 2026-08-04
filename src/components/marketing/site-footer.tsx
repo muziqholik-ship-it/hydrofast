@@ -1,9 +1,12 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { COMPANY } from "@/lib/company";
 
 export function SiteFooter() {
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
+  const locale = useLocale();
+  const ko = locale === "ko";
 
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-surface-alt)]">
@@ -14,18 +17,26 @@ export function SiteFooter() {
             <span className="text-[var(--color-safety-orange)]">FAST</span>
           </div>
           <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed">
-            {t("ceo")}
+            {t("ceo", { value: ko ? COMPANY.ceoKo : COMPANY.ceoEn })}
             <br />
-            {t("registration")}
+            {t("registration", { value: COMPANY.registrationNumber })}
             <br />
-            {t("address")}
+            {t("address", { value: ko ? COMPANY.addressKo : COMPANY.addressEn })}
           </p>
         </div>
 
         <div className="text-sm text-[var(--color-ink-soft)] leading-relaxed">
-          <p>{t("phone")}</p>
-          <p>{t("fax")}</p>
-          <p>{t("email")}</p>
+          <p>
+            <a href={`tel:${COMPANY.phone}`} className="hover:text-[var(--color-ink)]">
+              {t("phone", { value: COMPANY.phone })}
+            </a>
+          </p>
+          <p>{t("fax", { value: COMPANY.fax })}</p>
+          <p>
+            <a href={`mailto:${COMPANY.email}`} className="hover:text-[var(--color-ink)]">
+              {t("email", { value: COMPANY.email })}
+            </a>
+          </p>
           <p className="mt-2">{t("businessHours")}</p>
         </div>
 
@@ -41,6 +52,9 @@ export function SiteFooter() {
           </Link>
           <Link href="/contact" className="hover:text-[var(--color-ink)] text-[var(--color-ink-soft)]">
             {tNav("contact")}
+          </Link>
+          <Link href="/privacy" className="hover:text-[var(--color-ink)] text-[var(--color-ink-soft)]">
+            {t("privacy")}
           </Link>
         </nav>
       </div>

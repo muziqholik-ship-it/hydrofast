@@ -6,8 +6,16 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { CaseStudyCard } from "@/components/marketing/case-study-card";
 import { RevealGrid, RevealGridItem } from "@/components/marketing/reveal-grid";
 import type { Locale } from "@/i18n/routing";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = (await getLocale()) as Locale;
+  const t = await getTranslations("meta.cases");
+  return pageMetadata({ locale, path: "/cases", title: t("title"), description: t("description") });
+}
 
 export default async function CasesPage() {
   const locale = (await getLocale()) as Locale;

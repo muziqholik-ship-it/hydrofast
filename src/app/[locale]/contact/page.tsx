@@ -1,10 +1,19 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { db } from "@/db/client";
 import { businessAreas } from "@/db/schema";
 import { asc } from "drizzle-orm";
 import { ContactForm } from "@/components/marketing/contact-form";
+import type { Locale } from "@/i18n/routing";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = (await getLocale()) as Locale;
+  const t = await getTranslations("meta.contact");
+  return pageMetadata({ locale, path: "/contact", title: t("title"), description: t("description") });
+}
 
 export default async function ContactPage() {
   const t = await getTranslations("contactPage");

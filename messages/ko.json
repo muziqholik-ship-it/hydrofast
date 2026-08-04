@@ -74,14 +74,58 @@
     "formSuccess": "문의가 접수되었습니다. 빠르게 회신드리겠습니다.",
     "formError": "전송 중 오류가 발생했습니다. 다시 시도해주세요."
   },
+  "notFound": {
+    "message": "요청하신 페이지를 찾을 수 없습니다.",
+    "backHome": "홈으로",
+    "searchProducts": "제품 검색"
+  },
+  "privacyPage": {
+    "title": "개인정보처리방침",
+    "preparing": "개인정보처리방침 페이지를 준비 중입니다."
+  },
+  "meta": {
+    "titleDefault": "HYDROFAST(하이드로훼스트) — 유압 텐셔닝·초고압 시스템 전문기업",
+    "titleTemplate": "%s | HYDROFAST",
+    "description": "(주)하이드로훼스트는 유압 텐셔닝 장비, 초고압 밸브·피팅, 소방 펌프를 공급하고 유압 시스템 설계·제작과 토크렌치 교정까지 지원하는 유압 전문기업입니다. 1998년부터 인천 부평에서 산업 현장과 함께해 왔습니다.",
+    "ogImageAlt": "HYDROFAST — Precision & Power in Hydraulic",
+    "products": {
+      "title": "제품 검색",
+      "description": "유압 텐셔너, 초고압 밸브·피팅, 펌프 등 하이드로훼스트가 공급하는 제품을 제품명·제조사·규격으로 검색해 보세요."
+    },
+    "cases": {
+      "title": "제작 사례",
+      "description": "유압 시스템 설계·제작 전문기업 하이드로훼스트의 맞춤 주문제작 사례 — 상담부터 설계, 제작, 시공, 유지관리까지 실제 프로젝트를 소개합니다."
+    },
+    "partners": {
+      "title": "파트너사",
+      "description": "하이드로훼스트가 국내에 공급하는 해외 제조사 파트너 — 유압 텐셔닝, 초고압 밸브·피팅, 계측 분야의 글로벌 브랜드를 만나보세요."
+    },
+    "about": {
+      "title": "회사 소개",
+      "description": "1998년 설립된 유압 전문기업 (주)하이드로훼스트의 연혁, 인증·특허, 오시는 길을 소개합니다. 인천 부평 우림라이온스밸리에 위치해 있습니다."
+    },
+    "contact": {
+      "title": "견적 문의",
+      "description": "유압 텐셔닝, 초고압 시스템, 유압 시스템 설계·제작, 토크렌치 교정 관련 견적과 기술 상담을 남겨 주세요. 전문 엔지니어가 빠르게 회신드립니다."
+    },
+    "affiliates": {
+      "title": "관계사",
+      "description": "(주)하이드로훼스트와 함께하는 관계사를 소개합니다."
+    },
+    "privacy": {
+      "title": "개인정보처리방침",
+      "description": "(주)하이드로훼스트의 개인정보처리방침입니다."
+    }
+  },
   "footer": {
-    "ceo": "대표자: 최수성",
-    "registration": "사업자등록번호: 122-86-10520",
-    "address": "주소: 인천광역시 부평구 부평대로 283, 우림라이온스밸리 C동 610호",
-    "phone": "Tel: 032-623-5015",
-    "fax": "Fax: 032-623-5017",
-    "email": "E-mail: hydrofast@hydrofast.co.kr",
+    "ceo": "대표자: {value}",
+    "registration": "사업자등록번호: {value}",
+    "address": "주소: {value}",
+    "phone": "Tel: {value}",
+    "fax": "Fax: {value}",
+    "email": "E-mail: {value}",
     "businessHours": "영업시간: 평일 오전 9시 ~ 오후 6시 (토/일/공휴일 휴무)",
+    "privacy": "개인정보처리방침",
     "copyright": "© 2026 HYDROFAST Co., Ltd. All rights reserved."
   }
 }
