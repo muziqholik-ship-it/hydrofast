@@ -23,6 +23,12 @@
   /* Text color for content sitting ON a safety-orange background. Dark mode
      flips it to near-black: white on the brightened #ff4d0d is only ~3.3:1. */
   --color-safety-orange-contrast: #ffffff;
+  /* Workstream 09 amendment — the ONE token that workstream adds: hydraulic-oil
+     amber for the oil-fill typography. The metaphor (type filling with oil)
+     cannot be expressed in steel-blue or safety-orange; every darker shade the
+     effect needs (gradient depth, meniscus) is derived from this single token
+     via color-mix, so no other new colors exist. */
+  --color-fluid: #e8b04b;
   --radius-card: 6px;
   --radius-pill: 999px;
   --nav-height: 76px;
@@ -43,6 +49,8 @@
      on --color-surface-alt here; #ff4d0d passes AA on both dark surfaces. */
   --color-safety-orange: #ff4d0d;
   --color-safety-orange-contrast: #0f1115;
+  /* Slightly brighter oil on dark surfaces (same reasoning as safety-orange). */
+  --color-fluid: #f2bd5e;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,6 +64,7 @@
     --color-steel-light: #7d95ff;
     --color-safety-orange: #ff4d0d;
     --color-safety-orange-contrast: #0f1115;
+    --color-fluid: #f2bd5e;
   }
 }
 
@@ -70,6 +79,7 @@
   --color-safety-orange: var(--color-safety-orange);
   --color-safety-orange-dim: var(--color-safety-orange-dim);
   --color-safety-orange-contrast: var(--color-safety-orange-contrast);
+  --color-fluid: var(--color-fluid);
   --radius-card: var(--radius-card);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -121,4 +131,39 @@ body {
    via this attribute, set on <html> in the [locale] layout. */
 html[data-motion="off"] .marquee-track {
   animation: none;
+}
+
+/*
+  Oil-fill typography (workstream 09 §1 — src/components/motion/fluid-text.tsx).
+  Static/SSR/reduced-motion state: letters fully filled with the oil gradient
+  via background-clip, so no JS is ever needed for a correct heading. While the
+  SVG overlay animates, the real (selectable) HTML glyphs go transparent
+  underneath it. All depth shades derive from the single --color-fluid token.
+*/
+.fluid-text-static {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-fluid),
+    color-mix(in srgb, var(--color-fluid) 55%, black)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.fluid-text-animating [data-fluid-line] {
+  color: transparent;
+}
+
+.fluid-text-outline {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 1;
+}
+
+.fluid-text-meniscus {
+  fill: none;
+  stroke: color-mix(in srgb, var(--color-fluid) 45%, black);
+  stroke-width: 1.5;
+  opacity: 0.7;
 }

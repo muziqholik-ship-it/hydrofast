@@ -124,7 +124,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       <section className="mx-auto max-w-[1400px] px-6 py-20">
-        <SectionHeading title={tBiz("sectionTitle")} />
+        <SectionHeading title={tBiz("sectionTitle")} fluid />
         <ScrollRevealGrid className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {areas.map((area) => (
             <ScrollRevealItem key={area.slug}>

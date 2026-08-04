@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "@/i18n/navigation";
 import { gsap, EASE_ENTRANCE, EASE_MECHANICAL, MOTION_LEVEL, prefersReducedMotion } from "@/lib/motion";
 import { VideoLoop } from "@/components/media/video-loop";
+import { FluidText } from "@/components/motion/fluid-text";
 import type { VideoRendition } from "@/lib/videos";
 
 /*
@@ -173,7 +174,11 @@ export function ClosingCta({
       </svg>
 
       <div data-cta="content" className="relative mx-auto max-w-[1400px] px-6 py-16 text-center md:py-20">
-        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
+        {/* Third and last oil-fill placement (09 E2): fills as the section
+            enters; being the page end, it stays full rather than draining. */}
+        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+          <FluidText text={title} mode="scrub" />
+        </h2>
         <p className="mx-auto mt-3 max-w-2xl text-[var(--color-ink-soft)]">{sub}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link

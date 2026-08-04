@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
-import { gsap, SplitText, EASE_ENTRANCE, motionEnabled } from "@/lib/motion";
+import { gsap, EASE_ENTRANCE, motionEnabled } from "@/lib/motion";
+import { FluidText } from "@/components/motion/fluid-text";
 import { VideoLoop } from "@/components/media/video-loop";
 import type { VideoRendition } from "@/lib/videos";
 
@@ -54,58 +55,27 @@ export function HomeHero({
   const [activeIdx, setActiveIdx] = useState(0);
 
   /*
-   * Entrance choreography (kept from 08 Session A): SplitText masked
-   * line-reveal on the headline, staggered rises for the rest. SSR markup is
-   * fully visible — MOTION_LEVEL=off / reduced motion never run this, and
-   * the headline stays the LCP element.
+   * Entrance choreography (kept from 08 Session A, minus the headline: the
+   * h1 is now the oil-fill signature — FluidText mode="load" runs its own
+   * rise while these staggered lifts frame it). SSR markup is fully visible —
+   * MOTION_LEVEL=off / reduced motion never run this, and the headline stays
+   * the LCP element.
    */
   useEffect(() => {
     if (!motionEnabled()) return;
     const root = scope.current;
     if (!root) return;
 
-    let cancelled = false;
-    let split: SplitText | null = null;
-    const ctx = gsap.context(() => {}, root);
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: EASE_ENTRANCE } });
+      tl.from('[data-hero="kicker"]', { autoAlpha: 0, y: 16, duration: 0.4 }, 0);
+      tl.from('[data-hero="desc"]', { autoAlpha: 0, y: 24, duration: 0.5 }, 0.4);
+      tl.from('[data-hero="ctas"]', { autoAlpha: 0, y: 24, duration: 0.5 }, 0.5);
+      tl.from('[data-hero="ticker"]', { autoAlpha: 0, y: 16, duration: 0.5 }, 0.6);
+      tl.from('[data-hero="specs"]', { autoAlpha: 0, y: 24, duration: 0.5 }, 0.7);
+    }, root);
 
-    // Split only after webfonts settle, otherwise line boxes are measured
-    // against the fallback font and the masks wrap the wrong words.
-    document.fonts.ready.then(() => {
-      if (cancelled) return;
-      ctx.add(() => {
-        const h1 = root.querySelector("h1");
-        if (!h1) return;
-
-        const tl = gsap.timeline({ defaults: { ease: EASE_ENTRANCE } });
-
-        tl.from('[data-hero="kicker"]', { autoAlpha: 0, y: 16, duration: 0.4 }, 0);
-
-        split = SplitText.create(h1, { type: "lines", mask: "lines" });
-        tl.from(
-          split.lines,
-          {
-            yPercent: 110,
-            duration: 0.6,
-            stagger: 0.08,
-            // Restore the original markup after the reveal so window resizes
-            // reflow the headline naturally.
-            onComplete: () => split?.revert(),
-          },
-          0.1,
-        );
-
-        tl.from('[data-hero="desc"]', { autoAlpha: 0, y: 24, duration: 0.5 }, 0.4);
-        tl.from('[data-hero="ctas"]', { autoAlpha: 0, y: 24, duration: 0.5 }, 0.5);
-        tl.from('[data-hero="ticker"]', { autoAlpha: 0, y: 16, duration: 0.5 }, 0.6);
-        tl.from('[data-hero="specs"]', { autoAlpha: 0, y: 24, duration: 0.5 }, 0.7);
-      });
-    });
-
-    return () => {
-      cancelled = true;
-      split?.revert();
-      ctx.revert();
-    };
+    return () => ctx.revert();
   }, []);
 
   /*
@@ -148,14 +118,9 @@ export function HomeHero({
         >
           {kicker}
         </p>
-        <h1 className="max-w-3xl text-4xl md:text-6xl font-bold leading-tight tracking-tight text-white">
-          {/* The translated title uses "\n" for its intentional line break. */}
-          {title.split("\n").map((part, i) => (
-            <span key={i}>
-              {i > 0 && <br />}
-              {part}
-            </span>
-          ))}
+        <h1 className="max-w-3xl text-4xl md:text-6xl font-bold leading-tight tracking-tight">
+          {/* Oil-fill signature type; the title's "\n" line breaks pass through. */}
+          <FluidText text={title} mode="load" />
         </h1>
         <p data-hero="desc" className="mt-6 max-w-xl text-lg text-white/80">
           {desc}
