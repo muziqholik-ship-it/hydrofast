@@ -164,6 +164,8 @@ export default async function ProductDetailPage({
                   key={img.id}
                   src={publicImageUrl("product-images", img.storagePath) ?? undefined}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                   className="aspect-square w-full rounded-[var(--radius-card)] border border-[var(--color-border)] object-cover"
                 />
               ))}

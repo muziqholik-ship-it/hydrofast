@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
@@ -15,6 +15,9 @@ const NAV_LINKS = [
   { href: "/about", key: "about" },
 ] as const;
 
+const BIZ_MENU_ID = "business-areas-menu";
+const MOBILE_MENU_ID = "mobile-menu";
+
 export function SiteHeader({ areas }: { areas: NavArea[] }) {
   const tNav = useTranslations("nav");
   const locale = useLocale() as Locale;
@@ -22,6 +25,9 @@ export function SiteHeader({ areas }: { areas: NavArea[] }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [bizOpen, setBizOpen] = useState(false);
+  const bizRef = useRef<HTMLDivElement>(null);
+  const bizButtonRef = useRef<HTMLButtonElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const areaName = (a: NavArea) => (locale === "ko" ? a.nameKo : a.nameEn);
 
@@ -32,15 +38,53 @@ export function SiteHeader({ areas }: { areas: NavArea[] }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
+  // Close the mobile menu on navigation, adjusting state during render
+  // instead of in an effect (react-hooks/set-state-in-effect).
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setMenuOpen(false);
-  }, [pathname]);
+    setBizOpen(false);
+  }
+
+  // Clicking/tapping outside the dropdown closes it.
+  useEffect(() => {
+    if (!bizOpen) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (bizRef.current && !bizRef.current.contains(e.target as Node)) setBizOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [bizOpen]);
+
+  // Body scroll lock while the mobile menu is open.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [menuOpen]);
+
+  const onHeaderKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== "Escape") return;
+    if (bizOpen) {
+      setBizOpen(false);
+      bizButtonRef.current?.focus();
+    }
+    if (menuOpen) {
+      setMenuOpen(false);
+      menuButtonRef.current?.focus();
+    }
+  };
 
   return (
     <motion.header
       initial={{ y: -76, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
+      onKeyDown={onHeaderKeyDown}
       className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
         scrolled
           ? "bg-[var(--color-surface)]/95 backdrop-blur border-[var(--color-border)]"
@@ -56,21 +100,39 @@ export function SiteHeader({ areas }: { areas: NavArea[] }) {
 
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
           <div
+            ref={bizRef}
             className="relative"
             onMouseEnter={() => setBizOpen(true)}
-            onMouseLeave={() => setBizOpen(false)}
+            onMouseLeave={() => {
+              // Keep the panel open while keyboard focus is inside it.
+              if (!bizRef.current?.contains(document.activeElement)) setBizOpen(false);
+            }}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node)) setBizOpen(false);
+            }}
           >
             <button
+              ref={bizButtonRef}
               type="button"
+              aria-expanded={bizOpen}
+              aria-haspopup="menu"
+              aria-controls={BIZ_MENU_ID}
               onClick={() => setBizOpen((v) => !v)}
               className="flex items-center gap-1 text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] transition-colors"
             >
               {tNav("businessAreas")}
-              <span className={`text-[10px] transition-transform ${bizOpen ? "rotate-180" : ""}`}>▾</span>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 10 6"
+                className={`h-1.5 w-2.5 transition-transform ${bizOpen ? "rotate-180" : ""}`}
+              >
+                <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </button>
             <AnimatePresence>
               {bizOpen && (
                 <motion.div
+                  id={BIZ_MENU_ID}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
@@ -81,7 +143,7 @@ export function SiteHeader({ areas }: { areas: NavArea[] }) {
                     <Link
                       key={a.slug}
                       href={`/business/${a.slug}`}
-                      className="flex items-center gap-3 rounded-[var(--radius-card)] px-3 py-2.5 hover:bg-[var(--color-surface-alt)]"
+                      className="flex items-center gap-3 rounded-[var(--radius-card)] px-3 py-2.5 hover:bg-[var(--color-surface-alt)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-steel-light)]"
                     >
                       <span
                         className="flex h-7 w-7 shrink-0 items-center justify-center rounded-[var(--radius-card)] text-xs font-black text-white"
@@ -111,14 +173,17 @@ export function SiteHeader({ areas }: { areas: NavArea[] }) {
           <LocaleSwitcher />
           <Link
             href="/contact"
-            className="rounded-[var(--radius-card)] bg-[var(--color-safety-orange)] px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+            className="rounded-[var(--radius-card)] bg-[var(--color-safety-orange)] px-4 py-2 text-sm font-semibold text-[var(--color-safety-orange-contrast)] transition-transform hover:-translate-y-0.5"
           >
             {tNav("contact")}
           </Link>
         </div>
 
         <button
-          aria-label="Menu"
+          ref={menuButtonRef}
+          aria-label={tNav("menu")}
+          aria-expanded={menuOpen}
+          aria-controls={MOBILE_MENU_ID}
           className="lg:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen((v) => !v)}
         >
@@ -142,6 +207,7 @@ export function SiteHeader({ areas }: { areas: NavArea[] }) {
 
       {menuOpen && (
         <motion.nav
+          id={MOBILE_MENU_ID}
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
@@ -185,10 +251,11 @@ function LocaleSwitcher() {
   return (
     <button
       type="button"
+      aria-label={t("langSwitchLabel")}
       onClick={() => router.replace(pathname, { locale: nextLocale })}
       className="text-sm font-semibold text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]"
     >
-      {t("langToggle")}
+      <span lang={nextLocale}>{t("langToggle")}</span>
     </button>
   );
 }

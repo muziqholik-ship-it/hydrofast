@@ -50,8 +50,15 @@ export function HomeHero({
         <motion.h1
           variants={line}
           className="max-w-3xl text-4xl md:text-6xl font-bold leading-tight tracking-tight text-[var(--color-ink)]"
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
+        >
+          {/* The translated title uses "\n" for its intentional line break. */}
+          {title.split("\n").map((part, i) => (
+            <span key={i}>
+              {i > 0 && <br />}
+              {part}
+            </span>
+          ))}
+        </motion.h1>
         <motion.p variants={line} className="mt-6 max-w-xl text-lg text-[var(--color-ink-soft)]">
           {desc}
         </motion.p>

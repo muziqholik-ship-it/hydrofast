@@ -1,4 +1,4 @@
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { db } from "@/db/client";
 import { historyEvents, certifications } from "@/db/schema";
 import { asc } from "drizzle-orm";
@@ -14,11 +14,14 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { COMPANY } from "@/lib/company";
 
-export const dynamic = "force-dynamic";
+// Time-based ISR — see the caching-decision comment in src/app/[locale]/page.tsx.
+export const revalidate = 300;
 
-export async function generateMetadata(): Promise<Metadata> {
-  const locale = (await getLocale()) as Locale;
-  const t = await getTranslations("meta.about");
+type PageProps = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const locale = (await params).locale as Locale;
+  const t = await getTranslations({ locale, namespace: "meta.about" });
   return pageMetadata({ locale, path: "/about", title: t("title"), description: t("description") });
 }
 
@@ -32,8 +35,10 @@ const ADDRESS_KO = COMPANY.addressKo;
 const ADDRESS_EN = COMPANY.addressEn;
 const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent("인천광역시 부평구 부평대로 283")}&z=16&output=embed`;
 
-export default async function AboutPage() {
-  const locale = (await getLocale()) as Locale;
+export default async function AboutPage({ params }: PageProps) {
+  const { locale: rawLocale } = await params;
+  setRequestLocale(rawLocale);
+  const locale = rawLocale as Locale;
   const ko = locale === "ko";
 
   const [history, certs, areas] = await Promise.all([
@@ -184,7 +189,7 @@ export default async function AboutPage() {
               />
               <Link
                 href="/contact"
-                className="mt-2 rounded-[var(--radius-card)] bg-[var(--color-safety-orange)] px-5 py-3 text-center text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+                className="mt-2 rounded-[var(--radius-card)] bg-[var(--color-safety-orange)] px-5 py-3 text-center text-sm font-semibold text-[var(--color-safety-orange-contrast)] transition-transform hover:-translate-y-0.5"
               >
                 {ko ? "견적 문의하기" : "Request a Quote"}
               </Link>
@@ -232,9 +237,15 @@ export default async function AboutPage() {
                       <div className="flex h-full items-start gap-3 rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
                         {c.imagePath ? (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img src={publicImageUrl("site-media", c.imagePath) ?? undefined} alt={title} className="h-14 w-auto shrink-0 object-contain" />
+                          <img
+                            src={publicImageUrl("site-media", c.imagePath) ?? undefined}
+                            alt={title}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-14 w-auto shrink-0 object-contain"
+                          />
                         ) : (
-                          <span className="mt-0.5 shrink-0 rounded-[var(--radius-card)] bg-[var(--color-safety-orange)] px-2 py-1 text-[10px] font-bold uppercase text-white">
+                          <span className="mt-0.5 shrink-0 rounded-[var(--radius-card)] bg-[var(--color-safety-orange)] px-2 py-1 text-[10px] font-bold uppercase text-[var(--color-safety-orange-contrast)]">
                             {label}
                           </span>
                         )}

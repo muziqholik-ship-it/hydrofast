@@ -11,17 +11,20 @@ export interface ProductCardData {
 }
 
 export function ProductCard({ product }: { product: ProductCardData }) {
+  const imageUrl = product.primaryImagePath ? publicImageUrl("product-images", product.primaryImagePath) : null;
   return (
     <Link
       href={`/products/${product.slug}`}
       className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] transition-all hover:-translate-y-1 hover:border-[var(--color-steel-light)] hover:shadow-lg"
     >
       <div className="relative flex h-40 w-full items-center justify-center overflow-hidden bg-[var(--color-surface-alt)]">
-        {product.primaryImagePath ? (
+        {imageUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={publicImageUrl("product-images", product.primaryImagePath) ?? undefined}
+            src={imageUrl}
             alt={product.name}
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (

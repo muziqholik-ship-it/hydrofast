@@ -102,6 +102,7 @@ function Img({ image, t, className = "" }: { image: ContentImage; t: (l?: Loc) =
         src={contentImageUrl(image.src)}
         alt={caption || ""}
         loading="lazy"
+        decoding="async"
         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
       />
       {caption && (
@@ -246,30 +247,7 @@ function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (
         </div>
       );
 
-    case "compare": {
-      const Col = ({ col, highlight }: { col: { title: Loc; rows: { label: Loc; value: Loc }[] }; highlight?: boolean }) => (
-        <div
-          className="flex-1 overflow-hidden rounded-[var(--radius-card)] border"
-          style={highlight ? { borderColor: accent } : { borderColor: "var(--color-border)" }}
-        >
-          <div
-            className="px-5 py-3 text-center text-lg font-bold"
-            style={highlight ? { backgroundColor: accent, color: "#fff" } : { backgroundColor: "var(--color-surface-alt)" }}
-          >
-            {t(col.title)}
-          </div>
-          <div className="divide-y divide-[var(--color-border)]">
-            {col.rows.map((r, i) => (
-              <div key={i} className="flex items-center justify-between gap-4 px-5 py-3">
-                <span className="text-sm text-[var(--color-ink-soft)]">{t(r.label)}</span>
-                <span className="text-right font-bold" style={highlight ? { color: accent } : undefined}>
-                  {t(r.value)}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      );
+    case "compare":
       return (
         <div>
           {block.title && (
@@ -281,13 +259,12 @@ function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (
           )}
           {block.note && <p className="mb-5 text-sm text-[var(--color-ink-soft)]">{t(block.note)}</p>}
           <div className="flex flex-col gap-4 md:flex-row md:items-stretch">
-            <Col col={block.left} />
+            <CompareCol col={block.left} accent={accent} t={t} />
             <div className="hidden items-center text-xl font-black text-[var(--color-ink-soft)] md:flex">VS</div>
-            <Col col={block.right} highlight={block.right.highlight} />
+            <CompareCol col={block.right} highlight={block.right.highlight} accent={accent} t={t} />
           </div>
         </div>
       );
-    }
 
     case "bullets":
       return (
@@ -345,7 +322,7 @@ function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (
             </h3>
           )}
           <figure className="overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)]">
-            <img src={contentImageUrl(block.src)} alt={t(block.caption) || t(block.title)} loading="lazy" className="mx-auto w-full max-w-3xl" />
+            <img src={contentImageUrl(block.src)} alt={t(block.caption) || t(block.title)} loading="lazy" decoding="async" className="mx-auto w-full max-w-3xl" />
             {block.caption && (
               <figcaption className="border-t border-[var(--color-border)] px-4 py-3 text-center text-sm text-[var(--color-ink-soft)]">
                 {t(block.caption)}
@@ -358,4 +335,40 @@ function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (
     default:
       return null;
   }
+}
+
+function CompareCol({
+  col,
+  highlight,
+  accent,
+  t,
+}: {
+  col: { title: Loc; rows: { label: Loc; value: Loc }[] };
+  highlight?: boolean;
+  accent: string;
+  t: (l?: Loc) => string;
+}) {
+  return (
+    <div
+      className="flex-1 overflow-hidden rounded-[var(--radius-card)] border"
+      style={highlight ? { borderColor: accent } : { borderColor: "var(--color-border)" }}
+    >
+      <div
+        className="px-5 py-3 text-center text-lg font-bold"
+        style={highlight ? { backgroundColor: accent, color: "#fff" } : { backgroundColor: "var(--color-surface-alt)" }}
+      >
+        {t(col.title)}
+      </div>
+      <div className="divide-y divide-[var(--color-border)]">
+        {col.rows.map((r, i) => (
+          <div key={i} className="flex items-center justify-between gap-4 px-5 py-3">
+            <span className="text-sm text-[var(--color-ink-soft)]">{t(r.label)}</span>
+            <span className="text-right font-bold" style={highlight ? { color: accent } : undefined}>
+              {t(r.value)}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

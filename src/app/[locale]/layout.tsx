@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { SiteHeader } from "@/components/marketing/site-header";
@@ -78,7 +78,11 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+  // Enables static rendering / ISR for pages under this layout (next-intl
+  // otherwise reads the locale from request headers, forcing dynamic).
+  setRequestLocale(locale);
 
+  const tNav = await getTranslations({ locale, namespace: "nav" });
   const areas = await getAllAreas();
   const navAreas = areas.map((a) => ({ slug: a.slug, nameKo: a.name.ko, nameEn: a.name.en ?? a.name.ko, accent: a.accent, index: a.index }));
 
@@ -107,11 +111,17 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${pretendard.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-[var(--color-surface)] text-[var(--color-ink)]">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[var(--radius-card)] focus:bg-[var(--color-steel-light)] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          {tNav("skipToContent")}
+        </a>
         <JsonLd data={organizationJsonLd} />
         <NextIntlClientProvider>
           <MotionProvider>
             <SiteHeader areas={navAreas} />
-            <main className="flex-1">{children}</main>
+            <main id="main" className="flex-1">{children}</main>
             <SiteFooter />
           </MotionProvider>
         </NextIntlClientProvider>

@@ -7,11 +7,14 @@ export function SectionHeading({
   title,
   sub,
   align = "left",
+  as: Heading = "h2",
 }: {
   kicker?: string;
   title: string;
   sub?: string;
   align?: "left" | "center";
+  /** Pass "h1" when this is the page's top-level heading (each page needs exactly one h1). */
+  as?: "h1" | "h2";
 }) {
   return (
     <motion.div
@@ -26,7 +29,7 @@ export function SectionHeading({
           {kicker}
         </p>
       )}
-      <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{title}</h2>
+      <Heading className="text-2xl md:text-3xl font-bold tracking-tight">{title}</Heading>
       {sub && <p className="mt-3 max-w-2xl text-[var(--color-ink-soft)]">{sub}</p>}
     </motion.div>
   );

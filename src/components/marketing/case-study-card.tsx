@@ -14,6 +14,7 @@ export function CaseStudyCard({
   imageCount?: number;
 }) {
   const aspect = caseStudy.aspectRatio.replace("-", "/");
+  const imageUrl = caseStudy.imagePath ? publicImageUrl("case-study-images", caseStudy.imagePath) : null;
 
   return (
     <div className="group relative overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)]">
@@ -23,11 +24,13 @@ export function CaseStudyCard({
             +{imageCount - 1}
           </span>
         )}
-        {caseStudy.imagePath && (
+        {imageUrl && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={publicImageUrl("case-study-images", caseStudy.imagePath) ?? undefined}
+            src={imageUrl}
             alt={title}
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         )}

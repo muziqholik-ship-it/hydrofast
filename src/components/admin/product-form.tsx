@@ -199,7 +199,7 @@ export function ProductForm({
                   <button
                     type="button"
                     onClick={() => deleteGalleryImage(img.id, initial.id)}
-                    className="absolute -right-1 -top-1 rounded-full bg-[var(--color-safety-orange)] px-1.5 text-xs text-white"
+                    className="absolute -right-1 -top-1 rounded-full bg-[var(--color-safety-orange)] px-1.5 text-xs text-[var(--color-safety-orange-contrast)]"
                   >
                     ×
                   </button>

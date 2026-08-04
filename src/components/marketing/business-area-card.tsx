@@ -3,17 +3,20 @@ import { publicImageUrl } from "@/lib/image-url";
 import type { BusinessArea } from "@/db/schema";
 
 export function BusinessAreaCard({ area, name, summary }: { area: BusinessArea; name: string; summary: string }) {
+  const imageUrl = area.heroImagePath ? publicImageUrl("site-media", area.heroImagePath) : null;
   return (
     <Link
       href={`/business/${area.slug}`}
       className="group relative flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] transition-all hover:-translate-y-1 hover:border-[var(--color-steel-light)] hover:shadow-lg"
     >
       <div className="relative h-44 w-full overflow-hidden bg-[var(--color-surface-alt)]">
-        {area.heroImagePath && (
+        {imageUrl && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={publicImageUrl("site-media", area.heroImagePath) ?? undefined}
+            src={imageUrl}
             alt={name}
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         )}

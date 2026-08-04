@@ -8,7 +8,10 @@
     "cases": "Case Studies",
     "about": "About",
     "contact": "Contact",
-    "langToggle": "KO"
+    "langToggle": "KO",
+    "langSwitchLabel": "한국어로 전환",
+    "menu": "Menu",
+    "skipToContent": "Skip to content"
   },
   "common": {
     "search": "Search",
@@ -31,7 +34,7 @@
   },
   "hero": {
     "kicker": "HYDRAULIC SYSTEM & SOLUTION PROVIDER",
-    "title": "Total Hydraulic Solutions<br/>for Plants, Shipyards & Smart Factories",
+    "title": "Total Hydraulic Solutions\nfor Plants, Shipyards & Smart Factories",
     "desc": "Efficient, precise control — from design to on-site execution and FMS monitoring.",
     "ctaProducts": "Browse Products",
     "ctaContact": "Talk to Us",

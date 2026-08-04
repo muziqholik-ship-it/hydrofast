@@ -17,6 +17,8 @@ export function AreaCard({ area, locale }: { area: BusinessAreaContent; locale: 
         <img
           src={area.cardImage}
           alt={name}
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <span

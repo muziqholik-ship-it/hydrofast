@@ -25,7 +25,7 @@ export default async function AffiliatesPage() {
 
   return (
     <div className="mx-auto max-w-[1400px] px-6 py-16">
-      <SectionHeading title={t("sectionTitle")} align="center" />
+      <SectionHeading title={t("sectionTitle")} align="center" as="h1" />
       <RevealGrid className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {rows.map((a) => (
           <RevealGridItem key={a.id}>
@@ -35,7 +35,13 @@ export default async function AffiliatesPage() {
             >
               {a.logoPath && (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={publicImageUrl("site-media", a.logoPath) ?? undefined} alt={a.nameKo} className="h-16 w-auto object-contain" />
+                <img
+                  src={publicImageUrl("site-media", a.logoPath) ?? undefined}
+                  alt={a.nameKo}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-16 w-auto object-contain"
+                />
               )}
               <h3 className="text-xl font-bold">{locale === "ko" ? a.nameKo : a.nameEn ?? a.nameKo}</h3>
               {a.taglineKo && <p className="text-sm text-[var(--color-ink-soft)]">{locale === "ko" ? a.taglineKo : a.taglineEn ?? a.taglineKo}</p>}

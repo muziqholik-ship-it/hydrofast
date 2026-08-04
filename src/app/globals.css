@@ -15,8 +15,14 @@
   --color-border: #dde1e6;
   --color-steel: #1f3a63;
   --color-steel-light: #375cfb;
-  --color-safety-orange: #eb3a03;
+  /* #d03302 (was #eb3a03): the lightest shade of this accent that passes WCAG AA
+     (4.5:1) as small text on both --color-surface and --color-surface-alt, and
+     for white button text on top of it. Dark mode overrides it brighter below. */
+  --color-safety-orange: #d03302;
   --color-safety-orange-dim: #c22f02;
+  /* Text color for content sitting ON a safety-orange background. Dark mode
+     flips it to near-black: white on the brightened #ff4d0d is only ~3.3:1. */
+  --color-safety-orange-contrast: #ffffff;
   --radius-card: 6px;
   --radius-pill: 999px;
   --nav-height: 76px;
@@ -33,6 +39,10 @@
   --color-border: #2a2f38;
   --color-steel: #6f92c9;
   --color-steel-light: #7d95ff;
+  /* Brighter accent for dark surfaces — the shared #d03302 only reaches ~3.7:1
+     on --color-surface-alt here; #ff4d0d passes AA on both dark surfaces. */
+  --color-safety-orange: #ff4d0d;
+  --color-safety-orange-contrast: #0f1115;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,6 +54,8 @@
     --color-border: #2a2f38;
     --color-steel: #6f92c9;
     --color-steel-light: #7d95ff;
+    --color-safety-orange: #ff4d0d;
+    --color-safety-orange-contrast: #0f1115;
   }
 }
 
@@ -57,6 +69,7 @@
   --color-steel-light: var(--color-steel-light);
   --color-safety-orange: var(--color-safety-orange);
   --color-safety-orange-dim: var(--color-safety-orange-dim);
+  --color-safety-orange-contrast: var(--color-safety-orange-contrast);
   --radius-card: var(--radius-card);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -64,6 +77,12 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Keyboard focus ring — token-based, visible on both themes. */
+:focus-visible {
+  outline: 2px solid var(--color-steel-light);
+  outline-offset: 2px;
 }
 
 body {

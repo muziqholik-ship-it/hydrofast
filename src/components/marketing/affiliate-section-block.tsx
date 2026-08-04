@@ -42,7 +42,13 @@ export function AffiliateSectionBlock({
           className={`overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] ${reverse ? "lg:order-1" : ""}`}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={publicImageUrl("site-media", section.imagePath) ?? undefined} alt={heading ?? ""} className="h-full w-full object-cover" />
+          <img
+            src={publicImageUrl("site-media", section.imagePath) ?? undefined}
+            alt={heading ?? ""}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
         </motion.div>
       )}
     </div>

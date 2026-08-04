@@ -98,7 +98,7 @@ export default async function ProductsPage({
 
   return (
     <div className="mx-auto max-w-[1400px] px-6 py-16">
-      <SectionHeading title={tCommon("search")} />
+      <SectionHeading title={tCommon("search")} as="h1" />
 
       <form action="/products" className="mb-8 flex flex-wrap gap-3">
         <input
