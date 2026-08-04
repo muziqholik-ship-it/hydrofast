@@ -111,24 +111,33 @@ export function SiteHeader({ areas }: { areas: NavArea[] }) {
               if (!e.currentTarget.contains(e.relatedTarget as Node)) setBizOpen(false);
             }}
           >
-            <button
-              ref={bizButtonRef}
-              type="button"
-              aria-expanded={bizOpen}
-              aria-haspopup="menu"
-              aria-controls={BIZ_MENU_ID}
-              onClick={() => setBizOpen((v) => !v)}
-              className="flex items-center gap-1 text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] transition-colors"
-            >
-              {tNav("businessAreas")}
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 10 6"
-                className={`h-1.5 w-2.5 transition-transform ${bizOpen ? "rotate-180" : ""}`}
+            {/* Label navigates to the /business overview; the caret (and hover) toggles the dropdown. */}
+            <div className="flex items-center gap-0.5">
+              <Link
+                href="/business"
+                className="text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] transition-colors"
               >
-                <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+                {tNav("businessAreas")}
+              </Link>
+              <button
+                ref={bizButtonRef}
+                type="button"
+                aria-expanded={bizOpen}
+                aria-haspopup="menu"
+                aria-controls={BIZ_MENU_ID}
+                aria-label={tNav("businessAreasMenu")}
+                onClick={() => setBizOpen((v) => !v)}
+                className="p-1 text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] transition-colors"
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 10 6"
+                  className={`h-1.5 w-2.5 transition-transform ${bizOpen ? "rotate-180" : ""}`}
+                >
+                  <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
             <AnimatePresence>
               {bizOpen && (
                 <motion.div
@@ -214,9 +223,12 @@ export function SiteHeader({ areas }: { areas: NavArea[] }) {
           className="lg:hidden border-t border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-4 flex flex-col gap-4"
         >
           <div className="flex flex-col gap-1">
-            <span className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-soft)]">
+            <Link
+              href="/business"
+              className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-soft)]"
+            >
               {tNav("businessAreas")}
-            </span>
+            </Link>
             {areas.map((a) => (
               <Link key={a.slug} href={`/business/${a.slug}`} className="flex items-center gap-2 py-1 text-sm font-medium">
                 <span className="text-xs font-black" style={{ color: a.accent }}>

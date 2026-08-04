@@ -8,6 +8,7 @@
     "cases": "제작 사례",
     "about": "회사 소개",
     "contact": "견적 문의",
+    "businessAreasMenu": "사업 분야 메뉴 열기",
     "langToggle": "EN",
     "langSwitchLabel": "Switch to English",
     "menu": "메뉴",
@@ -38,6 +39,13 @@
     "desc": "효율적이고 정밀한 제어. 설계부터 시공, FMS 모니터링까지.",
     "ctaProducts": "제품 검색",
     "ctaContact": "상담 문의",
+    "imageAlt": "하이드로훼스트가 설계·제작한 유압 설치 장치 — 실제 주문제작 사례",
+    "specPressureLabel": "MAX PRESSURE",
+    "specCalLabel": "CAL. CERT",
+    "specCalValue": "ISO/IEC 17025",
+    "specNuclearLabel": "NUCLEAR",
+    "specNuclearValue": "CLASS A",
+    "specSinceLabel": "SINCE",
     "statYears": "업력",
     "statPressure": "최대 취급 압력",
     "statPartners": "해외 파트너사"
@@ -48,6 +56,15 @@
     "fluidGas": "초고압 유체·가스 시스템",
     "hydraulicEngineering": "토탈 유압 시스템",
     "fireSafety": "소방·환경·산업안전 솔루션"
+  },
+  "certifications": {
+    "sectionTitle": "인증 및 자격"
+  },
+  "closingCta": {
+    "title": "현장에 맞는 유압 솔루션이 필요하신가요?",
+    "sub": "상담부터 설계·제작·시공, FMS 유지관리까지 하나로 연결된 토탈 솔루션을 제공합니다.",
+    "primary": "견적 문의",
+    "secondary": "제품 검색"
   },
   "cases": {
     "sectionTitle": "맞춤 주문제작 사례",
@@ -100,6 +117,10 @@
     "titleTemplate": "%s | HYDROFAST",
     "description": "(주)하이드로훼스트는 유압 텐셔닝 장비, 초고압 밸브·피팅, 소방 펌프를 공급하고 유압 시스템 설계·제작과 토크렌치 교정까지 지원하는 유압 전문기업입니다. 1998년부터 인천 부평에서 산업 현장과 함께해 왔습니다.",
     "ogImageAlt": "HYDROFAST — Precision & Power in Hydraulic",
+    "business": {
+      "title": "사업 분야",
+      "description": "정밀 볼팅·토크, 초고압 유체·가스, 토탈 유압 시스템, 소방·환경·산업안전, 신소재·신기술 — 하이드로훼스트의 5대 핵심 사업 분야를 소개합니다."
+    },
     "products": {
       "title": "제품 검색",
       "description": "유압 텐셔너, 초고압 밸브·피팅, 펌프 등 하이드로훼스트가 공급하는 제품을 제품명·제조사·규격으로 검색해 보세요."

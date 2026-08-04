@@ -36,6 +36,8 @@ export default async function CasesPage({ params }: PageProps) {
       <RevealGrid className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {rows.map((cs) => (
           <RevealGridItem key={cs.id}>
+            {/* Anchor target for homepage card links (/cases#case-<id>); offset clears the sticky nav. */}
+            <div id={`case-${cs.id}`} className="scroll-mt-24" />
             <CaseStudyCard
               caseStudy={cs}
               title={locale === "ko" ? cs.titleKo : cs.titleEn ?? cs.titleKo}

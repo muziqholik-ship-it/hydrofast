@@ -8,6 +8,7 @@
     "cases": "Case Studies",
     "about": "About",
     "contact": "Contact",
+    "businessAreasMenu": "Open business areas menu",
     "langToggle": "KO",
     "langSwitchLabel": "한국어로 전환",
     "menu": "Menu",
@@ -38,6 +39,13 @@
     "desc": "Efficient, precise control — from design to on-site execution and FMS monitoring.",
     "ctaProducts": "Browse Products",
     "ctaContact": "Talk to Us",
+    "imageAlt": "Custom hydraulic installation system engineered and built by HYDROFAST",
+    "specPressureLabel": "MAX PRESSURE",
+    "specCalLabel": "CAL. CERT",
+    "specCalValue": "ISO/IEC 17025",
+    "specNuclearLabel": "NUCLEAR",
+    "specNuclearValue": "CLASS A",
+    "specSinceLabel": "SINCE",
     "statYears": "Years in business",
     "statPressure": "Max pressure handled",
     "statPartners": "Overseas partners"
@@ -48,6 +56,15 @@
     "fluidGas": "High-Pressure Fluid & Gas",
     "hydraulicEngineering": "Total Hydraulic Engineering",
     "fireSafety": "Fire, Environment & Safety"
+  },
+  "certifications": {
+    "sectionTitle": "Certifications"
+  },
+  "closingCta": {
+    "title": "Need a hydraulic solution built for your site?",
+    "sub": "One connected service — from consultation and design to fabrication, installation, and FMS-based maintenance.",
+    "primary": "Request a Quote",
+    "secondary": "Browse Products"
   },
   "cases": {
     "sectionTitle": "Custom Order Cases",
@@ -100,6 +117,10 @@
     "titleTemplate": "%s | HYDROFAST",
     "description": "HYDROFAST Co., Ltd. supplies hydraulic tensioning equipment, ultra-high-pressure valves and fittings, and fire pumps, and provides custom hydraulic system design, manufacturing, and torque wrench calibration. Serving Korean industry from Incheon since 1998.",
     "ogImageAlt": "HYDROFAST — Precision & Power in Hydraulic",
+    "business": {
+      "title": "Business Areas",
+      "description": "Explore HYDROFAST's five core businesses — precision bolting & torque, ultra-high-pressure fluid & gas, total hydraulic engineering, fire & industrial safety, and advanced materials."
+    },
     "products": {
       "title": "Products",
       "description": "Browse hydraulic tensioners, ultra-high-pressure valves and fittings, pumps, and more — search HYDROFAST's catalog by name, manufacturer, or spec."
