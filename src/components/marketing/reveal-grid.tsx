@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import { MOTION_LEVEL } from "@/lib/motion";
 
 const container: Variants = {
   hidden: {},
@@ -20,6 +21,11 @@ export function RevealGrid({
   children: React.ReactNode;
   className?: string;
 }) {
+  // Without an animating parent the items' variants never activate, so the
+  // grid renders fully static — the MOTION_LEVEL=off contract.
+  if (MOTION_LEVEL === "off") {
+    return <div className={className}>{children}</div>;
+  }
   return (
     <motion.div
       variants={container}

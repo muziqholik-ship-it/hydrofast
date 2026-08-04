@@ -31,14 +31,19 @@ export function CaseStudyCard({
         </span>
       )}
       {imageUrl && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={imageUrl}
-          alt={title}
-          loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        /* The wrapper is the scrub-parallax target (see CaseCardParallax) so
+           the CSS hover zoom on the <img> composes instead of being clobbered
+           by GSAP's inline transform. */
+        <div data-parallax-img className="absolute inset-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={imageUrl}
+            alt={title}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-4 text-white">

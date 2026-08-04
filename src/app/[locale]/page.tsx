@@ -15,7 +15,8 @@ import { CertificationStrip } from "@/components/marketing/certification-strip";
 import { ClosingCta } from "@/components/marketing/closing-cta";
 import { LogoMarquee } from "@/components/marketing/logo-marquee";
 import { StatCounter } from "@/components/marketing/stat-counter";
-import { RevealGrid, RevealGridItem } from "@/components/marketing/reveal-grid";
+import { ScrollRevealGrid, ScrollRevealItem } from "@/components/motion/scroll-reveal-grid";
+import { CaseCardParallax } from "@/components/motion/case-card-parallax";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 
@@ -126,13 +127,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       <section className="mx-auto max-w-[1400px] px-6 py-20">
         <SectionHeading title={tBiz("sectionTitle")} />
-        <RevealGrid className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <ScrollRevealGrid className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {areas.map((area) => (
-            <RevealGridItem key={area.slug}>
+            <ScrollRevealItem key={area.slug}>
               <AreaCard area={area} locale={locale} />
-            </RevealGridItem>
+            </ScrollRevealItem>
           ))}
-        </RevealGrid>
+        </ScrollRevealGrid>
       </section>
 
       {homepageCerts.length > 0 && (
@@ -147,9 +148,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {highlightCases.length > 0 && (
         <section className="mx-auto max-w-[1400px] px-6 py-20">
           <SectionHeading title={tCases("sectionTitle")} sub={tCases("sectionSub")} />
-          <RevealGrid className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Rise + image-settle is scrub-linked per card (report §3), so no
+              batch reveal here — the parallax IS the entrance. */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {highlightCases.map((cs) => (
-              <RevealGridItem key={cs.id}>
+              <CaseCardParallax key={cs.id}>
                 <CaseStudyCard
                   caseStudy={cs}
                   title={locale === "ko" ? cs.titleKo : cs.titleEn ?? cs.titleKo}
@@ -157,9 +160,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   imageCount={caseImageCounts[cs.id] ?? 0}
                   href={`/cases#case-${cs.id}`}
                 />
-              </RevealGridItem>
+              </CaseCardParallax>
             ))}
-          </RevealGrid>
+          </div>
           <div className="mt-8 text-center">
             <Link href="/cases" className="text-sm font-semibold text-[var(--color-steel-light)]">
               {tCommon("viewAll")} →

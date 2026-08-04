@@ -7,6 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { SiteHeader } from "@/components/marketing/site-header";
 import { SiteFooter } from "@/components/marketing/site-footer";
 import { MotionProvider } from "@/components/motion-provider";
+import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { JsonLd } from "@/components/json-ld";
 import { getAllAreas } from "@/lib/areas";
 import { COMPANY } from "@/lib/company";
@@ -78,6 +79,11 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+  // Mirrors MOTION_LEVEL from src/lib/motion.ts (client-only module, so the
+  // value is recomputed here): lets CSS-driven motion (logo marquees) go
+  // static when the owner sets NEXT_PUBLIC_MOTION_LEVEL=off.
+  const rawMotion = process.env.NEXT_PUBLIC_MOTION_LEVEL;
+  const motionLevel = rawMotion === "off" || rawMotion === "lite" ? rawMotion : "full";
   // Enables static rendering / ISR for pages under this layout (next-intl
   // otherwise reads the locale from request headers, forcing dynamic).
   setRequestLocale(locale);
@@ -109,7 +115,7 @@ export default async function LocaleLayout({
   };
 
   return (
-    <html lang={locale} className={`${pretendard.variable} h-full antialiased`}>
+    <html lang={locale} data-motion={motionLevel} className={`${pretendard.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-[var(--color-surface)] text-[var(--color-ink)]">
         <a
           href="#main"
@@ -121,7 +127,9 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <MotionProvider>
             <SiteHeader areas={navAreas} />
-            <main id="main" className="flex-1">{children}</main>
+            <SmoothScroll>
+              <main id="main" className="flex-1">{children}</main>
+            </SmoothScroll>
             <SiteFooter />
           </MotionProvider>
         </NextIntlClientProvider>

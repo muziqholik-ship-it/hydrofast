@@ -115,3 +115,10 @@ body {
     scroll-behavior: auto;
   }
 }
+
+/* NEXT_PUBLIC_MOTION_LEVEL=off must yield a fully static page. JS-driven
+   motion checks the env itself (src/lib/motion.ts); CSS-driven motion stops
+   via this attribute, set on <html> in the [locale] layout. */
+html[data-motion="off"] .marquee-track {
+  animation: none;
+}
