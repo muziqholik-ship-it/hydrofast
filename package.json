@@ -15,8 +15,6 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.7.0",
     "@supabase/ssr": "^0.12.3",
     "@supabase/supabase-js": "^2.110.7",
     "clsx": "^2.1.1",
@@ -32,15 +30,13 @@
     "react-dom": "19.2.4",
     "react-hook-form": "^7.82.0",
     "resend": "^6.18.1",
-    "server-only": "^0.0.1",
-    "three": "^0.185.1"
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/three": "^0.185.3",
     "dotenv": "^17.4.2",
     "drizzle-kit": "^0.31.10",
     "eslint": "^9",

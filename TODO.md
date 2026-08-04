@@ -22,10 +22,9 @@
 - [ ] Then run `npm run db:merge-case-studies` once to merge duplicate one-photo-per-row projects into single rows with galleries.
 - [ ] After verifying `/cases`, the `dedupeCaseStudies()` workaround in `src/app/[locale]/page.tsx` can be removed (harmless to keep).
 
-## 3D hero (workstream 08, Session B)
+## Video hero (workstream 09, Session D)
 
-- [ ] Capture `public/hero-poster.webp` — the mobile/lite hero fallback (until it exists those paths show the v1 hero photo). Dev-only capture button: `npm run dev` → `http://localhost:3000/?capture=1` → "capture poster" → convert per `scripts/convert-step-to-glb.md`.
-- [ ] Route A: drop a STEP/IGES export of a representative product (tensioner/cylinder) into `assets-src/`, run the pipeline in `scripts/convert-step-to-glb.md`, set `NEXT_PUBLIC_HERO_MODEL_URL` — replaces the procedural cylinder with the real product.
+- [ ] Drop stock/own clips into `assets-src/video/{lifting,torque,bolting,robotics,cta}/` and run `node scripts/encode-videos.mjs` — see `docs/VIDEO-PIPELINE.md` for the shopping list and licensing caveats. Until then the hero shows its intentional dark-gradient fallback.
 
 ## Search-engine registration checklist (from docs/improvement-plan/03-workstream-seo.md, Task 3.6 — human tasks, not code)
 

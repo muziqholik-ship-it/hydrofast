@@ -5,7 +5,7 @@ import type { CaseStudy } from "@/db/schema";
 import { asc, desc, eq } from "drizzle-orm";
 import { getNumericSettings } from "@/lib/settings";
 import { getCaseStudyImageCounts } from "@/lib/case-study-images";
-import { publicImageUrl } from "@/lib/image-url";
+import { getHeroSlots, getVideoSlot } from "@/lib/videos";
 import { HomeHero } from "@/components/marketing/home-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { AreaCard } from "@/components/marketing/area-card";
@@ -38,15 +38,6 @@ function dedupeCaseStudies(rows: CaseStudy[], limit: number): CaseStudy[] {
   }
   return unique;
 }
-
-/**
- * Hero photo: the 한화오션 propeller-installation build's cover in Storage —
- * a real ETO project with a worker in frame (chosen over the other studio
- * shots for scale and human context). If the object is ever removed the hero
- * falls back to its blueprint-grid panel, so this is safe to leave pinned;
- * swap the path here to feature a different build.
- */
-const HERO_IMAGE_PATH = "d0f231d3-d759-4fbe-8cd8-1a4ad6f550b1/card.webp";
 
 /*
  * Marketing-page caching decision (applies to /, /about, /cases, /partners):
@@ -104,6 +95,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     { label: tHero("specSinceLabel"), value: String(stats.founded_year) },
   ];
 
+  // Capability ticker slots from the video manifest (docs/VIDEO-PIPELINE.md);
+  // labels are bilingual in the manifest itself.
+  const heroSlots = getHeroSlots().map((s) => ({
+    key: s.key,
+    label: locale === "ko" ? s.labelKo : s.labelEn,
+    video: s.video,
+  }));
+
   return (
     <>
       <HomeHero
@@ -113,10 +112,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         ctaProducts={tHero("ctaProducts")}
         ctaContact={tHero("ctaContact")}
         specs={heroSpecs}
-        imageUrl={publicImageUrl("case-study-images", HERO_IMAGE_PATH)}
-        imageAlt={tHero("imageAlt")}
-        pressureBar={stats.max_pressure_bar}
-        readoutLabel={tHero("specPressureLabel")}
+        slots={heroSlots}
       />
 
       <section className="border-y border-[var(--color-border)] bg-[var(--color-surface-alt)] py-10">
@@ -200,6 +196,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         sub={tCta("sub")}
         primaryLabel={tCta("primary")}
         secondaryLabel={tCta("secondary")}
+        video={getVideoSlot("cta")?.video ?? null}
       />
     </>
   );

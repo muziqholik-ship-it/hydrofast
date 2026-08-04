@@ -1,0 +1,31 @@
+{
+  "$comment": "Video slot manifest (workstream 09 §3). Maintained by scripts/encode-videos.mjs — run it after dropping footage in assets-src/video/. `video: null` = no clip yet: components degrade to poster/gradient. Paths are /public-relative or absolute Supabase Storage URLs.",
+  "hero": ["lifting", "torque", "bolting", "robotics"],
+  "slots": {
+    "lifting": {
+      "labelKo": "중량물 인양",
+      "labelEn": "Heavy Lifting",
+      "video": null
+    },
+    "torque": {
+      "labelKo": "정밀 토크",
+      "labelEn": "Precision Torque",
+      "video": null
+    },
+    "bolting": {
+      "labelKo": "특수 볼팅",
+      "labelEn": "Special Bolting",
+      "video": null
+    },
+    "robotics": {
+      "labelKo": "유압 로보틱스",
+      "labelEn": "Hydraulic Robotics",
+      "video": null
+    },
+    "cta": {
+      "labelKo": "클로징 와이드 샷",
+      "labelEn": "Closing wide shot",
+      "video": null
+    }
+  }
+}

@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import { Link } from "@/i18n/navigation";
 import { gsap, EASE_ENTRANCE, EASE_MECHANICAL, MOTION_LEVEL, prefersReducedMotion } from "@/lib/motion";
+import { VideoLoop } from "@/components/media/video-loop";
+import type { VideoRendition } from "@/lib/videos";
 
 /*
  * Pressure-gauge geometry (workstream 08 A4). The dial spans 270°, from
@@ -36,11 +38,14 @@ export function ClosingCta({
   sub,
   primaryLabel,
   secondaryLabel,
+  video = null,
 }: {
   title: string;
   sub: string;
   primaryLabel: string;
   secondaryLabel: string;
+  /** Optional slow wide-shot loop (manifest slot "cta") — kept faint; the gauge stays the focal point. */
+  video?: VideoRendition | null;
 }) {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -106,6 +111,15 @@ export function ClosingCta({
       ref={sectionRef}
       className="relative overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-surface-alt)]"
     >
+      {/* Background loop (09 §1 storyboard): heavily desaturated, washed by
+          the surface color so text tokens keep their contrast in both themes.
+          Lazy + paused off-screen; posters-only at lite/off/reduced/Save-Data. */}
+      {video && (
+        <div aria-hidden className="absolute inset-0">
+          <VideoLoop video={video} className="absolute inset-0 opacity-30 saturate-[0.2]" />
+          <div className="absolute inset-0 bg-[var(--color-surface-alt)]/85" />
+        </div>
+      )}
       {/* Background pressure gauge — decorative, tokens only. */}
       <svg
         aria-hidden
