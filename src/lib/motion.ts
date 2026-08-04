@@ -48,6 +48,17 @@ export function motionEnabled(): boolean {
   return MOTION_LEVEL !== "off" && !prefersReducedMotion();
 }
 
+const noopSubscribe = () => () => {};
+
+/** SSR-safe hydration signal (lint-clean alternative to setState-in-effect). */
+export function useHydrated(): boolean {
+  return useSyncExternalStore(
+    noopSubscribe,
+    () => true,
+    () => false,
+  );
+}
+
 /** Reactive media query (SSR-safe: renders `serverDefault` until hydration). */
 export function useMediaQuery(query: string, serverDefault = false): boolean {
   const subscribe = useCallback(

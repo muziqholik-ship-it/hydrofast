@@ -15,6 +15,7 @@ intentional dark gradient), so the site is always shippable.
 | `bolting` | hero (ticker item 3) | special bolting — wind-turbine/flange/steel-structure bolts |
 | `robotics` | hero (ticker item 4) | hydraulic robotics — robot arms, automated lines |
 | `cta` | closing CTA background | slow desaturated wide shot — shipyard/plant |
+| `area-<slug>` | 사업 분야 horizontal panel for that business area | a loop matching the area (slug = the area's URL slug, e.g. `area-hydraulic-engineering`) — create the folder and the encode script registers the slot automatically |
 
 ## 2. Getting clips (footage sourcing, 09 §2)
 

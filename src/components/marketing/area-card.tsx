@@ -3,9 +3,19 @@ import type { BusinessAreaContent } from "@/content/business-areas";
 import type { Locale } from "@/i18n/routing";
 
 /* eslint-disable @next/next/no-img-element */
-export function AreaCard({ area, locale }: { area: BusinessAreaContent; locale: Locale }) {
+export function AreaCard({
+  area,
+  locale,
+  poster = null,
+}: {
+  area: BusinessAreaContent;
+  locale: Locale;
+  /** Video poster thumbnail (workstream 09 F1) — preferred over cardImage when the area has a clip. */
+  poster?: string | null;
+}) {
   const name = locale === "ko" ? area.name.ko : area.name.en ?? area.name.ko;
   const summary = locale === "ko" ? area.summary.ko : area.summary.en ?? area.summary.ko;
+  const imageSrc = poster ?? area.cardImage;
 
   return (
     <Link
@@ -15,7 +25,7 @@ export function AreaCard({ area, locale }: { area: BusinessAreaContent; locale: 
     >
       <div className="relative h-44 w-full overflow-hidden bg-[var(--color-surface-alt)]">
         <img
-          src={area.cardImage}
+          src={imageSrc}
           alt={name}
           loading="lazy"
           decoding="async"

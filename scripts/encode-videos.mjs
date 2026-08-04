@@ -98,6 +98,20 @@ async function main() {
   }
 
   const manifest = JSON.parse(readFileSync(MANIFEST, "utf8"));
+
+  // Auto-register slots for any extra source folders — this is how business
+  // areas get loops: create assets-src/video/area-<slug>/ and the slot
+  // appears (fix its ko/en labels in the manifest afterwards if it will ever
+  // be user-visible; area panels label themselves from the DB).
+  if (existsSync(SRC_DIR)) {
+    for (const entry of readdirSync(SRC_DIR, { withFileTypes: true })) {
+      if (entry.isDirectory() && !manifest.slots[entry.name]) {
+        manifest.slots[entry.name] = { labelKo: entry.name, labelEn: entry.name, video: null };
+        console.log(`- registered new slot "${entry.name}" from source folder`);
+      }
+    }
+  }
+
   const slotNames = requestedSlots.length > 0 ? requestedSlots : Object.keys(manifest.slots);
   mkdirSync(OUT_DIR, { recursive: true });
 

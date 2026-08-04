@@ -8,14 +8,13 @@ import { getCaseStudyImageCounts } from "@/lib/case-study-images";
 import { getHeroSlots, getVideoSlot } from "@/lib/videos";
 import { HomeHero } from "@/components/marketing/home-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
-import { AreaCard } from "@/components/marketing/area-card";
+import { BusinessAreas } from "@/components/marketing/business-areas";
 import { getAllAreas } from "@/lib/areas";
 import { CaseStudyCard } from "@/components/marketing/case-study-card";
 import { CertificationStrip } from "@/components/marketing/certification-strip";
 import { ClosingCta } from "@/components/marketing/closing-cta";
 import { LogoMarquee } from "@/components/marketing/logo-marquee";
 import { StatCounter } from "@/components/marketing/stat-counter";
-import { ScrollRevealGrid, ScrollRevealItem } from "@/components/motion/scroll-reveal-grid";
 import { CaseCardParallax } from "@/components/motion/case-card-parallax";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -103,6 +102,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     video: s.video,
   }));
 
+  // Business-area panel loops live in `area-<slug>` manifest slots (encode
+  // script auto-registers them from assets-src/video/ folders). The rich
+  // `sections` JSON is stripped before crossing to the client component —
+  // panels/cards never need it and it would bloat the RSC payload.
+  const areaVideos = Object.fromEntries(
+    areas.map((a) => [a.slug, getVideoSlot(`area-${a.slug}`)?.video ?? null]),
+  );
+  const slimAreas = areas.map((a) => ({ ...a, sections: [] }));
+
   return (
     <>
       <HomeHero
@@ -123,16 +131,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-6 py-20">
-        <SectionHeading title={tBiz("sectionTitle")} fluid />
-        <ScrollRevealGrid className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {areas.map((area) => (
-            <ScrollRevealItem key={area.slug}>
-              <AreaCard area={area} locale={locale} />
-            </ScrollRevealItem>
-          ))}
-        </ScrollRevealGrid>
-      </section>
+      <BusinessAreas title={tBiz("sectionTitle")} locale={locale} areas={slimAreas} videos={areaVideos} />
 
       {homepageCerts.length > 0 && (
         <CertificationStrip

@@ -14,5 +14,8 @@ assets-src/video/
   cta/        closing wide shot    (shipyard aerial, power plant dusk …)
 ```
 
+For the 사업 분야 horizontal panels, add `area-<slug>/` folders (slug = the
+area's URL slug) — the encode script registers those slots automatically.
+
 Put ONE clip per folder (the script takes the alphabetically first file if
 there are several). 6–12 s, 4K or 1080p, no audio needed — it is stripped.

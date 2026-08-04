@@ -22,9 +22,13 @@
 - [ ] Then run `npm run db:merge-case-studies` once to merge duplicate one-photo-per-row projects into single rows with galleries.
 - [ ] After verifying `/cases`, the `dedupeCaseStudies()` workaround in `src/app/[locale]/page.tsx` can be removed (harmless to keep).
 
-## Video hero (workstream 09, Session D)
+## Video homepage (workstream 09, Sessions D–F)
 
-- [ ] Drop stock/own clips into `assets-src/video/{lifting,torque,bolting,robotics,cta}/` and run `node scripts/encode-videos.mjs` — see `docs/VIDEO-PIPELINE.md` for the shopping list and licensing caveats. Until then the hero shows its intentional dark-gradient fallback.
+- [ ] Drop stock/own clips into `assets-src/video/{lifting,torque,bolting,robotics,cta}/` (and `area-<slug>/` for the 사업 분야 panels) and run `node scripts/encode-videos.mjs` — see `docs/VIDEO-PIPELINE.md` for the shopping list and licensing caveats. Until then all slots show their intentional dark-gradient fallbacks.
+- [ ] **Route A footage:** owner to collect real site footage from HYDROFAST installs (tensioning jobs, robot docking, lifts at 효성/한화오션/해군 etc.) and confirm client-site publication permission for any recognizable facility before a clip ships.
+- [ ] **Admin UI:** manage the `site-videos` Supabase Storage bucket + `src/content/videos.json` manifest from `/admin` (upload, assign slot, swap posters) instead of the CLI script.
+- [ ] **Paid-clip shortlist (Route C):** real bolting/torque close-ups are scarce in free libraries — shortlist candidates on Artgrid/Envato/Storyblocks/iStock for the `torque` and `bolting` slots.
+- [ ] **Coverr credit:** if any Coverr clip ends up shipping, add the footer credit (its license is self-contradictory on attribution — credit to be safe). Currently: no Coverr clips in use.
 
 ## Search-engine registration checklist (from docs/improvement-plan/03-workstream-seo.md, Task 3.6 — human tasks, not code)
 

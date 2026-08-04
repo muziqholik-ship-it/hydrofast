@@ -112,9 +112,11 @@ export function VideoLoop({
         fallback
       )}
       {attachSrc && src && (
+        // No autoPlay attribute on purpose (F1 playback discipline): the
+        // play/pause effect is the only driver, so inactive/off-screen
+        // videos never buffer beyond preload="metadata".
         <video
           ref={videoEl}
-          autoPlay
           muted
           loop
           playsInline

@@ -1,7 +1,7 @@
 "use client";
 
-import { Fragment, useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
-import { gsap, ScrollTrigger, MOTION_LEVEL, useMediaQuery } from "@/lib/motion";
+import { Fragment, useEffect, useId, useRef, useState } from "react";
+import { gsap, ScrollTrigger, MOTION_LEVEL, useHydrated, useMediaQuery } from "@/lib/motion";
 
 /*
  * Oil-fill typography (workstream 09 §1).
@@ -28,18 +28,14 @@ import { gsap, ScrollTrigger, MOTION_LEVEL, useMediaQuery } from "@/lib/motion";
 
 export type FluidTextMode = "load" | "scrub";
 
+/** External fill driver — e.g. the horizontal area scroller maps its own
+    scrub progress to per-panel levels and pushes them in imperatively. */
+export type FluidLevelSource = {
+  subscribe(listener: (level: number) => void): () => void;
+};
+
 type LineBox = { x: number; cy: number; text: string };
 type Layout = { w: number; h: number; fontSize: number; lines: LineBox[] };
-
-const noopSubscribe = () => () => {};
-/** SSR-safe "has hydrated" signal (lint-clean: no setState-in-effect). */
-function useHydrated() {
-  return useSyncExternalStore(
-    noopSubscribe,
-    () => true,
-    () => false,
-  );
-}
 
 function measure(wrapper: HTMLElement): Layout | null {
   const rect = wrapper.getBoundingClientRect();
@@ -87,12 +83,16 @@ export function FluidText({
   text,
   mode,
   level,
+  levelSource,
 }: {
   /** Heading copy; "\n" marks intentional line breaks (as in the hero title). */
   text: string;
   mode: FluidTextMode;
   /** Optional fixed fill level 0–1 (overrides the mode-driven animation). */
   level?: number;
+  /** Optional imperative fill driver (overrides the mode timelines; used by
+      the pinned horizontal scroller, whose progress is not vertical scroll). */
+  levelSource?: FluidLevelSource;
 }) {
   const id = useId().replace(/[^a-zA-Z0-9]/g, "");
   const ref = useRef<HTMLSpanElement>(null);
@@ -141,6 +141,7 @@ export function FluidText({
     // L≥1 the surface clears the top (letters completely full).
     const surfaceY = (l: number) => layout.h + amp - l * (layout.h + 2 * amp);
 
+    let unsubscribe: (() => void) | undefined;
     const ctx = gsap.context(() => {
       const drift = gsap.to("[data-fluid-wave]", {
         x: -lambda,
@@ -164,6 +165,11 @@ export function FluidText({
       if (level !== undefined) {
         state.l = level;
         apply();
+      } else if (levelSource) {
+        unsubscribe = levelSource.subscribe((l) => {
+          state.l = l;
+          apply();
+        });
       } else if (mode === "load") {
         // Rise 0→100% in ~1.6s, then settle with a slow slosh.
         gsap
@@ -187,8 +193,11 @@ export function FluidText({
       }
     }, wrapper);
 
-    return () => ctx.revert();
-  }, [animate, layout, mode, level]);
+    return () => {
+      unsubscribe?.();
+      ctx.revert();
+    };
+  }, [animate, layout, mode, level, levelSource]);
 
   const animating = animate && layout !== null;
   const bodyDepth = layout ? layout.h + 2 * Math.max(layout.fontSize * 0.08, 3) : 0;
