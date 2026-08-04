@@ -1,8 +1,32 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { Link } from "@/i18n/navigation";
-import { gsap, SplitText, EASE_ENTRANCE, motionEnabled } from "@/lib/motion";
+import {
+  gsap,
+  SplitText,
+  EASE_ENTRANCE,
+  MOTION_LEVEL,
+  motionEnabled,
+  prefersReducedMotion,
+  useMediaQuery,
+} from "@/lib/motion";
+import { createHeroProgress } from "@/lib/hero-progress";
+
+/*
+ * The WebGL scene ships as its own lazy chunk: home-hero must never import
+ * three/fiber/drei statically or the ~1 MB Three chunk lands in first-load JS.
+ */
+const HeroCanvas = dynamic(
+  () => import("@/components/three/hero-canvas").then((m) => m.HeroCanvas),
+  { ssr: false },
+);
+
+/** Optional real-CAD GLB (Route A swap seam — scripts/convert-step-to-glb.md). */
+const HERO_MODEL_URL = process.env.NEXT_PUBLIC_HERO_MODEL_URL || null;
+
+const POSTER_URL = "/hero-poster.webp";
 
 export type HeroSpec = { label: string; value: string };
 
@@ -15,6 +39,8 @@ export function HomeHero({
   specs,
   imageUrl,
   imageAlt,
+  pressureBar,
+  readoutLabel,
 }: {
   kicker: string;
   title: string;
@@ -25,8 +51,48 @@ export function HomeHero({
   specs: HeroSpec[];
   imageUrl: string | null;
   imageAlt: string;
+  /** Max working pressure from admin settings — drives the scrubbed readout. */
+  pressureBar: number;
+  readoutLabel: string;
 }) {
   const scope = useRef<HTMLElement>(null);
+  const [heroProgress] = useState(createHeroProgress);
+  const desktop = useMediaQuery("(min-width: 768px)");
+  const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
+  const [afterLcp, setAfterLcp] = useState(false);
+
+  /*
+   * Scene panel mode (workstream 08 B1/B4):
+   *  - "canvas": full level, ≥768px, mounted only after LCP settles
+   *  - "poster": lite (any width) or full on mobile — static webp of the scene
+   *  - "static": off / reduced motion / SSR — the v1 photo panel
+   */
+  const sceneMode =
+    MOTION_LEVEL === "off" || reducedMotion
+      ? "static"
+      : MOTION_LEVEL === "full"
+        ? desktop
+          ? afterLcp
+            ? "canvas"
+            : "static"
+          : "poster"
+        : "poster";
+
+  useEffect(() => {
+    if (MOTION_LEVEL !== "full") return;
+    const show = () => setAfterLcp(true);
+    let idleId: number | undefined;
+    let timeoutId: number | undefined;
+    if (typeof window.requestIdleCallback === "function") {
+      idleId = window.requestIdleCallback(show, { timeout: 2500 });
+    } else {
+      timeoutId = window.setTimeout(show, 400);
+    }
+    return () => {
+      if (idleId !== undefined) window.cancelIdleCallback(idleId);
+      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
+    };
+  }, []);
 
   /*
    * Entrance choreography (GSAP SplitText line-reveal per workstream 08 A2).
@@ -84,6 +150,90 @@ export function HomeHero({
     };
   }, []);
 
+  /*
+   * Pinned scroll choreography (workstream 08 B3): the hero pins for an extra
+   * 150vh while one scrubbed tween drives (a) the 0→max bar readout(s) and
+   * (b) the 3D scene via heroProgress (camera orbit + piston stroke — the
+   * canvas subscribes if/when it mounts, so this also runs against the poster
+   * on mobile: the readout keeps mobile from being motionless).
+   * SSR/off/reduced show the readout at max — never regress that.
+   */
+  useEffect(() => {
+    if (MOTION_LEVEL !== "full" || prefersReducedMotion()) return;
+    const root = scope.current;
+    if (!root) return;
+
+    const readouts = root.querySelectorAll<HTMLElement>("[data-hero-readout]");
+    const ctx = gsap.context(() => {
+      const state = { p: 0 };
+      gsap.to(state, {
+        p: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: root,
+          start: "top top",
+          end: "+=150%",
+          pin: true,
+          scrub: 0.8,
+          anticipatePin: 1,
+        },
+        onUpdate() {
+          const text = Math.round(state.p * pressureBar).toLocaleString("en-US");
+          readouts.forEach((el) => {
+            el.textContent = text;
+          });
+          heroProgress.set(state.p);
+        },
+      });
+    }, root);
+
+    return () => ctx.revert();
+  }, [pressureBar, heroProgress]);
+
+  const readoutChip = (extraClass: string) => (
+    // Decorative duplicate of the spec-strip pressure figure (hence
+    // aria-hidden) — screen readers keep the stable value in the <dl>.
+    <div
+      aria-hidden
+      className={`pointer-events-none border border-[var(--color-border)] border-t-2 border-t-[var(--color-safety-orange)] bg-[var(--color-surface)]/90 px-3 py-2 font-mono backdrop-blur-sm ${extraClass}`}
+    >
+      <div className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--color-ink-soft)]">
+        {readoutLabel}
+      </div>
+      <div className="text-xl font-bold tracking-tight text-[var(--color-ink)]">
+        <span data-hero-readout>{pressureBar.toLocaleString("en-US")}</span>
+        <span className="ml-1 text-sm">bar</span>
+      </div>
+    </div>
+  );
+
+  /* Photo panel: real ETO build, desaturated with a steel duotone overlay so
+     brand colors stay dominant. The static baseline (off / reduced / SSR) and
+     the underlay while the WebGL chunk loads; falls back to a blueprint-grid
+     panel when no image URL could be resolved. */
+  const photoPanel = imageUrl ? (
+    <>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={imageUrl}
+        alt={imageAlt}
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover saturate-[0.4]"
+      />
+      <div aria-hidden className="absolute inset-0 bg-[var(--color-steel)] opacity-40 mix-blend-multiply" />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-t from-[var(--color-steel)]/40 to-transparent mix-blend-multiply"
+      />
+    </>
+  ) : (
+    <div
+      aria-hidden
+      className="absolute inset-0 bg-[var(--color-surface-alt)] opacity-60 [background-image:linear-gradient(var(--color-border)_1px,transparent_1px),linear-gradient(90deg,var(--color-border)_1px,transparent_1px)] [background-size:32px_32px]"
+    />
+  );
+
   return (
     <section ref={scope} className="relative overflow-hidden bg-[var(--color-surface)]">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(55,92,251,0.08),transparent_60%)]" />
@@ -122,6 +272,10 @@ export function HomeHero({
             </Link>
           </div>
 
+          {/* Mobile readout: during the pinned scrub the scene panel sits
+              below the fold, so the counting element lives up here (<md). */}
+          <div className="mt-8 md:hidden">{readoutChip("inline-block")}</div>
+
           {/* Spec strip — 1px dividers via gap-px over a border-colored backing. */}
           <dl
             data-hero="specs"
@@ -140,37 +294,40 @@ export function HomeHero({
           </dl>
         </div>
 
-        {/* Photo panel: real ETO build, desaturated with a steel duotone overlay
-            so brand colors stay dominant. Falls back to a blueprint-grid panel
-            when no image URL could be resolved. */}
+        {/* Scene panel: WebGL cylinder at full/desktop, poster on mobile/lite,
+            v1 photo when static. The photo stays as the underlay in canvas
+            mode so nothing flashes while the Three chunk streams in — the
+            canvas wrapper brings its own opaque backdrop and fades over it. */}
         <div
           data-hero="image"
           className="relative min-h-56 w-full overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] sm:min-h-72 lg:min-h-0"
         >
-          {imageUrl ? (
-            <>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={imageUrl}
-                alt={imageAlt}
-                fetchPriority="high"
-                decoding="async"
-                className="absolute inset-0 h-full w-full object-cover saturate-[0.4]"
-              />
-              <div aria-hidden className="absolute inset-0 bg-[var(--color-steel)] opacity-40 mix-blend-multiply" />
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-[var(--color-steel)]/40 to-transparent mix-blend-multiply"
-              />
-            </>
+          {sceneMode === "poster" ? (
+            <HeroPoster fallback={photoPanel} imageAlt={imageAlt} />
           ) : (
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-[var(--color-surface-alt)] opacity-60 [background-image:linear-gradient(var(--color-border)_1px,transparent_1px),linear-gradient(90deg,var(--color-border)_1px,transparent_1px)] [background-size:32px_32px]"
-            />
+            photoPanel
           )}
+          {sceneMode === "canvas" && <HeroCanvas progress={heroProgress} modelUrl={HERO_MODEL_URL} />}
+          <div className="absolute bottom-4 left-4 z-10 hidden md:block">{readoutChip("")}</div>
         </div>
       </div>
     </section>
+  );
+}
+
+/** Poster of the composed 3D scene; falls back to the photo panel until the
+    owner captures one (dev: /?capture=1 — see scripts/convert-step-to-glb.md). */
+function HeroPoster({ fallback, imageAlt }: { fallback: React.ReactNode; imageAlt: string }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) return <>{fallback}</>;
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={POSTER_URL}
+      alt={imageAlt}
+      decoding="async"
+      onError={() => setFailed(true)}
+      className="absolute inset-0 h-full w-full object-cover"
+    />
   );
 }

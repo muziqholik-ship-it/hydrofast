@@ -115,6 +115,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         specs={heroSpecs}
         imageUrl={publicImageUrl("case-study-images", HERO_IMAGE_PATH)}
         imageAlt={tHero("imageAlt")}
+        pressureBar={stats.max_pressure_bar}
+        readoutLabel={tHero("specPressureLabel")}
       />
 
       <section className="border-y border-[var(--color-border)] bg-[var(--color-surface-alt)] py-10">

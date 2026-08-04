@@ -9,7 +9,7 @@
  * components (pages decide nothing server-side; motion is a client concern).
  */
 
-import { useEffect } from "react";
+import { useCallback, useEffect, useSyncExternalStore } from "react";
 import { useLocale } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -46,6 +46,23 @@ export function prefersReducedMotion(): boolean {
 /** True when JS-driven motion may run at all ("full" or "lite", no OS override). */
 export function motionEnabled(): boolean {
   return MOTION_LEVEL !== "off" && !prefersReducedMotion();
+}
+
+/** Reactive media query (SSR-safe: renders `serverDefault` until hydration). */
+export function useMediaQuery(query: string, serverDefault = false): boolean {
+  const subscribe = useCallback(
+    (onChange: () => void) => {
+      const mql = window.matchMedia(query);
+      mql.addEventListener("change", onChange);
+      return () => mql.removeEventListener("change", onChange);
+    },
+    [query],
+  );
+  return useSyncExternalStore(
+    subscribe,
+    () => window.matchMedia(query).matches,
+    () => serverDefault,
+  );
 }
 
 /**

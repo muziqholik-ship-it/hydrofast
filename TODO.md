@@ -22,6 +22,11 @@
 - [ ] Then run `npm run db:merge-case-studies` once to merge duplicate one-photo-per-row projects into single rows with galleries.
 - [ ] After verifying `/cases`, the `dedupeCaseStudies()` workaround in `src/app/[locale]/page.tsx` can be removed (harmless to keep).
 
+## 3D hero (workstream 08, Session B)
+
+- [ ] Capture `public/hero-poster.webp` — the mobile/lite hero fallback (until it exists those paths show the v1 hero photo). Dev-only capture button: `npm run dev` → `http://localhost:3000/?capture=1` → "capture poster" → convert per `scripts/convert-step-to-glb.md`.
+- [ ] Route A: drop a STEP/IGES export of a representative product (tensioner/cylinder) into `assets-src/`, run the pipeline in `scripts/convert-step-to-glb.md`, set `NEXT_PUBLIC_HERO_MODEL_URL` — replaces the procedural cylinder with the real product.
+
 ## Search-engine registration checklist (from docs/improvement-plan/03-workstream-seo.md, Task 3.6 — human tasks, not code)
 
 - [ ] Register the site at **Google Search Console** and **Naver Search Advisor** (searchadvisor.naver.com). Copy each service's HTML-tag verification value into the `GOOGLE_SITE_VERIFICATION` / `NAVER_SITE_VERIFICATION` env vars (see `.env.example`) on Vercel, then redeploy.
