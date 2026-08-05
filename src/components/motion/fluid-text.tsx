@@ -84,6 +84,7 @@ export function FluidText({
   mode,
   level,
   levelSource,
+  color,
 }: {
   /** Heading copy; "\n" marks intentional line breaks (as in the hero title). */
   text: string;
@@ -93,6 +94,10 @@ export function FluidText({
   /** Optional imperative fill driver (overrides the mode timelines; used by
       the pinned horizontal scroller, whose progress is not vertical scroll). */
   levelSource?: FluidLevelSource;
+  /** Fluid color override — e.g. each business area fills with its own
+      accent. Defaults to the shared --color-fluid amber; depth shades are
+      still derived via color-mix, so no extra colors appear anywhere. */
+  color?: string;
 }) {
   const id = useId().replace(/[^a-zA-Z0-9]/g, "");
   const ref = useRef<HTMLSpanElement>(null);
@@ -200,6 +205,8 @@ export function FluidText({
   }, [animate, layout, mode, level, levelSource]);
 
   const animating = animate && layout !== null;
+  const fluidColor = color ?? "var(--color-fluid)";
+  const fluidDeep = `color-mix(in srgb, ${fluidColor} 55%, black)`;
   const bodyDepth = layout ? layout.h + 2 * Math.max(layout.fontSize * 0.08, 3) : 0;
   const amp = layout ? Math.min(Math.max(layout.fontSize * 0.08, 3), 9) : 0;
   const lambda = layout ? Math.max(layout.fontSize * 2.2, 56) : 0;
@@ -208,6 +215,9 @@ export function FluidText({
     <span
       ref={ref}
       className={`relative inline-block ${animating ? "fluid-text-animating" : "fluid-text-static"}`}
+      // Custom color: override the token gradient of .fluid-text-static so
+      // the static/reduced-motion state matches the animated fill.
+      style={color && !animating ? { backgroundImage: `linear-gradient(180deg, ${fluidColor}, ${fluidDeep})` } : undefined}
     >
       {lines.map((line, i) => (
         <Fragment key={i}>
@@ -232,11 +242,8 @@ export function FluidText({
               x2="0"
               y2={layout.h}
             >
-              <stop offset="0" style={{ stopColor: "var(--color-fluid)" }} />
-              <stop
-                offset="1"
-                style={{ stopColor: "color-mix(in srgb, var(--color-fluid) 55%, black)" }}
-              />
+              <stop offset="0" style={{ stopColor: fluidColor }} />
+              <stop offset="1" style={{ stopColor: fluidDeep }} />
             </linearGradient>
             {/* The letterforms, reused as the clip for the fluid. SVG <text>
                 inherits the heading's font/size/weight/tracking, so ko and en
@@ -261,7 +268,11 @@ export function FluidText({
             <g data-fluid-level>
               <g data-fluid-wave>
                 <path d={fluidBodyPath(layout.w, lambda, amp, bodyDepth)} fill={`url(#${id}g)`} />
-                <path d={meniscusPath(layout.w, lambda, amp)} className="fluid-text-meniscus" />
+                <path
+                  d={meniscusPath(layout.w, lambda, amp)}
+                  className="fluid-text-meniscus"
+                  style={color ? { stroke: `color-mix(in srgb, ${fluidColor} 45%, black)` } : undefined}
+                />
               </g>
             </g>
           </g>

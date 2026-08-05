@@ -9,7 +9,7 @@
  * components (pages decide nothing server-side; motion is a client concern).
  */
 
-import { useCallback, useEffect, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useLayoutEffect, useSyncExternalStore } from "react";
 import { useLocale } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -47,6 +47,18 @@ export function prefersReducedMotion(): boolean {
 export function motionEnabled(): boolean {
   return MOTION_LEVEL !== "off" && !prefersReducedMotion();
 }
+
+/**
+ * useLayoutEffect that degrades to useEffect during SSR (silences the server
+ * warning). REQUIRED for any GSAP effect that restructures the DOM — above
+ * all ScrollTrigger `pin`, which wraps the trigger in a pin-spacer div. React
+ * runs LAYOUT-effect cleanups before it removes DOM nodes, but PASSIVE
+ * (useEffect) cleanups only after — so a pin created in useEffect makes React
+ * call removeChild on a node GSAP has re-parented → NotFoundError. Pin from
+ * this hook instead, so ctx.revert() unwraps the spacer first.
+ */
+export const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 const noopSubscribe = () => () => {};
 

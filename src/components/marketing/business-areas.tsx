@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import type { BusinessAreaContent } from "@/content/business-areas";
 import type { Locale } from "@/i18n/routing";
 import type { VideoRendition } from "@/lib/videos";
-import { gsap, MOTION_LEVEL, useHydrated, useMediaQuery } from "@/lib/motion";
+import { gsap, MOTION_LEVEL, useHydrated, useIsomorphicLayoutEffect, useMediaQuery } from "@/lib/motion";
 import type { ScrollTrigger } from "@/lib/motion";
 import { FluidText, type FluidLevelSource } from "@/components/motion/fluid-text";
 import { VideoLoop } from "@/components/media/video-loop";
@@ -67,7 +67,11 @@ export function BusinessAreas({
     Array.from({ length: areas.length }, createLevelEmitter),
   );
 
-  useEffect(() => {
+  // MUST be a layout effect: the pin re-parents the section into a
+  // pin-spacer, and only layout-effect cleanups run early enough for
+  // ctx.revert() to unwrap it before React removes the nodes (otherwise:
+  // NotFoundError removeChild on unmount/HMR/viewport flips).
+  useIsomorphicLayoutEffect(() => {
     if (!horizontal) return;
     const section = sectionRef.current;
     const track = trackRef.current;
@@ -87,10 +91,13 @@ export function BusinessAreas({
           anticipatePin: 1,
           onUpdate(self) {
             const pos = self.progress * (n - 1);
-            // Oil level per panel: full at its center moment, draining to
-            // empty one panel-width away — scrubbing back refills it.
+            // Oil level per panel: fills during the transition INTO the
+            // panel and is completely full while its image is on screen
+            // (|Δ| ≤ ~0.57), draining symmetrically as it slides away —
+            // scrubbing back refills it. Each heading therefore fills at
+            // its own panel, never all together.
             levelSources.forEach((source, i) =>
-              source.set(Math.min(Math.max(1.08 - Math.abs(pos - i) * 1.5, 0), 1.08)),
+              source.set(Math.min(Math.max((1 - Math.abs(pos - i)) * 2.5, 0), 1.08)),
             );
             const idx = Math.round(pos);
             setActiveIdx((prev) => (prev === idx ? prev : idx));
@@ -193,7 +200,13 @@ export function BusinessAreas({
                   {area.index}
                 </div>
                 <h3 className="mt-6 max-w-2xl text-3xl font-bold tracking-tight xl:text-4xl">
-                  <FluidText text={label(area)} mode="scrub" levelSource={levelSources[i]} />
+                  {/* Each area fills with its own accent color, not the shared amber. */}
+                  <FluidText
+                    text={label(area)}
+                    mode="scrub"
+                    levelSource={levelSources[i]}
+                    color={area.accent}
+                  />
                 </h3>
                 <p className="mt-2 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55">
                   {area.nameEn}
