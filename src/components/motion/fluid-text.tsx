@@ -148,7 +148,19 @@ export function FluidText({
 
     let unsubscribe: (() => void) | undefined;
     const ctx = gsap.context(() => {
-      const drift = gsap.to("[data-fluid-wave]", {
+      /*
+       * CRITICAL: animate ELEMENT REFERENCES, never selector strings, in
+       * anything that runs after this setup function returns. gsap.context
+       * only scopes selector text during its synchronous execution — a
+       * selector inside a later callback (subscription tick, onUpdate)
+       * resolves globally and would drive EVERY FluidText on the page from
+       * every instance (the "all headings fill together" bug).
+       */
+      const waveEl = wrapper.querySelector("[data-fluid-wave]");
+      const levelEl = wrapper.querySelector("[data-fluid-level]");
+      if (!waveEl || !levelEl) return;
+
+      const drift = gsap.to(waveEl, {
         x: -lambda,
         duration: 3,
         ease: "none",
@@ -164,7 +176,7 @@ export function FluidText({
       });
 
       const state = { l: 0 };
-      const apply = () => gsap.set("[data-fluid-level]", { y: surfaceY(state.l) });
+      const apply = () => gsap.set(levelEl, { y: surfaceY(state.l) });
       apply();
 
       if (level !== undefined) {

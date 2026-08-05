@@ -91,13 +91,13 @@ export function BusinessAreas({
           anticipatePin: 1,
           onUpdate(self) {
             const pos = self.progress * (n - 1);
-            // Oil level per panel: fills during the transition INTO the
-            // panel and is completely full while its image is on screen
-            // (|Δ| ≤ ~0.57), draining symmetrically as it slides away —
-            // scrubbing back refills it. Each heading therefore fills at
-            // its own panel, never all together.
+            // Oil level per panel: pours in during the slide that reveals
+            // the panel and is completely full by ~40% into the reveal
+            // (|Δ| ≤ 0.6), staying full the whole time its image is on
+            // screen, draining symmetrically as it slides away — scrubbing
+            // back refills it. Each heading fills at its own card, in order.
             levelSources.forEach((source, i) =>
-              source.set(Math.min(Math.max((1 - Math.abs(pos - i)) * 2.5, 0), 1.08)),
+              source.set(Math.min(Math.max((1 - Math.abs(pos - i)) * 2.7, 0), 1.08)),
             );
             const idx = Math.round(pos);
             setActiveIdx((prev) => (prev === idx ? prev : idx));
