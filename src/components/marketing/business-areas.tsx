@@ -152,21 +152,36 @@ export function BusinessAreas({
               key={area.slug}
               className="relative flex h-full w-screen shrink-0 items-end overflow-hidden"
             >
-              {/* Per-panel loop: lazy, and only the active ±1 panels play. */}
+              {/* Per-panel loop: lazy, and only the active ±1 panels play.
+                  Until a clip (or its poster) exists, the panel keeps the
+                  area's own CMS imagery — the washes above it handle
+                  legibility; the gradient is only a last resort for areas
+                  with no image at all. */}
               <VideoLoop
                 video={videos[area.slug] ?? null}
                 active={Math.abs(i - activeIdx) <= 1}
                 className="absolute inset-0"
                 fallback={
-                  <div className="absolute inset-0">
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        background: `radial-gradient(circle at 30% 25%, ${area.accent}40, transparent 60%)`,
-                      }}
+                  area.heroImage || area.cardImage ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={area.heroImage || area.cardImage}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 h-full w-full object-cover saturate-[0.7]"
                     />
-                    <div className="absolute inset-0 opacity-[0.1] [background-image:linear-gradient(rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:36px_36px]" />
-                  </div>
+                  ) : (
+                    <div className="absolute inset-0">
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          background: `radial-gradient(circle at 30% 25%, ${area.accent}40, transparent 60%)`,
+                        }}
+                      />
+                      <div className="absolute inset-0 opacity-[0.1] [background-image:linear-gradient(rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:36px_36px]" />
+                    </div>
+                  )
                 }
               />
               {/* dark wash + 8% area-accent wash (09 F1) */}
