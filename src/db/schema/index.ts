@@ -9,7 +9,6 @@ import { historyEvents } from "./history-events";
 import { certifications } from "./certifications";
 import { affiliates, affiliateSections } from "./affiliates";
 import { siteSettings } from "./site-settings";
-import { inquiries } from "./inquiries";
 
 export * from "./business-areas";
 export * from "./product-categories";
@@ -21,7 +20,6 @@ export * from "./history-events";
 export * from "./certifications";
 export * from "./affiliates";
 export * from "./site-settings";
-export * from "./inquiries";
 
 export const businessAreasRelations = relations(businessAreas, ({ many }) => ({
   categories: many(productCategories),
@@ -119,5 +117,4 @@ export const schema = {
   affiliates,
   affiliateSections,
   siteSettings,
-  inquiries,
 };

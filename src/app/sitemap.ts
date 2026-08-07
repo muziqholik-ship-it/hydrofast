@@ -4,6 +4,7 @@ import { products, manufacturers, businessAreas } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { localeUrl } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
+import { CUSTOM_PROJECTS } from "@/content/custom-projects";
 
 const STATIC_PATHS = [
   "",
@@ -47,6 +48,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   for (const p of STATIC_PATHS) {
     entries.push(...localizedEntries(p, { lastModified: buildTime, changeFrequency: "weekly" }));
+  }
+
+  // Hand-authored custom-project detail pages (src/content/custom-projects.ts) — no DB involved.
+  for (const project of CUSTOM_PROJECTS) {
+    entries.push(
+      ...localizedEntries(`/business/${project.areaSlug}/${project.slug}`, {
+        lastModified: buildTime,
+        changeFrequency: "monthly",
+      })
+    );
   }
 
   try {

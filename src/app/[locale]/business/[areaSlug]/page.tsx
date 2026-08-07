@@ -6,6 +6,7 @@ import { getAllAreas, getAreaContent } from "@/lib/areas";
 import { BusinessContent } from "@/components/marketing/business-content";
 import { JsonLd } from "@/components/json-ld";
 import { pageMetadata, localeUrl } from "@/lib/seo";
+import { localImageAspect } from "@/lib/image-size";
 import type { Locale } from "@/i18n/routing";
 
 // Content is CMS-managed (business_areas.content_json), so render per-request
@@ -46,6 +47,11 @@ export default async function BusinessAreaPage({
   const L = (l: { ko: string; en?: string }) => (locale === "ko" ? l.ko : l.en ?? l.ko);
   const others = all.filter((a) => a.slug !== area.slug);
 
+  // Resolved server-side so the hero picks its layout before first paint.
+  // Unknown (uploaded) images fall back to the landscape backdrop treatment.
+  const heroAspect = await localImageAspect(area.heroImage);
+  const uprightHero = Boolean(area.heroImage) && heroAspect !== undefined && heroAspect < 1.15;
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -63,21 +69,33 @@ export default async function BusinessAreaPage({
   return (
     <div>
       <JsonLd data={breadcrumbJsonLd} />
-      {/* Hero */}
+      {/* Hero — a landscape photo works as a full-bleed backdrop, but stretching
+          an upright one across a wide banner would show a thin slice of its
+          middle. Those stand beside the copy at their own ratio instead. */}
       <section className="relative overflow-hidden border-b border-[var(--color-border)]">
-        {area.heroImage && (
+        {area.heroImage && !uprightHero && (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={area.heroImage} alt={L(area.name)} className="absolute inset-0 h-full w-full object-cover" />
         )}
         <div className="absolute inset-0" style={{ background: `linear-gradient(90deg, ${area.accent}f2 0%, ${area.accent}cc 45%, ${area.accent}66 100%)` }} />
-        <div className="relative mx-auto max-w-[1400px] px-6 py-24 md:py-32 text-white">
-          <div className="flex items-center gap-3">
-            <span className="text-5xl font-black opacity-70">{area.index}</span>
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] opacity-90">{area.nameEn}</span>
+        <div className="relative mx-auto flex max-w-[1400px] flex-col gap-10 px-6 py-24 md:py-32 text-white lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <div className="flex items-center gap-3">
+              <span className="text-5xl font-black opacity-70">{area.index}</span>
+              <span className="text-sm font-semibold uppercase tracking-[0.2em] opacity-90">{area.nameEn}</span>
+            </div>
+            <h1 className="mt-4 max-w-3xl text-3xl md:text-5xl font-bold tracking-tight">{L(area.name)}</h1>
+            {L(area.tagline) && <p className="mt-4 max-w-2xl text-base md:text-lg font-medium opacity-95">{L(area.tagline)}</p>}
+            {L(area.summary) && <p className="mt-3 max-w-2xl text-sm leading-relaxed opacity-90">{L(area.summary)}</p>}
           </div>
-          <h1 className="mt-4 max-w-3xl text-3xl md:text-5xl font-bold tracking-tight">{L(area.name)}</h1>
-          {L(area.tagline) && <p className="mt-4 max-w-2xl text-base md:text-lg font-medium opacity-95">{L(area.tagline)}</p>}
-          {L(area.summary) && <p className="mt-3 max-w-2xl text-sm leading-relaxed opacity-90">{L(area.summary)}</p>}
+          {uprightHero && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={area.heroImage}
+              alt={L(area.name)}
+              className="h-[clamp(240px,44vh,420px)] w-auto max-w-full shrink-0 self-start rounded-[var(--radius-card)] object-contain shadow-2xl ring-1 ring-white/25 lg:self-center"
+            />
+          )}
         </div>
       </section>
 

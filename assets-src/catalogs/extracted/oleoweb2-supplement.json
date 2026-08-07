@@ -1,0 +1,28 @@
+{
+  "sourcePdf": "OLELOWEB2.pdf",
+  "auditNote": "Visual audit of OLELOWEB2.pdf (273 pages) rendered via poppler. Method: (1) read the full product index on PDF pages 5-22 (printed pages II-XIX) and cross-checked every model code and printed page against the 213 extracted Oleoweb products; (2) visually inspected all PDF page ranges not covered by any extracted sourcePages (23-26, 39-40, 89-90, 130-132, 148-150, 186-190, 208-210, 233-234, 254, 268-273) - all are notes pages, section dividers, coil/connector index tables, hand-pump use-and-maintenance booklets, applications collage, or back cover; (3) verified the two flagged regions: the deviators-and-ball-valves section is fully covered (RAS2/RAS3/RAS4 at PDF 256-261, DDFA3/DDFA6 at 243-244, DDF3/DDF6/IDF4/IDF8 and SAE variants at 245-252, FCT 253, EFD25A/B 235-242; the index row 'DDFA3-N p216' refers to the DDFA3340-N/DDFA3100-N sizes printed on the same DDFA3 page 218 = PDF 243, already captured in oleoweb-ddfa3 with 40-180 l/min), and the pumps section (PDF 210-232) is complete. Exactly ONE product family was missed: LE103A cartridge logic element / pressure compensator SAE10/3 SHORT on PDF page 188 (printed page 163, indexed under 'ELEMENTI LOGICI A CARTUCCIA - Cartridge Logic Elements' on index page XIII). The part-3 agent's notes wrongly recorded pages 188-189 as containing no product families (189 is indeed a notes page, but 188 is a full LE103A data page). The overview-catalog entry oleoweb-le (LE series, OLELOWEB1 p14) describes the same compensator line at family level; LE103A is the concrete detailed series and is added here with full page-level data. No other families are missing; extraction is otherwise complete.",
+  "manufacturer": { "slug": "oleoweb", "name": "Oleoweb Srl", "country": "Italy" },
+  "categories": [],
+  "products": [
+    {
+      "slug": "oleoweb-le103a",
+      "modelNo": "LE103A",
+      "categorySlug": "oleoweb-compensators",
+      "nameKo": "LE103A 카트리지 로직 엘리먼트 (압력 보상기, SAE10/3 SHORT)",
+      "nameEn": "LE103A Cartridge Logic Element (Pressure Compensator, SAE10/3 SHORT)",
+      "shortDescriptionKo": "SAE10/3 SHORT 캐비티용 카트리지 압력 보상기, 최대 70l/min, 350bar",
+      "shortDescriptionEn": "Cartridge pressure compensator for SAE10/3 SHORT cavity, up to 70 l/min and 350 bar",
+      "descriptionKo": "SAE10/3 SHORT 캐비티(7/8\"-14 UNF-2A)에 삽입하는 3포트 카트리지형 로직 엘리먼트 겸 압력 보상기입니다. 크래킹 압력 8bar(A) 또는 12bar(B) 스프링을 선택할 수 있으며, 최대 유량 70l/min, 최대 압력 350bar 사양입니다. 가스켓은 PTFE(P) 기본에 NBR(N)/바이톤(V) 옵션이 있으며, 체결 토크 50Nm, 중량 약 0.16kg입니다. 권장 여과도는 15μm(ISO 4406:1999 Class 19/17/14)입니다.",
+      "descriptionEn": "Three-port cartridge logic element / pressure compensator for the SAE10/3 SHORT cavity (7/8\"-14 UNF-2A). Available with 8 bar (A) or 12 bar (B) cracking-pressure springs, rated for flows up to 70 l/min and pressures up to 350 bar. Gasket options are PTFE (P) with NBR (N) or Viton (V) alternatives; tightening torque 50 Nm, weight approx. 0.16 kg. Advised filtration 15 um (ISO 4406:1999 class 19/17/14).",
+      "specs": {
+        "compensator_type": "normally_closed",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 70,
+        "max_pressure_bar": 350,
+        "variant_codes": "LE103A-A (8 bar) / LE103A-B (12 bar); gaskets P (PTFE) / N (NBR) / V (Viton); cavity SAE10/3 SHORT"
+      },
+      "sourcePages": "188"
+    }
+  ]
+}

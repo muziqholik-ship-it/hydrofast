@@ -31,6 +31,19 @@ const CATEGORY_LABEL: Record<string, { ko: string; en: string }> = {
   award: { ko: "수상", en: "Award" },
 };
 
+// Rotating hero backdrop — every facility/equipment shot in public/content/about
+// (logo.jfif and worldmap.webp intentionally excluded; they aren't scenery).
+const HERO_IMAGES = [
+  "/content/about/hero-bg.webp",
+  "/content/about/hero1.webp",
+  "/content/about/hero2.webp",
+  "/content/about/hero3.webp",
+  "/content/about/hero4.webp",
+  "/content/about/hero5.webp",
+  "/content/about/hero6.webp",
+  "/content/about/hero7.webp",
+];
+
 const ADDRESS_KO = COMPANY.addressKo;
 const ADDRESS_EN = COMPANY.addressEn;
 const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent("인천광역시 부평구 부평대로 283")}&z=16&output=embed`;
@@ -67,7 +80,7 @@ export default async function AboutPage({ params }: PageProps) {
         kicker="About Us"
         title={ko ? "정밀과 파워, 유압의 모든 것" : "Precision & Power in Hydraulic"}
         tagline={ko ? "(주)하이드로훼스트 — 유압 전문 기업" : "Hydrofast Co., Ltd. — Hydraulic Specialists"}
-        bgImage="/content/about/hero-bg.webp"
+        bgImages={HERO_IMAGES}
       />
 
       {/* Sticky sub-nav */}

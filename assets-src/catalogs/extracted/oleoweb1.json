@@ -1,0 +1,3324 @@
+{
+  "sourcePdf": "OLELOWEB1.pdf",
+  "manufacturer": {
+    "slug": "oleoweb",
+    "name": "Oleoweb S.r.l.",
+    "country": "Italy",
+    "websiteUrl": "https://www.oleoweb.com",
+    "descriptionKo": "Oleoweb S.r.l.은 2004년 설립된 이탈리아의 유압 밸브 전문 제조사로, 카델보스코 디 소프라(레조에밀리아)에 6,000m² 이상의 생산 시설을 갖추고 있습니다. 릴리프·체크·오버센터 밸브, 유량 조절 밸브, 수동 펌프 등 농업기계, 건설기계, 리프팅 장비용 유압 솔루션을 공급합니다.",
+    "descriptionEn": "Oleoweb S.r.l., founded in 2004, is an Italian hydraulic valve manufacturer with over 6,000 square meters of production area in Cadelbosco di Sopra (RE). The company supplies relief, check, overcenter and flow control valves, hand pumps and custom hydraulic solutions for agricultural, construction and lifting machinery."
+  },
+  "categories": [
+    {
+      "slug": "oleoweb-pressure-limiting-valves",
+      "nameKo": "압력 제한 밸브 (릴리프 밸브)",
+      "nameEn": "Pressure Limiting Valves",
+      "descriptionKo": "유압 회로의 압력을 설정값 이하로 제한하는 릴리프 밸브 및 안티쇼크 밸브 시리즈입니다.",
+      "descriptionEn": "Pressure relief and antishock valve series that limit hydraulic circuit pressure to a set value.",
+      "specSchema": [
+        {
+          "key": "valve_function",
+          "labelKo": "밸브 기능",
+          "labelEn": "Valve Function",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "pressure_relief",
+              "labelKo": "릴리프",
+              "labelEn": "Pressure relief"
+            },
+            {
+              "value": "antishock",
+              "labelKo": "안티쇼크",
+              "labelEn": "Antishock"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "cartridge",
+              "labelKo": "카트리지",
+              "labelEn": "Cartridge"
+            },
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "screwed_in",
+              "labelKo": "나사 삽입형",
+              "labelEn": "Screwed-in"
+            },
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            },
+            {
+              "value": "flanged",
+              "labelKo": "플랜지형",
+              "labelEn": "Flanged"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "variant_codes",
+          "labelKo": "포함 모델 코드",
+          "labelEn": "Series Variant Codes",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-sequence-valves",
+      "nameKo": "시퀀스 밸브",
+      "nameEn": "Sequence Valves",
+      "descriptionKo": "복수 액추에이터의 작동 순서를 제어하는 시퀀스 밸브와 엔드 스트로크·셔틀 밸브 시리즈입니다.",
+      "descriptionEn": "Sequence, end-stroke and shuttle valve series for controlling the operating order of multiple actuators.",
+      "specSchema": [
+        {
+          "key": "valve_function",
+          "labelKo": "밸브 기능",
+          "labelEn": "Valve Function",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "sequence",
+              "labelKo": "시퀀스",
+              "labelEn": "Sequence"
+            },
+            {
+              "value": "end_stroke",
+              "labelKo": "엔드 스트로크",
+              "labelEn": "End-stroke"
+            },
+            {
+              "value": "shuttle",
+              "labelKo": "셔틀",
+              "labelEn": "Shuttle"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "cartridge",
+              "labelKo": "카트리지",
+              "labelEn": "Cartridge"
+            },
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "screwed_in",
+              "labelKo": "나사 삽입형",
+              "labelEn": "Screwed-in"
+            },
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "variant_codes",
+          "labelKo": "포함 모델 코드",
+          "labelEn": "Series Variant Codes",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-check-valves",
+      "nameKo": "체크 밸브",
+      "nameEn": "Check Valves",
+      "descriptionKo": "한 방향으로만 유체 흐름을 허용하는 체크 밸브와 호스 파열 시 유량을 차단하는 호스 파열 방지 밸브 시리즈입니다.",
+      "descriptionEn": "One-way check valves and hose burst valves that block flow in the event of a hose failure.",
+      "specSchema": [
+        {
+          "key": "valve_function",
+          "labelKo": "밸브 기능",
+          "labelEn": "Valve Function",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "check",
+              "labelKo": "체크",
+              "labelEn": "Check"
+            },
+            {
+              "value": "hose_burst",
+              "labelKo": "호스 파열 방지",
+              "labelEn": "Hose burst"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "insert",
+              "labelKo": "인서트",
+              "labelEn": "Insert"
+            },
+            {
+              "value": "cartridge",
+              "labelKo": "카트리지",
+              "labelEn": "Cartridge"
+            },
+            {
+              "value": "housing_ff",
+              "labelKo": "하우징 F-F",
+              "labelEn": "Housing F-F"
+            },
+            {
+              "value": "housing_mf",
+              "labelKo": "하우징 M-F",
+              "labelEn": "Housing M-F"
+            },
+            {
+              "value": "housing_mm",
+              "labelKo": "하우징 M-M",
+              "labelEn": "Housing M-M"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "screwed_in",
+              "labelKo": "나사 삽입형",
+              "labelEn": "Screwed-in"
+            },
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "variant_codes",
+          "labelKo": "포함 모델 코드",
+          "labelEn": "Series Variant Codes",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-pilot-operated-check-valves",
+      "nameKo": "파일럿 체크 밸브",
+      "nameEn": "Pilot Operated Check Valves",
+      "descriptionKo": "파일럿 압력 또는 수동·공압 조작으로 역방향 흐름을 개방할 수 있는 파일럿 체크 밸브(로크 밸브) 시리즈입니다.",
+      "descriptionEn": "Pilot operated check (lock) valves that can be opened in reverse by pilot pressure or manual/pneumatic actuation.",
+      "specSchema": [
+        {
+          "key": "operation",
+          "labelKo": "조작 방식",
+          "labelEn": "Operation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "manual",
+              "labelKo": "수동 조작",
+              "labelEn": "Manual operated"
+            },
+            {
+              "value": "lever",
+              "labelKo": "레버 조작",
+              "labelEn": "Lever operated"
+            },
+            {
+              "value": "pneumatic",
+              "labelKo": "공압 조작",
+              "labelEn": "Pneumatic operated"
+            },
+            {
+              "value": "single_po",
+              "labelKo": "싱글 파일럿",
+              "labelEn": "Single PO"
+            },
+            {
+              "value": "double_po",
+              "labelKo": "더블 파일럿",
+              "labelEn": "Double PO"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "cartridge",
+              "labelKo": "카트리지",
+              "labelEn": "Cartridge"
+            },
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "screwed_in",
+              "labelKo": "나사 삽입형",
+              "labelEn": "Screwed-in"
+            },
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            },
+            {
+              "value": "flanged",
+              "labelKo": "플랜지형",
+              "labelEn": "Flanged"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "variant_codes",
+          "labelKo": "포함 모델 코드",
+          "labelEn": "Series Variant Codes",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-overcenter-valves",
+      "nameKo": "오버센터 밸브 (카운터밸런스 밸브)",
+      "nameEn": "Overcenter Valves",
+      "descriptionKo": "부하의 자중 낙하를 방지하고 하강 속도를 제어하는 오버센터(밸런싱) 밸브 시리즈로, 싱글·더블 구성을 제공합니다.",
+      "descriptionEn": "Overcenter (counterbalance) valve series in single and double configurations for load holding and controlled lowering.",
+      "specSchema": [
+        {
+          "key": "configuration",
+          "labelKo": "구성",
+          "labelEn": "Configuration",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "single",
+              "labelKo": "싱글",
+              "labelEn": "Single"
+            },
+            {
+              "value": "double",
+              "labelKo": "더블",
+              "labelEn": "Double"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "cartridge",
+              "labelKo": "카트리지",
+              "labelEn": "Cartridge"
+            },
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "screwed_in",
+              "labelKo": "나사 삽입형",
+              "labelEn": "Screwed-in"
+            },
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            },
+            {
+              "value": "flanged",
+              "labelKo": "플랜지형",
+              "labelEn": "Flanged"
+            },
+            {
+              "value": "banjo_bolt",
+              "labelKo": "반조 볼트형",
+              "labelEn": "Banjo bolt"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "variant_codes",
+          "labelKo": "포함 모델 코드",
+          "labelEn": "Series Variant Codes",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-flow-regulators",
+      "nameKo": "유량 조절 밸브",
+      "nameEn": "Flow Regulators",
+      "descriptionKo": "압력 보상형·니들형 유량 조절 밸브와 유량 분배/합류 밸브 시리즈로 액추에이터 속도를 정밀하게 제어합니다.",
+      "descriptionEn": "Pressure-compensated and needle-type flow control valves plus flow divider/combiners for precise actuator speed control.",
+      "specSchema": [
+        {
+          "key": "regulator_type",
+          "labelKo": "조절 방식",
+          "labelEn": "Regulator Type",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "compensated",
+              "labelKo": "압력 보상형",
+              "labelEn": "Compensated"
+            },
+            {
+              "value": "needle",
+              "labelKo": "니들형",
+              "labelEn": "Needle"
+            },
+            {
+              "value": "two_way_compensated",
+              "labelKo": "2-way 압력 보상형",
+              "labelEn": "2-way compensated"
+            },
+            {
+              "value": "three_way_to_tank",
+              "labelKo": "3-way 보상형 (탱크 배출)",
+              "labelEn": "3-way compensated, excess to tank"
+            },
+            {
+              "value": "three_way_to_pressure",
+              "labelKo": "3-way 보상형 (압력측 배출)",
+              "labelEn": "3-way compensated, excess to pressure"
+            },
+            {
+              "value": "divider_combiner",
+              "labelKo": "유량 분배/합류",
+              "labelEn": "Flow divider/combiner"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "insert",
+              "labelKo": "인서트",
+              "labelEn": "Insert"
+            },
+            {
+              "value": "cartridge",
+              "labelKo": "카트리지",
+              "labelEn": "Cartridge"
+            },
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "screwed_in",
+              "labelKo": "나사 삽입형",
+              "labelEn": "Screwed-in"
+            },
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "variant_codes",
+          "labelKo": "포함 모델 코드",
+          "labelEn": "Series Variant Codes",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-solenoid-cartridge-valves",
+      "nameKo": "솔레노이드 카트리지 밸브",
+      "nameEn": "Solenoid Cartridge Valves",
+      "descriptionKo": "전기 신호로 유로를 개폐·전환하는 나사 삽입식 솔레노이드 카트리지 밸브 시리즈입니다.",
+      "descriptionEn": "Screw-in solenoid cartridge valves that open, close or switch flow paths on electrical command.",
+      "specSchema": [
+        {
+          "key": "valve_type",
+          "labelKo": "밸브 타입",
+          "labelEn": "Valve Type",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "check_2_2",
+              "labelKo": "2/2 체크",
+              "labelEn": "2/2 check"
+            },
+            {
+              "value": "check_2_2_double_sealing",
+              "labelKo": "2/2 더블 실링 체크",
+              "labelEn": "2/2 check, double sealing"
+            },
+            {
+              "value": "spool_3_2",
+              "labelKo": "3/2 스풀",
+              "labelEn": "3/2 spool"
+            },
+            {
+              "value": "spool_4_3",
+              "labelKo": "4/3 스풀",
+              "labelEn": "4/3 spool"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "cartridge",
+              "labelKo": "카트리지",
+              "labelEn": "Cartridge"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "screwed_in",
+              "labelKo": "나사 삽입형",
+              "labelEn": "Screwed-in"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "variant_codes",
+          "labelKo": "포함 모델 코드",
+          "labelEn": "Series Variant Codes",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-compensators",
+      "nameKo": "압력 보상기 (컴펜세이터)",
+      "nameEn": "Compensators",
+      "descriptionKo": "부하 변동과 무관하게 일정한 압력 차를 유지시키는 카트리지형 압력 보상기 시리즈입니다.",
+      "descriptionEn": "Cartridge-type pressure compensators that maintain a constant pressure differential regardless of load variations.",
+      "specSchema": [
+        {
+          "key": "compensator_type",
+          "labelKo": "작동 형식",
+          "labelEn": "Compensator Type",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "normally_closed",
+              "labelKo": "노멀 클로즈드",
+              "labelEn": "Normally closed"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "cartridge",
+              "labelKo": "카트리지",
+              "labelEn": "Cartridge"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "screwed_in",
+              "labelKo": "나사 삽입형",
+              "labelEn": "Screwed-in"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "variant_codes",
+          "labelKo": "포함 모델 코드",
+          "labelEn": "Series Variant Codes",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-bases-and-manifolds",
+      "nameKo": "베이스 및 매니폴드",
+      "nameEn": "Bases and Manifolds",
+      "descriptionKo": "카트리지 밸브·CETOP 밸브 조합용 베이스와 매니폴드 블록 시리즈입니다.",
+      "descriptionEn": "Base and manifold block series for mounting cartridge and CETOP valves.",
+      "specSchema": [
+        {
+          "key": "base_type",
+          "labelKo": "블록 형식",
+          "labelEn": "Base Type",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "cetop",
+              "labelKo": "CETOP 베이스",
+              "labelEn": "Cetop bases"
+            },
+            {
+              "value": "t_cavity",
+              "labelKo": "T-캐비티 매니폴드",
+              "labelEn": "T-cavities manifolds"
+            },
+            {
+              "value": "sae",
+              "labelKo": "SAE 매니폴드",
+              "labelEn": "SAE manifolds"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "variant_codes",
+          "labelKo": "포함 모델 코드",
+          "labelEn": "Series Variant Codes",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-hand-pumps",
+      "nameKo": "수동 펌프 (핸드 펌프)",
+      "nameEn": "Hand Pumps",
+      "descriptionKo": "레버·페달·푸시풀 조작으로 유압을 발생시키는 수동 펌프 시리즈로 비상용 및 보조 유압원으로 사용됩니다.",
+      "descriptionEn": "Hand pump series operated by lever, pedal or push/pull action, used as emergency or auxiliary hydraulic power sources.",
+      "specSchema": [
+        {
+          "key": "actuation",
+          "labelKo": "조작 방식",
+          "labelEn": "Actuation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "tilting_lever",
+              "labelKo": "틸팅 레버",
+              "labelEn": "Tilting lever"
+            },
+            {
+              "value": "rotative_lever",
+              "labelKo": "회전 레버",
+              "labelEn": "Rotative lever"
+            },
+            {
+              "value": "push_pull",
+              "labelKo": "푸시/풀",
+              "labelEn": "Push/pull"
+            },
+            {
+              "value": "pedal",
+              "labelKo": "페달",
+              "labelEn": "Pedal"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "cartridge",
+              "labelKo": "카트리지",
+              "labelEn": "Cartridge"
+            },
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "screwed_in",
+              "labelKo": "나사 삽입형",
+              "labelEn": "Screwed-in"
+            },
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            },
+            {
+              "value": "flanged",
+              "labelKo": "플랜지형",
+              "labelEn": "Flanged"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "variant_codes",
+          "labelKo": "포함 모델 코드",
+          "labelEn": "Series Variant Codes",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-rotative-flow-diverters",
+      "nameKo": "로터리 유량 전환 밸브",
+      "nameEn": "Rotative Flow Diverters",
+      "descriptionKo": "레버 회전 조작으로 유로를 전환하는 수동 유량 전환 밸브(디버터) 시리즈로 3~8 way 구성을 제공합니다.",
+      "descriptionEn": "Manually operated rotary flow diverter series switching flow paths in 3- to 8-way configurations.",
+      "specSchema": [
+        {
+          "key": "ways",
+          "labelKo": "유로 수 (way)",
+          "labelEn": "Ways",
+          "dataType": "number",
+          "required": false,
+          "sortOrder": 1,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "max_flow_lpm_text",
+          "labelKo": "최대 유량 (L/min)",
+          "labelEn": "Max Flow (L/min)",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-solenoid-flow-diverters",
+      "nameKo": "전자식 유량 전환 밸브",
+      "nameEn": "Solenoid Flow Diverters",
+      "descriptionKo": "솔레노이드 조작으로 유로를 전환하는 전자식 유량 전환 밸브 시리즈입니다.",
+      "descriptionEn": "Solenoid-operated flow diverter series for electrically switching hydraulic flow paths.",
+      "specSchema": [
+        {
+          "key": "ways",
+          "labelKo": "유로 수 (way)",
+          "labelEn": "Ways",
+          "dataType": "number",
+          "required": false,
+          "sortOrder": 1,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "positions",
+          "labelKo": "포지션 수",
+          "labelEn": "Positions",
+          "dataType": "number",
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            }
+          ],
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": true
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-ball-valves",
+      "nameKo": "볼 밸브",
+      "nameEn": "Ball Valves",
+      "descriptionKo": "고압 유압 라인용 볼 밸브 시리즈로 2~4 way 구성을 제공합니다.",
+      "descriptionEn": "High-pressure hydraulic ball valve series in 2- to 4-way configurations.",
+      "specSchema": [
+        {
+          "key": "ways",
+          "labelKo": "유로 수 (way)",
+          "labelEn": "Ways",
+          "dataType": "number",
+          "required": false,
+          "sortOrder": 1,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-rotary-couplings",
+      "nameKo": "로터리 커플링 (회전 조인트)",
+      "nameEn": "Rotary Couplings",
+      "descriptionKo": "회전부에 유압을 전달하는 로터리 커플링(회전 조인트) 시리즈로 직선형과 90° 형을 제공합니다.",
+      "descriptionEn": "Rotary coupling (swivel joint) series for transferring hydraulic power to rotating parts, in straight and 90-degree versions.",
+      "specSchema": [
+        {
+          "key": "configuration",
+          "labelKo": "형상",
+          "labelEn": "Configuration",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "straight",
+              "labelKo": "직선형",
+              "labelEn": "Straight"
+            },
+            {
+              "value": "angle_90",
+              "labelKo": "90°형",
+              "labelEn": "90 degrees"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-reservoirs",
+      "nameKo": "오일 탱크 (리저버)",
+      "nameEn": "Reservoirs",
+      "descriptionKo": "유압 파워팩용 스틸·알루미늄 오일 탱크 시리즈입니다.",
+      "descriptionEn": "Steel and aluminium oil reservoir series for hydraulic power packs.",
+      "specSchema": [
+        {
+          "key": "material",
+          "labelKo": "재질",
+          "labelEn": "Material",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "steel",
+              "labelKo": "스틸",
+              "labelEn": "Steel"
+            },
+            {
+              "value": "aluminium",
+              "labelKo": "알루미늄",
+              "labelEn": "Aluminium"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량 (카탈로그 Q 값)",
+          "labelEn": "Max Flow (catalog Q value)",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-application-valves",
+      "nameKo": "어플리케이션 전용 밸브",
+      "nameEn": "Valves for Applications",
+      "descriptionKo": "특정 장비 전용으로 설계된 밸브 시리즈입니다.",
+      "descriptionEn": "Valve series designed for specific machine applications.",
+      "specSchema": [
+        {
+          "key": "application",
+          "labelKo": "적용 분야",
+          "labelEn": "Application",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "plough",
+              "labelKo": "플라우(쟁기)",
+              "labelEn": "Plough"
+            }
+          ],
+          "required": false,
+          "showInCardTeaser": true,
+          "sortOrder": 1
+        },
+        {
+          "key": "execution",
+          "labelKo": "구조 형식",
+          "labelEn": "Execution",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "parts_in_body",
+              "labelKo": "바디 일체형",
+              "labelEn": "Parts in body"
+            }
+          ],
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "installation",
+          "labelKo": "설치 방식",
+          "labelEn": "Installation",
+          "dataType": "select",
+          "options": [
+            {
+              "value": "in_line",
+              "labelKo": "인라인",
+              "labelEn": "In-line"
+            }
+          ],
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_flow_lpm",
+          "labelKo": "최대 유량",
+          "labelEn": "Max Flow",
+          "dataType": "unit_value",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 압력",
+          "labelEn": "Max Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "variant_codes",
+          "labelKo": "포함 모델 코드",
+          "labelEn": "Series Variant Codes",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
+      ]
+    },
+    {
+      "slug": "oleoweb-accessories-and-components",
+      "nameKo": "액세서리 및 구성품",
+      "nameEn": "Accessories and Components",
+      "descriptionKo": "솔레노이드 코일, 커넥터, 게이지 아이솔레이터, 테스트 포인트, 플러그 등 유압 시스템용 액세서리입니다.",
+      "descriptionEn": "Hydraulic system accessories including solenoid coils, connectors, gauge isolators, test points and plugs.",
+      "specSchema": [
+        {
+          "key": "component_type",
+          "labelKo": "구성품 종류",
+          "labelEn": "Component Type",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 1,
+          "showInCardTeaser": true
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "slug": "oleoweb-vmd",
+      "modelNo": "VMD",
+      "categorySlug": "oleoweb-pressure-limiting-valves",
+      "nameKo": "VMD 릴리프 밸브 (카트리지)",
+      "nameEn": "VMD Pressure Relief Valve (Cartridge)",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 릴리프 밸브로 최대 유량 120 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Pressure Relief Valve with screwed-in installation, rated for flows up to 120 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VMD은(는) 이탈리아 Oleoweb의 릴리프 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 120 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VMD is a pressure relief valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 120 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "pressure_relief",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 120,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "oleoweb-vmdr",
+      "modelNo": "VMDR",
+      "categorySlug": "oleoweb-pressure-limiting-valves",
+      "nameKo": "VMDR 릴리프 밸브 (바디 일체형)",
+      "nameEn": "VMDR Pressure Relief Valve (Parts in body)",
+      "shortDescriptionKo": "인라인 설치 방식의 릴리프 밸브로 최대 유량 120 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Pressure Relief Valve with in-line installation, rated for flows up to 120 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VMDR은(는) 이탈리아 Oleoweb의 릴리프 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 120 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VMDR is a pressure relief valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 120 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "pressure_relief",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 120,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "oleoweb-vbdc",
+      "modelNo": "VBDC",
+      "categorySlug": "oleoweb-pressure-limiting-valves",
+      "nameKo": "VBDC 안티쇼크 밸브 (바디 일체형)",
+      "nameEn": "VBDC Antishock Valve (Parts in body)",
+      "shortDescriptionKo": "인라인 설치 방식의 안티쇼크 밸브로 최대 유량 40 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Antishock Valve with in-line installation, rated for flows up to 40 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VBDC은(는) 이탈리아 Oleoweb의 안티쇼크 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VBDC is an antishock valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 40 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "antishock",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "oleoweb-scf-dcf-dcm-dcv",
+      "modelNo": "SCF-DCF-DCM-DCV",
+      "categorySlug": "oleoweb-pressure-limiting-valves",
+      "nameKo": "SCF-DCF-DCM-DCV 안티쇼크 밸브 (바디 일체형)",
+      "nameEn": "SCF-DCF-DCM-DCV Antishock Valve (Parts in body)",
+      "shortDescriptionKo": "플랜지형 설치 방식의 안티쇼크 밸브로 최대 유량 40 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Antishock Valve with flanged installation, rated for flows up to 40 L/min and pressures up to 350 bar.",
+      "descriptionKo": "SCF-DCF-DCM-DCV은(는) 이탈리아 Oleoweb의 안티쇼크 밸브 시리즈입니다. 바디 일체형 구조와 플랜지형 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 SCF, DCF, DCM, DCV 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The SCF-DCF-DCM-DCV is an antishock valve series from Oleoweb, Italy. It features a parts in body execution with flanged installation, rated for flows up to 40 L/min and pressures up to 350 bar. The series includes the SCF, DCF, DCM, DCV models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "antishock",
+        "execution": "parts_in_body",
+        "installation": "flanged",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350,
+        "variant_codes": "SCF, DCF, DCM, DCV"
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "oleoweb-vsl",
+      "modelNo": "VSL",
+      "categorySlug": "oleoweb-sequence-valves",
+      "nameKo": "VSL 시퀀스 밸브",
+      "nameEn": "VSL Sequence Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 시퀀스 밸브로 최대 유량 40 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Sequence Valve with in-line installation, rated for flows up to 40 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VSL은(는) 이탈리아 Oleoweb의 시퀀스 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VSL is a sequence valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 40 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "sequence",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "oleoweb-vslh",
+      "modelNo": "VSLH",
+      "categorySlug": "oleoweb-sequence-valves",
+      "nameKo": "VSLH 시퀀스 밸브",
+      "nameEn": "VSLH Sequence Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 시퀀스 밸브로 최대 유량 45 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Sequence Valve with in-line installation, rated for flows up to 45 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VSLH은(는) 이탈리아 Oleoweb의 시퀀스 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 45 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VSLH is a sequence valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 45 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "sequence",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 45,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "oleoweb-fcm",
+      "modelNo": "FCM",
+      "categorySlug": "oleoweb-sequence-valves",
+      "nameKo": "FCM 엔드 스트로크 밸브",
+      "nameEn": "FCM End-stroke Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 엔드 스트로크 밸브로 최대 유량 60 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "End-stroke Valve with in-line installation, rated for flows up to 60 L/min and pressures up to 350 bar.",
+      "descriptionKo": "FCM은(는) 이탈리아 Oleoweb의 엔드 스트로크 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 60 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The FCM is an end-stroke valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 60 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "end_stroke",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 60,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "oleoweb-fct",
+      "modelNo": "FCT",
+      "categorySlug": "oleoweb-sequence-valves",
+      "nameKo": "FCT 엔드 스트로크 밸브",
+      "nameEn": "FCT End-stroke Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 엔드 스트로크 밸브로 최대 유량 140 L/min, 최대 압력 250 bar를 지원합니다.",
+      "shortDescriptionEn": "End-stroke Valve with in-line installation, rated for flows up to 140 L/min and pressures up to 250 bar.",
+      "descriptionKo": "FCT은(는) 이탈리아 Oleoweb의 엔드 스트로크 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 140 L/min, 최대 압력 250 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The FCT is an end-stroke valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 140 L/min and pressures up to 250 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "end_stroke",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 140,
+        "max_pressure_bar": 250
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "oleoweb-sv",
+      "modelNo": "SV",
+      "categorySlug": "oleoweb-sequence-valves",
+      "nameKo": "SV 셔틀 밸브",
+      "nameEn": "SV Shuttle Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 셔틀 밸브로 최대 유량 30 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Shuttle Valve with screwed-in installation, rated for flows up to 30 L/min and pressures up to 350 bar.",
+      "descriptionKo": "SV은(는) 이탈리아 Oleoweb의 셔틀 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 30 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The SV is a shuttle valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 30 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "shuttle",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 30,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "oleoweb-vusf",
+      "modelNo": "VUSF",
+      "categorySlug": "oleoweb-sequence-valves",
+      "nameKo": "VUSF 셔틀 밸브",
+      "nameEn": "VUSF Shuttle Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 셔틀 밸브로 최대 유량 60 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Shuttle Valve with in-line installation, rated for flows up to 60 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VUSF은(는) 이탈리아 Oleoweb의 셔틀 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 60 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VUSF is a shuttle valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 60 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "shuttle",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 60,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "oleoweb-vui",
+      "modelNo": "VUI",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUI 체크 밸브 (인서트)",
+      "nameEn": "VUI Check Valve (Insert)",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 체크 밸브로 최대 유량 80 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Check Valve with screwed-in installation, rated for flows up to 80 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VUI은(는) 이탈리아 Oleoweb의 체크 밸브 시리즈입니다. 인서트 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 80 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VUI is a check valve series from Oleoweb, Italy. It features a insert execution with screwed-in installation, rated for flows up to 80 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "check",
+        "execution": "insert",
+        "installation": "screwed_in",
+        "max_flow_lpm": 80,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vuc",
+      "modelNo": "VUC",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUC 체크 밸브 (인서트)",
+      "nameEn": "VUC Check Valve (Insert)",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 체크 밸브로 최대 유량 30 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Check Valve with screwed-in installation, rated for flows up to 30 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VUC은(는) 이탈리아 Oleoweb의 체크 밸브 시리즈입니다. 인서트 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 30 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VUC is a check valve series from Oleoweb, Italy. It features a insert execution with screwed-in installation, rated for flows up to 30 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "check",
+        "execution": "insert",
+        "installation": "screwed_in",
+        "max_flow_lpm": 30,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vup",
+      "modelNo": "VUP",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUP 체크 밸브 (인서트)",
+      "nameEn": "VUP Check Valve (Insert)",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 체크 밸브로 최대 유량 80 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Check Valve with screwed-in installation, rated for flows up to 80 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VUP은(는) 이탈리아 Oleoweb의 체크 밸브 시리즈입니다. 인서트 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 80 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VUP is a check valve series from Oleoweb, Italy. It features a insert execution with screwed-in installation, rated for flows up to 80 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "check",
+        "execution": "insert",
+        "installation": "screwed_in",
+        "max_flow_lpm": 80,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-cur",
+      "modelNo": "CUR",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "CUR 체크 밸브 (카트리지)",
+      "nameEn": "CUR Check Valve (Cartridge)",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 체크 밸브로 최대 유량 60 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Check Valve with screwed-in installation, rated for flows up to 60 L/min and pressures up to 350 bar.",
+      "descriptionKo": "CUR은(는) 이탈리아 Oleoweb의 체크 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 60 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The CUR is a check valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 60 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "check",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 60,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vur",
+      "modelNo": "VUR",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUR 체크 밸브 (하우징 F-F)",
+      "nameEn": "VUR Check Valve (Housing F-F)",
+      "shortDescriptionKo": "인라인 설치 방식의 체크 밸브로 최대 유량 430 L/min, 최대 압력 400 bar를 지원합니다.",
+      "shortDescriptionEn": "Check Valve with in-line installation, rated for flows up to 430 L/min and pressures up to 400 bar.",
+      "descriptionKo": "VUR은(는) 이탈리아 Oleoweb의 체크 밸브 시리즈입니다. 하우징 F-F 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 430 L/min, 최대 압력 400 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VUR is a check valve series from Oleoweb, Italy. It features a housing f-f execution with in-line installation, rated for flows up to 430 L/min and pressures up to 400 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "check",
+        "execution": "housing_ff",
+        "installation": "in_line",
+        "max_flow_lpm": 430,
+        "max_pressure_bar": 400
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vmf",
+      "modelNo": "VMF",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VMF 체크 밸브 (하우징 M-F)",
+      "nameEn": "VMF Check Valve (Housing M-F)",
+      "shortDescriptionKo": "인라인 설치 방식의 체크 밸브로 최대 유량 150 L/min, 최대 압력 400 bar를 지원합니다.",
+      "shortDescriptionEn": "Check Valve with in-line installation, rated for flows up to 150 L/min and pressures up to 400 bar.",
+      "descriptionKo": "VMF은(는) 이탈리아 Oleoweb의 체크 밸브 시리즈입니다. 하우징 M-F 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 150 L/min, 최대 압력 400 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VMF is a check valve series from Oleoweb, Italy. It features a housing m-f execution with in-line installation, rated for flows up to 150 L/min and pressures up to 400 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "check",
+        "execution": "housing_mf",
+        "installation": "in_line",
+        "max_flow_lpm": 150,
+        "max_pressure_bar": 400
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vun",
+      "modelNo": "VUN",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUN 체크 밸브 (하우징 M-M)",
+      "nameEn": "VUN Check Valve (Housing M-M)",
+      "shortDescriptionKo": "인라인 설치 방식의 체크 밸브로 최대 유량 90 L/min, 최대 압력 400 bar를 지원합니다.",
+      "shortDescriptionEn": "Check Valve with in-line installation, rated for flows up to 90 L/min and pressures up to 400 bar.",
+      "descriptionKo": "VUN은(는) 이탈리아 Oleoweb의 체크 밸브 시리즈입니다. 하우징 M-M 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 90 L/min, 최대 압력 400 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VUN is a check valve series from Oleoweb, Italy. It features a housing m-m execution with in-line installation, rated for flows up to 90 L/min and pressures up to 400 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "check",
+        "execution": "housing_mm",
+        "installation": "in_line",
+        "max_flow_lpm": 90,
+        "max_pressure_bar": 400
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vuba",
+      "modelNo": "VUBA",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUBA 호스 파열 방지 밸브 (인서트)",
+      "nameEn": "VUBA Hose Burst Valve (Insert)",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 호스 파열 방지 밸브로 최대 유량 180 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Hose Burst Valve with screwed-in installation, rated for flows up to 180 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VUBA은(는) 이탈리아 Oleoweb의 호스 파열 방지 밸브 시리즈입니다. 인서트 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 180 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VUBA is a hose burst valve series from Oleoweb, Italy. It features a insert execution with screwed-in installation, rated for flows up to 180 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "hose_burst",
+        "execution": "insert",
+        "installation": "screwed_in",
+        "max_flow_lpm": 180,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vuba-din",
+      "modelNo": "VUBA/DIN",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUBA/DIN 호스 파열 방지 밸브 (하우징 M-M)",
+      "nameEn": "VUBA/DIN Hose Burst Valve (Housing M-M)",
+      "shortDescriptionKo": "인라인 설치 방식의 호스 파열 방지 밸브로 최대 유량 80 L/min, 최대 압력 315 bar를 지원합니다.",
+      "shortDescriptionEn": "Hose Burst Valve with in-line installation, rated for flows up to 80 L/min and pressures up to 315 bar.",
+      "descriptionKo": "VUBA/DIN은(는) 이탈리아 Oleoweb의 호스 파열 방지 밸브 시리즈입니다. 하우징 M-M 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 80 L/min, 최대 압력 315 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VUBA/DIN is a hose burst valve series from Oleoweb, Italy. It features a housing m-m execution with in-line installation, rated for flows up to 80 L/min and pressures up to 315 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_function": "hose_burst",
+        "execution": "housing_mm",
+        "installation": "in_line",
+        "max_flow_lpm": 80,
+        "max_pressure_bar": 315
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vem",
+      "modelNo": "VEM",
+      "categorySlug": "oleoweb-pilot-operated-check-valves",
+      "nameKo": "VEM 수동 조작 체크 밸브",
+      "nameEn": "VEM Manually Operated Check Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 수동 조작 체크 밸브로 최대 유량 55 L/min, 최대 압력 320 bar를 지원합니다.",
+      "shortDescriptionEn": "Manually Operated Check Valve with screwed-in installation, rated for flows up to 55 L/min and pressures up to 320 bar.",
+      "descriptionKo": "VEM은(는) 이탈리아 Oleoweb의 수동 조작 체크 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 55 L/min, 최대 압력 320 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VEM is a manually operated check valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 55 L/min and pressures up to 320 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "operation": "manual",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 55,
+        "max_pressure_bar": 320
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-cm6",
+      "modelNo": "CM6",
+      "categorySlug": "oleoweb-pilot-operated-check-valves",
+      "nameKo": "CM6 레버 조작 체크 밸브",
+      "nameEn": "CM6 Lever Operated Check Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 레버 조작 체크 밸브로 최대 유량 25 L/min, 최대 압력 320 bar를 지원합니다.",
+      "shortDescriptionEn": "Lever Operated Check Valve with screwed-in installation, rated for flows up to 25 L/min and pressures up to 320 bar.",
+      "descriptionKo": "CM6은(는) 이탈리아 Oleoweb의 레버 조작 체크 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 25 L/min, 최대 압력 320 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The CM6 is a lever operated check valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 25 L/min and pressures up to 320 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "operation": "lever",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 25,
+        "max_pressure_bar": 320
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vpn6",
+      "modelNo": "VPN6",
+      "categorySlug": "oleoweb-pilot-operated-check-valves",
+      "nameKo": "VPN6 공압 조작 체크 밸브",
+      "nameEn": "VPN6 Pneumatically Operated Check Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 공압 조작 체크 밸브로 최대 유량 40 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Pneumatically Operated Check Valve with screwed-in installation, rated for flows up to 40 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VPN6은(는) 이탈리아 Oleoweb의 공압 조작 체크 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VPN6 is a pneumatically operated check valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 40 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "operation": "pneumatic",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vpr",
+      "modelNo": "VPR",
+      "categorySlug": "oleoweb-pilot-operated-check-valves",
+      "nameKo": "VPR 싱글 파일럿 체크 밸브",
+      "nameEn": "VPR Single PO Check Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 싱글 파일럿 체크 밸브로 최대 유량 30 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Single PO Check Valve with screwed-in installation, rated for flows up to 30 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VPR은(는) 이탈리아 Oleoweb의 싱글 파일럿 체크 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 30 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VPR is a single po check valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 30 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "operation": "single_po",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 30,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-po",
+      "modelNo": "PO",
+      "categorySlug": "oleoweb-pilot-operated-check-valves",
+      "nameKo": "PO 싱글 파일럿 체크 밸브",
+      "nameEn": "PO Single PO Check Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 싱글 파일럿 체크 밸브로 최대 유량 60 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Single PO Check Valve with screwed-in installation, rated for flows up to 60 L/min and pressures up to 350 bar.",
+      "descriptionKo": "PO은(는) 이탈리아 Oleoweb의 싱글 파일럿 체크 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 60 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The PO is a single po check valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 60 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "operation": "single_po",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 60,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vrse-vrsd-vrp",
+      "modelNo": "VRSE - VRSD - VRP",
+      "categorySlug": "oleoweb-pilot-operated-check-valves",
+      "nameKo": "VRSE 시리즈 싱글 파일럿 체크 밸브",
+      "nameEn": "VRSE Series Single PO Check Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 싱글 파일럿 체크 밸브로 최대 유량 70 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Single PO Check Valve with in-line installation, rated for flows up to 70 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VRSE - VRSD - VRP은(는) 이탈리아 Oleoweb의 싱글 파일럿 체크 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 70 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 VRSE, VRSD, VRP 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VRSE - VRSD - VRP is a single po check valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 70 L/min and pressures up to 350 bar. The series includes the VRSE, VRSD, VRP models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "operation": "single_po",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 70,
+        "max_pressure_bar": 350,
+        "variant_codes": "VRSE, VRSD, VRP"
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vrpe",
+      "modelNo": "VRPE",
+      "categorySlug": "oleoweb-pilot-operated-check-valves",
+      "nameKo": "VRPE 싱글 파일럿 체크 밸브",
+      "nameEn": "VRPE Single PO Check Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 싱글 파일럿 체크 밸브로 최대 유량 150 L/min, 최대 압력 300 bar를 지원합니다.",
+      "shortDescriptionEn": "Single PO Check Valve with in-line installation, rated for flows up to 150 L/min and pressures up to 300 bar.",
+      "descriptionKo": "VRPE은(는) 이탈리아 Oleoweb의 싱글 파일럿 체크 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 150 L/min, 최대 압력 300 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VRPE is a single po check valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 150 L/min and pressures up to 300 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "operation": "single_po",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 150,
+        "max_pressure_bar": 300
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vrde-vrdd-vrdl",
+      "modelNo": "VRDE - VRDD - VRDL",
+      "categorySlug": "oleoweb-pilot-operated-check-valves",
+      "nameKo": "VRDE 시리즈 더블 파일럿 체크 밸브",
+      "nameEn": "VRDE Series Double PO Check Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 더블 파일럿 체크 밸브로 최대 유량 70 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Double PO Check Valve with in-line installation, rated for flows up to 70 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VRDE - VRDD - VRDL은(는) 이탈리아 Oleoweb의 더블 파일럿 체크 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 70 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 VRDE, VRDD, VRDL 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VRDE - VRDD - VRDL is a double po check valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 70 L/min and pressures up to 350 bar. The series includes the VRDE, VRDD, VRDL models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "operation": "double_po",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 70,
+        "max_pressure_bar": 350,
+        "variant_codes": "VRDE, VRDD, VRDL"
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-vrdf",
+      "modelNo": "VRDF",
+      "categorySlug": "oleoweb-pilot-operated-check-valves",
+      "nameKo": "VRDF 더블 파일럿 체크 밸브",
+      "nameEn": "VRDF Double PO Check Valve",
+      "shortDescriptionKo": "플랜지형 설치 방식의 더블 파일럿 체크 밸브로 최대 유량 50 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Double PO Check Valve with flanged installation, rated for flows up to 50 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VRDF은(는) 이탈리아 Oleoweb의 더블 파일럿 체크 밸브 시리즈입니다. 바디 일체형 구조와 플랜지형 설치 방식을 채택하였으며, 최대 유량 50 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VRDF is a double po check valve series from Oleoweb, Italy. It features a parts in body execution with flanged installation, rated for flows up to 50 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "operation": "double_po",
+        "execution": "parts_in_body",
+        "installation": "flanged",
+        "max_flow_lpm": 50,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "oleoweb-ow",
+      "modelNo": "OW",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "OW 싱글 오버센터 밸브",
+      "nameEn": "OW Single Overcenter Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 싱글 오버센터 밸브로 최대 유량 60 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Single Overcenter Valve with screwed-in installation, rated for flows up to 60 L/min and pressures up to 350 bar.",
+      "descriptionKo": "OW은(는) 이탈리아 Oleoweb의 싱글 오버센터 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 60 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The OW is a single overcenter valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 60 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "single",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 60,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-b03s-l",
+      "modelNo": "B03S...L",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "B03S...L 싱글 오버센터 밸브",
+      "nameEn": "B03S...L Single Overcenter Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 싱글 오버센터 밸브로 최대 유량 30 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Single Overcenter Valve with in-line installation, rated for flows up to 30 L/min and pressures up to 350 bar.",
+      "descriptionKo": "B03S...L은(는) 이탈리아 Oleoweb의 싱글 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 30 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The B03S...L is a single overcenter valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 30 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "single",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 30,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-b03s-f",
+      "modelNo": "B03S...F",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "B03S...F 싱글 오버센터 밸브",
+      "nameEn": "B03S...F Single Overcenter Valve",
+      "shortDescriptionKo": "플랜지형 설치 방식의 싱글 오버센터 밸브로 최대 유량 30 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Single Overcenter Valve with flanged installation, rated for flows up to 30 L/min and pressures up to 350 bar.",
+      "descriptionKo": "B03S...F은(는) 이탈리아 Oleoweb의 싱글 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 플랜지형 설치 방식을 채택하였으며, 최대 유량 30 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The B03S...F is a single overcenter valve series from Oleoweb, Italy. It features a parts in body execution with flanged installation, rated for flows up to 30 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "single",
+        "execution": "parts_in_body",
+        "installation": "flanged",
+        "max_flow_lpm": 30,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-vbcl-vccl-vblp-vclp-vbcr-vccr-vbfp",
+      "modelNo": "VBCL - VCCL - VBLP - VCLP - VBCR - VCCR - VBFP",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "VBCL 시리즈 싱글 오버센터 밸브",
+      "nameEn": "VBCL Series Single Overcenter Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 싱글 오버센터 밸브로 최대 유량 120 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Single Overcenter Valve with in-line installation, rated for flows up to 120 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VBCL - VCCL - VBLP - VCLP - VBCR - VCCR - VBFP은(는) 이탈리아 Oleoweb의 싱글 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 120 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 VBCL, VCCL, VBLP, VCLP, VBCR, VCCR, VBFP 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VBCL - VCCL - VBLP - VCLP - VBCR - VCCR - VBFP is a single overcenter valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 120 L/min and pressures up to 350 bar. The series includes the VBCL, VCCL, VBLP, VCLP, VBCR, VCCR, VBFP models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "single",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 120,
+        "max_pressure_bar": 350,
+        "variant_codes": "VBCL, VCCL, VBLP, VCLP, VBCR, VCCR, VBFP"
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-vblh-vclh-vblf-vclf",
+      "modelNo": "VBLH - VCLH - VBLF - VCLF",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "VBLH 시리즈 싱글 오버센터 밸브",
+      "nameEn": "VBLH Series Single Overcenter Valve",
+      "shortDescriptionKo": "플랜지형 설치 방식의 싱글 오버센터 밸브로 최대 유량 60 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Single Overcenter Valve with flanged installation, rated for flows up to 60 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VBLH - VCLH - VBLF - VCLF은(는) 이탈리아 Oleoweb의 싱글 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 플랜지형 설치 방식을 채택하였으며, 최대 유량 60 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 VBLH, VCLH, VBLF, VCLF 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VBLH - VCLH - VBLF - VCLF is a single overcenter valve series from Oleoweb, Italy. It features a parts in body execution with flanged installation, rated for flows up to 60 L/min and pressures up to 350 bar. The series includes the VBLH, VCLH, VBLF, VCLF models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "single",
+        "execution": "parts_in_body",
+        "installation": "flanged",
+        "max_flow_lpm": 60,
+        "max_pressure_bar": 350,
+        "variant_codes": "VBLH, VCLH, VBLF, VCLF"
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-vbcb-vccb",
+      "modelNo": "VBCB - VCCB",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "VBCB 시리즈 싱글 오버센터 밸브",
+      "nameEn": "VBCB Series Single Overcenter Valve",
+      "shortDescriptionKo": "반조 볼트형 설치 방식의 싱글 오버센터 밸브로 최대 유량 40 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Single Overcenter Valve with banjo bolt installation, rated for flows up to 40 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VBCB - VCCB은(는) 이탈리아 Oleoweb의 싱글 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 반조 볼트형 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 VBCB, VCCB 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VBCB - VCCB is a single overcenter valve series from Oleoweb, Italy. It features a parts in body execution with banjo bolt installation, rated for flows up to 40 L/min and pressures up to 350 bar. The series includes the VBCB, VCCB models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "single",
+        "execution": "parts_in_body",
+        "installation": "banjo_bolt",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350,
+        "variant_codes": "VBCB, VCCB"
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-scvb",
+      "modelNo": "SCVB",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "SCVB 싱글 오버센터 밸브",
+      "nameEn": "SCVB Single Overcenter Valve",
+      "shortDescriptionKo": "플랜지형 설치 방식의 싱글 오버센터 밸브로 최대 유량 60 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Single Overcenter Valve with flanged installation, rated for flows up to 60 L/min and pressures up to 350 bar.",
+      "descriptionKo": "SCVB은(는) 이탈리아 Oleoweb의 싱글 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 플랜지형 설치 방식을 채택하였으며, 최대 유량 60 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The SCVB is a single overcenter valve series from Oleoweb, Italy. It features a parts in body execution with flanged installation, rated for flows up to 60 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "single",
+        "execution": "parts_in_body",
+        "installation": "flanged",
+        "max_flow_lpm": 60,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-b03d-l",
+      "modelNo": "B03D...L",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "B03D...L 더블 오버센터 밸브",
+      "nameEn": "B03D...L Double Overcenter Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 더블 오버센터 밸브로 최대 유량 30 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Double Overcenter Valve with in-line installation, rated for flows up to 30 L/min and pressures up to 350 bar.",
+      "descriptionKo": "B03D...L은(는) 이탈리아 Oleoweb의 더블 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 30 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The B03D...L is a double overcenter valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 30 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "double",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 30,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-b03d-f",
+      "modelNo": "B03D...F",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "B03D...F 더블 오버센터 밸브",
+      "nameEn": "B03D...F Double Overcenter Valve",
+      "shortDescriptionKo": "플랜지형 설치 방식의 더블 오버센터 밸브로 최대 유량 30 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Double Overcenter Valve with flanged installation, rated for flows up to 30 L/min and pressures up to 350 bar.",
+      "descriptionKo": "B03D...F은(는) 이탈리아 Oleoweb의 더블 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 플랜지형 설치 방식을 채택하였으며, 최대 유량 30 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The B03D...F is a double overcenter valve series from Oleoweb, Italy. It features a parts in body execution with flanged installation, rated for flows up to 30 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "double",
+        "execution": "parts_in_body",
+        "installation": "flanged",
+        "max_flow_lpm": 30,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-vbcd-sovbcd-vbcc-sovbcc",
+      "modelNo": "VBCD - SOVBCD - VBCC - SOVBCC",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "VBCD 시리즈 더블 오버센터 밸브",
+      "nameEn": "VBCD Series Double Overcenter Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 더블 오버센터 밸브로 최대 유량 60 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Double Overcenter Valve with in-line installation, rated for flows up to 60 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VBCD - SOVBCD - VBCC - SOVBCC은(는) 이탈리아 Oleoweb의 더블 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 60 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 VBCD, SOVBCD, VBCC, SOVBCC 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VBCD - SOVBCD - VBCC - SOVBCC is a double overcenter valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 60 L/min and pressures up to 350 bar. The series includes the VBCD, SOVBCD, VBCC, SOVBCC models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "double",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 60,
+        "max_pressure_bar": 350,
+        "variant_codes": "VBCD, SOVBCD, VBCC, SOVBCC"
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-vbcf-vbcfe",
+      "modelNo": "VBCF - VBCFE",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "VBCF 시리즈 더블 오버센터 밸브",
+      "nameEn": "VBCF Series Double Overcenter Valve",
+      "shortDescriptionKo": "플랜지형 설치 방식의 더블 오버센터 밸브로 최대 유량 60 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Double Overcenter Valve with flanged installation, rated for flows up to 60 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VBCF - VBCFE은(는) 이탈리아 Oleoweb의 더블 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 플랜지형 설치 방식을 채택하였으며, 최대 유량 60 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 VBCF, VBCFE 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VBCF - VBCFE is a double overcenter valve series from Oleoweb, Italy. It features a parts in body execution with flanged installation, rated for flows up to 60 L/min and pressures up to 350 bar. The series includes the VBCF, VBCFE models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "double",
+        "execution": "parts_in_body",
+        "installation": "flanged",
+        "max_flow_lpm": 60,
+        "max_pressure_bar": 350,
+        "variant_codes": "VBCF, VBCFE"
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-vbca",
+      "modelNo": "VBCA",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "VBCA 더블 오버센터 밸브",
+      "nameEn": "VBCA Double Overcenter Valve",
+      "shortDescriptionKo": "반조 볼트형 설치 방식의 더블 오버센터 밸브로 최대 유량 40 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Double Overcenter Valve with banjo bolt installation, rated for flows up to 40 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VBCA은(는) 이탈리아 Oleoweb의 더블 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 반조 볼트형 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VBCA is a double overcenter valve series from Oleoweb, Italy. It features a parts in body execution with banjo bolt installation, rated for flows up to 40 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "double",
+        "execution": "parts_in_body",
+        "installation": "banjo_bolt",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-vbcs-vbct",
+      "modelNo": "VBCS - VBCT",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "VBCS 시리즈 더블 오버센터 밸브",
+      "nameEn": "VBCS Series Double Overcenter Valve",
+      "shortDescriptionKo": "플랜지형 설치 방식의 더블 오버센터 밸브로 최대 유량 40 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Double Overcenter Valve with flanged installation, rated for flows up to 40 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VBCS - VBCT은(는) 이탈리아 Oleoweb의 더블 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 플랜지형 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 VBCS, VBCT 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VBCS - VBCT is a double overcenter valve series from Oleoweb, Italy. It features a parts in body execution with flanged installation, rated for flows up to 40 L/min and pressures up to 350 bar. The series includes the VBCS, VBCT models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "double",
+        "execution": "parts_in_body",
+        "installation": "flanged",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350,
+        "variant_codes": "VBCS, VBCT"
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-dcvb",
+      "modelNo": "DCVB",
+      "categorySlug": "oleoweb-overcenter-valves",
+      "nameKo": "DCVB 더블 오버센터 밸브",
+      "nameEn": "DCVB Double Overcenter Valve",
+      "shortDescriptionKo": "플랜지형 설치 방식의 더블 오버센터 밸브로 최대 유량 60 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Double Overcenter Valve with flanged installation, rated for flows up to 60 L/min and pressures up to 350 bar.",
+      "descriptionKo": "DCVB은(는) 이탈리아 Oleoweb의 더블 오버센터 밸브 시리즈입니다. 바디 일체형 구조와 플랜지형 설치 방식을 채택하였으며, 최대 유량 60 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The DCVB is a double overcenter valve series from Oleoweb, Italy. It features a parts in body execution with flanged installation, rated for flows up to 60 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "double",
+        "execution": "parts_in_body",
+        "installation": "flanged",
+        "max_flow_lpm": 60,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "oleoweb-vcc-vscr",
+      "modelNo": "VCC - VSCR",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "VCC 시리즈 압력 보상형 유량 조절 밸브",
+      "nameEn": "VCC Series Compensated Flow Control Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 압력 보상형 유량 조절 밸브로 최대 유량 47 L/min, 최대 압력 250 bar를 지원합니다.",
+      "shortDescriptionEn": "Compensated Flow Control Valve with screwed-in installation, rated for flows up to 47 L/min and pressures up to 250 bar.",
+      "descriptionKo": "VCC - VSCR은(는) 이탈리아 Oleoweb의 압력 보상형 유량 조절 밸브 시리즈입니다. 인서트 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 47 L/min, 최대 압력 250 bar 사양을 갖추고 있습니다. 본 시리즈에는 VCC, VSCR 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VCC - VSCR is a compensated flow control valve series from Oleoweb, Italy. It features a insert execution with screwed-in installation, rated for flows up to 47 L/min and pressures up to 250 bar. The series includes the VCC, VSCR models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "compensated",
+        "execution": "insert",
+        "installation": "screwed_in",
+        "max_flow_lpm": 47,
+        "max_pressure_bar": 250,
+        "variant_codes": "VCC, VSCR"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-vrd",
+      "modelNo": "VRD",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "VRD 압력 보상형 유량 조절 밸브",
+      "nameEn": "VRD Compensated Flow Control Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 압력 보상형 유량 조절 밸브로 최대 유량 150 L/min, 최대 압력 300 bar를 지원합니다.",
+      "shortDescriptionEn": "Compensated Flow Control Valve with screwed-in installation, rated for flows up to 150 L/min and pressures up to 300 bar.",
+      "descriptionKo": "VRD은(는) 이탈리아 Oleoweb의 압력 보상형 유량 조절 밸브 시리즈입니다. 인서트 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 150 L/min, 최대 압력 300 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VRD is a compensated flow control valve series from Oleoweb, Italy. It features a insert execution with screwed-in installation, rated for flows up to 150 L/min and pressures up to 300 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "compensated",
+        "execution": "insert",
+        "installation": "screwed_in",
+        "max_flow_lpm": 150,
+        "max_pressure_bar": 300
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-vsc6-vscf6",
+      "modelNo": "VSC6 - VSCF6",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "VSC6 시리즈 압력 보상형 유량 조절 밸브",
+      "nameEn": "VSC6 Series Compensated Flow Control Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 압력 보상형 유량 조절 밸브로 최대 유량 18 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Compensated Flow Control Valve with screwed-in installation, rated for flows up to 18 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VSC6 - VSCF6은(는) 이탈리아 Oleoweb의 압력 보상형 유량 조절 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 18 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 VSC6, VSCF6 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VSC6 - VSCF6 is a compensated flow control valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 18 L/min and pressures up to 350 bar. The series includes the VSC6, VSCF6 models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "compensated",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 18,
+        "max_pressure_bar": 350,
+        "variant_codes": "VSC6, VSCF6"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-vbf6-vrf6",
+      "modelNo": "VBF6 - VRF6",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "VBF6 시리즈 니들 밸브",
+      "nameEn": "VBF6 Series Needle Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 니들 밸브로 최대 유량 40 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Needle Valve with screwed-in installation, rated for flows up to 40 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VBF6 - VRF6은(는) 이탈리아 Oleoweb의 니들 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 VBF6, VRF6 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VBF6 - VRF6 is a needle valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 40 L/min and pressures up to 350 bar. The series includes the VBF6, VRF6 models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "needle",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350,
+        "variant_codes": "VBF6, VRF6"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-rb-ru",
+      "modelNo": "RB-RU",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "RB-RU 시리즈 니들 밸브",
+      "nameEn": "RB-RU Series Needle Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 니들 밸브로 최대 유량 70 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Needle Valve with screwed-in installation, rated for flows up to 70 L/min and pressures up to 350 bar.",
+      "descriptionKo": "RB-RU은(는) 이탈리아 Oleoweb의 니들 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 70 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 RB, RU 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The RB-RU is a needle valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 70 L/min and pressures up to 350 bar. The series includes the RB, RU models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "needle",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 70,
+        "max_pressure_bar": 350,
+        "variant_codes": "RB, RU"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-vurf-vbrf",
+      "modelNo": "VURF - VBRF",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "VURF 시리즈 니들 밸브",
+      "nameEn": "VURF Series Needle Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 니들 밸브로 최대 유량 200 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Needle Valve with in-line installation, rated for flows up to 200 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VURF - VBRF은(는) 이탈리아 Oleoweb의 니들 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 200 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 VURF, VBRF 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VURF - VBRF is a needle valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 200 L/min and pressures up to 350 bar. The series includes the VURF, VBRF models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "needle",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 200,
+        "max_pressure_bar": 350,
+        "variant_codes": "VURF, VBRF"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-stu-stuf-stb-stbf",
+      "modelNo": "STU - STUF - STB - STBF",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "STU 시리즈 니들 밸브",
+      "nameEn": "STU Series Needle Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 니들 밸브로 최대 유량 300 L/min, 최대 압력 400 bar를 지원합니다.",
+      "shortDescriptionEn": "Needle Valve with in-line installation, rated for flows up to 300 L/min and pressures up to 400 bar.",
+      "descriptionKo": "STU - STUF - STB - STBF은(는) 이탈리아 Oleoweb의 니들 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 300 L/min, 최대 압력 400 bar 사양을 갖추고 있습니다. 본 시리즈에는 STU, STUF, STB, STBF 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The STU - STUF - STB - STBF is a needle valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 300 L/min and pressures up to 400 bar. The series includes the STU, STUF, STB, STBF models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "needle",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 300,
+        "max_pressure_bar": 400,
+        "variant_codes": "STU, STUF, STB, STBF"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-vrc",
+      "modelNo": "VRC",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "VRC 2-way 압력 보상형 유량 조절 밸브",
+      "nameEn": "VRC 2-Way Compensated Flow Regulator",
+      "shortDescriptionKo": "인라인 설치 방식의 2-way 압력 보상형 유량 조절 밸브로 최대 유량 33 L/min, 최대 압력 250 bar를 지원합니다.",
+      "shortDescriptionEn": "2-Way Compensated Flow Regulator with in-line installation, rated for flows up to 33 L/min and pressures up to 250 bar.",
+      "descriptionKo": "VRC은(는) 이탈리아 Oleoweb의 2-way 압력 보상형 유량 조절 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 33 L/min, 최대 압력 250 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VRC is a 2-way compensated flow regulator series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 33 L/min and pressures up to 250 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "two_way_compensated",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 33,
+        "max_pressure_bar": 250
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-vpt-vpt-ar-vpt-rv",
+      "modelNo": "VPT - VPT/AR - VPT/RV",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "VPT 시리즈 3-way 압력 보상형 유량 조절 밸브 (탱크 배출)",
+      "nameEn": "VPT Series 3-Way Compensated Flow Regulator (Excess to Tank)",
+      "shortDescriptionKo": "인라인 설치 방식의 3-way 압력 보상형 유량 조절 밸브 (탱크 배출)(으)로 최대 유량 240 L/min, 최대 압력 250 bar를 지원합니다.",
+      "shortDescriptionEn": "3-Way Compensated Flow Regulator (Excess to Tank) with in-line installation, rated for flows up to 240 L/min and pressures up to 250 bar.",
+      "descriptionKo": "VPT - VPT/AR - VPT/RV은(는) 이탈리아 Oleoweb의 3-way 압력 보상형 유량 조절 밸브 (탱크 배출) 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 240 L/min, 최대 압력 250 bar 사양을 갖추고 있습니다. 본 시리즈에는 VPT, VPT/AR, VPT/RV 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VPT - VPT/AR - VPT/RV is a 3-way compensated flow regulator (excess to tank) series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 240 L/min and pressures up to 250 bar. The series includes the VPT, VPT/AR, VPT/RV models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "three_way_to_tank",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 240,
+        "max_pressure_bar": 250,
+        "variant_codes": "VPT, VPT/AR, VPT/RV"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-cp10",
+      "modelNo": "CP10",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "CP10 3-way 압력 보상형 유량 조절 밸브 (압력측 배출)",
+      "nameEn": "CP10 3-Way Compensated Flow Regulator (Excess to Pressure)",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 3-way 압력 보상형 유량 조절 밸브 (압력측 배출)(으)로 최대 유량 50 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "3-Way Compensated Flow Regulator (Excess to Pressure) with screwed-in installation, rated for flows up to 50 L/min and pressures up to 350 bar.",
+      "descriptionKo": "CP10은(는) 이탈리아 Oleoweb의 3-way 압력 보상형 유량 조절 밸브 (압력측 배출) 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 50 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The CP10 is a 3-way compensated flow regulator (excess to pressure) series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 50 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "three_way_to_pressure",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 50,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-vpp-vpp-rv",
+      "modelNo": "VPP - VPP/RV",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "VPP 시리즈 3-way 압력 보상형 유량 조절 밸브 (압력측 배출)",
+      "nameEn": "VPP Series 3-Way Compensated Flow Regulator (Excess to Pressure)",
+      "shortDescriptionKo": "인라인 설치 방식의 3-way 압력 보상형 유량 조절 밸브 (압력측 배출)(으)로 최대 유량 150 L/min, 최대 압력 250 bar를 지원합니다.",
+      "shortDescriptionEn": "3-Way Compensated Flow Regulator (Excess to Pressure) with in-line installation, rated for flows up to 150 L/min and pressures up to 250 bar.",
+      "descriptionKo": "VPP - VPP/RV은(는) 이탈리아 Oleoweb의 3-way 압력 보상형 유량 조절 밸브 (압력측 배출) 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 150 L/min, 최대 압력 250 bar 사양을 갖추고 있습니다. 본 시리즈에는 VPP, VPP/RV 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VPP - VPP/RV is a 3-way compensated flow regulator (excess to pressure) series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 150 L/min and pressures up to 250 bar. The series includes the VPP, VPP/RV models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "three_way_to_pressure",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 150,
+        "max_pressure_bar": 250,
+        "variant_codes": "VPP, VPP/RV"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-vdrf",
+      "modelNo": "VDRF",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "VDRF 유량 분배/합류 밸브",
+      "nameEn": "VDRF Flow Divider/Combiner",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 유량 분배/합류 밸브로 최대 유량 40 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Flow Divider/Combiner with screwed-in installation, rated for flows up to 40 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VDRF은(는) 이탈리아 Oleoweb의 유량 분배/합류 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VDRF is a flow divider/combiner series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 40 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "divider_combiner",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-drf",
+      "modelNo": "DRF",
+      "categorySlug": "oleoweb-flow-regulators",
+      "nameKo": "DRF 유량 분배/합류 밸브",
+      "nameEn": "DRF Flow Divider/Combiner",
+      "shortDescriptionKo": "인라인 설치 방식의 유량 분배/합류 밸브로 최대 유량 40 L/min, 최대 압력 250 bar를 지원합니다.",
+      "shortDescriptionEn": "Flow Divider/Combiner with in-line installation, rated for flows up to 40 L/min and pressures up to 250 bar.",
+      "descriptionKo": "DRF은(는) 이탈리아 Oleoweb의 유량 분배/합류 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 250 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The DRF is a flow divider/combiner series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 40 L/min and pressures up to 250 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "regulator_type": "divider_combiner",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 250
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "oleoweb-ec-2",
+      "modelNo": "EC...2",
+      "categorySlug": "oleoweb-solenoid-cartridge-valves",
+      "nameKo": "EC...2 2/2 솔레노이드 체크 밸브",
+      "nameEn": "EC...2 2/2 Solenoid Check Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 2/2 솔레노이드 체크 밸브로 최대 유량 70 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "2/2 Solenoid Check Valve with screwed-in installation, rated for flows up to 70 L/min and pressures up to 350 bar.",
+      "descriptionKo": "EC...2은(는) 이탈리아 Oleoweb의 2/2 솔레노이드 체크 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 70 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The EC...2 is a 2/2 solenoid check valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 70 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_type": "check_2_2",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 70,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "14"
+    },
+    {
+      "slug": "oleoweb-ed-2",
+      "modelNo": "ED...2",
+      "categorySlug": "oleoweb-solenoid-cartridge-valves",
+      "nameKo": "ED...2 2/2 더블 실링 솔레노이드 체크 밸브",
+      "nameEn": "ED...2 2/2 Double Sealing Solenoid Check Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 2/2 더블 실링 솔레노이드 체크 밸브로 최대 유량 40 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "2/2 Double Sealing Solenoid Check Valve with screwed-in installation, rated for flows up to 40 L/min and pressures up to 350 bar.",
+      "descriptionKo": "ED...2은(는) 이탈리아 Oleoweb의 2/2 더블 실링 솔레노이드 체크 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The ED...2 is a 2/2 double sealing solenoid check valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 40 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_type": "check_2_2_double_sealing",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "14"
+    },
+    {
+      "slug": "oleoweb-es-3",
+      "modelNo": "ES...3",
+      "categorySlug": "oleoweb-solenoid-cartridge-valves",
+      "nameKo": "ES...3 3/2 솔레노이드 스풀 밸브",
+      "nameEn": "ES...3 3/2 Solenoid Spool Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 3/2 솔레노이드 스풀 밸브로 최대 유량 15 L/min, 최대 압력 250 bar를 지원합니다.",
+      "shortDescriptionEn": "3/2 Solenoid Spool Valve with screwed-in installation, rated for flows up to 15 L/min and pressures up to 250 bar.",
+      "descriptionKo": "ES...3은(는) 이탈리아 Oleoweb의 3/2 솔레노이드 스풀 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 15 L/min, 최대 압력 250 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The ES...3 is a 3/2 solenoid spool valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 15 L/min and pressures up to 250 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_type": "spool_3_2",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 15,
+        "max_pressure_bar": 250
+      },
+      "sourcePages": "14"
+    },
+    {
+      "slug": "oleoweb-es-4",
+      "modelNo": "ES...4",
+      "categorySlug": "oleoweb-solenoid-cartridge-valves",
+      "nameKo": "ES...4 4/3 솔레노이드 스풀 밸브",
+      "nameEn": "ES...4 4/3 Solenoid Spool Valve",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 4/3 솔레노이드 스풀 밸브로 최대 유량 25 L/min, 최대 압력 250 bar를 지원합니다.",
+      "shortDescriptionEn": "4/3 Solenoid Spool Valve with screwed-in installation, rated for flows up to 25 L/min and pressures up to 250 bar.",
+      "descriptionKo": "ES...4은(는) 이탈리아 Oleoweb의 4/3 솔레노이드 스풀 밸브 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 25 L/min, 최대 압력 250 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The ES...4 is a 4/3 solenoid spool valve series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 25 L/min and pressures up to 250 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "valve_type": "spool_4_3",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 25,
+        "max_pressure_bar": 250
+      },
+      "sourcePages": "14"
+    },
+    {
+      "slug": "oleoweb-le",
+      "modelNo": "LE",
+      "categorySlug": "oleoweb-compensators",
+      "nameKo": "LE 압력 보상기 (노멀 클로즈드)",
+      "nameEn": "LE Compensator (Normally Closed)",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 노멀 클로즈드 압력 보상기로 최대 유량 70 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Normally closed compensator with screwed-in installation, rated for flows up to 70 L/min and pressures up to 350 bar.",
+      "descriptionKo": "LE은(는) 이탈리아 Oleoweb의 노멀 클로즈드 압력 보상기 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 70 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The LE is a normally closed compensator series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 70 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "compensator_type": "normally_closed",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 70,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "14"
+    },
+    {
+      "slug": "oleoweb-bs3-bp3-bs5-bm-bmrv",
+      "modelNo": "BS3 - BP3 - BS5 - BM - BMRV",
+      "categorySlug": "oleoweb-bases-and-manifolds",
+      "nameKo": "BS3 시리즈 CETOP 베이스",
+      "nameEn": "BS3 Series Cetop Base",
+      "shortDescriptionKo": "인라인 설치 방식의 CETOP 베이스로 최대 유량 80 L/min, 최대 압력 210 bar를 지원합니다.",
+      "shortDescriptionEn": "Cetop Base with in-line installation, rated for flows up to 80 L/min and pressures up to 210 bar.",
+      "descriptionKo": "BS3 - BP3 - BS5 - BM - BMRV은(는) 이탈리아 Oleoweb의 CETOP 베이스 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 80 L/min, 최대 압력 210 bar 사양을 갖추고 있습니다. 본 시리즈에는 BS3, BP3, BS5, BM, BMRV 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The BS3 - BP3 - BS5 - BM - BMRV is a cetop base series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 80 L/min and pressures up to 210 bar. The series includes the BS3, BP3, BS5, BM, BMRV models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "base_type": "cetop",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 80,
+        "max_pressure_bar": 210,
+        "variant_codes": "BS3, BP3, BS5, BM, BMRV"
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "oleoweb-t-11a",
+      "modelNo": "T-11A",
+      "categorySlug": "oleoweb-bases-and-manifolds",
+      "nameKo": "T-11A T-캐비티 매니폴드",
+      "nameEn": "T-11A T-Cavity Manifold",
+      "shortDescriptionKo": "인라인 설치 방식의 T-캐비티 매니폴드로 최대 유량 60 L/min, 최대 압력 210 bar를 지원합니다.",
+      "shortDescriptionEn": "T-Cavity Manifold with in-line installation, rated for flows up to 60 L/min and pressures up to 210 bar.",
+      "descriptionKo": "T-11A은(는) 이탈리아 Oleoweb의 T-캐비티 매니폴드 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 60 L/min, 최대 압력 210 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The T-11A is a t-cavity manifold series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 60 L/min and pressures up to 210 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "base_type": "t_cavity",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 60,
+        "max_pressure_bar": 210
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "oleoweb-sae8-sae10",
+      "modelNo": "SAE8 - SAE10",
+      "categorySlug": "oleoweb-bases-and-manifolds",
+      "nameKo": "SAE8 시리즈 SAE 매니폴드",
+      "nameEn": "SAE8 Series SAE Manifold",
+      "shortDescriptionKo": "인라인 설치 방식의 SAE 매니폴드로 최대 유량 70 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "SAE Manifold with in-line installation, rated for flows up to 70 L/min and pressures up to 350 bar.",
+      "descriptionKo": "SAE8 - SAE10은(는) 이탈리아 Oleoweb의 SAE 매니폴드 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 70 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 본 시리즈에는 SAE8, SAE10 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The SAE8 - SAE10 is a sae manifold series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 70 L/min and pressures up to 350 bar. The series includes the SAE8, SAE10 models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "base_type": "sae",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 70,
+        "max_pressure_bar": 350,
+        "variant_codes": "SAE8, SAE10"
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "oleoweb-pmel",
+      "modelNo": "PMEL",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PMEL 틸팅 레버 수동 펌프",
+      "nameEn": "PMEL Tilting Lever Hand Pump",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 틸팅 레버 수동 펌프로 최대 유량 10 L/min, 최대 압력 200 bar를 지원합니다.",
+      "shortDescriptionEn": "Tilting Lever Hand Pump with screwed-in installation, rated for flows up to 10 L/min and pressures up to 200 bar.",
+      "descriptionKo": "PMEL은(는) 이탈리아 Oleoweb의 틸팅 레버 수동 펌프 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 10 L/min, 최대 압력 200 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The PMEL is a tilting lever hand pump series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 10 L/min and pressures up to 200 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "actuation": "tilting_lever",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 10,
+        "max_pressure_bar": 200
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "oleoweb-pm",
+      "modelNo": "PM",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PM 틸팅 레버 수동 펌프",
+      "nameEn": "PM Tilting Lever Hand Pump",
+      "shortDescriptionKo": "인라인 설치 방식의 틸팅 레버 수동 펌프로 최대 유량 70 L/min, 최대 압력 200 bar를 지원합니다.",
+      "shortDescriptionEn": "Tilting Lever Hand Pump with in-line installation, rated for flows up to 70 L/min and pressures up to 200 bar.",
+      "descriptionKo": "PM은(는) 이탈리아 Oleoweb의 틸팅 레버 수동 펌프 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 70 L/min, 최대 압력 200 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The PM is a tilting lever hand pump series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 70 L/min and pressures up to 200 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "actuation": "tilting_lever",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 70,
+        "max_pressure_bar": 200
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "oleoweb-pma-pmi-pms-pmt",
+      "modelNo": "PMA - PMI - PMS - PMT",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PMA 시리즈 틸팅 레버 수동 펌프",
+      "nameEn": "PMA Series Tilting Lever Hand Pump",
+      "shortDescriptionKo": "플랜지형 설치 방식의 틸팅 레버 수동 펌프로 최대 유량 45 L/min, 최대 압력 500 bar를 지원합니다.",
+      "shortDescriptionEn": "Tilting Lever Hand Pump with flanged installation, rated for flows up to 45 L/min and pressures up to 500 bar.",
+      "descriptionKo": "PMA - PMI - PMS - PMT은(는) 이탈리아 Oleoweb의 틸팅 레버 수동 펌프 시리즈입니다. 바디 일체형 구조와 플랜지형 설치 방식을 채택하였으며, 최대 유량 45 L/min, 최대 압력 500 bar 사양을 갖추고 있습니다. 본 시리즈에는 PMA, PMI, PMS, PMT 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The PMA - PMI - PMS - PMT is a tilting lever hand pump series from Oleoweb, Italy. It features a parts in body execution with flanged installation, rated for flows up to 45 L/min and pressures up to 500 bar. The series includes the PMA, PMI, PMS, PMT models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "actuation": "tilting_lever",
+        "execution": "parts_in_body",
+        "installation": "flanged",
+        "max_flow_lpm": 45,
+        "max_pressure_bar": 500,
+        "variant_codes": "PMA, PMI, PMS, PMT"
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "oleoweb-pme1-pme2",
+      "modelNo": "PME1 - PME2",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PME1 시리즈 틸팅 레버 수동 펌프",
+      "nameEn": "PME1 Series Tilting Lever Hand Pump",
+      "shortDescriptionKo": "플랜지형 설치 방식의 틸팅 레버 수동 펌프로 최대 유량 40 L/min, 최대 압력 240 bar를 지원합니다.",
+      "shortDescriptionEn": "Tilting Lever Hand Pump with flanged installation, rated for flows up to 40 L/min and pressures up to 240 bar.",
+      "descriptionKo": "PME1 - PME2은(는) 이탈리아 Oleoweb의 틸팅 레버 수동 펌프 시리즈입니다. 바디 일체형 구조와 플랜지형 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 240 bar 사양을 갖추고 있습니다. 본 시리즈에는 PME1, PME2 모델이 포함됩니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The PME1 - PME2 is a tilting lever hand pump series from Oleoweb, Italy. It features a parts in body execution with flanged installation, rated for flows up to 40 L/min and pressures up to 240 bar. The series includes the PME1, PME2 models. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "actuation": "tilting_lever",
+        "execution": "parts_in_body",
+        "installation": "flanged",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 240,
+        "variant_codes": "PME1, PME2"
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "oleoweb-pmd",
+      "modelNo": "PMD",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PMD 회전 레버 수동 펌프",
+      "nameEn": "PMD Rotative Lever Hand Pump",
+      "shortDescriptionKo": "인라인 설치 방식의 회전 레버 수동 펌프로 최대 유량 17 L/min, 최대 압력 500 bar를 지원합니다.",
+      "shortDescriptionEn": "Rotative Lever Hand Pump with in-line installation, rated for flows up to 17 L/min and pressures up to 500 bar.",
+      "descriptionKo": "PMD은(는) 이탈리아 Oleoweb의 회전 레버 수동 펌프 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 17 L/min, 최대 압력 500 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The PMD is a rotative lever hand pump series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 17 L/min and pressures up to 500 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "actuation": "rotative_lever",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 17,
+        "max_pressure_bar": 500
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "oleoweb-pmep",
+      "modelNo": "PMEP",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PMEP 푸시/풀 수동 펌프",
+      "nameEn": "PMEP Push/Pull Hand Pump",
+      "shortDescriptionKo": "나사 삽입형 설치 방식의 푸시/풀 수동 펌프로 최대 유량 10 L/min, 최대 압력 200 bar를 지원합니다.",
+      "shortDescriptionEn": "Push/Pull Hand Pump with screwed-in installation, rated for flows up to 10 L/min and pressures up to 200 bar.",
+      "descriptionKo": "PMEP은(는) 이탈리아 Oleoweb의 푸시/풀 수동 펌프 시리즈입니다. 카트리지 구조와 나사 삽입형 설치 방식을 채택하였으며, 최대 유량 10 L/min, 최대 압력 200 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The PMEP is a push/pull hand pump series from Oleoweb, Italy. It features a cartridge execution with screwed-in installation, rated for flows up to 10 L/min and pressures up to 200 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "actuation": "push_pull",
+        "execution": "cartridge",
+        "installation": "screwed_in",
+        "max_flow_lpm": 10,
+        "max_pressure_bar": 200
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "oleoweb-pme3",
+      "modelNo": "PME3",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PME3 페달 수동 펌프",
+      "nameEn": "PME3 Pedal Hand Pump",
+      "shortDescriptionKo": "인라인 설치 방식의 페달 수동 펌프로 최대 유량 14 L/min, 최대 압력 220 bar를 지원합니다.",
+      "shortDescriptionEn": "Pedal Hand Pump with in-line installation, rated for flows up to 14 L/min and pressures up to 220 bar.",
+      "descriptionKo": "PME3은(는) 이탈리아 Oleoweb의 페달 수동 펌프 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 14 L/min, 최대 압력 220 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The PME3 is a pedal hand pump series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 14 L/min and pressures up to 220 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "actuation": "pedal",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 14,
+        "max_pressure_bar": 220
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "oleoweb-ddfa3",
+      "modelNo": "DDFA3",
+      "categorySlug": "oleoweb-rotative-flow-diverters",
+      "nameKo": "DDFA3 3-way 로터리 유량 전환 밸브",
+      "nameEn": "DDFA3 3-Way Rotary Flow Diverter",
+      "shortDescriptionKo": "인라인 설치형 3-way 로터리 유량 전환 밸브로 최대 유량 180 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "3-way rotary flow diverter with in-line installation, rated up to 180 L/min and 350 bar.",
+      "descriptionKo": "DDFA3은(는) 이탈리아 Oleoweb의 3-way 로터리 유량 전환 밸브입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 180 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 하나의 유압원으로 복수의 액추에이터를 선택 구동하는 회로에 사용됩니다.",
+      "descriptionEn": "The DDFA3 is a 3-way rotary flow diverter from Oleoweb, Italy. It features a parts-in-body execution with in-line installation, rated for flows up to 180 L/min and pressures up to 350 bar. It is used to route a single hydraulic supply to multiple actuators.",
+      "specs": {
+        "ways": 3,
+        "max_flow_lpm_text": "180",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "16"
+    },
+    {
+      "slug": "oleoweb-ddf3",
+      "modelNo": "DDF3",
+      "categorySlug": "oleoweb-rotative-flow-diverters",
+      "nameKo": "DDF3 3-way 로터리 유량 전환 밸브",
+      "nameEn": "DDF3 3-Way Rotary Flow Diverter",
+      "shortDescriptionKo": "인라인 설치형 3-way 로터리 유량 전환 밸브로 최대 유량 200 L/min, 최대 압력 300 bar를 지원합니다.",
+      "shortDescriptionEn": "3-way rotary flow diverter with in-line installation, rated up to 200 L/min and 300 bar.",
+      "descriptionKo": "DDF3은(는) 이탈리아 Oleoweb의 3-way 로터리 유량 전환 밸브입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 200 L/min, 최대 압력 300 bar 사양을 갖추고 있습니다. 하나의 유압원으로 복수의 액추에이터를 선택 구동하는 회로에 사용됩니다.",
+      "descriptionEn": "The DDF3 is a 3-way rotary flow diverter from Oleoweb, Italy. It features a parts-in-body execution with in-line installation, rated for flows up to 200 L/min and pressures up to 300 bar. It is used to route a single hydraulic supply to multiple actuators.",
+      "specs": {
+        "ways": 3,
+        "max_flow_lpm_text": "200",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_pressure_bar": 300
+      },
+      "sourcePages": "16"
+    },
+    {
+      "slug": "oleoweb-ddfa6",
+      "modelNo": "DDFA6",
+      "categorySlug": "oleoweb-rotative-flow-diverters",
+      "nameKo": "DDFA6 6-way 로터리 유량 전환 밸브",
+      "nameEn": "DDFA6 6-Way Rotary Flow Diverter",
+      "shortDescriptionKo": "인라인 설치형 6-way 로터리 유량 전환 밸브로 최대 유량 60+60 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "6-way rotary flow diverter with in-line installation, rated up to 60+60 L/min and 350 bar.",
+      "descriptionKo": "DDFA6은(는) 이탈리아 Oleoweb의 6-way 로터리 유량 전환 밸브입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 60+60 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 하나의 유압원으로 복수의 액추에이터를 선택 구동하는 회로에 사용됩니다.",
+      "descriptionEn": "The DDFA6 is a 6-way rotary flow diverter from Oleoweb, Italy. It features a parts-in-body execution with in-line installation, rated for flows up to 60+60 L/min and pressures up to 350 bar. It is used to route a single hydraulic supply to multiple actuators.",
+      "specs": {
+        "ways": 6,
+        "max_flow_lpm_text": "60+60",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "16"
+    },
+    {
+      "slug": "oleoweb-ddf6",
+      "modelNo": "DDF6",
+      "categorySlug": "oleoweb-rotative-flow-diverters",
+      "nameKo": "DDF6 6-way 로터리 유량 전환 밸브",
+      "nameEn": "DDF6 6-Way Rotary Flow Diverter",
+      "shortDescriptionKo": "인라인 설치형 6-way 로터리 유량 전환 밸브로 최대 유량 200+200 L/min, 최대 압력 300 bar를 지원합니다.",
+      "shortDescriptionEn": "6-way rotary flow diverter with in-line installation, rated up to 200+200 L/min and 300 bar.",
+      "descriptionKo": "DDF6은(는) 이탈리아 Oleoweb의 6-way 로터리 유량 전환 밸브입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 200+200 L/min, 최대 압력 300 bar 사양을 갖추고 있습니다. 하나의 유압원으로 복수의 액추에이터를 선택 구동하는 회로에 사용됩니다.",
+      "descriptionEn": "The DDF6 is a 6-way rotary flow diverter from Oleoweb, Italy. It features a parts-in-body execution with in-line installation, rated for flows up to 200+200 L/min and pressures up to 300 bar. It is used to route a single hydraulic supply to multiple actuators.",
+      "specs": {
+        "ways": 6,
+        "max_flow_lpm_text": "200+200",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_pressure_bar": 300
+      },
+      "sourcePages": "16"
+    },
+    {
+      "slug": "oleoweb-idf4",
+      "modelNo": "IDF4",
+      "categorySlug": "oleoweb-rotative-flow-diverters",
+      "nameKo": "IDF4 4-way 로터리 유량 전환 밸브",
+      "nameEn": "IDF4 4-Way Rotary Flow Diverter",
+      "shortDescriptionKo": "인라인 설치형 4-way 로터리 유량 전환 밸브로 최대 유량 200 L/min, 최대 압력 300 bar를 지원합니다.",
+      "shortDescriptionEn": "4-way rotary flow diverter with in-line installation, rated up to 200 L/min and 300 bar.",
+      "descriptionKo": "IDF4은(는) 이탈리아 Oleoweb의 4-way 로터리 유량 전환 밸브입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 200 L/min, 최대 압력 300 bar 사양을 갖추고 있습니다. 하나의 유압원으로 복수의 액추에이터를 선택 구동하는 회로에 사용됩니다.",
+      "descriptionEn": "The IDF4 is a 4-way rotary flow diverter from Oleoweb, Italy. It features a parts-in-body execution with in-line installation, rated for flows up to 200 L/min and pressures up to 300 bar. It is used to route a single hydraulic supply to multiple actuators.",
+      "specs": {
+        "ways": 4,
+        "max_flow_lpm_text": "200",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_pressure_bar": 300
+      },
+      "sourcePages": "16"
+    },
+    {
+      "slug": "oleoweb-idf8",
+      "modelNo": "IDF8",
+      "categorySlug": "oleoweb-rotative-flow-diverters",
+      "nameKo": "IDF8 8-way 로터리 유량 전환 밸브",
+      "nameEn": "IDF8 8-Way Rotary Flow Diverter",
+      "shortDescriptionKo": "인라인 설치형 8-way 로터리 유량 전환 밸브로 최대 유량 200+200 L/min, 최대 압력 300 bar를 지원합니다.",
+      "shortDescriptionEn": "8-way rotary flow diverter with in-line installation, rated up to 200+200 L/min and 300 bar.",
+      "descriptionKo": "IDF8은(는) 이탈리아 Oleoweb의 8-way 로터리 유량 전환 밸브입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 200+200 L/min, 최대 압력 300 bar 사양을 갖추고 있습니다. 하나의 유압원으로 복수의 액추에이터를 선택 구동하는 회로에 사용됩니다.",
+      "descriptionEn": "The IDF8 is a 8-way rotary flow diverter from Oleoweb, Italy. It features a parts-in-body execution with in-line installation, rated for flows up to 200+200 L/min and pressures up to 300 bar. It is used to route a single hydraulic supply to multiple actuators.",
+      "specs": {
+        "ways": 8,
+        "max_flow_lpm_text": "200+200",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_pressure_bar": 300
+      },
+      "sourcePages": "16"
+    },
+    {
+      "slug": "oleoweb-efd25-6",
+      "modelNo": "EFD25/6",
+      "categorySlug": "oleoweb-solenoid-flow-diverters",
+      "nameKo": "EFD25/6 6-way/2-position 전자식 유량 전환 밸브",
+      "nameEn": "EFD25/6 6-Way/2-Position Solenoid Flow Diverter",
+      "shortDescriptionKo": "인라인 설치 방식의 6-way/2-position 전자식 유량 전환 밸브로 최대 유량 50 L/min, 최대 압력 310 bar를 지원합니다.",
+      "shortDescriptionEn": "6-Way/2-Position Solenoid Flow Diverter with in-line installation, rated for flows up to 50 L/min and pressures up to 310 bar.",
+      "descriptionKo": "EFD25/6은(는) 이탈리아 Oleoweb의 6-way/2-position 전자식 유량 전환 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 50 L/min, 최대 압력 310 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The EFD25/6 is a 6-way/2-position solenoid flow diverter series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 50 L/min and pressures up to 310 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "ways": 6,
+        "positions": 2,
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 50,
+        "max_pressure_bar": 310
+      },
+      "sourcePages": "16"
+    },
+    {
+      "slug": "oleoweb-efd25-8",
+      "modelNo": "EFD25/8",
+      "categorySlug": "oleoweb-solenoid-flow-diverters",
+      "nameKo": "EFD25/8 8-way/2-position 전자식 유량 전환 밸브",
+      "nameEn": "EFD25/8 8-Way/2-Position Solenoid Flow Diverter",
+      "shortDescriptionKo": "인라인 설치 방식의 8-way/2-position 전자식 유량 전환 밸브로 최대 유량 50 L/min, 최대 압력 310 bar를 지원합니다.",
+      "shortDescriptionEn": "8-Way/2-Position Solenoid Flow Diverter with in-line installation, rated for flows up to 50 L/min and pressures up to 310 bar.",
+      "descriptionKo": "EFD25/8은(는) 이탈리아 Oleoweb의 8-way/2-position 전자식 유량 전환 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 50 L/min, 최대 압력 310 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The EFD25/8 is a 8-way/2-position solenoid flow diverter series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 50 L/min and pressures up to 310 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "ways": 8,
+        "positions": 2,
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 50,
+        "max_pressure_bar": 310
+      },
+      "sourcePages": "16"
+    },
+    {
+      "slug": "oleoweb-efd25-10",
+      "modelNo": "EFD25/10",
+      "categorySlug": "oleoweb-solenoid-flow-diverters",
+      "nameKo": "EFD25/10 10-way/2-position 전자식 유량 전환 밸브",
+      "nameEn": "EFD25/10 10-Way/2-Position Solenoid Flow Diverter",
+      "shortDescriptionKo": "인라인 설치 방식의 10-way/2-position 전자식 유량 전환 밸브로 최대 유량 50 L/min, 최대 압력 310 bar를 지원합니다.",
+      "shortDescriptionEn": "10-Way/2-Position Solenoid Flow Diverter with in-line installation, rated for flows up to 50 L/min and pressures up to 310 bar.",
+      "descriptionKo": "EFD25/10은(는) 이탈리아 Oleoweb의 10-way/2-position 전자식 유량 전환 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 50 L/min, 최대 압력 310 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The EFD25/10 is a 10-way/2-position solenoid flow diverter series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 50 L/min and pressures up to 310 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "ways": 10,
+        "positions": 2,
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 50,
+        "max_pressure_bar": 310
+      },
+      "sourcePages": "16"
+    },
+    {
+      "slug": "oleoweb-ras2",
+      "modelNo": "RAS2",
+      "categorySlug": "oleoweb-ball-valves",
+      "nameKo": "RAS2 2-way 볼 밸브",
+      "nameEn": "RAS2 2-Way Ball Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 2-way 볼 밸브로 최대 유량 150 L/min, 최대 압력 500 bar를 지원합니다.",
+      "shortDescriptionEn": "2-Way Ball Valve with in-line installation, rated for flows up to 150 L/min and pressures up to 500 bar.",
+      "descriptionKo": "RAS2은(는) 이탈리아 Oleoweb의 2-way 볼 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 150 L/min, 최대 압력 500 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The RAS2 is a 2-way ball valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 150 L/min and pressures up to 500 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "ways": 2,
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 150,
+        "max_pressure_bar": 500
+      },
+      "sourcePages": "17"
+    },
+    {
+      "slug": "oleoweb-ras3",
+      "modelNo": "RAS3",
+      "categorySlug": "oleoweb-ball-valves",
+      "nameKo": "RAS3 3-way 볼 밸브",
+      "nameEn": "RAS3 3-Way Ball Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 3-way 볼 밸브로 최대 유량 150 L/min, 최대 압력 500 bar를 지원합니다.",
+      "shortDescriptionEn": "3-Way Ball Valve with in-line installation, rated for flows up to 150 L/min and pressures up to 500 bar.",
+      "descriptionKo": "RAS3은(는) 이탈리아 Oleoweb의 3-way 볼 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 150 L/min, 최대 압력 500 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The RAS3 is a 3-way ball valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 150 L/min and pressures up to 500 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "ways": 3,
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 150,
+        "max_pressure_bar": 500
+      },
+      "sourcePages": "17"
+    },
+    {
+      "slug": "oleoweb-ras4",
+      "modelNo": "RAS4",
+      "categorySlug": "oleoweb-ball-valves",
+      "nameKo": "RAS4 4-way 볼 밸브",
+      "nameEn": "RAS4 4-Way Ball Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 4-way 볼 밸브로 최대 유량 150 L/min, 최대 압력 500 bar를 지원합니다.",
+      "shortDescriptionEn": "4-Way Ball Valve with in-line installation, rated for flows up to 150 L/min and pressures up to 500 bar.",
+      "descriptionKo": "RAS4은(는) 이탈리아 Oleoweb의 4-way 볼 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 150 L/min, 최대 압력 500 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The RAS4 is a 4-way ball valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 150 L/min and pressures up to 500 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "ways": 4,
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 150,
+        "max_pressure_bar": 500
+      },
+      "sourcePages": "17"
+    },
+    {
+      "slug": "oleoweb-ggil",
+      "modelNo": "GGIL",
+      "categorySlug": "oleoweb-rotary-couplings",
+      "nameKo": "GGIL 직선형 로터리 커플링",
+      "nameEn": "GGIL Straight Rotary Coupling",
+      "shortDescriptionKo": "인라인 설치 방식의 직선형 로터리 커플링으로 최대 유량 180 L/min, 최대 압력 300 bar를 지원합니다.",
+      "shortDescriptionEn": "Straight Rotary Coupling with in-line installation, rated for flows up to 180 L/min and pressures up to 300 bar.",
+      "descriptionKo": "GGIL은(는) 이탈리아 Oleoweb의 직선형 로터리 커플링 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 180 L/min, 최대 압력 300 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The GGIL is a straight rotary coupling series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 180 L/min and pressures up to 300 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "straight",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 180,
+        "max_pressure_bar": 300
+      },
+      "sourcePages": "17"
+    },
+    {
+      "slug": "oleoweb-gg90",
+      "modelNo": "GG90",
+      "categorySlug": "oleoweb-rotary-couplings",
+      "nameKo": "GG90 90° 로터리 커플링",
+      "nameEn": "GG90 90-Degree Rotary Coupling",
+      "shortDescriptionKo": "인라인 설치 방식의 90° 로터리 커플링으로 최대 유량 180 L/min, 최대 압력 300 bar를 지원합니다.",
+      "shortDescriptionEn": "90-Degree Rotary Coupling with in-line installation, rated for flows up to 180 L/min and pressures up to 300 bar.",
+      "descriptionKo": "GG90은(는) 이탈리아 Oleoweb의 90° 로터리 커플링 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 180 L/min, 최대 압력 300 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The GG90 is a 90-degree rotary coupling series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 180 L/min and pressures up to 300 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "configuration": "angle_90",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 180,
+        "max_pressure_bar": 300
+      },
+      "sourcePages": "17"
+    },
+    {
+      "slug": "oleoweb-tnk",
+      "modelNo": "TNK",
+      "categorySlug": "oleoweb-reservoirs",
+      "nameKo": "TNK 스틸 오일 탱크",
+      "nameEn": "TNK Steel Tank",
+      "shortDescriptionKo": "인라인 설치 방식의 스틸 오일 탱크로 최대 유량 20 L/min를 지원합니다.",
+      "shortDescriptionEn": "Steel Tank with in-line installation, rated for flows up to 20 L/min.",
+      "descriptionKo": "TNK은(는) 이탈리아 Oleoweb의 스틸 오일 탱크 시리즈입니다. 인라인 설치 방식을 채택하였으며, 최대 유량 20 L/min 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The TNK is a steel tank series from Oleoweb, Italy. It features in-line installation, rated for flows up to 20 L/min. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "material": "steel",
+        "installation": "in_line",
+        "max_flow_lpm": 20
+      },
+      "sourcePages": "18"
+    },
+    {
+      "slug": "oleoweb-tna",
+      "modelNo": "TNA",
+      "categorySlug": "oleoweb-reservoirs",
+      "nameKo": "TNA 알루미늄 오일 탱크",
+      "nameEn": "TNA Aluminium Tank",
+      "shortDescriptionKo": "인라인 설치 방식의 알루미늄 오일 탱크로 최대 유량 5 L/min를 지원합니다.",
+      "shortDescriptionEn": "Aluminium Tank with in-line installation, rated for flows up to 5 L/min.",
+      "descriptionKo": "TNA은(는) 이탈리아 Oleoweb의 알루미늄 오일 탱크 시리즈입니다. 인라인 설치 방식을 채택하였으며, 최대 유량 5 L/min 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The TNA is an aluminium tank series from Oleoweb, Italy. It features in-line installation, rated for flows up to 5 L/min. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "material": "aluminium",
+        "installation": "in_line",
+        "max_flow_lpm": 5
+      },
+      "sourcePages": "18"
+    },
+    {
+      "slug": "oleoweb-vara",
+      "modelNo": "VARA",
+      "categorySlug": "oleoweb-application-valves",
+      "nameKo": "VARA 플라우용 밸브",
+      "nameEn": "VARA Plough Valve",
+      "shortDescriptionKo": "인라인 설치 방식의 플라우(쟁기)용 밸브로 최대 유량 40 L/min, 최대 압력 350 bar를 지원합니다.",
+      "shortDescriptionEn": "Plough valve with in-line installation, rated for flows up to 40 L/min and pressures up to 350 bar.",
+      "descriptionKo": "VARA은(는) 이탈리아 Oleoweb의 플라우(쟁기)용 밸브 시리즈입니다. 바디 일체형 구조와 인라인 설치 방식을 채택하였으며, 최대 유량 40 L/min, 최대 압력 350 bar 사양을 갖추고 있습니다. 농업기계, 건설·토목기계, 리프팅 장비 및 산업용 유압 시스템에 적용됩니다.",
+      "descriptionEn": "The VARA is a plough valve series from Oleoweb, Italy. It features a parts in body execution with in-line installation, rated for flows up to 40 L/min and pressures up to 350 bar. Typical applications include agricultural, construction, lifting and industrial hydraulic systems.",
+      "specs": {
+        "application": "plough",
+        "execution": "parts_in_body",
+        "installation": "in_line",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350
+      },
+      "sourcePages": "18"
+    },
+    {
+      "slug": "oleoweb-coils",
+      "modelNo": "COILS",
+      "categorySlug": "oleoweb-accessories-and-components",
+      "nameKo": "솔레노이드 코일",
+      "nameEn": "Solenoid Coils",
+      "shortDescriptionKo": "Oleoweb 유압 밸브 시스템용 코일입니다.",
+      "shortDescriptionEn": "Coils for Oleoweb hydraulic valve systems.",
+      "descriptionKo": "COILS은(는) 이탈리아 Oleoweb의 유압 시스템 액세서리 라인업 중 코일 제품군입니다. Oleoweb 솔레노이드 밸브 및 매니폴드 시스템과 함께 사용되며, 세부 사양은 개별 데이터시트를 참조해야 합니다.",
+      "descriptionEn": "COILS is the Coils range in Oleoweb's hydraulic accessory line-up. They are used together with Oleoweb solenoid valves and manifold systems; refer to individual datasheets for detailed specifications.",
+      "specs": {
+        "component_type": "Coils"
+      },
+      "sourcePages": "19"
+    },
+    {
+      "slug": "oleoweb-connectors",
+      "modelNo": "CONNECTORS",
+      "categorySlug": "oleoweb-accessories-and-components",
+      "nameKo": "커넥터",
+      "nameEn": "Connectors",
+      "shortDescriptionKo": "Oleoweb 유압 밸브 시스템용 커넥터입니다.",
+      "shortDescriptionEn": "Connectors for Oleoweb hydraulic valve systems.",
+      "descriptionKo": "CONNECTORS은(는) 이탈리아 Oleoweb의 유압 시스템 액세서리 라인업 중 커넥터 제품군입니다. Oleoweb 솔레노이드 밸브 및 매니폴드 시스템과 함께 사용되며, 세부 사양은 개별 데이터시트를 참조해야 합니다.",
+      "descriptionEn": "CONNECTORS is the Connectors range in Oleoweb's hydraulic accessory line-up. They are used together with Oleoweb solenoid valves and manifold systems; refer to individual datasheets for detailed specifications.",
+      "specs": {
+        "component_type": "Connectors"
+      },
+      "sourcePages": "19"
+    },
+    {
+      "slug": "oleoweb-sov",
+      "modelNo": "SOV",
+      "categorySlug": "oleoweb-accessories-and-components",
+      "nameKo": "SOV 게이지 아이솔레이터",
+      "nameEn": "SOV Gauge Isolators",
+      "shortDescriptionKo": "Oleoweb 유압 밸브 시스템용 게이지 아이솔레이터입니다.",
+      "shortDescriptionEn": "Gauge isolators for Oleoweb hydraulic valve systems.",
+      "descriptionKo": "SOV은(는) 이탈리아 Oleoweb의 유압 시스템 액세서리 라인업 중 게이지 아이솔레이터 제품군입니다. Oleoweb 솔레노이드 밸브 및 매니폴드 시스템과 함께 사용되며, 세부 사양은 개별 데이터시트를 참조해야 합니다.",
+      "descriptionEn": "SOV is the Gauge isolators range in Oleoweb's hydraulic accessory line-up. They are used together with Oleoweb solenoid valves and manifold systems; refer to individual datasheets for detailed specifications.",
+      "specs": {
+        "component_type": "Gauge isolators"
+      },
+      "sourcePages": "19"
+    },
+    {
+      "slug": "oleoweb-mnp",
+      "modelNo": "MNP",
+      "categorySlug": "oleoweb-accessories-and-components",
+      "nameKo": "MNP 미니메스 테스트 포인트",
+      "nameEn": "MNP Minimess Test Points",
+      "shortDescriptionKo": "Oleoweb 유압 밸브 시스템용 미니메스 테스트 포인트입니다.",
+      "shortDescriptionEn": "Minimess test points for Oleoweb hydraulic valve systems.",
+      "descriptionKo": "MNP은(는) 이탈리아 Oleoweb의 유압 시스템 액세서리 라인업 중 미니메스 테스트 포인트 제품군입니다. Oleoweb 솔레노이드 밸브 및 매니폴드 시스템과 함께 사용되며, 세부 사양은 개별 데이터시트를 참조해야 합니다.",
+      "descriptionEn": "MNP is the Minimess test points range in Oleoweb's hydraulic accessory line-up. They are used together with Oleoweb solenoid valves and manifold systems; refer to individual datasheets for detailed specifications.",
+      "specs": {
+        "component_type": "Minimess test points"
+      },
+      "sourcePages": "19"
+    },
+    {
+      "slug": "oleoweb-plugs-din3852",
+      "modelNo": "PLUGS DIN3852",
+      "categorySlug": "oleoweb-accessories-and-components",
+      "nameKo": "DIN3852 플러그",
+      "nameEn": "Plugs DIN3852",
+      "shortDescriptionKo": "Oleoweb 유압 밸브 시스템용 DIN3852 규격 플러그입니다.",
+      "shortDescriptionEn": "Plugs DIN3852 for Oleoweb hydraulic valve systems.",
+      "descriptionKo": "PLUGS DIN3852은(는) 이탈리아 Oleoweb의 유압 시스템 액세서리 라인업 중 DIN3852 규격 플러그 제품군입니다. Oleoweb 솔레노이드 밸브 및 매니폴드 시스템과 함께 사용되며, 세부 사양은 개별 데이터시트를 참조해야 합니다.",
+      "descriptionEn": "PLUGS DIN3852 is the Plugs DIN3852 range in Oleoweb's hydraulic accessory line-up. They are used together with Oleoweb solenoid valves and manifold systems; refer to individual datasheets for detailed specifications.",
+      "specs": {
+        "component_type": "Plugs DIN3852"
+      },
+      "sourcePages": "19"
+    },
+    {
+      "slug": "oleoweb-plugs-sae8",
+      "modelNo": "PLUGS SAE8",
+      "categorySlug": "oleoweb-accessories-and-components",
+      "nameKo": "SAE8 플러그",
+      "nameEn": "Plugs SAE8",
+      "shortDescriptionKo": "Oleoweb 유압 밸브 시스템용 SAE8 규격 플러그입니다.",
+      "shortDescriptionEn": "Plugs SAE8 for Oleoweb hydraulic valve systems.",
+      "descriptionKo": "PLUGS SAE8은(는) 이탈리아 Oleoweb의 유압 시스템 액세서리 라인업 중 SAE8 규격 플러그 제품군입니다. Oleoweb 솔레노이드 밸브 및 매니폴드 시스템과 함께 사용되며, 세부 사양은 개별 데이터시트를 참조해야 합니다.",
+      "descriptionEn": "PLUGS SAE8 is the Plugs SAE8 range in Oleoweb's hydraulic accessory line-up. They are used together with Oleoweb solenoid valves and manifold systems; refer to individual datasheets for detailed specifications.",
+      "specs": {
+        "component_type": "Plugs SAE8"
+      },
+      "sourcePages": "19"
+    }
+  ],
+  "notes": "Source is Oleoweb's OVERVIEW catalog (OVE24EI00), which only contains summary tables (Model / Description / Execution / Installation / Q up to LPM / P up to bar); thread/port sizes, weights and detailed curves are not present in this PDF, so spec schemas are limited to those columns. Combined table rows (e.g. SCF-DCF-DCM-DCV, VBCL-VCCL-..., B03S...L) were kept as one product per row with member codes in the variant_codes field, matching the catalog's own grouping. Rotative flow diverters use a text flow field (max_flow_lpm_text) because the catalog lists dual-section values like '200+200' and '60+60'. For reservoirs (TNK/TNA) the catalog prints 20/5 under 'Q UP TO LPM' with no pressure value; recorded as-is though it may actually denote tank capacity in liters. The 'Customized solutions' section (p19) has no model rows and was skipped. Accessories rows (COILS, CONNECTORS, SOV, MNP, PLUGS) have no numeric specs in this catalog. Two identical 'PLUGS' model rows were disambiguated as PLUGS DIN3852 and PLUGS SAE8. Note: slugs are based on exact series codes, so if OLELOWEB2.pdf details the same series (e.g. VMD, VBCL), the second agent's slugs may intentionally collide for dedupe."
+}

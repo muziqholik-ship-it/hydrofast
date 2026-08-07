@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { gsap, EASE_ENTRANCE, motionEnabled } from "@/lib/motion";
 import { FluidText } from "@/components/motion/fluid-text";
@@ -19,6 +19,55 @@ const ROTATE_MS = 7000;
  * literals are the existing steel-light/white values already used for
  * gradients elsewhere in the marketing pages — no new colors.
  */
+/*
+ * Headline composer. Lines still split on "\n", but a line holding
+ * "·"-separated keywords (ko: 플랜트·조선·스마트팩토리를 위한) renders each
+ * keyword as its own looping oil fill — staggered loopDelays so the three
+ * words pour/drain on visibly different clocks, forever. Trailing words
+ * after the last keyword (" 위한") and the "·" separators are plain white;
+ * lines without "·" (the en title, the second ko line) keep the original
+ * fill-once load treatment.
+ */
+function HeroTitle({ title }: { title: string }) {
+  let keyword = 0;
+  return (
+    <>
+      {title.split("\n").map((line, li) => {
+        const segs = line.split("·");
+        return (
+          <Fragment key={li}>
+            {li > 0 && <br />}
+            {segs.length === 1 ? (
+              <FluidText text={line} mode="load" color="#ffffff" deepColor="#ffffff" />
+            ) : (
+              segs.map((seg, si) => {
+                // Only the compound word loops; anything after its first
+                // space (the connective " 위한") stays static white.
+                const cut = si === segs.length - 1 ? seg.indexOf(" ") : -1;
+                const word = cut === -1 ? seg : seg.slice(0, cut);
+                const rest = cut === -1 ? "" : seg.slice(cut);
+                return (
+                  <Fragment key={si}>
+                    {si > 0 && <span className="text-white">·</span>}
+                    <FluidText
+                      text={word}
+                      mode="loop"
+                      loopDelay={0.15 + keyword++ * 0.9}
+                      color="#ffffff"
+                      deepColor="#ffffff"
+                    />
+                    {rest && <span className="text-white">{rest}</span>}
+                  </Fragment>
+                );
+              })
+            )}
+          </Fragment>
+        );
+      })}
+    </>
+  );
+}
+
 const slotFallback = (
   <div className="absolute inset-0">
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(55,92,251,0.28),transparent_60%)]" />
@@ -119,8 +168,11 @@ export function HomeHero({
           {kicker}
         </p>
         <h1 className="max-w-3xl text-4xl md:text-6xl font-bold leading-tight tracking-tight">
-          {/* Oil-fill signature type; the title's "\n" line breaks pass through. */}
-          <FluidText text={title} mode="load" />
+          {/* Oil-fill signature type. White fluid + white outlines: unfilled
+              glyphs read as transparent text with a white stroke. The
+              "·"-separated keywords loop empty→full→empty on staggered
+              clocks; the rest fills once (see HeroTitle). */}
+          <HeroTitle title={title} />
         </h1>
         <p data-hero="desc" className="mt-6 max-w-xl text-lg text-white/80">
           {desc}

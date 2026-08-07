@@ -1,0 +1,56 @@
+{
+  "sourcePdf": "GEMELS.pdf",
+  "auditNote": "Visual audit of GEMELS.pdf (720 pages) via rendered page images (poppler + PyMuPDF). Method: (1) read all range-overview pages (PDF p23-43) in full detail — these enumerate the complete product range with catalog page references; (2) contact-sheet sweep of every 4th body page (PDF p44-692, each series spans 4+ pages so no series could be skipped) checking every section header against the 100 extracted products. Result: 2 series were MISSED by the text-only extraction, both hydraulic ball valves with SAE J518 flange-head (C61/C62) ends: GES (catalog p384-387, PDF p386-389) and GBS (catalog p414-417, PDF p416-419). Likely cause: their tables sit directly after the visually similar GEF and GBF sections (the extracted GEF entry's sourcePages '382-389' actually spans the GES pages) and the range overview lists them in a right-hand column easily conflated with GE5/GEF-S/GBF-S in plain text. Everything else was confirmed complete: all 32 quick-coupling series, all remaining hydraulic ball valves (incl. GE5 vs GES disambiguated visually), hydraulic valves (incl. VBP sub-variants VBPSE/VBPDE covered by the single VBP entry), swivel joints, oil & gas ball valves (GN/GN HC/GM/SBF/SBF-W/SBT/DBB), electric motors, and kits (locking, handles, pneumatic/electric actuators J4C-JDA-JSR-DA-SR, limit switch). Pages 694-720 are technical reference only (no products). Both new products reuse the existing gemels-ball-valves category and its spec keys; no new categories needed.",
+  "manufacturer": { "slug": "gemels", "name": "GEMELS S.p.A.", "country": "Italy" },
+  "categories": [],
+  "products": [
+    {
+      "slug": "gemels-ges",
+      "modelNo": "GES",
+      "categorySlug": "gemels-ball-valves",
+      "nameKo": "GES SAE 플랜지 헤드 2웨이 볼 밸브",
+      "nameEn": "GES SAE Flange-Head 2-Way Ball Valve",
+      "shortDescriptionKo": "SAE J518 플랜지 헤드(C61/C62) 일체형 2웨이 고압 볼 밸브. DN13~DN25, 최대 420bar",
+      "shortDescriptionEn": "2-way high pressure ball valve with integrated SAE J518 flange heads (C61/C62), DN13 to DN25, up to 420 bar",
+      "descriptionKo": "밸브 양단에 SAE J518 플랜지 헤드가 일체로 가공된 2웨이 고압 볼 밸브입니다. S3000(C61, 35MPa)과 S6000(C62, 42MPa) 압력 클래스를 지원하며 사이즈는 DN13~DN25입니다. 스플릿 플랜지 클램프로 배관에 직결할 수 있어 별도 어댑터가 필요 없고, 표준형 외에 엑스트라 롱(연장형) 버전도 제공됩니다. 탄소강(1.0737, 아연 도금)과 스테인리스강(1.4404) 사양이 있으며 카본강 밸브에는 고정 홀이 기본 포함됩니다.",
+      "descriptionEn": "A 2-way high pressure ball valve with SAE J518 flange heads machined integrally on both ends, for direct split-flange clamping to the line without adapters. Available in S3000 (C61, 35 MPa) and S6000 (C62, 42 MPa) pressure classes, sizes DN13 to DN25, in standard and extra-long body versions. Offered in galvanized carbon steel (1.0737) and stainless steel (1.4404); fixing holes are included on carbon steel valves.",
+      "specs": {
+        "valve_ways": "2_way",
+        "size_range": "DN13 - DN25",
+        "max_pressure_bar": 420,
+        "body_material": "carbon_or_stainless_steel",
+        "seat_material": "POM (옵션: PEEK, PA612, GEMPTFE, PTFE)",
+        "seal_material": "NBR (옵션: FKM, EPDM, MVQ)",
+        "port_types": "SAE J518 플랜지 헤드, S3000(C61)/S6000(C62), 엑스트라 롱 버전 제공",
+        "temp_range": "CS -20°C ~ +100°C / SS -30°C ~ +100°C",
+        "surface_treatment": "아연 도금(Galvanized)",
+        "special_features": "플랜지 헤드 일체형(어댑터 불필요), 카본강 고정 홀 포함, 감축 보어·특수 나사·PN6000psi급·공압/전동 액추에이터·잠금장치 옵션"
+      },
+      "sourcePages": "386-389"
+    },
+    {
+      "slug": "gemels-gbs",
+      "modelNo": "GBS",
+      "categorySlug": "gemels-ball-valves",
+      "nameKo": "GBS 단조 SAE 플랜지 헤드 2웨이 볼 밸브",
+      "nameEn": "GBS Forged SAE Flange-Head 2-Way Ball Valve",
+      "shortDescriptionKo": "단조 바디 SAE J518 플랜지 헤드(C61/C62) 2웨이 볼 밸브. DN32~DN50, 최대 420bar",
+      "shortDescriptionEn": "Forged 2-way ball valve with integrated SAE J518 flange heads (C61/C62), DN32 to DN50, up to 420 bar",
+      "descriptionKo": "대구경(DN32~DN50)용 단조 바디 2웨이 고압 볼 밸브로, 양단에 SAE J518 플랜지 헤드가 일체로 가공되어 스플릿 플랜지 클램프로 직결됩니다. S3000(C61: DN32 28MPa, DN40/DN50 21MPa)과 S6000(C62: 전 사이즈 42MPa) 압력 클래스를 지원하며 표준형과 엑스트라 롱(연장형) 버전이 있습니다. 탄소강(바디 1.0570, 아연 도금)과 스테인리스강(1.4404) 사양을 제공합니다.",
+      "descriptionEn": "A forged-body 2-way high pressure ball valve for larger bores (DN32 to DN50) with SAE J518 flange heads machined integrally on both ends for direct split-flange clamping. Available in S3000 (C61: 28 MPa at DN32, 21 MPa at DN40/DN50) and S6000 (C62: 42 MPa all sizes) pressure classes, in standard and extra-long body versions, in galvanized carbon steel (body 1.0570) or stainless steel (1.4404).",
+      "specs": {
+        "valve_ways": "2_way",
+        "size_range": "DN32 - DN50",
+        "max_pressure_bar": 420,
+        "body_material": "carbon_or_stainless_steel",
+        "seat_material": "POM (옵션: PEEK, PA612, GEMPTFE, PTFE)",
+        "seal_material": "NBR (옵션: FKM, EPDM, MVQ)",
+        "port_types": "SAE J518 플랜지 헤드, S3000(C61)/S6000(C62), 엑스트라 롱 버전 제공",
+        "temp_range": "-30°C ~ +100°C (바디 -46°C)",
+        "surface_treatment": "아연 도금(Galvanized)",
+        "special_features": "단조 바디, 플랜지 헤드 일체형(어댑터 불필요), S3000은 사이즈별 정격 상이(DN32 280bar / DN40·50 210bar), 감축 보어·특수 나사·PN6000psi급·공압/전동 액추에이터·잠금장치 옵션"
+      },
+      "sourcePages": "416-419"
+    }
+  ]
+}

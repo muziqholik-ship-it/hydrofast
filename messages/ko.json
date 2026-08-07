@@ -31,7 +31,10 @@
     "relatedProducts": "관련 제품",
     "country": "국가",
     "website": "웹사이트",
-    "model": "모델명"
+    "model": "모델명",
+    "cardView": "카드",
+    "listView": "목록",
+    "resultsCount": "제품 {count}개"
   },
   "hero": {
     "kicker": "HYDRAULIC SYSTEM & SOLUTION PROVIDER",
@@ -83,26 +86,24 @@
   },
   "contactPage": {
     "title": "유압 솔루션의 모든 것,<br/>지금 상담하세요.",
-    "sub": "전문 엔지니어가 최적의 솔루션을 제안해 드립니다.",
-    "formName": "이름",
-    "formCompany": "회사명",
-    "formEmail": "이메일",
-    "formPhone": "연락처",
-    "formBusinessArea": "관심 분야",
-    "formMessage": "문의 내용",
-    "formConsent": "[필수] <link>개인정보 수집 및 이용</link>에 동의합니다",
-    "formSubmit": "문의 보내기",
-    "formSuccess": "문의가 접수되었습니다. 빠르게 회신드리겠습니다.",
-    "formError": "전송 중 오류가 발생했습니다. 다시 시도해주세요.",
-    "errors": {
-      "missing_fields": "필수 항목을 모두 입력해주세요.",
-      "consent_required": "개인정보 수집 및 이용에 동의해주세요.",
-      "invalid_email": "올바른 이메일 주소를 입력해주세요.",
-      "too_long": "입력 가능한 글자 수를 초과했습니다. 내용을 줄여 다시 시도해주세요.",
-      "too_fast": "너무 빠르게 전송되었습니다. 잠시 후 다시 시도해주세요.",
-      "rate_limited": "짧은 시간에 너무 많은 문의가 접수되었습니다. 잠시 후 다시 시도해주세요.",
-      "server_error": "전송 중 오류가 발생했습니다. 다시 시도해주세요."
-    }
+    "sub": "전화 또는 이메일로 문의 주시면 전문 엔지니어가 최적의 솔루션을 제안해 드립니다.",
+    "phoneTitle": "전화 문의",
+    "phoneNote": "평일 오전 9시 ~ 오후 6시 (토/일/공휴일 휴무)",
+    "emailTitle": "이메일 문의",
+    "emailNote": "24시간 접수 · 영업일 기준으로 빠르게 회신드립니다",
+    "guideTitle": "문의 전에 준비해 주세요",
+    "guideSub": "아래 내용을 함께 알려주시면 더 빠르고 정확한 상담이 가능합니다.",
+    "guide1Title": "회사명과 담당자 정보",
+    "guide1Desc": "회사명, 성함, 회신받을 연락처(전화 또는 이메일)",
+    "guide2Title": "관심 분야 · 제품",
+    "guide2Desc": "예: 유압 텐셔너, 초고압 밸브·피팅, 소방 펌프, 토크렌치 교정, 유압 시스템 설계·제작",
+    "guide3Title": "사용 환경과 요구 사양",
+    "guide3Desc": "볼트 규격, 작업 압력·토크 값, 사용 유체, 설치 환경 등 아시는 범위에서 알려주세요",
+    "guide4Title": "수량과 납기",
+    "guide4Desc": "필요 수량과 희망 납기 (교정 문의 시 장비 수량·모델명)",
+    "guide5Title": "참고 자료",
+    "guide5Desc": "도면, 현장 사진, 기존 장비 사진이 있다면 이메일에 첨부해 주세요",
+    "visitTitle": "오시는 길"
   },
   "notFound": {
     "message": "요청하신 페이지를 찾을 수 없습니다.",
@@ -139,7 +140,7 @@
     },
     "contact": {
       "title": "견적 문의",
-      "description": "유압 텐셔닝, 초고압 시스템, 유압 시스템 설계·제작, 토크렌치 교정 관련 견적과 기술 상담을 남겨 주세요. 전문 엔지니어가 빠르게 회신드립니다."
+      "description": "유압 텐셔닝, 초고압 시스템, 유압 시스템 설계·제작, 토크렌치 교정 관련 견적과 기술 상담은 전화·이메일로 문의해 주세요. 전문 엔지니어가 빠르게 회신드립니다."
     },
     "affiliates": {
       "title": "관계사",

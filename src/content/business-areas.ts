@@ -15,7 +15,8 @@
  */
 
 export type Loc = { ko: string; en?: string };
-export type ContentImage = { src: string; caption?: Loc };
+/** `href` (an internal, locale-unprefixed path) turns the rendered card into a link. */
+export type ContentImage = { src: string; caption?: Loc; href?: string };
 
 export type ContentBlock =
   | {
@@ -26,6 +27,12 @@ export type ContentBlock =
       pills?: Loc[];
       images?: ContentImage[];
       imageLayout?: "row" | "grid" | "single";
+      /**
+       * "cover" (default) fills the frame and crops the overflow; "contain"
+       * shows the whole image, letterboxed — use it when the subject runs to
+       * the edges (wide equipment shots, diagrams) and cropping loses content.
+       */
+      imageFit?: "cover" | "contain";
       reverse?: boolean;
     }
   | { kind: "gallery"; title?: Loc; subtitle?: Loc; columns?: 2 | 3 | 4; images: ContentImage[] }
@@ -38,6 +45,18 @@ export type ContentBlock =
       right: { title: Loc; highlight?: boolean; rows: { label: Loc; value: Loc }[] };
     }
   | { kind: "bullets"; title?: Loc; items: Loc[] }
+  /**
+   * Certificates are portrait scanned documents, so they get their own block
+   * rather than a gallery: shown whole (never cropped) on paper-white cards,
+   * with the label beside the sheet instead of overlaid on it.
+   */
+  | {
+      kind: "certs";
+      title?: Loc;
+      subtitle?: Loc;
+      issuerLogo?: string;
+      items: { src: string; title: Loc; note?: Loc }[];
+    }
   | { kind: "brands"; title?: Loc; items: { name: string; country?: string }[] }
   | { kind: "figure"; title?: Loc; src: string; caption?: Loc };
 
@@ -76,7 +95,7 @@ export const BUSINESS_AREAS: BusinessAreaContent[] = [
       ko: "발전·석유화학·중공업·플랜트 현장을 위한 정밀 토크 장비와 국제 인증 교정 시스템, 원자력 A등급 유압 텐셔닝을 공급합니다.",
       en: "Precision torque tooling, internationally certified calibration systems, and nuclear-grade hydraulic tensioning for power, petrochemical and heavy industry.",
     },
-    heroImage: "/content/bolting/precision_torque1.webp",
+    heroImage: "/content/bolting/precision_torque2.webp",
     cardImage: "/content/bolting/smart_factory_torque_management1.webp",
     sections: [
       {
@@ -164,7 +183,7 @@ export const BUSINESS_AREAS: BusinessAreaContent[] = [
       ko: "현장 에어만으로 최대 4,000bar 증압, 6,900bar급 밸브·피팅, 그리고 국내 최초의 물 기반 친환경 고압 시스템까지 — 수소 시대의 고압 코어를 공급합니다.",
       en: "Boosting to 4,000 bar on shop air alone, 6,900 bar-class valves & fittings, and Korea's first water-based high-pressure system — the high-pressure core for the hydrogen era.",
     },
-    heroImage: "/content/fluidgas/hydrogas_main1.jpg",
+    heroImage: "/content/fluidgas/hydrogas_unit2.webp",
     cardImage: "/content/fluidgas/hydrogas_main2.webp",
     sections: [
       {
@@ -356,6 +375,7 @@ export const BUSINESS_AREAS: BusinessAreaContent[] = [
               b("/content/hydraulic/hydraulic_system3.webp"),
             ],
             imageLayout: "grid",
+            imageFit: "contain",
           },
           {
             kind: "brands",
@@ -376,12 +396,68 @@ export const BUSINESS_AREAS: BusinessAreaContent[] = [
           {
             kind: "gallery",
             title: { ko: "맞춤 설계·제작", en: "Custom design & fabrication" },
+            subtitle: {
+              ko: "카드를 클릭하면 프로젝트별 상세 사양과 제작 갤러리를 볼 수 있습니다.",
+              en: "Click a card for each project's detailed specifications and build gallery.",
+            },
             columns: 4,
             images: [
-              b("/content/hydraulic/system_application1.jpg", { ko: "회전 링크용 부착물 테스트 벤치", en: "Rotary-link attachment test bench" }),
-              b("/content/hydraulic/system_application2.jpg", { ko: "EPPR 밸브 테스트 벤치", en: "EPPR valve test bench" }),
-              b("/content/hydraulic/system_application3.jpg", { ko: "트랙터 커넥트 테스트 유니트", en: "Tractor connect test unit" }),
-              b("/content/hydraulic/system_application4.jpg", { ko: "클러치 테스트 벤치", en: "Clutch test bench" }),
+              {
+                src: "/content/hydraulic/system_application1.jpg",
+                caption: { ko: "회전링크 테스트 벤치", en: "Rotary link test bench" },
+                href: "/business/hydraulic-engineering/rotary-link-test-bench",
+              },
+              {
+                src: "/content/hydraulic/system_application2.jpg",
+                caption: { ko: "EPPR 밸브 테스트 벤치", en: "EPPR valve test bench" },
+                href: "/business/hydraulic-engineering/eppr-valve-test-bench",
+              },
+              {
+                src: "/content/hydraulic/system_application3.jpg",
+                caption: { ko: "트랙터 커넥트 테스트 유니트", en: "Tractor connect test unit" },
+                href: "/business/hydraulic-engineering/tractor-connect-test-unit",
+              },
+              {
+                src: "/content/hydraulic/system_application4.jpg",
+                caption: { ko: "드론용 클러치 테스트 벤치", en: "Drone clutch test bench" },
+                href: "/business/hydraulic-engineering/drone-clutch-test-bench",
+              },
+            ],
+          },
+          {
+            kind: "specTable",
+            title: { ko: "맞춤 제작 사례 주요 사양", en: "Key specifications of custom builds" },
+            headers: [
+              { ko: "프로젝트", en: "Project" },
+              { ko: "Main Hydraulic" },
+              { ko: "Sub Hydraulic" },
+              { ko: "특징", en: "Features" },
+            ],
+            rows: [
+              [
+                { ko: "회전링크 테스트 벤치", en: "Rotary link test bench" },
+                { ko: "350bar × 95LPM" },
+                { ko: "210bar × 49LPM" },
+                { ko: "Oil Chilling System" },
+              ],
+              [
+                { ko: "EPPR 밸브 테스트 벤치", en: "EPPR valve test bench" },
+                { ko: "50bar × 100LPM" },
+                { ko: "—" },
+                { ko: "Oil Fan Cooling · 8연 5종 자동 Test", en: "Oil fan cooling · 8-station 5-type automated test" },
+              ],
+              [
+                { ko: "트랙터 커넥트 테스트 유니트", en: "Tractor connect test unit" },
+                { ko: "230bar × 80LPM" },
+                { ko: "230bar × 50LPM" },
+                { ko: "Suction Flow Control System" },
+              ],
+              [
+                { ko: "드론용 클러치 테스트 벤치", en: "Drone clutch test bench" },
+                { ko: "20bar × 30LPM" },
+                { ko: "—" },
+                { ko: "Oil Fan Cooling (rpm 제어) · Oil Suction Control", en: "Oil fan cooling (rpm control) · oil suction control" },
+              ],
             ],
           },
         ],
@@ -421,9 +497,11 @@ export const BUSINESS_AREAS: BusinessAreaContent[] = [
               en: "We supply fire-truck OEMs with the core component of disaster response — water pumps rated 500 to 20,000 LPM, the maximum for fire apparatus.",
             },
             images: [
-              b("/content/fire/pumps.webp", { ko: "소방차용 원심 물 펌프 (500~20,000 LPM)", en: "Centrifugal fire pumps (500–20,000 LPM)" }),
+              b("/content/fire/water_pump03_GODIVA.webp", { ko: "GODIVA 소방펌프", en: "GODIVA fire pump" }),
+              b("/content/fire/water_pump01_HALE.webp", { ko: "HALE 소방펌프", en: "HALE fire pump" }),
+              b("/content/fire/water_pump02_HALE.webp", { ko: "HALE 원심 펌프", en: "HALE centrifugal pump" }),
             ],
-            imageLayout: "single",
+            imageLayout: "row",
           },
           {
             kind: "specTable",
@@ -473,7 +551,8 @@ export const BUSINESS_AREAS: BusinessAreaContent[] = [
             },
             images: [
               b("/content/fire/tunnel-fire.webp", { ko: "터널 화재용 송풍 (BIG)", en: "Tunnel fire ventilation (BIG)" }),
-              b("/content/fire/blower-units.webp", { ko: "차량 탑재형 송풍 유닛", en: "Truck-mounted blower units" }),
+              b("/content/fire/fire_blower01_BIG.webp", { ko: "트레일러형 송풍 유닛 (BIG)", en: "Trailer-mounted blower unit (BIG)" }),
+              b("/content/fire/fire_blower02_BIG.webp", { ko: "차량 탑재형 송풍 유닛 (BIG)", en: "Truck-mounted blower unit (BIG)" }),
             ],
             imageLayout: "row",
           },
@@ -483,7 +562,46 @@ export const BUSINESS_AREAS: BusinessAreaContent[] = [
             images: [
               b("/content/fire/fog-jet.webp", { ko: "분진·미세먼지 안개분사 (WLP)", en: "Dust-suppression fog jet (WLP)" }),
               b("/content/fire/range-diagram.webp", { ko: "도달 150m · 확산 340°", en: "150 m reach · 340° spread" }),
-              b("/content/fire/lowpump.webp", { ko: "저압용 물펌프 (DYNASET)", en: "Low-pressure water pump (DYNASET)" }),
+              b("/content/fire/low_pressure_water_pump01_DYNASET.webp", { ko: "저압용 물펌프 (DYNASET)", en: "Low-pressure water pump (DYNASET)" }),
+              b("/content/fire/low_pressure_water_pump02_DYNASET.webp", { ko: "스트레이너 장착형", en: "With strainer basket" }),
+              b("/content/fire/low_pressure_water_pump03_DYNASET.webp", { ko: "수직 토출형", en: "Vertical-discharge variant" }),
+            ],
+          },
+        ],
+      },
+      {
+        kicker: { ko: "품질 인증", en: "Quality Certification" },
+        heading: { ko: "KFI 인정 취득 품목", en: "KFI-approved product lines" },
+        blocks: [
+          {
+            kind: "certs",
+            title: { ko: "한국소방산업기술원(KFI) 인정서", en: "Korea Fire Institute (KFI) certificates" },
+            subtitle: {
+              ko: "소방펌프·방수총·소화관창·압축공기포 4개 품목에 대해 한국소방산업기술원의 인정을 취득하여, 국내 소방차 제작 사양에 그대로 적용할 수 있습니다.",
+              en: "Fire pumps, monitors, nozzles and compressed-air foam systems all hold Korea Fire Institute approval, so they can be specified directly into domestic fire-apparatus builds.",
+            },
+            issuerLogo: "/content/fire/kfi_logo.webp",
+            items: [
+              {
+                src: "/content/fire/kfi_cert_fire_pump.webp",
+                title: { ko: "소방펌프", en: "Fire pump" },
+                note: { ko: "KFI 인정", en: "KFI approved" },
+              },
+              {
+                src: "/content/fire/kfi_cert_monitor.webp",
+                title: { ko: "방수총 (방수포)", en: "Fire monitor" },
+                note: { ko: "KFI 인정", en: "KFI approved" },
+              },
+              {
+                src: "/content/fire/kfi_cert_nozzle.webp",
+                title: { ko: "소화관창", en: "Fire nozzle" },
+                note: { ko: "KFI 인정", en: "KFI approved" },
+              },
+              {
+                src: "/content/fire/kfi_cert_cafs.webp",
+                title: { ko: "압축공기포", en: "Compressed-air foam" },
+                note: { ko: "KFI 인정", en: "KFI approved" },
+              },
             ],
           },
         ],
@@ -653,7 +771,7 @@ export const BUSINESS_AREAS: BusinessAreaContent[] = [
       ko: "계열사 (주)동신소재의 GFRP 보강근·경량골재·나노 소재 합성 기술과, (주)이에프하이드로의 리튬이온 배터리용 소화약제 EF-LBF20을 소개합니다.",
       en: "The GFRP rebar, lightweight aggregate and nano-synthesis of affiliate DongShin Materials, and EF-LBF20 lithium-ion battery fire suppression from affiliate EF Hydro.",
     },
-    heroImage: "/content/materials/GFRP_Rebar_main.webp",
+    heroImage: "/content/materials/nano_main.webp",
     cardImage: "/content/materials/nano_main.webp",
     sections: [
       {

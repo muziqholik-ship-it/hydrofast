@@ -16,7 +16,6 @@ const SECTIONS = [
   { href: "/admin/certifications", label: "인증 · 특허" },
   { href: "/admin/affiliates", label: "관계사" },
   { href: "/admin/settings", label: "사이트 설정" },
-  { href: "/admin/inquiries", label: "문의 내역" },
 ];
 
 export function AdminSidebar() {

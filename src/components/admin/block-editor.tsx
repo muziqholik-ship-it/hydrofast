@@ -31,6 +31,8 @@ type CompareBlock = Extract<ContentBlock, { kind: "compare" }>;
 type BulletsBlock = Extract<ContentBlock, { kind: "bullets" }>;
 type BrandsBlock = Extract<ContentBlock, { kind: "brands" }>;
 type FigureBlock = Extract<ContentBlock, { kind: "figure" }>;
+type CertsBlock = Extract<ContentBlock, { kind: "certs" }>;
+type CertItem = CertsBlock["items"][number];
 type CompareRow = { label: Loc; value: Loc };
 
 /* ------------------------------------------------------------------ */
@@ -65,6 +67,8 @@ function emptyBlock(kind: ContentBlock["kind"]): ContentBlock {
       return { kind: "brands", items: [] };
     case "figure":
       return { kind: "figure", src: "" };
+    case "certs":
+      return { kind: "certs", items: [] };
   }
 }
 
@@ -76,6 +80,7 @@ const BLOCK_KINDS: { kind: ContentBlock["kind"]; label: string }[] = [
   { kind: "bullets", label: "불릿 목록" },
   { kind: "brands", label: "브랜드" },
   { kind: "figure", label: "이미지(단일)" },
+  { kind: "certs", label: "인증서" },
 ];
 
 function kindLabel(kind: ContentBlock["kind"]): string {
@@ -300,6 +305,15 @@ function ImageListEditor({
             <div className="mt-2">
               <LocInput label="캡션 (선택)" value={img.caption ?? emptyLoc()} onChange={(caption) => update(i, { caption })} />
             </div>
+            <div className="mt-2">
+              <label className={LABEL}>링크 (선택)</label>
+              <input
+                value={img.href ?? ""}
+                onChange={(e) => update(i, { href: e.target.value || undefined })}
+                placeholder="/business/... (내부 경로)"
+                className={INPUT_SM}
+              />
+            </div>
           </div>
         ))}
       </div>
@@ -338,6 +352,17 @@ function FeatureEditor({ block, onChange }: { block: FeatureBlock; onChange: (b:
             <option value="row">가로 (row)</option>
             <option value="grid">그리드 (grid)</option>
             <option value="single">단일 (single)</option>
+          </select>
+        </div>
+        <div>
+          <label className={LABEL}>이미지 맞춤</label>
+          <select
+            value={block.imageFit ?? "cover"}
+            onChange={(e) => onChange({ ...block, imageFit: e.target.value as FeatureBlock["imageFit"] })}
+            className={INPUT_SM}
+          >
+            <option value="cover">채우기 (잘림)</option>
+            <option value="contain">전체 보기 (잘림 없음)</option>
           </select>
         </div>
         <label className="flex items-center gap-2 pb-1.5 text-xs">
@@ -611,6 +636,63 @@ function FigureEditor({ block, onChange }: { block: FigureBlock; onChange: (b: F
   );
 }
 
+function CertsEditor({ block, onChange }: { block: CertsBlock; onChange: (b: CertsBlock) => void }) {
+  function update(i: number, patch: Partial<CertItem>) {
+    onChange({ ...block, items: block.items.map((it, idx) => (idx === i ? { ...it, ...patch } : it)) });
+  }
+  return (
+    <div className="flex flex-col gap-3">
+      <LocInput label="제목 (선택)" value={block.title ?? emptyLoc()} onChange={(title) => onChange({ ...block, title })} />
+      <LocInput label="부제 (선택)" value={block.subtitle ?? emptyLoc()} onChange={(subtitle) => onChange({ ...block, subtitle })} />
+      <div>
+        <label className={LABEL}>인증기관 로고 (선택)</label>
+        <ImageField value={block.issuerLogo ?? ""} onChange={(issuerLogo) => onChange({ ...block, issuerLogo: issuerLogo || undefined })} />
+      </div>
+      <div>
+        <label className={LABEL}>인증서 목록</label>
+        <div className="flex flex-col gap-3">
+          {block.items.map((cert, i) => (
+            <div key={i} className="rounded-[var(--radius-card)] border border-[var(--color-border)] p-3">
+              <div className="mb-2 flex items-center justify-between">
+                <span className="text-[10px] font-semibold text-[var(--color-ink-soft)]">인증서 {i + 1}</span>
+                <div className="flex gap-2 text-xs">
+                  <button type="button" onClick={() => onChange({ ...block, items: moved(block.items, i, -1) })} className={MOVE_BTN}>
+                    ↑
+                  </button>
+                  <button type="button" onClick={() => onChange({ ...block, items: moved(block.items, i, 1) })} className={MOVE_BTN}>
+                    ↓
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onChange({ ...block, items: block.items.filter((_, idx) => idx !== i) })}
+                    className={DEL_BTN}
+                  >
+                    삭제
+                  </button>
+                </div>
+              </div>
+              <ImageField value={cert.src} onChange={(src) => update(i, { src })} />
+              <div className="mt-2">
+                <LocInput label="품목명" value={cert.title} onChange={(title) => update(i, { title })} />
+              </div>
+              <div className="mt-2">
+                <LocInput label="비고 (선택)" value={cert.note ?? emptyLoc()} onChange={(note) => update(i, { note })} />
+              </div>
+            </div>
+          ))}
+        </div>
+        <button
+          type="button"
+          onClick={() => onChange({ ...block, items: [...block.items, { src: "", title: emptyLoc() }] })}
+          className={ADD_BTN}
+        >
+          + 인증서 추가
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function BlockBody({ block, onChange }: { block: ContentBlock; onChange: (b: ContentBlock) => void }) {
   switch (block.kind) {
     case "feature":
@@ -627,6 +709,8 @@ function BlockBody({ block, onChange }: { block: ContentBlock; onChange: (b: Con
       return <BrandsEditor block={block} onChange={onChange} />;
     case "figure":
       return <FigureEditor block={block} onChange={onChange} />;
+    case "certs":
+      return <CertsEditor block={block} onChange={onChange} />;
   }
 }
 

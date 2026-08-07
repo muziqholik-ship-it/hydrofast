@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import { motion, type Variants } from "framer-motion";
+import { Link } from "@/i18n/navigation";
 import type {
   BusinessAreaContent,
   ContentBlock,
@@ -28,12 +30,25 @@ function useT(locale: Locale) {
 
 /* eslint-disable @next/next/no-img-element */
 export function BusinessContent({ area, locale }: { area: BusinessAreaContent; locale: Locale }) {
+  return <ContentSections sections={area.sections} accent={area.accent} locale={locale} />;
+}
+
+/** Standalone section renderer — also used by pages (e.g. custom-project details) that aren't a full business area. */
+export function ContentSections({
+  sections,
+  accent,
+  locale,
+}: {
+  sections: ContentSection[];
+  accent: string;
+  locale: Locale;
+}) {
   const t = useT(locale);
 
   return (
     <div className="flex flex-col">
-      {area.sections.map((section, i) => (
-        <Section key={i} section={section} accent={area.accent} t={t} shaded={i % 2 === 1} />
+      {sections.map((section, i) => (
+        <Section key={i} section={section} accent={accent} t={t} shaded={i % 2 === 1} />
       ))}
     </div>
   );
@@ -94,91 +109,236 @@ function Section({
   );
 }
 
-function Img({ image, t, className = "" }: { image: ContentImage; t: (l?: Loc) => string; className?: string }) {
+/* ── Uncropped image layout ────────────────────────────────────────────────
+ *
+ * Content ratios here run from a 6.4:1 product strip to a 1:2.3 rebar shot, so
+ * no fixed frame can hold them: `object-cover` amputated the ends of the wide
+ * ones and the top and bottom of the tall ones. Nothing below crops. Instead
+ * each figure hugs its photo, and the *layout* adapts to the photo's shape —
+ * uprights stand beside the copy, landscapes flow in a masonry band under it,
+ * and panoramas take the full width of that band.
+ */
+
+/** Under this ratio an image reads as upright and belongs beside the copy. */
+const UPRIGHT_MAX = 1.15;
+/** At or over this an image is a panorama; it spans every column of its band. */
+const PANORAMA_MIN = 2.2;
+/** Ceiling on an upright image, so a 1:2.3 photo can't take over the section. */
+const UPRIGHT_CAP = "clamp(220px, 48vh, 520px)";
+
+type ImageSize = { aspect: number; height: number };
+
+/**
+ * Intrinsic sizes for a block's images, by `src`.
+ *
+ * Measured off a detached `Image()` at low fetch priority rather than the
+ * rendered `<img>`: the layout has to know the shape *before* a lazy image
+ * scrolls into view, or the block would visibly re-flow under the reader. The
+ * warm cache means the real `<img>` then paints instantly. Until a size lands
+ * the image is treated as landscape, which is the uncropped fallback anyway.
+ */
+function useImageSizes(srcs: string[]): Record<string, ImageSize> {
+  const [sizes, setSizes] = useState<Record<string, ImageSize>>({});
+
+  useEffect(() => {
+    if (srcs.length === 0) return;
+    let live = true;
+    const probes = srcs.map((src) => {
+      const url = contentImageUrl(src);
+      if (!url) return null;
+      const probe = new Image();
+      probe.fetchPriority = "low";
+      probe.onload = () => {
+        const { naturalWidth: w, naturalHeight: h } = probe;
+        if (!live || !w || !h) return;
+        setSizes((prev) => (prev[src] ? prev : { ...prev, [src]: { aspect: w / h, height: h } }));
+      };
+      probe.src = url;
+      return probe;
+    });
+    return () => {
+      live = false;
+      probes.forEach((p) => p && (p.onload = null));
+    };
+  }, [srcs]);
+
+  return sizes;
+}
+
+function Img({
+  image,
+  t,
+  className = "",
+  imgClassName = "",
+  style,
+}: {
+  image: ContentImage;
+  t: (l?: Loc) => string;
+  className?: string;
+  imgClassName?: string;
+  style?: React.CSSProperties;
+}) {
   const caption = t(image.caption);
   return (
-    <figure className={`group relative overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] ${className}`}>
+    <figure
+      // The hover affordance is a lift, not a zoom — a zoom inside a frame that
+      // hugs its image would clip the very edges this rewrite exists to save.
+      className={`group relative overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] transition-shadow duration-300 hover:shadow-lg ${className}`}
+      style={style}
+    >
       <img
         src={contentImageUrl(image.src)}
         alt={caption || ""}
         loading="lazy"
         decoding="async"
-        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+        className={`block ${imgClassName}`}
       />
       {caption && (
         <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-3 py-2 text-xs font-medium text-white">
           {caption}
+          {image.href && <span aria-hidden> →</span>}
         </figcaption>
       )}
+      {image.href && <Link href={image.href} aria-label={caption || image.href} className="absolute inset-0" />}
     </figure>
   );
 }
 
+/**
+ * Upright images standing side by side. Each figure is given the photo's own
+ * ratio and a height of `min(cap, natural)` — so it is exactly the shape of its
+ * contents (no letterbox), never crops, and never upscales a small source past
+ * its real pixels.
+ */
+function UprightRow({
+  images,
+  t,
+  sizes,
+}: {
+  images: ContentImage[];
+  t: (l?: Loc) => string;
+  sizes: Record<string, ImageSize>;
+}) {
+  return (
+    <div className="flex flex-wrap items-center justify-center gap-3">
+      {images.map((im, i) => {
+        const size = sizes[im.src];
+        return (
+          <Img
+            key={i}
+            image={im}
+            t={t}
+            className="max-w-full"
+            style={
+              size ? { height: `min(${UPRIGHT_CAP}, ${size.height}px)`, aspectRatio: size.aspect } : undefined
+            }
+            // `contain` inside a frame that already has the image's ratio is a
+            // no-op; it only engages if `max-w-full` clamps a very wide frame on
+            // a narrow screen, where a hairline letterbox beats a distorted photo.
+            imgClassName="h-full w-full object-contain"
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+const BAND_COLUMNS = ["columns-1", "columns-1", "columns-1 sm:columns-2", "columns-2 lg:columns-3", "columns-2 lg:columns-4"];
+
+/**
+ * Landscape images in a masonry band: every one runs at its natural height, so
+ * the mixed ratios settle into balanced columns instead of a ragged grid, and
+ * a panorama breaks out across the whole band rather than shrinking to a sliver.
+ */
+function ImageBand({
+  images,
+  t,
+  sizes,
+  columns,
+}: {
+  images: ContentImage[];
+  t: (l?: Loc) => string;
+  sizes: Record<string, ImageSize>;
+  columns?: number;
+}) {
+  const n = Math.min(columns ?? images.length, images.length, 4);
+  return (
+    <div className={`gap-3 ${BAND_COLUMNS[Math.max(n, 1)]} ${images.length === 1 ? "mx-auto max-w-4xl" : ""}`}>
+      {images.map((im, i) => (
+        <Img
+          key={i}
+          image={im}
+          t={t}
+          className={`mb-3 break-inside-avoid ${(sizes[im.src]?.aspect ?? 0) >= PANORAMA_MIN ? "[column-span:all]" : ""}`}
+          imgClassName="h-auto w-full"
+        />
+      ))}
+    </div>
+  );
+}
+
+/** Every image a block renders, so their ratios can be probed up front. */
+function blockImageSrcs(block: ContentBlock): string[] {
+  if (block.kind === "feature") return (block.images ?? []).map((im) => im.src);
+  if (block.kind === "gallery") return block.images.map((im) => im.src);
+  return [];
+}
+
 function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (l?: Loc) => string }) {
+  const srcs = useMemo(() => blockImageSrcs(block), [block]);
+  const sizes = useImageSizes(srcs);
+
   switch (block.kind) {
     case "feature": {
-      const layout = block.imageLayout ?? "row";
-      const hasImages = block.images && block.images.length > 0;
+      const images = block.images ?? [];
+      // Unmeasured images default to the band, which is uncropped either way.
+      const upright = images.filter((im) => (sizes[im.src]?.aspect ?? Infinity) < UPRIGHT_MAX);
+      const band = images.filter((im) => (sizes[im.src]?.aspect ?? Infinity) >= UPRIGHT_MAX);
+      const split = upright.length > 0;
       return (
-        <div className={`grid gap-8 ${hasImages ? "lg:grid-cols-2 lg:items-center" : ""}`}>
-          <div className={block.reverse ? "lg:order-2" : ""}>
-            {block.badge && (
-              <span
-                className="mb-3 inline-block rounded-[var(--radius-pill)] px-3 py-1 text-xs font-bold text-white"
-                style={{ backgroundColor: accent }}
-              >
-                {t(block.badge)}
-              </span>
-            )}
-            <h3 className="text-xl md:text-2xl font-bold tracking-tight">{t(block.title)}</h3>
-            {block.body && (
-              <p className="mt-3 leading-relaxed text-[var(--color-ink-soft)]">{t(block.body)}</p>
-            )}
-            {block.pills && (
-              <div className="mt-4 flex flex-wrap gap-2">
-                {block.pills.map((p, i) => (
-                  <span
-                    key={i}
-                    className="rounded-[var(--radius-card)] border px-3 py-1 text-sm font-semibold"
-                    style={{ borderColor: accent, color: accent }}
-                  >
-                    {t(p)}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-          {hasImages && (
-            <div className={block.reverse ? "lg:order-1" : ""}>
-              {layout === "single" ? (
-                <Img image={block.images![0]} t={t} className="aspect-[4/3]" />
-              ) : layout === "grid" ? (
-                <div className="grid grid-cols-2 gap-3">
-                  {block.images!.map((im, i) => (
-                    <Img key={i} image={im} t={t} className="aspect-[4/3]" />
-                  ))}
-                </div>
-              ) : (
-                <div className={`grid gap-3 ${block.images!.length >= 3 ? "grid-cols-3" : "grid-cols-2"}`}>
-                  {block.images!.map((im, i) => (
-                    <Img key={i} image={im} t={t} className="aspect-[3/4]" />
+        <div className="flex flex-col gap-8">
+          <div className={`grid gap-8 ${split ? "lg:grid-cols-2 lg:items-center" : ""}`}>
+            <div className={split && block.reverse ? "lg:order-2" : ""}>
+              {block.badge && (
+                <span
+                  className="mb-3 inline-block rounded-[var(--radius-pill)] px-3 py-1 text-xs font-bold text-white"
+                  style={{ backgroundColor: accent }}
+                >
+                  {t(block.badge)}
+                </span>
+              )}
+              <h3 className="text-xl md:text-2xl font-bold tracking-tight">{t(block.title)}</h3>
+              {block.body && (
+                <p className="mt-3 leading-relaxed text-[var(--color-ink-soft)]">{t(block.body)}</p>
+              )}
+              {block.pills && (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {block.pills.map((p, i) => (
+                    <span
+                      key={i}
+                      className="rounded-[var(--radius-card)] border px-3 py-1 text-sm font-semibold"
+                      style={{ borderColor: accent, color: accent }}
+                    >
+                      {t(p)}
+                    </span>
                   ))}
                 </div>
               )}
             </div>
-          )}
+            {split && (
+              <div className={block.reverse ? "lg:order-1" : ""}>
+                <UprightRow images={upright} t={t} sizes={sizes} />
+              </div>
+            )}
+          </div>
+          {/* Landscapes drop below the copy, where they get the full column width
+              instead of being squeezed into the half beside it. */}
+          {band.length > 0 && <ImageBand images={band} t={t} sizes={sizes} />}
         </div>
       );
     }
 
     case "gallery": {
-      const cols = block.columns ?? 3;
-      const gridClass =
-        cols === 4
-          ? "grid-cols-2 md:grid-cols-4"
-          : cols === 2
-          ? "grid-cols-1 sm:grid-cols-2"
-          : "grid-cols-2 md:grid-cols-3";
       return (
         <div>
           {(block.title || block.subtitle) && (
@@ -193,11 +353,7 @@ function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (
               {block.subtitle && <p className="mt-2 text-sm text-[var(--color-ink-soft)]">{t(block.subtitle)}</p>}
             </div>
           )}
-          <div className={`grid gap-3 ${gridClass}`}>
-            {block.images.map((im, i) => (
-              <Img key={i} image={im} t={t} className="aspect-[4/3]" />
-            ))}
-          </div>
+          <ImageBand images={block.images} t={t} sizes={sizes} columns={block.columns ?? 3} />
         </div>
       );
     }
@@ -284,6 +440,57 @@ function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (
               </li>
             ))}
           </ul>
+        </div>
+      );
+
+    case "certs":
+      return (
+        <div>
+          {(block.title || block.subtitle || block.issuerLogo) && (
+            <div className="mb-5 flex flex-wrap items-end justify-between gap-4">
+              <div>
+                {block.title && (
+                  <h3 className="text-lg font-bold">
+                    <span className="border-l-4 pl-3" style={{ borderColor: accent }}>
+                      {t(block.title)}
+                    </span>
+                  </h3>
+                )}
+                {block.subtitle && <p className="mt-2 text-sm text-[var(--color-ink-soft)]">{t(block.subtitle)}</p>}
+              </div>
+              {block.issuerLogo && (
+                <img
+                  src={contentImageUrl(block.issuerLogo)}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  className="h-8 w-auto object-contain"
+                />
+              )}
+            </div>
+          )}
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {block.items.map((cert, i) => (
+              <figure
+                key={i}
+                className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)]"
+              >
+                <div className="bg-white p-3">
+                  <img
+                    src={contentImageUrl(cert.src)}
+                    alt={t(cert.title)}
+                    loading="lazy"
+                    decoding="async"
+                    className="mx-auto aspect-[5/7] w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <figcaption className="border-t border-[var(--color-border)] px-3 py-3">
+                  <div className="text-sm font-semibold leading-snug">{t(cert.title)}</div>
+                  {cert.note && <div className="mt-1 text-xs text-[var(--color-ink-soft)]">{t(cert.note)}</div>}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       );
 

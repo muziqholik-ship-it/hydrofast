@@ -1,0 +1,1011 @@
+{
+  "sourcePdf": "OLELOWEB2.pdf",
+  "pagesCovered": "5-89",
+  "manufacturer": {
+    "slug": "oleoweb",
+    "name": "Oleoweb Srl",
+    "country": "Italy",
+    "websiteUrl": "https://www.oleoweb.com",
+    "descriptionKo": "Oleoweb Srl은 이탈리아 레지오 에밀리아에 본사를 둔 유압 밸브 전문 제조사로, 모바일 기계 및 산업용 유압 시스템을 위한 체크 밸브, 유량 제어 밸브, 안전 밸브, 릴리프 밸브 등을 생산합니다. ISO 9001:2015 인증을 보유하고 있습니다.",
+    "descriptionEn": "Oleoweb Srl, based in Reggio Emilia, Italy, is a specialist manufacturer of hydraulic valves for mobile machinery and industrial hydraulic systems, producing check valves, flow control valves, safety valves and relief valves. The company operates an ISO 9001:2015 certified management system."
+  },
+  "categories": [
+    {
+      "slug": "oleoweb-check-valves",
+      "nameKo": "체크 밸브",
+      "nameEn": "Check Valves",
+      "descriptionKo": "역류를 방지하는 단방향 밸브. 인서트형(카트리지)과 인라인형(F/F, M/F, M/M 하우징), 셔틀 밸브를 포함합니다.",
+      "descriptionEn": "One-way valves preventing reverse flow, including insert (cartridge) types, in-line housings (F/F, M/F, M/M) and load shuttle valves.",
+      "specSchema": [
+        {"key": "max_pressure_bar", "labelKo": "최대 사용 압력", "labelEn": "Max Working Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "port_sizes", "labelKo": "포트 사이즈", "labelEn": "Port Sizes", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "thread_types", "labelKo": "나사 규격", "labelEn": "Thread Types", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "sealing_type", "labelKo": "시트 형식", "labelEn": "Sealing Type", "dataType": "select", "options": [
+          {"value": "ball", "labelKo": "볼 시트", "labelEn": "Ball"},
+          {"value": "poppet", "labelKo": "포핏(콘) 시트", "labelEn": "Poppet"},
+          {"value": "disk", "labelKo": "디스크 시트", "labelEn": "Disk"},
+          {"value": "ball_or_poppet", "labelKo": "볼/포핏 선택", "labelEn": "Ball or Poppet"},
+          {"value": "shuttle", "labelKo": "셔틀", "labelEn": "Shuttle"}
+        ], "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "cracking_pressure", "labelKo": "개방 압력(스프링)", "labelEn": "Cracking Pressure (Spring)", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "mounting_style", "labelKo": "장착 방식", "labelEn": "Mounting Style", "dataType": "select", "options": [
+          {"value": "insert", "labelKo": "인서트(카트리지)", "labelEn": "Insert (Cartridge)"},
+          {"value": "in_line", "labelKo": "인라인", "labelEn": "In-line"}
+        ], "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "max_leakage", "labelKo": "최대 누유량", "labelEn": "Max Leakage", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "oleoweb-safety-valves",
+      "nameKo": "배관 안전 밸브",
+      "nameEn": "Hose Burst Safety Valves",
+      "descriptionKo": "호스/배관 파손 시 유량 급증을 감지하여 자동 차단함으로써 하중의 자유 낙하를 방지하는 배관 안전(호스 파열 방지) 밸브입니다.",
+      "descriptionEn": "Hose burst (pipe safety) valves that automatically shut off when excess flow from a burst hose or pipe is detected, preventing uncontrolled load fall.",
+      "specSchema": [
+        {"key": "max_pressure_bar", "labelKo": "최대 사용 압력", "labelEn": "Max Working Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "port_sizes", "labelKo": "포트 사이즈", "labelEn": "Port Sizes", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "connection_standard", "labelKo": "접속 규격", "labelEn": "Connection Standard", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "setting_range", "labelKo": "차단 유량 설정 범위", "labelEn": "Trip Flow Setting Range", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "orifice_option", "labelKo": "포핏 오리피스 옵션", "labelEn": "Poppet Orifice Option", "dataType": "boolean", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "mounting_style", "labelKo": "장착 방식", "labelEn": "Mounting Style", "dataType": "select", "options": [
+          {"value": "insert", "labelKo": "인서트(카트리지)", "labelEn": "Insert (Cartridge)"},
+          {"value": "in_line", "labelKo": "인라인", "labelEn": "In-line"}
+        ], "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "max_leakage", "labelKo": "최대 누유량", "labelEn": "Max Leakage", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "oleoweb-flow-control-valves",
+      "nameKo": "유량 제어 밸브",
+      "nameEn": "Flow Control Valves",
+      "descriptionKo": "단방향/양방향 스로틀 밸브, 압력 보상형 유량 조절 밸브(하강 속도 제어), 3웨이 유량 레귤레이터, 유량 분배/합류 밸브 등 액추에이터 속도 제어용 밸브입니다.",
+      "descriptionEn": "Valves for actuator speed control: unidirectional and bidirectional throttle valves, pressure-compensated flow regulators (lowering control), 3-way flow regulators and flow divider/combiner valves.",
+      "specSchema": [
+        {"key": "max_pressure_bar", "labelKo": "최대 사용 압력", "labelEn": "Max Working Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "port_sizes", "labelKo": "포트 사이즈", "labelEn": "Port Sizes", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "thread_types", "labelKo": "나사 규격", "labelEn": "Thread Types", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "control_type", "labelKo": "제어 방식", "labelEn": "Control Type", "dataType": "select", "options": [
+          {"value": "unidirectional", "labelKo": "단방향 유량 제어", "labelEn": "Unidirectional"},
+          {"value": "bidirectional", "labelKo": "양방향 유량 제어", "labelEn": "Bidirectional"},
+          {"value": "fixed_compensated", "labelKo": "고정형 압력 보상", "labelEn": "Fixed, Pressure Compensated"},
+          {"value": "adjustable_compensated", "labelKo": "가변형 압력 보상", "labelEn": "Adjustable, Pressure Compensated"},
+          {"value": "two_way_compensated", "labelKo": "2웨이 압력 보상", "labelEn": "2-Way Pressure Compensated"},
+          {"value": "three_way_compensated", "labelKo": "3웨이 압력 보상", "labelEn": "3-Way Pressure Compensated"},
+          {"value": "flow_divider_combiner", "labelKo": "유량 분배/합류", "labelEn": "Flow Divider/Combiner"},
+          {"value": "end_stroke", "labelKo": "엔드 스트로크(리미트)", "labelEn": "End-stroke"}
+        ], "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "pressure_compensated", "labelKo": "압력 보상형", "labelEn": "Pressure Compensated", "dataType": "boolean", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "adjustment_type", "labelKo": "조절 방식", "labelEn": "Adjustment Type", "dataType": "select", "options": [
+          {"value": "fixed", "labelKo": "고정(공장 설정)", "labelEn": "Fixed"},
+          {"value": "handknob", "labelKo": "핸드 노브", "labelEn": "Handknob"},
+          {"value": "handwheel", "labelKo": "핸드 휠", "labelEn": "Hand Wheel"},
+          {"value": "screw", "labelKo": "스크류(공구)", "labelEn": "Screw"},
+          {"value": "shim_setting", "labelKo": "심(스페이서) 설정", "labelEn": "Shim Setting"},
+          {"value": "pushbutton", "labelKo": "푸시버튼", "labelEn": "Pushbutton"}
+        ], "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "controlled_flow_range", "labelKo": "제어 유량 범위", "labelEn": "Controlled Flow Range", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false},
+        {"key": "mounting_style", "labelKo": "장착 방식", "labelEn": "Mounting Style", "dataType": "select", "options": [
+          {"value": "insert", "labelKo": "인서트(카트리지)", "labelEn": "Insert (Cartridge)"},
+          {"value": "in_line", "labelKo": "인라인", "labelEn": "In-line"},
+          {"value": "in_line_panel", "labelKo": "인라인/패널 장착", "labelEn": "In-line / Panel Mount"}
+        ], "required": false, "sortOrder": 9, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "oleoweb-pilot-check-valves",
+      "nameKo": "파일럿 체크 밸브 (블록 밸브)",
+      "nameEn": "Pilot Operated Check Valves",
+      "descriptionKo": "실린더 하중을 위치에 고정하는 단동/복동 파일럿 조작 체크 밸브(로크 밸브)입니다. 인라인형, DIN2353 튜브 접속형, 플랜지형을 포함합니다.",
+      "descriptionEn": "Single and double acting pilot operated check valves (lock valves) that hold cylinder loads in position. In-line, DIN2353 tube-fitting and flanged versions are included.",
+      "specSchema": [
+        {"key": "max_pressure_bar", "labelKo": "최대 사용 압력", "labelEn": "Max Working Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "port_sizes", "labelKo": "포트 사이즈", "labelEn": "Port Sizes", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "acting_type", "labelKo": "작동 형식", "labelEn": "Acting Type", "dataType": "select", "options": [
+          {"value": "single", "labelKo": "단동 (싱글)", "labelEn": "Single Acting"},
+          {"value": "double", "labelKo": "복동 (더블)", "labelEn": "Double Acting"}
+        ], "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "pilot_ratio", "labelKo": "파일럿 비율", "labelEn": "Pilot Ratio", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "connection_standard", "labelKo": "접속 형식", "labelEn": "Connection Type", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "mounting_style", "labelKo": "장착 방식", "labelEn": "Mounting Style", "dataType": "select", "options": [
+          {"value": "in_line", "labelKo": "인라인", "labelEn": "In-line"},
+          {"value": "flanged", "labelKo": "플랜지", "labelEn": "Flanged"}
+        ], "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "max_leakage", "labelKo": "최대 누유량", "labelEn": "Max Leakage", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "oleoweb-shock-valves",
+      "nameKo": "안티쇼크 밸브 (더블 크로스 릴리프)",
+      "nameEn": "Anti-Shock Valves (Dual Cross-Line Relief)",
+      "descriptionKo": "유압 모터 회로의 압력 서지를 양방향으로 흡수하는 더블 크로스 라인 직동형 릴리프 밸브입니다. 인라인 블록형과 OMP/OMR/OMS 모터 직결 플랜지형을 포함합니다.",
+      "descriptionEn": "Double cross-line direct acting relief valves absorbing pressure shocks in both directions of hydraulic motor circuits. Available as in-line blocks and flange-mounted versions for OMP/OMR/OMS motors.",
+      "specSchema": [
+        {"key": "max_pressure_bar", "labelKo": "최대 사용 압력", "labelEn": "Max Working Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "port_sizes", "labelKo": "포트 사이즈", "labelEn": "Port Sizes", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "setting_ranges", "labelKo": "설정 압력 범위(스프링)", "labelEn": "Setting Ranges (Springs)", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "mounting_style", "labelKo": "장착 방식", "labelEn": "Mounting Style", "dataType": "select", "options": [
+          {"value": "in_line", "labelKo": "인라인 블록", "labelEn": "In-line Block"},
+          {"value": "motor_flange", "labelKo": "모터 플랜지", "labelEn": "Motor Flange"}
+        ], "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "motor_compatibility", "labelKo": "적용 모터", "labelEn": "Motor Compatibility", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "relief_cartridge", "labelKo": "릴리프 카트리지", "labelEn": "Relief Cartridge", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "oleoweb-pressure-valves",
+      "nameKo": "압력 제어 밸브 (릴리프/시퀀스)",
+      "nameEn": "Pressure Control Valves (Relief / Sequence)",
+      "descriptionKo": "인라인 직동형 릴리프 밸브와 시퀀스 밸브. 회로 최대 압력 제한 및 2차 회로 순차 작동에 사용됩니다.",
+      "descriptionEn": "In-line direct acting pressure relief valves and sequence valves for limiting maximum circuit pressure and sequencing secondary circuits.",
+      "specSchema": [
+        {"key": "max_pressure_bar", "labelKo": "최대 사용 압력", "labelEn": "Max Working Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "port_sizes", "labelKo": "포트 사이즈", "labelEn": "Port Sizes", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "thread_types", "labelKo": "나사 규격", "labelEn": "Thread Types", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "valve_function", "labelKo": "밸브 기능", "labelEn": "Valve Function", "dataType": "select", "options": [
+          {"value": "relief", "labelKo": "릴리프", "labelEn": "Relief"},
+          {"value": "sequence", "labelKo": "시퀀스", "labelEn": "Sequence"}
+        ], "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "setting_ranges", "labelKo": "설정 압력 범위(스프링)", "labelEn": "Setting Ranges (Springs)", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "adjustment_type", "labelKo": "조절 방식", "labelEn": "Adjustment Type", "dataType": "select", "options": [
+          {"value": "screw", "labelKo": "스크류", "labelEn": "Screw"},
+          {"value": "handknob", "labelKo": "핸드 노브", "labelEn": "Handknob"},
+          {"value": "screw_or_handknob", "labelKo": "스크류/핸드 노브 선택", "labelEn": "Screw or Handknob"},
+          {"value": "fixed", "labelKo": "고정 설정", "labelEn": "Fixed Setting"}
+        ], "required": false, "sortOrder": 7, "showInCardTeaser": false}
+      ]
+    }
+  ],
+  "products": [
+    {
+      "slug": "oleoweb-vui",
+      "modelNo": "VUI",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUI 인서트 체크 밸브 (볼 타입)",
+      "nameEn": "VUI Insert Check Valve (Ball Type)",
+      "shortDescriptionKo": "볼 시트 방식의 나사 삽입식 인서트 체크 밸브, BSPP 1/4\"-3/4\", 350 bar",
+      "shortDescriptionEn": "Ball-type screw-in insert check valve, BSPP 1/4\"-3/4\", 350 bar",
+      "descriptionKo": "매니폴드 캐비티에 직접 삽입하는 볼 시트 방식의 단방향 체크 밸브입니다. BSPP 1/4\"~3/4\" 캐비티에 대응하며 최대 350 bar, 20~80 L/min의 유량을 처리합니다. 개방 압력 0.5 bar, 최대 누유량 0.25 cm³/min(5방울/분)이며 양방향으로 설치가 가능합니다.",
+      "descriptionEn": "One-way ball-type check valve that screws directly into a manifold cavity. Covers BSPP 1/4\" to 3/4\" cavities with flows of 20-80 L/min at up to 350 bar. Cracking pressure 0.5 bar, max leakage 0.25 cm³/min (5 drops/min); the cartridge can be installed in both directions.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 80,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\", 3/4\" (cavity)",
+        "thread_types": "BSPP",
+        "sealing_type": "ball",
+        "cracking_pressure": "0.5 bar",
+        "mounting_style": "insert",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "27"
+    },
+    {
+      "slug": "oleoweb-vuc",
+      "modelNo": "VUC",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUC 인서트 체크 밸브 (포핏 타입)",
+      "nameEn": "VUC Insert Check Valve (Poppet Type)",
+      "shortDescriptionKo": "포핏(오투라토레) 방식 인서트 체크 밸브, BSPP 1/4\"-3/8\", 350 bar",
+      "shortDescriptionEn": "Poppet-type insert check valve, BSPP 1/4\"-3/8\", 350 bar",
+      "descriptionKo": "포핏 시트 방식의 나사 삽입식 인서트 체크 밸브입니다. BSPP 1/4\"(20 L/min) 및 3/8\"(30 L/min) 캐비티용으로 최대 350 bar에서 사용합니다. 개방 압력 0.5 bar, 최대 누유량 0.25 cm³/min이며 전용 설치 공구가 제공됩니다.",
+      "descriptionEn": "Screw-in insert check valve with poppet sealing. Available for BSPP 1/4\" (20 L/min) and 3/8\" (30 L/min) cavities at up to 350 bar. Cracking pressure 0.5 bar, max leakage 0.25 cm³/min; a dedicated installation tool is available.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 30,
+        "port_sizes": "BSPP 1/4\", 3/8\" (cavity)",
+        "thread_types": "BSPP",
+        "sealing_type": "poppet",
+        "cracking_pressure": "0.5 bar",
+        "mounting_style": "insert",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "28"
+    },
+    {
+      "slug": "oleoweb-vup",
+      "modelNo": "VUP",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUP 인서트 체크 밸브 (디스크 타입)",
+      "nameEn": "VUP Insert Check Valve (Disk Type)",
+      "shortDescriptionKo": "디스크 방식 인서트 체크 밸브, BSPP 1/2\"-3/4\", 350 bar",
+      "shortDescriptionEn": "Disk-type insert check valve, BSPP 1/2\"-3/4\", 350 bar",
+      "descriptionKo": "디스크 시트 방식의 나사 삽입식 인서트 체크 밸브입니다. BSPP 1/2\"(60 L/min)와 3/4\"(80 L/min) 캐비티용으로 최대 350 bar에서 사용합니다. 개방 압력 0.5 bar, 최대 누유량 0.25 cm³/min이며 전용 설치 공구가 제공됩니다.",
+      "descriptionEn": "Screw-in insert check valve with disk sealing. Available for BSPP 1/2\" (60 L/min) and 3/4\" (80 L/min) cavities at up to 350 bar. Cracking pressure 0.5 bar, max leakage 0.25 cm³/min; a dedicated installation tool is available.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 80,
+        "port_sizes": "BSPP 1/2\", 3/4\" (cavity)",
+        "thread_types": "BSPP",
+        "sealing_type": "disk",
+        "cracking_pressure": "0.5 bar",
+        "mounting_style": "insert",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "29"
+    },
+    {
+      "slug": "oleoweb-vuba-din",
+      "modelNo": "VUBA-DIN",
+      "categorySlug": "oleoweb-safety-valves",
+      "nameKo": "VUBA-DIN 배관 안전 밸브 (DIN 튜브 접속형)",
+      "nameEn": "VUBA-DIN Hose Burst Valve (DIN Tube Fitting)",
+      "shortDescriptionKo": "DIN 튜브 피팅 일체형 호스 파열 방지 밸브, BSPP 3/8\"-1/2\", 315 bar",
+      "shortDescriptionEn": "Hose burst safety valve with integrated DIN tube fitting, BSPP 3/8\"-1/2\", 315 bar",
+      "descriptionKo": "DIN 규격 튜브 피팅(M16x1.5/M18x1.5/M22x1.5, Ø10/12/15 튜브)이 일체화된 배관 안전 밸브입니다. 호스나 배관 파손 시 설정 유량을 초과하는 흐름을 감지하여 자동으로 차단, 하중의 자유 낙하를 방지합니다. BSPP 3/8\"(50 L/min)과 1/2\"(80 L/min) 규격으로 최대 315 bar에서 사용하며, 심(F) 설정과 포핏 오리피스(P) 옵션을 지정할 수 있습니다.",
+      "descriptionEn": "Pipe safety valve with an integrated DIN tube fitting (M16x1.5/M18x1.5/M22x1.5 for Ø10/12/15 pipe). If a hose or pipe bursts, the valve senses the excess flow and shuts off automatically, preventing free fall of the load. Sizes BSPP 3/8\" (50 L/min) and 1/2\" (80 L/min) rated to 315 bar; trip setting (F shim) and an orifice on the flat poppet (P) can be specified in the ordering code.",
+      "specs": {
+        "max_pressure_bar": 315,
+        "max_flow_lpm": 80,
+        "port_sizes": "BSPP 3/8\", 1/2\"",
+        "connection_standard": "DIN pipe fitting M16x1.5 / M18x1.5 / M22x1.5 (Ø10/12/15 pipe)",
+        "setting_range": "Shim setting F 0.1-2 mm (factory set on request)",
+        "orifice_option": true,
+        "mounting_style": "in_line",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "30"
+    },
+    {
+      "slug": "oleoweb-vuba",
+      "modelNo": "VUBA",
+      "categorySlug": "oleoweb-safety-valves",
+      "nameKo": "VUBA 배관 안전 밸브",
+      "nameEn": "VUBA Hose Burst Valve",
+      "shortDescriptionKo": "인서트형 호스 파열 방지 안전 밸브, BSPP 1/4\"-1\", 350 bar, 최대 180 L/min",
+      "shortDescriptionEn": "Insert-type hose burst safety valve, BSPP 1/4\"-1\", 350 bar, up to 180 L/min",
+      "descriptionKo": "실린더 포트나 콜로네트(하우징)에 삽입하는 호스 파열 방지 안전 밸브입니다. BSPP 1/4\"~1\" 5개 사이즈로 최대 350 bar, 25~180 L/min에 대응합니다. 심(F) 설정값 0.1~2 mm로 차단 유량을 조정하며(사이즈별 3~124 L/min, 공차 ±10%), 포핏 오리피스 옵션과 M/F·F/F 하우징(콜로네트)이 별도 제공됩니다.",
+      "descriptionEn": "Hose burst safety valve inserted into cylinder ports or supplied housings. Five sizes BSPP 1/4\" to 1\" cover 25-180 L/min at up to 350 bar. The trip flow is set by an F shim of 0.1-2 mm (3-124 L/min depending on size, ±10% tolerance); an orifice on the flat poppet and M/F or F/F housings are available as options.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 180,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\", 3/4\", 1\"",
+        "connection_standard": "Insert cartridge; M/F and F/F housings available",
+        "setting_range": "Shim setting F 0.1-2 mm; trip flow 3-124 L/min by size (±10%)",
+        "orifice_option": true,
+        "mounting_style": "insert",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "31-32"
+    },
+    {
+      "slug": "oleoweb-vcc",
+      "modelNo": "VCC140 / VCC380 / VCC120",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "VCC 하강 제어 밸브 (고정형 압력 보상)",
+      "nameEn": "VCC Fixed Lowering Control Valve (Pressure Compensated)",
+      "shortDescriptionKo": "고정 유량 압력 보상형 하강 속도 제어 인서트 밸브, BSPP 1/4\"-1/2\", 250 bar",
+      "shortDescriptionEn": "Fixed pressure-compensated lowering speed control insert valve, BSPP 1/4\"-1/2\", 250 bar",
+      "descriptionKo": "액추에이터 하강 속도를 부하 압력과 무관하게 일정하게 유지하는 고정형 압력 보상 인서트 밸브입니다. VCC140(BSPP 1/4\", 1~15 L/min), VCC380(BSPP 3/8\", 1~18 L/min), VCC120(BSPP 1/2\", 9~47 L/min) 시리즈로 구성되며 최대 250 bar에서 사용합니다. 제어 유량은 100 bar 기준 ±10% 공차로 공장 설정되며, 인라인 하우징 블록이 별도 제공됩니다.",
+      "descriptionEn": "Fixed pressure-compensated insert valves that keep actuator lowering speed constant regardless of load pressure. The family comprises VCC140 (BSPP 1/4\", 1-15 L/min), VCC380 (BSPP 3/8\", 1-18 L/min) and VCC120 (BSPP 1/2\", 9-47 L/min), all rated to 250 bar. Controlled flow is factory set at 100 bar with ±10% tolerance; in-line housing blocks are available.",
+      "specs": {
+        "max_pressure_bar": 250,
+        "max_flow_lpm": 47,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\" (cavity)",
+        "thread_types": "BSPP",
+        "control_type": "fixed_compensated",
+        "pressure_compensated": true,
+        "adjustment_type": "fixed",
+        "controlled_flow_range": "1-47 L/min at 100 bar (±10%), by series and code",
+        "mounting_style": "insert"
+      },
+      "sourcePages": "33-35"
+    },
+    {
+      "slug": "oleoweb-vscr6",
+      "modelNo": "VSCR6",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "VSCR6 하강 제어 밸브 (소형 고정형 압력 보상)",
+      "nameEn": "VSCR6 Compact Fixed Flow Control Valve (Pressure Compensated)",
+      "shortDescriptionKo": "소형 고정 유량 압력 보상 인서트 밸브, 1-12 L/min, 250 bar",
+      "shortDescriptionEn": "Compact fixed pressure-compensated insert flow control, 1-12 L/min, 250 bar",
+      "descriptionKo": "소형 카트리지 형태의 고정형 압력 보상 유량 제어 밸브입니다. 오리피스 직경 Ø1~3.3 mm에 따라 100 bar 기준 1~12 L/min의 제어 유량을 제공하며 최대 250 bar에서 사용합니다. O-링(9.25x1.78) 장착형으로 중량은 약 0.012 kg입니다.",
+      "descriptionEn": "Miniature cartridge-type fixed pressure-compensated flow control valve. Orifice diameters of Ø1 to 3.3 mm give controlled flows of 1-12 L/min at 100 bar (±10%), with a maximum pressure of 250 bar. Mounted with a 9.25x1.78 O-ring; weight approx. 0.012 kg.",
+      "specs": {
+        "max_pressure_bar": 250,
+        "max_flow_lpm": 12,
+        "port_sizes": "Cartridge with O-ring 9.25x1.78",
+        "thread_types": "-",
+        "control_type": "fixed_compensated",
+        "pressure_compensated": true,
+        "adjustment_type": "fixed",
+        "controlled_flow_range": "1-12 L/min at 100 bar (±10%), orifice Ø1-3.3 mm",
+        "mounting_style": "insert"
+      },
+      "sourcePages": "36"
+    },
+    {
+      "slug": "oleoweb-vrd",
+      "modelNo": "VRD",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "VRD 하강 제어 밸브 (가변형 압력 보상)",
+      "nameEn": "VRD Adjustable Lowering Control Valve (Pressure Compensated)",
+      "shortDescriptionKo": "가변식 압력 보상형 하강 속도 제어 밸브, BSPP 1/4\"-3/4\", 300 bar, 최대 150 L/min",
+      "shortDescriptionEn": "Adjustable pressure-compensated lowering control valve, BSPP 1/4\"-3/4\", 300 bar, up to 150 L/min",
+      "descriptionKo": "설정(F값)으로 제어 유량을 조정할 수 있는 압력 보상형 하강 속도 제어 밸브입니다. BSPP 1/4\"~3/4\" 4개 사이즈, 최대 300 bar, 최대 유량 20~150 L/min에 대응합니다. 50 bar 기준 제어 유량은 사이즈와 스풀(A~F) 및 설정값에 따라 1.4~151 L/min 범위이며, M/F·F/F 하우징(콜로네트)이 별도 제공됩니다.",
+      "descriptionEn": "Pressure-compensated lowering control valve whose controlled flow is adjusted by the F setting. Four sizes BSPP 1/4\" to 3/4\", rated 300 bar with max flows of 20-150 L/min. Controlled flow at 50 bar ranges from 1.4 to 151 L/min depending on size, spool option (A-F) and setting; M/F and F/F housings are available.",
+      "specs": {
+        "max_pressure_bar": 300,
+        "max_flow_lpm": 150,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\", 3/4\"",
+        "thread_types": "BSPP",
+        "control_type": "adjustable_compensated",
+        "pressure_compensated": true,
+        "adjustment_type": "shim_setting",
+        "controlled_flow_range": "1.4-151 L/min at 50 bar (±10%), by size/spool/setting",
+        "mounting_style": "insert"
+      },
+      "sourcePages": "37-38"
+    },
+    {
+      "slug": "oleoweb-vur",
+      "modelNo": "VUR",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUR 체크 밸브 (F/F 인라인형)",
+      "nameEn": "VUR Check Valve (F/F In-line Housing)",
+      "shortDescriptionKo": "암/암 인라인 체크 밸브, BSPP 1/8\"-2\"·NPTF·SAE, 최대 400 bar, 최대 430 L/min",
+      "shortDescriptionEn": "Female/female in-line check valve, BSPP 1/8\"-2\", NPTF and SAE, up to 400 bar and 430 L/min",
+      "descriptionKo": "양단 암나사(F/F) 하우징 타입의 인라인 체크 밸브입니다. BSPP 1/8\"~2\", NPTF 1/8\"~2\", SAE(UNF/UN 7/16\"~2-1/2\") 나사에 대응하며, 사이즈에 따라 최대 400 bar(대구경은 350/250 bar), 유량 5~430 L/min을 처리합니다. 볼 시트(소구경) 또는 포핏 시트를 선택할 수 있고 스프링은 0.5(표준)/1.5/3/4.5/6/10 bar 옵션이 있습니다. 교축 오리피스가 가공된 -H 버전도 주문 가능합니다.",
+      "descriptionEn": "In-line check valve with female/female housing. Available in BSPP 1/8\"-2\", NPTF 1/8\"-2\" and SAE (7/16\"-20UNF to 2-1/2\"-12UN) threads; ratings up to 400 bar (350/250 bar for larger sizes) and flows of 5-430 L/min. Ball sealing (small sizes) or poppet sealing, with spring options of 0.5 (standard)/1.5/3/4.5/6/10 bar. A -H version with a calibrated restriction hole is available.",
+      "specs": {
+        "max_pressure_bar": 400,
+        "max_flow_lpm": 430,
+        "port_sizes": "1/8\" - 2\" (SAE 7/16-20UNF - 2-1/2-12UN)",
+        "thread_types": "BSPP, NPTF, SAE UNF/UN",
+        "sealing_type": "ball_or_poppet",
+        "cracking_pressure": "0.5 bar std; 1.5 / 3 / 4.5 / 6 / 10 bar options",
+        "mounting_style": "in_line",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "41-44"
+    },
+    {
+      "slug": "oleoweb-vmf",
+      "modelNo": "VMF",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VMF 체크 밸브 (M/F 인라인형)",
+      "nameEn": "VMF Check Valve (M/F In-line Housing)",
+      "shortDescriptionKo": "수/암 인라인 체크 밸브, BSPP 1/4\"-1\", 최대 400 bar, 15-150 L/min",
+      "shortDescriptionEn": "Male/female in-line check valve, BSPP 1/4\"-1\", up to 400 bar, 15-150 L/min",
+      "descriptionKo": "한쪽 수나사, 한쪽 암나사(M/F) 구조로 포트에 직접 체결하는 인라인 체크 밸브입니다. BSPP 1/4\"~1\" 5개 사이즈로 15~150 L/min, 최대 400 bar(1\"은 350 bar)에 대응합니다. 볼 시트(1/4\"~1/2\", 0.5 bar 스프링) 또는 포핏 시트를 선택할 수 있으며 스프링 0.5/3/4.5/6/10 bar, 교축 오리피스 -H 버전이 제공됩니다.",
+      "descriptionEn": "In-line check valve with male/female ends that screws directly into a port. Five sizes BSPP 1/4\" to 1\" handle 15-150 L/min at up to 400 bar (350 bar for 1\"). Ball sealing (1/4\"-1/2\" with 0.5 bar spring) or poppet sealing; spring options 0.5/3/4.5/6/10 bar and a -H restriction-hole version are available.",
+      "specs": {
+        "max_pressure_bar": 400,
+        "max_flow_lpm": 150,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\", 3/4\", 1\"",
+        "thread_types": "BSPP",
+        "sealing_type": "ball_or_poppet",
+        "cracking_pressure": "0.5 bar std; 3 / 4.5 / 6 / 10 bar options",
+        "mounting_style": "in_line",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "45-46"
+    },
+    {
+      "slug": "oleoweb-vun",
+      "modelNo": "VUN",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUN 체크 밸브 (M/M 인라인형)",
+      "nameEn": "VUN Check Valve (M/M In-line)",
+      "shortDescriptionKo": "수/수 인라인 체크 밸브, BSPP 1/4\"-1\", 500 bar, 5-90 L/min",
+      "shortDescriptionEn": "Male/male in-line check valve, BSPP 1/4\"-1\", 500 bar, 5-90 L/min",
+      "descriptionKo": "양단 수나사(M/M) 구조의 컴팩트 인라인 체크 밸브로 최대 500 bar의 고압에 대응합니다. BSPP 1/4\"~1\" 5개 사이즈, 유량 5~90 L/min이며 볼 시트(1/4\"~1/2\", 0.5 bar 스프링) 또는 포핏 시트를 선택합니다. 스프링 0.5/3/4.5/6 bar 옵션과 교축 오리피스 -H 버전이 제공됩니다.",
+      "descriptionEn": "Compact in-line check valve with male/male ends rated to 500 bar. Five sizes BSPP 1/4\" to 1\" cover 5-90 L/min, with ball sealing (1/4\"-1/2\", 0.5 bar spring) or poppet sealing. Spring options 0.5/3/4.5/6 bar (6 bar not for 1/4\") and a -H restriction-hole version are available.",
+      "specs": {
+        "max_pressure_bar": 500,
+        "max_flow_lpm": 90,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\", 3/4\", 1\"",
+        "thread_types": "BSPP",
+        "sealing_type": "ball_or_poppet",
+        "cracking_pressure": "0.5 bar std; 3 / 4.5 / 6 bar options",
+        "mounting_style": "in_line",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "47-48"
+    },
+    {
+      "slug": "oleoweb-vusf",
+      "modelNo": "VUSF",
+      "categorySlug": "oleoweb-check-valves",
+      "nameKo": "VUSF 셔틀 밸브",
+      "nameEn": "VUSF Load Shuttle Valve",
+      "shortDescriptionKo": "3포트 로드 셔틀 밸브, BSPP 1/4\"-1/2\", 350 bar, 20-60 L/min",
+      "shortDescriptionEn": "3-port load shuttle valve, BSPP 1/4\"-1/2\", 350 bar, 20-60 L/min",
+      "descriptionKo": "두 입력 포트 중 높은 압력을 자동으로 선택하여 출력하는 3포트 셔틀 밸브입니다. BSPP 1/4\"(20 L/min), 3/8\"(40 L/min), 1/2\"(60 L/min) 사이즈로 최대 350 bar에서 사용하며, 로드센싱 신호 선택 등 부하 신호 회로에 적합합니다.",
+      "descriptionEn": "3-port shuttle valve that automatically selects the higher of two input pressures to its outlet. Sizes BSPP 1/4\" (20 L/min), 3/8\" (40 L/min) and 1/2\" (60 L/min) rated to 350 bar, suited to load-sensing and load signal circuits.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 60,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\"",
+        "thread_types": "BSPP",
+        "sealing_type": "shuttle",
+        "cracking_pressure": "-",
+        "mounting_style": "in_line",
+        "max_leakage": "-"
+      },
+      "sourcePages": "64"
+    },
+    {
+      "slug": "oleoweb-vurf",
+      "modelNo": "VURF",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "VURF 단방향 유량 제어 밸브",
+      "nameEn": "VURF Unidirectional Flow Control Valve",
+      "shortDescriptionKo": "체크 밸브 내장 단방향 유량 제어 밸브, BSPP 1/8\"-1 1/4\", 최대 350 bar",
+      "shortDescriptionEn": "Unidirectional flow control valve with integrated check, BSPP 1/8\"-1 1/4\", up to 350 bar",
+      "descriptionKo": "한 방향의 유량을 조절하고 역방향은 체크 밸브를 통해 자유 흐름을 허용하는 인라인 유량 제어 밸브입니다. BSPP 1/8\"~1-1/4\" 7개 사이즈, 유량 5~200 L/min, 최대 압력 350 bar(3/4\"는 300, 1\" 이상은 250 bar)입니다. 140/380/120 사이즈는 볼 시트 사양입니다.",
+      "descriptionEn": "In-line flow control valve regulating flow in one direction with free reverse flow through an integrated check. Seven sizes BSPP 1/8\" to 1-1/4\" cover 5-200 L/min; max pressure 350 bar (300 bar for 3/4\", 250 bar for 1\" and 1-1/4\"). Ball sealing on sizes 140/380/120.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 200,
+        "port_sizes": "BSPP 1/8\", 1/4\", 3/8\", 1/2\", 3/4\", 1\", 1-1/4\"",
+        "thread_types": "BSPP",
+        "control_type": "unidirectional",
+        "pressure_compensated": false,
+        "adjustment_type": "handknob",
+        "controlled_flow_range": "5-200 L/min by size",
+        "mounting_style": "in_line"
+      },
+      "sourcePages": "49"
+    },
+    {
+      "slug": "oleoweb-vbrf",
+      "modelNo": "VBRF",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "VBRF 양방향 유량 제어 밸브",
+      "nameEn": "VBRF Bidirectional Flow Control Valve",
+      "shortDescriptionKo": "양방향 유량 제어 밸브, BSPP 1/8\"-1 1/4\", 최대 350 bar",
+      "shortDescriptionEn": "Bidirectional flow control valve, BSPP 1/8\"-1 1/4\", up to 350 bar",
+      "descriptionKo": "양방향 모두 유량을 교축하는 인라인 유량 제어 밸브입니다. BSPP 1/8\"~1-1/4\" 7개 사이즈, 유량 5~200 L/min, 최대 압력 350 bar(3/4\"는 300, 1\" 이상은 250 bar)로 VURF와 동일한 치수 계열입니다.",
+      "descriptionEn": "In-line flow control valve throttling flow in both directions. Seven sizes BSPP 1/8\" to 1-1/4\" cover 5-200 L/min; max pressure 350 bar (300 bar for 3/4\", 250 bar for 1\" and 1-1/4\"), sharing dimensions with the VURF series.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 200,
+        "port_sizes": "BSPP 1/8\", 1/4\", 3/8\", 1/2\", 3/4\", 1\", 1-1/4\"",
+        "thread_types": "BSPP",
+        "control_type": "bidirectional",
+        "pressure_compensated": false,
+        "adjustment_type": "handknob",
+        "controlled_flow_range": "5-200 L/min by size",
+        "mounting_style": "in_line"
+      },
+      "sourcePages": "50"
+    },
+    {
+      "slug": "oleoweb-stu",
+      "modelNo": "STU",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "STU 단방향 유량 제어 밸브 (니들형)",
+      "nameEn": "STU Unidirectional Flow Control Valve (Needle Type)",
+      "shortDescriptionKo": "핸드 노브 조절식 단방향 유량 제어 밸브, BSPP/NPTF/SAE 1/8\"-1 1/2\", 최대 400 bar",
+      "shortDescriptionEn": "Handknob-adjustable unidirectional flow control valve, BSPP/NPTF/SAE 1/8\"-1 1/2\", up to 400 bar",
+      "descriptionKo": "알루미늄 핸드 노브로 조절하는 니들형 단방향 유량 제어 밸브로, 역방향은 자유 흐름입니다. BSPP·NPTF 1/8\"~1-1/2\", SAE 7/16\"-20UNF~1-7/8\"-12UN 나사에 대응하며 유량 10~300 L/min, 최대 압력 400 bar(대구경 350 bar)입니다. 180/140/380/120 사이즈는 볼 시트 사양입니다.",
+      "descriptionEn": "Needle-type unidirectional flow control valve adjusted by an aluminium handknob, with free reverse flow. Available in BSPP and NPTF 1/8\"-1-1/2\" and SAE 7/16\"-20UNF to 1-7/8\"-12UN threads; flows 10-300 L/min at up to 400 bar (350 bar for the largest sizes). Ball sealing on sizes 180/140/380/120.",
+      "specs": {
+        "max_pressure_bar": 400,
+        "max_flow_lpm": 300,
+        "port_sizes": "1/8\" - 1-1/2\" (SAE 7/16-20UNF - 1-7/8-12UN)",
+        "thread_types": "BSPP, NPTF, SAE UNF/UN",
+        "control_type": "unidirectional",
+        "pressure_compensated": false,
+        "adjustment_type": "handknob",
+        "controlled_flow_range": "10-300 L/min by size",
+        "mounting_style": "in_line"
+      },
+      "sourcePages": "51, 53, 55"
+    },
+    {
+      "slug": "oleoweb-stuf",
+      "modelNo": "STUF",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "STUF 단방향 유량 제어 밸브 (패널 장착형)",
+      "nameEn": "STUF Unidirectional Flow Control Valve (Panel Mount)",
+      "shortDescriptionKo": "패널 장착 나사부를 갖춘 단방향 유량 제어 밸브, BSPP/NPTF/SAE, 최대 400 bar",
+      "shortDescriptionEn": "Unidirectional flow control valve with panel-mounting thread, BSPP/NPTF/SAE, up to 400 bar",
+      "descriptionKo": "STU와 동일한 니들형 단방향 유량 제어 밸브에 패널 장착용 나사부(M15x1~M45x1.5)와 옵션 보호 캡을 추가한 버전입니다. BSPP·NPTF 1/8\"~1-1/2\", SAE 7/16\"~1-7/8\" 나사, 유량 10~300 L/min, 최대 압력 400 bar(대구경 350 bar)입니다.",
+      "descriptionEn": "Version of the STU needle-type unidirectional flow control valve with a panel-mounting thread (M15x1 to M45x1.5) and optional protection cap. BSPP and NPTF 1/8\"-1-1/2\" and SAE 7/16\" to 1-7/8\" threads; flows 10-300 L/min at up to 400 bar (350 bar for the largest sizes).",
+      "specs": {
+        "max_pressure_bar": 400,
+        "max_flow_lpm": 300,
+        "port_sizes": "1/8\" - 1-1/2\" (SAE 7/16-20UNF - 1-7/8-12UN)",
+        "thread_types": "BSPP, NPTF, SAE UNF/UN",
+        "control_type": "unidirectional",
+        "pressure_compensated": false,
+        "adjustment_type": "handknob",
+        "controlled_flow_range": "10-300 L/min by size",
+        "mounting_style": "in_line_panel"
+      },
+      "sourcePages": "52, 54, 56"
+    },
+    {
+      "slug": "oleoweb-stb",
+      "modelNo": "STB",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "STB 양방향 유량 제어 밸브 (니들형)",
+      "nameEn": "STB Bidirectional Flow Control Valve (Needle Type)",
+      "shortDescriptionKo": "핸드 노브 조절식 양방향 스로틀 밸브, BSPP/NPTF/SAE 1/8\"-1 1/2\", 최대 400 bar",
+      "shortDescriptionEn": "Handknob-adjustable bidirectional throttle valve, BSPP/NPTF/SAE 1/8\"-1 1/2\", up to 400 bar",
+      "descriptionKo": "양방향 모두 유량을 교축하는 니들형 스로틀 밸브로 알루미늄 핸드 노브로 조절합니다. BSPP·NPTF 1/8\"~1-1/2\", SAE 7/16\"~1-7/8\" 나사, 유량 10~300 L/min, 최대 압력 400 bar(대구경 350 bar)입니다.",
+      "descriptionEn": "Needle-type throttle valve restricting flow in both directions, adjusted by an aluminium handknob. BSPP and NPTF 1/8\"-1-1/2\" and SAE 7/16\" to 1-7/8\" threads; flows 10-300 L/min at up to 400 bar (350 bar for the largest sizes).",
+      "specs": {
+        "max_pressure_bar": 400,
+        "max_flow_lpm": 300,
+        "port_sizes": "1/8\" - 1-1/2\" (SAE 7/16-20UNF - 1-7/8-12UN)",
+        "thread_types": "BSPP, NPTF, SAE UNF/UN",
+        "control_type": "bidirectional",
+        "pressure_compensated": false,
+        "adjustment_type": "handknob",
+        "controlled_flow_range": "10-300 L/min by size",
+        "mounting_style": "in_line"
+      },
+      "sourcePages": "57, 59, 61"
+    },
+    {
+      "slug": "oleoweb-stbf",
+      "modelNo": "STBF",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "STBF 양방향 유량 제어 밸브 (패널 장착형)",
+      "nameEn": "STBF Bidirectional Flow Control Valve (Panel Mount)",
+      "shortDescriptionKo": "패널 장착 나사부를 갖춘 양방향 스로틀 밸브, BSPP/NPTF/SAE, 최대 400 bar",
+      "shortDescriptionEn": "Bidirectional throttle valve with panel-mounting thread, BSPP/NPTF/SAE, up to 400 bar",
+      "descriptionKo": "STB 양방향 스로틀 밸브에 패널 장착용 나사부(M15x1~M45x1.5)와 옵션 보호 캡을 추가한 버전입니다. BSPP·NPTF 1/8\"~1-1/2\", SAE 7/16\"~1-7/8\" 나사, 유량 10~300 L/min, 최대 압력 400 bar(대구경 350 bar)입니다.",
+      "descriptionEn": "Version of the STB bidirectional throttle valve with a panel-mounting thread (M15x1 to M45x1.5) and optional protection cap. BSPP and NPTF 1/8\"-1-1/2\" and SAE 7/16\" to 1-7/8\" threads; flows 10-300 L/min at up to 400 bar (350 bar for the largest sizes).",
+      "specs": {
+        "max_pressure_bar": 400,
+        "max_flow_lpm": 300,
+        "port_sizes": "1/8\" - 1-1/2\" (SAE 7/16-20UNF - 1-7/8-12UN)",
+        "thread_types": "BSPP, NPTF, SAE UNF/UN",
+        "control_type": "bidirectional",
+        "pressure_compensated": false,
+        "adjustment_type": "handknob",
+        "controlled_flow_range": "10-300 L/min by size",
+        "mounting_style": "in_line_panel"
+      },
+      "sourcePages": "58, 60, 62"
+    },
+    {
+      "slug": "oleoweb-vrc",
+      "modelNo": "VRC",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "VRC 2웨이 압력 보상 유량 제어 밸브",
+      "nameEn": "VRC 2-Way Pressure Compensated Flow Control Valve",
+      "shortDescriptionKo": "2웨이 압력 보상형 유량 제어 밸브, BSPP 1/4\"-1/2\", 250 bar",
+      "shortDescriptionEn": "2-way pressure-compensated flow control valve, BSPP 1/4\"-1/2\", 250 bar",
+      "descriptionKo": "부하 압력 변동과 무관하게 설정 유량을 유지하는 2웨이 압력 보상형 유량 제어 밸브입니다. VRC140(BSPP 1/4\", 10 L/min), VRC380(3/8\", 18 L/min), VRC120(1/2\", 33 L/min) 사이즈로 최대 250 bar에서 사용하며 역방향은 자유 흐름입니다.",
+      "descriptionEn": "2-way pressure-compensated flow control valve maintaining a set flow independent of load pressure changes. Sizes VRC140 (BSPP 1/4\", 10 L/min), VRC380 (3/8\", 18 L/min) and VRC120 (1/2\", 33 L/min) rated to 250 bar, with free reverse flow.",
+      "specs": {
+        "max_pressure_bar": 250,
+        "max_flow_lpm": 33,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\"",
+        "thread_types": "BSPP",
+        "control_type": "two_way_compensated",
+        "pressure_compensated": true,
+        "adjustment_type": "handknob",
+        "controlled_flow_range": "10-33 L/min by size",
+        "mounting_style": "in_line"
+      },
+      "sourcePages": "63"
+    },
+    {
+      "slug": "oleoweb-drf10",
+      "modelNo": "DRF10",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "DRF10 유량 분배/합류 밸브",
+      "nameEn": "DRF10 Flow Divider/Combiner Valve",
+      "shortDescriptionKo": "50:50 유량 분배·합류 밸브, 입력 2-40 L/min, 250 bar",
+      "shortDescriptionEn": "50:50 flow divider/combiner valve, inlet 2-40 L/min, 250 bar",
+      "descriptionKo": "하나의 입력 유량을 두 액추에이터로 균등 분배하거나 역방향으로 합류시키는 스풀식 유량 분배/합류 밸브입니다. 입력 유량 범위 2~5, 3~10, 7~20, 15~40 L/min의 4개 등급이 있으며 최대 250 bar에서 사용합니다. P 포트와 U1/U2 포트는 BSPP 3/8\" 또는 1/2\"를 선택할 수 있습니다.",
+      "descriptionEn": "Spool-type flow divider/combiner splitting one inlet flow equally between two actuators, or recombining it in reverse. Four inlet flow ranges (2-5, 3-10, 7-20, 15-40 L/min) rated to 250 bar. Port P and ports U1/U2 can each be BSPP 3/8\" or 1/2\".",
+      "specs": {
+        "max_pressure_bar": 250,
+        "max_flow_lpm": 40,
+        "port_sizes": "P, U1/U2: BSPP 3/8\" or 1/2\"",
+        "thread_types": "BSPP",
+        "control_type": "flow_divider_combiner",
+        "pressure_compensated": true,
+        "adjustment_type": "fixed",
+        "controlled_flow_range": "Inlet ranges 2-5 / 3-10 / 7-20 / 15-40 L/min",
+        "mounting_style": "in_line"
+      },
+      "sourcePages": "65"
+    },
+    {
+      "slug": "oleoweb-vpt",
+      "modelNo": "VPT",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "VPT 3웨이 유량 레귤레이터 (잉여 유량 탱크 복귀)",
+      "nameEn": "VPT 3-Way Flow Regulator (Excess Flow to Tank)",
+      "shortDescriptionKo": "잉여 유량을 탱크로 배출하는 3웨이 압력 보상 유량 레귤레이터, BSPP 3/8\"-1\", 250 bar",
+      "shortDescriptionEn": "3-way pressure-compensated flow regulator with excess flow to tank, BSPP 3/8\"-1\", 250 bar",
+      "descriptionKo": "핸드 휠로 설정한 유량만 우선 회로로 보내고 잉여 유량은 탱크로 배출하는 3웨이 압력 보상형 유량 레귤레이터입니다. BSPP 3/8\"~1\" 4개 사이즈로 최대 250 bar, 최대 유량 50~240 L/min(우선 유량 30~150 L/min)에 대응합니다. 역류용 체크 밸브 내장형(VPT-AR)과 릴리프 밸브 내장형(VPT-RV, 10~250 bar) 버전이 있습니다.",
+      "descriptionEn": "3-way pressure-compensated flow regulator sending the handwheel-set flow to the priority circuit and dumping excess flow to tank. Four sizes BSPP 3/8\" to 1\" rated 250 bar with max flows of 50-240 L/min (regulated flow 30-150 L/min). Variants include VPT-AR with a check valve for free reverse flow and VPT-RV with a built-in relief valve (10-250 bar).",
+      "specs": {
+        "max_pressure_bar": 250,
+        "max_flow_lpm": 240,
+        "port_sizes": "BSPP 3/8\", 1/2\", 3/4\", 1\"",
+        "thread_types": "BSPP",
+        "control_type": "three_way_compensated",
+        "pressure_compensated": true,
+        "adjustment_type": "handwheel",
+        "controlled_flow_range": "Regulated 30-150 L/min with inlet 50-240 L/min, by size",
+        "mounting_style": "in_line"
+      },
+      "sourcePages": "66-68"
+    },
+    {
+      "slug": "oleoweb-vpp",
+      "modelNo": "VPP",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "VPP 3웨이 유량 레귤레이터 (잉여 유량 가압 회로)",
+      "nameEn": "VPP 3-Way Flow Regulator (Excess Flow to Pressure)",
+      "shortDescriptionKo": "잉여 유량을 2차 가압 회로로 보내는 3웨이 압력 보상 유량 레귤레이터, BSPP 3/8\"-3/4\", 250 bar",
+      "shortDescriptionEn": "3-way pressure-compensated flow regulator with excess flow to a pressure line, BSPP 3/8\"-3/4\", 250 bar",
+      "descriptionKo": "설정 유량을 우선 회로로 보내고 잉여 유량을 탱크가 아닌 2차 가압 회로(E 포트)로 보내는 3웨이 압력 보상형 유량 레귤레이터입니다. BSPP 3/8\"~3/4\" 3개 사이즈로 최대 250 bar, 유량 50~150 L/min에 대응합니다. 릴리프 밸브와 전기식 언로더 밸브(12/24 VDC, 220 VRAC 코일)를 조합한 VPP-RV 버전이 제공됩니다.",
+      "descriptionEn": "3-way pressure-compensated flow regulator delivering the set flow to the priority circuit while routing excess flow to a secondary pressure line (port E) instead of tank. Three sizes BSPP 3/8\" to 3/4\" rated 250 bar with flows of 50-150 L/min. The VPP-RV variant adds a relief valve and an electrical unloader valve (12/24 VDC or 220 VRAC coils).",
+      "specs": {
+        "max_pressure_bar": 250,
+        "max_flow_lpm": 150,
+        "port_sizes": "BSPP 3/8\", 1/2\", 3/4\"",
+        "thread_types": "BSPP",
+        "control_type": "three_way_compensated",
+        "pressure_compensated": true,
+        "adjustment_type": "handwheel",
+        "controlled_flow_range": "Regulated 30-80 L/min with inlet 50-150 L/min, by size",
+        "mounting_style": "in_line"
+      },
+      "sourcePages": "69-70"
+    },
+    {
+      "slug": "oleoweb-fcm",
+      "modelNo": "FCM",
+      "categorySlug": "oleoweb-flow-control-valves",
+      "nameKo": "FCM 엔드 스트로크 밸브 (푸시버튼식)",
+      "nameEn": "FCM Pushbutton End-Stroke Valve",
+      "shortDescriptionKo": "노멀 클로즈 푸시버튼 엔드 스트로크 밸브, BSPP 1/4\"-1/2\", 최대 350 bar",
+      "shortDescriptionEn": "Normally-closed pushbutton end-stroke valve, BSPP 1/4\"-1/2\", up to 350 bar",
+      "descriptionKo": "실린더나 기계 요소가 스트로크 끝에서 푸시버튼을 눌러 유로를 개방하는 노멀 클로즈(NC) 엔드 스트로크 밸브입니다. BSPP 1/4\"·3/8\"(40 L/min, 350 bar), 1/2\"(60 L/min, 300 bar) 사이즈가 있으며, 기계식 리미트·언로딩 회로에 사용됩니다.",
+      "descriptionEn": "Normally-closed end-stroke valve whose pushbutton is depressed by the cylinder or machine element at end of stroke to open the flow path. Sizes BSPP 1/4\" and 3/8\" (40 L/min, 350 bar) and 1/2\" (60 L/min, 300 bar), used for mechanical limit and unloading circuits.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 60,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\"",
+        "thread_types": "BSPP",
+        "control_type": "end_stroke",
+        "pressure_compensated": false,
+        "adjustment_type": "pushbutton",
+        "controlled_flow_range": "40-60 L/min by size",
+        "mounting_style": "in_line"
+      },
+      "sourcePages": "71"
+    },
+    {
+      "slug": "oleoweb-vrse",
+      "modelNo": "VRSE",
+      "categorySlug": "oleoweb-pilot-check-valves",
+      "nameKo": "VRSE 단동 파일럿 체크 밸브",
+      "nameEn": "VRSE Single Acting Pilot Check Valve",
+      "shortDescriptionKo": "단동형 파일럿 체크(블록) 밸브, BSPP 1/4\"-3/4\", 350 bar, 파일럿 비율 1:4",
+      "shortDescriptionEn": "Single acting pilot operated check valve, BSPP 1/4\"-3/4\", 350 bar, pilot ratio 1:4",
+      "descriptionKo": "한쪽 라인의 하중을 고정하고 반대 라인의 파일럿 압력으로 개방하는 단동형 파일럿 체크 밸브입니다. BSPP 1/4\"~3/4\" 4개 사이즈로 15~70 L/min, 최대 350 bar에 대응합니다. 파일럿 비율은 1:4(3/4\"는 1:2.9)이며 최대 누유량은 0.25 cm³/min입니다.",
+      "descriptionEn": "Single acting pilot operated check valve holding the load on one line and released by pilot pressure from the opposite line. Four sizes BSPP 1/4\" to 3/4\" cover 15-70 L/min at up to 350 bar. Pilot ratio 1:4 (1:2.9 for 3/4\"); max leakage 0.25 cm³/min.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 70,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\", 3/4\"",
+        "acting_type": "single",
+        "pilot_ratio": "1:4 (3/4\": 1:2.9)",
+        "connection_standard": "BSPP threaded ports",
+        "mounting_style": "in_line",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "72"
+    },
+    {
+      "slug": "oleoweb-vrde",
+      "modelNo": "VRDE",
+      "categorySlug": "oleoweb-pilot-check-valves",
+      "nameKo": "VRDE 복동 파일럿 체크 밸브",
+      "nameEn": "VRDE Double Acting Pilot Check Valve",
+      "shortDescriptionKo": "복동형 파일럿 체크(블록) 밸브, BSPP 1/4\"-3/4\", 350 bar, 파일럿 비율 1:4",
+      "shortDescriptionEn": "Double acting pilot operated check valve, BSPP 1/4\"-3/4\", 350 bar, pilot ratio 1:4",
+      "descriptionKo": "실린더 양측 라인을 모두 고정하는 복동형 파일럿 체크 밸브입니다. BSPP 1/4\"~3/4\" 4개 사이즈로 15~70 L/min, 최대 350 bar에 대응합니다. 파일럿 비율은 1:4(3/4\"는 1:2.9)이며 최대 누유량은 0.25 cm³/min입니다.",
+      "descriptionEn": "Double acting pilot operated check valve locking both cylinder lines. Four sizes BSPP 1/4\" to 3/4\" cover 15-70 L/min at up to 350 bar. Pilot ratio 1:4 (1:2.9 for 3/4\"); max leakage 0.25 cm³/min.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 70,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\", 3/4\"",
+        "acting_type": "double",
+        "pilot_ratio": "1:4 (3/4\": 1:2.9)",
+        "connection_standard": "BSPP threaded ports",
+        "mounting_style": "in_line",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "73"
+    },
+    {
+      "slug": "oleoweb-vrsd",
+      "modelNo": "VRSD",
+      "categorySlug": "oleoweb-pilot-check-valves",
+      "nameKo": "VRSD 단동 파일럿 체크 밸브 (DIN2353 접속)",
+      "nameEn": "VRSD Single Acting Pilot Check Valve (DIN2353)",
+      "shortDescriptionKo": "DIN2353 튜브 접속형 단동 파일럿 체크 밸브, BSPP 1/4\"-1/2\", 350 bar",
+      "shortDescriptionEn": "Single acting pilot check valve with DIN2353 tube fittings, BSPP 1/4\"-1/2\", 350 bar",
+      "descriptionKo": "DIN2353 컷링 튜브 피팅(Ø8/12/15 튜브)이 일체화된 단동형 파일럿 체크 밸브입니다. BSPP 1/4\"~1/2\" 사이즈로 10~45 L/min, 최대 350 bar에 대응합니다. 파일럿 비율은 1:4(T8 버전은 1:9)입니다.",
+      "descriptionEn": "Single acting pilot operated check valve with integrated DIN2353 cutting-ring tube fittings (Ø8/12/15 pipe). Sizes BSPP 1/4\" to 1/2\" cover 10-45 L/min at up to 350 bar. Pilot ratio 1:4 (1:9 for the T8 version).",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 45,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\" (pipe Ø8/12/15)",
+        "acting_type": "single",
+        "pilot_ratio": "1:4 (T8: 1:9)",
+        "connection_standard": "DIN2353 tube fitting",
+        "mounting_style": "in_line",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "74"
+    },
+    {
+      "slug": "oleoweb-vrdd",
+      "modelNo": "VRDD",
+      "categorySlug": "oleoweb-pilot-check-valves",
+      "nameKo": "VRDD 복동 파일럿 체크 밸브 (DIN2353 접속)",
+      "nameEn": "VRDD Double Acting Pilot Check Valve (DIN2353)",
+      "shortDescriptionKo": "DIN2353 튜브 접속형 복동 파일럿 체크 밸브, BSPP 1/4\"-1/2\", 350 bar",
+      "shortDescriptionEn": "Double acting pilot check valve with DIN2353 tube fittings, BSPP 1/4\"-1/2\", 350 bar",
+      "descriptionKo": "DIN2353 컷링 튜브 피팅(Ø8/12/15 튜브)이 일체화된 복동형 파일럿 체크 밸브로, 실린더 양측 라인을 고정합니다. BSPP 1/4\"~1/2\" 사이즈로 10~45 L/min, 최대 350 bar에 대응합니다. 파일럿 비율은 1:4(T8 버전은 1:9)입니다.",
+      "descriptionEn": "Double acting pilot operated check valve with integrated DIN2353 cutting-ring tube fittings (Ø8/12/15 pipe), locking both cylinder lines. Sizes BSPP 1/4\" to 1/2\" cover 10-45 L/min at up to 350 bar. Pilot ratio 1:4 (1:9 for the T8 version).",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 45,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\" (pipe Ø8/12/15)",
+        "acting_type": "double",
+        "pilot_ratio": "1:4 (T8: 1:9)",
+        "connection_standard": "DIN2353 tube fitting",
+        "mounting_style": "in_line",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "75"
+    },
+    {
+      "slug": "oleoweb-vrpe",
+      "modelNo": "VRPE",
+      "categorySlug": "oleoweb-pilot-check-valves",
+      "nameKo": "VRPE 단동 파일럿 체크 밸브 (인라인 하우징형)",
+      "nameEn": "VRPE Single Acting Pilot Check Valve (In-line Housing)",
+      "shortDescriptionKo": "콜로네트형 단동 파일럿 체크 밸브, BSPP 1/4\"-1\", 최대 350 bar, 150 L/min",
+      "shortDescriptionEn": "Housing-type single acting pilot check valve, BSPP 1/4\"-1\", up to 350 bar and 150 L/min",
+      "descriptionKo": "배관 라인에 직접 연결하는 콜로네트(하우징) 타입의 단동형 파일럿 체크 밸브로, 파일럿 포트는 BSPP 1/4\"입니다. BSPP 1/4\"~1\" 5개 사이즈로 25~150 L/min, 최대 350 bar(3/4\" 이상은 300 bar)에 대응합니다. 파일럿 비율은 사이즈별 1:4~1:5.3입니다.",
+      "descriptionEn": "Housing-type single acting pilot operated check valve for direct pipe mounting, with a BSPP 1/4\" pilot port. Five sizes BSPP 1/4\" to 1\" cover 25-150 L/min at up to 350 bar (300 bar for 3/4\" and 1\"). Pilot ratio 1:4 to 1:5.3 depending on size.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 150,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\", 3/4\", 1\" (pilot BSPP 1/4\")",
+        "acting_type": "single",
+        "pilot_ratio": "1:4 - 1:5.3 by size",
+        "connection_standard": "BSPP threaded ports",
+        "mounting_style": "in_line",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "76"
+    },
+    {
+      "slug": "oleoweb-vrp",
+      "modelNo": "VRP",
+      "categorySlug": "oleoweb-pilot-check-valves",
+      "nameKo": "VRP 단동 파일럿 체크 밸브 (블록형)",
+      "nameEn": "VRP Single Acting Pilot Check Valve (Block Type)",
+      "shortDescriptionKo": "블록형 단동 파일럿 체크 밸브, BSPP 3/8\"-1/2\", 350 bar, 파일럿 비율 1:4",
+      "shortDescriptionEn": "Block-type single acting pilot check valve, BSPP 3/8\"-1/2\", 350 bar, pilot ratio 1:4",
+      "descriptionKo": "장착 구멍을 갖춘 블록 바디의 단동형 파일럿 체크 밸브입니다. BSPP 3/8\"(35 L/min)과 1/2\"(50 L/min) 사이즈로 최대 350 bar에 대응하며 파일럿 비율은 1:4입니다.",
+      "descriptionEn": "Single acting pilot operated check valve in a block body with mounting holes. Sizes BSPP 3/8\" (35 L/min) and 1/2\" (50 L/min) rated to 350 bar, pilot ratio 1:4.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 50,
+        "port_sizes": "BSPP 3/8\", 1/2\"",
+        "acting_type": "single",
+        "pilot_ratio": "1:4",
+        "connection_standard": "BSPP threaded ports, block body",
+        "mounting_style": "in_line",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "77"
+    },
+    {
+      "slug": "oleoweb-vrdl",
+      "modelNo": "VRDL",
+      "categorySlug": "oleoweb-pilot-check-valves",
+      "nameKo": "VRDL 복동 파일럿 체크 밸브 (블록형)",
+      "nameEn": "VRDL Double Acting Pilot Check Valve (Block Type)",
+      "shortDescriptionKo": "블록형 복동 파일럿 체크 밸브, BSPP 1/4\"-1/2\", 350 bar, 파일럿 비율 1:7",
+      "shortDescriptionEn": "Block-type double acting pilot check valve, BSPP 1/4\"-1/2\", 350 bar, pilot ratio 1:7",
+      "descriptionKo": "장착 구멍을 갖춘 블록 바디의 복동형 파일럿 체크 밸브로 실린더 양측 라인을 고정합니다. BSPP 1/4\"·3/8\"(35 L/min), 1/2\"(50 L/min) 사이즈로 최대 350 bar, 파일럿 비율 1:7입니다.",
+      "descriptionEn": "Double acting pilot operated check valve in a block body with mounting holes, locking both cylinder lines. Sizes BSPP 1/4\" and 3/8\" (35 L/min) and 1/2\" (50 L/min) rated to 350 bar, pilot ratio 1:7.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 50,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\"",
+        "acting_type": "double",
+        "pilot_ratio": "1:7",
+        "connection_standard": "BSPP threaded ports, block body",
+        "mounting_style": "in_line",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "78"
+    },
+    {
+      "slug": "oleoweb-vrdf",
+      "modelNo": "VRDF",
+      "categorySlug": "oleoweb-pilot-check-valves",
+      "nameKo": "VRDF 복동 파일럿 체크 밸브 (플랜지형)",
+      "nameEn": "VRDF Double Acting Pilot Check Valve (Flanged)",
+      "shortDescriptionKo": "플랜지 장착형 복동 파일럿 체크(로크) 밸브, BSPP 3/8\"-1/2\", 350 bar",
+      "shortDescriptionEn": "Flange-mounted double acting pilot check (lock) valve, BSPP 3/8\"-1/2\", 350 bar",
+      "descriptionKo": "실린더에 플랜지로 직접 장착하는 복동형 파일럿 체크(로크) 밸브입니다. BSPP 3/8\"(35 L/min)과 1/2\"(50 L/min) 사이즈로 최대 350 bar에 대응합니다. 파일럿 비율은 1:7(1/2\"는 1:3.2 선택 가능), 스프링은 1 bar 또는 6 bar(표준), 파일럿 피스톤 O-링 유무를 주문 코드로 지정합니다.",
+      "descriptionEn": "Double acting pilot operated check (lock) valve flange-mounted directly onto the cylinder. Sizes BSPP 3/8\" (35 L/min) and 1/2\" (50 L/min) rated to 350 bar. Pilot ratio 1:7 (1:3.2 optional on size 120); spring 1 bar or 6 bar (standard) and O-ring on the pilot piston selectable via ordering code.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 50,
+        "port_sizes": "BSPP 3/8\", 1/2\"",
+        "acting_type": "double",
+        "pilot_ratio": "1:7 (size 120 also 1:3.2)",
+        "connection_standard": "Flanged, BSPP ports",
+        "mounting_style": "flanged",
+        "max_leakage": "0.25 cm³/min (5 drops/min)"
+      },
+      "sourcePages": "79"
+    },
+    {
+      "slug": "oleoweb-vbdc",
+      "modelNo": "VBDC",
+      "categorySlug": "oleoweb-shock-valves",
+      "nameKo": "VBDC 안티쇼크 밸브 (더블 크로스 릴리프)",
+      "nameEn": "VBDC Dual Cross-Line Anti-Shock Valve",
+      "shortDescriptionKo": "인라인 블록형 더블 크로스 릴리프 밸브, BSPP 3/8\"-1/2\", 350 bar, 40 L/min",
+      "shortDescriptionEn": "In-line block dual cross-line relief valve, BSPP 3/8\"-1/2\", 350 bar, 40 L/min",
+      "descriptionKo": "유압 모터 양측 라인의 압력 서지를 상호 릴리프하는 인라인 블록형 더블 크로스 직동 릴리프 밸브입니다. BSPP 3/8\"·1/2\" 포트, 최대 40 L/min, 350 bar에 대응하며 VMD40S 릴리프 카트리지를 사용합니다. 스프링은 10~90, 20~210, 70~350 bar 3종입니다.",
+      "descriptionEn": "In-line block with two crossed direct acting relief valves protecting both lines of a hydraulic motor against pressure shocks. BSPP 3/8\" or 1/2\" ports, 40 L/min at up to 350 bar, using VMD40S relief cartridges. Three spring ranges: 10-90, 20-210 and 70-350 bar.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 40,
+        "port_sizes": "BSPP 3/8\", 1/2\"",
+        "setting_ranges": "10-90 / 20-210 / 70-350 bar (12 / 33 / 70 bar per turn)",
+        "mounting_style": "in_line",
+        "motor_compatibility": "Generic hydraulic motor circuits",
+        "relief_cartridge": "VMD40S"
+      },
+      "sourcePages": "80"
+    },
+    {
+      "slug": "oleoweb-dcv",
+      "modelNo": "DCV",
+      "categorySlug": "oleoweb-shock-valves",
+      "nameKo": "DCV 안티쇼크 밸브 (플랜지형)",
+      "nameEn": "DCV Dual Cross-Line Anti-Shock Valve (Flanged)",
+      "shortDescriptionKo": "모터 플랜지 장착형 더블 크로스 릴리프 밸브, Ø21(BSPP 1/2\"), 350 bar, 40 L/min",
+      "shortDescriptionEn": "Motor flange-mounted dual cross-line relief valve, Ø21 (BSPP 1/2\"), 350 bar, 40 L/min",
+      "descriptionKo": "유압 모터 포트면에 직접 플랜지 장착하는 더블 크로스 직동 릴리프 밸브입니다. Ø21(BSPP 1/2\") 접속, 최대 40 L/min, 350 bar이며 VMD40S 릴리프 카트리지를 사용합니다. 스프링은 10~90, 20~210, 70~350 bar 3종입니다.",
+      "descriptionEn": "Dual cross-line direct acting relief valve that flange-mounts directly onto the port face of a hydraulic motor. Ø21 (BSPP 1/2\") connection, 40 L/min at up to 350 bar, using VMD40S relief cartridges. Three spring ranges: 10-90, 20-210 and 70-350 bar.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 40,
+        "port_sizes": "Ø21 (BSPP 1/2\")",
+        "setting_ranges": "10-90 / 20-210 / 70-350 bar (12 / 33 / 70 bar per turn)",
+        "mounting_style": "motor_flange",
+        "motor_compatibility": "Hydraulic motors with Ø21 port interface",
+        "relief_cartridge": "VMD40S"
+      },
+      "sourcePages": "81"
+    },
+    {
+      "slug": "oleoweb-dcf",
+      "modelNo": "DCF",
+      "categorySlug": "oleoweb-shock-valves",
+      "nameKo": "DCF 안티쇼크 밸브 (OMP/OMR 모터용)",
+      "nameEn": "DCF Dual Cross-Line Anti-Shock Valve (for OMP/OMR Motors)",
+      "shortDescriptionKo": "OMP/OMR 모터 플랜지 장착형 더블 크로스 릴리프 밸브, BSPP 1/2\", 350 bar",
+      "shortDescriptionEn": "Dual cross-line relief valve flange-mounted on OMP/OMR motors, BSPP 1/2\", 350 bar",
+      "descriptionKo": "Danfoss OMP/OMR 계열 오비탈 모터의 포트면에 직접 장착하는 더블 크로스 직동 릴리프(안티쇼크) 밸브입니다. BSPP 1/2\" 접속, 최대 40 L/min, 350 bar이며 VMD40S 릴리프 카트리지를 사용합니다. 스프링은 10~40, 20~210, 70~350 bar 3종입니다.",
+      "descriptionEn": "Dual cross-line direct acting relief (anti-shock) valve mounting directly onto the port face of OMP/OMR-type orbital motors. BSPP 1/2\" connection, 40 L/min at up to 350 bar, using VMD40S relief cartridges. Three spring ranges: 10-40, 20-210 and 70-350 bar.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 40,
+        "port_sizes": "BSPP 1/2\"",
+        "setting_ranges": "10-40 / 20-210 / 70-350 bar (12 / 33 / 70 bar per turn)",
+        "mounting_style": "motor_flange",
+        "motor_compatibility": "OMP / OMR orbital motors",
+        "relief_cartridge": "VMD40S"
+      },
+      "sourcePages": "82"
+    },
+    {
+      "slug": "oleoweb-dcm",
+      "modelNo": "DCM",
+      "categorySlug": "oleoweb-shock-valves",
+      "nameKo": "DCM 안티쇼크 밸브 (OMS 모터용)",
+      "nameEn": "DCM Dual Cross-Line Anti-Shock Valve (for OMS Motors)",
+      "shortDescriptionKo": "OMS 모터 플랜지 장착형 더블 크로스 릴리프 밸브, BSPP 1/2\", 350 bar",
+      "shortDescriptionEn": "Dual cross-line relief valve flange-mounted on OMS motors, BSPP 1/2\", 350 bar",
+      "descriptionKo": "OMS 계열 오비탈 모터의 포트면에 직접 장착하는 더블 크로스 직동 릴리프(안티쇼크) 밸브입니다. BSPP 1/2\" 접속, 최대 40 L/min, 350 bar이며 VMD40S 릴리프 카트리지를 사용합니다. 스프링은 10~40, 20~210, 70~350 bar 3종입니다.",
+      "descriptionEn": "Dual cross-line direct acting relief (anti-shock) valve mounting directly onto the port face of OMS-type orbital motors. BSPP 1/2\" connection, 40 L/min at up to 350 bar, using VMD40S relief cartridges. Three spring ranges: 10-40, 20-210 and 70-350 bar.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 40,
+        "port_sizes": "BSPP 1/2\"",
+        "setting_ranges": "10-40 / 20-210 / 70-350 bar (12 / 33 / 70 bar per turn)",
+        "mounting_style": "motor_flange",
+        "motor_compatibility": "OMS orbital motors",
+        "relief_cartridge": "VMD40S"
+      },
+      "sourcePages": "83"
+    },
+    {
+      "slug": "oleoweb-vmdr",
+      "modelNo": "VMDR40 / VMDR90 / VMDR120",
+      "categorySlug": "oleoweb-pressure-valves",
+      "nameKo": "VMDR 인라인 직동 릴리프 밸브",
+      "nameEn": "VMDR In-line Direct Acting Relief Valve",
+      "shortDescriptionKo": "인라인 직동형 릴리프 밸브, BSPP 3/8\"-1\", 350 bar, 40-120 L/min",
+      "shortDescriptionEn": "In-line direct acting pressure relief valve, BSPP 3/8\"-1\", 350 bar, 40-120 L/min",
+      "descriptionKo": "회로 최대 압력을 제한하는 인라인 직동형 릴리프 밸브 시리즈입니다. VMDR40(BSPP 3/8\"·1/2\", 40 L/min), VMDR90(1/2\"·3/4\", 80 L/min), VMDR120(3/4\"·1\", 120 L/min)으로 구성되며 최대 350 bar에서 사용합니다. 스크류(C) 또는 핸드 노브(V) 조절 방식과 최대 350 bar까지의 3종 스프링을 선택할 수 있습니다.",
+      "descriptionEn": "In-line direct acting relief valve series limiting maximum circuit pressure. Comprises VMDR40 (BSPP 3/8\"/1/2\", 40 L/min), VMDR90 (1/2\"/3/4\", 80 L/min) and VMDR120 (3/4\"/1\", 120 L/min), rated to 350 bar. Screw (C) or handknob (V) adjustment with three spring ranges up to 350 bar.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 120,
+        "port_sizes": "BSPP 3/8\", 1/2\", 3/4\", 1\" (by series)",
+        "thread_types": "BSPP",
+        "valve_function": "relief",
+        "setting_ranges": "VMDR40: 10-90/20-210/70-350 bar; VMDR90: 10-100/20-250/50-350 bar; VMDR120: 10-100/20-250/40-350 bar",
+        "adjustment_type": "screw_or_handknob"
+      },
+      "sourcePages": "84-86"
+    },
+    {
+      "slug": "oleoweb-vsl",
+      "modelNo": "VSL",
+      "categorySlug": "oleoweb-pressure-valves",
+      "nameKo": "VSL 인라인 시퀀스 밸브",
+      "nameEn": "VSL In-line Direct Sequence Valve",
+      "shortDescriptionKo": "인라인 직동형 시퀀스 밸브, BSPP 1/4\"-1/2\", 350 bar, 20-40 L/min",
+      "shortDescriptionEn": "In-line direct acting sequence valve, BSPP 1/4\"-1/2\", 350 bar, 20-40 L/min",
+      "descriptionKo": "1차 회로가 설정 압력에 도달하면 2차 회로로 유량을 보내는 인라인 직동형 시퀀스 밸브입니다. BSPP 1/4\"(20 L/min), 3/8\"·1/2\"(40 L/min) 사이즈로 최대 350 bar에 대응하며, 스프링은 10~90, 20~210, 70~350 bar 3종입니다.",
+      "descriptionEn": "In-line direct acting sequence valve that opens flow to a secondary circuit once the primary circuit reaches the set pressure. Sizes BSPP 1/4\" (20 L/min) and 3/8\"/1/2\" (40 L/min) rated to 350 bar, with three spring ranges: 10-90, 20-210 and 70-350 bar.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 40,
+        "port_sizes": "BSPP 1/4\", 3/8\", 1/2\"",
+        "thread_types": "BSPP",
+        "valve_function": "sequence",
+        "setting_ranges": "10-90 / 20-210 / 70-350 bar (12 / 30 / 65 bar per turn)",
+        "adjustment_type": "screw"
+      },
+      "sourcePages": "87"
+    },
+    {
+      "slug": "oleoweb-vslh",
+      "modelNo": "VSLH",
+      "categorySlug": "oleoweb-pressure-valves",
+      "nameKo": "VSLH 고정 설정 시퀀스 밸브",
+      "nameEn": "VSLH Fixed-Setting Sequence Valve",
+      "shortDescriptionKo": "고정 설정(50 bar) 인라인 시퀀스 밸브, 3/8\" BSPP/NPTF, 350 bar, 45 L/min",
+      "shortDescriptionEn": "Fixed-setting (50 bar) in-line sequence valve, 3/8\" BSPP/NPTF, 350 bar, 45 L/min",
+      "descriptionKo": "시퀀스 압력이 50 bar로 공장 설정된 고정형 인라인 시퀀스 밸브로, 체크 밸브 개방 압력은 0.5 bar입니다. 3/8\" 사이즈(BSPP 또는 NPTF)로 최대 45 L/min, 350 bar에 대응합니다. 표준 이외의 설정 압력은 별도 문의로 제작됩니다.",
+      "descriptionEn": "Fixed-setting in-line sequence valve factory set to 50 bar sequence pressure, with a 0.5 bar check valve cracking pressure. Size 3/8\" (BSPP or NPTF) handles up to 45 L/min at 350 bar. Non-standard settings are available on request.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 45,
+        "port_sizes": "3/8\"",
+        "thread_types": "BSPP, NPTF",
+        "valve_function": "sequence",
+        "setting_ranges": "Fixed 50 bar (other settings on request); check valve 0.5 bar",
+        "adjustment_type": "fixed"
+      },
+      "sourcePages": "88"
+    }
+  ],
+  "notes": "Extracted from OLELOWEB2.pdf (Oleoweb CAT24EI00.02 general catalogue) PDF pages 5-89. PDF pages 5-25 are index/TOC and general maintenance/warranty text; product content spans PDF pages 26-89 (printed catalogue pages 1-64). Granularity: one product per family; size-per-series families were merged where specs are shared (VCC140/380/120 -> oleoweb-vcc; VMDR40/90/120 -> oleoweb-vmdr; VUR/VMF/VUN '-H' restriction-hole variants, VUR BSPP/NPTF/SAE thread variants, STU/STUF/STB/STBF NPTF/SAE thread variants, and VPT-AR/VPT-RV, VPP-RV sub-versions folded into their parent family entries with notes in descriptions). Common technical data for all families: ISO 6743/4 (DIN 51524) mineral oil, viscosity 15-250 cSt, oil temp -20..+80C, NBR seals standard (viton/polyurethane on request), steel bodies with CRIII zinc plating, recommended filtration 15 um. Deviators & ball valves mentioned in the task brief appear only in the TOC within pages 5-25; their product pages fall outside pages 5-89 and were left to the agents covering later ranges. All values read from the embedded text layer of the PDF (tables were legible); performance-curve-only data (pressure drop graphs) was not tabulated.",
+  "sourcePages": "26-89"
+}

@@ -16,17 +16,23 @@ import { gsap, ScrollTrigger, MOTION_LEVEL, useHydrated, useMediaQuery } from "@
  * ease allowed per the 09 motion-grammar amendment) while the fill level
  * translates the fluid vertically:
  *   - mode="load":  0 → ~100% in ~1.6s on mount, then a slow slosh settle
+ *   - mode="loop":  perpetual empty → full → empty cycle (offset per
+ *                   instance via loopDelay — the hero keywords breathe on
+ *                   staggered clocks), paused while off-screen
  *   - mode="scrub": ScrollTrigger scrub — fills as the heading approaches,
  *                   holds, then drains as it leaves the viewport top
  * The overlay hides the HTML glyphs (color: transparent) and draws its own
- * 1px --color-border outline, so text stays legible at any fill level.
+ * 1px outline so text stays legible at any fill level — stroked in the fluid
+ * color itself when a custom `color` is given (hero fills white with white
+ * outlines; each business area outlines in its own accent), falling back to
+ * --color-border otherwise.
  * Korean and English take the identical path: the SVG <text> inherits the
  * heading's font (Pretendard) and is aligned per measured line box. If a
  * marked line soft-wraps (very narrow viewport), we bail to the static
  * filled state rather than misalign the mask.
  */
 
-export type FluidTextMode = "load" | "scrub";
+export type FluidTextMode = "load" | "loop" | "scrub";
 
 /** External fill driver — e.g. the horizontal area scroller maps its own
     scrub progress to per-panel levels and pushes them in imperatively. */
@@ -85,6 +91,8 @@ export function FluidText({
   level,
   levelSource,
   color,
+  deepColor,
+  loopDelay = 0,
 }: {
   /** Heading copy; "\n" marks intentional line breaks (as in the hero title). */
   text: string;
@@ -98,6 +106,13 @@ export function FluidText({
       accent. Defaults to the shared --color-fluid amber; depth shades are
       still derived via color-mix, so no extra colors appear anywhere. */
   color?: string;
+  /** Bottom stop of the fill gradient. Defaults to `color` mixed 55% toward
+      black; the hero passes white here so its fluid stays pure white instead
+      of shading gray. */
+  deepColor?: string;
+  /** mode="loop" only: seconds before the first fill starts, so sibling
+      instances (the hero keywords) cycle on visibly different clocks. */
+  loopDelay?: number;
 }) {
   const id = useId().replace(/[^a-zA-Z0-9]/g, "");
   const ref = useRef<HTMLSpanElement>(null);
@@ -166,13 +181,14 @@ export function FluidText({
         ease: "none",
         repeat: -1,
       });
-      // The wave loop is the only perpetual tween on the page — never let it
-      // tick while the heading is off-screen.
+      // Perpetual tweens (wave drift + any loop cycle) must never tick while
+      // the heading is off-screen.
+      const perpetual: gsap.core.Animation[] = [drift];
       ScrollTrigger.create({
         trigger: wrapper,
         start: "top bottom",
         end: "bottom top",
-        onToggle: (self) => (self.isActive ? drift.play() : drift.pause()),
+        onToggle: (self) => perpetual.forEach((a) => (self.isActive ? a.play() : a.pause())),
       });
 
       const state = { l: 0 };
@@ -187,6 +203,17 @@ export function FluidText({
           state.l = l;
           apply();
         });
+      } else if (mode === "loop") {
+        // Endless breathe: pour in, hold full, drain out, rest — then again.
+        // loopDelay offsets sibling instances so they never move in unison.
+        perpetual.push(
+          gsap
+            .timeline({ repeat: -1, delay: loopDelay, defaults: { onUpdate: apply } })
+            .to(state, { l: 1.08, duration: 1.5, ease: "power2.inOut" })
+            .to(state, { l: 1.08, duration: 0.7, ease: "none" })
+            .to(state, { l: 0, duration: 1.5, ease: "power2.inOut" })
+            .to(state, { l: 0, duration: 0.5, ease: "none" }),
+        );
       } else if (mode === "load") {
         // Rise 0→100% in ~1.6s, then settle with a slow slosh.
         gsap
@@ -214,14 +241,15 @@ export function FluidText({
       unsubscribe?.();
       ctx.revert();
     };
-  }, [animate, layout, mode, level, levelSource]);
+  }, [animate, layout, mode, level, levelSource, loopDelay]);
 
   const animating = animate && layout !== null;
   const fluidColor = color ?? "var(--color-fluid)";
-  const fluidDeep = `color-mix(in srgb, ${fluidColor} 55%, black)`;
+  const fluidDeep = deepColor ?? `color-mix(in srgb, ${fluidColor} 55%, black)`;
   const bodyDepth = layout ? layout.h + 2 * Math.max(layout.fontSize * 0.08, 3) : 0;
   const amp = layout ? Math.min(Math.max(layout.fontSize * 0.08, 3), 9) : 0;
   const lambda = layout ? Math.max(layout.fontSize * 2.2, 56) : 0;
+  const maskPad = layout ? layout.fontSize : 0;
 
   return (
     <span
@@ -267,14 +295,51 @@ export function FluidText({
                 </text>
               ))}
             </clipPath>
+            {/* Strokes are centered on the glyph edge, so knocking every
+                glyph body out of the outline pass keeps only the outer half:
+                ONE combined border around the union of the letters, instead
+                of per-letter rings crossing wherever glyphs touch/overlap. */}
+            <mask
+              id={`${id}m`}
+              maskUnits="userSpaceOnUse"
+              x={-maskPad}
+              y={-maskPad}
+              width={layout.w + 2 * maskPad}
+              height={layout.h + 2 * maskPad}
+            >
+              <rect
+                x={-maskPad}
+                y={-maskPad}
+                width={layout.w + 2 * maskPad}
+                height={layout.h + 2 * maskPad}
+                fill="#fff"
+              />
+              {layout.lines.map((l, i) => (
+                <text key={i} x={l.x} y={l.cy} dominantBaseline="central" fill="#000">
+                  {l.text}
+                </text>
+              ))}
+            </mask>
           </defs>
 
-          {/* 1px outline hint so unfilled letters stay legible mid-animation */}
-          {layout.lines.map((l, i) => (
-            <text key={i} x={l.x} y={l.cy} dominantBaseline="central" className="fluid-text-outline">
-              {l.text}
-            </text>
-          ))}
+          {/* Outline hint so unfilled letters stay legible mid-animation;
+              the stroke matches the fluid color when one is set. The mask
+              trims it to the outside edge (see defs), so stroke-width 2
+              reads as a ~1px border. */}
+          <g mask={`url(#${id}m)`}>
+            {layout.lines.map((l, i) => (
+              <text
+                key={i}
+                x={l.x}
+                y={l.cy}
+                dominantBaseline="central"
+                className="fluid-text-outline"
+                style={color ? { stroke: fluidColor } : undefined}
+              >
+                {l.text}
+              </text>
+            ))}
+          </g>
 
           <g clipPath={`url(#${id}c)`}>
             <g data-fluid-level>
@@ -283,7 +348,11 @@ export function FluidText({
                 <path
                   d={meniscusPath(layout.w, lambda, amp)}
                   className="fluid-text-meniscus"
-                  style={color ? { stroke: `color-mix(in srgb, ${fluidColor} 45%, black)` } : undefined}
+                  style={
+                    color
+                      ? { stroke: deepColor ?? `color-mix(in srgb, ${fluidColor} 45%, black)` }
+                      : undefined
+                  }
                 />
               </g>
             </g>

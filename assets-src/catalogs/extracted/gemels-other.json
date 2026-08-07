@@ -1,0 +1,970 @@
+{
+  "sourcePdf": "GEMELS.pdf",
+  "pagesCovered": "PDF pages 475-693 (swivel joints 475-495, hydraulic valves 497-567, oil & gas ball valves 569-633, electric motors 634-637, kits/actuators 638-693; pages 694-720 are technical reference tables with no products)",
+  "manufacturer": {
+    "slug": "gemels",
+    "name": "GEMELS S.p.A.",
+    "country": "Italy",
+    "websiteUrl": "https://www.gemels.com",
+    "descriptionKo": "GEMELS S.p.A.는 이탈리아의 고압 볼 밸브 전문 제조사로, 유압 볼 밸브·퀵 커플링·스위벨 조인트·오일&가스 볼 밸브·액추에이터·전기 모터까지 폭넓은 제품군을 100% 이탈리아/EU 소재로 생산합니다.",
+    "descriptionEn": "GEMELS S.p.A. is an Italian manufacturer specializing in high-pressure ball valves, quick couplings, swivel joints, oil & gas ball valves, actuators and electric motors, produced with 100% Made in Italy/EU materials."
+  },
+  "categories": [
+    {
+      "slug": "gemels-swivel-joints",
+      "nameKo": "스위벨 조인트",
+      "nameEn": "Swivel Joints",
+      "descriptionKo": "중장비용 고내구성 설계의 GEMELS 스위벨 조인트. 인라인/90° 타입부터 최대 22포트 멀티웨이 유압 스위벨 조인트까지, 모듈화 설계와 다양한 나사 규격(BSP, NPT, SAE, DIN)을 지원합니다.",
+      "descriptionEn": "GEMELS swivel joints with heavy-duty high-resistance design, from in-line and 90-degree types to multi-way hydraulic swivel joints with up to 22 ways, featuring modular construction and multiple thread standards (BSP, NPT, SAE, DIN).",
+      "specSchema": [
+        {"key": "joint_type", "labelKo": "조인트 형식", "labelEn": "Joint Type", "dataType": "select", "options": [
+          {"value": "in_line", "labelKo": "인라인", "labelEn": "In-line"},
+          {"value": "in_line_or_90", "labelKo": "인라인/90°", "labelEn": "In-line / 90°"},
+          {"value": "multi_way", "labelKo": "멀티웨이", "labelEn": "Multi-way"}
+        ], "required": true, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "size_range", "labelKo": "사이즈 범위", "labelEn": "Size Range", "dataType": "text", "required": true, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "max_pressure_mpa", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "MPa", "required": true, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "end_connections", "labelKo": "접속 규격", "labelEn": "End Connections", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "body_material", "labelKo": "본체 재질", "labelEn": "Body Material", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "temp_range_c", "labelKo": "사용 온도 범위", "labelEn": "Temperature Range", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "surface_treatment", "labelKo": "표면 처리", "labelEn": "Surface Treatment", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "l/min", "required": false, "sortOrder": 8, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "gemels-hydraulic-valves",
+      "nameKo": "유압 밸브",
+      "nameEn": "Hydraulic Valves",
+      "descriptionKo": "볼 밸브 외에 GEMELS가 공급하는 유압 밸브 제품군: 오버센터 밸브, 릴리프 밸브, 체크 밸브, 유량 제어/분배 밸브, 셔틀 밸브, 안전 밸브 블록 등. 농기계, 자동차, 조선, 소방, 제철 등 다양한 산업에 적용됩니다.",
+      "descriptionEn": "GEMELS hydraulic valve range beyond ball valves: overcenter valves, relief valves, check valves, flow control/diverter valves, shuttle valves and accumulator safety valve blocks, serving agriculture, automotive, naval, firefighting, steel plants and more.",
+      "specSchema": [
+        {"key": "valve_type", "labelKo": "밸브 종류", "labelEn": "Valve Type", "dataType": "select", "options": [
+          {"value": "safety_valve", "labelKo": "안전 밸브", "labelEn": "Safety Valve"},
+          {"value": "overcenter_valve", "labelKo": "오버센터 밸브", "labelEn": "Overcenter Valve"},
+          {"value": "relief_valve", "labelKo": "릴리프 밸브", "labelEn": "Relief Valve"},
+          {"value": "check_valve", "labelKo": "체크 밸브", "labelEn": "Check Valve"},
+          {"value": "pilot_check_valve", "labelKo": "파일럿 체크 밸브", "labelEn": "Pilot Operated Check Valve"},
+          {"value": "flow_control_valve", "labelKo": "유량 제어 밸브", "labelEn": "Flow Control Valve"},
+          {"value": "flow_regulator", "labelKo": "유량 조절기", "labelEn": "Flow Regulator"},
+          {"value": "shuttle_valve", "labelKo": "셔틀 밸브", "labelEn": "Shuttle Valve"},
+          {"value": "hose_break_valve", "labelKo": "호스 파단 밸브", "labelEn": "Hose Break Valve"},
+          {"value": "flow_diverter", "labelKo": "유량 분배 밸브", "labelEn": "Flow Diverter"}
+        ], "required": true, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "size_range", "labelKo": "사이즈 범위", "labelEn": "Size Range", "dataType": "text", "required": true, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "max_pressure_mpa", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "MPa", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "end_connections", "labelKo": "접속 규격", "labelEn": "End Connections", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "body_material", "labelKo": "본체 재질", "labelEn": "Body Material", "dataType": "select", "options": [
+          {"value": "carbon_steel", "labelKo": "탄소강", "labelEn": "Carbon Steel"},
+          {"value": "stainless_steel", "labelKo": "스테인리스강", "labelEn": "Stainless Steel"},
+          {"value": "carbon_or_stainless_steel", "labelKo": "탄소강/스테인리스강", "labelEn": "Carbon or Stainless Steel"},
+          {"value": "cast_iron", "labelKo": "주철", "labelEn": "Cast Iron"}
+        ], "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "temp_range_c", "labelKo": "사용 온도 범위", "labelEn": "Temperature Range", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "l/min", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "seal_material", "labelKo": "시일 재질", "labelEn": "Seal Material", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false},
+        {"key": "surface_treatment", "labelKo": "표면 처리", "labelEn": "Surface Treatment", "dataType": "text", "required": false, "sortOrder": 9, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "gemels-oil-gas-ball-valves",
+      "nameKo": "오일&가스 볼 밸브",
+      "nameEn": "Oil & Gas Ball Valves",
+      "descriptionKo": "플로팅 및 트러니언 설계의 오일&가스용 볼 밸브. 1/4\"~42\" 사이즈, ANSI 150~2500 클래스, 온쇼어/오프쇼어의 업스트림·미드스트림·다운스트림 분야 국제 규격(API 6D 등)에 부합합니다.",
+      "descriptionEn": "Floating and trunnion design ball valves for oil & gas, from 1/4\" up to 42\", ANSI class 150-2500, compliant with international norms (API 6D etc.) for onshore/offshore upstream, midstream and downstream applications.",
+      "specSchema": [
+        {"key": "valve_design", "labelKo": "밸브 설계", "labelEn": "Valve Design", "dataType": "select", "options": [
+          {"value": "floating_screwed", "labelKo": "플로팅(나사식)", "labelEn": "Floating (Screwed Ends)"},
+          {"value": "floating_high_cyclicity", "labelKo": "플로팅(고빈도 작동)", "labelEn": "Floating (High Cyclicity)"},
+          {"value": "wafer_floating", "labelKo": "웨이퍼 플로팅", "labelEn": "Wafer Type Floating"},
+          {"value": "split_body_floating", "labelKo": "스플릿 바디 플로팅", "labelEn": "Split Body Floating"},
+          {"value": "split_body_trunnion", "labelKo": "스플릿 바디 트러니언", "labelEn": "Split Body Trunnion"},
+          {"value": "double_block_bleed", "labelKo": "더블 블록 앤 블리드", "labelEn": "Double Block and Bleed"}
+        ], "required": true, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "size_range", "labelKo": "사이즈 범위", "labelEn": "Size Range", "dataType": "text", "required": true, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "pressure_class", "labelKo": "압력 클래스", "labelEn": "Pressure Class", "dataType": "text", "required": true, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "max_pressure_mpa", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "MPa", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "end_connections", "labelKo": "접속 규격", "labelEn": "End Connections", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "body_material", "labelKo": "본체 재질", "labelEn": "Body Material", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "temp_range_c", "labelKo": "사용 온도 범위", "labelEn": "Temperature Range", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "standards", "labelKo": "적용 규격", "labelEn": "Standards", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false},
+        {"key": "iso5211_mount", "labelKo": "ISO 5211 액추에이터 마운트", "labelEn": "ISO 5211 Actuator Mount", "dataType": "boolean", "required": false, "sortOrder": 9, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "gemels-actuators-kits",
+      "nameKo": "액추에이터 및 키트",
+      "nameEn": "Actuators & Kits",
+      "descriptionKo": "GEMELS 볼 밸브용 공압(스카치요크/랙&피니언) 및 전동 액추에이터와 잠금장치, 핸들, 리미트 스위치 등 밸브 액세서리 키트 제품군.",
+      "descriptionEn": "Pneumatic (scotch-yoke and rack & pinion) and electric actuators for GEMELS ball valves, plus valve accessory kits including locking devices, handles and limit switches.",
+      "specSchema": [
+        {"key": "product_type", "labelKo": "제품 종류", "labelEn": "Product Type", "dataType": "select", "options": [
+          {"value": "pneumatic_actuator", "labelKo": "공압 액추에이터", "labelEn": "Pneumatic Actuator"},
+          {"value": "electric_actuator", "labelKo": "전동 액추에이터", "labelEn": "Electric Actuator"},
+          {"value": "locking_device", "labelKo": "잠금장치", "labelEn": "Locking Device"},
+          {"value": "handle", "labelKo": "핸들", "labelEn": "Handle"},
+          {"value": "limit_switch", "labelKo": "리미트 스위치", "labelEn": "Limit Switch"}
+        ], "required": true, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "operation", "labelKo": "작동 방식", "labelEn": "Operation", "dataType": "select", "options": [
+          {"value": "double_acting", "labelKo": "복동식", "labelEn": "Double Acting"},
+          {"value": "spring_return", "labelKo": "스프링 리턴", "labelEn": "Spring Return"},
+          {"value": "electric", "labelKo": "전동", "labelEn": "Electric"},
+          {"value": "manual", "labelKo": "수동", "labelEn": "Manual"},
+          {"value": "monitoring", "labelKo": "위치 감지", "labelEn": "Position Monitoring"}
+        ], "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "models", "labelKo": "모델 구성", "labelEn": "Models", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "torque_range_nm", "labelKo": "토크 범위", "labelEn": "Torque Range", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "supply", "labelKo": "구동원", "labelEn": "Supply", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "iso5211_flange", "labelKo": "ISO 5211 플랜지", "labelEn": "ISO 5211 Flange", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "temp_range_c", "labelKo": "사용 온도 범위", "labelEn": "Temperature Range", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "certification", "labelKo": "인증", "labelEn": "Certification", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "gemels-electric-motors",
+      "nameKo": "전기 모터",
+      "nameEn": "Electric Motors",
+      "descriptionKo": "이탈리아에서 설계·생산되는 GEMELS AC 3상 토크 모터 시리즈. 2~100 kW, 48~400V, 최대 10,000 RPM으로 견인 구동, 유압 파워 유닛, 표준 플랜지(IEC/NEMA) 응용에 대응합니다.",
+      "descriptionEn": "GEMELS series of AC three-phase torque motors designed and produced in Italy, from 2 to 100 kW, 48 to 400V and up to 10,000 RPM, for traction, hydraulic power units and standard IEC/NEMA flange applications.",
+      "specSchema": [
+        {"key": "motor_type", "labelKo": "모터 형식", "labelEn": "Motor Type", "dataType": "text", "required": true, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "power_range_kw", "labelKo": "출력 범위", "labelEn": "Power Range", "dataType": "text", "required": true, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "voltage_range_v", "labelKo": "전압 범위", "labelEn": "Voltage Range", "dataType": "text", "required": true, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "max_speed_rpm", "labelKo": "최대 회전수", "labelEn": "Max Speed", "dataType": "unit_value", "unit": "RPM", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "cooling", "labelKo": "냉각 방식", "labelEn": "Cooling", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "mounting", "labelKo": "장착 방식", "labelEn": "Mounting", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "applications", "labelKo": "적용 분야", "labelEn": "Applications", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false}
+      ]
+    }
+  ],
+  "products": [
+    {
+      "slug": "gemels-gsj",
+      "modelNo": "GSJ",
+      "categorySlug": "gemels-swivel-joints",
+      "nameKo": "GSJ 시리즈 인라인 스위벨 조인트",
+      "nameEn": "GSJ Series In-line Swivel Joints",
+      "shortDescriptionKo": "최대 420bar 고압용 인라인 스위벨 조인트 (DN6~DN32)",
+      "shortDescriptionEn": "High-pressure in-line swivel joints up to 420 bar (DN6-DN32)",
+      "descriptionKo": "GSJ 시리즈는 중장비용 고내구성 설계의 인라인 스위벨 조인트입니다. DN6~DN32 사이즈에서 최대 42 MPa(420 bar)의 작동 압력을 지원하며, 볼 없는 구조의 특수 고강성 설계로 유로가 끊기지 않아 높은 유량을 확보합니다. BSPP(암/수), NPT, SAE, JIC, ORFS, DIN 등 다양한 나사 조합이 가능하고 아연-니켈 표면 처리로 내식성이 우수합니다. 90° 타입도 주문 제작 가능합니다.",
+      "descriptionEn": "The GSJ series is an in-line swivel joint with a special high-resistance design for heavy-duty equipment. Sizes DN6 to DN32 support working pressures up to 42 MPa (420 bar), and the ball-free design with uninterrupted flow passage enables high flow rates. Available with BSPP (female/male), NPT, SAE, JIC, ORFS and DIN thread combinations, with zinc-nickel surface treatment for corrosion resistance. A 90-degree version is available on request.",
+      "specs": {
+        "joint_type": "in_line",
+        "size_range": "DN6 ~ DN32 (G1/4 ~ G1 1/4)",
+        "max_pressure_mpa": 42,
+        "end_connections": "BSPP(ISO 1179-1/ISO 8434-6), NPT(ANSI/ASME B1.20.1), SAE J1926-1, JIC(ISO 8434-2), ORFS(ISO 8434-3), DIN(ISO 8434-1)",
+        "body_material": "탄소강 (Carbon Steel)",
+        "temp_range_c": "-40°C ~ +100°C",
+        "surface_treatment": "아연-니켈 도금 (Zinc-Nickel)"
+      },
+      "sourcePages": "476-485"
+    },
+    {
+      "slug": "gemels-sj",
+      "modelNo": "SJ",
+      "categorySlug": "gemels-swivel-joints",
+      "nameKo": "SJ 시리즈 스위벨 조인트 (인라인/90°)",
+      "nameEn": "SJ Series Swivel Joints (In-line / 90°)",
+      "shortDescriptionKo": "인라인 및 90° 타입 스위벨 조인트 (DN6~DN50, 최대 정압 400bar)",
+      "shortDescriptionEn": "In-line and 90-degree swivel joints (DN6-DN50, max static 400 bar)",
+      "descriptionKo": "SJ 시리즈는 인라인(SJ10)과 90°(SJ90) 두 가지 형태로 제공되는 탄소강 스위벨 조인트입니다. G1/4~G2(DN6~DN50) 사이즈에서 최대 정압 40 MPa, 회전 시 압력은 사이즈에 따라 5~20 MPa를 지원하며 최대 유량은 700 l/min입니다. BSP 나사가 기본이고 NPT는 주문 제작 가능합니다.",
+      "descriptionEn": "The SJ series carbon steel swivel joints come in in-line (SJ10) and 90-degree (SJ90) configurations. Sizes G1/4 to G2 (DN6-DN50) support maximum static pressures of 40 MPa with rotating pressures of 5-20 MPa depending on size, and flow rates up to 700 l/min. BSP threads are standard with NPT available on request.",
+      "specs": {
+        "joint_type": "in_line_or_90",
+        "size_range": "DN6 ~ DN50 (G1/4 ~ G2)",
+        "max_pressure_mpa": 40,
+        "end_connections": "BSP (GAS DIN/ISO 228); NPT 주문 제작",
+        "body_material": "탄소강 (Carbon Steel)",
+        "temp_range_c": "-20°C ~ +80°C",
+        "surface_treatment": "아연 도금 (Galvanized)",
+        "max_flow_lpm": 700
+      },
+      "sourcePages": "486-489"
+    },
+    {
+      "slug": "gemels-sj-hd",
+      "modelNo": "SJ HD",
+      "categorySlug": "gemels-swivel-joints",
+      "nameKo": "SJ HD 시리즈 헤비듀티 스위벨 조인트",
+      "nameEn": "SJ HD Series Heavy Duty Swivel Joints",
+      "shortDescriptionKo": "회전 중에도 400bar를 견디는 헤비듀티 인라인 스위벨 조인트",
+      "shortDescriptionEn": "Heavy-duty in-line swivel joints rated 400 bar while rotating",
+      "descriptionKo": "SJ HD 시리즈는 헤비듀티용 인라인 스위벨 조인트로, G1/2~G1(DN13~DN25) 사이즈에서 회전 중 최대 35~40 MPa, 피크 압력 45~50 MPa를 지원합니다. 최대 유량은 사이즈에 따라 95~215 l/min이며, BSP 나사가 기본이고 UNF/SAE 나사는 주문 제작 가능합니다.",
+      "descriptionEn": "The SJ HD series heavy-duty in-line swivel joints in sizes G1/2 to G1 (DN13-DN25) support rotating pressures of 35-40 MPa with peak pressures of 45-50 MPa. Maximum flow ranges from 95 to 215 l/min by size; BSP threads are standard with UNF/SAE available on request.",
+      "specs": {
+        "joint_type": "in_line",
+        "size_range": "DN13 ~ DN25 (G1/2 ~ G1)",
+        "max_pressure_mpa": 50,
+        "end_connections": "BSP (GAS DIN/ISO 228); UNF/SAE 주문 제작",
+        "body_material": "탄소강 (Carbon Steel)",
+        "temp_range_c": "-20°C ~ +80°C",
+        "surface_treatment": "아연 도금 (Galvanized)",
+        "max_flow_lpm": 215
+      },
+      "sourcePages": "490-491"
+    },
+    {
+      "slug": "gemels-hsj",
+      "modelNo": "HSJ",
+      "categorySlug": "gemels-swivel-joints",
+      "nameKo": "HSJ 시리즈 유압 멀티웨이 스위벨 조인트",
+      "nameEn": "HSJ Series Hydraulic Multi-way Swivel Joints",
+      "shortDescriptionKo": "굴착기·크레인용 2~22 포트 유압 스위벨 조인트 (최대 420bar)",
+      "shortDescriptionEn": "2- to 22-way hydraulic swivel joints for excavators and cranes (up to 420 bar)",
+      "descriptionKo": "HSJ 시리즈는 드릴링 리그, 굴착기/모바일 크레인, 텔레핸들러, 콘크리트 믹서 펌프 등에 사용되는 유압 멀티웨이 스위벨 조인트입니다. 2웨이부터 22웨이까지 구성 가능하며 최대 압력 420 bar, 최대 회전 속도 12 rpm을 지원합니다. 스테이터는 C40/알루미늄, 로터는 S355J2G3/알루미늄 재질이고 NBR/FKM/EPDM/테플론 시일과 전기 슬립링 조합도 주문 제작 가능합니다.",
+      "descriptionEn": "The HSJ series hydraulic multi-way swivel joints serve drilling rigs, excavators/mobile cranes, telehandlers and concrete mixer pumps. Configurable from 2 up to 22 ways, they support pressures up to 420 bar and rotating speeds up to 12 rpm. The stator is C40/aluminium and rotor S355J2G3/aluminium, with NBR/FKM/EPDM/Teflon seals and optional electrical slip ring integration per customer requirements.",
+      "specs": {
+        "joint_type": "multi_way",
+        "size_range": "2웨이 ~ 22웨이",
+        "max_pressure_mpa": 42,
+        "end_connections": "BSP, NPT, SAE, 플랜지",
+        "body_material": "스테이터 C40/알루미늄, 로터 S355J2G3/알루미늄",
+        "temp_range_c": "주위 -20°C ~ +60°C, 작동 유체 최대 +90°C (표준 -10°C ~ +80°C)",
+        "surface_treatment": "로터: 망간 인산염/ENP 니켈 도금/경질 산화, 스테이터: 경질 크롬/ENP 니켈 도금/경질 산화"
+      },
+      "sourcePages": "492-495"
+    },
+    {
+      "slug": "gemels-safety-valve-pg",
+      "modelNo": "PG (Safety Valve)",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "PG 시리즈 어큐뮬레이터 안전 밸브 블록",
+      "nameEn": "PG Series Accumulator Safety Valve Block",
+      "shortDescriptionKo": "수동/솔레노이드 조작식 어큐뮬레이터 격리·방출 안전 밸브 블록 (CE PED 인증)",
+      "shortDescriptionEn": "Manual and solenoid operated accumulator isolation/discharge safety blocks (CE PED certified)",
+      "descriptionKo": "PG 시리즈 안전 밸브는 유압 어큐뮬레이터용 격리·방출 블록으로, 볼 밸브(격리), 사전 설정된 자동 릴리프 밸브(안전), 니들 밸브(수동 방출)로 구성되며 솔레노이드 밸브(원격 방출) 옵션을 추가할 수 있습니다. DN10~DN32 사이즈에 정격 42 MPa, 릴리프 밸브 최대 420 bar 설정이 가능하고, 릴리프 밸브는 유럽 압력기기지침 PED 2014/68/EU에 따라 인증·교정 및 CE 마킹되어 있습니다.",
+      "descriptionEn": "The PG series safety valve is a hydraulic isolation and discharge block for accumulators, consisting of a ball valve (isolation), a pre-set automatic relief valve (safety) and a needle valve (manual discharge), with an optional solenoid valve for remote discharge. Available in DN10-DN32 rated at 42 MPa with relief settings up to 420 bar, the relief valve is certified, calibrated and CE-marked per the European Pressure Equipment Directive PED 2014/68/EU.",
+      "specs": {
+        "valve_type": "safety_valve",
+        "size_range": "DN10 ~ DN32",
+        "max_pressure_mpa": 42,
+        "end_connections": "BSP, NPT, SAE J1926 (어큐뮬레이터 포트 M33×2)",
+        "body_material": "carbon_steel",
+        "temp_range_c": "수동식 -20°C ~ +90°C, 솔레노이드 병용식 -20°C ~ +60°C",
+        "seal_material": "NBR",
+        "surface_treatment": "인산염 처리 (Phosphate)"
+      },
+      "sourcePages": "498-509"
+    },
+    {
+      "slug": "gemels-vap",
+      "modelNo": "VAP",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "VAP 안전 밸브",
+      "nameEn": "VAP Safety Valve",
+      "shortDescriptionKo": "CE 인증 유압 안전 밸브 (DN6~DN13)",
+      "shortDescriptionEn": "CE-certified hydraulic safety valves (DN6-DN13)",
+      "descriptionKo": "VAP 시리즈는 CE 인증을 받은 유압 안전 밸브로 G1/4(DN6), G3/8(DN10), G1/2(DN13) 사이즈로 제공됩니다. 카탈로그에는 외형 치수만 수록되어 있으며 상세 압력 설정은 제조사 문의가 필요합니다.",
+      "descriptionEn": "The VAP series are CE-certified hydraulic safety valves available in G1/4 (DN6), G3/8 (DN10) and G1/2 (DN13). The catalog lists dimensional data only; pressure setting details require consultation with the manufacturer.",
+      "specs": {
+        "valve_type": "safety_valve",
+        "size_range": "DN6 ~ DN13 (G1/4 ~ G1/2)",
+        "end_connections": "BSP (GAS DIN/ISO 228)",
+        "body_material": "carbon_steel"
+      },
+      "sourcePages": "556-557"
+    },
+    {
+      "slug": "gemels-vose",
+      "modelNo": "VOSE",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "VOSE 시리즈 단동 오버센터 밸브",
+      "nameEn": "VOSE Series Single Effect Overcenter Valves",
+      "shortDescriptionKo": "단동 오버센터 밸브, DN6~DN20, 최대 350bar",
+      "shortDescriptionEn": "Single effect overcenter valves, DN6-DN20, up to 350 bar",
+      "descriptionKo": "VOSE 시리즈는 부하 유지 및 제어용 단동 오버센터 밸브입니다. DN6~DN20 사이즈에 최대 35 MPa(PN350), 설정 범위 6~35 MPa이며 파일럿비는 4.25:1(대구경 6.25:1)입니다. BSP/NPT/SAE 나사와 아연 도금 탄소강 본체로 제공되며 8:1, 11:1 파일럿비와 탬퍼 방지 캡은 주문 제작 가능합니다.",
+      "descriptionEn": "The VOSE series are single effect overcenter valves for load holding and control. Sizes DN6-DN20 are rated up to 35 MPa (PN350) with a 6-35 MPa setting range and pilot ratios of 4.25:1 (6.25:1 for the largest size). Available with BSP/NPT/SAE ends in galvanized carbon steel; 8:1 and 11:1 pilot ratios and tamper-proof caps on request.",
+      "specs": {
+        "valve_type": "overcenter_valve",
+        "size_range": "DN6 ~ DN20",
+        "max_pressure_mpa": 35,
+        "end_connections": "BSP(ISO 228), NPT(ANSI/ASME B1.20.1), SAE J1926-1",
+        "body_material": "carbon_steel",
+        "temp_range_c": "유체 -20°C ~ +90°C, 주위 -20°C ~ +50°C",
+        "max_flow_lpm": 90,
+        "seal_material": "NBR",
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "510-513"
+    },
+    {
+      "slug": "gemels-vode",
+      "modelNo": "VODE",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "VODE 시리즈 복동 오버센터 밸브",
+      "nameEn": "VODE Series Double Effect Overcenter Valves",
+      "shortDescriptionKo": "복동 오버센터 밸브, DN6~DN20, 최대 350bar",
+      "shortDescriptionEn": "Double effect overcenter valves, DN6-DN20, up to 350 bar",
+      "descriptionKo": "VODE 시리즈는 양방향 부하 제어용 복동 오버센터 밸브입니다. DN6~DN20 사이즈에 최대 35 MPa(PN350), 설정 범위 3~35 MPa이며 파일럿비는 4.25:1(대구경 6.25:1)입니다. BSP/NPT/SAE 나사, 아연 도금 탄소강 본체이며 8:1, 11:1 파일럿비, 대구경, 탬퍼 방지 캡은 주문 제작 가능합니다.",
+      "descriptionEn": "The VODE series are double effect overcenter valves for bidirectional load control. Sizes DN6-DN20 are rated up to 35 MPa (PN350) with 3-35 MPa setting ranges and pilot ratios of 4.25:1 (6.25:1 for the largest size). Supplied with BSP/NPT/SAE ends in galvanized carbon steel; 8:1 and 11:1 pilot ratios, bigger sizes and tamper-proof caps on request.",
+      "specs": {
+        "valve_type": "overcenter_valve",
+        "size_range": "DN6 ~ DN20",
+        "max_pressure_mpa": 35,
+        "end_connections": "BSP(ISO 228), NPT(ANSI/ASME B1.20.1), SAE J1926-1",
+        "body_material": "carbon_steel",
+        "temp_range_c": "유체 -20°C ~ +90°C, 주위 -20°C ~ +50°C",
+        "max_flow_lpm": 90,
+        "seal_material": "NBR",
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "514-517"
+    },
+    {
+      "slug": "gemels-vrc",
+      "modelNo": "VRC",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "VRC 시리즈 매니폴드형 직동 릴리프 밸브",
+      "nameEn": "VRC Series Direct Acting Relief Valves with Manifold",
+      "shortDescriptionKo": "매니폴드 일체형 직동 릴리프 밸브, DN6~DN10",
+      "shortDescriptionEn": "Direct acting relief valves with manifold, DN6-DN10",
+      "descriptionKo": "VRC 시리즈는 매니폴드 일체형 직동 릴리프 밸브입니다. DN6~DN10 사이즈에 최대 35 MPa(PN350), 표준 설정 범위 10~180 bar(주문 시 10~50, 80~300 bar)이며 최대 유량은 40 l/min입니다. BSP/NPT/SAE 나사와 NBR(옵션 Viton) 시일, 아연 도금 탄소강 본체로 제공됩니다.",
+      "descriptionEn": "The VRC series are direct acting relief valves integrated in a manifold. Sizes DN6-DN10 are rated up to 35 MPa (PN350) with a standard setting range of 10-180 bar (10-50 and 80-300 bar on request) and flows up to 40 l/min. Supplied with BSP/NPT/SAE ends, NBR seals (Viton optional) and galvanized carbon steel bodies.",
+      "specs": {
+        "valve_type": "relief_valve",
+        "size_range": "DN6 ~ DN10",
+        "max_pressure_mpa": 35,
+        "end_connections": "BSP(ISO 228), NPT(ANSI/ASME B1.20.1), SAE J1926-1",
+        "body_material": "carbon_steel",
+        "temp_range_c": "유체 -20°C ~ +80°C, 주위 -20°C ~ +50°C",
+        "max_flow_lpm": 40,
+        "seal_material": "NBR 70 Shore A (옵션 Viton)",
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "518-521"
+    },
+    {
+      "slug": "gemels-vrm",
+      "modelNo": "VRM",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "VRM 시리즈 압력계 포트형 릴리프 밸브",
+      "nameEn": "VRM Series Relief Valves in Manifold with Manometer Port",
+      "shortDescriptionKo": "압력계 포트를 갖춘 매니폴드형 릴리프 밸브, DN10~DN20",
+      "shortDescriptionEn": "Manifold relief valves with manometer port, DN10-DN20",
+      "descriptionKo": "VRM 시리즈는 압력계 포트를 갖춘 매니폴드형 릴리프 밸브입니다. DN10~DN20 사이즈에 최대 35 MPa(PN350), 표준 설정 범위 10~180 bar(주문 시 10~50/20~100/50~250/80~300 bar)이며 최대 유량은 DN20 기준 90 l/min입니다. BSP/NPT/SAE 나사, NBR(옵션 Viton) 시일로 제공됩니다.",
+      "descriptionEn": "The VRM series are relief valves in a manifold with manometer port. Sizes DN10-DN20 are rated up to 35 MPa (PN350) with a standard 10-180 bar setting range (10-50/20-100/50-250/80-300 bar on request) and flows up to 90 l/min at DN20. Available with BSP/NPT/SAE ends and NBR seals (Viton optional).",
+      "specs": {
+        "valve_type": "relief_valve",
+        "size_range": "DN10 ~ DN20",
+        "max_pressure_mpa": 35,
+        "end_connections": "BSP(ISO 228), NPT(ANSI/ASME B1.20.1), SAE J1926-1",
+        "body_material": "carbon_steel",
+        "temp_range_c": "유체 -20°C ~ +80°C, 주위 -20°C ~ +50°C",
+        "max_flow_lpm": 90,
+        "seal_material": "NBR 70 Shore A (옵션 Viton)",
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "522-525"
+    },
+    {
+      "slug": "gemels-vbp",
+      "modelNo": "VBP",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "VBP 시리즈 파일럿 체크 밸브",
+      "nameEn": "VBP Series Pilot Operated Check Valves",
+      "shortDescriptionKo": "단동(VBPSE)/복동(VBPDE) 파일럿 체크 밸브, DN6~DN20",
+      "shortDescriptionEn": "Single (VBPSE) and double (VBPDE) pilot operated check valves, DN6-DN20",
+      "descriptionKo": "VBP 시리즈는 단동(VBPSE), 복동(VBPDE), 12mm 배관 장착형(VBPDE CEXC), 인라인형(VBPDE Type A) 파일럿 체크 밸브로 구성됩니다. DN6~DN20 사이즈에 최대 35 MPa(PN350), 파일럿비 3.8:1~6.25:1, 최대 유량 100 l/min이며 BSP 나사와 아연 도금 탄소강 본체로 제공됩니다.",
+      "descriptionEn": "The VBP series comprises single (VBPSE), double (VBPDE), 12mm-pipe-mount (VBPDE CEXC) and inline (VBPDE Type A) pilot operated check valves. Sizes DN6-DN20 are rated up to 35 MPa (PN350) with pilot ratios of 3.8:1 to 6.25:1 and flows up to 100 l/min, supplied with BSP ends and galvanized carbon steel bodies.",
+      "specs": {
+        "valve_type": "pilot_check_valve",
+        "size_range": "DN6 ~ DN20",
+        "max_pressure_mpa": 35,
+        "end_connections": "BSP (GAS DIN/ISO 228)",
+        "body_material": "carbon_steel",
+        "temp_range_c": "-20°C ~ +100°C",
+        "max_flow_lpm": 100,
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "526-531"
+    },
+    {
+      "slug": "gemels-rfm-bdm",
+      "modelNo": "RFM/BDM",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "RFM/BDM 시리즈 배럴형 유량 조절기",
+      "nameEn": "RFM/BDM Series Barrel Type Flow Regulators",
+      "shortDescriptionKo": "단방향(RFM)/양방향(BDM) 배럴형 유량 조절기, DN6~DN25",
+      "shortDescriptionEn": "Uni-directional (RFM) and bi-directional (BDM) barrel type flow regulators, DN6-DN25",
+      "descriptionKo": "RFM(단방향)과 BDM(양방향)은 배럴형 유량 조절기입니다. DN6~DN25 사이즈에 최대 35 MPa(DN25는 25 MPa), 최대 유량 160 l/min이며 BSP 나사와 아연 도금 표면 처리로 제공됩니다.",
+      "descriptionEn": "The RFM (uni-directional) and BDM (bi-directional) are barrel type flow regulators. Sizes DN6-DN25 are rated up to 35 MPa (25 MPa at DN25) with flows up to 160 l/min, supplied with BSP ends and zinc plated surfaces.",
+      "specs": {
+        "valve_type": "flow_regulator",
+        "size_range": "DN6 ~ DN25",
+        "max_pressure_mpa": 35,
+        "end_connections": "BSP (GAS DIN/ISO 228)",
+        "body_material": "carbon_steel",
+        "temp_range_c": "유체 -20°C ~ +90°C, 주위 -20°C ~ +50°C",
+        "max_flow_lpm": 160,
+        "surface_treatment": "아연 도금 (Zinc plated)"
+      },
+      "sourcePages": "532-533"
+    },
+    {
+      "slug": "gemels-rf",
+      "modelNo": "RF",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "RF 시리즈 체크밸브 내장 유량 제어 밸브",
+      "nameEn": "RF Series Flow Control Valves with Check Valve",
+      "shortDescriptionKo": "체크밸브 내장 유량 제어 밸브, DN6~DN40, 최대 400bar",
+      "shortDescriptionEn": "Check valve flow control valves, DN6-DN40, up to 400 bar",
+      "descriptionKo": "RF 시리즈는 역류 시 자유 흐름을 허용하는 체크밸브 내장형 유량 제어 밸브입니다. DN6~DN40 사이즈에 최대 40 MPa(PN400, 대구경 35 MPa), 최대 유량 300 l/min, 크래킹 압력 0.05 MPa이며 BSP/NPT 나사와 아연 도금 탄소강 본체로 제공됩니다.",
+      "descriptionEn": "The RF series are flow control valves with integrated check valve for free reverse flow. Sizes DN6-DN40 are rated up to 40 MPa (PN400, 35 MPa for larger sizes) with flows up to 300 l/min and a 0.05 MPa cracking pressure, supplied with BSP/NPT ends and galvanized carbon steel bodies.",
+      "specs": {
+        "valve_type": "flow_control_valve",
+        "size_range": "DN6 ~ DN40",
+        "max_pressure_mpa": 40,
+        "end_connections": "BSP(ISO 228), NPT(ANSI/ASME B1.20.1)",
+        "body_material": "carbon_steel",
+        "temp_range_c": "-20°C ~ +100°C",
+        "max_flow_lpm": 300,
+        "seal_material": "NBR",
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "534-537"
+    },
+    {
+      "slug": "gemels-bd",
+      "modelNo": "BD",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "BD 시리즈 양방향 유량 제어 밸브",
+      "nameEn": "BD Series Bi-directional Flow Control Valves",
+      "shortDescriptionKo": "양방향 스로틀 유량 제어 밸브, DN6~DN40, 최대 400bar",
+      "shortDescriptionEn": "Bi-directional throttle flow control valves, DN6-DN40, up to 400 bar",
+      "descriptionKo": "BD 시리즈는 양방향으로 유량을 제한하는 스로틀형 유량 제어 밸브입니다. DN6~DN40 사이즈에 최대 40 MPa(PN400, 대구경 35 MPa), 최대 유량 300 l/min이며 BSP/NPT 나사, 아연 도금 탄소강 본체로 제공되고 패널 장착 키트도 지원합니다.",
+      "descriptionEn": "The BD series are bi-directional throttle type flow control valves. Sizes DN6-DN40 are rated up to 40 MPa (PN400, 35 MPa for larger sizes) with flows up to 300 l/min, supplied with BSP/NPT ends and galvanized carbon steel bodies; panel mounting kits are available.",
+      "specs": {
+        "valve_type": "flow_control_valve",
+        "size_range": "DN6 ~ DN40",
+        "max_pressure_mpa": 40,
+        "end_connections": "BSP(ISO 228), NPT(ANSI/ASME B1.20.1)",
+        "body_material": "carbon_steel",
+        "temp_range_c": "-20°C ~ +100°C",
+        "max_flow_lpm": 300,
+        "seal_material": "NBR",
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "538-541"
+    },
+    {
+      "slug": "gemels-vu",
+      "modelNo": "VU",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "VU 시리즈 체크 밸브",
+      "nameEn": "VU Series Check Valves",
+      "shortDescriptionKo": "탄소강/스테인리스 체크 밸브, DN6~DN50, 최대 500bar",
+      "shortDescriptionEn": "Carbon and stainless steel check valves, DN6-DN50, up to 500 bar",
+      "descriptionKo": "VU 시리즈는 포핏형 체크 밸브로 DN6~DN50 사이즈에 최대 50 MPa(PN500, 사이즈에 따라 35~50 MPa)를 지원합니다. 크래킹 압력은 표준 0.04/0.07 MPa(주문 시 1~8 bar 스프링), 최대 유량 430 l/min이며 BSP/NPT/SAE 나사, 탄소강 및 스테인리스강 본체로 제공됩니다.",
+      "descriptionEn": "The VU series poppet check valves cover DN6-DN50 with ratings up to 50 MPa (PN500; 35-50 MPa depending on size). Standard cracking pressures are 0.04/0.07 MPa (1-8 bar springs on request) with flows up to 430 l/min, supplied with BSP/NPT/SAE ends in carbon or stainless steel.",
+      "specs": {
+        "valve_type": "check_valve",
+        "size_range": "DN6 ~ DN50",
+        "max_pressure_mpa": 50,
+        "end_connections": "BSP(ISO 228), NPT(ANSI/ASME B1.20.1), SAE J1926-1",
+        "body_material": "carbon_or_stainless_steel",
+        "temp_range_c": "CS -20°C ~ +100°C, SS -30°C ~ +100°C",
+        "max_flow_lpm": 430,
+        "surface_treatment": "아연 도금 (CS, Galvanized)"
+      },
+      "sourcePages": "542-545"
+    },
+    {
+      "slug": "gemels-vuf-vus",
+      "modelNo": "VUF/VUS",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "VUF/VUS 시리즈 플랜지형 체크 밸브",
+      "nameEn": "VUF/VUS Series Flanged Check Valves",
+      "shortDescriptionKo": "SAE J518 플랜지형 체크 밸브, DN13~DN50, 최대 420bar",
+      "shortDescriptionEn": "SAE J518 flanged check valves, DN13-DN50, up to 420 bar",
+      "descriptionKo": "VUF(플랜지 포함)와 VUS(샌드위치형) 시리즈는 SAE J518 플랜지 접속용 체크 밸브입니다. DN13~DN50 사이즈에 S6000-F62/S3000-C61/S6000-C62 규격으로 제공되며 최대 42 MPa를 지원합니다. 탄소강과 스테인리스강 본체 중 선택할 수 있습니다.",
+      "descriptionEn": "The VUF (with flanges) and VUS (sandwich type) series are check valves for SAE J518 flange connections. Sizes DN13-DN50 are available in S6000-F62, S3000-C61 and S6000-C62 patterns rated up to 42 MPa, in carbon or stainless steel bodies.",
+      "specs": {
+        "valve_type": "check_valve",
+        "size_range": "DN13 ~ DN50 (1/2\" ~ 2\")",
+        "max_pressure_mpa": 42,
+        "end_connections": "SAE J518 S3000-C61 / S6000-C62 / S6000-F62 플랜지",
+        "body_material": "carbon_or_stainless_steel",
+        "temp_range_c": "CS -20°C ~ +100°C, SS -30°C ~ +100°C"
+      },
+      "sourcePages": "546-549"
+    },
+    {
+      "slug": "gemels-gev",
+      "modelNo": "GEV",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "GEV 시리즈 3방 셔틀 밸브",
+      "nameEn": "GEV Series 3-Way Shuttle Valves",
+      "shortDescriptionKo": "3방향 셔틀 밸브, DN6~DN25, 최대 500bar",
+      "shortDescriptionEn": "3-way shuttle valves, DN6-DN25, up to 500 bar",
+      "descriptionKo": "GEV 시리즈는 두 입력 중 고압측을 자동 선택하는 3방 셔틀 밸브입니다. DN6~DN25 사이즈에 최대 50 MPa(PN500)를 지원하며 BSP/NPT 나사와 탄소강(1.0737) 본체로 제공됩니다. 축소 보어와 특수 나사는 주문 제작 가능합니다.",
+      "descriptionEn": "The GEV series are 3-way shuttle valves that automatically select the higher-pressure input. Sizes DN6-DN25 are rated up to 50 MPa (PN500), supplied with BSP/NPT ends and carbon steel (1.0737) bodies. Reduced bores and special threads are available on request.",
+      "specs": {
+        "valve_type": "shuttle_valve",
+        "size_range": "DN6 ~ DN25",
+        "max_pressure_mpa": 50,
+        "end_connections": "BSP(ISO 228), NPT(ANSI/ASME B1.20.1)",
+        "body_material": "carbon_steel",
+        "temp_range_c": "-20°C ~ +100°C",
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "550-553"
+    },
+    {
+      "slug": "gemels-gps",
+      "modelNo": "GPS",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "GPS 시리즈 3방 단동 파일럿 체크 밸브",
+      "nameEn": "GPS Series 3-Way Single Pilot Operated Check Valves",
+      "shortDescriptionKo": "3방향 단동 파일럿 체크 밸브, DN6~DN25, 최대 400bar",
+      "shortDescriptionEn": "3-way single pilot operated check valves, DN6-DN25, up to 400 bar",
+      "descriptionKo": "GPS 시리즈는 아연 도금 강 본체의 3방향 단동 파일럿 체크 밸브입니다. G1/4~G1 포트에 최대 40 MPa(대구경 35 MPa), 최대 유량 120 l/min, 크래킹 압력 0.05~2.5 MPa(선택형), 파일럿비 1:3.5~1:9이며 NBR 오링을 사용합니다.",
+      "descriptionEn": "The GPS series are 3-way single pilot operated check valves with zinc plated steel bodies. Port sizes G1/4 to G1 are rated up to 40 MPa (35 MPa for larger sizes) with flows up to 120 l/min, selectable cracking pressures from 0.05 to 2.5 MPa and pilot ratios from 1:3.5 to 1:9, using NBR o-rings.",
+      "specs": {
+        "valve_type": "pilot_check_valve",
+        "size_range": "DN6 ~ DN25 (G1/4 ~ G1)",
+        "max_pressure_mpa": 40,
+        "end_connections": "BSP (BSPP)",
+        "body_material": "carbon_steel",
+        "temp_range_c": "-20°C ~ +100°C",
+        "max_flow_lpm": 120,
+        "seal_material": "NBR",
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "554-555"
+    },
+    {
+      "slug": "gemels-vb-vuba",
+      "modelNo": "VB VUBA",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "VB VUBA 시리즈 호스 파단 밸브",
+      "nameEn": "VB VUBA Series Hose Break Valves",
+      "shortDescriptionKo": "호스 파단 시 유로를 차단하는 안전 밸브, DN6~DN25",
+      "shortDescriptionEn": "Hose break safety valves, DN6-DN25",
+      "descriptionKo": "VB VUBA 시리즈는 호스 파단 시 급격한 유량 증가를 감지해 유로를 차단하는 안전 밸브입니다. G1/4~G1 사이즈에 최대 35 MPa, 유량 범위 8~200 l/min이며 카트리지(VB), 암나사 하우징(VBF), 수나사 하우징(VBM) 및 조립품 형태로 제공됩니다. 반응 유량 설정(T)이 가능합니다.",
+      "descriptionEn": "The VB VUBA series are hose break safety valves that shut off flow when a sudden flow increase indicates hose failure. Sizes G1/4 to G1 are rated at 35 MPa with flow ranges of 8-200 l/min, offered as cartridges (VB), female housings (VBF), male housings (VBM) and assembled units, with adjustable reaction flow setting (T).",
+      "specs": {
+        "valve_type": "hose_break_valve",
+        "size_range": "DN6 ~ DN25 (G1/4 ~ G1)",
+        "max_pressure_mpa": 35,
+        "end_connections": "BSP (GAS DIN/ISO 228)",
+        "body_material": "carbon_steel",
+        "temp_range_c": "-20°C ~ +100°C",
+        "max_flow_lpm": 200,
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "558-561"
+    },
+    {
+      "slug": "gemels-ddf3-a",
+      "modelNo": "DDF3-A",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "DDF3-A 시리즈 3방 유량 분배 밸브",
+      "nameEn": "DDF3-A Series 3-Way Flow Diverters",
+      "shortDescriptionKo": "3방향 유량 분배 밸브(오픈/클로즈드 센터), DN6~DN25",
+      "shortDescriptionEn": "3-way flow diverters (open/closed center), DN6-DN25",
+      "descriptionKo": "DDF3-A 시리즈는 오픈 센터와 클로즈드 센터 두 방식으로 제공되는 3방 유량 분배 밸브입니다. G1/4~G1(DN6~DN25) 사이즈에 최대 50 MPa를 지원하며 아연 도금 탄소강 본체입니다. DIN 51524/ISO 6743-4 광유 사용, 15µm 여과가 권장됩니다.",
+      "descriptionEn": "The DDF3-A series are 3-way flow diverters available in open center and closed center versions. Sizes G1/4 to G1 (DN6-DN25) are rated up to 50 MPa with galvanized carbon steel bodies. Mineral oil per DIN 51524/ISO 6743-4 and 15 micron filtration are recommended.",
+      "specs": {
+        "valve_type": "flow_diverter",
+        "size_range": "DN6 ~ DN25 (G1/4 ~ G1)",
+        "max_pressure_mpa": 50,
+        "end_connections": "BSP (GAS DIN/ISO 228)",
+        "body_material": "carbon_steel",
+        "temp_range_c": "유체 -20°C ~ +80°C, 주위 -20°C ~ +50°C",
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "562-563"
+    },
+    {
+      "slug": "gemels-ddf6-a",
+      "modelNo": "DDF6-A",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "DDF6-A 시리즈 6방 유량 분배 밸브",
+      "nameEn": "DDF6-A Series 6-Way Flow Diverters",
+      "shortDescriptionKo": "6방향 유량 분배 밸브(오픈/클로즈드 센터), DN10~DN25",
+      "shortDescriptionEn": "6-way flow diverters (open/closed center), DN10-DN25",
+      "descriptionKo": "DDF6-A 시리즈는 오픈 센터와 클로즈드 센터 방식의 6방 유량 분배 밸브입니다. G3/8~G1(DN10~DN25) 사이즈에 최대 35 MPa(사이즈에 따라 22~35 MPa)를 지원하며 아연 도금 탄소강 본체입니다.",
+      "descriptionEn": "The DDF6-A series are 6-way flow diverters in open center and closed center versions. Sizes G3/8 to G1 (DN10-DN25) are rated up to 35 MPa (22-35 MPa depending on size) with galvanized carbon steel bodies.",
+      "specs": {
+        "valve_type": "flow_diverter",
+        "size_range": "DN10 ~ DN25 (G3/8 ~ G1)",
+        "max_pressure_mpa": 35,
+        "end_connections": "BSP (GAS DIN/ISO 228)",
+        "body_material": "carbon_steel",
+        "temp_range_c": "유체 -20°C ~ +80°C, 주위 -20°C ~ +50°C",
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "564-565"
+    },
+    {
+      "slug": "gemels-ddf",
+      "modelNo": "DDF",
+      "categorySlug": "gemels-hydraulic-valves",
+      "nameKo": "DDF 시리즈 3방 유량 분배 밸브 (주철)",
+      "nameEn": "DDF Series 3-Way Flow Diverters (Cast Iron)",
+      "shortDescriptionKo": "주철 본체 3방 유량 분배 밸브, DN6~DN25, 최대 300bar",
+      "shortDescriptionEn": "Cast iron 3-way flow diverters, DN6-DN25, up to 300 bar",
+      "descriptionKo": "DDF 시리즈는 주철 본체의 오픈 센터 3방 유량 분배 밸브입니다. G1/4~G1(DN6~DN25) 사이즈에 최대 30 MPa(사이즈에 따라 22~30 MPa), 최대 유량 200 l/min을 지원합니다.",
+      "descriptionEn": "The DDF series are open-center 3-way flow diverters with cast iron bodies. Sizes G1/4 to G1 (DN6-DN25) are rated up to 30 MPa (22-30 MPa depending on size) with flows up to 200 l/min.",
+      "specs": {
+        "valve_type": "flow_diverter",
+        "size_range": "DN6 ~ DN25 (G1/4 ~ G1)",
+        "max_pressure_mpa": 30,
+        "end_connections": "BSP (GAS DIN/ISO 228)",
+        "body_material": "cast_iron",
+        "max_flow_lpm": 200,
+        "surface_treatment": "아연 도금 (Galvanized)"
+      },
+      "sourcePages": "566-567"
+    },
+    {
+      "slug": "gemels-gn-hc",
+      "modelNo": "GN HC",
+      "categorySlug": "gemels-oil-gas-ball-valves",
+      "nameKo": "GN HC 시리즈 고빈도 작동용 2방 고압 볼 밸브",
+      "nameEn": "GN HC Series High Cyclicity 2-Way High Pressure Ball Valves",
+      "shortDescriptionKo": "고빈도 작동(High Cyclicity)용 2방 고압 볼 밸브, DN6~DN50, 6000psi",
+      "shortDescriptionEn": "High cyclicity 2-way high pressure ball valves, DN6-DN50, 6000 psi",
+      "descriptionKo": "GN HC 시리즈는 빈번한 개폐가 요구되는 오일&가스 응용을 위한 2방 고압 볼 밸브입니다. DN6~DN50 사이즈에 41.4 MPa(6000 psi)를 지원하며 스템 재질 1.4542, PA612G 볼 시트로 내구성을 높였습니다. BSP/NPT/SAE 나사, 탄소강 및 스테인리스강 본체로 제공되고 ISO 5211 마운트에 복동/스프링 리턴 액추에이터 장착이 가능합니다.",
+      "descriptionEn": "The GN HC series are 2-way high-pressure ball valves for oil & gas applications requiring frequent cycling. Sizes DN6-DN50 are rated 41.4 MPa (6000 psi), with a 1.4542 stem and PA612G ball seats for durability. Available with BSP/NPT/SAE ends in carbon or stainless steel, with ISO 5211 mounting for double acting or spring return actuators.",
+      "specs": {
+        "valve_design": "floating_high_cyclicity",
+        "size_range": "DN6 ~ DN50 (1/4\" ~ 2\")",
+        "pressure_class": "6000 psi (PN414)",
+        "max_pressure_mpa": 41.4,
+        "end_connections": "BSP(ISO 228), NPT(ANSI/ASME B1.20.1), SAE J1926-1",
+        "body_material": "탄소강 1.0737 / 스테인리스강 1.4404",
+        "temp_range_c": "CS -20°C ~ +100°C, SS -30°C ~ +100°C",
+        "standards": "ISO 5211",
+        "iso5211_mount": true
+      },
+      "sourcePages": "570-577"
+    },
+    {
+      "slug": "gemels-gn",
+      "modelNo": "GN",
+      "categorySlug": "gemels-oil-gas-ball-valves",
+      "nameKo": "GN 시리즈 2방 고압 볼 밸브",
+      "nameEn": "GN Series 2-Way High Pressure Ball Valves",
+      "shortDescriptionKo": "오일&가스용 2방 고압 볼 밸브, DN6~DN50, PN500/S6000",
+      "shortDescriptionEn": "Oil & gas 2-way high pressure ball valves, DN6-DN50, PN500/S6000",
+      "descriptionKo": "GN 시리즈는 ASTM A350 LF2(탄소강) 또는 A182 F316L(스테인리스강) 단조 본체의 오일&가스용 2방 고압 볼 밸브입니다. DN6~DN50 사이즈에 최대 50 MPa(PN500) 또는 S6000(41.4 MPa) 클래스로 제공되며, BSP/NPT/소켓용접(SW)/PE 맞대기용접 접속과 -46°C~+250°C의 넓은 온도 범위(재질 선택에 따름)를 지원합니다. ISO 5211 마운트로 액추에이터 장착이 가능합니다.",
+      "descriptionEn": "The GN series are 2-way high-pressure ball valves for oil & gas with forged ASTM A350 LF2 (carbon steel) or A182 F316L (stainless steel) bodies. Sizes DN6-DN50 are offered in PN500 (50 MPa) or S6000 (41.4 MPa) classes with BSP/NPT/socket weld (SW/SWXT)/PE butt weld ends and a -46°C to +250°C temperature range depending on materials. ISO 5211 mounting allows actuator fitting.",
+      "specs": {
+        "valve_design": "floating_screwed",
+        "size_range": "DN6 ~ DN50 (1/4\" ~ 2\")",
+        "pressure_class": "PN500 / S6000",
+        "max_pressure_mpa": 50,
+        "end_connections": "BSP, NPT, SW, SW Extra-long, PE BW",
+        "body_material": "ASTM A350 LF2 / ASTM A182 F316L",
+        "temp_range_c": "-46°C ~ +250°C (재질 선택에 따름)",
+        "standards": "ISO 5211",
+        "iso5211_mount": true
+      },
+      "sourcePages": "578-589"
+    },
+    {
+      "slug": "gemels-gm",
+      "modelNo": "GM",
+      "categorySlug": "gemels-oil-gas-ball-valves",
+      "nameKo": "GM 시리즈 2방 고압 볼 밸브",
+      "nameEn": "GM Series 2-Way High Pressure Ball Valves",
+      "shortDescriptionKo": "오일&가스용 2방 고압 볼 밸브, DN6~DN100, PN500/S3000",
+      "shortDescriptionEn": "Oil & gas 2-way high pressure ball valves, DN6-DN100, PN500/S3000",
+      "descriptionKo": "GM 시리즈는 ASTM A350 LF2/A105(탄소강) 또는 A182 F316L(스테인리스강) 본체의 오일&가스용 2방 고압 볼 밸브입니다. DN6~DN100 사이즈에 최대 PN500 또는 S3000 클래스로 제공되며 BSP/NPT/소켓용접 접속(PE·SW 엑스트라롱은 주문 제작)과 -46°C~+250°C 온도 범위를 지원합니다.",
+      "descriptionEn": "The GM series are 2-way high-pressure ball valves for oil & gas with ASTM A350 LF2/A105 (carbon steel) or A182 F316L (stainless steel) bodies. Sizes DN6-DN100 are offered up to PN500 or S3000 class with BSP/NPT/socket weld ends (PE and SW extra-long on request) and a -46°C to +250°C temperature range depending on materials.",
+      "specs": {
+        "valve_design": "floating_screwed",
+        "size_range": "DN6 ~ DN100 (1/4\" ~ 4\")",
+        "pressure_class": "PN500 / S3000",
+        "max_pressure_mpa": 50,
+        "end_connections": "BSP, NPT, SW (PE·SW 엑스트라롱 주문 제작)",
+        "body_material": "ASTM A350 LF2 (DN65~100: A105) / ASTM A182 F316L",
+        "temp_range_c": "-46°C ~ +250°C (재질 선택에 따름)",
+        "iso5211_mount": false
+      },
+      "sourcePages": "590-597"
+    },
+    {
+      "slug": "gemels-sbf-w",
+      "modelNo": "SBF-W",
+      "categorySlug": "gemels-oil-gas-ball-valves",
+      "nameKo": "SBF-W 시리즈 웨이퍼형 볼 밸브",
+      "nameEn": "SBF-W Series Wafer Type Ball Valves",
+      "shortDescriptionKo": "스플릿 바디 플로팅 웨이퍼형 볼 밸브, DN13~DN150, ANSI 150~600",
+      "shortDescriptionEn": "Split body floating wafer type ball valves, DN13-DN150, ANSI 150-600",
+      "descriptionKo": "SBF-W 시리즈는 스플릿 바디 플로팅 구조의 웨이퍼형 볼 밸브입니다. DN13~DN150(1/2\"~6\") 사이즈에 ANSI 150/300/600 클래스로 제공되며, 단조 탄소강(LF2)·스테인리스강(F316)·듀플렉스·합금강 본체와 RPTFE 볼 시트(PEEK/POM/DEVLON 옵션)를 사용합니다. -50°C~+200°C 온도 범위와 ISO 5211 액추에이터 마운트를 지원합니다.",
+      "descriptionEn": "The SBF-W series are wafer type ball valves with split body floating construction. Sizes DN13-DN150 (1/2\"-6\") are offered in ANSI 150/300/600 classes with forged carbon steel (LF2), stainless steel (F316), duplex or alloy bodies and RPTFE ball seats (PEEK/POM/DEVLON options). They cover -50°C to +200°C and provide ISO 5211 actuator mounting.",
+      "specs": {
+        "valve_design": "wafer_floating",
+        "size_range": "DN13 ~ DN150 (1/2\" ~ 6\")",
+        "pressure_class": "ANSI 150 / 300 / 600",
+        "max_pressure_mpa": 10,
+        "end_connections": "웨이퍼 (ASME B16.5 플랜지 사이 장착)",
+        "body_material": "ASTM A350 LF2 / A479 Tp.316 (CS, SS, DSS, 합금강 단조)",
+        "temp_range_c": "-50°C ~ +200°C (재질 선택에 따름)",
+        "standards": "ASME B16.5, ISO 5211",
+        "iso5211_mount": true
+      },
+      "sourcePages": "598-601"
+    },
+    {
+      "slug": "gemels-sbf",
+      "modelNo": "SBF",
+      "categorySlug": "gemels-oil-gas-ball-valves",
+      "nameKo": "SBF 시리즈 스플릿 바디 플로팅 볼 밸브",
+      "nameEn": "SBF Series Split Body Floating Ball Valves",
+      "shortDescriptionKo": "플랜지형 스플릿 바디 플로팅 볼 밸브, DN13~DN150, ANSI 150~2500",
+      "shortDescriptionEn": "Flanged split body floating ball valves, DN13-DN150, ANSI 150-2500",
+      "descriptionKo": "SBF 시리즈는 볼트 체결 스플릿 바디 플로팅 볼 밸브로 DN13~DN150(1/2\"~6\") 사이즈, ANSI 150~2500 클래스로 제공됩니다. 단조 LF2/F316(듀플렉스·합금강 옵션) 본체, RPTFE 시트(PEEK/POM/DEVLON/메탈-투-메탈 옵션), RF/RTJ/BW/FF 플랜지를 지원하며 API 6D, API 598, ASME B16.34/B16.5/B16.10, NACE MR-01-75, BS 5351 등 국제 규격에 부합합니다. 풀보어/리듀스드 보어 선택이 가능합니다.",
+      "descriptionEn": "The SBF series are bolted split body floating ball valves in DN13-DN150 (1/2\"-6\"), ANSI class 150-2500. With forged LF2/F316 bodies (duplex and alloy options), RPTFE seats (PEEK/POM/DEVLON/metal-to-metal options) and RF/RTJ/BW/FF flanges, they comply with API 6D, API 598, ASME B16.34/B16.5/B16.10, NACE MR-01-75, BS 5351 and related standards. Full bore and reduced bore versions are available.",
+      "specs": {
+        "valve_design": "split_body_floating",
+        "size_range": "DN13 ~ DN150 (1/2\" ~ 6\"), FB/RB",
+        "pressure_class": "ANSI 150 ~ 2500",
+        "max_pressure_mpa": 42,
+        "end_connections": "플랜지 RF (RTJ/BW/FF 주문 제작)",
+        "body_material": "ASTM A350 LF2 / A182 F316 (A105, F51 듀플렉스 옵션)",
+        "temp_range_c": "-50°C ~ +200°C (재질 선택에 따름)",
+        "standards": "API 6D, API 598, ASME B16.34/B16.5/B16.10, BS 6755, NACE MR-01-75, BS 5351, ISO 5211",
+        "iso5211_mount": true
+      },
+      "sourcePages": "602-611"
+    },
+    {
+      "slug": "gemels-sbt",
+      "modelNo": "SBT",
+      "categorySlug": "gemels-oil-gas-ball-valves",
+      "nameKo": "SBT 시리즈 스플릿 바디 트러니언 볼 밸브",
+      "nameEn": "SBT Series Split Body Trunnion Ball Valves",
+      "shortDescriptionKo": "트러니언 마운트 볼 밸브, DN20~DN900(3/4\"~36\"), ANSI 150~2500",
+      "shortDescriptionEn": "Trunnion mounted ball valves, DN20-DN900 (3/4\"-36\"), ANSI 150-2500",
+      "descriptionKo": "SBT 시리즈는 볼트 체결 스플릿 바디 트러니언 마운트 볼 밸브로 DN20~DN900(3/4\"~36\") 사이즈, ANSI 150~2500 클래스로 제공됩니다. LF2/F316 단조 본체, 인코넬 X750 스프링, 스템 인젝션·드레인 플러그·벤트 블리더를 갖추고 있으며 레버/기어/공압·전동 액추에이터 조작이 가능합니다. API 6D 등 파이프라인 밸브 규격에 부합하며 완전 용접(Fully Welded) 버전도 제공됩니다.",
+      "descriptionEn": "The SBT series are bolted split body trunnion mounted ball valves in DN20-DN900 (3/4\"-36\"), ANSI class 150-2500. Built with forged LF2/F316 bodies, Inconel X750 springs, stem injection, drain plug and vent bleeder, they can be operated by lever, gear or pneumatic/electric actuators. They comply with API 6D and related pipeline valve standards, and a fully welded version is also available.",
+      "specs": {
+        "valve_design": "split_body_trunnion",
+        "size_range": "DN20 ~ DN900 (3/4\" ~ 36\"), FB/RB",
+        "pressure_class": "ANSI 150 ~ 2500",
+        "max_pressure_mpa": 42,
+        "end_connections": "플랜지 RF (RTJ/BW/FF 주문 제작)",
+        "body_material": "ASTM A350 LF2 / A182 F316 (F51 듀플렉스 옵션)",
+        "temp_range_c": "-50°C ~ +200°C (재질 선택에 따름)",
+        "standards": "API 6D, API 598, ASME B16.34/B16.5/B16.10, BS 6755, NACE MR-01-75, BS 5351, ISO 5211",
+        "iso5211_mount": true
+      },
+      "sourcePages": "612-625"
+    },
+    {
+      "slug": "gemels-dbb",
+      "modelNo": "DBB",
+      "categorySlug": "gemels-oil-gas-ball-valves",
+      "nameKo": "DBB 시리즈 더블 블록 앤 블리드 볼 밸브",
+      "nameEn": "DBB Series Double Block and Bleed Ball Valves",
+      "shortDescriptionKo": "더블 블록 앤 블리드 볼 밸브, DN13~DN200(1/2\"~8\"), ANSI 150~2500",
+      "shortDescriptionEn": "Double block and bleed ball valves, DN13-DN200 (1/2\"-8\"), ANSI 150-2500",
+      "descriptionKo": "DBB 시리즈는 두 개의 볼과 블리더를 하나의 본체에 통합한 더블 블록 앤 블리드 볼 밸브입니다. DN13~DN200(1/2\"~8\") 사이즈, ANSI 150~2500 클래스로 제공되며 LF2/F316 단조 본체, RPTFE 시트(PEEK/POM/DEVLON/메탈-투-메탈 옵션), RF/RTJ/BW/FF 플랜지, 정전기 방지 장치를 갖추고 있습니다.",
+      "descriptionEn": "The DBB series are double block and bleed ball valves integrating two balls and a bleeder in one body. Sizes DN13-DN200 (1/2\"-8\") in ANSI class 150-2500 feature forged LF2/F316 bodies, RPTFE seats (PEEK/POM/DEVLON/metal-to-metal options), RF/RTJ/BW/FF flanges and antistatic devices.",
+      "specs": {
+        "valve_design": "double_block_bleed",
+        "size_range": "DN13 ~ DN200 (1/2\" ~ 8\"), FB/RB",
+        "pressure_class": "ANSI 150 ~ 2500",
+        "max_pressure_mpa": 42,
+        "end_connections": "플랜지 RF (RTJ/BW/FF 주문 제작)",
+        "body_material": "ASTM A350 LF2 / A479 Tp.316 (CS, SS, DSS, 합금강 단조)",
+        "temp_range_c": "-50°C ~ +200°C (재질 선택에 따름)",
+        "standards": "ASME B16.5, ISO 5211",
+        "iso5211_mount": true
+      },
+      "sourcePages": "626-633"
+    },
+    {
+      "slug": "gemels-jda",
+      "modelNo": "JDA",
+      "categorySlug": "gemels-actuators-kits",
+      "nameKo": "JDA 시리즈 초소형 스카치요크 공압 액추에이터 (복동식)",
+      "nameEn": "JDA Series Ultra Compact Scotch-Yoke Pneumatic Actuators (Double Acting)",
+      "shortDescriptionKo": "복동식 스카치요크 공압 액추에이터, 토크 6.4~692 Nm, ATEX",
+      "shortDescriptionEn": "Double acting scotch-yoke pneumatic actuators, 6.4-692 Nm, ATEX",
+      "descriptionKo": "JDA 시리즈는 초소형 스카치요크 구조의 복동식 공압 액추에이터로 고빈도 작동(High Cyclicity)에 적합합니다. JDA13~JDA520 모델이 공기압 0.3~0.8 MPa에서 6.4~691.8 Nm의 토크를 제공하며 표준 공급 압력은 6 bar(최대 8 bar)입니다. 알루미늄 실린더 본체, -50°C~+160°C 사용 온도, ATEX 인증, ISO 5211 F03~F10 플랜지를 지원합니다.",
+      "descriptionEn": "The JDA series are ultra compact scotch-yoke double acting pneumatic actuators suited to high cyclicity duty. Models JDA13 to JDA520 deliver 6.4 to 691.8 Nm at 0.3-0.8 MPa air supply, with 6 bar standard (8 bar max). Aluminium cylinder bodies, -50°C to +160°C service, ATEX certification and ISO 5211 F03-F10 flanges.",
+      "specs": {
+        "product_type": "pneumatic_actuator",
+        "operation": "double_acting",
+        "models": "JDA13, JDA35, JDA75, JDA135, JDA520",
+        "torque_range_nm": "6.4 ~ 691.8 Nm (0.3~0.8 MPa 공기압)",
+        "supply": "압축공기 6 bar (최대 8 bar), 건조/윤활 공기·비부식성 가스·경유압유",
+        "iso5211_flange": "F03 ~ F10",
+        "temp_range_c": "-50°C ~ +160°C",
+        "certification": "ATEX"
+      },
+      "sourcePages": "650-655"
+    },
+    {
+      "slug": "gemels-jsr",
+      "modelNo": "JSR",
+      "categorySlug": "gemels-actuators-kits",
+      "nameKo": "JSR 시리즈 초소형 스카치요크 공압 액추에이터 (스프링 리턴)",
+      "nameEn": "JSR Series Ultra Compact Scotch-Yoke Pneumatic Actuators (Spring Return)",
+      "shortDescriptionKo": "스프링 리턴 스카치요크 공압 액추에이터, 토크 21.6~240 Nm, ATEX",
+      "shortDescriptionEn": "Spring return scotch-yoke pneumatic actuators, 21.6-240 Nm, ATEX",
+      "descriptionKo": "JSR 시리즈는 초소형 스카치요크 구조의 스프링 리턴 공압 액추에이터입니다. JSR20~JSR240 모델이 0.6 MPa 공기압 기준 21.6~240 Nm의 토크를 제공하며 표준 공급 압력은 6 bar(최대 8 bar)입니다. -50°C~+160°C 사용 온도, ATEX 인증, ISO 5211 F03~F10 플랜지를 지원합니다.",
+      "descriptionEn": "The JSR series are ultra compact scotch-yoke spring return pneumatic actuators. Models JSR20 to JSR240 deliver 21.6 to 240 Nm at 0.6 MPa air supply, with 6 bar standard (8 bar max). Rated -50°C to +160°C with ATEX certification and ISO 5211 F03-F10 flanges.",
+      "specs": {
+        "product_type": "pneumatic_actuator",
+        "operation": "spring_return",
+        "models": "JSR20, JSR42, JSR84, JSR240",
+        "torque_range_nm": "21.6 ~ 240 Nm (0.6 MPa 공기압 기준)",
+        "supply": "압축공기 6 bar (최대 8 bar), 건조/윤활 공기·비부식성 가스·경유압유",
+        "iso5211_flange": "F03 ~ F10",
+        "temp_range_c": "-50°C ~ +160°C",
+        "certification": "ATEX"
+      },
+      "sourcePages": "656-659"
+    },
+    {
+      "slug": "gemels-da-rack-pinion",
+      "modelNo": "DA (Rack & Pinion)",
+      "categorySlug": "gemels-actuators-kits",
+      "nameKo": "DA 시리즈 랙&피니언 공압 액추에이터 (복동식)",
+      "nameEn": "DA Series Rack & Pinion Pneumatic Actuators (Double Acting)",
+      "shortDescriptionKo": "복동식 랙&피니언 공압 액추에이터, 토크 23.7~824 Nm, ATEX",
+      "shortDescriptionEn": "Double acting rack & pinion pneumatic actuators, 23.7-824 Nm, ATEX",
+      "descriptionKo": "DA 시리즈는 랙&피니언 구조의 복동식 공압 액추에이터입니다. DA25~DA825 모델이 0.6 MPa 공기압 기준 23.7~824 Nm의 토크를 제공하며 표준 공급 압력은 6 bar(최대 7 bar)입니다. 양극산화 알루미늄 본체, Buna-N 시일 기준 -40°C~+80°C 사용 온도, ATEX 인증, ISO 5211 F03~F12 플랜지를 지원하며 GEMELS 볼 밸브용 액추에이터 키트(AK 시리즈)와 조합됩니다.",
+      "descriptionEn": "The DA series are double acting rack & pinion pneumatic actuators. Models DA25 to DA825 deliver 23.7 to 824 Nm at 0.6 MPa air supply, with 6 bar standard (7 bar max). Anodized aluminium bodies, -40°C to +80°C with Buna-N seals, ATEX certification and ISO 5211 F03-F12 flanges; combined with AK series mounting kits for GEMELS ball valves.",
+      "specs": {
+        "product_type": "pneumatic_actuator",
+        "operation": "double_acting",
+        "models": "DA25, DA40, DA100, DA200, DA375, DA825",
+        "torque_range_nm": "23.7 ~ 824 Nm (0.6 MPa 공기압 기준)",
+        "supply": "압축공기 6 bar (최대 7 bar), 건조/윤활 공기·비부식성 가스·경유압유",
+        "iso5211_flange": "F03 ~ F12",
+        "temp_range_c": "-40°C ~ +80°C (Buna-N 시일)",
+        "certification": "ATEX"
+      },
+      "sourcePages": "660-661"
+    },
+    {
+      "slug": "gemels-sr-rack-pinion",
+      "modelNo": "SR (Rack & Pinion)",
+      "categorySlug": "gemels-actuators-kits",
+      "nameKo": "SR 시리즈 랙&피니언 공압 액추에이터 (스프링 리턴)",
+      "nameEn": "SR Series Rack & Pinion Pneumatic Actuators (Spring Return)",
+      "shortDescriptionKo": "스프링 리턴 랙&피니언 공압 액추에이터, 토크 최대 533 Nm, ATEX",
+      "shortDescriptionEn": "Spring return rack & pinion pneumatic actuators, up to 533 Nm, ATEX",
+      "descriptionKo": "SR 시리즈는 랙&피니언 구조의 스프링 리턴 공압 액추에이터입니다. SR35/(18)~SR530/(290) 모델이 0.6 MPa 공기압 기준 에어 스타트 토크 32.7~533 Nm, 스프링 엔드 토크 18~292 Nm를 제공합니다. 표준 공급 압력 6 bar(최대 7 bar), -40°C~+80°C(Buna-N 시일), ATEX 인증, ISO 5211 F05~F12 플랜지를 지원합니다.",
+      "descriptionEn": "The SR series are spring return rack & pinion pneumatic actuators. Models SR35/(18) to SR530/(290) deliver air-start torques of 32.7 to 533 Nm and spring-end torques of 18 to 292 Nm at 0.6 MPa. Standard 6 bar supply (7 bar max), -40°C to +80°C with Buna-N seals, ATEX certification and ISO 5211 F05-F12 flanges.",
+      "specs": {
+        "product_type": "pneumatic_actuator",
+        "operation": "spring_return",
+        "models": "SR35/(18), SR60/(40), SR130/(72), SR240/(132), SR385/(210), SR530/(290)",
+        "torque_range_nm": "에어 스타트 32.7 ~ 533 Nm, 스프링 엔드 18 ~ 292 Nm (0.6 MPa 기준)",
+        "supply": "압축공기 6 bar (최대 7 bar)",
+        "iso5211_flange": "F05 ~ F12",
+        "temp_range_c": "-40°C ~ +80°C (Buna-N 시일)",
+        "certification": "ATEX"
+      },
+      "sourcePages": "662-663"
+    },
+    {
+      "slug": "gemels-j4c",
+      "modelNo": "J4C",
+      "categorySlug": "gemels-actuators-kits",
+      "nameKo": "J4C 시리즈 전동 액추에이터",
+      "nameEn": "J4C Series Electric Actuators",
+      "shortDescriptionKo": "볼 밸브용 전동 액추에이터, 토크 20~300 Nm, IP67",
+      "shortDescriptionEn": "Electric actuators for ball valves, 20-300 Nm, IP67",
+      "descriptionKo": "J4C 시리즈는 GEMELS 볼 밸브(DN6~DN50)용 쿼터턴 전동 액추에이터입니다. J4C-20/35/55/85/140/300 모델이 작동 토크 20~300 Nm를 제공하며, 12 VAC/VDC 또는 24~240 VAC/VDC 멀티전압 전원, 24V 브러시리스 모터, IP67 등급, 4 SPDT 리미트 스위치, 히터를 내장합니다. 디지털 포지셔너(4-20mA 등), 배터리 페일세이프(BSR), 3위치 제어 옵션이 제공되며 ISO 5211 F03~F10 플랜지를 지원합니다.",
+      "descriptionEn": "The J4C series are quarter-turn electric actuators for GEMELS ball valves (DN6-DN50). Models J4C-20/35/55/85/140/300 provide 20-300 Nm operational torque, powered at 12 VAC/VDC or multi-voltage 24-240 VAC/VDC with a 24V brushless motor, IP67 rating, 4 SPDT limit switches and heater. Options include digital positioner (4-20mA etc.), BSR battery fail-safe and 3-position control, with ISO 5211 F03-F10 flanges.",
+      "specs": {
+        "product_type": "electric_actuator",
+        "operation": "electric",
+        "models": "J4C-20, J4C-35, J4C-55, J4C-85, J4C-140, J4C-300",
+        "torque_range_nm": "작동 토크 20 ~ 300 Nm (브레이크 토크 25 ~ 350 Nm)",
+        "supply": "12 VAC/VDC 또는 24~240 VAC/VDC, 듀티 75%, IP67",
+        "iso5211_flange": "F03 ~ F10",
+        "temp_range_c": "-20°C ~ +70°C",
+        "certification": "IP67 (DPS 디지털 포지셔너·BSR 페일세이프 옵션)"
+      },
+      "sourcePages": "676-681"
+    },
+    {
+      "slug": "gemels-locking-devices",
+      "modelNo": "LK / SB",
+      "categorySlug": "gemels-actuators-kits",
+      "nameKo": "잠금장치 시리즈 (LKB/LKF/LKR/LKS/SB)",
+      "nameEn": "Locking Device Series (LKB/LKF/LKR/LKS/SB)",
+      "shortDescriptionKo": "GEMELS 볼 밸브용 핸들 잠금장치 및 시큐리티 블록",
+      "shortDescriptionEn": "Handle locking devices and security blocks for GEMELS ball valves",
+      "descriptionKo": "GEMELS 볼 밸브 시리즈별 전용 잠금장치입니다. LKB(GM·GN용), LKF(GE·GB·GHP·GPK용), LKR(GR용), LKS(SBF·SBF-W용), 시큐리티 블록(SB)과 리미트 스위치 겸용 LKF LS로 구성되며 DN6~DN100 사이즈에 대응합니다. 아연 도금 탄소강 또는 스테인리스강 재질로 제공됩니다.",
+      "descriptionEn": "Series-specific locking devices for GEMELS ball valves: LKB (for GM/GN), LKF (for GE/GB/GHP/GPK), LKR (for GR), LKS (for SBF/SBF-W), security blocks (SB) and LKF LS versions with limit switch provision, covering DN6-DN100. Available in galvanized carbon steel or stainless steel.",
+      "specs": {
+        "product_type": "locking_device",
+        "operation": "manual",
+        "models": "LKB, LKF, LKF LS, LKR, LKS, SB (시큐리티 블록)",
+        "supply": "대응 밸브: GE, GB, GHP, GPK, GR, GM, GN, SBF, SBF-W (DN6~DN100)",
+        "certification": "재질: 아연 도금 탄소강 / 스테인리스강"
+      },
+      "sourcePages": "640-645"
+    },
+    {
+      "slug": "gemels-handles",
+      "modelNo": "HANDLES",
+      "categorySlug": "gemels-actuators-kits",
+      "nameKo": "핸들 시리즈",
+      "nameEn": "Handles Series",
+      "shortDescriptionKo": "GEMELS 볼 밸브용 교체 핸들 (벤트/버터플라이/스트레이트/파이프/쇼트/탠덤)",
+      "shortDescriptionEn": "Replacement handles for GEMELS ball valves (bent/butterfly/straight/pipe/short/tandem)",
+      "descriptionKo": "GEMELS 볼 밸브용 교체 핸들 키트입니다. 벤트, 버터플라이, 컷 스트레이트, 컷 벤트, 파이프, 쇼트, 스트레이트, 탠덤(콤비네이션 밸브용) 형태로 제공되며 GE, GPK, GN, GM, GB, GR, GHP, G3K/G4K 시리즈에 대응합니다. 재질은 자마크(크로밍/도장), 아연 도금 탄소강, 스테인리스강 중 선택 가능합니다.",
+      "descriptionEn": "Replacement handle kits for GEMELS ball valves in bent, butterfly, cut straight, cut bent, pipe, short, straight and tandem (for combination valves) styles, fitting GE, GPK, GN, GM, GB, GR, GHP and G3K/G4K series. Materials include zamak (chromed/painted), galvanized carbon steel and stainless steel.",
+      "specs": {
+        "product_type": "handle",
+        "operation": "manual",
+        "models": "벤트, 버터플라이, 컷 스트레이트, 컷 벤트, 파이프, 쇼트, 스트레이트, 탠덤",
+        "supply": "대응 밸브: GE, GPK, GN, GM, GB, GR, GHP, G3K/G4K (SW 6~24mm)",
+        "certification": "재질: 자마크 / 아연 도금 탄소강 / 스테인리스강"
+      },
+      "sourcePages": "646-649"
+    },
+    {
+      "slug": "gemels-limit-switch",
+      "modelNo": "LIMIT SWITCH",
+      "categorySlug": "gemels-actuators-kits",
+      "nameKo": "리미트 스위치 시리즈",
+      "nameEn": "Limit Switch Series",
+      "shortDescriptionKo": "밸브 개폐 위치 피드백용 리미트 스위치 박스 (ATEX/SIL 옵션)",
+      "shortDescriptionEn": "Limit switch boxes for valve position feedback (ATEX/SIL options)",
+      "descriptionKo": "수동 및 액추에이터 구동 밸브용 위치 피드백 리미트 스위치 제품군입니다. 초소형 폴리아미드 박스(IP 시리즈, IP66/67), ATEX Ex ia 본질안전형(IV), ATEX Ex d 알루미늄형(EAE), NAMUR 솔레노이드 밸브(Ex ia, 3/2·5/2 way)로 구성되며 VDI/VDE 3845(80×30mm) 장착, SIL 1-3(IEC 61508) 대응이 가능합니다. 수동 밸브용 장착 키트(F03~F05 ISO 플랜지)도 제공됩니다.",
+      "descriptionEn": "Position feedback limit switch range for manual and actuated valves: compact polyamide boxes (IP series, IP66/67), ATEX Ex ia intrinsically safe (IV), ATEX Ex d aluminium (EAE) versions and a NAMUR solenoid valve (Ex ia, 3/2 and 5/2 way). VDI/VDE 3845 (80x30mm) mounting and SIL 1-3 (IEC 61508) capability, with mounting kits for manual valves (F03-F05 ISO flanges).",
+      "specs": {
+        "product_type": "limit_switch",
+        "operation": "monitoring",
+        "models": "IP2M01, IV2M01 (ATEX Ex ia), EAE2M01 (ATEX Ex d), MNF532-IA 솔레노이드 밸브",
+        "supply": "기계식 스위치/근접 센서 1~3개, 24~250 V AC/DC (모델별 상이)",
+        "temp_range_c": "-25°C ~ +70°C (모델별 상이)",
+        "certification": "IP66/IP67, ATEX/IECEx, SIL 1-3 (IEC 61508:2010)"
+      },
+      "sourcePages": "688-693"
+    },
+    {
+      "slug": "gemels-electric-motors",
+      "modelNo": "GE ELECTRIC",
+      "categorySlug": "gemels-electric-motors",
+      "nameKo": "GEMELS AC 3상 토크 모터 시리즈",
+      "nameEn": "GEMELS AC Three-Phase Torque Motor Series",
+      "shortDescriptionKo": "2~100kW AC 3상 토크 모터, 최대 10,000 RPM",
+      "shortDescriptionEn": "2-100 kW AC three-phase torque motors, up to 10,000 RPM",
+      "descriptionKo": "이탈리아에서 설계·생산되는 GEMELS 전기 모터 시리즈는 AC 3상 토크 모터로, 2~100 kW 출력, 48~400V 전압, 최대 10,000 RPM 사양의 다양한 모델로 제공됩니다. 견인(트랙션) 구동, 유압 파워 유닛(펌프 인터페이스), 표준 IEC/NEMA 플랜지 사양으로 설계할 수 있으며 공랭/수랭, 커넥션 박스 또는 권선 직결 케이블 옵션을 지원합니다. 저속에서도 높은 토크를 내며 소음·배출이 적고 유지보수 부담이 낮은 것이 특징입니다. 상세 사양은 요청 시 맞춤 설계됩니다.",
+      "descriptionEn": "The GEMELS electric motor series, designed and produced in Italy, consists of AC three-phase torque motors available in models from 2 to 100 kW, 48 to 400V and up to 10,000 RPM. They can be configured for traction drives, hydraulic power units (pump interfaces) and standard IEC/NEMA flanges, with air or liquid cooling and power cables via connection box or directly connected to the winding. They deliver high torque even at low RPM with low noise, zero emissions and low maintenance; detailed specifications are customized on request.",
+      "specs": {
+        "motor_type": "AC 3상 토크 모터 (AC three-phase torque motor)",
+        "power_range_kw": "2 ~ 100 kW",
+        "voltage_range_v": "48 ~ 400 V",
+        "max_speed_rpm": 10000,
+        "cooling": "공랭 / 수랭",
+        "mounting": "트랙션용, 유압 파워 유닛(펌프 인터페이스), 표준 IEC/NEMA 플랜지",
+        "applications": "전동 파워트레인, 유압 파워 유닛, 산업 구동"
+      },
+      "sourcePages": "634-637"
+    }
+  ],
+  "notes": "Extracted from GEMELS General Catalogue Edition 21.18 text dump (assets-src/catalogs/extracted/_text/GEMELS.txt). Coverage: swivel joints begin at PDF page 475 (before the nominal 500 boundary) and were included here as explicitly assigned; hydraulic ball valve pages before 474 were left to the other agent. Pages 694-720 contain only technical reference (chemical resistance tables, torque/selection charts, certifications, contacts) - no products. Notes on data quality: (1) VAP safety valve page (557) lists dimensions only, no PN rating - max_pressure omitted. (2) Electric motors section (634-637) is a capability overview without per-model tables; single series-level product created ('sizes and power according to request'). (3) GN HC tables include DN40/DN50 rows although the intro states sizes to DN32 - size range recorded as DN6-DN50 per tables. (4) Oil & gas ANSI-class max_pressure_mpa values for SBF/SBT/DBB (42 MPa at ANSI 2500) are derived from the ANSI class rating, not stated as a single figure in the catalog. (5) Visual PDF verification was not possible in this environment (pdftoppm unavailable); all data comes from the embedded text layer, which was complete for these sections. (6) HSJ multi-way swivel joints are configuration-engineered products without a fixed dimension table."
+}

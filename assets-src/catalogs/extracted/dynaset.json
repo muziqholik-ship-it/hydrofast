@@ -1,0 +1,238 @@
+{
+  "sourcePdf": "하이드로훼스트_다이나셋_최종.pdf",
+  "manufacturer": {
+    "slug": "dynaset",
+    "name": "DYNASET",
+    "country": "Finland",
+    "websiteUrl": "https://dynaset.com",
+    "descriptionKo": "다이나셋(DYNASET)은 유압 발전기, 파워 세척 유니트 및 콤프레샤 분야의 글로벌 선두 제조업체입니다. 이동식 기계, 차량, 선박의 유압 동력을 전기, 고압 워터, 압축공기, 마그넷(자석), 진동, 파워 부스팅 및 진공으로 변환하는 유압 장비를 생산합니다.",
+    "descriptionEn": "DYNASET is a leading global manufacturer of hydraulic generators, power washing units and compressors. Its hydraulic equipment converts the hydraulic power of mobile machinery, vehicles and vessels into electricity, high-pressure water, compressed air, magnet power, vibration, power boosting and vacuum."
+  },
+  "categories": [
+    {
+      "slug": "dynaset-electricity",
+      "nameKo": "유압 발전기",
+      "nameEn": "Hydraulic Generators",
+      "descriptionKo": "이동식 기계·차량·선박의 유압 동력을 모든 AC 전기 제품에 사용할 수 있는 고품질 전기로 변환하는 유압 발전기 제품군입니다.",
+      "descriptionEn": "Hydraulic generators that convert the hydraulic power of mobile machinery, vehicles or vessels into high-quality electricity for all AC-powered equipment.",
+      "specSchema": [
+        {"key": "power_kva_min", "labelKo": "최소 출력", "labelEn": "Min power", "dataType": "unit_value", "unit": "kVA", "required": false, "sortOrder": 1, "showInCardTeaser": false},
+        {"key": "power_kva_max", "labelKo": "최대 출력", "labelEn": "Max power", "dataType": "unit_value", "unit": "kVA", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "power_kw_min", "labelKo": "최소 출력 (kW)", "labelEn": "Min power (kW)", "dataType": "unit_value", "unit": "kW", "required": false, "sortOrder": 3, "showInCardTeaser": false},
+        {"key": "power_kw_max", "labelKo": "최대 출력 (kW)", "labelEn": "Max power (kW)", "dataType": "unit_value", "unit": "kW", "required": false, "sortOrder": 4, "showInCardTeaser": true}
+      ]
+    },
+    {
+      "slug": "dynaset-high-pressure-water",
+      "nameKo": "고압 워터",
+      "nameEn": "High Pressure Water",
+      "descriptionKo": "유압 동력을 고압수 또는 대용량 물 펌핑 동력으로 변환하는 제품군으로, 거리 청소, 분진 억제, 양수 등에 사용됩니다.",
+      "descriptionEn": "Products that convert hydraulic power into high-pressure water or high-volume water pumping power, used for street washing, dust suppression, dewatering and more.",
+      "specSchema": [
+        {"key": "water_flow_min_lpm", "labelKo": "최소 유량", "labelEn": "Min water flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 1, "showInCardTeaser": false},
+        {"key": "water_flow_max_lpm", "labelKo": "최대 유량", "labelEn": "Max water flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "water_pressure_min_bar", "labelKo": "최소 수압", "labelEn": "Min water pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 3, "showInCardTeaser": false},
+        {"key": "water_pressure_max_bar", "labelKo": "최대 수압", "labelEn": "Max water pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 4, "showInCardTeaser": true},
+        {"key": "working_width_min_cm", "labelKo": "최소 작업 폭", "labelEn": "Min working width", "dataType": "unit_value", "unit": "cm", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "working_width_max_cm", "labelKo": "최대 작업 폭", "labelEn": "Max working width", "dataType": "unit_value", "unit": "cm", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "discharge_5m_min_lpm", "labelKo": "5m 양정 최소 토출량", "labelEn": "Min discharge at 5 m head", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "discharge_5m_max_lpm", "labelKo": "5m 양정 최대 토출량", "labelEn": "Max discharge at 5 m head", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 8, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "dynaset-compressed-air",
+      "nameKo": "압축 공기",
+      "nameEn": "Compressed Air",
+      "descriptionKo": "이동식 기계·차량·선박의 유압 동력을 압축 공기로 변환하는 유압 콤프레샤 제품군입니다.",
+      "descriptionEn": "Hydraulic compressors that convert the hydraulic power of mobile machinery, vehicles or vessels into compressed air.",
+      "specSchema": [
+        {"key": "air_flow_min_lpm", "labelKo": "최소 공기 유량", "labelEn": "Min airflow volume", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 1, "showInCardTeaser": false},
+        {"key": "air_flow_max_lpm", "labelKo": "최대 공기 유량", "labelEn": "Max airflow volume", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "air_pressure_min_bar", "labelKo": "최소 공기 압력", "labelEn": "Min air pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 3, "showInCardTeaser": false},
+        {"key": "air_pressure_max_bar", "labelKo": "최대 공기 압력", "labelEn": "Max air pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 4, "showInCardTeaser": true}
+      ]
+    },
+    {
+      "slug": "dynaset-magnet",
+      "nameKo": "마그넷 (자석)",
+      "nameEn": "Magnet Power",
+      "descriptionKo": "이동식 기계의 유압 파워를 자석 파워로 변환하는 유압 마그넷 제품군으로, 금속 수집·적재 및 정렬에 사용됩니다.",
+      "descriptionEn": "Hydraulic magnets that convert the hydraulic power of mobile machinery into magnet power, used for collecting, loading and sorting metal.",
+      "specSchema": [
+        {"key": "lifting_capacity_min_kg", "labelKo": "최소 정격 인양 능력", "labelEn": "Min nominal lifting capacity", "dataType": "unit_value", "unit": "kg", "required": false, "sortOrder": 1, "showInCardTeaser": false},
+        {"key": "lifting_capacity_max_kg", "labelKo": "최대 정격 인양 능력", "labelEn": "Max nominal lifting capacity", "dataType": "unit_value", "unit": "kg", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "coil_power_min_kw", "labelKo": "최소 마그넷 코일 파워", "labelEn": "Min magnet coil power", "dataType": "unit_value", "unit": "kW", "required": false, "sortOrder": 3, "showInCardTeaser": false},
+        {"key": "coil_power_max_kw", "labelKo": "최대 마그넷 코일 파워", "labelEn": "Max magnet coil power", "dataType": "unit_value", "unit": "kW", "required": false, "sortOrder": 4, "showInCardTeaser": true},
+        {"key": "demagnetization_time_s", "labelKo": "자기 소거 시간", "labelEn": "Demagnetization time", "dataType": "unit_value", "unit": "s", "required": false, "sortOrder": 5, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "dynaset-vibration",
+      "nameKo": "진동",
+      "nameEn": "Vibration",
+      "descriptionKo": "굴착기·백호의 유압력을 진동으로 변환하는 유압 바이브레이터 제품군으로, 지면 침투, 토양 압축, 파일 드라이빙 등에 사용됩니다.",
+      "descriptionEn": "Hydraulic vibras that convert the hydraulic power of excavators and backhoes into vibration, used for ground penetration, soil compaction and pile driving.",
+      "specSchema": [
+        {"key": "frequency_min_hz", "labelKo": "최소 진동수", "labelEn": "Min frequency", "dataType": "unit_value", "unit": "Hz", "required": false, "sortOrder": 1, "showInCardTeaser": false},
+        {"key": "frequency_max_hz", "labelKo": "최대 진동수", "labelEn": "Max frequency", "dataType": "unit_value", "unit": "Hz", "required": false, "sortOrder": 2, "showInCardTeaser": true}
+      ]
+    },
+    {
+      "slug": "dynaset-vacuum",
+      "nameKo": "진공",
+      "nameEn": "Vacuum",
+      "descriptionKo": "이동식 기계·차량의 유압력을 강력한 진공 및 공기 분사로 변환하는 제품군으로, 재활용 및 청소 작업에 사용됩니다.",
+      "descriptionEn": "Products that convert the hydraulic power of mobile machinery or vehicles into powerful vacuum and air blow for recycling and cleaning applications.",
+      "specSchema": [
+        {"key": "air_flow_max_m3s", "labelKo": "최대 공기 유량", "labelEn": "Max air flow", "dataType": "unit_value", "unit": "m³/s", "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "vacuum_kpa", "labelKo": "진공도", "labelEn": "Vacuum", "dataType": "unit_value", "unit": "kPa", "required": false, "sortOrder": 2, "showInCardTeaser": true}
+      ]
+    }
+  ],
+  "products": [
+    {
+      "slug": "dynaset-hg",
+      "modelNo": "HG",
+      "categorySlug": "dynaset-electricity",
+      "nameKo": "HG 유압 발전기",
+      "nameEn": "HG Hydraulic Generator",
+      "shortDescriptionKo": "이동식 기계·차량·선박의 유압 동력을 고품질 AC 전기로 변환하는 유압 발전기입니다.",
+      "shortDescriptionEn": "Hydraulic generator that converts the hydraulic power of mobile machinery, vehicles or vessels into high-quality AC electricity.",
+      "descriptionKo": "DYNASET HG 유압 발전기는 이동식 기계, 차량 또는 선박의 유압을 모든 AC 전원을 사용하는 전기 제품의 고품질 전기로 변환합니다. 크기 대비 뛰어난 전력 비율과 컴팩트한 사이즈, 경량 설계로 모든 유압 시스템에 간편하게 설치할 수 있으며 유지 보수가 필요 없습니다. 전기 장비, 조명, 난방기, 냉각기, 용접 공구 등에 사용되며 굴착기, 적재기, 트랙터, 트럭, 모바일 크레인 등에 적용됩니다.",
+      "descriptionEn": "The DYNASET HG hydraulic generator converts the hydraulic power of mobile machinery, vehicles or vessels into high-quality electricity for all AC-powered equipment. With an excellent power-to-size ratio, compact and lightweight design, it installs easily on any hydraulic system and requires no maintenance. It powers electric equipment, lighting, heaters, coolers and welding tools on excavators, loaders, tractors, trucks and mobile cranes.",
+      "specs": {
+        "power_kva_min": 3.5,
+        "power_kva_max": 350,
+        "power_kw_min": 3.5,
+        "power_kw_max": 280
+      },
+      "sourcePages": "4"
+    },
+    {
+      "slug": "dynaset-kpl",
+      "modelNo": "KPL",
+      "categorySlug": "dynaset-high-pressure-water",
+      "nameKo": "KPL 고압 거리 청소 유니트",
+      "nameEn": "KPL High Pressure Street Washing Unit",
+      "shortDescriptionKo": "차량의 유압 동력을 고압수로 변환하여 거리 청소를 수행하는 일체형 고압 세척 유니트입니다.",
+      "shortDescriptionEn": "All-in-one high-pressure washing unit that converts vehicle hydraulic power into high-pressure water for street cleaning.",
+      "descriptionKo": "DYNASET KPL 고압 거리 청소 유니트는 이동식 기계나 차량의 유압 동력을 고압수로 변환하여 거리 청소를 할 수 있도록 합니다. 일체형 컴팩트 유니트로 설치가 용이하고 깊은 표면까지 청소할 수 있으며 최소한의 물만 소비합니다. 조절 가능한 세척 파이프와 워싱 건이 포함된 모듈식 구조로 거리 청소, 중장비 청소, 소독·살균, 동상 및 거리 벤치 세척에 사용됩니다.",
+      "descriptionEn": "The DYNASET KPL high pressure street washing unit converts the hydraulic power of mobile machinery or vehicles into high-pressure water for street cleaning. As an all-in-one compact unit it is easy to install, cleans deep into surfaces and uses minimal water. Its modular design includes an adjustable washing pipe and a washing gun, and it is used for street cleaning, heavy equipment washing, disinfection, and washing statues and street benches.",
+      "specs": {
+        "water_flow_min_lpm": 30,
+        "water_flow_max_lpm": 90,
+        "water_pressure_min_bar": 180,
+        "water_pressure_max_bar": 250,
+        "working_width_min_cm": 150,
+        "working_width_max_cm": 250
+      },
+      "sourcePages": "5"
+    },
+    {
+      "slug": "dynaset-hpw-dust",
+      "modelNo": "HPW-DUST",
+      "categorySlug": "dynaset-high-pressure-water",
+      "nameKo": "HPW-DUST 고압 분진 억제기 (살포, 스프레이)",
+      "nameEn": "HPW-DUST High Pressure Dust Suppression System",
+      "shortDescriptionKo": "분무된 물 미스트로 분진을 억제하는 이동식 기계용 고압 분진 제어 시스템입니다.",
+      "shortDescriptionEn": "High-pressure dust control system for mobile machinery that suppresses dust with a fine water mist.",
+      "descriptionKo": "HPW-DUST 고압 분진 억제 시스템은 철거, 거리 청소, 채석, 파쇄, 재활용 등의 이동식 기계를 위한 혁신적인 분진 제어 시스템입니다. 분무된 물로 미스트를 생성하여 분진을 억제하고 배출물이 외부로 확산되는 것을 방지합니다. 분진 발생원을 겨냥한 제어로 최소한의 물만 소비하며 PM10 먼지 농도를 감소시키고, 케빈(운전석)에서 작업이 가능하며 압력 세척용 건과 이중 더스트 부스팅 시스템(옵션)을 갖추고 있습니다.",
+      "descriptionEn": "The HPW-DUST high pressure dust suppression system is an innovative dust control system for mobile machinery in demolition, street cleaning, quarrying, crushing and recycling. It generates a fine mist of sprayed water that suppresses dust and prevents emissions from spreading. Targeting dust at its source, it uses minimal water, reduces PM10 dust concentration, can be operated from the cabin, and comes with a pressure washing gun and an optional dual dust boosting system.",
+      "specs": {
+        "water_flow_min_lpm": 10,
+        "water_flow_max_lpm": 180,
+        "water_pressure_min_bar": 130,
+        "water_pressure_max_bar": 200
+      },
+      "sourcePages": "6"
+    },
+    {
+      "slug": "dynaset-hsp",
+      "modelNo": "HSP",
+      "categorySlug": "dynaset-high-pressure-water",
+      "nameKo": "HSP 유압 양수 펌프",
+      "nameEn": "HSP Hydraulic Submersible Pump",
+      "shortDescriptionKo": "유압 동력을 대용량 물 펌핑 동력으로 변환하는 수중 사용 가능 유압 양수 펌프입니다.",
+      "shortDescriptionEn": "Hydraulic submersible pump that converts hydraulic power into high-volume water pumping power.",
+      "descriptionKo": "DYNASET HSP 유압 양수 펌프는 이동식 기계, 차량 또는 선박의 유압 동력을 대용량 물 펌핑 동력으로 변환합니다. 견고하고 심플한 디자인에 고형물 및 연마 성분이 있는 물질에도 내성이 있으며, 전기를 사용하지 않아 감전 위험이 없습니다. 컴팩트하고 가벼우며 소모품이 없고 마른 상태에서 가동해도 손상 없이 안전합니다. 대용량 양수, 굴착 작업 시 양수, 슬러지 펌핑, 홍수 대비 펌핑 등에 사용됩니다.",
+      "descriptionEn": "The DYNASET HSP hydraulic submersible pump converts the hydraulic power of mobile machinery, vehicles or vessels into high-volume water pumping power. Its rugged, simple design resists solids and abrasive materials, and since it uses no electricity there is no risk of electric shock. It is compact, lightweight, has no consumables and can safely run dry without damage. Applications include high-volume dewatering, pumping during excavation, sludge pumping and flood-response pumping.",
+      "specs": {
+        "water_flow_min_lpm": 800,
+        "water_flow_max_lpm": 20000,
+        "discharge_5m_min_lpm": 600,
+        "discharge_5m_max_lpm": 16000
+      },
+      "sourcePages": "7"
+    },
+    {
+      "slug": "dynaset-hk",
+      "modelNo": "HK",
+      "categorySlug": "dynaset-compressed-air",
+      "nameKo": "HK 유압 피스톤 콤프레샤",
+      "nameEn": "HK Hydraulic Piston Compressor",
+      "shortDescriptionKo": "이동식 기계·차량·선박의 유압 동력을 압축 공기로 변환하는 유압 피스톤 콤프레샤입니다.",
+      "shortDescriptionEn": "Hydraulic piston compressor that converts the hydraulic power of mobile machinery, vehicles or vessels into compressed air.",
+      "descriptionKo": "DYNASET HK 유압 피스톤 콤프레샤는 이동식 기계, 차량 또는 선박의 유압 동력을 압축 공기로 변환합니다. 뛰어난 크기 대비 전력 비율과 컴팩트한 사이즈, 가벼운 무게, 에어 쿨링, 낮은 소음이 특징이며 항상 사용 준비가 되어 있고 모든 유압 시스템에 간편하게 설치할 수 있습니다. 공압 공구 전원 공급, 수리 작업, 청소, 공압 브레이크 시스템, 타이어 공기 주입 등에 사용됩니다.",
+      "descriptionEn": "The DYNASET HK hydraulic piston compressor converts the hydraulic power of mobile machinery, vehicles or vessels into compressed air. It features an excellent power-to-size ratio, compact size, light weight, air cooling and low noise, is always ready for use and installs easily on any hydraulic system. Applications include powering pneumatic tools, repair work, cleaning, pneumatic brake systems and tire inflation.",
+      "specs": {
+        "air_flow_min_lpm": 450,
+        "air_flow_max_lpm": 1000,
+        "air_pressure_min_bar": 8,
+        "air_pressure_max_bar": 12
+      },
+      "sourcePages": "8"
+    },
+    {
+      "slug": "dynaset-hmag-pro",
+      "modelNo": "HMAG PRO",
+      "categorySlug": "dynaset-magnet",
+      "nameKo": "HMAG PRO 유압 마그넷 (자석)",
+      "nameEn": "HMAG PRO Hydraulic Magnet",
+      "shortDescriptionKo": "유압 자석 발전기가 내장된 완전 일체형 유압 마그넷으로, 금속 수집과 철재 자재 취급에 사용됩니다.",
+      "shortDescriptionEn": "Fully integrated hydraulic magnet with a built-in hydraulic magnet generator for metal collection and steel material handling.",
+      "descriptionKo": "DYNASET HMAG PRO 유압 마그넷은 이동식 기계의 유압 파워를 자석 파워로 변환합니다. 유압 자석 발전기가 내장되어 있어 완전한 일체형 유닛이며, 자기 소거 시간 0.8초로 세계에서 가장 빠른 수준입니다. 장비에 빠르게 장착하고 유압 보조라인에 쉽게 연결할 수 있으며 기계 간 전환이 용이합니다. 금속 수집, 재활용·철거·건설, 철재 자재 취급, 트럭·열차·선박 적재, 철도 및 도로변 청소에 사용됩니다.",
+      "descriptionEn": "The DYNASET HMAG PRO hydraulic magnet converts the hydraulic power of mobile machinery into magnet power. With a built-in hydraulic magnet generator it is a fully integrated unit, and its 0.8-second demagnetization time is among the fastest in the world. It mounts quickly on equipment, connects easily to auxiliary hydraulic lines and transfers easily between machines. It is used for metal collection, recycling, demolition and construction, steel material handling, loading trucks, trains and ships, and railway and roadside cleaning.",
+      "specs": {
+        "lifting_capacity_min_kg": 5500,
+        "lifting_capacity_max_kg": 34000,
+        "coil_power_min_kw": 2.7,
+        "coil_power_max_kw": 11,
+        "demagnetization_time_s": 0.8
+      },
+      "sourcePages": "9"
+    },
+    {
+      "slug": "dynaset-hvb",
+      "modelNo": "HVB",
+      "categorySlug": "dynaset-vibration",
+      "nameKo": "HVB 유압 바이브레이터",
+      "nameEn": "HVB Hydraulic Vibra",
+      "shortDescriptionKo": "굴착기·백호의 유압력을 진동으로 변환하여 버켓 침투력을 높이는 유압 바이브레이터입니다.",
+      "shortDescriptionEn": "Hydraulic vibra that converts excavator or backhoe hydraulic power into vibration for better bucket penetration.",
+      "descriptionKo": "DYNASET HVB 유압 바이브레이터는 굴착기 또는 백호의 유압력을 진동으로 변환합니다. 진동을 통해 바위가 많고 딱딱하거나 얼어붙은 땅으로 굴착기 버켓을 침투시킬 수 있습니다. 조이스틱 버튼으로 활성화되며 굴착기 버킷을 신속하게 비우고 아스팔트 절삭 효율을 높여 기계의 다기능성과 투자 수익률을 향상시킵니다. 지면 침투, 토양 압축, 말뚝박기(파일 드라이빙), 아스팔트 자르기에 사용됩니다.",
+      "descriptionEn": "The DYNASET HVB hydraulic vibra converts the hydraulic power of an excavator or backhoe into vibration, allowing the bucket to penetrate rocky, hard or frozen ground. Activated from a joystick button, it speeds up bucket emptying, improves asphalt cutting efficiency and increases machine versatility and return on investment. Applications include ground penetration, soil compaction, pile driving and asphalt cutting.",
+      "specs": {
+        "frequency_min_hz": 35,
+        "frequency_max_hz": 55
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "dynaset-hrvb",
+      "modelNo": "HRVB",
+      "categorySlug": "dynaset-vacuum",
+      "nameKo": "HRVB 유압 재활용 진공 파쇄기",
+      "nameEn": "HRVB Hydraulic Recycling Vacuum Bucket",
+      "shortDescriptionKo": "유압력을 강력한 진공과 공기 분사로 변환하는 재활용·청소용 진공 버킷입니다.",
+      "shortDescriptionEn": "Recycling vacuum bucket that converts hydraulic power into powerful vacuum and air blow for recycling and cleaning.",
+      "descriptionKo": "DYNASET HRVB 유압 재활용 진공 파쇄기(진공 버킷)는 이동식 기계나 차량의 유압력을 재활용 및 청소를 위한 강력한 진공과 공기 분사로 변환합니다. 특허 기술이 적용된 튼튼한 구조에 조절식 흡입 해치, 보조 흡입구, 다양한 용도를 위한 특수 필터를 갖추고 있습니다. 건설·철거 현장 재활용 및 청소, 철도·전차 청소, 해안가 청소, 시장·축제·공원 청소에 사용됩니다.",
+      "descriptionEn": "The DYNASET HRVB hydraulic recycling vacuum bucket converts the hydraulic power of mobile machinery or vehicles into powerful vacuum and air blow for recycling and cleaning applications. Built with patented technology and a robust structure, it features an adjustable suction hatch, an auxiliary suction inlet and special filters for various uses. Applications include recycling and cleaning at construction and demolition sites, railway and tram cleaning, coastal cleaning, and cleaning markets, festivals and parks.",
+      "specs": {
+        "air_flow_max_m3s": 3.4,
+        "vacuum_kpa": -8
+      },
+      "sourcePages": "11"
+    }
+  ],
+  "notes": "This catalog is a series-level marketing brochure: each product page shows one series with min-max gauge figures (출력 특성), not per-model specification tables, so one product per series was extracted with range endpoints as min/max spec fields. HPW-DUST water flow gauge shows two ranges (Basic Flow 10-60 L/min, High Power Flow 30-180 L/min); recorded overall min 10 / max 180. HRVB gauges print only the endpoint values 3.4 m³/s (air flow) and -8 kPa (vacuum); minimums are not printed. Page 12 lists the full DYNASET product portfolio without any specs (HGV, HGV POWER BOX, HWG, HGG, HPW, PPL, HDF, HPW-FIRE, FP, JPL, HKR, HKL, HCF, HMG PRO, MAG, HVD, HRC, HPI, HPIC, plus know-how items like PTO, HMV, HHK, HV/HVY, HEU, HPU, HRU); these were not extracted as products because the catalog provides no specification data for them. Pages 1-3 are cover/application overview pages with no product specs. HG power gauge shows 3.5-350 kVA and 3.5-280 kW."
+}

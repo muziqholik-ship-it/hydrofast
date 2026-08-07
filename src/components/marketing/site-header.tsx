@@ -93,7 +93,7 @@ export function SiteHeader({ areas }: { areas: NavArea[] }) {
       style={{ height: "var(--nav-height)" }}
     >
       <div className="mx-auto flex h-full max-w-[1400px] items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold tracking-tight text-lg">
+        <Link href="/" className="flex items-center font-bold tracking-tight text-lg">
           <span className="text-[var(--color-steel-light)]">HYDRO</span>
           <span className="text-[var(--color-safety-orange)]">FAST</span>
         </Link>

@@ -149,10 +149,16 @@ export function BusinessAreas({
 
   return (
     <section className="py-20">
-      <div className="mx-auto max-w-[1400px] px-6">
-        <SectionHeading title={title} fluid />
-      </div>
       <div ref={sectionRef} className="relative overflow-hidden bg-[var(--color-ink)]">
+        {/* Section title floats pinned at the top-left of the panels, above
+            the sliding track, staying put through the whole horizontal scrub. */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-20">
+          <div className="mx-auto max-w-[1400px] px-6">
+            <h2 className="pt-10 text-2xl font-bold tracking-tight text-white md:text-3xl">
+              {title}
+            </h2>
+          </div>
+        </div>
         <div ref={trackRef} className="flex h-screen w-max">
           {areas.map((area, i) => (
             <article
@@ -200,12 +206,15 @@ export function BusinessAreas({
                   {area.index}
                 </div>
                 <h3 className="mt-6 max-w-2xl text-3xl font-bold tracking-tight xl:text-4xl">
-                  {/* Each area fills with its own accent color, not the shared amber. */}
+                  {/* Each area fills with its own accent color, not the shared
+                      amber. deepColor = accent keeps the fill flat (no
+                      darkening gradient toward the baseline). */}
                   <FluidText
                     text={label(area)}
                     mode="scrub"
                     levelSource={levelSources[i]}
                     color={area.accent}
+                    deepColor={area.accent}
                   />
                 </h3>
                 <p className="mt-2 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55">

@@ -2,18 +2,14 @@
 
 ## Privacy policy — owner must fill in before launch (Task 6.1, workstream 06)
 
-- [ ] Replace the `{{PRIVACY_OFFICER_NAME}}` and `{{PRIVACY_OFFICER_TITLE}}` placeholders in `src/app/[locale]/privacy/policy-content.ts` (both the ko and en blocks) with the actual 개인정보 보호책임자. **Do not launch with placeholders visible.**
-- [ ] Have the company/legal review the full `/privacy` text — it is a compliant-structured draft, not legal advice. Confirm the 3-year retention period and the 시행일 (currently 2026-08-04) match company policy.
+- [x] Replace the `{{PRIVACY_OFFICER_NAME}}` and `{{PRIVACY_OFFICER_TITLE}}` placeholders in `src/app/[locale]/privacy/policy-content.ts` (both the ko and en blocks) with the actual 개인정보 보호책임자. **Do not launch with placeholders visible.**
+- [x] Have the company/legal review the full `/privacy` text — it is a compliant-structured draft, not legal advice. Confirm the 3-year retention period and the 시행일 (currently 2026-08-04) match company policy.
 
-## Inquiry email notification setup (Task 6.5, workstream 06)
+## Contact page simplified to email/phone (2026-08-05)
 
-- [ ] Create a Resend account (resend.com), add and verify the `hydrofast.co.kr` domain (Domains → Add Domain → add the DKIM/SPF DNS records at the registrar).
-- [ ] Create an API key and set `RESEND_API_KEY` and `NOTIFY_FROM` (e.g. `HYDROFAST 홈페이지 <no-reply@hydrofast.co.kr>`) on Vercel, then redeploy. Until then, inquiries still land in `/admin/inquiries` and the server logs a warning instead of emailing.
-- [ ] Future: confirmation email to the submitter (deliberately skipped in this pass to avoid sender-reputation issues on an unwarmed domain).
-
-## Contact-form spam — future hardening (Task 6.3, workstream 06)
-
-- [ ] Current rate limit is per-email (max 3 inquiries / 10 min, counted from the `inquiries` table). IP-based limiting would need middleware + a store like Upstash Redis — revisit if spam volume grows.
+- The inquiry form, email notification pipeline (Resend), spam hardening, and `/admin/inquiries` were removed — `/contact` now shows phone/email plus an inquiry-preparation guide. `RESEND_API_KEY` / `NOTIFY_FROM` env vars are no longer read (remove from Vercel if set).
+- [ ] The `inquiries` table still exists in Supabase (existing submissions preserved, nothing writes to it anymore). Export anything needed, then drop it in the Supabase SQL Editor when convenient: `drop table if exists inquiries;`
+- [ ] Have legal re-check `/privacy` sections 1 and 4 — collection method now reads "email/phone inquiries" instead of the website form, but the overseas-transfer wording (Vercel/Supabase) was written for form submissions stored in Supabase.
 
 ## Case-study data model (Task 6.6, workstream 06) — code shipped, DB steps pending
 

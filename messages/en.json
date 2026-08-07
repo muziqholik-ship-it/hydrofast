@@ -31,7 +31,10 @@
     "relatedProducts": "Related products",
     "country": "Country",
     "website": "Website",
-    "model": "Model No."
+    "model": "Model No.",
+    "cardView": "Cards",
+    "listView": "List",
+    "resultsCount": "{count, plural, one {# product} other {# products}}"
   },
   "hero": {
     "kicker": "HYDRAULIC SYSTEM & SOLUTION PROVIDER",
@@ -83,26 +86,24 @@
   },
   "contactPage": {
     "title": "Ready to spec your<br/>hydraulic solution?",
-    "sub": "Our engineers will propose the right solution for your site.",
-    "formName": "Name",
-    "formCompany": "Company",
-    "formEmail": "Email",
-    "formPhone": "Phone",
-    "formBusinessArea": "Area of interest",
-    "formMessage": "Message",
-    "formConsent": "[Required] I agree to the <link>collection and use of my personal information</link>.",
-    "formSubmit": "Send inquiry",
-    "formSuccess": "Your inquiry has been received. We'll get back to you shortly.",
-    "formError": "Something went wrong while sending. Please try again.",
-    "errors": {
-      "missing_fields": "Please fill in all required fields.",
-      "consent_required": "Please agree to the collection and use of personal information.",
-      "invalid_email": "Please enter a valid email address.",
-      "too_long": "Your input exceeds the allowed length. Please shorten it and try again.",
-      "too_fast": "That was submitted too quickly. Please wait a moment and try again.",
-      "rate_limited": "Too many inquiries in a short period. Please try again later.",
-      "server_error": "Something went wrong while sending. Please try again."
-    }
+    "sub": "Reach us by phone or email — our engineers will propose the right solution for your site.",
+    "phoneTitle": "Call us",
+    "phoneNote": "Weekdays 09:00–18:00 KST (closed weekends & holidays)",
+    "emailTitle": "Email us",
+    "emailNote": "Accepted 24/7 · we reply promptly on business days",
+    "guideTitle": "Before you reach out",
+    "guideSub": "Including the details below helps us respond faster and more accurately.",
+    "guide1Title": "Company & contact person",
+    "guide1Desc": "Company name, your name, and how we can reach you (phone or email)",
+    "guide2Title": "Area of interest / product",
+    "guide2Desc": "e.g. hydraulic tensioners, ultra-high-pressure valves & fittings, fire pumps, torque wrench calibration, custom hydraulic systems",
+    "guide3Title": "Operating conditions & specs",
+    "guide3Desc": "Bolt size, working pressure / torque values, media, installation environment — whatever you know",
+    "guide4Title": "Quantity & timeline",
+    "guide4Desc": "Required quantity and target delivery date (for calibration: number of tools and model names)",
+    "guide5Title": "Reference materials",
+    "guide5Desc": "Attach drawings, site photos, or photos of existing equipment to your email",
+    "visitTitle": "Visit us"
   },
   "notFound": {
     "message": "The page you are looking for could not be found.",

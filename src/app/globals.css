@@ -158,7 +158,9 @@ html[data-motion="off"] .marquee-track {
 .fluid-text-outline {
   fill: none;
   stroke: var(--color-border);
-  stroke-width: 1;
+  /* Centered stroke whose inner half is masked away (fluid-text.tsx) —
+     2px here renders as a ~1px border outside the glyph union. */
+  stroke-width: 2;
 }
 
 .fluid-text-meniscus {

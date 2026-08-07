@@ -124,6 +124,10 @@ async function main() {
     descriptionKo: "자체 설계·제작 유압 시스템 및 부품",
     descriptionEn: "In-house designed & fabricated hydraulic systems and components",
     sortOrder: 0,
+    // Kept as a manufacturer so in-house products can be attributed to us, but
+    // inactive: /partners and the homepage brand marquee list the brands we
+    // distribute, and we are not one of our own partners.
+    isActive: false,
   });
 
   const partnerBrands: { slug: string; name: string; country: string; areas: string[] }[] = [

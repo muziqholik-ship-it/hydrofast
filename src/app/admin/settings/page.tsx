@@ -6,9 +6,10 @@ const SUGGESTED_KEYS = [
   "hero_kicker",
   "hero_title",
   "hero_desc",
-  "stat_years",
-  "stat_pressure",
-  "stat_partners",
+  // Homepage stats: 업력 is computed as (current year − founded_year); partner
+  // count derives from active manufacturers. Defaults live in src/lib/settings.ts.
+  "founded_year",
+  "max_pressure_bar",
   "contact_email",
   "contact_phone",
   "contact_fax",

@@ -1,0 +1,584 @@
+{
+  "sourcePdf": "Euroswitch_catalogo_2026.pdf",
+  "pagesCovered": "153-196",
+  "manufacturer": {
+    "slug": "euroswitch",
+    "name": "Euroswitch",
+    "country": "Italy",
+    "websiteUrl": "https://www.euroswitch.it",
+    "descriptionKo": "Euroswitch S.p.A.는 이탈리아 살레 마라시노(브레시아)에 본사를 둔 센서 전문 제조사로, 레벨·압력·온도·유량 센서와 스위치를 설계·생산합니다. ISO 9001/14001/45001 인증을 보유하고 있으며 ATEX 인증 제품도 공급합니다.",
+    "descriptionEn": "Euroswitch S.p.A., based in Sale Marasino (Brescia), Italy, designs and manufactures level, pressure, temperature and flow sensors and switches. The company is ISO 9001/14001/45001 certified and also offers ATEX-certified products."
+  },
+  "categories": [
+    {
+      "slug": "euroswitch-temperature-switches",
+      "nameKo": "온도 스위치 (바이메탈 서모스탯)",
+      "nameEn": "Temperature Switches (Bimetallic Thermostats)",
+      "descriptionKo": "바이메탈 방식의 스냅 액션 온도 스위치(서모스탯) 시리즈로, 설정 온도에서 접점이 개폐되어 냉각팬 제어, 과열 보호 등에 사용됩니다. 황동 바디(요청 시 스테인리스)와 다양한 나사 규격을 지원합니다.",
+      "descriptionEn": "Bimetallic snap-action temperature switches (thermostats) that open or close a contact at a preset temperature, used for fan control and overheating protection. Brass body (stainless steel on request) with a wide choice of thread connections.",
+      "specSchema": [
+        {"key": "setting_temperature_range", "labelKo": "설정 온도 범위", "labelEn": "Setting Temperature Range", "dataType": "text", "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "contact_type", "labelKo": "접점 형식", "labelEn": "Contact Type", "dataType": "select", "options": [
+          {"value": "no_or_nc", "labelKo": "N.O. 또는 N.C.", "labelEn": "N.O. or N.C."},
+          {"value": "spdt", "labelKo": "SPDT(교환 접점)", "labelEn": "SPDT (changeover)"}
+        ], "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "switching_differential", "labelKo": "동작 편차(디퍼렌셜)", "labelEn": "Switching Differential", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": false},
+        {"key": "process_connection", "labelKo": "프로세스 접속", "labelEn": "Process Connection", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": true},
+        {"key": "electrical_connection", "labelKo": "전기 접속", "labelEn": "Electrical Connection", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "protection_class", "labelKo": "보호 등급", "labelEn": "Protection Class", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "max_ambient_temperature_c", "labelKo": "최대 주위 온도", "labelEn": "Max Ambient Temperature", "dataType": "unit_value", "unit": "°C", "required": false, "sortOrder": 8, "showInCardTeaser": false},
+        {"key": "body_material", "labelKo": "바디 재질", "labelEn": "Body Material", "dataType": "text", "required": false, "sortOrder": 9, "showInCardTeaser": false},
+        {"key": "number_of_cycles", "labelKo": "동작 수명(사이클)", "labelEn": "Number of Cycles", "dataType": "number", "required": false, "sortOrder": 10, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "euroswitch-temperature-sensors",
+      "nameKo": "온도 센서 / 프로브",
+      "nameEn": "Temperature Sensors / Probes",
+      "descriptionKo": "NTC·PTC 서미스터, PT100·PT1000, KTY, Ni1000 등 다양한 감지 소자를 적용한 접촉식 온도 센서 시리즈입니다. 수지 몰딩형, 금속 캡슐형, 나사 체결형 등 여러 구조와 폭넓은 나사·커넥터 옵션을 제공합니다.",
+      "descriptionEn": "Contact-type temperature sensor series using NTC/PTC thermistors, PT100/PT1000, KTY and Ni1000 elements. Available as resin-moulded probes, metal-encapsulated probes and threaded sensors with a wide range of threads and integrated connectors.",
+      "specSchema": [
+        {"key": "sensor_element", "labelKo": "감지 소자", "labelEn": "Sensing Element", "dataType": "text", "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "working_temperature_range", "labelKo": "사용 온도 범위", "labelEn": "Working Temperature Range", "dataType": "text", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "process_connection", "labelKo": "프로세스 접속", "labelEn": "Process Connection", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "electrical_connection", "labelKo": "전기 접속", "labelEn": "Electrical Connection", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "protection_class", "labelKo": "보호 등급", "labelEn": "Protection Class", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "body_material", "labelKo": "바디 재질", "labelEn": "Body Material", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "thermistor_coat", "labelKo": "소자 피복", "labelEn": "Thermistor Coat", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "euroswitch-temperature-transmitters",
+      "nameKo": "온도 트랜스미터 / 전자식 온도 센서",
+      "nameEn": "Temperature Transmitters / Electronic Temperature Sensors",
+      "descriptionKo": "4-20 mA 아날로그 출력, IO-Link, PWM 등 전자식 출력 신호를 제공하는 온도 트랜스미터 시리즈입니다. 일부 모델은 SCD 프로그래머로 설정 가능한 2개의 디지털(PNP) 출력을 갖추고 있습니다.",
+      "descriptionEn": "Electronic temperature transmitters with 4-20 mA analogue, IO-Link or PWM output signals. Some models feature two programmable PNP digital outputs configurable via the SCD programming device.",
+      "specSchema": [
+        {"key": "output_signal", "labelKo": "출력 신호", "labelEn": "Output Signal", "dataType": "select", "options": [
+          {"value": "4_20_ma", "labelKo": "4-20 mA 아날로그", "labelEn": "4-20 mA analogue"},
+          {"value": "io_link", "labelKo": "IO-Link", "labelEn": "IO-Link"},
+          {"value": "pwm", "labelKo": "PWM", "labelEn": "PWM"}
+        ], "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "fluid_temperature_range", "labelKo": "유체 온도 범위", "labelEn": "Fluid Temperature Range", "dataType": "text", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "supply_voltage", "labelKo": "공급 전압", "labelEn": "Supply Voltage", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": false},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "process_connection", "labelKo": "프로세스 접속", "labelEn": "Process Connection", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": true},
+        {"key": "electrical_connection", "labelKo": "전기 접속", "labelEn": "Electrical Connection", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "protection_class", "labelKo": "보호 등급", "labelEn": "Protection Class", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "body_material", "labelKo": "바디 재질", "labelEn": "Body Material", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false},
+        {"key": "digital_outputs", "labelKo": "디지털 출력 수", "labelEn": "Digital Outputs", "dataType": "number", "required": false, "sortOrder": 9, "showInCardTeaser": false},
+        {"key": "probe_length_options", "labelKo": "프로브 길이 옵션", "labelEn": "Probe Length Options", "dataType": "text", "required": false, "sortOrder": 10, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "euroswitch-temperature-accessories",
+      "nameKo": "온도 센서 액세서리",
+      "nameEn": "Temperature Sensor Accessories",
+      "descriptionKo": "온도 센서 설치용 액세서리로, 유체 누출 없이 센서를 탈착할 수 있게 해주는 보호관(써모웰) 등이 포함됩니다.",
+      "descriptionEn": "Installation accessories for temperature sensors, including thermowells that allow sensor removal without fluid leakage.",
+      "specSchema": [
+        {"key": "model_variants", "labelKo": "모델 구성", "labelEn": "Model Variants", "dataType": "text", "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "material", "labelKo": "재질", "labelEn": "Material", "dataType": "text", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "process_connection", "labelKo": "프로세스 접속", "labelEn": "Process Connection", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "sensor_connection", "labelKo": "센서 측 접속", "labelEn": "Sensor-side Connection", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "overall_length", "labelKo": "전체 길이", "labelEn": "Overall Length", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "well_bore_diameter_mm", "labelKo": "보호관 외경", "labelEn": "Well Diameter", "dataType": "unit_value", "unit": "mm", "required": false, "sortOrder": 6, "showInCardTeaser": false}
+      ]
+    }
+  ],
+  "products": [
+    {
+      "slug": "euroswitch-506-508",
+      "modelNo": "506 / 508",
+      "categorySlug": "euroswitch-temperature-switches",
+      "nameKo": "506-508 바이메탈 서모스탯 (Hex 24/27)",
+      "nameEn": "506-508 Bimetallic Thermostat Hex 24/27",
+      "shortDescriptionKo": "Hex 24(506)/Hex 27(508) 렌치 규격의 바이메탈 온도 스위치, N.O./N.C. 선택형",
+      "shortDescriptionEn": "Bimetallic temperature switch with Hex 24 (506) / Hex 27 (508) wrench size, N.O. or N.C. contact",
+      "descriptionKo": "506(Hex 24)과 508(Hex 27) 시리즈는 스냅 액션 접점을 갖춘 바이메탈 서모스탯입니다. 설정 온도는 25~120°C 범위에서 5°C 간격으로 선택할 수 있으며, 상시열림(N.O.) 또는 상시닫힘(N.C.) 접점을 제공합니다. 1/4\"G, 3/8\"G, 1/2\"G, M14x1.5, M16x1.5, M18x1.5, M22x1.5 등 다양한 나사 규격을 지원하고 최대 80 bar 압력에서 사용 가능합니다. 요청 시 ATEX 인증 사양도 공급됩니다.",
+      "descriptionEn": "The 506 (Hex 24) and 508 (Hex 27) series are bimetallic thermostats with snap-action contacts. Setting temperatures are available from 25 to 120 °C in 5 °C steps, with normally-open or normally-closed contact versions. A wide range of threads is offered (1/4\"G, 3/8\"G, 1/2\"G, M14x1.5, M16x1.5, M18x1.5, M22x1.5) and the switch withstands up to 80 bar. ATEX certification is available on request.",
+      "specs": {
+        "setting_temperature_range": "25~120°C (5°C 간격)",
+        "contact_type": "no_or_nc",
+        "switching_differential": "7/13 K (±5K 공차)",
+        "process_connection": "1/4\"G, 3/8\"G, 1/2\"G, M14x1.5, M16x1.5, M18x1.5, M22x1.5",
+        "electrical_connection": "Faston 수 6.3x0.8 + 접지 단자",
+        "protection_class": "IP00 (보호캡 사용 시 IP54/IP65, 수지 몰딩 케이블 시 IP67)",
+        "max_pressure_bar": 80,
+        "max_ambient_temperature_c": 120,
+        "body_material": "황동 (요청 시 스테인리스)",
+        "number_of_cycles": 100000
+      },
+      "sourcePages": "165"
+    },
+    {
+      "slug": "euroswitch-525",
+      "modelNo": "525",
+      "categorySlug": "euroswitch-temperature-switches",
+      "nameKo": "525 바이메탈 서모스탯 (Hex 22)",
+      "nameEn": "525 Bimetallic Thermostat Hex 22",
+      "shortDescriptionKo": "Hex 22 컴팩트 바이메탈 온도 스위치, N.O./N.C. 선택형",
+      "shortDescriptionEn": "Compact Hex 22 bimetallic temperature switch, N.O. or N.C. contact",
+      "descriptionKo": "525 시리즈는 Hex 22 렌치 규격의 컴팩트 바이메탈 서모스탯입니다. 설정 온도는 25~120°C 범위에서 5°C 간격으로 선택 가능하며 N.O.(525 11) 또는 N.C.(525 21) 접점을 제공합니다. 1/4\"G, 3/8\"G, M14x1.5 나사 규격을 지원하고 최대 80 bar에서 사용할 수 있습니다.",
+      "descriptionEn": "The 525 series is a compact bimetallic thermostat with a Hex 22 wrench size. Setting temperatures range from 25 to 120 °C in 5 °C steps, with N.O. (525 11) or N.C. (525 21) contact versions. Threads 1/4\"G, 3/8\"G and M14x1.5 are available and the switch is rated up to 80 bar.",
+      "specs": {
+        "setting_temperature_range": "25~120°C (5°C 간격)",
+        "contact_type": "no_or_nc",
+        "switching_differential": "7/13 K (±5K 공차)",
+        "process_connection": "1/4\"G, 3/8\"G, M14x1.5",
+        "electrical_connection": "Faston 수 6.3x0.8",
+        "protection_class": "IP00 (보호캡 3015200 사용 시 IP54)",
+        "max_pressure_bar": 80,
+        "max_ambient_temperature_c": 120,
+        "body_material": "황동 (요청 시 스테인리스)",
+        "number_of_cycles": 100000
+      },
+      "sourcePages": "166"
+    },
+    {
+      "slug": "euroswitch-507",
+      "modelNo": "507",
+      "categorySlug": "euroswitch-temperature-switches",
+      "nameKo": "507 SPDT 접점 서모스탯",
+      "nameEn": "507 Thermostat with SPDT Contacts",
+      "shortDescriptionKo": "DIN43650 커넥터 일체형 SPDT(교환 접점) 온도 스위치, IP65",
+      "shortDescriptionEn": "SPDT changeover temperature switch with DIN43650 connector, IP65",
+      "descriptionKo": "507 시리즈는 SPDT 교환 접점을 갖춘 서모스탯으로, 하나의 스위치로 N.O.와 N.C. 회로를 동시에 구성할 수 있습니다. 설정 온도는 35~85°C 범위에서 5°C 간격으로 선택 가능하며, UNI EN 175301-803(DIN43650) 규격 커넥터 사용 시 IP65 보호 등급을 만족합니다. 3/8\"G, 1/2\"G, M14x1.5, M22x1.5 나사를 지원하고 최대 80 bar에서 사용 가능하며, 접점 재질은 은(Silver)입니다.",
+      "descriptionEn": "The 507 series thermostat features SPDT changeover contacts, providing both N.O. and N.C. circuits in one switch. Setting temperatures range from 35 to 85 °C in 5 °C steps. With a UNI EN 175301-803 (DIN43650) connector the protection degree is IP65. Threads 3/8\"G, 1/2\"G, M14x1.5 and M22x1.5 are available, pressure rating is 80 bar, and the contacts are silver.",
+      "specs": {
+        "setting_temperature_range": "35~85°C (5°C 간격)",
+        "contact_type": "spdt",
+        "switching_differential": "15/20 K (±5K 공차)",
+        "process_connection": "3/8\"G, 1/2\"G, M14x1.5, M22x1.5",
+        "electrical_connection": "Faston 수 6.3x0.8 + 접지, DIN43650 커넥터(PG11 케이블 클램프)",
+        "protection_class": "IP65 (UNI EN 175301-803/DIN43650 커넥터 사용 시)",
+        "max_pressure_bar": 80,
+        "max_ambient_temperature_c": 85,
+        "body_material": "황동 (요청 시 스테인리스)",
+        "number_of_cycles": null
+      },
+      "sourcePages": "168"
+    },
+    {
+      "slug": "euroswitch-520",
+      "modelNo": "520",
+      "categorySlug": "euroswitch-temperature-switches",
+      "nameKo": "520 바이메탈 서모스탯 (Hex 17, 케이블형)",
+      "nameEn": "520 Bimetallic Thermostat Hex 17 (Cable Version)",
+      "shortDescriptionKo": "PVC HT105 케이블 일체형 소형 바이메탈 온도 스위치, IP67",
+      "shortDescriptionEn": "Small bimetallic temperature switch with integrated PVC HT105 cable, IP67",
+      "descriptionKo": "520 시리즈는 Hex 17 렌치 규격의 소형 바이메탈 서모스탯으로, PVC HT 105 케이블이 일체형으로 몰딩되어 IP67 보호 등급을 만족합니다. 설정 온도는 40~100°C 범위에서 10°C 간격으로 선택 가능하며 N.O.(520 71) 또는 N.C.(520 72) 접점을 제공합니다. 1/4\"G, M12x1.5, M14x1.5 나사를 지원하며 요청 시 +150°C 대응 HT(고온) 케이블 사양도 공급됩니다.",
+      "descriptionEn": "The 520 series is a small Hex 17 bimetallic thermostat with an integrated PVC HT 105 cable, achieving IP67 protection. Setting temperatures range from 40 to 100 °C in 10 °C steps, with N.O. (520 71) or N.C. (520 72) contacts. Threads 1/4\"G, M12x1.5 and M14x1.5 are available; an HT high-temperature cable version rated +150 °C is available on request.",
+      "specs": {
+        "setting_temperature_range": "40~100°C (10°C 간격)",
+        "contact_type": "no_or_nc",
+        "switching_differential": "5/10 K (±5K 공차)",
+        "process_connection": "1/4\"G, M12x1.5, M14x1.5",
+        "electrical_connection": "PVC HT 105 케이블 (기타 요청 가능)",
+        "protection_class": "IP67",
+        "max_pressure_bar": null,
+        "max_ambient_temperature_c": 105,
+        "body_material": "황동 (요청 시 스테인리스)",
+        "number_of_cycles": 100000
+      },
+      "sourcePages": "169"
+    },
+    {
+      "slug": "euroswitch-570",
+      "modelNo": "570",
+      "categorySlug": "euroswitch-temperature-sensors",
+      "nameKo": "570 수지 몰딩 온도 센서",
+      "nameEn": "570 Epoxy Coated Temperature Sensors",
+      "shortDescriptionKo": "Ø5 mm 수지 몰딩형 소형 온도 프로브 (NTC/PTC/PT100/PT1000)",
+      "shortDescriptionEn": "Ø5 mm resin-moulded miniature temperature probe (NTC/PTC/PT100/PT1000)",
+      "descriptionKo": "570 시리즈는 감지 소자를 수지로 몰딩한 Ø5 mm, 길이 19~20 mm의 소형 온도 프로브입니다. NTC, PTC, PT100, PT1000 소자를 선택할 수 있으며 PVC 케이블(기타 요청 가능)로 연결됩니다. 사용 온도는 -20~+120°C(기타 요청 가능)이며 보호 등급은 IP65~IP67입니다.",
+      "descriptionEn": "The 570 series is a miniature temperature probe, Ø5 mm and 19-20 mm long, with the sensing element encapsulated in moulded resin. NTC, PTC, PT100 or PT1000 elements are available, connected via PVC cable (others on request). Working temperature is -20 to +120 °C (others on request) with IP65-IP67 protection.",
+      "specs": {
+        "sensor_element": "NTC / PTC / PT100 / PT1000",
+        "working_temperature_range": "-20~+120°C (기타 요청 가능)",
+        "process_connection": "프로브 삽입형 (Ø5 mm, L 19~20 mm, 나사 없음)",
+        "electrical_connection": "PVC 케이블 (기타 요청 가능)",
+        "protection_class": "IP65 - IP67",
+        "body_material": "몰딩 수지",
+        "thermistor_coat": "몰딩 수지 (Moulded resin)"
+      },
+      "sourcePages": "172"
+    },
+    {
+      "slug": "euroswitch-572",
+      "modelNo": "572",
+      "categorySlug": "euroswitch-temperature-sensors",
+      "nameKo": "572 금속 캡슐형 온도 센서",
+      "nameEn": "572 Temperature Sensors with Metallic Encapsulation",
+      "shortDescriptionKo": "금속 슬리브 캡슐형 온도 프로브, Ø4/Ø5.9 mm, 길이 32~100 mm",
+      "shortDescriptionEn": "Metal-encapsulated temperature probe, Ø4/Ø5.9 mm, lengths 32-100 mm",
+      "descriptionKo": "572 시리즈는 감지 소자를 금속 슬리브(황동·강·청동)에 캡슐화한 온도 프로브입니다. NTC, PTC, PT100, PT1000 소자를 선택할 수 있으며 프로브 치수는 Ø4 mm(L 40/100 mm), Ø5.9 mm(L 32/39/50/60 mm)입니다. 사용 온도는 -20~+120°C(기타 요청 가능), 보호 등급은 IP65~IP67이며 전기 접속은 요청 사양에 따라 제작됩니다.",
+      "descriptionEn": "The 572 series encapsulates the sensing element in a metal sleeve (brass, steel or bronze). NTC, PTC, PT100 or PT1000 elements are available with probe dimensions of Ø4 mm (L 40/100 mm) and Ø5.9 mm (L 32/39/50/60 mm). Working temperature is -20 to +120 °C (others on request), protection IP65-IP67, and the electrical connection is made to order.",
+      "specs": {
+        "sensor_element": "NTC / PTC / PT100 / PT1000",
+        "working_temperature_range": "-20~+120°C (기타 요청 가능)",
+        "process_connection": "프로브 삽입형 (Ø4 mm: L 40/100, Ø5.9 mm: L 32/39/50/60)",
+        "electrical_connection": "요청 사양 (On request)",
+        "protection_class": "IP65 - IP67",
+        "body_material": "황동 / 강 / 청동 캡슐",
+        "thermistor_coat": "금속 캡슐"
+      },
+      "sourcePages": "173"
+    },
+    {
+      "slug": "euroswitch-580e",
+      "modelNo": "580E",
+      "categorySlug": "euroswitch-temperature-sensors",
+      "nameKo": "580E DIN 커넥터 온도 센서",
+      "nameEn": "580E Temperature Sensors with DIN Connector",
+      "shortDescriptionKo": "DIN43650 커넥터 일체형 나사 체결식 온도 센서, IP65",
+      "shortDescriptionEn": "Threaded temperature sensor with DIN43650 connector, IP65",
+      "descriptionKo": "580E 시리즈는 UNI EN 175301-803(DIN43650) 규격 커넥터(PG11 케이블 클램프)를 갖춘 나사 체결식 온도 센서입니다. PT100 및 1 kΩ~100 kΩ의 다양한 NTC/PTC 서미스터 값을 선택할 수 있으며, M4부터 M22x1.5, G1/2\", 1/8\" NPT까지 폭넓은 나사 규격을 지원합니다. 바디는 황동(요청 시 스테인리스), 사용 온도는 -20~+120°C입니다.",
+      "descriptionEn": "The 580E series is a threaded temperature sensor with a UNI EN 175301-803 (DIN43650) connector and PG11 cable clamp. PT100 and a wide range of NTC/PTC thermistor values from 1 kΩ to 100 kΩ are available, with threads from M4 up to M22x1.5, G1/2\" and 1/8\" NPT. The body is brass (stainless steel on request) and the working temperature is -20 to +120 °C.",
+      "specs": {
+        "sensor_element": "NTC / PTC (1kΩ~100kΩ) / PT100",
+        "working_temperature_range": "-20~+120°C",
+        "process_connection": "M4, M10, M12, M14, M16, M18, M20, M22, G1/4\", G1/2\", 3/8\", 9/16\"-18UNF, 1/8\" NPT 등",
+        "electrical_connection": "DIN43650(UNI EN 175301-803) 커넥터, PG11 케이블 클램프",
+        "protection_class": "IP65 (UNI EN 175301-803 준거)",
+        "body_material": "황동 (요청 시 스테인리스 AISI)",
+        "thermistor_coat": "수지 (Resin)"
+      },
+      "sourcePages": "174"
+    },
+    {
+      "slug": "euroswitch-580",
+      "modelNo": "580",
+      "categorySlug": "euroswitch-temperature-sensors",
+      "nameKo": "580 NTC/PTC 온도 센서",
+      "nameEn": "580 NTC/PTC Temperature Sensors",
+      "shortDescriptionKo": "다양한 일체형 커넥터(Deutsch, AMP, M12 등)를 지원하는 NTC/PTC 온도 센서",
+      "shortDescriptionEn": "NTC/PTC temperature sensor with a wide choice of integrated connectors (Deutsch, AMP, M12, etc.)",
+      "descriptionKo": "580 시리즈는 차량·산업용으로 널리 사용되는 나사 체결식 NTC/PTC 온도 센서입니다. 1 kΩ~100 kΩ의 다양한 서미스터 값을 선택할 수 있으며, Deutsch DT04-2P, AMP Superseal 1.5, AMP Junior Power Timer, M12, DIN72585 바요넷 등 다양한 일체형 커넥터(K0~K6)를 지원합니다. 바디는 황동(요청 시 스테인리스), 사용 온도 -20~+120°C, 보호 등급 IP67(요청 시 IP69)입니다.",
+      "descriptionEn": "The 580 series is a threaded NTC/PTC temperature sensor widely used in vehicle and industrial applications. Thermistor values from 1 kΩ to 100 kΩ are available, together with integrated connectors (K0-K6): Deutsch DT04-2P, AMP Superseal 1.5, AMP Junior Power Timer, M12 and DIN72585 bayonet. Brass body (stainless steel on request), working temperature -20 to +120 °C, protection IP67 (IP69 on request).",
+      "specs": {
+        "sensor_element": "NTC / PTC (1kΩ~100kΩ, 10kΩ Beta 3977/4100 등)",
+        "working_temperature_range": "-20~+120°C (기타 요청 가능)",
+        "process_connection": "M4, M10, M12, M14, M16, M18, M20, M22, G1/4\", G1/2\", 3/8\", 9/16\"-18UNF, 1/8\" NPT 등",
+        "electrical_connection": "K0 Deutsch DT04-2P / K1 AMP Superseal 1.5 / K2 케이블+커넥터 / K3 AMP Junior Power Timer / K4·K5 M12 / K6 DIN72585 바요넷",
+        "protection_class": "IP67 (요청 시 IP69)",
+        "body_material": "황동 (요청 시 스테인리스 AISI)",
+        "thermistor_coat": "수지 (Resin)"
+      },
+      "sourcePages": "175"
+    },
+    {
+      "slug": "euroswitch-595-596",
+      "modelNo": "595 / 596",
+      "categorySlug": "euroswitch-temperature-sensors",
+      "nameKo": "595-596 PT100/PT1000 온도 센서",
+      "nameEn": "595-596 PT100/PT1000 Temperature Sensors",
+      "shortDescriptionKo": "IEC 751 준거 PT100(595)/PT1000(596) 측온저항체 센서",
+      "shortDescriptionEn": "PT100 (595) / PT1000 (596) RTD sensors per IEC 751",
+      "descriptionKo": "595(PT100)와 596(PT1000) 시리즈는 IEC 751 특성 곡선을 따르는 측온저항체(RTD) 온도 센서입니다. M4부터 M22x1.5, 1/8\" NPT까지 폭넓은 나사 규격과 Deutsch DT04-2P, AMP Superseal 1.5, AMP Junior Power Timer, M12, DIN72585 바요넷 등 다양한 일체형 커넥터를 지원합니다. 바디는 황동(요청 시 스테인리스), 사용 온도 -20~+120°C, 보호 등급 IP67(요청 시 IP69)입니다.",
+      "descriptionEn": "The 595 (PT100) and 596 (PT1000) series are RTD temperature sensors following the IEC 751 characteristic curve. A wide thread range from M4 to M22x1.5 and 1/8\" NPT is offered, together with integrated connectors including Deutsch DT04-2P, AMP Superseal 1.5, AMP Junior Power Timer, M12 and DIN72585 bayonet. Brass body (stainless steel on request), working temperature -20 to +120 °C, protection IP67 (IP69 on request).",
+      "specs": {
+        "sensor_element": "PT100 (595) / PT1000 (596), IEC 751",
+        "working_temperature_range": "-20~+120°C (기타 요청 가능)",
+        "process_connection": "M4, M10, M12, M14, M16, M18, M20, M22, G1/4\", G1/2\", 3/8\", 9/16\"-18UNF, 1/8\" NPT 등",
+        "electrical_connection": "K0 Deutsch DT04-2P / K1 AMP Superseal 1.5 / K2 케이블+커넥터 / K3 AMP Junior Power Timer / K4·K5 M12 / K6 DIN72585 바요넷",
+        "protection_class": "IP67 (요청 시 IP69)",
+        "body_material": "황동 (요청 시 스테인리스)",
+        "thermistor_coat": "수지 (Resin)"
+      },
+      "sourcePages": "176"
+    },
+    {
+      "slug": "euroswitch-590",
+      "modelNo": "590",
+      "categorySlug": "euroswitch-temperature-sensors",
+      "nameKo": "590 KTY 온도 센서",
+      "nameEn": "590 KTY Temperature Sensors",
+      "shortDescriptionKo": "KTY 실리콘 소자 적용 나사 체결식 온도 센서",
+      "shortDescriptionEn": "Threaded temperature sensor with KTY silicon element",
+      "descriptionKo": "590 시리즈는 KTY 실리콘 온도 소자를 적용한 나사 체결식 온도 센서입니다(대표 코드 590 203). 다양한 나사 규격과 Deutsch, AMP, M12, DIN72585 바요넷 등 일체형 커넥터(K0~K6)를 지원합니다. 바디는 황동(요청 시 스테인리스 AISI), 사용 온도 -20~+120°C, 보호 등급 IP67(요청 시 IP69)입니다.",
+      "descriptionEn": "The 590 series is a threaded temperature sensor using a KTY silicon element (typical code 590 203). It offers a wide thread range and integrated connectors (K0-K6) including Deutsch, AMP, M12 and DIN72585 bayonet. Brass body (stainless steel on request), working temperature -20 to +120 °C, protection IP67 (IP69 on request).",
+      "specs": {
+        "sensor_element": "KTY (실리콘 온도 소자)",
+        "working_temperature_range": "-20~+120°C (기타 요청 가능)",
+        "process_connection": "M4, M10, M12, M14, M16, M18, M20, M22, G1/4\", G1/2\", 3/8\", 9/16\"-18UNF, 1/8\" NPT 등",
+        "electrical_connection": "K0 Deutsch DT04-2P / K1 AMP Superseal 1.5 / K2 케이블+커넥터 / K3 AMP Junior Power Timer / K4·K5 M12 / K6 DIN72585 바요넷",
+        "protection_class": "IP67 (요청 시 IP69)",
+        "body_material": "황동 (요청 시 스테인리스 AISI)",
+        "thermistor_coat": "수지 (Resin)"
+      },
+      "sourcePages": "177"
+    },
+    {
+      "slug": "euroswitch-597",
+      "modelNo": "597",
+      "categorySlug": "euroswitch-temperature-sensors",
+      "nameKo": "597 Ni1000 온도 센서",
+      "nameEn": "597 Ni1000 Temperature Sensors",
+      "shortDescriptionKo": "Ni1000 니켈 측온저항체 적용 나사 체결식 온도 센서",
+      "shortDescriptionEn": "Threaded temperature sensor with Ni1000 nickel RTD element",
+      "descriptionKo": "597 시리즈는 Ni1000 니켈 측온저항체를 적용한 나사 체결식 온도 센서입니다(대표 코드 597 203). 다양한 나사 규격과 Deutsch, AMP, M12, DIN72585 바요넷 등 일체형 커넥터(K0~K6)를 지원합니다. 바디는 황동(요청 시 스테인리스), 사용 온도 -20~+120°C, 보호 등급 IP67(요청 시 IP69)입니다.",
+      "descriptionEn": "The 597 series is a threaded temperature sensor using a Ni1000 nickel RTD element (typical code 597 203). A wide thread range and integrated connectors (K0-K6) including Deutsch, AMP, M12 and DIN72585 bayonet are available. Brass body (stainless steel on request), working temperature -20 to +120 °C, protection IP67 (IP69 on request).",
+      "specs": {
+        "sensor_element": "Ni1000 (니켈 RTD)",
+        "working_temperature_range": "-20~+120°C (기타 요청 가능)",
+        "process_connection": "M4, M10, M12, M14, M16, M18, M20, M22, G1/4\", G1/2\", 3/8\", 9/16\"-18UNF, 1/8\" NPT 등",
+        "electrical_connection": "K0 Deutsch DT04-2P / K1 AMP Superseal 1.5 / K2 케이블+커넥터 / K3 AMP Junior Power Timer / K4·K5 M12 / K6 DIN72585 바요넷",
+        "protection_class": "IP67 (요청 시 IP69)",
+        "body_material": "황동 (요청 시 스테인리스)",
+        "thermistor_coat": "수지 (Resin)"
+      },
+      "sourcePages": "178"
+    },
+    {
+      "slug": "euroswitch-582",
+      "modelNo": "582",
+      "categorySlug": "euroswitch-temperature-sensors",
+      "nameKo": "582 수온 센서",
+      "nameEn": "582 Water Temperature Sensors",
+      "shortDescriptionKo": "AISI 316L 바디의 수온 측정용 NTC 센서, -55~+150°C",
+      "shortDescriptionEn": "Water temperature NTC sensor with AISI 316L body, -55 to +150 °C",
+      "descriptionKo": "582 시리즈는 수온 측정용 온도 센서로, 표준 사양은 25°C 기준 NTC 12 kΩ(Beta 3760K) 서미스터입니다(기타 요청 가능). 바디는 AISI 316L 스테인리스이며 Faston 6.3x0.8 표준 전기 접속과 폭넓은 나사 규격을 지원합니다. 사용 온도는 -55~+150°C, 보호 등급은 IP65입니다.",
+      "descriptionEn": "The 582 series is a water temperature sensor with a standard NTC 12 kΩ at 25 °C (Beta 3760K) thermistor (others on request). The body is AISI 316L stainless steel with standard Faston 6.3x0.8 electrical connection and a wide thread range. Working temperature is -55 to +150 °C and protection degree IP65.",
+      "specs": {
+        "sensor_element": "NTC 12kΩ @25°C 표준 (기타 NTC/PTC 요청 가능)",
+        "working_temperature_range": "-55~+150°C",
+        "process_connection": "M4, M10, M12, M14, M16, M18, M20, M22x1.5(Hex 24/27), G1/4\", G1/2\", 3/8\", 1/8\" NPT 등",
+        "electrical_connection": "Faston 6.3x0.8 표준 (K0~K6 일체형 커넥터 선택 가능)",
+        "protection_class": "IP65",
+        "body_material": "AISI 316L 스테인리스",
+        "thermistor_coat": "수지 (Resin)"
+      },
+      "sourcePages": "179"
+    },
+    {
+      "slug": "euroswitch-577",
+      "modelNo": "577",
+      "categorySlug": "euroswitch-temperature-sensors",
+      "nameKo": "577 공기 온도 센서",
+      "nameEn": "577 Air Temperature Sensors",
+      "shortDescriptionKo": "와이어 메쉬 보호 캡 구조의 공기 온도 측정용 NTC/PTC 센서",
+      "shortDescriptionEn": "Air temperature NTC/PTC sensor with wire-mesh protected element",
+      "descriptionKo": "577 시리즈는 공기 온도 측정용 센서로, 감지 소자가 강제 와이어 메쉬로 보호되어 공기와 직접 접촉해 빠른 응답을 제공합니다. Ø21 mm NBR 캡으로 고정하며 1 kΩ~100 kΩ의 다양한 NTC/PTC 서미스터 값과 Deutsch, AMP, M12 등 일체형 커넥터(K0~K6)를 지원합니다. 사용 온도는 -20~+120°C, 보호 등급은 IP67입니다.",
+      "descriptionEn": "The 577 series measures air temperature with the sensing element protected by a steel wire mesh for fast response. It mounts via a Ø21 mm NBR cap, offers NTC/PTC thermistor values from 1 kΩ to 100 kΩ and integrated connectors (K0-K6) such as Deutsch, AMP and M12. Working temperature is -20 to +120 °C with IP67 protection.",
+      "specs": {
+        "sensor_element": "NTC / PTC (1kΩ~100kΩ)",
+        "working_temperature_range": "-20~+120°C (기타 요청 가능)",
+        "process_connection": "NBR 캡 Ø21 mm 압입 고정",
+        "electrical_connection": "K0 Deutsch DT04-2P / K1 AMP Superseal 1.5 / K2 케이블+커넥터 / K3 AMP Junior Power Timer / K4·K5 M12 / K6 DIN72585 바요넷",
+        "protection_class": "IP67",
+        "body_material": "NBR 캡 + 강제 와이어 메쉬",
+        "thermistor_coat": "와이어 메쉬 (Wire mesh)"
+      },
+      "sourcePages": "180"
+    },
+    {
+      "slug": "euroswitch-589",
+      "modelNo": "589",
+      "categorySlug": "euroswitch-temperature-sensors",
+      "nameKo": "589 이중 NTC/PTC 온도 프로브",
+      "nameEn": "589 Temperature Probes with Double NTC/PTC",
+      "shortDescriptionKo": "2개의 독립 NTC/PTC 소자를 내장한 이중 출력 온도 프로브",
+      "shortDescriptionEn": "Dual-output temperature probe with two independent NTC/PTC elements",
+      "descriptionKo": "589 시리즈는 하나의 프로브에 2개의 독립적인 NTC/PTC 소자를 내장한 이중 온도 센서로, 이중화가 필요하거나 두 계통(예: 계기+제어)에 신호를 보내야 하는 용도에 적합합니다. Hex 27 바디에 다양한 나사 규격과 일체형 커넥터(K0~K6)를 지원하며, 사용 온도 -20~+120°C(HT 사양 지원), 보호 등급 IP67(요청 시 IP69)입니다.",
+      "descriptionEn": "The 589 series integrates two independent NTC/PTC elements in one probe, suitable for redundancy or feeding two circuits (e.g. gauge and controller). The Hex 27 body offers a wide thread range and integrated connectors (K0-K6). Working temperature is -20 to +120 °C (HT version available) with IP67 protection (IP69 on request).",
+      "specs": {
+        "sensor_element": "이중 NTC / PTC (1kΩ~100kΩ, 독립 2회로)",
+        "working_temperature_range": "-20~+120°C (기타 요청 가능, HT 사양)",
+        "process_connection": "M4, M10, M12, M14, M16, M18, M20, M22, G1/4\", G1/2\", 3/8\", 9/16\"-18UNF, 1/8\" NPT 등 (Hex 27)",
+        "electrical_connection": "K0 Deutsch DT04-2P / K1 AMP Superseal 1.5 / K2 케이블+커넥터 / K3 AMP Junior Power Timer / K4·K5 M12 / K6 DIN72585 바요넷",
+        "protection_class": "IP67 (요청 시 IP69)",
+        "body_material": "황동 (요청 시 스테인리스)",
+        "thermistor_coat": "수지 (Resin)"
+      },
+      "sourcePages": "181"
+    },
+    {
+      "slug": "euroswitch-583",
+      "modelNo": "583",
+      "categorySlug": "euroswitch-temperature-sensors",
+      "nameKo": "583 접지형(어스 바디) 온도 센서",
+      "nameEn": "583 Temperature Sensors with Earthed Body",
+      "shortDescriptionKo": "바디 접지 방식의 1선식 온도 센서, Faston 6.3 단자",
+      "shortDescriptionEn": "Single-wire temperature sensor with earthed body and Faston 6.3 terminal",
+      "descriptionKo": "583 시리즈는 센서 바디를 접지(어스)로 사용하는 1선식 온도 센서로, 차량 계기용 수온·유온 센서로 널리 사용되는 구조입니다. Hex 22 바디에 Faston 6.3 단자를 갖추며 1 kΩ~100 kΩ의 다양한 NTC/PTC 서미스터 값을 선택할 수 있습니다. 사용 온도 -40~+130°C, 사용 전압 12 V, 보호 등급 IP65입니다.",
+      "descriptionEn": "The 583 series uses the sensor body as the earth return, a single-wire design widely used for vehicle gauge water/oil temperature sensing. The Hex 22 body carries a Faston 6.3 terminal and NTC/PTC thermistor values from 1 kΩ to 100 kΩ are available. Working temperature -40 to +130 °C, working voltage 12 V, protection IP65.",
+      "specs": {
+        "sensor_element": "NTC / PTC (1kΩ~100kΩ), 바디 접지 1선식",
+        "working_temperature_range": "-40~+130°C",
+        "process_connection": "M4, M10, M12, M14, M16, M18, M20, M22x1.5, G1/4\", G1/2\", 3/8\", 1/8\" NPT 등 (Hex 22)",
+        "electrical_connection": "Faston 6.3 (단자 1개, 바디 접지)",
+        "protection_class": "IP65",
+        "body_material": "황동 (요청 시 스테인리스)",
+        "thermistor_coat": "수지 (Resin)"
+      },
+      "sourcePages": "182"
+    },
+    {
+      "slug": "euroswitch-598",
+      "modelNo": "598",
+      "categorySlug": "euroswitch-temperature-transmitters",
+      "nameKo": "598 온도 트랜스미터 (4-20 mA)",
+      "nameEn": "598 Temperature Transmitters with 4-20 mA Analogue Output",
+      "shortDescriptionKo": "DIN B 알루미늄 헤드형 산업용 4-20 mA 온도 트랜스미터",
+      "shortDescriptionEn": "Industrial 4-20 mA temperature transmitter with DIN B aluminium head",
+      "descriptionKo": "598 시리즈는 DIN B 알루미늄 접속 헤드를 갖춘 산업용 온도 트랜스미터로, 측정 온도를 4-20 mA 아날로그 신호로 출력합니다. 공급 전압은 8~30 V, 사용 온도 범위는 -20~+100°C이며 G1/2\" 나사로 체결합니다. 바디(프로브) 재질은 AISI 316 스테인리스, 보호 등급은 IP65입니다.",
+      "descriptionEn": "The 598 series is an industrial temperature transmitter with a DIN B aluminium connection head, converting the measured temperature to a 4-20 mA analogue signal. Supply voltage is 8-30 V, working temperature -20 to +100 °C, with G1/2\" process connection. The probe is AISI 316 stainless steel and protection degree is IP65.",
+      "specs": {
+        "output_signal": "4_20_ma",
+        "fluid_temperature_range": "-20~+100°C",
+        "supply_voltage": "8~30 V DC",
+        "max_pressure_bar": null,
+        "process_connection": "G1/2\"",
+        "electrical_connection": "DIN B 알루미늄 접속 헤드",
+        "protection_class": "IP65",
+        "body_material": "AISI 316 스테인리스",
+        "digital_outputs": 0,
+        "probe_length_options": "삽입부 약 84 mm"
+      },
+      "sourcePages": "186"
+    },
+    {
+      "slug": "euroswitch-ests",
+      "modelNo": "ESTS",
+      "categorySlug": "euroswitch-temperature-transmitters",
+      "nameKo": "ESTS 소형 전자식 온도 센서 (4-20 mA)",
+      "nameEn": "ESTS Electronic Sensor Temperature Small 4-20 mA",
+      "shortDescriptionKo": "M12 커넥터·250 bar 대응 소형 4-20 mA 온도 트랜스미터",
+      "shortDescriptionEn": "Miniature 4-20 mA temperature transmitter, M12 connector, up to 250 bar",
+      "descriptionKo": "ESTS는 소형화된 전자식 온도 트랜스미터로 4-20 mA 아날로그 출력을 제공합니다(센서 자체 출력 범위 2-24 mA). G1/4\" 또는 G1/2\"(DIN3852-2) 나사와 Ø6, 50 mm 프로브 구조이며, HT(-15/+125°C)·LT(-24/+80°C) 두 가지 유체 온도 버전이 있습니다. 공급 전압 10-32 Vdc, 역극성 보호 내장, 최대 압력 250 bar, 보호 등급 IP65/IP67, M12 커넥터, AISI 316 바디, EMC EN61326 2-3:2013 적합입니다.",
+      "descriptionEn": "The ESTS is a miniaturised electronic temperature transmitter with 4-20 mA analogue output (sensor output range 2-24 mA). It features G1/4\" or G1/2\" (DIN3852-2) threads with a Ø6 x 50 mm probe, in HT (-15/+125 °C) and LT (-24/+80 °C) fluid temperature versions. Supply 10-32 Vdc with reverse polarity protection, max pressure 250 bar, IP65/IP67, M12 connector, AISI 316 body, EMC per EN61326 2-3:2013.",
+      "specs": {
+        "output_signal": "4_20_ma",
+        "fluid_temperature_range": "HT: -15~+125°C / LT: -24~+80°C (주위 온도 -20~+80°C)",
+        "supply_voltage": "10~32 V DC (역극성 보호)",
+        "max_pressure_bar": 250,
+        "process_connection": "G1/4\"A 또는 G1/2\"A (DIN3852-2), 프로브 Ø6 x 50 mm",
+        "electrical_connection": "M12 커넥터",
+        "protection_class": "IP65 / IP67",
+        "body_material": "AISI 316 스테인리스",
+        "digital_outputs": 0,
+        "probe_length_options": "50 mm"
+      },
+      "sourcePages": "187"
+    },
+    {
+      "slug": "euroswitch-est",
+      "modelNo": "EST",
+      "categorySlug": "euroswitch-temperature-transmitters",
+      "nameKo": "EST 온도 트랜스미터 (4-20 mA + 디지털 2점)",
+      "nameEn": "EST Temperature Transmitter 4-20 mA with 2 Programmable Digital Outputs",
+      "shortDescriptionKo": "4-20 mA 출력과 프로그래머블 PNP 디지털 출력 2점을 갖춘 온도 트랜스미터",
+      "shortDescriptionEn": "Temperature transmitter with 4-20 mA output and 2 programmable PNP digital outputs",
+      "descriptionKo": "EST 시리즈는 4-20 mA 아날로그 출력과 함께 NO/NC 및 히스테리시스를 프로그래밍할 수 있는 PNP 디지털 출력 2점(최대 부하 0.2 A)을 제공하는 온도 트랜스미터입니다. 디지털 출력은 공장 설정 또는 SCD 프로그래머로 설정할 수 있습니다. G1\" 나사, Ø8 프로브(길이 85~800 mm 선택), 공급 전압 24 V ±10%, 유체 온도 -25~+95°C, 최대 압력 210 bar, IP65/IP67, M12 커넥터, AISI 316 바디입니다.",
+      "descriptionEn": "The EST series temperature transmitter provides a 4-20 mA analogue output plus two PNP digital outputs (max load 0.2 A) programmable for NO/NC and hysteresis, either at the factory or via the SCD device. It features a G1\" thread, Ø8 probe with lengths from 85 to 800 mm, 24 V ±10% supply, fluid temperature -25 to +95 °C, 210 bar max pressure, IP65/IP67, M12 connector and AISI 316 body.",
+      "specs": {
+        "output_signal": "4_20_ma",
+        "fluid_temperature_range": "-25~+95°C (동작 온도 -25~+80°C)",
+        "supply_voltage": "24 V DC ±10% (역극성 보호)",
+        "max_pressure_bar": 210,
+        "process_connection": "G1\", 프로브 Ø8",
+        "electrical_connection": "M12 커넥터 (5핀)",
+        "protection_class": "IP65 / IP67",
+        "body_material": "AISI 316 스테인리스",
+        "digital_outputs": 2,
+        "probe_length_options": "L2: 85, 100, 150, 200, 250, 300, 350, 500, 700, 800 mm"
+      },
+      "sourcePages": "188"
+    },
+    {
+      "slug": "euroswitch-est2",
+      "modelNo": "EST2",
+      "categorySlug": "euroswitch-temperature-transmitters",
+      "nameKo": "EST2 온도/레벨 복합 트랜스미터 (4-20 mA + 디지털 2점)",
+      "nameEn": "EST2 Temperature/Level Transmitter 4-20 mA with 2 Programmable Digital Outputs",
+      "shortDescriptionKo": "온도 4-20 mA 출력과 레벨/온도 겸용 디지털 출력 2점의 복합 트랜스미터",
+      "shortDescriptionEn": "Combined transmitter with 4-20 mA temperature output and 2 digital outputs assignable to level or temperature",
+      "descriptionKo": "EST2 시리즈는 온도를 4-20 mA(±1°C)로 출력하면서, 레벨 또는 온도에 할당 가능한 프로그래머블 PNP 디지털 출력 2점(최대 부하 0.2 A, 지연 시간 설정 가능)을 제공하는 온도/레벨 복합 트랜스미터입니다. 오일, 수용성 절삭유, 물, 경유 등에 사용되며 G1\" 나사, Ø13 스템(요청 시 최대 2000 mm), NBR 플로트, 공급 전압 24 V ±10%, 사용 온도 -25~+95°C, IP65/IP67, M12 커넥터, AISI 316 바디/스템 사양입니다. 액체 비중은 0.6 이상이어야 합니다.",
+      "descriptionEn": "The EST2 series is a combined temperature/level transmitter with a 4-20 mA (±1 °C) temperature output and two programmable PNP digital outputs (max load 0.2 A, settable delay time) assignable to level or temperature thresholds. Suitable for oils, water-based coolants, water and diesel, it features a G1\" thread, Ø13 stem (up to 2000 mm on request), NBR float, 24 V ±10% supply, working temperature -25 to +95 °C, IP65/IP67, M12 connector and AISI 316 case/stem. Liquid specific gravity must exceed 0.6.",
+      "specs": {
+        "output_signal": "4_20_ma",
+        "fluid_temperature_range": "-25~+95°C",
+        "supply_voltage": "24 V DC ±10% (역극성 보호)",
+        "max_pressure_bar": null,
+        "process_connection": "G1\", 스템 Ø13 (플로트 Ø30)",
+        "electrical_connection": "M12 커넥터 (5핀)",
+        "protection_class": "IP65 / IP67",
+        "body_material": "AISI 316 스테인리스 (플로트/O-링 NBR)",
+        "digital_outputs": 2,
+        "probe_length_options": "요청 사양, 최대 2000 mm"
+      },
+      "sourcePages": "189"
+    },
+    {
+      "slug": "euroswitch-est-io",
+      "modelNo": "EST-IO",
+      "categorySlug": "euroswitch-temperature-transmitters",
+      "nameKo": "EST-IO IO-Link 온도 트랜스미터",
+      "nameEn": "EST-IO IO-Link Temperature Transmitter",
+      "shortDescriptionKo": "IO-Link 통신 출력의 산업용 온도 트랜스미터",
+      "shortDescriptionEn": "Industrial temperature transmitter with IO-Link output",
+      "descriptionKo": "EST-IO 시리즈는 IO-Link 통신으로 온도 데이터를 전송하는 산업용 온도 트랜스미터입니다(코드 ESTI 120). 오일, 수용성 절삭유, 물, 경유 등에 사용되며 G1\" 나사, Ø8 프로브(길이 85~800 mm), 공급 전압 24 V ±10%, 사용 온도 -25~+95°C, 보호 등급 IP65/IP67, M12 커넥터, AISI 316 바디/스템 사양입니다.",
+      "descriptionEn": "The EST-IO series (code ESTI 120) is an industrial temperature transmitter communicating via IO-Link. Suitable for oils, water-based coolants, water and diesel, it features a G1\" thread, Ø8 probe (lengths 85-800 mm), 24 V ±10% supply, working temperature -25 to +95 °C, IP65/IP67 protection, M12 connector and AISI 316 case/stem.",
+      "specs": {
+        "output_signal": "io_link",
+        "fluid_temperature_range": "-25~+95°C",
+        "supply_voltage": "24 V DC ±10% (역극성 보호)",
+        "max_pressure_bar": null,
+        "process_connection": "G1\", 프로브 Ø8",
+        "electrical_connection": "M12 커넥터 (IO-Link, CQ 핀 4)",
+        "protection_class": "IP65 / IP67",
+        "body_material": "AISI 316 스테인리스",
+        "digital_outputs": 0,
+        "probe_length_options": "L2: 85, 100, 150, 200, 250, 300, 350, 500, 700, 800 mm"
+      },
+      "sourcePages": "190"
+    },
+    {
+      "slug": "euroswitch-pwm",
+      "modelNo": "PWM",
+      "categorySlug": "euroswitch-temperature-transmitters",
+      "nameKo": "PWM 출력 온도 센서 (팬 제어용)",
+      "nameEn": "PWM Temperature Sensor with Analogue PWM Output",
+      "shortDescriptionKo": "냉각팬 속도·회전 방향 제어용 PWM 출력 온도 센서",
+      "shortDescriptionEn": "PWM-output temperature sensor for programmable fan speed and rotation control",
+      "descriptionKo": "PWM 시리즈는 온도에 따라 듀티 사이클이 변하는 PWM 신호를 출력하여 냉각팬의 속도와 회전 방향을 제어하는 온도 센서입니다. 예시 설정으로 0~20°C에서 듀티 2.5%(0 rpm), 20.1~50°C에서 25~75%(500~2500 rpm), 50°C 초과 시 75%(최대 2500 rpm)로 동작하며 팬 역회전 사이클도 프로그래밍할 수 있습니다. 공급 전압 12 Vdc, G1/2\"·M22x1.5 나사, 황동 바디, 최대 압력 50 bar, 사용 온도 -40~+95°C(주위 -40~+105°C)입니다.",
+      "descriptionEn": "The PWM series outputs a PWM signal whose duty cycle varies with temperature to control cooling fan speed and rotation direction. In the example setting, duty is 2.5% (0 rpm) from 0-20 °C, 25-75% (500-2500 rpm) from 20.1-50 °C and 75% (max 2500 rpm) above 50 °C, with a programmable reverse-rotation cycle. Supply 12 Vdc, G1/2\" and M22x1.5 threads, brass body, 50 bar max pressure, working temperature -40 to +95 °C (ambient -40 to +105 °C).",
+      "specs": {
+        "output_signal": "pwm",
+        "fluid_temperature_range": "-40~+95°C (주위 온도 -40~+105°C)",
+        "supply_voltage": "12 V DC",
+        "max_pressure_bar": 50,
+        "process_connection": "G1/2\", M22x1.5 (Hex 27)",
+        "electrical_connection": "일체형 커넥터 (자동차용)",
+        "protection_class": null,
+        "body_material": "황동 (기타 요청 가능)",
+        "digital_outputs": 0,
+        "probe_length_options": null
+      },
+      "sourcePages": "191"
+    },
+    {
+      "slug": "euroswitch-est-pz",
+      "modelNo": "EST-PZ1 / EST-PZ2",
+      "categorySlug": "euroswitch-temperature-accessories",
+      "nameKo": "EST-PZ 온도 센서용 보호관(써모웰)",
+      "nameEn": "EST-PZ Thermowell for Temperature Sensors",
+      "shortDescriptionKo": "유체 누출 없이 센서 탈착이 가능한 AISI 316 보호관",
+      "shortDescriptionEn": "AISI 316 thermowell allowing sensor removal without fluid leakage",
+      "descriptionKo": "EST-PZ 보호관(써모웰)은 배관·탱크에서 유체를 배출하지 않고 온도 센서를 탈착할 수 있게 해주는 액세서리입니다. EST-PZ1은 G1\"에서 G1/2\"로, EST-PZ2는 G1/2\"(DIN3852-2)에서 G1/2\"로 변환하며, AISI 316 재질로 고압 및 부식성 유체에 대한 보호 성능을 제공합니다.",
+      "descriptionEn": "The EST-PZ thermowell allows temperature sensors to be removed from pipes or tanks without draining the fluid. EST-PZ1 adapts a G1\" process connection to G1/2\", while EST-PZ2 adapts G1/2\" (DIN3852-2) to G1/2\". Made of AISI 316, it offers high pressure resistance and protection against aggressive media.",
+      "specs": {
+        "model_variants": "EST-PZ1 (G1\" → G1/2\") / EST-PZ2 (G1/2\" → G1/2\")",
+        "material": "AISI 316 스테인리스",
+        "process_connection": "EST-PZ1: G1\" / EST-PZ2: G1/2\"A DIN3852-2",
+        "sensor_connection": "G1/2\"",
+        "overall_length": "EST-PZ1: 87.5 mm / EST-PZ2: 55 mm",
+        "well_bore_diameter_mm": 12
+      },
+      "sourcePages": "192"
+    }
+  ],
+  "notes": "PDF 페이지 153-196(카탈로그 표기 페이지 151-192)의 온도 섹션 전체를 추출. 카탈로그 페이지 번호 = PDF 페이지 - 2. 제품군: 바이메탈 서모스탯 4종(506-508, 525, 507, 520), 온도 센서 11종(570, 572, 580E, 580, 595-596, 590, 597, 582, 577, 589, 583), 전자식 트랜스미터 6종(598, ESTS, EST, EST2, EST-IO, PWM), 액세서리 1종(EST-PZ 써모웰). 미포함 페이지: 보호캡/커넥터 액세서리(PDF 167, 서모스탯용 캡 3015001/3900001/3900200 등 - 개별 스펙 테이블 없는 부속품 목록), 센서용 일체형 커넥터/배선 예시(PDF 183-185), 특성 곡선 예시 페이지, 인증서(PDF 158-159), SCD 4.0 센서 설정 장치(PDF 193 - 압력/레벨/온도 공용 프로그래밍 기기이므로 중복 방지를 위해 다른 섹션 담당 에이전트와 조율 필요, 본 파일에는 미포함). 대부분의 센서 시리즈에서 최대 사용 압력·체결 토크는 '제조사 문의' 항목이라 null 또는 생략 처리. 520의 최대 압력, 507의 사이클 수, PWM의 보호 등급, 598/EST2/EST-IO의 최대 압력은 카탈로그에 수치 미기재. NTC/PTC 서미스터 저항값 옵션(1kΩ~100kΩ, 코드 102/103/103B/104/202/222/302/332/472/502/123/503/142/242/561 등)과 나사 코드(01~24), 커넥터 코드(K0~K6)는 주문 코드 변형이므로 스펙 텍스트로 요약."
+}

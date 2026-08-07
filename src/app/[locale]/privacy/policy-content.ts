@@ -31,14 +31,14 @@ export const PRIVACY_POLICY: Record<Locale, PolicyContent> = {
   ko: {
     intro:
       `${COMPANY.legalNameKo}(이하 "회사")는 「개인정보 보호법」 등 관계 법령을 준수하며, ` +
-      "홈페이지 견적·상담 문의를 통해 수집되는 개인정보를 다음과 같이 처리합니다.",
+      "이메일·전화를 통한 견적·상담 문의 과정에서 수집되는 개인정보를 다음과 같이 처리합니다.",
     sections: [
       {
         heading: "1. 수집하는 개인정보의 항목 및 수집 방법",
         list: [
           "필수 항목: 이름, 이메일, 문의 내용",
           "선택 항목: 회사명, 연락처, 관심 분야",
-          "수집 방법: 홈페이지 견적·상담 문의 폼",
+          "수집 방법: 이메일·전화를 통한 견적·상담 문의",
         ],
       },
       {
@@ -85,8 +85,8 @@ export const PRIVACY_POLICY: Record<Locale, PolicyContent> = {
       {
         heading: "7. 개인정보 보호책임자",
         list: [
-          "성명: {{PRIVACY_OFFICER_NAME}}",
-          "직책: {{PRIVACY_OFFICER_TITLE}}",
+          "성명: 이유정",
+          "직책: 과장",
           `연락처: ${COMPANY.phone} / ${COMPANY.email}`,
         ],
       },
@@ -104,14 +104,14 @@ export const PRIVACY_POLICY: Record<Locale, PolicyContent> = {
   en: {
     intro:
       `${COMPANY.legalNameEn} (the "Company") complies with the Personal Information Protection Act (PIPA) of Korea ` +
-      "and other applicable laws, and processes personal information collected through the website inquiry form as follows.",
+      "and other applicable laws, and processes personal information collected through email and phone inquiries as follows.",
     sections: [
       {
         heading: "1. Items Collected and Collection Method",
         list: [
           "Required: name, email, message",
           "Optional: company name, phone number, area of interest",
-          "Collection method: the quote/consultation inquiry form on this website",
+          "Collection method: quote/consultation inquiries received by email or phone",
         ],
       },
       {
@@ -158,8 +158,8 @@ export const PRIVACY_POLICY: Record<Locale, PolicyContent> = {
       {
         heading: "7. Privacy Officer",
         list: [
-          "Name: {{PRIVACY_OFFICER_NAME}}",
-          "Title: {{PRIVACY_OFFICER_TITLE}}",
+          "Name: Lee Yu-jeong",
+          "Title: Manager",
           `Contact: ${COMPANY.phoneIntl} / ${COMPANY.email}`,
         ],
       },

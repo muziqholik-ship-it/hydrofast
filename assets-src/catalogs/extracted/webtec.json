@@ -1,0 +1,1043 @@
+{
+  "sourcePdf": "WEBTEC.pdf",
+  "manufacturer": {
+    "slug": "webtec",
+    "name": "Webtec Products Limited",
+    "country": "United Kingdom",
+    "websiteUrl": "https://www.webtec.com",
+    "descriptionKo": "Webtec은 영국 케임브리지셔에 본사를 둔 유압 측정 및 제어 제품 전문 제조업체로, 60년 이상 산업·모바일·농업 분야의 유압 장비 진단과 성능 개선을 지원해 왔습니다. 유량계, 휴대용 유압 테스터, 데이터로거, 유압 제어 밸브 등을 생산합니다.",
+    "descriptionEn": "Webtec is a UK-based specialist manufacturer of hydraulic measurement and control products, helping customers in the industrial, mobile and agricultural sectors diagnose hydraulic faults and improve machinery performance for over 60 years. Its range covers flow meters, portable hydraulic testers, data loggers and hydraulic control valves."
+  },
+  "categories": [
+    {
+      "slug": "webtec-control-valves",
+      "nameKo": "유압 제어 밸브",
+      "nameEn": "Hydraulic Control Valves",
+      "descriptionKo": "유량 제어 밸브, 우선 유량 분배 밸브, 유량 분배·합류 밸브, 방향 제어 밸브 및 릴리프 밸브 등 유압 시스템의 반복 가능한 제어를 위한 밸브 제품군입니다.",
+      "descriptionEn": "Flow control valves, priority flow dividers, divider-combiners, directional control valves and relief valves for repeatable hydraulic control.",
+      "specSchema": [
+        {"key": "valve_type", "labelKo": "밸브 유형", "labelEn": "Valve Type", "dataType": "select", "options": [
+          {"value": "flow_control_2port", "labelKo": "2포트 유량 제어", "labelEn": "Two-Port Flow Control"},
+          {"value": "priority_flow_divider", "labelKo": "우선 유량 분배", "labelEn": "Priority Flow Divider"},
+          {"value": "flow_divider_combiner", "labelKo": "유량 분배·합류", "labelEn": "Flow Divider Combiner"},
+          {"value": "directional", "labelKo": "방향 제어", "labelEn": "Directional Control"},
+          {"value": "diverter", "labelKo": "다이버터", "labelEn": "Diverter"},
+          {"value": "relief", "labelKo": "릴리프", "labelEn": "Pressure Relief"},
+          {"value": "combination", "labelKo": "복합(분배+방향)", "labelEn": "Combination"}
+        ], "required": true, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "priority_flow_lpm", "labelKo": "최대 우선(REG) 유량", "labelEn": "Max Priority (REG) Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "porting", "labelKo": "포트 규격", "labelEn": "Porting", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "body_material", "labelKo": "바디 재질", "labelEn": "Body Material", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "seal_material", "labelKo": "씰 재질", "labelEn": "Seal Material", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "weight_kg", "labelKo": "중량", "labelEn": "Weight", "dataType": "unit_value", "unit": "kg", "required": false, "sortOrder": 8, "showInCardTeaser": false},
+        {"key": "accuracy", "labelKo": "정확도", "labelEn": "Accuracy", "dataType": "text", "required": false, "sortOrder": 9, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "webtec-flow-monitors",
+      "nameKo": "유량·상태 모니터링",
+      "nameEn": "Flow & Condition Monitoring",
+      "descriptionKo": "산업 및 모바일 장비의 유압 시스템 상태 감시를 위한 인라인 유량 지시계, 유량 모니터 및 CAN 호환 센서 제품군입니다.",
+      "descriptionEn": "In-line flow indicators, flow monitors and CAN-compatible sensors for industrial and mobile hydraulic system condition monitoring.",
+      "specSchema": [
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "output_signal", "labelKo": "출력 방식", "labelEn": "Output Signal", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "accuracy", "labelKo": "정확도", "labelEn": "Accuracy", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "porting", "labelKo": "포트 규격", "labelEn": "Porting", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "fluid_temp_range", "labelKo": "유체 온도 범위", "labelEn": "Fluid Temperature Range", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "ambient_temp_range", "labelKo": "주위 온도 범위", "labelEn": "Ambient Temperature Range", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "weight_kg", "labelKo": "중량", "labelEn": "Weight", "dataType": "unit_value", "unit": "kg", "required": false, "sortOrder": 8, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "webtec-portable-testers",
+      "nameKo": "휴대용 유압 테스터",
+      "nameEn": "Portable Hydraulic Testers",
+      "descriptionKo": "현장에서 유량·압력·온도를 동시에 측정하여 유압 시스템을 진단하는 기계식 및 디지털 휴대용 테스터입니다.",
+      "descriptionEn": "Mechanical and digital portable testers that measure flow, pressure and temperature for on-site hydraulic system diagnostics.",
+      "specSchema": [
+        {"key": "tester_type", "labelKo": "테스터 유형", "labelEn": "Tester Type", "dataType": "select", "options": [
+          {"value": "mechanical", "labelKo": "기계식", "labelEn": "Mechanical"},
+          {"value": "digital", "labelKo": "디지털", "labelEn": "Digital"},
+          {"value": "digital_multimeter", "labelKo": "디지털 멀티미터", "labelEn": "Digital Multimeter"}
+        ], "required": true, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "flow_accuracy", "labelKo": "유량 정확도", "labelEn": "Flow Accuracy", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "pressure_accuracy", "labelKo": "압력 정확도", "labelEn": "Pressure Accuracy", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "temp_accuracy", "labelKo": "온도 정확도", "labelEn": "Temperature Accuracy", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "fluid_temp_range", "labelKo": "유체 온도 범위", "labelEn": "Fluid Temperature Range", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "ambient_temp_range", "labelKo": "주위 온도 범위", "labelEn": "Ambient Temperature Range", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "webtec-dataloggers",
+      "nameKo": "유압 데이터로거",
+      "nameEn": "Hydraulic Dataloggers",
+      "descriptionKo": "유압 시스템의 압력·유량·온도 데이터를 기록·분석하는 HPM 시리즈 디지털 압력 게이지 및 데이터로거입니다.",
+      "descriptionEn": "HPM series digital pressure gauges and data loggers for recording and analysing hydraulic pressure, flow and temperature data.",
+      "specSchema": [
+        {"key": "device_type", "labelKo": "장비 유형", "labelEn": "Device Type", "dataType": "select", "options": [
+          {"value": "digital_pressure_gauge", "labelKo": "디지털 압력 게이지", "labelEn": "Digital Pressure Gauge"},
+          {"value": "datalogger", "labelKo": "데이터로거", "labelEn": "Data Logger"}
+        ], "required": true, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "accuracy", "labelKo": "정확도", "labelEn": "Accuracy", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": false},
+        {"key": "ports", "labelKo": "인터페이스 포트", "labelEn": "Interface Ports", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": true},
+        {"key": "battery", "labelKo": "배터리", "labelEn": "Battery", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "protection_rating", "labelKo": "보호 등급", "labelEn": "Protection Rating", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "memory", "labelKo": "메모리", "labelEn": "Memory", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "ambient_temp_range", "labelKo": "주위 온도 범위", "labelEn": "Ambient Temperature Range", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false},
+        {"key": "porting", "labelKo": "포트 규격", "labelEn": "Porting", "dataType": "text", "required": false, "sortOrder": 9, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "webtec-datalogger-sensors",
+      "nameKo": "데이터로거용 센서",
+      "nameEn": "Sensors for Dataloggers",
+      "descriptionKo": "HPM 시리즈 데이터로거와 함께 사용하는 압력·온도 센서 및 터빈 유량계입니다.",
+      "descriptionEn": "Pressure/temperature sensors and turbine flow meters for use with the HPM series data loggers.",
+      "specSchema": [
+        {"key": "sensor_type", "labelKo": "센서 유형", "labelEn": "Sensor Type", "dataType": "select", "options": [
+          {"value": "pressure_temperature", "labelKo": "압력·온도 센서", "labelEn": "Pressure/Temperature Sensor"},
+          {"value": "turbine_flow", "labelKo": "터빈 유량계", "labelEn": "Turbine Flow Meter"},
+          {"value": "turbine_flow_loading", "labelKo": "부하밸브 내장 터빈 유량계", "labelEn": "Turbine Flow Meter with Loading Valve"}
+        ], "required": true, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "accuracy", "labelKo": "정확도", "labelEn": "Accuracy", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "fluid_temp_range", "labelKo": "유체 온도 범위", "labelEn": "Fluid Temperature Range", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "ambient_temp_range", "labelKo": "주위 온도 범위", "labelEn": "Ambient Temperature Range", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "porting", "labelKo": "포트/연결 규격", "labelEn": "Porting / Connection", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "webtec-test-stand-instrumentation",
+      "nameKo": "테스트 스탠드 계측기",
+      "nameEn": "Test Stand Instrumentation",
+      "descriptionKo": "유압 테스트 스탠드용 데이터 수집 시스템, 유량계, 패널 미터, 압력 트랜스듀서, 속도·온도 센서 제품군입니다.",
+      "descriptionEn": "Data acquisition systems, flow meters, panel meters, pressure transducers, speed pickups and temperature sensors for hydraulic test stands.",
+      "specSchema": [
+        {"key": "instrument_type", "labelKo": "계측기 유형", "labelEn": "Instrument Type", "dataType": "select", "options": [
+          {"value": "data_acquisition", "labelKo": "데이터 수집 시스템", "labelEn": "Data Acquisition System"},
+          {"value": "pd_flow_meter", "labelKo": "용적식 유량계", "labelEn": "Positive Displacement Flow Meter"},
+          {"value": "turbine_flow_meter", "labelKo": "터빈 유량계", "labelEn": "Turbine Flow Meter"},
+          {"value": "turbine_flow_meter_loading", "labelKo": "부하밸브 내장 터빈 유량계", "labelEn": "Turbine Flow Meter with Loading Valve"},
+          {"value": "panel_meter", "labelKo": "패널 미터", "labelEn": "Panel Meter"},
+          {"value": "pressure_transducer", "labelKo": "압력 트랜스듀서", "labelEn": "Pressure Transducer"},
+          {"value": "speed_sensor", "labelKo": "속도 센서", "labelEn": "Speed Sensor"},
+          {"value": "temperature_sensor", "labelKo": "온도 센서", "labelEn": "Temperature Sensor"}
+        ], "required": true, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "accuracy", "labelKo": "정확도", "labelEn": "Accuracy", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "output_signal", "labelKo": "출력 방식", "labelEn": "Output Signal", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "fluid_temp_range", "labelKo": "유체 온도 범위", "labelEn": "Fluid Temperature Range", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "porting", "labelKo": "포트 규격", "labelEn": "Porting", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "weight_kg", "labelKo": "중량", "labelEn": "Weight", "dataType": "unit_value", "unit": "kg", "required": false, "sortOrder": 8, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "webtec-accessories",
+      "nameKo": "유압 액세서리",
+      "nameEn": "Hydraulic Accessories",
+      "descriptionKo": "압력 테스트 키트, 압력 게이지, 부하 밸브, 안전 파열판 등 유압 테스트를 위한 액세서리 제품군입니다.",
+      "descriptionEn": "Pressure test kits, pressure gauges, loading valves and safety burst discs for hydraulic testing.",
+      "specSchema": [
+        {"key": "accessory_type", "labelKo": "액세서리 유형", "labelEn": "Accessory Type", "dataType": "select", "options": [
+          {"value": "pressure_test_kit", "labelKo": "압력 테스트 키트", "labelEn": "Pressure Test Kit"},
+          {"value": "pressure_gauge", "labelKo": "압력 게이지", "labelEn": "Pressure Gauge"},
+          {"value": "loading_valve", "labelKo": "부하 밸브", "labelEn": "Loading Valve"},
+          {"value": "burst_disc", "labelKo": "안전 파열판", "labelEn": "Safety Burst Disc"}
+        ], "required": true, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "L/min", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "connection", "labelKo": "연결 규격", "labelEn": "Connection", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "fluid_temp_range", "labelKo": "유체 온도 범위", "labelEn": "Fluid Temperature Range", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "features", "labelKo": "특징", "labelEn": "Features", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false}
+      ]
+    }
+  ],
+  "products": [
+    {
+      "slug": "webtec-ilfc-series",
+      "modelNo": "ILFC Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "ILFC 시리즈 고정 유량 압력보상 제어 밸브",
+      "nameEn": "ILFC Series Fixed Flow Pressure Compensated Control Valve",
+      "shortDescriptionKo": "최대 210 bar, 16 L/min의 인라인 장착형 고정 유량 압력보상 제어 밸브입니다.",
+      "shortDescriptionEn": "In-line fixed flow pressure compensated control valve rated to 210 bar and 16 L/min.",
+      "descriptionKo": "ILFC 시리즈는 부하 변동에 관계없이 설정된 유량을 일정하게 유지하는 고정 유량 압력보상 제어 밸브입니다. 최대 정격 압력 210 bar(3000 psi), 최대 정격 유량 16 L/min(4 US gpm)이며 SAE, BSPP, NPTF 포트를 지원합니다. 아연 도금 스틸 바디에 인라인 방식으로 장착합니다.",
+      "descriptionEn": "The ILFC series is a fixed flow pressure compensated control valve that maintains a constant set flow regardless of load variations. It is rated to 210 bar (3000 psi) and 16 L/min (4 US gpm) with SAE, BSPP and NPTF porting options. The zinc plated steel body mounts in-line.",
+      "specs": {
+        "valve_type": "flow_control_2port",
+        "max_pressure_bar": 210,
+        "max_flow_lpm": 16,
+        "porting": "SAE, BSPP, NPTF",
+        "body_material": "Zinc Plated Steel (internal: Steel, Aluminium)",
+        "seal_material": "NBR"
+      },
+      "sourcePages": "3-4"
+    },
+    {
+      "slug": "webtec-vfc-series",
+      "modelNo": "VFC Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "VFC 시리즈 가변 유량 압력보상 제어 밸브",
+      "nameEn": "VFC Series Variable Flow Pressure Compensated Control Valve",
+      "shortDescriptionKo": "최대 210 bar, 55 L/min의 가변 유량 압력보상 제어 밸브입니다.",
+      "shortDescriptionEn": "Variable flow pressure compensated control valve rated to 210 bar and 55 L/min.",
+      "descriptionKo": "VFC 시리즈는 유량을 가변 조절할 수 있는 압력보상 제어 밸브로, 부하 압력 변화에도 설정 유량을 유지합니다. 최대 압력 210 bar(3000 psi), 최대 유량 55 L/min(15 US gpm)이며 SAE, BSPP, NPTF 포트를 지원합니다. 알루미늄 바디에 카본 스틸 내부 부품, NBR/PTFE 씰을 사용합니다.",
+      "descriptionEn": "The VFC series is a variable flow pressure compensated control valve that holds the set flow rate despite load pressure changes. It is rated to 210 bar (3000 psi) and 55 L/min (15 US gpm) with SAE, BSPP and NPTF porting. The valve has an aluminium body with carbon steel internals and NBR/PTFE seals.",
+      "specs": {
+        "valve_type": "flow_control_2port",
+        "max_pressure_bar": 210,
+        "max_flow_lpm": 55,
+        "porting": "SAE, BSPP, NPTF",
+        "body_material": "Aluminium (internal: Carbon Steel)",
+        "seal_material": "NBR, PTFE"
+      },
+      "sourcePages": "4"
+    },
+    {
+      "slug": "webtec-vfd50-series",
+      "modelNo": "VFD50 Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "VFD50 시리즈 가변 우선 유량 분배 밸브",
+      "nameEn": "VFD50 Series Variable Priority Flow Divider",
+      "shortDescriptionKo": "총 유량 50 L/min, 우선 유량 30 L/min까지 처리하는 가변 우선 유량 분배 밸브입니다.",
+      "shortDescriptionEn": "Variable priority flow divider handling up to 50 L/min total flow with up to 30 L/min priority flow.",
+      "descriptionKo": "VFD50 시리즈는 입력 유량을 우선(REG) 포트와 바이패스(BP) 포트로 분배하는 소형 가변 우선 유량 분배 밸브입니다. 최대 압력 250 bar(3,625 psi), 총 유량 50 L/min(13.2 US gpm), 최대 우선 유량 30 L/min(7.9 US gpm)입니다. BSPP, NPT, 매니폴드 마운트 포트를 지원하며 주철(SG Iron) 바디에 스틸 부품, 알루미늄 노브 구성으로 중량은 약 0.75 kg입니다.",
+      "descriptionEn": "The VFD50 series is a compact variable priority flow divider that splits inlet flow between a priority (REG) port and a bypass (BP) port. It is rated to 250 bar (3,625 psi) with 50 L/min (13.2 US gpm) total flow and up to 30 L/min (7.9 US gpm) priority flow. Porting options are BSPP, NPT and manifold mount, with steel components in a cast SG iron body and aluminium knob, weighing typically 0.75 kg.",
+      "specs": {
+        "valve_type": "priority_flow_divider",
+        "max_pressure_bar": 250,
+        "max_flow_lpm": 50,
+        "priority_flow_lpm": 30,
+        "porting": "BSPP, NPT, Manifold Mount",
+        "body_material": "Cast SG Iron (steel components, aluminium knob)",
+        "weight_kg": 0.75
+      },
+      "sourcePages": "4"
+    },
+    {
+      "slug": "webtec-vfd120-series",
+      "modelNo": "VFD120 Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "VFD120 시리즈 가변 우선 유량 분배 밸브",
+      "nameEn": "VFD120 Series Variable Priority Flow Divider",
+      "shortDescriptionKo": "최대 420 bar, 총 유량 120 L/min의 가변 우선 유량 분배 밸브입니다.",
+      "shortDescriptionEn": "Variable priority flow divider rated to 420 bar with 120 L/min total flow.",
+      "descriptionKo": "VFD120 시리즈는 최대 정격 압력 420 bar(6000 psi), 총 유량 120 L/min(32 US gpm), 최대 우선(REG) 유량 95 L/min(25 US gpm)의 가변 우선 유량 분배 밸브입니다. BSPP, SAE, NPT, 미터법 포트를 지원하며 흑색 도장 덕타일 주철 바디에 스틸 부품과 알루미늄 노브를 사용합니다. 중량은 약 2.0 kg입니다.",
+      "descriptionEn": "The VFD120 series variable priority flow divider is rated to 420 bar (6000 psi) with up to 120 L/min (32 US gpm) total flow and up to 95 L/min (25 US gpm) priority (REG) flow. Porting options include BSPP, SAE, NPT and metric. Steel components are housed in a cast ductile iron body painted black with an aluminium knob, weighing typically 2.0 kg.",
+      "specs": {
+        "valve_type": "priority_flow_divider",
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 120,
+        "priority_flow_lpm": 95,
+        "porting": "BSPP, SAE, NPT, Metric",
+        "body_material": "Cast Ductile Iron, painted black (steel components, aluminium knob)",
+        "weight_kg": 2.0
+      },
+      "sourcePages": "5"
+    },
+    {
+      "slug": "webtec-vfd190-series",
+      "modelNo": "VFD190 Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "VFD190 시리즈 가변 우선 유량 분배 밸브",
+      "nameEn": "VFD190 Series Variable Priority Flow Divider",
+      "shortDescriptionKo": "총 유량 190 L/min, 우선 유량 150 L/min까지 처리하는 고유량 가변 우선 유량 분배 밸브입니다.",
+      "shortDescriptionEn": "High-flow variable priority flow divider handling up to 190 L/min total flow and 150 L/min priority flow.",
+      "descriptionKo": "VFD190 시리즈는 최대 정격 압력 420 bar(6000 psi), 총 유량 190 L/min(50 US gpm), 최대 우선(REG) 유량 150 L/min(40 US gpm)의 대유량 가변 우선 유량 분배 밸브입니다. BSPP, SAE 포트를 지원하며 흑색 도장 덕타일 주철 바디에 스틸 부품과 알루미늄 노브를 사용합니다. 중량은 3.5~4.0 kg입니다.",
+      "descriptionEn": "The VFD190 series is a high-capacity variable priority flow divider rated to 420 bar (6000 psi) with up to 190 L/min (50 US gpm) total flow and up to 150 L/min (40 US gpm) priority (REG) flow. It offers BSPP and SAE porting, with steel components in a black-painted cast ductile iron body and aluminium knob, weighing 3.5 to 4.0 kg.",
+      "specs": {
+        "valve_type": "priority_flow_divider",
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 190,
+        "priority_flow_lpm": 150,
+        "porting": "BSPP, SAE",
+        "body_material": "Cast Ductile Iron, painted black (steel components, aluminium knob)",
+        "weight_kg": 4.0
+      },
+      "sourcePages": "5"
+    },
+    {
+      "slug": "webtec-vfd120md-series",
+      "modelNo": "VFD120MD Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "VFD120MD 시리즈 원격 비례제어 우선 유량 분배 밸브",
+      "nameEn": "VFD120MD Series Variable Priority Flow Divider with Remote Proportional Control",
+      "shortDescriptionKo": "원격 비례 제어 기능을 갖춘 최대 420 bar, 120 L/min의 가변 우선 유량 분배 밸브입니다.",
+      "shortDescriptionEn": "Variable priority flow divider with remote proportional control, rated to 420 bar and 120 L/min.",
+      "descriptionKo": "VFD120MD 시리즈는 원격 비례 제어가 가능한 가변 우선 유량 분배 밸브입니다. 최대 정격 압력 420 bar(6000 psi), 총 유량 120 L/min(32 US gpm), 최대 우선(REG) 유량 110 L/min(30 US gpm)입니다. BSPP, SAE, NPTF, 미터법 포트를 지원하며 흑색 도장 덕타일 주철 바디에 알루미늄 플레이트와 스틸 브래킷에 장착된 구동 메커니즘을 갖추고 있습니다. 중량은 2.75 kg입니다.",
+      "descriptionEn": "The VFD120MD series is a variable priority flow divider with remote proportional control. It is rated to 420 bar (6000 psi) with up to 120 L/min (32 US gpm) total flow and up to 110 L/min (30 US gpm) priority (REG) flow. Porting options are BSPP, SAE, NPTF and metric; the drive mechanism is mounted on an aluminium plate and mild steel bracket on a black-painted cast ductile iron body, weighing 2.75 kg.",
+      "specs": {
+        "valve_type": "priority_flow_divider",
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 120,
+        "priority_flow_lpm": 110,
+        "porting": "BSPP, SAE, NPTF, Metric",
+        "body_material": "Cast Ductile Iron, painted black (drive mechanism on aluminium plate / mild steel bracket)",
+        "weight_kg": 2.75
+      },
+      "sourcePages": "5"
+    },
+    {
+      "slug": "webtec-vfd120-e-series",
+      "modelNo": "VFD120-E Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "VFD120-E 시리즈 전동 구동 우선 유량 분배 밸브",
+      "nameEn": "VFD120-E Series Variable Priority Flow Divider with Electric Motor Drive",
+      "shortDescriptionKo": "전기 모터 구동식 최대 420 bar, 120 L/min의 가변 우선 유량 분배 밸브입니다.",
+      "shortDescriptionEn": "Electric motor driven variable priority flow divider rated to 420 bar and 120 L/min.",
+      "descriptionKo": "VFD120-E 시리즈는 전기 모터 구동 방식의 가변 우선 유량 분배 밸브입니다. 최대 정격 압력 420 bar(6000 psi), 총 유량 120 L/min(32 US gpm), 최대 우선(REG) 유량 110 L/min(30 US gpm)입니다. BSPP, SAE, NPTF, 미터법 포트를 지원하며 흑색 도장 덕타일 주철 바디, 알루미늄 플레이트와 스틸 브래킷에 장착된 구동 메커니즘으로 구성되고 중량은 2.75 kg입니다.",
+      "descriptionEn": "The VFD120-E series is a variable priority flow divider with electric motor drive. It is rated to 420 bar (6000 psi) with up to 120 L/min (32 US gpm) total flow and up to 110 L/min (30 US gpm) priority (REG) flow. It offers BSPP, SAE, NPTF and metric porting, with the drive mechanism mounted on an aluminium plate and mild steel bracket on a black-painted cast ductile iron body, weighing 2.75 kg.",
+      "specs": {
+        "valve_type": "priority_flow_divider",
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 120,
+        "priority_flow_lpm": 110,
+        "porting": "BSPP, SAE, NPTF, Metric",
+        "body_material": "Cast Ductile Iron, painted black (drive mechanism on aluminium plate / mild steel bracket)",
+        "weight_kg": 2.75
+      },
+      "sourcePages": "5"
+    },
+    {
+      "slug": "webtec-fdc60-series",
+      "modelNo": "FDC60 Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "FDC60 시리즈 유량 분배·합류 밸브",
+      "nameEn": "FDC60 Series Flow Divider Combiner",
+      "shortDescriptionKo": "최대 310 bar, 70 L/min의 유량 분배·합류 밸브로 정확도 ±2.0%를 제공합니다.",
+      "shortDescriptionEn": "Flow divider combiner rated to 310 bar and 70 L/min with ±2.0% accuracy.",
+      "descriptionKo": "FDC60 시리즈는 두 액추에이터에 유량을 균등하게 분배하거나 합류시키는 유량 분배·합류 밸브입니다. 최대 정격 압력 310 bar(4,500 psi), 최대 정격 유량 70 L/min(18 US gpm)이며 정확도는 밸브 정격 최대 유량의 ±2.0%입니다. 주위 및 유체 온도 범위는 -30~100°C이고 ISO 11158 광유에 적합합니다.",
+      "descriptionEn": "The FDC60 series flow divider combiner splits or combines flow equally between two actuators. It is rated to 310 bar (4,500 psi) and up to 70 L/min (18 US gpm) with an accuracy of ±2.0% of valve rated maximum flow. Ambient and fluid temperature ranges are -30 to 100°C, and it is compatible with mineral oils to ISO 11158.",
+      "specs": {
+        "valve_type": "flow_divider_combiner",
+        "max_pressure_bar": 310,
+        "max_flow_lpm": 70,
+        "accuracy": "±2.0% of valve rated maximum flow"
+      },
+      "sourcePages": "6"
+    },
+    {
+      "slug": "webtec-fdc140-series",
+      "modelNo": "FDC140 Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "FDC140 시리즈 고유량 분배·합류 밸브",
+      "nameEn": "FDC140 Series High Flow Divider Combiner",
+      "shortDescriptionKo": "최대 420 bar, 140 L/min의 고유량 분배·합류 밸브로 정확도 ±1.5%를 제공합니다.",
+      "shortDescriptionEn": "High flow divider combiner rated to 420 bar and 140 L/min with ±1.5% accuracy.",
+      "descriptionKo": "FDC140 시리즈는 대유량 시스템용 유량 분배·합류 밸브입니다. 최대 정격 압력 420 bar(6000 psi), 최대 총 유량 140 L/min(37 US gpm)이며 정확도는 밸브 정격 최대 유량의 ±1.5%입니다. 주위 및 유체 온도 범위는 -30~100°C이며 광유 및 합성유에 사용할 수 있습니다.",
+      "descriptionEn": "The FDC140 series is a flow divider combiner for high-flow systems, rated to 420 bar (6000 psi) with up to 140 L/min (37 US gpm) total flow and an accuracy of ±1.5% of valve rated maximum flow. Ambient and fluid temperature ranges are -30 to 100°C, and it is compatible with mineral and synthetic oils.",
+      "specs": {
+        "valve_type": "flow_divider_combiner",
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 140,
+        "accuracy": "±1.5% of valve rated maximum flow"
+      },
+      "sourcePages": "6"
+    },
+    {
+      "slug": "webtec-rv-ck-m-series",
+      "modelNo": "RV, CK & M Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "RV·CK·M 시리즈 릴리프/체크밸브 내장 우선 유량 분배 밸브",
+      "nameEn": "RV, CK & M Series Variable Priority Flow Dividers with Built-in Relief or Check Valve",
+      "shortDescriptionKo": "릴리프 또는 체크밸브를 내장한 최대 250 bar, 114 L/min의 가변 우선 유량 분배 밸브입니다.",
+      "shortDescriptionEn": "Variable priority flow dividers with built-in relief or check valve, rated to 250 bar and 114 L/min.",
+      "descriptionKo": "RV, CK, M 시리즈는 릴리프 밸브 또는 체크 밸브를 내장한 가변 우선 유량 분배 밸브입니다. 최대 정격 압력 250 bar(3630 psi), 최대 정격 유량 114 L/min(30 US gpm)이며 BSPP, NPTF, SAE, 미터법 포트를 지원합니다. 주철 바디에 스틸 부품과 알루미늄 노브 구성으로 중량은 3.5 kg입니다.",
+      "descriptionEn": "The RV, CK and M series are variable priority flow dividers with a built-in relief or check valve. They are rated to 250 bar (3630 psi) and up to 114 L/min (30 US gpm) with BSPP, NPTF, SAE and metric porting. Steel components are housed in a cast iron body with an aluminium knob, weighing 3.5 kg.",
+      "specs": {
+        "valve_type": "priority_flow_divider",
+        "max_pressure_bar": 250,
+        "max_flow_lpm": 114,
+        "porting": "BSPP, NPTF, SAE, Metric",
+        "body_material": "Cast Iron (steel components, aluminium knob)",
+        "weight_kg": 3.5
+      },
+      "sourcePages": "6"
+    },
+    {
+      "slug": "webtec-fv120-200",
+      "modelNo": "FV120 / 200",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "FV120/200 고정·비례 유량 분배 밸브",
+      "nameEn": "FV120 / 200 Fixed and Proportional Flow Divider Valves",
+      "shortDescriptionKo": "최대 420 bar, 76 L/min의 고정 및 비례식 유량 분배 밸브입니다.",
+      "shortDescriptionEn": "Fixed and proportional flow divider valves rated to 420 bar and 76 L/min.",
+      "descriptionKo": "FV120/200은 고정 및 비례 방식의 유량 분배 밸브입니다. 최대 정격 압력 420 bar(6000 psi), 최대 유량 용량 76 L/min(20 US gpm)이며 BSPP, SAE 포트를 지원합니다. 주철 바디에 스틸 부품으로 구성되고 M8 또는 5/16인치 볼트 2개로 장착하며 중량은 1.6 kg입니다.",
+      "descriptionEn": "The FV120/200 are fixed and proportional flow divider valves rated to 420 bar (6000 psi) with a maximum flow capacity of 76 L/min (20 US gpm). They offer BSPP and SAE porting, with steel components in a cast iron body, mounting via two M8 or 5/16\" bolts and weighing 1.6 kg.",
+      "specs": {
+        "valve_type": "priority_flow_divider",
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 76,
+        "porting": "BSPP, SAE",
+        "body_material": "Cast Iron (steel components)",
+        "weight_kg": 1.6
+      },
+      "sourcePages": "6"
+    },
+    {
+      "slug": "webtec-cv120-series",
+      "modelNo": "CV120 Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "CV120 시리즈 복합 밸브 (우선 유량 분배 + 방향 제어)",
+      "nameEn": "CV120 Series Combination Valve - Variable Priority Flow Divider with Directional Control",
+      "shortDescriptionKo": "가변 우선 유량 분배와 방향 제어를 결합한 최대 250 bar, 120 L/min의 복합 밸브입니다.",
+      "shortDescriptionEn": "Combination valve integrating variable priority flow divider and directional control, rated to 250 bar and 120 L/min.",
+      "descriptionKo": "CV120 시리즈는 가변 우선 유량 분배 기능과 방향 제어 기능을 하나로 결합한 복합 밸브입니다. 최대 정격 압력 250 bar(3600 psi), 총 유량 용량 120 L/min(32 US gpm), 조절 유량 용량 95 L/min(25 US gpm)입니다. BSPP, SAE 포트를 지원하며 흑색 도장 덕타일 주철 바디에 220 bar(3200 psi) 릴리프 밸브가 포함되고 중량은 8.9 kg입니다.",
+      "descriptionEn": "The CV120 series is a combination valve integrating a variable priority flow divider with directional control. It is rated to 250 bar (3600 psi) with a total flow capacity of 120 L/min (32 US gpm) and regulated flow capacity of up to 95 L/min (25 US gpm). It offers BSPP and SAE porting, a black-painted cast ductile iron body with a 220 bar (3200 psi) relief valve, and weighs 8.9 kg.",
+      "specs": {
+        "valve_type": "combination",
+        "max_pressure_bar": 250,
+        "max_flow_lpm": 120,
+        "priority_flow_lpm": 95,
+        "porting": "BSPP, SAE",
+        "body_material": "Cast Ductile Iron, painted black (steel components, aluminium knob)",
+        "weight_kg": 8.9
+      },
+      "sourcePages": "7"
+    },
+    {
+      "slug": "webtec-180-series",
+      "modelNo": "180 Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "180 시리즈 로터리 시어 방향 제어 밸브",
+      "nameEn": "180 Series Rotary Shear Directional Control Valve",
+      "shortDescriptionKo": "최대 700 bar, 38 L/min의 로터리 시어 방식 방향 제어 밸브입니다.",
+      "shortDescriptionEn": "Rotary shear directional control valve rated to 700 bar and 38 L/min.",
+      "descriptionKo": "180 시리즈는 로터리 시어 방식의 방향 제어 밸브로, 최대 정격 압력 700 bar(10,000 psi), 최대 정격 유량 38 L/min(10 US gpm)입니다. 주위 온도 -20~50°C, 유체 온도 -30~120°C에서 사용 가능하며 BSPP, SAE, NPTF, 매니폴드 마운트 포트를 지원합니다. 알루미늄 바디에 페놀 수지 노브, 카본 스틸 내부 부품, NBR 씰을 사용합니다.",
+      "descriptionEn": "The 180 series is a rotary shear directional control valve rated to 700 bar (10,000 psi) and up to 38 L/min (10 US gpm). It operates at ambient temperatures of -20 to 50°C and media temperatures of -30 to 120°C, with BSPP, SAE, NPTF and manifold mount porting. The aluminium body carries a phenolic resin knob with carbon steel internals and NBR seals.",
+      "specs": {
+        "valve_type": "directional",
+        "max_pressure_bar": 700,
+        "max_flow_lpm": 38,
+        "porting": "BSPP, SAE, NPTF, Manifold Mount",
+        "body_material": "Aluminium, phenolic resin knob (internal: Carbon Steel)",
+        "seal_material": "NBR"
+      },
+      "sourcePages": "7"
+    },
+    {
+      "slug": "webtec-280-series",
+      "modelNo": "280 Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "280 시리즈 스테인리스 로터리 방향 제어 밸브",
+      "nameEn": "280 Series Stainless Steel Rotary Directional Control Valve",
+      "shortDescriptionKo": "가혹 환경용 스테인리스 스틸 바디의 최대 700 bar, 38 L/min 로터리 방향 제어 밸브입니다.",
+      "shortDescriptionEn": "Stainless steel rotary directional control valve for harsh environments, rated to 700 bar and 38 L/min.",
+      "descriptionKo": "280 시리즈는 가혹한 환경의 유압 시스템을 위한 스테인리스 스틸 로터리 방향 제어 밸브입니다. 최대 정격 압력 700 bar(10,000 psi), 최대 정격 유량 38 L/min(10 US gpm)이며 주위 온도 -20~50°C, 유체 온도 -30~120°C에서 사용 가능합니다. BSPP, NPTF, SAE, 매니폴드 마운트 포트를 지원하고 스테인리스 스틸 바디에 카본 스틸 내부 부품, NBR 씰을 사용합니다.",
+      "descriptionEn": "The 280 series is a stainless steel rotary directional control valve for hydraulics in harsh environments. It is rated to 700 bar (10,000 psi) and up to 38 L/min (10 US gpm), operating at ambient temperatures of -20 to 50°C and media temperatures of -30 to 120°C. Porting options are BSPP, NPTF, SAE and manifold mount, with a stainless steel body, carbon steel internals and NBR seals.",
+      "specs": {
+        "valve_type": "directional",
+        "max_pressure_bar": 700,
+        "max_flow_lpm": 38,
+        "porting": "BSPP, NPTF, SAE, Manifold Mount",
+        "body_material": "Stainless Steel, phenolic resin knob (internal: Carbon Steel)",
+        "seal_material": "NBR"
+      },
+      "sourcePages": "7"
+    },
+    {
+      "slug": "webtec-sv80-series",
+      "modelNo": "SV80 Series",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "SV80 시리즈 다이버터 밸브",
+      "nameEn": "SV80 Series Diverter Valve",
+      "shortDescriptionKo": "최대 210 bar, 80 L/min의 유로 전환용 다이버터 밸브입니다.",
+      "shortDescriptionEn": "Diverter valve for switching flow paths, rated to 210 bar and 80 L/min.",
+      "descriptionKo": "SV80 시리즈는 유압 회로의 유로를 전환하는 다이버터 밸브입니다. 최대 정격 압력 210 bar(3000 psi), 최대 정격 유량 80 L/min(21 US gpm)이며 ISO 11158 광유에 적합합니다. 주철 바디에 스테인리스 스틸 내부 부품을 사용하고 BSPP, SAE 포트를 지원하며 중량은 2 kg입니다.",
+      "descriptionEn": "The SV80 series diverter valve switches flow between circuits, rated to 210 bar (3000 psi) and up to 80 L/min (21 US gpm). It is compatible with mineral oils to ISO 11158, features stainless steel internals in a cast iron body, offers BSPP and SAE porting and weighs 2 kg.",
+      "specs": {
+        "valve_type": "diverter",
+        "max_pressure_bar": 210,
+        "max_flow_lpm": 80,
+        "porting": "BSPP, SAE",
+        "body_material": "Cast Iron (internal: Stainless Steel)",
+        "weight_kg": 2.0
+      },
+      "sourcePages": "7"
+    },
+    {
+      "slug": "webtec-rv5",
+      "modelNo": "RV5",
+      "categorySlug": "webtec-control-valves",
+      "nameKo": "RV5 릴리프 밸브",
+      "nameEn": "RV5 Pressure Relief Valve",
+      "shortDescriptionKo": "최대 276 bar, 70 L/min의 압력 릴리프 밸브입니다.",
+      "shortDescriptionEn": "Pressure relief valve rated to 276 bar and 70 L/min.",
+      "descriptionKo": "RV5는 최대 압력 276 bar(4000 psi), 최대 유량 70 L/min(18 US gpm)의 압력 릴리프 밸브입니다. 3/4인치 BSPP 포트를 사용하며 고장력 알루미늄 바디에 스틸 내부 부품과 스틸 카트리지로 구성됩니다. 중량은 0.73 kg이고 8.7mm x 40mm 장착 구멍 1개로 고정합니다.",
+      "descriptionEn": "The RV5 is a pressure relief valve rated to 276 bar (4000 psi) and up to 70 L/min (18 US gpm). It uses a 3/4\" BSPP port, a high tensile aluminium body with steel internals and steel cartridge, weighs 0.73 kg and mounts via a single 8.7 mm x 40 mm mounting hole.",
+      "specs": {
+        "valve_type": "relief",
+        "max_pressure_bar": 276,
+        "max_flow_lpm": 70,
+        "porting": "3/4\" BSPP",
+        "body_material": "High Tensile Aluminium (internal: Steel, steel cartridge)",
+        "weight_kg": 0.73
+      },
+      "sourcePages": "8"
+    },
+    {
+      "slug": "webtec-fi750-series",
+      "modelNo": "FI750 Series",
+      "categorySlug": "webtec-flow-monitors",
+      "nameKo": "FI750 시리즈 인라인 유량 지시계",
+      "nameEn": "FI750 Series In-Line Flow Indicator",
+      "shortDescriptionKo": "최대 420 bar, 180 L/min의 인라인 유량 지시계입니다.",
+      "shortDescriptionEn": "In-line flow indicator rated to 420 bar and 180 L/min.",
+      "descriptionKo": "FI750 시리즈는 배관에 직접 설치하여 유량을 육안으로 확인할 수 있는 인라인 유량 지시계입니다. 최대 정격 압력 420 bar(6,000 psi), 최대 정격 유량 180 L/min(48 US gpm)이며 BSPP, NPSF, SAE 포트를 지원합니다. 알루미늄 2011T6 바디에 황동 내부 부품, FKM 씰을 사용하며 중량은 1.4 kg입니다.",
+      "descriptionEn": "The FI750 series is an in-line flow indicator for direct visual flow reading in the pipeline. It is rated to 420 bar (6,000 psi) and up to 180 L/min (48 US gpm) with BSPP, NPSF and SAE porting. The aluminium 2011T6 body contains mainly brass internals with FKM seals and weighs 1.4 kg.",
+      "specs": {
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 180,
+        "output_signal": "Visual indicator",
+        "porting": "BSPP, NPSF, SAE",
+        "ambient_temp_range": "-10 to 50 °C",
+        "weight_kg": 1.4
+      },
+      "sourcePages": "9"
+    },
+    {
+      "slug": "webtec-fi1500-series",
+      "modelNo": "FI1500 Series",
+      "categorySlug": "webtec-flow-monitors",
+      "nameKo": "FI1500 시리즈 인라인 유량 지시계",
+      "nameEn": "FI1500 Series In-Line Flow Indicator",
+      "shortDescriptionKo": "최대 350 bar, 400 L/min의 대유량 인라인 유량 지시계입니다.",
+      "shortDescriptionEn": "High-capacity in-line flow indicator rated to 350 bar and 400 L/min.",
+      "descriptionKo": "FI1500 시리즈는 대유량 시스템용 인라인 유량 지시계입니다. 최대 정격 압력 350 bar(5000 psi), 최대 정격 유량 400 L/min(100 US gpm)이며 BSPP, SAE 포트를 지원합니다. 알루미늄 2011T6 바디에 황동 내부 부품, FKM 씰을 사용하며 중량은 3.2 kg입니다.",
+      "descriptionEn": "The FI1500 series is an in-line flow indicator for high-flow systems, rated to 350 bar (5000 psi) and up to 400 L/min (100 US gpm) with BSPP and SAE porting. The aluminium 2011T6 body houses mainly brass internals with FKM seals and weighs 3.2 kg.",
+      "specs": {
+        "max_pressure_bar": 350,
+        "max_flow_lpm": 400,
+        "output_signal": "Visual indicator",
+        "porting": "BSPP, SAE",
+        "ambient_temp_range": "-10 to 50 °C",
+        "weight_kg": 3.2
+      },
+      "sourcePages": "9"
+    },
+    {
+      "slug": "webtec-flowhub-series",
+      "modelNo": "FlowHUB Series",
+      "categorySlug": "webtec-flow-monitors",
+      "nameKo": "FlowHUB 시리즈 유량·온도 모니터",
+      "nameEn": "FlowHUB Series Flow & Temperature Monitor",
+      "shortDescriptionKo": "유량과 온도를 측정·표시·스위칭·전송하는 최대 420 bar, 360 L/min의 통합 모니터입니다.",
+      "shortDescriptionEn": "Integrated monitor that measures, displays, switches and transmits flow and temperature, rated to 420 bar and 360 L/min.",
+      "descriptionKo": "FlowHUB 시리즈는 유량과 온도를 측정하여 표시, 스위칭, 신호 전송까지 수행하는 통합형 모니터입니다. 최대 정격 압력 420 bar(6000 psi), 최대 정격 유량 360 L/min(95 US gpm)이며 수나사형 BSPP, SAE JIC 포트를 지원합니다. 알루미늄 바디에 황동, 스테인리스 스틸, 카본 스틸 내부 부품을 사용하며 유체 온도 범위는 5~90°C입니다.",
+      "descriptionEn": "The FlowHUB series is an integrated monitor that measures, displays, switches and transmits flow and temperature. It is rated to 420 bar (6000 psi) and up to 360 L/min (95 US gpm) with male BSPP and male SAE JIC porting. The aluminium body contains brass, stainless steel and carbon steel internals; fluid temperature range is 5 to 90°C.",
+      "specs": {
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 360,
+        "output_signal": "Display, switch, transmit",
+        "porting": "Male BSPP, Male SAE JIC",
+        "fluid_temp_range": "5 to 90 °C",
+        "ambient_temp_range": "0 to 50 °C"
+      },
+      "sourcePages": "9"
+    },
+    {
+      "slug": "webtec-wp-series",
+      "modelNo": "WP Series",
+      "categorySlug": "webtec-flow-monitors",
+      "nameKo": "WP 시리즈 유압 유량 모니터",
+      "nameEn": "WP Series Hydraulic Flow Monitor",
+      "shortDescriptionKo": "최대 420 bar, 550 L/min의 유압 유량 모니터로 풀스케일 ±2.0% 정확도를 제공합니다.",
+      "shortDescriptionEn": "Hydraulic flow monitor rated to 420 bar and 550 L/min with ±2.0% full scale accuracy.",
+      "descriptionKo": "WP 시리즈는 최대 정격 압력 420 bar(6000 psi), 최대 정격 유량 550 L/min(150 US gpm)의 유압 유량 모니터입니다. 정확도는 풀스케일 ±2.0%(-BI 코드 옵션 시 ±0.4%)이며 최대 정격 온도는 116°C입니다. BSPP, NPTF, SAE 포트를 지원하고 알루미늄, 황동 또는 스테인리스 스틸 바디에 스테인리스 스틸 내부 부품을 사용합니다.",
+      "descriptionEn": "The WP series hydraulic flow monitor is rated to 420 bar (6000 psi) and up to 550 L/min (150 US gpm). Accuracy is ±2.0% of full scale (±0.4% with the -BI code option) and the maximum rated temperature is 116°C. Porting options are BSPP, NPTF and SAE, with body materials in aluminium, brass or stainless steel and stainless steel internals.",
+      "specs": {
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 550,
+        "accuracy": "±2.0% of full scale (-BI code ±0.4% of full scale)",
+        "porting": "BSPP, NPTF, SAE",
+        "fluid_temp_range": "up to 116 °C"
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "webtec-rfi-series",
+      "modelNo": "RFI Series",
+      "categorySlug": "webtec-flow-monitors",
+      "nameKo": "RFI 시리즈 양방향 유량 지시계",
+      "nameEn": "RFI Series Reversible Flow Indicator",
+      "shortDescriptionKo": "최대 420 bar, 200 L/min의 양방향 유량 지시계입니다.",
+      "shortDescriptionEn": "Reversible flow indicator rated to 420 bar and 200 L/min.",
+      "descriptionKo": "RFI 시리즈는 양방향 유동을 측정할 수 있는 유량 지시계입니다. 최대 정격 압력 420 bar(6000 psi), 최대 정격 유량 200 L/min(54 US gpm)이며 BSPP, SAE 포트를 지원합니다. 알루미늄 2011T6 바디에 스테인리스 스틸과 황동 내부 부품, NBR/FKM 씰을 사용하며 중량은 2.0 kg입니다.",
+      "descriptionEn": "The RFI series is a flow indicator capable of measuring flow in both directions. It is rated to 420 bar (6000 psi) and up to 200 L/min (54 US gpm) with BSPP and SAE porting. The aluminium 2011T6 body contains stainless steel and brass internals with NBR and FKM seals, weighing 2.0 kg.",
+      "specs": {
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 200,
+        "output_signal": "Visual indicator (reversible flow)",
+        "porting": "BSPP, SAE",
+        "ambient_temp_range": "-10 to 50 °C",
+        "weight_kg": 2.0
+      },
+      "sourcePages": "10"
+    },
+    {
+      "slug": "webtec-j1939-series",
+      "modelNo": "J1939 Series",
+      "categorySlug": "webtec-flow-monitors",
+      "nameKo": "J1939 시리즈 CAN 호환 유압 모니터링 센서",
+      "nameEn": "J1939 Series SAE J1939 CAN Compatible Sensors",
+      "shortDescriptionKo": "SAE J1939 CAN 버스 호환 유압 시스템 모니터링 센서로 최대 480 bar, 1500 L/min을 지원합니다.",
+      "shortDescriptionEn": "SAE J1939 CAN-bus compatible sensors for hydraulic system monitoring, rated to 480 bar and 1500 L/min.",
+      "descriptionKo": "J1939 시리즈는 SAE J1939 CAN 버스와 호환되는 유압 시스템 모니터링용 센서입니다. 최대 정격 압력 480 bar(7000 psi), 최대 유량 1500 L/min(400 US gpm)이며 유체 온도 5~90°C에서 연속 사용이 가능합니다. 정확도는 유량 범위의 15~100% 구간에서 지시값의 1%, 15% 미만 구간에서는 풀스케일의 0.15% 고정(CT15는 풀스케일의 1%)입니다.",
+      "descriptionEn": "The J1939 series are SAE J1939 CAN-compatible sensors for hydraulic system monitoring, rated to 480 bar (7000 psi) and up to 1500 L/min (400 US gpm) with continuous fluid temperatures of 5 to 90°C. Accuracy is 1% of indicated reading from 15% to 100% of the flow range, and a fixed 0.15% of full scale below 15% (1% of full scale for the CT15).",
+      "specs": {
+        "max_pressure_bar": 480,
+        "max_flow_lpm": 1500,
+        "output_signal": "SAE J1939 CAN-bus",
+        "accuracy": "1% of indicated reading (15-100% of range); 0.15% FS below 15% (CT15: 1% FS)",
+        "fluid_temp_range": "5 to 90 °C continuous",
+        "ambient_temp_range": "5 to 40 °C"
+      },
+      "sourcePages": "10, 17"
+    },
+    {
+      "slug": "webtec-cta-series",
+      "modelNo": "CTA Series",
+      "categorySlug": "webtec-flow-monitors",
+      "nameKo": "CTA 시리즈 헤비듀티 유압 시스템 유량 모니터",
+      "nameEn": "CTA Series Heavy Duty Hydraulic System Flow Monitor",
+      "shortDescriptionKo": "모바일·산업 장비 상시 설치용 헤비듀티 유량·온도 모니터로 J1939 CAN 또는 4-20 mA 출력을 제공합니다.",
+      "shortDescriptionEn": "Heavy duty flow and temperature monitor for permanent installation in mobile or industrial machinery, with J1939 CAN or 4-20 mA output.",
+      "descriptionKo": "CTA 시리즈는 모바일 및 산업 기계에 상시 설치하도록 설계된 견고한 유압 오일 유량·온도 모니터입니다. 폐루프 제어, 실시간 진단, 안전 인터록, 예지보전/IoT 시스템 연동에 적합하며 J1939 CAN 버스 인터페이스 또는 4-20 mA 출력을 제공합니다. 최대 정격 압력 420 bar(6,000 psi), 최대 유량 300 L/min(80 US gpm), 유체 온도 범위 -40~90°C이며 BSPP, SAE 포트를 지원합니다.",
+      "descriptionEn": "The CTA series are rugged hydraulic oil flow and temperature monitors designed for permanent installation in mobile or industrial machinery. Suitable for closed loop control, real-time diagnostics, safety interlocks and predictive maintenance/IoT systems, they provide a J1939 CAN-bus interface or 4-20 mA output. Rated to 420 bar (6,000 psi) and 300 L/min (80 US gpm) with a fluid temperature range of -40 to 90°C and BSPP or SAE porting.",
+      "specs": {
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 300,
+        "output_signal": "4-20 mA (3-wire, M12 connector) or SAE J1939 CAN (Deutsch connector)",
+        "porting": "BSPP, SAE",
+        "fluid_temp_range": "-40 to 90 °C"
+      },
+      "sourcePages": "17"
+    },
+    {
+      "slug": "webtec-rfik-series",
+      "modelNo": "RFIK Series",
+      "categorySlug": "webtec-portable-testers",
+      "nameKo": "RFIK 시리즈 기계식 유압 테스터",
+      "nameEn": "RFIK Series Mechanical Hydraulic Tester",
+      "shortDescriptionKo": "최대 420 bar, 270 L/min의 휴대용 기계식 유압 테스터입니다.",
+      "shortDescriptionEn": "Portable mechanical hydraulic tester rated to 420 bar and 270 L/min.",
+      "descriptionKo": "RFIK 시리즈는 전원 없이 사용하는 기계식 휴대용 유압 테스터입니다. 최대 정격 압력 420 bar(6090 psi), 최대 유량 270 L/min(70 US gpm)이며 유체 온도 20~80°C 범위에서 사용합니다. 정확도는 유량 ±4% FS, 압력 ±1.6% FS, 온도 ±2.5°C입니다.",
+      "descriptionEn": "The RFIK series is a mechanical portable hydraulic tester requiring no power supply. It is rated to 420 bar (6090 psi) and up to 270 L/min (70 US gpm), operating with fluid temperatures of 20 to 80°C. Accuracy is ±4% FS for flow, ±1.6% FS for pressure and ±2.5°C for temperature.",
+      "specs": {
+        "tester_type": "mechanical",
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 270,
+        "flow_accuracy": "±4% FS",
+        "pressure_accuracy": "±1.6% FS",
+        "temp_accuracy": "±2.5 °C",
+        "fluid_temp_range": "20 to 80 °C",
+        "ambient_temp_range": "-10 to 50 °C"
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "webtec-dht-series",
+      "modelNo": "DHT Series",
+      "categorySlug": "webtec-portable-testers",
+      "nameKo": "DHT 시리즈 디지털 유압 테스터",
+      "nameEn": "DHT Series Digital Hydraulic Tester",
+      "shortDescriptionKo": "최대 480 bar, 800 L/min의 휴대용 디지털 유압 테스터입니다.",
+      "shortDescriptionEn": "Portable digital hydraulic tester rated to 480 bar and 800 L/min.",
+      "descriptionKo": "DHT 시리즈는 유량, 압력, 온도를 디지털로 측정하는 휴대용 유압 테스터입니다. 최대 정격 압력 480 bar(7000 psi), 최대 정격 유량 800 L/min(210 US gpm)이며 유체 온도 -10~120°C 범위에서 사용합니다. 정확도는 유량 ±1% FS, 압력 ±1.6% FS, 온도 ±1°C입니다.",
+      "descriptionEn": "The DHT series is a portable digital hydraulic tester measuring flow, pressure and temperature. It is rated to 480 bar (7000 psi) and up to 800 L/min (210 US gpm), with fluid temperatures of -10 to 120°C. Accuracy is ±1% full scale for flow, ±1.6% full scale for pressure and ±1°C for temperature.",
+      "specs": {
+        "tester_type": "digital",
+        "max_pressure_bar": 480,
+        "max_flow_lpm": 800,
+        "flow_accuracy": "±1% FS",
+        "pressure_accuracy": "±1.6% FS",
+        "temp_accuracy": "±1 °C",
+        "fluid_temp_range": "-10 to 120 °C",
+        "ambient_temp_range": "-10 to 50 °C"
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "webtec-dhm-series",
+      "modelNo": "DHM Series",
+      "categorySlug": "webtec-portable-testers",
+      "nameKo": "DHM 시리즈 디지털 유압 멀티미터",
+      "nameEn": "DHM Series Digital Hydraulic Multimeter",
+      "shortDescriptionKo": "QuickCert+ 앱을 지원하는 최대 480 bar, 800 L/min의 디지털 유압 멀티미터입니다.",
+      "shortDescriptionEn": "Digital hydraulic multimeter with QuickCert+ app support, rated to 480 bar and 800 L/min.",
+      "descriptionKo": "DHM 시리즈는 iPhone 및 Android용 QuickCert+ 앱과 연동되는 디지털 유압 멀티미터입니다. 최대 정격 압력 480 bar(7000 psi), 최대 정격 유량 800 L/min(210 US gpm)이며 유체 온도 0~120°C 범위에서 사용합니다. 정확도는 유량 지시값의 ±1%(범위의 15~100%), 압력 ±0.5% FS, 온도 ±1°C입니다.",
+      "descriptionEn": "The DHM series is a digital hydraulic multimeter with the QuickCert+ app available for iPhone and Android. It is rated to 480 bar (7000 psi) and up to 800 L/min (210 US gpm) with fluid temperatures of 0 to 120°C. Accuracy is ±1% of indicated reading for flow (15 to 100% of range), ±0.5% full scale for pressure and ±1°C for temperature.",
+      "specs": {
+        "tester_type": "digital_multimeter",
+        "max_pressure_bar": 480,
+        "max_flow_lpm": 800,
+        "flow_accuracy": "±1% of indicated reading (15-100% of range)",
+        "pressure_accuracy": "±0.5% FS",
+        "temp_accuracy": "±1 °C",
+        "fluid_temp_range": "0 to 120 °C",
+        "ambient_temp_range": "-10 to 50 °C"
+      },
+      "sourcePages": "11"
+    },
+    {
+      "slug": "webtec-hpm110-series",
+      "modelNo": "HPM110 Series",
+      "categorySlug": "webtec-dataloggers",
+      "nameKo": "HPM110 시리즈 디지털 압력 게이지",
+      "nameEn": "HPM110 Series Digital Pressure Gauge",
+      "shortDescriptionKo": "최대 600 bar, 풀스케일 ±0.5% 정확도의 디지털 압력 게이지입니다.",
+      "shortDescriptionEn": "Digital pressure gauge rated to 600 bar with ±0.5% full scale accuracy.",
+      "descriptionKo": "HPM110 시리즈는 최대 정격 압력 600 bar(8700 psi)의 디지털 압력 게이지입니다. 정확도는 풀스케일 ±0.5%이며 오일, 물 등 다양한 유체에 사용할 수 있습니다. 유체 온도 -20~80°C, 주위 온도 -10~50°C에서 사용 가능하고 BSPP, SAE 포트를 지원합니다.",
+      "descriptionEn": "The HPM110 series is a digital pressure gauge rated to 600 bar (8700 psi) with an accuracy of ±0.5% full scale. It is compatible with oil, water and other fluids on request, operates with fluid temperatures of -20 to 80°C and ambient temperatures of -10 to 50°C, and offers BSPP and SAE porting.",
+      "specs": {
+        "device_type": "digital_pressure_gauge",
+        "max_pressure_bar": 600,
+        "accuracy": "±0.5% full scale",
+        "ambient_temp_range": "-10 to 50 °C",
+        "porting": "BSPP, SAE"
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "webtec-hpm4000-series",
+      "modelNo": "HPM4000 Series",
+      "categorySlug": "webtec-dataloggers",
+      "nameKo": "HPM4000 시리즈 유압 데이터로거",
+      "nameEn": "HPM4000 Series Hydraulic Data Logger",
+      "shortDescriptionKo": "IP67 보호 등급의 휴대용 유압 데이터로거입니다.",
+      "shortDescriptionEn": "Portable hydraulic data logger with IP67 protection rating.",
+      "descriptionKo": "HPM4000 시리즈는 IP67(EN60529) 보호 등급의 휴대용 유압 데이터로거입니다. 작동 온도 범위 0~50°C, 100-240 VAC 입력 전원과 마이크로 USB(Type B, +5 VDC 최대 1000 mA) 연결을 지원합니다. 3.7 VDC 4500 mAh 리튬이온 배터리를 탑재하여 센서 2개 연결 시 8시간 이상 사용할 수 있습니다.",
+      "descriptionEn": "The HPM4000 series is a portable hydraulic data logger with IP67 (EN60529) protection. It operates from 0 to 50°C with a 100-240 VAC power input and micro-USB Type B connection (+5 VDC max 1000 mA). The 3.7 VDC 4500 mAh lithium-ion battery pack provides more than 8 hours of operation with 2 sensors.",
+      "specs": {
+        "device_type": "datalogger",
+        "ports": "Micro-USB Type B (+5 VDC max 1000 mA)",
+        "battery": "Lithium-Ion 3.7 VDC, 4500 mAh (>8 h with 2 sensors)",
+        "protection_rating": "IP67 (EN60529)",
+        "ambient_temp_range": "0 to 50 °C (operating)"
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "webtec-hpm5000-series",
+      "modelNo": "HPM5000 Series",
+      "categorySlug": "webtec-dataloggers",
+      "nameKo": "HPM5000 시리즈 유압 데이터로거",
+      "nameEn": "HPM5000 Series Hydraulic Data Logger",
+      "shortDescriptionKo": "USB-C 고속 충전과 USB-A 호스트를 지원하는 IP65 유압 데이터로거입니다.",
+      "shortDescriptionEn": "IP65 hydraulic data logger with USB-C fast charging and USB-A host port.",
+      "descriptionKo": "HPM5000 시리즈는 USB-C(고속 충전 및 PC 데이터 전송)와 USB-A 호스트(USB 메모리 저장) 포트를 갖춘 유압 데이터로거입니다. 7.2 V / 3500 mAh / 25.44 Wh 리튬이온 배터리를 탑재하고 보호 등급은 IP65입니다. 주위 온도 -20~50°C에서 사용 가능하며 ABS/PC 열가소성 바디에 접이식 스탠드와 VESA 75x75 mm 표준 장착을 지원합니다.",
+      "descriptionEn": "The HPM5000 series hydraulic data logger features USB-C (fast charging and data transfer to PC) and USB-A host (storage via USB memory stick) ports. It carries a 7.2 V / 3500 mAh / 25.44 Wh lithium-ion battery pack with IP65 protection. It operates at ambient temperatures of -20 to 50°C, with an ABS/PC thermoplastic body, folding stand and VESA 75x75 mm mounting.",
+      "specs": {
+        "device_type": "datalogger",
+        "ports": "USB-C (charging/data), USB-A host (USB memory)",
+        "battery": "Lithium-Ion 7.2 V / 3500 mAh / 25.44 Wh",
+        "protection_rating": "IP65 (EN 60529)",
+        "ambient_temp_range": "-20 to 50 °C"
+      },
+      "sourcePages": "12"
+    },
+    {
+      "slug": "webtec-hpm7000-series",
+      "modelNo": "HPM7000 Series",
+      "categorySlug": "webtec-dataloggers",
+      "nameKo": "HPM7000 시리즈 유압 데이터로거",
+      "nameEn": "HPM7000 Series Hydraulic Data Logger",
+      "shortDescriptionKo": "12GB 메모리와 LAN·다중 USB 포트를 갖춘 고급형 유압 데이터로거입니다.",
+      "shortDescriptionEn": "Advanced hydraulic data logger with 12GB memory, LAN and multiple USB ports.",
+      "descriptionKo": "HPM7000 시리즈는 12GB 메모리를 내장한 고급형 유압 데이터로거입니다. USB 디바이스 포트(PC 데이터 전송), 외부 저장 매체용 USB 호스트 2개, 네트워크 연결용 LAN 포트를 갖추고 있습니다. 주위 온도 -10~50°C에서 사용 가능하며 ABS/PC 바디에 TPE 보호 커버, 운반 스트랩, 접이식 스탠드와 VESA 100x100 mm 장착을 지원합니다. 입력 모듈 제외 중량은 1.88 kg입니다.",
+      "descriptionEn": "The HPM7000 series is an advanced hydraulic data logger with 12GB of internal memory. It provides a USB device port for PC data transfer, two USB host ports for external storage media and a LAN port for network connection. Operating at -10 to 50°C ambient, it has an ABS/PC body with TPE protective covers, carrying strap, folding stand and VESA 100x100 mm mounting, weighing 1.88 kg without input modules.",
+      "specs": {
+        "device_type": "datalogger",
+        "ports": "USB device, 2x USB host, LAN",
+        "memory": "12GB",
+        "ambient_temp_range": "-10 to 50 °C"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "webtec-sr-pressure-temperature-sensors",
+      "modelNo": "SR / Intelligent Digital (CANopen) Sensors",
+      "categorySlug": "webtec-datalogger-sensors",
+      "nameKo": "SR·CANopen 압력/온도 센서",
+      "nameEn": "SR & Intelligent Digital (CANopen) Pressure / Temperature Sensors",
+      "shortDescriptionKo": "HPM 시리즈용 최대 1000 bar 압력·온도 센서 및 액세서리입니다.",
+      "shortDescriptionEn": "Pressure/temperature sensors and accessories for the HPM series, rated to 1000 bar.",
+      "descriptionKo": "HPM 시리즈 데이터로거와 함께 사용하는 SR 및 지능형 디지털(CANopen) 압력·온도 센서입니다. 최대 정격 압력 1000 bar(14,500 psi)이며 압력 정확도는 풀스케일 ±0.5%, 온도 정확도는 ±3°C(SR-PTT-* 전용)입니다. 주위 온도 -25~85°C, 유체 온도 -25~105°C 연속 사용이 가능하며 최대 630 bar 정격의 M16 x 2 테스트 포인트 커넥터가 함께 제공됩니다.",
+      "descriptionEn": "SR and Intelligent Digital (CANopen) pressure/temperature sensors and accessories for use with the HPM series data loggers. Rated to 1000 bar (14,500 psi) with pressure accuracy of ±0.5% full scale and temperature accuracy of ±3°C (SR-PTT-* only). Ambient range is -25 to 85°C and fluid range -25 to 105°C continuous; supplied with an M16 x 2 test point connector rated to 630 bar (live connection at 400 bar or less).",
+      "specs": {
+        "sensor_type": "pressure_temperature",
+        "max_pressure_bar": 1000,
+        "accuracy": "Pressure ±0.5% FS; Temperature ±3 °C (SR-PTT-* only)",
+        "fluid_temp_range": "-25 to 105 °C continuous",
+        "ambient_temp_range": "-25 to 85 °C",
+        "porting": "M16 x 2 test point connector (max 630 bar, live connection ≤400 bar)"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "webtec-ct-for-hpm-series",
+      "modelNo": "CT for HPM Series",
+      "categorySlug": "webtec-datalogger-sensors",
+      "nameKo": "CT (HPM용) 터빈 유량계",
+      "nameEn": "CT Turbine Flow Meters for HPM Series",
+      "shortDescriptionKo": "HPM 데이터로거용 최대 480 bar, 1500 L/min 터빈 유량계입니다.",
+      "shortDescriptionEn": "Turbine flow meters for HPM data loggers, rated to 480 bar and 1500 L/min.",
+      "descriptionKo": "HPM 시리즈 데이터로거와 함께 사용하는 CT 터빈 유량계입니다. 최대 정격 압력 480 bar(7000 psi), 최대 유량 1500 L/min(400 US gpm)이며 유체 온도 -20~90°C 연속 사용이 가능합니다. BSPP, SAE 포트를 지원하고 ISO 11158 광유에 적합합니다.",
+      "descriptionEn": "CT turbine flow meters for use with the HPM series data loggers. Rated to 480 bar (7000 psi) and up to 1500 L/min (400 US gpm) with continuous fluid temperatures of -20 to 90°C. They offer BSPP and SAE porting and are compatible with mineral oils to ISO 11158.",
+      "specs": {
+        "sensor_type": "turbine_flow",
+        "max_pressure_bar": 480,
+        "max_flow_lpm": 1500,
+        "fluid_temp_range": "-20 to 90 °C continuous",
+        "ambient_temp_range": "-10 to 50 °C",
+        "porting": "BSPP, SAE"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "webtec-ctr-for-hpm-series",
+      "modelNo": "CTR for HPM Series",
+      "categorySlug": "webtec-datalogger-sensors",
+      "nameKo": "CTR (HPM용) 부하밸브 내장 터빈 유량계",
+      "nameEn": "CTR Turbine Flow Meters with Built-In Loading Valve for HPM Series",
+      "shortDescriptionKo": "부하 밸브를 내장한 HPM 데이터로거용 최대 480 bar, 750 L/min 터빈 유량계입니다.",
+      "shortDescriptionEn": "Turbine flow meters with built-in loading valve for HPM data loggers, rated to 480 bar and 750 L/min.",
+      "descriptionKo": "HPM 시리즈 데이터로거용 CTR 터빈 유량계로, 부하 시험을 위한 로딩 밸브를 내장하고 있습니다. 최대 정격 압력 480 bar(7000 psi), 최대 유량 750 L/min(200 US gpm)이며 유체 온도 -20~90°C 연속 사용이 가능합니다. BSPP, SAE 포트를 지원합니다.",
+      "descriptionEn": "CTR turbine flow meters for the HPM series data loggers include a built-in loading valve for load testing. Rated to 480 bar (7000 psi) and up to 750 L/min (200 US gpm) with continuous fluid temperatures of -20 to 90°C, with BSPP and SAE porting.",
+      "specs": {
+        "sensor_type": "turbine_flow_loading",
+        "max_pressure_bar": 480,
+        "max_flow_lpm": 750,
+        "fluid_temp_range": "-20 to 90 °C continuous",
+        "ambient_temp_range": "-10 to 50 °C",
+        "porting": "BSPP, SAE"
+      },
+      "sourcePages": "13"
+    },
+    {
+      "slug": "webtec-c2000",
+      "modelNo": "C2000",
+      "categorySlug": "webtec-test-stand-instrumentation",
+      "nameKo": "C2000 유압 데이터 수집 시스템",
+      "nameEn": "C2000 Hydraulic Data Acquisition System",
+      "shortDescriptionKo": "8~64 입력의 모듈형 유압 테스트용 데이터 수집 시스템입니다.",
+      "shortDescriptionEn": "Modular hydraulic data acquisition system with 8 to 64 inputs.",
+      "descriptionKo": "C2000은 유압 테스트 스탠드용 모듈형 데이터 수집 시스템으로 8~64개의 입력을 지원합니다. Windows 호환 소프트웨어로 운용되며 시험 성적서 출력, TCP/IP 네트워크 연결, 전용 고속 컨트롤러를 갖추고 있습니다.",
+      "descriptionEn": "The C2000 is a modular data acquisition system for hydraulic test stands supporting 8 to 64 inputs. It runs on Windows-compatible software, prints test certificates, is TCP/IP network ready and uses a dedicated high-speed controller.",
+      "specs": {
+        "instrument_type": "data_acquisition",
+        "output_signal": "TCP/IP network, Windows-compatible software, 8-64 modular inputs"
+      },
+      "sourcePages": "14"
+    },
+    {
+      "slug": "webtec-gf-series",
+      "modelNo": "GF Series",
+      "categorySlug": "webtec-test-stand-instrumentation",
+      "nameKo": "GF 시리즈 용적식 유량계",
+      "nameEn": "GF Series Positive Displacement Flow Meters with Conditioned Output",
+      "shortDescriptionKo": "컨디셔닝 출력을 갖춘 최대 420 bar, 150 L/min의 용적식 유량계입니다.",
+      "shortDescriptionEn": "Positive displacement flow meters with conditioned output, rated to 420 bar and 150 L/min.",
+      "descriptionKo": "GF 시리즈는 컨디셔닝된 출력 신호를 제공하는 용적식(PD) 유량계입니다. 최대 정격 압력 420 bar(6,000 psi), 최대 정격 유량 150 L/min(40 US gpm)이며 유체 온도 -40~120°C 범위에서 사용합니다. 바디와 내부 부품 모두 스테인리스 스틸이며 NBR 씰(다른 씰은 문의)과 BSPP, SAE 포트를 지원합니다.",
+      "descriptionEn": "The GF series are positive displacement flow meters with conditioned output. Rated to 420 bar (6,000 psi) and 150 L/min (40 US gpm) with fluid temperatures of -40 to 120°C. Both body and internals are stainless steel with NBR seals (other seals on request) and BSPP or SAE porting.",
+      "specs": {
+        "instrument_type": "pd_flow_meter",
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 150,
+        "output_signal": "Conditioned output",
+        "fluid_temp_range": "-40 to 120 °C",
+        "porting": "BSPP, SAE"
+      },
+      "sourcePages": "14"
+    },
+    {
+      "slug": "webtec-ct-series",
+      "modelNo": "CT Series",
+      "categorySlug": "webtec-test-stand-instrumentation",
+      "nameKo": "CT 시리즈 터빈 유량계",
+      "nameEn": "CT Series Turbine Flow Meters with Conditioned Output",
+      "shortDescriptionKo": "컨디셔닝 출력을 갖춘 최대 480 bar, 1,500 L/min의 터빈 유량계입니다.",
+      "shortDescriptionEn": "Turbine flow meters with conditioned output, rated to 480 bar and 1,500 L/min.",
+      "descriptionKo": "CT 시리즈는 테스트 스탠드용 컨디셔닝 출력 터빈 유량계입니다. 최대 정격 압력 480 bar(6,960 psi), 최대 유량 1,500 L/min(396 US gpm)이며 유체 온도 5~90°C 범위에서 사용합니다. BSPP, SAE 포트를 지원하고 ISO 11158 광유에 적합합니다.",
+      "descriptionEn": "The CT series are turbine flow meters with conditioned output for test stand use. Rated to 480 bar (6,960 psi) and up to 1,500 L/min (396 US gpm) with fluid temperatures of 5 to 90°C. They offer BSPP and SAE porting and are compatible with mineral oils to ISO 11158.",
+      "specs": {
+        "instrument_type": "turbine_flow_meter",
+        "max_pressure_bar": 480,
+        "max_flow_lpm": 1500,
+        "output_signal": "Conditioned output",
+        "fluid_temp_range": "5 to 90 °C",
+        "porting": "BSPP, SAE"
+      },
+      "sourcePages": "14"
+    },
+    {
+      "slug": "webtec-ctr-series",
+      "modelNo": "CTR Series",
+      "categorySlug": "webtec-test-stand-instrumentation",
+      "nameKo": "CTR 시리즈 부하밸브 내장 터빈 유량계",
+      "nameEn": "CTR Series Turbine Flow Meters with Conditioned Output and Built-in Loading Valve",
+      "shortDescriptionKo": "부하 밸브를 내장한 최대 480 bar, 800 L/min의 컨디셔닝 출력 터빈 유량계입니다.",
+      "shortDescriptionEn": "Turbine flow meters with conditioned output and built-in loading valve, rated to 480 bar and 800 L/min.",
+      "descriptionKo": "CTR 시리즈는 컨디셔닝 출력과 부하 시험용 로딩 밸브를 내장한 터빈 유량계입니다. 최대 정격 압력 480 bar(7,000 psi), 최대 정격 유량 800 L/min(210 US gpm)이며 유체 온도 5~90°C 범위에서 사용합니다. BSPP, SAE 포트를 지원합니다.",
+      "descriptionEn": "The CTR series turbine flow meters combine conditioned output with a built-in loading valve for load testing. Rated to 480 bar (7,000 psi) and up to 800 L/min (210 US gpm) with fluid temperatures of 5 to 90°C, offering BSPP and SAE porting.",
+      "specs": {
+        "instrument_type": "turbine_flow_meter_loading",
+        "max_pressure_bar": 480,
+        "max_flow_lpm": 800,
+        "output_signal": "Conditioned output",
+        "fluid_temp_range": "5 to 90 °C",
+        "porting": "BSPP, SAE"
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "webtec-apm-advanced-panel-meters",
+      "modelNo": "APM",
+      "categorySlug": "webtec-test-stand-instrumentation",
+      "nameKo": "APM 고급 패널 미터",
+      "nameEn": "APM Advanced Panel Meters",
+      "shortDescriptionKo": "아날로그 센서용 디지털·바그래프 겸용 프로세스 패널 미터입니다.",
+      "shortDescriptionEn": "Digital process panel meters for analogue sensors with combined digital and bar graph display.",
+      "descriptionKo": "APM 고급 패널 미터는 아날로그 센서용 디지털 프로세스 미터로 디지털 표시와 바그래프 표시를 결합했습니다. 사용자 설정용 USB 포트, 경고 플래시 백라이트, 최소/최대값 표시 기능을 갖추고 있으며 깊이가 53mm 미만으로 컴팩트합니다. 2개의 독립 출력 또는 4-20 mA 아날로그 모니터 출력을 제공합니다.",
+      "descriptionEn": "The APM advanced panel meters are digital process meters for analogue sensors combining a digital readout with a bar graph display. Features include a USB port for custom user settings, warning flash backlight, min/max display range and a compact depth under 53 mm. They provide two independent outputs or 4-20 mA analogue monitor outputs.",
+      "specs": {
+        "instrument_type": "panel_meter",
+        "output_signal": "Two independent outputs or 4-20 mA analogue monitor outputs; USB for settings"
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "webtec-wika-a-10",
+      "modelNo": "WIKA A-10 Type",
+      "categorySlug": "webtec-test-stand-instrumentation",
+      "nameKo": "WIKA A-10 타입 압력 트랜스듀서",
+      "nameEn": "WIKA A-10 Type Pressure Transducers",
+      "shortDescriptionKo": "최대 600 bar, 풀스케일 ±1% 정확도의 압력 트랜스듀서입니다.",
+      "shortDescriptionEn": "Pressure transducers rated to 600 bar with ±1% full scale accuracy.",
+      "descriptionKo": "WIKA A-10 타입 압력 트랜스듀서는 최대 정격 압력 600 bar이며 정확도는 풀스케일 ±1%입니다. 작동 온도 범위는 -40~100°C이고 스테인리스 스틸 316L 바디를 사용합니다. BSPP, SAE 장착을 지원하며 중량은 0.080 kg입니다.",
+      "descriptionEn": "The WIKA A-10 type pressure transducers are rated to 600 bar with ±1% full scale accuracy. Operating temperature range is -40 to 100°C with a stainless steel 316L body. They support BSPP and SAE mounting and weigh 0.080 kg.",
+      "specs": {
+        "instrument_type": "pressure_transducer",
+        "max_pressure_bar": 600,
+        "accuracy": "±1% full scale",
+        "porting": "BSPP, SAE",
+        "weight_kg": 0.08
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "webtec-sp-ttl-series",
+      "modelNo": "SP-TTL Series",
+      "categorySlug": "webtec-test-stand-instrumentation",
+      "nameKo": "SP-TTL 시리즈 마그네틱 속도 픽업 센서",
+      "nameEn": "SP-TTL Series Magnetic Speed Pickup with Conditioned Output",
+      "shortDescriptionKo": "컨디셔닝 출력을 갖춘 마그네틱 방식 회전 속도 픽업 센서입니다.",
+      "shortDescriptionEn": "Magnetic speed pickup sensor with conditioned square wave output.",
+      "descriptionKo": "SP-TTL 시리즈는 컨디셔닝된 출력을 제공하는 마그네틱 속도 픽업 센서입니다. 공급 전압 12-32 VDC에서 0-5 V 구형파 펄스를 출력하며(최소 부하 600옴) M12x1 5핀 커넥터로 연결합니다. 무전해 니켈 도금 스틸 바디에 알루미늄 리드를 사용하고 중량은 0.25 kg입니다.",
+      "descriptionEn": "The SP-TTL series is a magnetic speed pickup with conditioned output. Operating from a 12-32 VDC supply, it outputs a 0-5 V square wave pulse (minimum load 600 ohms) via an M12x1 5-pin connector. The electroless nickel plated steel body has an aluminium lid and weighs 0.25 kg.",
+      "specs": {
+        "instrument_type": "speed_sensor",
+        "output_signal": "0-5 V square wave pulse (min load 600 Ω), supply 12-32 VDC, M12x1 5-pin",
+        "weight_kg": 0.25
+      },
+      "sourcePages": "15"
+    },
+    {
+      "slug": "webtec-tp125-series",
+      "modelNo": "TP125 Series",
+      "categorySlug": "webtec-test-stand-instrumentation",
+      "nameKo": "TP125 시리즈 온도 센서",
+      "nameEn": "TP125 Series Temperature Sensors",
+      "shortDescriptionKo": "최대 480 bar 시스템용 온도 센서로 ±1°C 정확도를 제공합니다.",
+      "shortDescriptionEn": "Temperature sensors for systems up to 480 bar with ±1°C accuracy.",
+      "descriptionKo": "TP125 시리즈는 유압 테스트 스탠드용 온도 센서입니다. 최대 정격 압력 480 bar(7,000 psi) 시스템에 사용할 수 있으며 유체 온도 범위는 0~125°C, 스케일 범위는 0~150°C입니다. 정확도는 ±1°C이고 ISO 11158 광유에 적합합니다.",
+      "descriptionEn": "The TP125 series are temperature sensors for hydraulic test stands, usable in systems rated to 480 bar (7,000 psi). Fluid temperature range is 0 to 125°C with a scaled range of 0 to 150°C and an accuracy of ±1°C. Compatible with mineral oils to ISO 11158.",
+      "specs": {
+        "instrument_type": "temperature_sensor",
+        "max_pressure_bar": 480,
+        "accuracy": "±1 °C (scaled range 0-150 °C)",
+        "fluid_temp_range": "0 to 125 °C"
+      },
+      "sourcePages": "16"
+    },
+    {
+      "slug": "webtec-pt-series",
+      "modelNo": "PT Series",
+      "categorySlug": "webtec-accessories",
+      "nameKo": "PT 시리즈 맞춤형 압력 테스트 키트",
+      "nameEn": "PT Series Custom Pressure Test Kits",
+      "shortDescriptionKo": "게이지, 호스, 테스트 포인트, 어댑터로 구성되는 맞춤형 압력 테스트 키트입니다.",
+      "shortDescriptionEn": "Custom-built pressure test kits comprising gauges, hoses, test points and adaptors.",
+      "descriptionKo": "PT 시리즈는 고객 사양에 맞춰 구성하는 맞춤형 압력 테스트 키트입니다. 게이지, 호스, 테스트 포인트, 어댑터가 포함되어 신속한 압력 점검을 위한 완전한 테스트 시스템을 제공합니다. 테스트 포인트는 회로 어디에나 설치할 수 있으며, 테스트 호스는 시스템 압력이 걸린 상태에서도 오일 손실이나 이물질 유입 없이 손으로 연결할 수 있어 오일 샘플링과 공기 배출에도 적합합니다. 케이스는 충분한 수납 공간을 제공하고 게이지 패널은 분리하여 사용할 수 있습니다.",
+      "descriptionEn": "The PT series are custom pressure test kits built to your specification from a huge pick-and-mix range. Each kit includes gauges, hoses, test points and adaptors, providing a complete system for rapid pressure testing. Test points can be fitted anywhere in the circuit, and test hoses can be connected by hand under full system pressure without oil loss or dirt ingress - ideal for oil sampling and air bleeding. The case provides ample storage and the gauge panel is removable for convenient use.",
+      "specs": {
+        "accessory_type": "pressure_test_kit",
+        "features": "Custom built; includes gauges, hoses, test points and adaptors; hot connection under full system pressure"
+      },
+      "sourcePages": "18"
+    },
+    {
+      "slug": "webtec-63mm-pressure-gauges",
+      "modelNo": "63 mm Pressure Gauges",
+      "categorySlug": "webtec-accessories",
+      "nameKo": "63mm 압력 게이지",
+      "nameEn": "63 mm Diameter Pressure Gauges",
+      "shortDescriptionKo": "글리세린 충전식 63mm 직경 압력 게이지입니다.",
+      "shortDescriptionEn": "Glycerine-filled 63 mm diameter pressure gauges.",
+      "descriptionKo": "직경 63mm의 글리세린 충전식 압력 게이지입니다. 하부 또는 중앙 후면 연결 방식을 선택할 수 있으며 1/4인치 BSPP 연결부를 사용합니다.",
+      "descriptionEn": "Glycerine-filled pressure gauges with a 63 mm diameter dial. Available with bottom or centre back connection and a 1/4\" BSPP fitting.",
+      "specs": {
+        "accessory_type": "pressure_gauge",
+        "connection": "1/4\" BSPP, bottom or centre back",
+        "features": "Glycerine filled"
+      },
+      "sourcePages": "18"
+    },
+    {
+      "slug": "webtec-hv-series",
+      "modelNo": "HV Series",
+      "categorySlug": "webtec-accessories",
+      "nameKo": "HV 시리즈 부하 밸브",
+      "nameEn": "HV Series Loading Valves",
+      "shortDescriptionKo": "최대 420 bar, 800 L/min의 유압 부하 밸브입니다.",
+      "shortDescriptionEn": "Hydraulic loading valves rated to 420 bar and 800 L/min.",
+      "descriptionKo": "HV 시리즈는 유압 시스템 부하 시험용 로딩 밸브입니다. 최대 정격 압력 420 bar(6,000 psi), 최대 정격 유량 800 L/min(210 US gpm)이며 유체 온도 0~120°C 범위에서 사용합니다. BSPP, SAE 포트를 지원하고 ISO 11158 광유에 적합합니다.",
+      "descriptionEn": "The HV series loading valves are used for load testing hydraulic systems. Rated to 420 bar (6,000 psi) and up to 800 L/min (210 US gpm) with fluid temperatures of 0 to 120°C. They offer BSPP and SAE porting and are compatible with mineral oils to ISO 11158.",
+      "specs": {
+        "accessory_type": "loading_valve",
+        "max_pressure_bar": 420,
+        "max_flow_lpm": 800,
+        "connection": "BSPP, SAE",
+        "fluid_temp_range": "0 to 120 °C"
+      },
+      "sourcePages": "18"
+    },
+    {
+      "slug": "webtec-safety-burst-discs",
+      "modelNo": "Safety Burst Discs",
+      "categorySlug": "webtec-accessories",
+      "nameKo": "안전 파열판",
+      "nameEn": "Safety Burst Discs",
+      "shortDescriptionKo": "부하 밸브를 과압으로부터 보호하는 안전 파열판입니다.",
+      "shortDescriptionEn": "Safety burst discs that protect the loading valve from accidental overpressurisation.",
+      "descriptionKo": "안전 파열판은 지정된 압력 범위 내에서 파열이 보장되어 부하 밸브를 우발적인 과압으로부터 보호합니다. 측면 또는 상부 연결이 가능해 설치가 쉽고 교체도 빠르고 간편합니다.",
+      "descriptionEn": "Safety burst discs are guaranteed to rupture within the specified pressure range, protecting the load valve from accidental overpressurisation. Easy installation allows side or top connections, and they are fast and easy to replace.",
+      "specs": {
+        "accessory_type": "burst_disc",
+        "features": "Guaranteed rupture within specified pressure range; side or top connection; fast replacement"
+      },
+      "sourcePages": "19"
+    }
+  ],
+  "notes": "Extracted from a 22-page product overview catalog (PRODOV-OV-ENG-3846, issue 1.9, 01/26); text extracted via pdftotext because page rendering was unavailable, so product photos/hydraulic symbols were not inspected. This is an overview catalog: only 'at a glance' headline specs are given per series, so detailed per-variant tables do not exist and unit_value fields use catalog maximum ('up to') values. Ranged values reduced to max: VFD190 weight 3.5-4.0 kg recorded as 4.0. The J1939 series appears on both page 10 (industrial condition monitoring) and page 17 (mobile condition monitoring) with identical specs - captured once with sourcePages '10, 17'. WIKA A-10 catalog line reads 'Up to 600 bar, 10,000 psi' which is internally inconsistent (600 bar is about 8,700 psi); the bar figure 600 was kept. FDC60/FDC140 list no porting; C2000, APM, PT series, 63 mm gauges and burst discs have no numeric pressure/flow ratings in this catalog, so those spec keys were omitted. ILFC appears on page 3 only as a 'how to use this guide' example and again on page 4 in the real product listing; recorded as pages 3-4. The RV, CK & M series covers three closely related divider variants presented as a single specification block, so it was kept as one product.",
+  "extractedAt": "2026-08-05"
+}

@@ -1,0 +1,1418 @@
+{
+  "sourcePdf": "OLELOWEB2.pdf",
+  "pagesCovered": "171-273",
+  "manufacturer": {
+    "slug": "oleoweb",
+    "name": "Oleoweb Srl",
+    "country": "Italy",
+    "websiteUrl": "https://www.oleoweb.com",
+    "descriptionKo": "Oleoweb Srl은 이탈리아의 유압 밸브 및 수동 펌프 전문 제조사로, 농기계·건설기계·산업기계용 카트리지 밸브, 유량 전환 밸브, 수동 펌프, 매니폴드 등을 생산합니다.",
+    "descriptionEn": "Oleoweb Srl is an Italian manufacturer of hydraulic valves and hand pumps, producing cartridge valves, flow diverters, hand pumps and manifolds for agricultural, construction and industrial mobile machinery."
+  },
+  "categories": [
+    {
+      "slug": "oleoweb-hand-pumps",
+      "nameKo": "수동 펌프",
+      "nameEn": "Hand Pumps",
+      "descriptionKo": "카트리지형, 더블 펌핑형, 하향 단동형, 페달형 등 다양한 구조와 배기량의 유압 수동 펌프.",
+      "descriptionEn": "Hydraulic hand pumps in cartridge, double pumping, single downward pumping and foot-operated layouts with a wide range of displacements.",
+      "specSchema": [
+        {"key": "pump_type", "labelKo": "펌프 형식", "labelEn": "Pump Type", "dataType": "select", "options": [
+          {"value": "cartridge", "labelKo": "카트리지형", "labelEn": "Cartridge"},
+          {"value": "double_pumping", "labelKo": "더블 펌핑", "labelEn": "Double Pumping"},
+          {"value": "single_downward", "labelKo": "하향 단일 펌핑", "labelEn": "Single Downward Pumping"},
+          {"value": "double_cylinder", "labelKo": "더블 실린더", "labelEn": "Double Cylinder"},
+          {"value": "foot", "labelKo": "페달식", "labelEn": "Foot Operated"}
+        ], "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "acting_type", "labelKo": "작동 방식", "labelEn": "Acting Type", "dataType": "select", "options": [
+          {"value": "single_acting", "labelKo": "단동 실린더용", "labelEn": "For Single Acting Cylinder"},
+          {"value": "double_acting", "labelKo": "복동 실린더용", "labelEn": "For Double Acting Cylinder"}
+        ], "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "displacement_cc", "labelKo": "배기량 (cm³)", "labelEn": "Displacement (cm³)", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 4, "showInCardTeaser": true},
+        {"key": "optimal_pressure_bar", "labelKo": "최적 사용 압력 (bar)", "labelEn": "Optimal Pressure (bar)", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "ports", "labelKo": "포트 규격", "labelEn": "Ports", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "cavity", "labelKo": "카트리지 캐비티", "labelEn": "Cavity", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "weight_kg", "labelKo": "중량 (kg)", "labelEn": "Weight (kg)", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false},
+        {"key": "lever_length_mm", "labelKo": "레버 길이", "labelEn": "Lever Length", "dataType": "unit_value", "unit": "mm", "required": false, "sortOrder": 9, "showInCardTeaser": false},
+        {"key": "options", "labelKo": "옵션", "labelEn": "Options", "dataType": "text", "required": false, "sortOrder": 10, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "oleoweb-cartridge-valves",
+      "nameKo": "카트리지 밸브",
+      "nameEn": "Cartridge Valves",
+      "descriptionKo": "SAE 및 미터나사 캐비티용 직동식 릴리프 밸브, 파일럿 체크 밸브, 셔틀 밸브, 수동 비상 밸브, 공압 밸브.",
+      "descriptionEn": "Direct acting pressure relief valves, pilot check valves, shuttle valves, manual emergency valves and pneumatic valves for SAE and metric cavities.",
+      "specSchema": [
+        {"key": "valve_function", "labelKo": "밸브 기능", "labelEn": "Valve Function", "dataType": "select", "options": [
+          {"value": "pressure_relief", "labelKo": "압력 릴리프", "labelEn": "Pressure Relief"},
+          {"value": "pilot_check", "labelKo": "파일럿 체크", "labelEn": "Pilot Check"},
+          {"value": "shuttle", "labelKo": "셔틀(선택)", "labelEn": "Load Shuttle"},
+          {"value": "manual_emergency", "labelKo": "수동 비상", "labelEn": "Manual Emergency"},
+          {"value": "pneumatic", "labelKo": "공압 작동", "labelEn": "Pneumatic Operated"}
+        ], "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "cavity", "labelKo": "캐비티", "labelEn": "Cavity", "dataType": "text", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "thread", "labelKo": "나사 규격", "labelEn": "Thread", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": false},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량", "labelEn": "Max Flow", "dataType": "unit_value", "unit": "l/min", "required": false, "sortOrder": 4, "showInCardTeaser": true},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 5, "showInCardTeaser": true},
+        {"key": "setting_range_bar", "labelKo": "설정 압력 범위 (bar)", "labelEn": "Setting Range (bar)", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "adjustment", "labelKo": "조정 방식", "labelEn": "Adjustment", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "tightening_torque_nm", "labelKo": "조임 토크 (Nm)", "labelEn": "Tightening Torque (Nm)", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false},
+        {"key": "weight_kg", "labelKo": "중량 (kg)", "labelEn": "Weight (kg)", "dataType": "text", "required": false, "sortOrder": 9, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "oleoweb-manifolds",
+      "nameKo": "매니폴드 / 블록",
+      "nameEn": "Manifolds / Blocks",
+      "descriptionKo": "알루미늄 CETOP3/CETOP5 싱글 및 병렬 멀티 매니폴드, SAE 카트리지 밸브용 블록과 밸브 바디.",
+      "descriptionEn": "Aluminium CETOP3/CETOP5 single and parallel multiple manifolds, SAE cartridge valve blocks and valve bodies.",
+      "specSchema": [
+        {"key": "manifold_type", "labelKo": "매니폴드 형식", "labelEn": "Manifold Type", "dataType": "select", "options": [
+          {"value": "cetop3_single", "labelKo": "CETOP3 싱글", "labelEn": "CETOP3 Single"},
+          {"value": "cetop5_single", "labelKo": "CETOP5 싱글", "labelEn": "CETOP5 Single"},
+          {"value": "multi_parallel", "labelKo": "병렬 멀티", "labelEn": "Parallel Multiple"},
+          {"value": "cartridge_body", "labelKo": "카트리지 밸브 바디", "labelEn": "Cartridge Valve Body"},
+          {"value": "sae_block", "labelKo": "SAE 블록", "labelEn": "SAE Block"}
+        ], "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량 (l/min)", "labelEn": "Max Flow (l/min)", "dataType": "text", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 3, "showInCardTeaser": true},
+        {"key": "material", "labelKo": "재질", "labelEn": "Material", "dataType": "select", "options": [
+          {"value": "aluminium", "labelKo": "알루미늄", "labelEn": "Aluminium"},
+          {"value": "steel", "labelKo": "강철", "labelEn": "Steel"},
+          {"value": "aluminium_or_steel", "labelKo": "알루미늄/강철", "labelEn": "Aluminium or Steel"}
+        ], "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "ports", "labelKo": "포트 규격", "labelEn": "Ports", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "stations", "labelKo": "스테이션 수", "labelEn": "Stations", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false},
+        {"key": "relief_valve", "labelKo": "릴리프 밸브", "labelEn": "Relief Valve", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "weight_kg", "labelKo": "중량 (kg)", "labelEn": "Weight (kg)", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "oleoweb-flow-diverters",
+      "nameKo": "유량 전환 밸브 (디버터)",
+      "nameEn": "Flow Diverters",
+      "descriptionKo": "수동 3/4/6/8웨이 유량 전환 밸브, 전기식 모듈형 6/8/10웨이 유량 전환 밸브 및 견인식 스트로크 엔드 밸브.",
+      "descriptionEn": "Manual 3/4/6/8-way flow diverters, stackable electric 6/8/10-way flow diverters and tug end-stroke valves.",
+      "specSchema": [
+        {"key": "diverter_type", "labelKo": "형식", "labelEn": "Type", "dataType": "select", "options": [
+          {"value": "manual", "labelKo": "수동 레버식", "labelEn": "Manual Lever"},
+          {"value": "electric_modular", "labelKo": "전기식 모듈형", "labelEn": "Electric Stackable"},
+          {"value": "end_stroke", "labelKo": "견인식 스트로크 엔드", "labelEn": "Tug End-Stroke"}
+        ], "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "ways", "labelKo": "웨이 수", "labelEn": "Ways", "dataType": "text", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "thread_standard", "labelKo": "나사 규격", "labelEn": "Thread Standard", "dataType": "select", "options": [
+          {"value": "bspp", "labelKo": "BSPP", "labelEn": "BSPP"},
+          {"value": "sae_unf", "labelKo": "SAE (UNF/UN)", "labelEn": "SAE (UNF/UN)"}
+        ], "required": false, "sortOrder": 3, "showInCardTeaser": false},
+        {"key": "port_sizes", "labelKo": "포트 사이즈", "labelEn": "Port Sizes", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량 (l/min)", "labelEn": "Max Flow (l/min)", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": true},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 6, "showInCardTeaser": true},
+        {"key": "circuit_options", "labelKo": "회로 옵션", "labelEn": "Circuit Options", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false},
+        {"key": "supply_voltage", "labelKo": "공급 전압", "labelEn": "Supply Voltage", "dataType": "text", "required": false, "sortOrder": 8, "showInCardTeaser": false},
+        {"key": "weight_kg", "labelKo": "중량 (kg)", "labelEn": "Weight (kg)", "dataType": "text", "required": false, "sortOrder": 9, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "oleoweb-tanks",
+      "nameKo": "오일 탱크",
+      "nameEn": "Oil Reservoirs",
+      "descriptionKo": "수동 펌프용 강철 및 알루미늄 오일 탱크. 브리더 플러그, 드레인 플러그, 흡입 튜브 포함.",
+      "descriptionEn": "Steel and aluminium oil reservoirs for hand pumps, supplied with breather plug, drain plug and suction tube.",
+      "specSchema": [
+        {"key": "material", "labelKo": "재질", "labelEn": "Material", "dataType": "select", "options": [
+          {"value": "steel", "labelKo": "강철", "labelEn": "Steel"},
+          {"value": "aluminium", "labelKo": "알루미늄", "labelEn": "Aluminium"}
+        ], "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "capacity_liters", "labelKo": "용량 (L)", "labelEn": "Capacity (L)", "dataType": "text", "required": false, "sortOrder": 2, "showInCardTeaser": true},
+        {"key": "mounting", "labelKo": "장착 방식", "labelEn": "Mounting", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": false},
+        {"key": "included_accessories", "labelKo": "기본 구성품", "labelEn": "Included Accessories", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": false},
+        {"key": "finish", "labelKo": "표면 처리", "labelEn": "Finish", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "weight_kg", "labelKo": "중량 (kg)", "labelEn": "Weight (kg)", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false}
+      ]
+    },
+    {
+      "slug": "oleoweb-accessories",
+      "nameKo": "유압 부품 / 액세서리",
+      "nameEn": "Hydraulic Components / Accessories",
+      "descriptionKo": "2/3/4웨이 볼 밸브, 인라인 및 90° 스위벨 조인트, 압력계 차단 밸브, 압력 테스트 포인트(미니프레스), 무정지 쟁기용 밸브 블록.",
+      "descriptionEn": "2/3/4-way ball valves, in-line and 90-degree rotating couplings, pressure gauge shut-off valves, test couplings for pressure checking and no-stop plough valve blocks.",
+      "specSchema": [
+        {"key": "component_type", "labelKo": "부품 종류", "labelEn": "Component Type", "dataType": "select", "options": [
+          {"value": "ball_valve", "labelKo": "볼 밸브", "labelEn": "Ball Valve"},
+          {"value": "rotating_coupling", "labelKo": "스위벨 조인트", "labelEn": "Rotating Coupling"},
+          {"value": "gauge_shutoff_valve", "labelKo": "압력계 차단 밸브", "labelEn": "Gauge Shut-off Valve"},
+          {"value": "test_coupling", "labelKo": "압력 테스트 포인트", "labelEn": "Test Coupling"},
+          {"value": "valve_block", "labelKo": "밸브 블록", "labelEn": "Valve Block"}
+        ], "required": false, "sortOrder": 1, "showInCardTeaser": true},
+        {"key": "ways", "labelKo": "웨이 수", "labelEn": "Ways", "dataType": "number", "required": false, "sortOrder": 2, "showInCardTeaser": false},
+        {"key": "thread_type", "labelKo": "나사 종류", "labelEn": "Thread Type", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": false},
+        {"key": "size_range", "labelKo": "사이즈 범위", "labelEn": "Size Range", "dataType": "text", "required": false, "sortOrder": 4, "showInCardTeaser": true},
+        {"key": "max_flow_lpm", "labelKo": "최대 유량 (l/min)", "labelEn": "Max Flow (l/min)", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false},
+        {"key": "max_pressure_bar", "labelKo": "최대 압력", "labelEn": "Max Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 6, "showInCardTeaser": true},
+        {"key": "weight_kg", "labelKo": "중량 (kg)", "labelEn": "Weight (kg)", "dataType": "text", "required": false, "sortOrder": 7, "showInCardTeaser": false}
+      ]
+    }
+  ],
+  "products": [
+    {
+      "slug": "oleoweb-pme-l",
+      "modelNo": "PME L (PME5L / PME6L / PME7L)",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PME L 카트리지 수동 펌프",
+      "nameEn": "PME L Cartridge Hand Pumps",
+      "shortDescriptionKo": "SAE8/2 플랜지 캐비티용 카트리지 수동 펌프, 1~3cc, 최대 300bar",
+      "shortDescriptionEn": "Cartridge hand pumps for SAE8/2 flange cavity, 1-3 cc, up to 300 bar",
+      "descriptionKo": "SAE8/2 플랜지형 캐비티에 삽입하는 카트리지식 수동 펌프 시리즈입니다. 배기량 1cc(PME5L, 300bar), 2cc(PME6L, 200bar), 3cc(PME7L, 120bar)의 3가지 모델이 있으며, 270mm 작동 레버가 기본 제공됩니다. 매니폴드 블록(바디 코드 62200023)과 조합하여 컴팩트한 비상 작동 회로를 구성할 수 있습니다.",
+      "descriptionEn": "Series of cartridge-type hand pumps for the SAE8/2 cavity with flange. Three models are available: 1 cc (PME5L, 300 bar), 2 cc (PME6L, 200 bar) and 3 cc (PME7L, 120 bar). Supplied with a 270 mm acting lever, they combine with manifold blocks (body code 62200023) to build compact emergency actuation circuits.",
+      "specs": {
+        "pump_type": "cartridge",
+        "acting_type": "single_acting",
+        "displacement_cc": "1 / 2 / 3",
+        "max_pressure_bar": 300,
+        "optimal_pressure_bar": "PME5L 300, PME6L 200, PME7L 120",
+        "cavity": "SAE8/2 with flange (3/4-16UNF-2A)",
+        "weight_kg": "0.46",
+        "lever_length_mm": 270,
+        "options": "Hand lever L"
+      },
+      "sourcePages": "171"
+    },
+    {
+      "slug": "oleoweb-pme5p",
+      "modelNo": "PME5P",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PME5P SAE 8 카트리지 수동 펌프",
+      "nameEn": "PME5P SAE 8 Cartridge Hand Pump",
+      "shortDescriptionKo": "SAE8/2 캐비티용 소형 카트리지 수동 펌프, 1cc, 50bar",
+      "shortDescriptionEn": "Compact SAE8/2 cartridge hand pump, 1 cc, 50 bar",
+      "descriptionKo": "SAE8/2 캐비티에 장착하는 초소형 카트리지 수동 펌프입니다. 배기량 1cc, 최대 압력 50bar, 중량 0.2kg으로 저압 보조 회로나 비상 작동용으로 적합합니다.",
+      "descriptionEn": "Ultra-compact cartridge hand pump for the SAE8/2 cavity. With 1 cc displacement, 50 bar maximum pressure and only 0.2 kg weight, it suits low-pressure auxiliary or emergency actuation circuits.",
+      "specs": {
+        "pump_type": "cartridge",
+        "acting_type": "single_acting",
+        "displacement_cc": "1",
+        "max_pressure_bar": 50,
+        "cavity": "SAE8/2",
+        "weight_kg": "0.2"
+      },
+      "sourcePages": "172"
+    },
+    {
+      "slug": "oleoweb-pme10",
+      "modelNo": "PME10",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PME10 SAE 10 카트리지 수동 펌프",
+      "nameEn": "PME10 SAE 10 Cartridge Hand Pump",
+      "shortDescriptionKo": "SAE10/2 캐비티용 카트리지 수동 펌프, 10cc, 200bar",
+      "shortDescriptionEn": "SAE10/2 cartridge hand pump, 10 cc, 200 bar",
+      "descriptionKo": "SAE10/2 캐비티(7/8-14UNF-2A)에 장착하는 카트리지 수동 펌프입니다. 배기량 10cc, 최대 압력 200bar이며 500mm 작동 레버가 기본 제공됩니다. 카탈로그에 카트리지 장착 및 레버 조립 절차가 함께 안내되어 있습니다.",
+      "descriptionEn": "Cartridge hand pump for the SAE10/2 cavity (7/8-14UNF-2A). It delivers 10 cc per stroke at up to 200 bar and is supplied with a 500 mm acting lever. The catalogue includes cartridge installation and lever assembly instructions.",
+      "specs": {
+        "pump_type": "cartridge",
+        "acting_type": "single_acting",
+        "displacement_cc": "10",
+        "max_pressure_bar": 200,
+        "cavity": "SAE10/2 (7/8-14UNF-2A)",
+        "weight_kg": "1.9",
+        "lever_length_mm": 500
+      },
+      "sourcePages": "173-174"
+    },
+    {
+      "slug": "oleoweb-pm20",
+      "modelNo": "PM20",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PM20 더블 펌핑 수동 펌프 (단동)",
+      "nameEn": "PM20 Double Pumping Hand Pump (Single Acting)",
+      "shortDescriptionKo": "단동 실린더용 더블 펌핑 수동 펌프, 20cc, 최대 350bar",
+      "shortDescriptionEn": "Double pumping hand pump for single acting cylinder, 20 cc, up to 350 bar",
+      "descriptionKo": "단동 실린더용 더블 펌핑(양방향 토출) 수동 펌프입니다. 배기량 20cc, 최적 사용 압력 150bar, 최대 350bar이며 600mm 레버가 기본 제공됩니다. 고무 보호커버(소프트 벨로우즈), 조이스틱, 언로딩 레버, 릴리프 밸브, 드레인 밸브 등 다양한 옵션 구성이 가능합니다.",
+      "descriptionEn": "Double pumping hand pump for single acting cylinders, delivering oil on both lever strokes. Displacement 20 cc, optimal pressure 150 bar, maximum 350 bar, supplied with a 600 mm lever. Options include rubber protection bellows, joystick, unloading lever, relief valve and drain valve configurations.",
+      "specs": {
+        "pump_type": "double_pumping",
+        "acting_type": "single_acting",
+        "displacement_cc": "20",
+        "max_pressure_bar": 350,
+        "optimal_pressure_bar": "150",
+        "ports": "In BSPP 1/2, Out BSPP 3/8",
+        "weight_kg": "3.4",
+        "lever_length_mm": 600,
+        "options": "W / WRV / J / L / RRV, rubber bellows (P)"
+      },
+      "sourcePages": "211-212"
+    },
+    {
+      "slug": "oleoweb-pm50",
+      "modelNo": "PM50",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PM50 더블 펌핑 수동 펌프 (단동)",
+      "nameEn": "PM50 Double Pumping Hand Pump (Single Acting)",
+      "shortDescriptionKo": "단동 실린더용 더블 펌핑 수동 펌프, 50cc, 최대 280bar",
+      "shortDescriptionEn": "Double pumping hand pump for single acting cylinder, 50 cc, up to 280 bar",
+      "descriptionKo": "단동 실린더용 대용량 더블 펌핑 수동 펌프입니다. 배기량 50cc, 최적 사용 압력 80bar, 최대 280bar이며 600mm 레버가 기본 제공됩니다. 소프트 벨로우즈, 조이스틱, 언로딩 레버, 릴리프/드레인 밸브 옵션을 선택할 수 있습니다.",
+      "descriptionEn": "High-displacement double pumping hand pump for single acting cylinders. Displacement 50 cc, optimal pressure 80 bar, maximum 280 bar, supplied with a 600 mm lever. Available with rubber bellows, joystick, unloading lever and relief/drain valve options.",
+      "specs": {
+        "pump_type": "double_pumping",
+        "acting_type": "single_acting",
+        "displacement_cc": "50",
+        "max_pressure_bar": 280,
+        "optimal_pressure_bar": "80",
+        "ports": "BSPP 1/2",
+        "weight_kg": "4.2",
+        "lever_length_mm": 600,
+        "options": "W / WRV / J / L / RRV, rubber bellows (P)"
+      },
+      "sourcePages": "213-214"
+    },
+    {
+      "slug": "oleoweb-pm70",
+      "modelNo": "PM70",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PM70 더블 펌핑 수동 펌프 (단동)",
+      "nameEn": "PM70 Double Pumping Hand Pump (Single Acting)",
+      "shortDescriptionKo": "단동 실린더용 더블 펌핑 수동 펌프, 70cc, 최대 200bar",
+      "shortDescriptionEn": "Double pumping hand pump for single acting cylinder, 70 cc, up to 200 bar",
+      "descriptionKo": "단동 실린더용 최대 배기량 모델의 더블 펌핑 수동 펌프입니다. 배기량 70cc, 최적 사용 압력 50bar, 최대 200bar이며 600mm 레버가 기본 제공됩니다. 빠른 실린더 이송이 필요한 저압 대유량 용도에 적합합니다.",
+      "descriptionEn": "Largest-displacement double pumping hand pump for single acting cylinders. Displacement 70 cc, optimal pressure 50 bar, maximum 200 bar, supplied with a 600 mm lever. Suited to low-pressure, high-volume applications requiring fast cylinder travel.",
+      "specs": {
+        "pump_type": "double_pumping",
+        "acting_type": "single_acting",
+        "displacement_cc": "70",
+        "max_pressure_bar": 200,
+        "optimal_pressure_bar": "50",
+        "ports": "BSPP 1/2",
+        "weight_kg": "5.6",
+        "lever_length_mm": 600,
+        "options": "W / WRV / J / L / RRV, rubber bellows (P)"
+      },
+      "sourcePages": "215-216"
+    },
+    {
+      "slug": "oleoweb-pms",
+      "modelNo": "PMS (PMS6 / PMS12 / PMS25 / PMS45)",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PMS 더블 펌핑 수동 펌프 (단동, 탱크 장착형)",
+      "nameEn": "PMS Double Pumping Hand Pump (Single Acting, Tank Mount)",
+      "shortDescriptionKo": "단동 실린더용 더블 펌핑 수동 펌프, 6~45cc, 최대 500bar",
+      "shortDescriptionEn": "Double pumping hand pump for single acting cylinder, 6-45 cc, up to 500 bar",
+      "descriptionKo": "탱크 위/내부 장착형 더블 펌핑 수동 펌프로 단동 실린더용입니다. 배기량 6/12/25/45cc 4가지이며, PMS6은 최대 500bar(최적 420bar)까지 사용 가능합니다. 성형 가스켓, 고정 볼트, 600mm 레버가 기본 제공되며 조이스틱·언로딩 레버·릴리프 밸브 등 풍부한 옵션 조합을 지원합니다.",
+      "descriptionEn": "Tank-mounted double pumping hand pump for single acting cylinders. Four displacements (6/12/25/45 cc); the PMS6 reaches 500 bar maximum (420 bar optimal). Supplied with shaped seal, fixing screws and a 600 mm lever, with a wide set of joystick, unloading lever and relief valve options.",
+      "specs": {
+        "pump_type": "double_pumping",
+        "acting_type": "single_acting",
+        "displacement_cc": "6 / 12 / 25 / 45",
+        "max_pressure_bar": 500,
+        "optimal_pressure_bar": "PMS6 420, PMS12 220, PMS25 120, PMS45 80",
+        "weight_kg": "3.7",
+        "lever_length_mm": 600,
+        "options": "W / WRV / J / L / RV / JRV / LRV, rubber bellows (P)"
+      },
+      "sourcePages": "217-218"
+    },
+    {
+      "slug": "oleoweb-pmi",
+      "modelNo": "PMI (PMI6 / PMI12 / PMI25 / PMI45)",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PMI 더블 펌핑 수동 펌프 (복동, 클로즈드 센터)",
+      "nameEn": "PMI Double Pumping Hand Pump (Double Acting, Closed Center)",
+      "shortDescriptionKo": "복동 실린더용 클로즈드 센터 수동 펌프, 6~45cc, 최대 500bar",
+      "shortDescriptionEn": "Closed-center hand pump for double acting cylinder, 6-45 cc, up to 500 bar",
+      "descriptionKo": "복동 실린더 제어용 클로즈드 센터 방식 더블 펌핑 수동 펌프입니다. 배기량 6/12/25/45cc, 최대 압력은 배기량에 따라 280~500bar입니다. 내장 방향 선택 레버로 A/B 포트(BSPP 3/8)를 전환하며, 성형 가스켓·고정 볼트·600mm 레버가 기본 제공됩니다.",
+      "descriptionEn": "Closed-center double pumping hand pump for controlling double acting cylinders. Displacements 6/12/25/45 cc with maximum pressures from 280 to 500 bar depending on size. An integrated selector controls the A/B ports (BSPP 3/8); supplied with shaped seal, fixing screws and 600 mm lever.",
+      "specs": {
+        "pump_type": "double_pumping",
+        "acting_type": "double_acting",
+        "displacement_cc": "6 / 12 / 25 / 45",
+        "max_pressure_bar": 500,
+        "optimal_pressure_bar": "PMI6 420, PMI12 220, PMI25 120, PMI45 80",
+        "ports": "A/B BSPP 3/8",
+        "weight_kg": "4.2",
+        "lever_length_mm": 600,
+        "options": "L / RV / LRV, rubber bellows (P)"
+      },
+      "sourcePages": "219-220"
+    },
+    {
+      "slug": "oleoweb-pmt",
+      "modelNo": "PMT (PMT6 / PMT12 / PMT25 / PMT45)",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PMT 더블 펌핑 수동 펌프 (복동, 체크 밸브 내장)",
+      "nameEn": "PMT Double Pumping Hand Pump (Double Acting, with Check Valves)",
+      "shortDescriptionKo": "체크 밸브 내장 복동 실린더용 수동 펌프, 6~45cc, 최대 500bar",
+      "shortDescriptionEn": "Hand pump with check valves for double acting cylinder, 6-45 cc, up to 500 bar",
+      "descriptionKo": "복동 실린더용 체크 밸브(로드 홀딩) 내장형 더블 펌핑 수동 펌프입니다. 배기량 6/12/25/45cc, 최대 압력 280~500bar이며 A/B 포트는 BSPP 1/4입니다. A/B 또는 B 포트 릴리프 밸브 옵션(RVAB/RVB)을 선택할 수 있습니다.",
+      "descriptionEn": "Double pumping hand pump with integrated check valves (load holding) for double acting cylinders. Displacements 6/12/25/45 cc, maximum pressures 280 to 500 bar, A/B ports BSPP 1/4. Relief valve options on both ports (RVAB) or port B only (RVB) are available.",
+      "specs": {
+        "pump_type": "double_pumping",
+        "acting_type": "double_acting",
+        "displacement_cc": "6 / 12 / 25 / 45",
+        "max_pressure_bar": 500,
+        "optimal_pressure_bar": "PMT6 420, PMT12 220, PMT25 120, PMT45 80",
+        "ports": "A/B BSPP 1/4",
+        "weight_kg": "4.2",
+        "lever_length_mm": 600,
+        "options": "RVAB / RVB, rubber bellows (P)"
+      },
+      "sourcePages": "221-222"
+    },
+    {
+      "slug": "oleoweb-pma",
+      "modelNo": "PMA (PMA6 / PMA12 / PMA25 / PMA45)",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PMA 더블 펌핑 수동 펌프 (복동, 오픈 센터)",
+      "nameEn": "PMA Double Pumping Hand Pump (Double Acting, Open Center)",
+      "shortDescriptionKo": "복동 실린더용 오픈 센터 수동 펌프, 6~45cc, 최대 500bar",
+      "shortDescriptionEn": "Open-center hand pump for double acting cylinder, 6-45 cc, up to 500 bar",
+      "descriptionKo": "복동 실린더 제어용 오픈 센터 방식 더블 펌핑 수동 펌프입니다. 배기량 6/12/25/45cc, 최대 압력 280~500bar, A/B 포트는 BSPP 3/8입니다. 언로딩 레버 및 A/B 릴리프 밸브 옵션이 제공되며 성형 가스켓·고정 볼트·600mm 레버가 기본 구성품입니다.",
+      "descriptionEn": "Open-center double pumping hand pump for double acting cylinders. Displacements 6/12/25/45 cc, maximum pressures 280 to 500 bar, A/B ports BSPP 3/8. Options include unloading lever and relief valves on A and B; supplied with shaped seal, fixing screws and 600 mm lever.",
+      "specs": {
+        "pump_type": "double_pumping",
+        "acting_type": "double_acting",
+        "displacement_cc": "6 / 12 / 25 / 45",
+        "max_pressure_bar": 500,
+        "optimal_pressure_bar": "PMA6 420, PMA12 220, PMA25 120, PMA45 80",
+        "ports": "A/B BSPP 3/8",
+        "weight_kg": "4.2",
+        "lever_length_mm": 600,
+        "options": "L / RV / LRV, rubber bellows (P)"
+      },
+      "sourcePages": "223-224"
+    },
+    {
+      "slug": "oleoweb-pme1",
+      "modelNo": "PME1 (PME18 / PME115)",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PME1 하향 단일 펌핑 수동 펌프",
+      "nameEn": "PME1 Single Downward Pumping Hand Pump",
+      "shortDescriptionKo": "단동 실린더용 하향 펌핑 수동 펌프, 8/15cc, 최대 380bar",
+      "shortDescriptionEn": "Single downward pumping hand pump for single acting cylinder, 8/15 cc, up to 380 bar",
+      "descriptionKo": "레버를 아래로 내릴 때만 토출하는 단일 펌핑 방식의 수동 펌프입니다. 배기량 8cc(최대 380bar) 또는 15cc(최대 350bar)이며 토출 포트는 BSPP 1/4입니다. 성형 가스켓, 고정 볼트, Ø20mm 500mm 레버가 기본 제공됩니다.",
+      "descriptionEn": "Hand pump delivering oil only on the downward lever stroke, for single acting cylinders. Displacement 8 cc (380 bar max) or 15 cc (350 bar max) with a BSPP 1/4 delivery port. Supplied with shaped seal, fixing screws and a 500 mm lever (dia. 20 mm).",
+      "specs": {
+        "pump_type": "single_downward",
+        "acting_type": "single_acting",
+        "displacement_cc": "8 / 15",
+        "max_pressure_bar": 380,
+        "optimal_pressure_bar": "PME18 180, PME115 110",
+        "ports": "BSPP 1/4",
+        "weight_kg": "2.9",
+        "lever_length_mm": 500,
+        "options": "W / WRV / RV, rubber bellows (P)"
+      },
+      "sourcePages": "225-226"
+    },
+    {
+      "slug": "oleoweb-pme2",
+      "modelNo": "PME2 (PME220 / PME230 / PME240)",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PME2 하향 단일 펌핑 수동 펌프",
+      "nameEn": "PME2 Single Downward Pumping Hand Pump",
+      "shortDescriptionKo": "단동 실린더용 하향 펌핑 수동 펌프, 20~40cc, 최대 240bar",
+      "shortDescriptionEn": "Single downward pumping hand pump for single acting cylinder, 20-40 cc, up to 240 bar",
+      "descriptionKo": "하향 스트로크에서만 토출하는 대용량 단일 펌핑 수동 펌프입니다. 배기량 20cc(최대 240bar), 30cc(185bar), 40cc(160bar) 3가지가 있으며 600mm 레버가 기본 제공됩니다. 언로딩 레버 및 릴리프 밸브 옵션을 조합할 수 있습니다.",
+      "descriptionEn": "High-displacement hand pump delivering oil only on the downward stroke. Three displacements: 20 cc (240 bar max), 30 cc (185 bar) and 40 cc (160 bar), supplied with a 600 mm lever. Unloading lever and relief valve options can be combined.",
+      "specs": {
+        "pump_type": "single_downward",
+        "acting_type": "single_acting",
+        "displacement_cc": "20 / 30 / 40",
+        "max_pressure_bar": 240,
+        "optimal_pressure_bar": "PME220 80, PME230 60, PME240 40",
+        "weight_kg": "4.2",
+        "lever_length_mm": 600,
+        "options": "W / WRV / L / RV / LRV, rubber bellows (P)"
+      },
+      "sourcePages": "227-228"
+    },
+    {
+      "slug": "oleoweb-pmd",
+      "modelNo": "PMD (PMD5 / PMD10 / PMD17)",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PMD 더블 실린더 수동 펌프 (단동)",
+      "nameEn": "PMD Single Acting Hand Pump with Double Cylinder",
+      "shortDescriptionKo": "더블 펌핑 엘리먼트 수동 펌프, 5~17cc, 최대 500bar",
+      "shortDescriptionEn": "Hand pump with double pumping cylinder, 5-17 cc, up to 500 bar",
+      "descriptionKo": "펌핑 엘리먼트를 2개 내장한 단동 실린더용 수동 펌프입니다. 배기량 5cc(500bar), 10cc(250bar), 17cc(150bar)이며 포트는 BSPP 3/8입니다. 성형 가스켓, 고정 볼트, 500mm 레버가 기본 제공됩니다.",
+      "descriptionEn": "Hand pump with a double pumping element for single acting cylinders. Displacements 5 cc (500 bar), 10 cc (250 bar) and 17 cc (150 bar) with BSPP 3/8 ports. Supplied with shaped seal, fixing screws and a 500 mm lever.",
+      "specs": {
+        "pump_type": "double_cylinder",
+        "acting_type": "single_acting",
+        "displacement_cc": "5 / 10 / 17",
+        "max_pressure_bar": 500,
+        "optimal_pressure_bar": "PMD5 500, PMD10 250, PMD17 150",
+        "ports": "BSPP 3/8",
+        "weight_kg": "5.7",
+        "lever_length_mm": 500,
+        "options": "W (without unloading valve)"
+      },
+      "sourcePages": "229"
+    },
+    {
+      "slug": "oleoweb-pme3",
+      "modelNo": "PME3",
+      "categorySlug": "oleoweb-hand-pumps",
+      "nameKo": "PME3 페달식 유압 펌프",
+      "nameEn": "PME3 Foot Pump",
+      "shortDescriptionKo": "1.5L 탱크 일체형 페달 펌프, 14cc, 최대 220bar",
+      "shortDescriptionEn": "Foot pump with integrated 1.5 L reservoir, 14 cc, up to 220 bar",
+      "descriptionKo": "1.5L 오일 탱크가 일체형으로 구성된 페달식 유압 펌프입니다. 배기량 14cc, 최대 압력 220bar이며 토출 포트는 BSPP 1/4입니다. 양손이 자유로워야 하는 클램핑·시험 장비 용도에 적합합니다.",
+      "descriptionEn": "Foot-operated hydraulic pump with an integrated 1.5-litre reservoir. Displacement 14 cc, maximum pressure 220 bar, delivery port BSPP 1/4. Ideal for clamping and test equipment applications where both hands must stay free.",
+      "specs": {
+        "pump_type": "foot",
+        "acting_type": "single_acting",
+        "displacement_cc": "14",
+        "max_pressure_bar": 220,
+        "ports": "BSPP 1/4",
+        "weight_kg": "10.4",
+        "options": "Integrated 1.5 L reservoir"
+      },
+      "sourcePages": "230"
+    },
+    {
+      "slug": "oleoweb-vem",
+      "modelNo": "VEM (VEM6 / VEM10)",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VEM 수동 비상 밸브",
+      "nameEn": "VEM Manual Emergency Valves",
+      "shortDescriptionKo": "SAE8/SAE10 카트리지 수동 비상 밸브, 최대 50l/min, 320bar",
+      "shortDescriptionEn": "SAE8/SAE10 cartridge manual emergency valves, up to 50 l/min, 320 bar",
+      "descriptionKo": "수동 노브 조작으로 회로를 개방·차단하는 비상용 카트리지 밸브입니다. VEM6(3/4-16UNF, 30l/min)과 VEM10(7/8-14UNF, 50l/min) 두 사이즈가 있으며 최대 압력은 320bar입니다. 최대 누유량 0.25cc/min(5방울/min)의 우수한 기밀성을 갖습니다.",
+      "descriptionEn": "Manually operated cartridge emergency valves that open or block the circuit via a hand knob. Two sizes: VEM6 (3/4-16UNF, 30 l/min) and VEM10 (7/8-14UNF, 50 l/min), rated 320 bar. Maximum leakage is only 0.25 cc/min (5 drops/min).",
+      "specs": {
+        "valve_function": "manual_emergency",
+        "cavity": "SAE8/2 / SAE10/2",
+        "thread": "3/4-16UNF-2A / 7/8-14UNF-2A",
+        "max_flow_lpm": 50,
+        "max_pressure_bar": 320,
+        "adjustment": "Manual knob",
+        "tightening_torque_nm": "25-30 (VEM6), 41-47 (VEM10)",
+        "weight_kg": "0.12-0.20"
+      },
+      "sourcePages": "175"
+    },
+    {
+      "slug": "oleoweb-vpn6",
+      "modelNo": "VPN6",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VPN6 SAE 8 공압 작동 밸브",
+      "nameEn": "VPN6 SAE 8 Pneumatic Valve",
+      "shortDescriptionKo": "공압 파일럿 작동식 SAE8 카트리지 밸브, 30l/min, 350bar",
+      "shortDescriptionEn": "Air-piloted SAE8 cartridge valve, 30 l/min, 350 bar",
+      "descriptionKo": "공압 파일럿(4~15bar)으로 개폐하는 SAE8/2 캐비티용 2웨이 카트리지 밸브입니다. 최대 유량 30l/min, 최대 압력 350bar이며 파일럿 포트는 BSPP 1/4입니다. 원격 공압 신호로 유압 회로를 제어할 때 사용합니다.",
+      "descriptionEn": "Two-way cartridge valve for the SAE8/2 cavity, opened and closed by an air pilot signal (4-15 bar). Maximum flow 30 l/min, maximum pressure 350 bar, pilot port BSPP 1/4. Used to control hydraulic circuits with a remote pneumatic signal.",
+      "specs": {
+        "valve_function": "pneumatic",
+        "cavity": "SAE8/2",
+        "thread": "3/4-16UNF-2A",
+        "max_flow_lpm": 30,
+        "max_pressure_bar": 350,
+        "setting_range_bar": "Pilot pressure 4-15",
+        "tightening_torque_nm": "25-30",
+        "weight_kg": "0.16"
+      },
+      "sourcePages": "176"
+    },
+    {
+      "slug": "oleoweb-vmd1n",
+      "modelNo": "VMD1N",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VMD1N SAE 8 직동식 릴리프 밸브",
+      "nameEn": "VMD1N SAE8 Direct Acting Pressure Relief Valve",
+      "shortDescriptionKo": "SAE8 직동식 릴리프 밸브, 20l/min, 최대 350bar",
+      "shortDescriptionEn": "SAE8 direct acting relief valve, 20 l/min, up to 350 bar",
+      "descriptionKo": "SAE8/2 캐비티용 직동식 압력 릴리프 카트리지 밸브입니다. 최대 유량 20l/min, 최대 압력 350bar이며 4종의 스프링(10~40, 20~110, 30~210, 40~350bar)으로 설정 범위를 선택합니다. 육각 렌치 조정식이며 세이프티 캡 옵션이 있습니다.",
+      "descriptionEn": "Direct acting pressure relief cartridge valve for the SAE8/2 cavity. Maximum flow 20 l/min, maximum pressure 350 bar, with four spring ranges (10-40, 20-110, 30-210, 40-350 bar). Hex-key adjustment with an optional safety cap.",
+      "specs": {
+        "valve_function": "pressure_relief",
+        "cavity": "SAE8/2",
+        "thread": "3/4-16UNF-2A",
+        "max_flow_lpm": 20,
+        "max_pressure_bar": 350,
+        "setting_range_bar": "10-40 / 20-110 / 30-210 / 40-350",
+        "adjustment": "Hex socket screw (safety cap option)",
+        "tightening_torque_nm": "25-30",
+        "weight_kg": "0.11"
+      },
+      "sourcePages": "177"
+    },
+    {
+      "slug": "oleoweb-vmd10",
+      "modelNo": "VMD10",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VMD10 SAE 8 직동식 릴리프 밸브",
+      "nameEn": "VMD10 SAE8 Direct Acting Pressure Relief Valve",
+      "shortDescriptionKo": "SAE8 직동식 릴리프 밸브(핸드노브 옵션), 20l/min, 350bar",
+      "shortDescriptionEn": "SAE8 direct acting relief valve with handknob option, 20 l/min, 350 bar",
+      "descriptionKo": "SAE8/2 캐비티용 직동식 릴리프 밸브로 육각 렌치(C, 봉인 캡 옵션) 또는 핸드노브(V) 조정 방식을 선택할 수 있습니다. 최대 유량 20l/min, 최대 압력 350bar이며 4종 스프링으로 10~350bar 범위를 커버합니다.",
+      "descriptionEn": "Direct acting relief valve for the SAE8/2 cavity available with hex socket screw adjustment (C, tamper-proof cap option) or handknob (V). Maximum flow 20 l/min, maximum pressure 350 bar, four spring ranges covering 10 to 350 bar.",
+      "specs": {
+        "valve_function": "pressure_relief",
+        "cavity": "SAE8/2",
+        "thread": "3/4-16UNF-2A",
+        "max_flow_lpm": 20,
+        "max_pressure_bar": 350,
+        "setting_range_bar": "10-40 / 20-110 / 30-210 / 40-350",
+        "adjustment": "Hex socket screw (C) or handknob (V)",
+        "tightening_torque_nm": "25-30",
+        "weight_kg": "0.14"
+      },
+      "sourcePages": "178"
+    },
+    {
+      "slug": "oleoweb-vmd8",
+      "modelNo": "VMD8",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VMD8 SAE 10 직동식 릴리프 밸브",
+      "nameEn": "VMD8 SAE10 Direct Acting Pressure Relief Valve",
+      "shortDescriptionKo": "SAE10 직동식 릴리프 밸브, 40l/min, 최대 350bar",
+      "shortDescriptionEn": "SAE10 direct acting relief valve, 40 l/min, up to 350 bar",
+      "descriptionKo": "SAE10/2 캐비티(7/8-14UNF-2A)용 직동식 릴리프 밸브입니다. 최대 유량 40l/min, 최대 압력 350bar이며 3종 스프링(10~90, 20~210, 70~350bar)을 제공합니다. 렌치 조정(C) 또는 핸드노브(V) 방식을 선택할 수 있습니다.",
+      "descriptionEn": "Direct acting relief valve for the SAE10/2 cavity (7/8-14UNF-2A). Maximum flow 40 l/min, maximum pressure 350 bar, with three spring ranges (10-90, 20-210, 70-350 bar). Available with hex screw (C) or handknob (V) adjustment.",
+      "specs": {
+        "valve_function": "pressure_relief",
+        "cavity": "SAE10/2",
+        "thread": "7/8-14UNF-2A",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350,
+        "setting_range_bar": "10-90 / 20-210 / 70-350",
+        "adjustment": "Hex socket screw (C) or handknob (V)",
+        "tightening_torque_nm": "41-47",
+        "weight_kg": "0.17"
+      },
+      "sourcePages": "179"
+    },
+    {
+      "slug": "oleoweb-vmd30",
+      "modelNo": "VMD30",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VMD30 M20x1.5 직동식 릴리프 밸브",
+      "nameEn": "VMD30 M20x1.5 Direct Acting Pressure Relief Valve",
+      "shortDescriptionKo": "M20x1.5 직동식 릴리프 밸브, 30l/min, 320bar",
+      "shortDescriptionEn": "M20x1.5 direct acting relief valve, 30 l/min, 320 bar",
+      "descriptionKo": "M20x1.5 미터나사 캐비티(C2015/30)용 직동식 릴리프 밸브입니다. 최대 유량 30l/min, 최대 압력 320bar이며 3종 스프링(10~90, 20~210, 70~350bar)으로 설정합니다. 렌치(C) 또는 핸드노브(V) 조정 방식이 있습니다.",
+      "descriptionEn": "Direct acting relief valve for the M20x1.5 metric cavity (C2015/30). Maximum flow 30 l/min, maximum pressure 320 bar, with three spring ranges (10-90, 20-210, 70-350 bar). Hex screw (C) or handknob (V) adjustment.",
+      "specs": {
+        "valve_function": "pressure_relief",
+        "cavity": "C2015/30",
+        "thread": "M20x1.5",
+        "max_flow_lpm": 30,
+        "max_pressure_bar": 320,
+        "setting_range_bar": "10-90 / 20-210 / 70-350",
+        "adjustment": "Hex socket screw (C) or handknob (V)",
+        "tightening_torque_nm": "25-30",
+        "weight_kg": "0.16"
+      },
+      "sourcePages": "180"
+    },
+    {
+      "slug": "oleoweb-vmd40s",
+      "modelNo": "VMD40S",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VMD40S M20x1.5 직동식 릴리프 밸브",
+      "nameEn": "VMD40S M20x1.5 Direct Acting Pressure Relief Valve",
+      "shortDescriptionKo": "M20x1.5 직동식 릴리프 밸브, 40l/min, 350bar",
+      "shortDescriptionEn": "M20x1.5 direct acting relief valve, 40 l/min, 350 bar",
+      "descriptionKo": "M20x1.5/M14x1.5 이중 나사 구조(C2015/1415/2 캐비티)의 직동식 릴리프 밸브입니다. 최대 유량 40l/min, 최대 압력 350bar이며 BS3/BP3/BM 매니폴드 시리즈에 표준 장착되는 밸브입니다. 3종 스프링(10~90, 20~210, 70~350bar)과 전용 설치 공구(61700008)가 제공됩니다.",
+      "descriptionEn": "Direct acting relief valve with M20x1.5/M14x1.5 double thread (cavity C2015/1415/2). Maximum flow 40 l/min, maximum pressure 350 bar; it is the standard relief valve of the BS3/BP3/BM manifold series. Three spring ranges (10-90, 20-210, 70-350 bar) and a dedicated installation tool (61700008).",
+      "specs": {
+        "valve_function": "pressure_relief",
+        "cavity": "C2015/1415/2",
+        "thread": "M20x1.5 / M14x1.5",
+        "max_flow_lpm": 40,
+        "max_pressure_bar": 350,
+        "setting_range_bar": "10-90 / 20-210 / 70-350",
+        "adjustment": "Hex socket screw (C) or handknob (V)",
+        "tightening_torque_nm": "M20 40-45, M14 10-15",
+        "weight_kg": "0.13"
+      },
+      "sourcePages": "181"
+    },
+    {
+      "slug": "oleoweb-vmd90",
+      "modelNo": "VMD90",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VMD90 M24x1.5 직동식 릴리프 밸브",
+      "nameEn": "VMD90 M24x1.5 Direct Acting Pressure Relief Valve",
+      "shortDescriptionKo": "M24x1.5 직동식 릴리프 밸브, 80l/min, 350bar",
+      "shortDescriptionEn": "M24x1.5 direct acting relief valve, 80 l/min, 350 bar",
+      "descriptionKo": "M24x1.5 캐비티(C2415/2)용 직동식 릴리프 밸브로 최대 유량 80l/min, 최대 압력 350bar입니다. 3종 스프링(10~90, 20~210, 50~350bar)을 제공하며 BS5 CETOP5 매니폴드에 표준 장착됩니다.",
+      "descriptionEn": "Direct acting relief valve for the M24x1.5 cavity (C2415/2), rated 80 l/min and 350 bar. Three spring ranges (10-90, 20-210, 50-350 bar); it is the standard relief valve of the BS5 CETOP5 manifold.",
+      "specs": {
+        "valve_function": "pressure_relief",
+        "cavity": "C2415/2",
+        "thread": "M24x1.5",
+        "max_flow_lpm": 80,
+        "max_pressure_bar": 350,
+        "setting_range_bar": "10-90 / 20-210 / 50-350",
+        "adjustment": "Hex socket screw (C) or handknob (V)",
+        "tightening_torque_nm": "60-65",
+        "weight_kg": "0.25"
+      },
+      "sourcePages": "182"
+    },
+    {
+      "slug": "oleoweb-vmd120",
+      "modelNo": "VMD120",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VMD120 M28x1.5 직동식 릴리프 밸브",
+      "nameEn": "VMD120 M28x1.5 Direct Acting Pressure Relief Valve",
+      "shortDescriptionKo": "M28x1.5 직동식 릴리프 밸브, 120l/min, 350bar",
+      "shortDescriptionEn": "M28x1.5 direct acting relief valve, 120 l/min, 350 bar",
+      "descriptionKo": "M28x1.5 캐비티(C2815/2)용 대유량 직동식 릴리프 밸브입니다. 최대 유량 120l/min, 최대 압력 350bar이며 3종 스프링(10~100, 20~250, 40~350bar)을 제공합니다. 렌치(C) 또는 핸드노브(V) 조정 방식이 있습니다.",
+      "descriptionEn": "High-flow direct acting relief valve for the M28x1.5 cavity (C2815/2). Maximum flow 120 l/min, maximum pressure 350 bar, with three spring ranges (10-100, 20-250, 40-350 bar). Hex screw (C) or handknob (V) adjustment.",
+      "specs": {
+        "valve_function": "pressure_relief",
+        "cavity": "C2815/2",
+        "thread": "M28x1.5",
+        "max_flow_lpm": 120,
+        "max_pressure_bar": 350,
+        "setting_range_bar": "10-100 / 20-250 / 40-350",
+        "adjustment": "Hex socket screw (C) or handknob (V)",
+        "tightening_torque_nm": "60-65",
+        "weight_kg": "0.32"
+      },
+      "sourcePages": "183"
+    },
+    {
+      "slug": "oleoweb-vmd160",
+      "modelNo": "VMD160",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VMD160 차등 면적 직동식 릴리프 밸브",
+      "nameEn": "VMD160 Direct Acting Differential Area Relief Valve",
+      "shortDescriptionKo": "SAE12 차등 면적 릴리프 밸브, 160l/min, 380bar",
+      "shortDescriptionEn": "SAE12 differential area relief valve, 160 l/min, 380 bar",
+      "descriptionKo": "차등 면적 구조로 대유량에서도 안정적인 특성을 갖는 직동식 릴리프 밸브입니다. SAE12/2 캐비티(1-1/16-12 UN)용으로 최대 유량 160l/min, 최대 압력 380bar입니다. 3종 스프링(10~120, 100~250, 190~350bar)을 제공합니다.",
+      "descriptionEn": "Direct acting relief valve with differential area design for stable characteristics at high flow. Fits the SAE12/2 cavity (1-1/16-12 UN), rated 160 l/min and 380 bar. Three spring ranges (10-120, 100-250, 190-350 bar).",
+      "specs": {
+        "valve_function": "pressure_relief",
+        "cavity": "SAE12/2",
+        "thread": "1-1/16-12UN-2A",
+        "max_flow_lpm": 160,
+        "max_pressure_bar": 380,
+        "setting_range_bar": "10-120 / 100-250 / 190-350",
+        "adjustment": "Hex socket screw (C) or handknob (V)",
+        "tightening_torque_nm": "60-65",
+        "weight_kg": "0.35"
+      },
+      "sourcePages": "184"
+    },
+    {
+      "slug": "oleoweb-vpr",
+      "modelNo": "VPR (VPR08 / VPR10)",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VPR 단동용 파일럿 체크 밸브",
+      "nameEn": "VPR Single Acting Pilot Check Valves",
+      "shortDescriptionKo": "SAE8/SAE10 파일럿 체크 밸브, 최대 30l/min, 350bar",
+      "shortDescriptionEn": "SAE8/SAE10 pilot check valves, up to 30 l/min, 350 bar",
+      "descriptionKo": "단동 실린더의 하중 유지용 파일럿 체크(블록) 카트리지 밸브입니다. VPR08(3/4-16UNF, 15l/min)과 VPR10(7/8-14UNF, 30l/min) 두 사이즈이며 최대 압력 350bar, 파일럿비 1:2.5입니다.",
+      "descriptionEn": "Pilot operated check (load holding) cartridge valves for single acting cylinders. Two sizes: VPR08 (3/4-16UNF, 15 l/min) and VPR10 (7/8-14UNF, 30 l/min), rated 350 bar with a 1:2.5 pilot ratio.",
+      "specs": {
+        "valve_function": "pilot_check",
+        "cavity": "SAE8/3 / SAE10/3",
+        "thread": "3/4-16UNF / 7/8-14UNF",
+        "max_flow_lpm": 30,
+        "max_pressure_bar": 350,
+        "setting_range_bar": "Pilot ratio 1:2.5",
+        "tightening_torque_nm": "25-30 (VPR08), 41-47 (VPR10)",
+        "weight_kg": "0.09-0.11"
+      },
+      "sourcePages": "185"
+    },
+    {
+      "slug": "oleoweb-vpr22",
+      "modelNo": "VPR22",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "VPR22 M22x1.5 파일럿 체크 밸브",
+      "nameEn": "VPR22 M22x1.5 Single Acting Pilot Check Valve",
+      "shortDescriptionKo": "M22x1.5 파일럿 체크 밸브, 50l/min, 350bar",
+      "shortDescriptionEn": "M22x1.5 pilot check valve, 50 l/min, 350 bar",
+      "descriptionKo": "M22x1.5 캐비티(C2215/3)용 단동 파일럿 체크 밸브입니다. 포핏 시일 구조(SP)로 최대 유량 50l/min, 최대 압력 350bar, 파일럿비 1:2.5입니다. 5bar 또는 8bar 스프링을 선택할 수 있습니다.",
+      "descriptionEn": "Single acting pilot check valve for the M22x1.5 cavity (C2215/3). Poppet sealing (SP) design rated 50 l/min and 350 bar with a 1:2.5 pilot ratio. Available with a 5 bar or 8 bar spring.",
+      "specs": {
+        "valve_function": "pilot_check",
+        "cavity": "C2215/3",
+        "thread": "M22x1.5",
+        "max_flow_lpm": 50,
+        "max_pressure_bar": 350,
+        "setting_range_bar": "Spring 5 or 8 bar, pilot ratio 1:2.5",
+        "tightening_torque_nm": "44-50",
+        "weight_kg": "0.14"
+      },
+      "sourcePages": "186"
+    },
+    {
+      "slug": "oleoweb-sv",
+      "modelNo": "SV (SV08 / SV10)",
+      "categorySlug": "oleoweb-cartridge-valves",
+      "nameKo": "SV 셔틀 밸브 (로드 셔틀)",
+      "nameEn": "SV Load Shuttle Ball Valves",
+      "shortDescriptionKo": "SAE8/SAE10 볼 셔틀 밸브, 최대 30l/min, 350bar",
+      "shortDescriptionEn": "SAE8/SAE10 ball-type shuttle valves, up to 30 l/min, 350 bar",
+      "descriptionKo": "두 입력 중 높은 압력을 선택해 출력하는 볼 타입 셔틀(선택) 카트리지 밸브입니다. SV08(3/4-16UNF, 15l/min)과 SV10(7/8-14UNF, 30l/min) 두 사이즈이며 최대 압력 350bar입니다.",
+      "descriptionEn": "Ball-type load shuttle cartridge valves that route the higher of two input pressures to the output. Two sizes: SV08 (3/4-16UNF, 15 l/min) and SV10 (7/8-14UNF, 30 l/min), rated 350 bar.",
+      "specs": {
+        "valve_function": "shuttle",
+        "cavity": "SAE8/3 / SAE10/3",
+        "thread": "3/4-16UNF / 7/8-14UNF",
+        "max_flow_lpm": 30,
+        "max_pressure_bar": 350,
+        "tightening_torque_nm": "25-30 (SV08), 41-47 (SV10)",
+        "weight_kg": "0.07-0.10"
+      },
+      "sourcePages": "187"
+    },
+    {
+      "slug": "oleoweb-bs3",
+      "modelNo": "BS3",
+      "categorySlug": "oleoweb-manifolds",
+      "nameKo": "BS3 CETOP3 알루미늄 싱글 매니폴드 (측면 포트)",
+      "nameEn": "BS3 Aluminium CETOP3 Single Manifold (Lateral Ports)",
+      "shortDescriptionKo": "측면 포트 CETOP3 싱글 베이스, 40l/min, 210bar, 릴리프 밸브 내장",
+      "shortDescriptionEn": "Lateral-port CETOP3 single base, 40 l/min, 210 bar, with relief valve",
+      "descriptionKo": "측면 포트 방식의 CETOP3 규격 알루미늄(흑색 아노다이징) 싱글 매니폴드입니다. 최대 유량 40l/min, 최대 압력 210bar이며 VMD40S 릴리프 밸브가 내장됩니다. P/T/A/B 포트는 BSPP 3/8, 게이지 포트 M은 BSPP 1/4입니다.",
+      "descriptionEn": "Black anodized aluminium CETOP3 single manifold with lateral ports. Rated 40 l/min and 210 bar, fitted with the VMD40S relief valve. P/T/A/B ports are BSPP 3/8 and the gauge port M is BSPP 1/4.",
+      "specs": {
+        "manifold_type": "cetop3_single",
+        "max_flow_lpm": "40",
+        "max_pressure_bar": 210,
+        "material": "aluminium",
+        "ports": "P/T/A/B BSPP 3/8, M BSPP 1/4",
+        "relief_valve": "VMD40S (springs 10-90 / 20-210 bar)",
+        "weight_kg": "0.8"
+      },
+      "sourcePages": "191"
+    },
+    {
+      "slug": "oleoweb-bp3",
+      "modelNo": "BP3",
+      "categorySlug": "oleoweb-manifolds",
+      "nameKo": "BP3 CETOP3 알루미늄 싱글 매니폴드 (후면 포트)",
+      "nameEn": "BP3 Aluminium CETOP3 Single Manifold (Rear Ports)",
+      "shortDescriptionKo": "후면 포트 CETOP3 싱글 베이스, 40l/min, 210bar, 릴리프 밸브 내장",
+      "shortDescriptionEn": "Rear-port CETOP3 single base, 40 l/min, 210 bar, with relief valve",
+      "descriptionKo": "후면 포트 방식의 CETOP3 규격 알루미늄(흑색 아노다이징) 싱글 매니폴드입니다. 최대 유량 40l/min, 최대 압력 210bar이며 VMD40S 릴리프 밸브가 내장됩니다. P/T/A/B 포트는 BSPP 3/8, 게이지 포트 M은 BSPP 1/4입니다.",
+      "descriptionEn": "Black anodized aluminium CETOP3 single manifold with rear ports. Rated 40 l/min and 210 bar, fitted with the VMD40S relief valve. P/T/A/B ports are BSPP 3/8 and the gauge port M is BSPP 1/4.",
+      "specs": {
+        "manifold_type": "cetop3_single",
+        "max_flow_lpm": "40",
+        "max_pressure_bar": 210,
+        "material": "aluminium",
+        "ports": "P/T/A/B BSPP 3/8, M BSPP 1/4",
+        "relief_valve": "VMD40S (springs 10-90 / 20-210 bar)",
+        "weight_kg": "0.72"
+      },
+      "sourcePages": "192"
+    },
+    {
+      "slug": "oleoweb-bs5",
+      "modelNo": "BS5",
+      "categorySlug": "oleoweb-manifolds",
+      "nameKo": "BS5 CETOP5 알루미늄 싱글 매니폴드",
+      "nameEn": "BS5 Aluminium CETOP5 Single Manifold",
+      "shortDescriptionKo": "CETOP5 싱글 베이스, 80l/min, 210bar, VMD90 릴리프 내장",
+      "shortDescriptionEn": "CETOP5 single base, 80 l/min, 210 bar, with VMD90 relief valve",
+      "descriptionKo": "CETOP5 규격 알루미늄(흑색 아노다이징) 싱글 매니폴드입니다. 최대 유량 80l/min, 최대 압력 210bar이며 VMD90 릴리프 밸브가 내장됩니다. P/T/A/B 포트는 BSPP 1/2, 게이지 포트 M은 BSPP 1/4입니다.",
+      "descriptionEn": "Black anodized aluminium CETOP5 single manifold. Rated 80 l/min and 210 bar, fitted with the VMD90 relief valve. P/T/A/B ports are BSPP 1/2 and the gauge port M is BSPP 1/4.",
+      "specs": {
+        "manifold_type": "cetop5_single",
+        "max_flow_lpm": "80",
+        "max_pressure_bar": 210,
+        "material": "aluminium",
+        "ports": "P/T/A/B BSPP 1/2, M BSPP 1/4",
+        "relief_valve": "VMD90 (springs 10-100 / 20-210 bar)",
+        "weight_kg": "1.20"
+      },
+      "sourcePages": "193"
+    },
+    {
+      "slug": "oleoweb-bm-rv",
+      "modelNo": "BM-RV (BM2-RV ~ BM8-RV)",
+      "categorySlug": "oleoweb-manifolds",
+      "nameKo": "BM-RV 병렬 멀티 매니폴드 (릴리프 밸브 포함)",
+      "nameEn": "BM-RV Parallel Multiple Manifolds (with Relief Valve)",
+      "shortDescriptionKo": "2~8 스테이션 병렬 멀티 베이스, 40l/min, 210bar, 릴리프 밸브 포함",
+      "shortDescriptionEn": "2-8 station parallel multiple bases, 40 l/min, 210 bar, with relief valve",
+      "descriptionKo": "측면 포트 병렬 회로 구성의 알루미늄 CETOP3 멀티 매니폴드로 VMD40S 릴리프 밸브가 포함됩니다. 2~8 스테이션(BM2-RV~BM8-RV)을 선택할 수 있으며 최대 유량 40l/min, 최대 압력 210bar입니다. P/T 포트 BSPP 1/2, A/B 포트 BSPP 3/8, 게이지 포트 BSPP 1/4입니다.",
+      "descriptionEn": "Aluminium CETOP3 multiple manifolds with lateral ports and parallel circuit, including the VMD40S relief valve. Available from 2 to 8 stations (BM2-RV to BM8-RV), rated 40 l/min and 210 bar. P/T ports BSPP 1/2, A/B ports BSPP 3/8, gauge port BSPP 1/4.",
+      "specs": {
+        "manifold_type": "multi_parallel",
+        "max_flow_lpm": "40",
+        "max_pressure_bar": 210,
+        "material": "aluminium",
+        "ports": "P/T BSPP 1/2, A/B BSPP 3/8, M BSPP 1/4",
+        "stations": "2-8",
+        "relief_valve": "VMD40S included (springs 10-90 / 20-210 bar)",
+        "weight_kg": "2.1-5.9"
+      },
+      "sourcePages": "194"
+    },
+    {
+      "slug": "oleoweb-bm",
+      "modelNo": "BM (BM2 ~ BM8)",
+      "categorySlug": "oleoweb-manifolds",
+      "nameKo": "BM 병렬 멀티 매니폴드 (릴리프 밸브 미포함)",
+      "nameEn": "BM Parallel Multiple Manifolds (without Relief Valve)",
+      "shortDescriptionKo": "2~8 스테이션 병렬 멀티 베이스, 40l/min, 210bar",
+      "shortDescriptionEn": "2-8 station parallel multiple bases, 40 l/min, 210 bar",
+      "descriptionKo": "릴리프 밸브 없이 구성되는 측면 포트 병렬 회로 알루미늄 CETOP3 멀티 매니폴드입니다. 2~8 스테이션(BM2~BM8)을 선택할 수 있으며 최대 유량 40l/min, 최대 압력 210bar입니다. P/T 포트 BSPP 1/2, A/B 포트 BSPP 3/8입니다.",
+      "descriptionEn": "Aluminium CETOP3 multiple manifolds with lateral ports and parallel circuit, supplied without relief valve. Available from 2 to 8 stations (BM2 to BM8), rated 40 l/min and 210 bar. P/T ports BSPP 1/2, A/B ports BSPP 3/8.",
+      "specs": {
+        "manifold_type": "multi_parallel",
+        "max_flow_lpm": "40",
+        "max_pressure_bar": 210,
+        "material": "aluminium",
+        "ports": "P/T BSPP 1/2, A/B BSPP 3/8, M BSPP 1/4",
+        "stations": "2-8",
+        "relief_valve": "None",
+        "weight_kg": "1.5-5.2"
+      },
+      "sourcePages": "195"
+    },
+    {
+      "slug": "oleoweb-valve-bodies",
+      "modelNo": "COR / COS (T-11A, SAE10/3 SHORT bodies)",
+      "categorySlug": "oleoweb-manifolds",
+      "nameKo": "카트리지 밸브 바디 (T-11A / SAE10/3)",
+      "nameEn": "Cartridge Valve Bodies (T-11A / SAE10/3)",
+      "shortDescriptionKo": "T-11A 싱글/더블 캐비티 및 SAE10/3 쇼트 캐비티용 밸브 바디",
+      "shortDescriptionEn": "Valve bodies for T-11A single/double cavities and SAE10/3 short cavity",
+      "descriptionKo": "카트리지 밸브 장착용 라인 바디 시리즈입니다. T-11A 더블 캐비티(크로스 파일럿) 및 싱글 캐비티 알루미늄 바디(SAE08, BSPP 3/8, BSPP 1/2 포트, 210bar)와 SAE10/3 쇼트 캐비티용 강철(350bar)/알루미늄(210bar) 바디가 있습니다.",
+      "descriptionEn": "Line-mount body series for cartridge valves. Includes T-11A double-cavity (cross piloted) and single-cavity aluminium bodies (SAE08, BSPP 3/8 or BSPP 1/2 ports, 210 bar) and SAE10/3 short-cavity bodies in steel (350 bar) or aluminium (210 bar).",
+      "specs": {
+        "manifold_type": "cartridge_body",
+        "max_pressure_bar": 350,
+        "material": "aluminium_or_steel",
+        "ports": "SAE 08 / BSPP 3/8 / BSPP 1/2",
+        "weight_kg": "0.3-0.44"
+      },
+      "sourcePages": "196, 199-200"
+    },
+    {
+      "slug": "oleoweb-sae-blocks",
+      "modelNo": "BLOCCHI SAE (SAE8/2, SAE8/3, SAE10/2, SAE10/3, SAE8/3 SHORT)",
+      "categorySlug": "oleoweb-manifolds",
+      "nameKo": "SAE 카트리지 밸브 블록",
+      "nameEn": "SAE Cartridge Valve Blocks",
+      "shortDescriptionKo": "SAE8/SAE10 2·3웨이 캐비티 블록, 강철 350bar / 알루미늄 210bar",
+      "shortDescriptionEn": "SAE8/SAE10 2- and 3-way cavity blocks, steel 350 bar / aluminium 210 bar",
+      "descriptionKo": "SAE8/2, SAE8/3, SAE10/2, SAE10/3 및 SAE8/3 쇼트 캐비티용 밸브 블록 시리즈입니다. 아연 도금 강철(350bar) 또는 흑색 아노다이징 알루미늄(210bar) 재질이며 포트는 BSPP 1/4~1/2입니다. PME6 플랜지 부착형 SAE8/2 블록(62200023)도 제공되어 카트리지 수동 펌프와 조합할 수 있습니다.",
+      "descriptionEn": "Valve block series for SAE8/2, SAE8/3, SAE10/2, SAE10/3 and SAE8/3 short cavities. Available in zinc-plated steel (350 bar) or black anodized aluminium (210 bar) with BSPP 1/4 to 1/2 ports. The SAE8/2 block with PME6 flange (62200023) pairs with the cartridge hand pumps.",
+      "specs": {
+        "manifold_type": "sae_block",
+        "max_pressure_bar": 350,
+        "material": "aluminium_or_steel",
+        "ports": "BSPP 1/4 / 3/8 / 1/2",
+        "weight_kg": "0.16-0.77"
+      },
+      "sourcePages": "197-198, 201-207"
+    },
+    {
+      "slug": "oleoweb-efd25a",
+      "modelNo": "EFD25A",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "EFD25A 고출력 전기식 모듈형 유량 전환 밸브",
+      "nameEn": "EFD25A High Power Electric Flow Diverter (Stackable)",
+      "shortDescriptionKo": "6/8/10웨이 스택형 전기 디버터, 총 50l/min, 최대 310bar",
+      "shortDescriptionEn": "Stackable 6/8/10-way electric diverter, 50 l/min total, up to 310 bar",
+      "descriptionKo": "6/8/10웨이로 스택 구성이 가능한 고출력 솔레노이드 유량 전환 밸브입니다. 총 유량 50l/min(라인당 25l/min), 최대 압력 310bar(드레인 사용 시)이며 포트는 BSPP 1/4입니다. 12/24VDC 40W 코일(DIN 46350 또는 DEUTSCH DT4 커넥터), 클로즈드/Y 트랜지션 스풀, 내부/외부 드레인, 수동 비상 핀 옵션을 지원합니다.",
+      "descriptionEn": "High-power stackable solenoid flow diverter configurable with 6, 8 or 10 ways. Total flow 50 l/min (25 l/min per line), maximum pressure 310 bar with drainage, BSPP 1/4 ports. 12/24 VDC 40 W coils (DIN 46350 or DEUTSCH DT4), closed or Y transition spools, internal/external drain and manual emergency pin options.",
+      "specs": {
+        "diverter_type": "electric_modular",
+        "ways": "6 / 8 / 10",
+        "thread_standard": "bspp",
+        "port_sizes": "BSPP 1/4",
+        "max_flow_lpm": "50 total (25 per line)",
+        "max_pressure_bar": 310,
+        "circuit_options": "Closed or Y transition spool, internal/external drain",
+        "supply_voltage": "12 / 24 VDC, 40 W (DIN 46350 / DEUTSCH DT4)",
+        "weight_kg": "1.4 per section"
+      },
+      "sourcePages": "235-238"
+    },
+    {
+      "slug": "oleoweb-efd25b",
+      "modelNo": "EFD25B",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "EFD25B 저출력 전기식 모듈형 유량 전환 밸브",
+      "nameEn": "EFD25B Low Power Electric Flow Diverter (Stackable)",
+      "shortDescriptionKo": "6/8/10웨이 스택형 전기 디버터, 총 25l/min, 최대 310bar",
+      "shortDescriptionEn": "Stackable 6/8/10-way electric diverter, 25 l/min total, up to 310 bar",
+      "descriptionKo": "6/8/10웨이 스택 구성의 저출력(27W) 솔레노이드 유량 전환 밸브입니다. 총 유량 25l/min(라인당 12.5l/min), 최대 압력 310bar(드레인 사용 시)이며 포트는 BSPP 1/4입니다. 12/24VDC 코일(DIN 46350 또는 DEUTSCH DT4), 클로즈드/Y 트랜지션 스풀, 내부/외부 드레인, 수동 비상 핀 옵션을 지원합니다.",
+      "descriptionEn": "Low-power (27 W) stackable solenoid flow diverter configurable with 6, 8 or 10 ways. Total flow 25 l/min (12.5 l/min per line), maximum pressure 310 bar with drainage, BSPP 1/4 ports. 12/24 VDC coils (DIN 46350 or DEUTSCH DT4), closed or Y transition spools, internal/external drain and manual emergency pin options.",
+      "specs": {
+        "diverter_type": "electric_modular",
+        "ways": "6 / 8 / 10",
+        "thread_standard": "bspp",
+        "port_sizes": "BSPP 1/4",
+        "max_flow_lpm": "25 total (12.5 per line)",
+        "max_pressure_bar": 310,
+        "circuit_options": "Closed or Y transition spool, internal/external drain",
+        "supply_voltage": "12 / 24 VDC, 27 W (DIN 46350 / DEUTSCH DT4)",
+        "weight_kg": "1.3 per section"
+      },
+      "sourcePages": "239-242"
+    },
+    {
+      "slug": "oleoweb-ddfa3",
+      "modelNo": "DDFA3",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "DDFA3 고압 3웨이 유량 전환 밸브",
+      "nameEn": "DDFA3 High Pressure 3-Way Flow Diverters",
+      "shortDescriptionKo": "고압 수동 3웨이 디버터, BSPP 1/4~1, 최대 500bar",
+      "shortDescriptionEn": "High pressure manual 3-way diverters, BSPP 1/4-1, up to 500 bar",
+      "descriptionKo": "최대 500bar까지 사용 가능한 고압형 수동 3웨이 유량 전환 밸브입니다. BSPP 1/4~1 사이즈에서 최대 유량 40~180l/min을 지원하며 오픈 센터(A)/클로즈드 센터(B) 회로를 선택할 수 있습니다.",
+      "descriptionEn": "High pressure manual 3-way flow diverters rated up to 500 bar. Sizes from BSPP 1/4 to 1 with maximum flows of 40 to 180 l/min, available in open centre (A) or closed centre (B) circuits.",
+      "specs": {
+        "diverter_type": "manual",
+        "ways": "3",
+        "thread_standard": "bspp",
+        "port_sizes": "BSPP 1/4, 3/8, 1/2, 3/4, 1",
+        "max_flow_lpm": "40-180 by size",
+        "max_pressure_bar": 500,
+        "circuit_options": "Open centre (A) / Closed centre (B)",
+        "weight_kg": "0.9-2.33"
+      },
+      "sourcePages": "243"
+    },
+    {
+      "slug": "oleoweb-ddfa6",
+      "modelNo": "DDFA6",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "DDFA6 고압 6웨이 유량 전환 밸브",
+      "nameEn": "DDFA6 High Pressure 6-Way Flow Diverters",
+      "shortDescriptionKo": "고압 수동 6웨이 디버터, BSPP 1/4~1/2, 최대 500bar",
+      "shortDescriptionEn": "High pressure manual 6-way diverters, BSPP 1/4-1/2, up to 500 bar",
+      "descriptionKo": "2개 스테이지로 구성된 고압형 수동 6웨이 유량 전환 밸브입니다. BSPP 1/4~1/2 사이즈에서 스테이지당 최대 40~60l/min, 최대 압력 500bar입니다. 오픈 센터(A)/클로즈드 센터(B) 회로를 선택할 수 있습니다.",
+      "descriptionEn": "High pressure manual 6-way flow diverters with two stages. Sizes BSPP 1/4 to 1/2 with 40-60 l/min per stage and a 500 bar maximum pressure. Available in open centre (A) or closed centre (B) circuits.",
+      "specs": {
+        "diverter_type": "manual",
+        "ways": "6",
+        "thread_standard": "bspp",
+        "port_sizes": "BSPP 1/4, 3/8, 1/2",
+        "max_flow_lpm": "40-60 per stage",
+        "max_pressure_bar": 500,
+        "circuit_options": "Open centre (A) / Closed centre (B)",
+        "weight_kg": "1.94"
+      },
+      "sourcePages": "244"
+    },
+    {
+      "slug": "oleoweb-ddf3",
+      "modelNo": "DDF3",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "DDF3 3웨이 유량 전환 밸브 (BSPP)",
+      "nameEn": "DDF3 3-Way Flow Diverters (BSPP)",
+      "shortDescriptionKo": "수동 3웨이 디버터, BSPP 1/4~1, 60~200l/min, 최대 350bar",
+      "shortDescriptionEn": "Manual 3-way diverters, BSPP 1/4-1, 60-200 l/min, up to 350 bar",
+      "descriptionKo": "레버 조작식 수동 3웨이 유량 전환 밸브입니다. BSPP 1/4~1 사이즈에서 최대 유량 60~200l/min, 최대 압력 350bar(1인치 300bar)입니다. 오픈 센터(A)/클로즈드 센터(B) 회로를 선택할 수 있습니다.",
+      "descriptionEn": "Lever-operated manual 3-way flow diverters. Sizes BSPP 1/4 to 1 with maximum flows of 60 to 200 l/min and 350 bar maximum pressure (300 bar for the 1 inch size). Open centre (A) or closed centre (B) circuits.",
+      "specs": {
+        "diverter_type": "manual",
+        "ways": "3",
+        "thread_standard": "bspp",
+        "port_sizes": "BSPP 1/4, 3/8, 1/2, 3/4, 1",
+        "max_flow_lpm": "60-200 by size",
+        "max_pressure_bar": 350,
+        "circuit_options": "Open centre (A) / Closed centre (B)",
+        "weight_kg": "0.8-2.5"
+      },
+      "sourcePages": "245"
+    },
+    {
+      "slug": "oleoweb-ddf3sae",
+      "modelNo": "DDF3SAE",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "DDF3SAE 3웨이 유량 전환 밸브 (SAE)",
+      "nameEn": "DDF3SAE 3-Way Flow Diverters (SAE)",
+      "shortDescriptionKo": "SAE 나사 수동 3웨이 디버터, 60~200l/min, 최대 350bar",
+      "shortDescriptionEn": "SAE-threaded manual 3-way diverters, 60-200 l/min, up to 350 bar",
+      "descriptionKo": "SAE 나사(3/4-16UNF~1-5/16-12UN) 포트 사양의 수동 3웨이 유량 전환 밸브입니다. 최대 유량 60~200l/min, 최대 압력 350bar(SAE16 300bar)이며 오픈/클로즈드 센터 회로를 선택할 수 있습니다.",
+      "descriptionEn": "Manual 3-way flow diverters with SAE threaded ports (3/4-16UNF to 1-5/16-12UN). Maximum flows 60 to 200 l/min, maximum pressure 350 bar (300 bar for SAE16), with open or closed centre circuits.",
+      "specs": {
+        "diverter_type": "manual",
+        "ways": "3",
+        "thread_standard": "sae_unf",
+        "port_sizes": "3/4-16UNF, 7/8-14UNF, 1-1/16-12UN, 1-5/16-12UN",
+        "max_flow_lpm": "60-200 by size",
+        "max_pressure_bar": 350,
+        "circuit_options": "Open centre (A) / Closed centre (B)",
+        "weight_kg": "0.8-2.2"
+      },
+      "sourcePages": "246"
+    },
+    {
+      "slug": "oleoweb-ddf6",
+      "modelNo": "DDF6",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "DDF6 6웨이 유량 전환 밸브 (BSPP)",
+      "nameEn": "DDF6 6-Way Flow Diverters (BSPP)",
+      "shortDescriptionKo": "수동 6웨이 디버터, BSPP 1/4~1, 최대 350bar",
+      "shortDescriptionEn": "Manual 6-way diverters, BSPP 1/4-1, up to 350 bar",
+      "descriptionKo": "복동 회로(2라인)를 동시에 전환하는 수동 6웨이 유량 전환 밸브입니다. BSPP 1/4~1 사이즈에서 라인당 최대 60~200l/min, 최대 압력 350bar(1인치 300bar)입니다. 오픈/클로즈드 센터 회로를 선택할 수 있습니다.",
+      "descriptionEn": "Manual 6-way flow diverters switching two lines simultaneously for double acting circuits. Sizes BSPP 1/4 to 1 with 60-200 l/min per line and 350 bar maximum pressure (300 bar for 1 inch). Open or closed centre circuits.",
+      "specs": {
+        "diverter_type": "manual",
+        "ways": "6",
+        "thread_standard": "bspp",
+        "port_sizes": "BSPP 1/4, 3/8, 1/2, 3/4, 1",
+        "max_flow_lpm": "60+60 to 200+200 by size",
+        "max_pressure_bar": 350,
+        "circuit_options": "Open centre (A) / Closed centre (B)",
+        "weight_kg": "1.6-5.3"
+      },
+      "sourcePages": "247"
+    },
+    {
+      "slug": "oleoweb-ddf6sae",
+      "modelNo": "DDF6SAE",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "DDF6SAE 6웨이 유량 전환 밸브 (SAE)",
+      "nameEn": "DDF6SAE 6-Way Flow Diverters (SAE)",
+      "shortDescriptionKo": "SAE 나사 수동 6웨이 디버터, 최대 350bar",
+      "shortDescriptionEn": "SAE-threaded manual 6-way diverters, up to 350 bar",
+      "descriptionKo": "SAE 나사(3/4-16UNF~1-5/16-12UN) 포트 사양의 수동 6웨이 유량 전환 밸브입니다. 라인당 최대 60~200l/min, 최대 압력 350bar(SAE16 300bar)이며 오픈/클로즈드 센터 회로를 선택할 수 있습니다.",
+      "descriptionEn": "Manual 6-way flow diverters with SAE threaded ports (3/4-16UNF to 1-5/16-12UN). Per-line flows of 60 to 200 l/min and 350 bar maximum pressure (300 bar for SAE16), with open or closed centre circuits.",
+      "specs": {
+        "diverter_type": "manual",
+        "ways": "6",
+        "thread_standard": "sae_unf",
+        "port_sizes": "3/4-16UNF, 7/8-14UNF, 1-1/16-12UN, 1-5/16-12UN",
+        "max_flow_lpm": "60+60 to 200+200 by size",
+        "max_pressure_bar": 350,
+        "circuit_options": "Open centre (A) / Closed centre (B)",
+        "weight_kg": "1.5-5.3"
+      },
+      "sourcePages": "248"
+    },
+    {
+      "slug": "oleoweb-idf4",
+      "modelNo": "IDF4",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "IDF4 4웨이 유량 전환 밸브 (BSPP)",
+      "nameEn": "IDF4 4-Way Flow Diverters (BSPP)",
+      "shortDescriptionKo": "수동 4웨이 디버터, BSPP 1/4~1, 최대 350bar",
+      "shortDescriptionEn": "Manual 4-way diverters, BSPP 1/4-1, up to 350 bar",
+      "descriptionKo": "인렛(E)과 아웃렛(S) 포트를 갖춘 수동 4웨이 유량 전환 밸브입니다. BSPP 1/4~1 사이즈에서 최대 유량 60~200l/min, 최대 압력 350bar(1인치 300bar)입니다. 클로즈드 센터(A)/오픈 센터(B) 회로를 선택할 수 있습니다.",
+      "descriptionEn": "Manual 4-way flow diverters with inlet (E) and outlet (S) porting. Sizes BSPP 1/4 to 1 with maximum flows of 60 to 200 l/min and 350 bar maximum pressure (300 bar for 1 inch). Closed centre (A) or open centre (B) circuits.",
+      "specs": {
+        "diverter_type": "manual",
+        "ways": "4",
+        "thread_standard": "bspp",
+        "port_sizes": "BSPP 1/4, 3/8, 1/2, 3/4, 1",
+        "max_flow_lpm": "60-200 by size",
+        "max_pressure_bar": 350,
+        "circuit_options": "Closed centre (A) / Open centre (B)",
+        "weight_kg": "1.3-2.8"
+      },
+      "sourcePages": "249"
+    },
+    {
+      "slug": "oleoweb-idf4sae",
+      "modelNo": "IDF4SAE",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "IDF4SAE 4웨이 유량 전환 밸브 (SAE)",
+      "nameEn": "IDF4SAE 4-Way Flow Diverters (SAE)",
+      "shortDescriptionKo": "SAE 나사 수동 4웨이 디버터, 최대 350bar",
+      "shortDescriptionEn": "SAE-threaded manual 4-way diverters, up to 350 bar",
+      "descriptionKo": "SAE 나사(3/4-16UNF~1-5/16-12UN) 포트 사양의 수동 4웨이 유량 전환 밸브입니다. 최대 유량 60~200l/min, 최대 압력 350bar(SAE16 300bar)이며 클로즈드/오픈 센터 회로를 선택할 수 있습니다.",
+      "descriptionEn": "Manual 4-way flow diverters with SAE threaded ports (3/4-16UNF to 1-5/16-12UN). Maximum flows 60 to 200 l/min, maximum pressure 350 bar (300 bar for SAE16), with closed or open centre circuits.",
+      "specs": {
+        "diverter_type": "manual",
+        "ways": "4",
+        "thread_standard": "sae_unf",
+        "port_sizes": "3/4-16UNF, 7/8-14UNF, 1-1/16-12UN, 1-5/16-12UN",
+        "max_flow_lpm": "60-200 by size",
+        "max_pressure_bar": 350,
+        "circuit_options": "Closed centre (A) / Open centre (B)",
+        "weight_kg": "1.3-2.8"
+      },
+      "sourcePages": "250"
+    },
+    {
+      "slug": "oleoweb-idf8",
+      "modelNo": "IDF8",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "IDF8 8웨이 유량 전환 밸브 (BSPP)",
+      "nameEn": "IDF8 8-Way Flow Diverters (BSPP)",
+      "shortDescriptionKo": "수동 8웨이 디버터, BSPP 1/4~1, 최대 350bar",
+      "shortDescriptionEn": "Manual 8-way diverters, BSPP 1/4-1, up to 350 bar",
+      "descriptionKo": "복동 2회로를 동시에 전환하는 수동 8웨이 유량 전환 밸브입니다. BSPP 1/4~1 사이즈에서 라인당 최대 60~200l/min, 최대 압력 350bar(1인치 300bar)입니다. 클로즈드/오픈 센터 회로를 선택할 수 있습니다.",
+      "descriptionEn": "Manual 8-way flow diverters switching two double acting circuits simultaneously. Sizes BSPP 1/4 to 1 with 60-200 l/min per line and 350 bar maximum pressure (300 bar for 1 inch). Closed or open centre circuits.",
+      "specs": {
+        "diverter_type": "manual",
+        "ways": "8",
+        "thread_standard": "bspp",
+        "port_sizes": "BSPP 1/4, 3/8, 1/2, 3/4, 1",
+        "max_flow_lpm": "60+60 to 200+200 by size",
+        "max_pressure_bar": 350,
+        "circuit_options": "Closed centre (A) / Open centre (B)",
+        "weight_kg": "2.5-5.1"
+      },
+      "sourcePages": "251"
+    },
+    {
+      "slug": "oleoweb-idf8sae",
+      "modelNo": "IDF8SAE",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "IDF8SAE 8웨이 유량 전환 밸브 (SAE)",
+      "nameEn": "IDF8SAE 8-Way Flow Diverters (SAE)",
+      "shortDescriptionKo": "SAE 나사 수동 8웨이 디버터, 최대 350bar",
+      "shortDescriptionEn": "SAE-threaded manual 8-way diverters, up to 350 bar",
+      "descriptionKo": "SAE 나사(3/4-16UNF~1-5/16-12UN) 포트 사양의 수동 8웨이 유량 전환 밸브입니다. 라인당 최대 60~200l/min, 최대 압력 350bar(SAE16 300bar)이며 클로즈드/오픈 센터 회로를 선택할 수 있습니다.",
+      "descriptionEn": "Manual 8-way flow diverters with SAE threaded ports (3/4-16UNF to 1-5/16-12UN). Per-line flows of 60 to 200 l/min and 350 bar maximum pressure (300 bar for SAE16), with closed or open centre circuits.",
+      "specs": {
+        "diverter_type": "manual",
+        "ways": "8",
+        "thread_standard": "sae_unf",
+        "port_sizes": "3/4-16UNF, 7/8-14UNF, 1-1/16-12UN, 1-5/16-12UN",
+        "max_flow_lpm": "60+60 to 200+200 by size",
+        "max_pressure_bar": 350,
+        "circuit_options": "Closed centre (A) / Open centre (B)",
+        "weight_kg": "2.1-4.3"
+      },
+      "sourcePages": "252"
+    },
+    {
+      "slug": "oleoweb-fct",
+      "modelNo": "FCT",
+      "categorySlug": "oleoweb-flow-diverters",
+      "nameKo": "FCT 견인식 스트로크 엔드 밸브",
+      "nameEn": "FCT Tug End-Stroke Valves",
+      "shortDescriptionKo": "케이블 견인식 스트로크 엔드 밸브, BSPP 3/8~1, 최대 250bar",
+      "shortDescriptionEn": "Tug-operated end-stroke valves, BSPP 3/8-1, up to 250 bar",
+      "descriptionKo": "케이블 견인으로 작동하는 스트로크 엔드(리미트) 밸브로, 실린더가 행정 끝에 도달하면 유로를 전환합니다. BSPP 3/8~1 사이즈에서 최대 유량 60~140l/min, 최대 압력 250bar(1인치 200bar)입니다. 클로즈드 센터(A)/오픈 센터(B) 회로를 선택할 수 있습니다.",
+      "descriptionEn": "Tug (pull) operated end-stroke valves that switch the flow path when the cylinder reaches end of stroke. Sizes BSPP 3/8 to 1 with maximum flows of 60 to 140 l/min and 250 bar maximum pressure (200 bar for 1 inch). Closed centre (A) or open centre (B) circuits.",
+      "specs": {
+        "diverter_type": "end_stroke",
+        "ways": "2",
+        "thread_standard": "bspp",
+        "port_sizes": "BSPP 3/8, 1/2, 3/4, 1",
+        "max_flow_lpm": "60-140 by size",
+        "max_pressure_bar": 250,
+        "circuit_options": "Closed centre (A) / Open centre (B)",
+        "weight_kg": "1.7-2.5"
+      },
+      "sourcePages": "253"
+    },
+    {
+      "slug": "oleoweb-tnk",
+      "modelNo": "TNK",
+      "categorySlug": "oleoweb-tanks",
+      "nameKo": "TNK 강철 오일 탱크",
+      "nameEn": "TNK Steel Reservoirs",
+      "shortDescriptionKo": "수동 펌프용 강철 오일 탱크, 1~20L",
+      "shortDescriptionEn": "Steel oil reservoirs for hand pumps, 1-20 L",
+      "descriptionKo": "수동 펌프 조합용 강철 오일 탱크 시리즈입니다. 1/2/3/5/7/10/13/15/20L 용량이 있으며 수평·수직 장착이 모두 가능합니다. RAL9005 내유성 흑색 도장 처리되며 브리더 플러그, 드레인 플러그, 흡입 튜브가 기본 포함됩니다.",
+      "descriptionEn": "Steel oil reservoir series for hand pump assemblies. Capacities of 1/2/3/5/7/10/13/15/20 litres with both horizontal and vertical mounting. Finished in RAL9005 oil-proof black paint and supplied with breather plug, drain plug and draft tube.",
+      "specs": {
+        "material": "steel",
+        "capacity_liters": "1 / 2 / 3 / 5 / 7 / 10 / 13 / 15 / 20",
+        "mounting": "Horizontal or vertical",
+        "included_accessories": "Breather plug, drain plug, draft tube",
+        "finish": "RAL9005 oil-proof black painting",
+        "weight_kg": "2.2-16"
+      },
+      "sourcePages": "231"
+    },
+    {
+      "slug": "oleoweb-tna",
+      "modelNo": "TNA (TNA1 / TNA2 / TNA3 / TNA5)",
+      "categorySlug": "oleoweb-tanks",
+      "nameKo": "TNA 알루미늄 오일 탱크",
+      "nameEn": "TNA Aluminium Reservoirs",
+      "shortDescriptionKo": "수동 펌프용 알루미늄 오일 탱크, 1~5L",
+      "shortDescriptionEn": "Aluminium oil reservoirs for hand pumps, 1-5 L",
+      "descriptionKo": "수동 펌프 조합용 경량 알루미늄 오일 탱크 시리즈입니다. 1/2/3/5L 용량이 있으며 BSPP 1/4 에어 블리딩(브리더) 플러그, 드레인 플러그, 흡입 튜브가 기본 포함됩니다.",
+      "descriptionEn": "Lightweight aluminium oil reservoir series for hand pump assemblies. Capacities of 1/2/3/5 litres, supplied with BSPP 1/4 air bleeding plug, drain plug and suction tube.",
+      "specs": {
+        "material": "aluminium",
+        "capacity_liters": "1 / 2 / 3 / 5",
+        "included_accessories": "Air bleeding plug (BSPP 1/4), cap, gasket, suction tube",
+        "weight_kg": "1.1-1.8"
+      },
+      "sourcePages": "232"
+    },
+    {
+      "slug": "oleoweb-vara01",
+      "modelNo": "VARA01",
+      "categorySlug": "oleoweb-accessories",
+      "nameKo": "VARA01 무정지 쟁기용 로딩·완충 밸브 블록",
+      "nameEn": "VARA01 Loading and Anti-Shock Valve Block for No-Stop Ploughs",
+      "shortDescriptionKo": "노스톱 쟁기·심토파쇄기용 완충 밸브 블록, BSPP 3/8, 350bar",
+      "shortDescriptionEn": "Anti-shock valve block for no-stop ploughs and subsoilers, BSPP 3/8, 350 bar",
+      "descriptionKo": "무정지(no-stop) 쟁기와 심토파쇄기의 하중 유지 및 충격 흡수를 위한 강철 밸브 블록입니다. BSPP 3/8 포트, 최대 유량 40l/min, 최대 압력 350bar이며 고압측 250bar/저압측 80bar로 봉인 설정된 릴리프 밸브가 내장됩니다. 아연 도금(CRII) 표면 처리와 NBR 시일이 표준입니다.",
+      "descriptionEn": "Steel valve block for load holding and shock absorption on no-stop ploughs and subsoilers. BSPP 3/8 ports, 40 l/min maximum flow and 350 bar maximum pressure, with factory-sealed relief settings of 250 bar (AP) and 80 bar (BP) at 5 l/min. Zinc-plated (CRII) finish with NBR seals as standard.",
+      "specs": {
+        "component_type": "valve_block",
+        "thread_type": "BSPP",
+        "size_range": "BSPP 3/8",
+        "max_flow_lpm": "40",
+        "max_pressure_bar": 350,
+        "weight_kg": "1.8"
+      },
+      "sourcePages": "255"
+    },
+    {
+      "slug": "oleoweb-ras2",
+      "modelNo": "RAS2 (BSPP / NPT)",
+      "categorySlug": "oleoweb-accessories",
+      "nameKo": "RAS2 2웨이 볼 밸브",
+      "nameEn": "RAS2 2-Way Ball Valves",
+      "shortDescriptionKo": "고압 2웨이 볼 밸브, 1/8~1-1/2, 최대 500bar",
+      "shortDescriptionEn": "High pressure 2-way ball valves, 1/8 to 1-1/2, up to 500 bar",
+      "descriptionKo": "유압 라인 차단용 고압 2웨이 볼 밸브입니다. BSPP 및 NPT 나사로 1/8~1-1/2 사이즈가 제공되며 최대 유량 15~150l/min, 최대 압력은 사이즈에 따라 350~500bar입니다. 고정 홀 옵션(P)을 선택할 수 있습니다.",
+      "descriptionEn": "High pressure 2-way ball valves for shutting off hydraulic lines. Available in BSPP and NPT threads from 1/8 to 1-1/2, with flows of 15 to 150 l/min and maximum pressures of 350 to 500 bar depending on size. Fixing holes option (P) available.",
+      "specs": {
+        "component_type": "ball_valve",
+        "ways": 2,
+        "thread_type": "BSPP / NPT",
+        "size_range": "1/8 - 1-1/2",
+        "max_flow_lpm": "15-150 by size",
+        "max_pressure_bar": 500,
+        "weight_kg": "0.5-2.5"
+      },
+      "sourcePages": "256, 259"
+    },
+    {
+      "slug": "oleoweb-ras3",
+      "modelNo": "RAS3 (BSPP / NPT)",
+      "categorySlug": "oleoweb-accessories",
+      "nameKo": "RAS3 3웨이 볼 밸브",
+      "nameEn": "RAS3 3-Way Ball Valves",
+      "shortDescriptionKo": "고압 3웨이 볼 밸브, 1/8~1-1/2, 최대 400bar",
+      "shortDescriptionEn": "High pressure 3-way ball valves, 1/8 to 1-1/2, up to 400 bar",
+      "descriptionKo": "유로 전환용 고압 3웨이(L포트) 볼 밸브입니다. BSPP 및 NPT 나사로 1/8~1-1/2 사이즈가 제공되며 최대 유량 15~150l/min, 최대 압력은 소형 400bar, 1/2 이상 350bar입니다. 고정 홀 옵션(P)을 선택할 수 있습니다.",
+      "descriptionEn": "High pressure 3-way (L-port) ball valves for diverting flow. Available in BSPP and NPT threads from 1/8 to 1-1/2, with flows of 15 to 150 l/min and maximum pressures of 400 bar (small sizes) or 350 bar (1/2 and larger). Fixing holes option (P) available.",
+      "specs": {
+        "component_type": "ball_valve",
+        "ways": 3,
+        "thread_type": "BSPP / NPT",
+        "size_range": "1/8 - 1-1/2",
+        "max_flow_lpm": "15-150 by size",
+        "max_pressure_bar": 400,
+        "weight_kg": "0.6-2.8"
+      },
+      "sourcePages": "257, 260"
+    },
+    {
+      "slug": "oleoweb-ras4",
+      "modelNo": "RAS4 (BSPP / NPT)",
+      "categorySlug": "oleoweb-accessories",
+      "nameKo": "RAS4 4웨이 볼 밸브",
+      "nameEn": "RAS4 4-Way Ball Valves",
+      "shortDescriptionKo": "고압 4웨이 볼 밸브, 1/4~1-1/2, 최대 500bar",
+      "shortDescriptionEn": "High pressure 4-way ball valves, 1/4 to 1-1/2, up to 500 bar",
+      "descriptionKo": "복동 회로 전환용 고압 4웨이 볼 밸브입니다. BSPP 및 NPT 나사로 1/4~1-1/2 사이즈가 제공되며 최대 유량 25~150l/min, 최대 압력은 사이즈에 따라 350~500bar입니다. B/C 두 가지 회로 스킴과 고정 홀(표준 P)을 지원합니다.",
+      "descriptionEn": "High pressure 4-way ball valves for switching double acting circuits. Available in BSPP and NPT threads from 1/4 to 1-1/2, with flows of 25 to 150 l/min and maximum pressures of 350 to 500 bar depending on size. Two circuit schemes (B/C) and fixing holes (standard P).",
+      "specs": {
+        "component_type": "ball_valve",
+        "ways": 4,
+        "thread_type": "BSPP / NPT",
+        "size_range": "1/4 - 1-1/2",
+        "max_flow_lpm": "25-150 by size",
+        "max_pressure_bar": 500,
+        "weight_kg": "1.8-9.2"
+      },
+      "sourcePages": "258, 261"
+    },
+    {
+      "slug": "oleoweb-ggil",
+      "modelNo": "GGIL",
+      "categorySlug": "oleoweb-accessories",
+      "nameKo": "GGIL 인라인 스위벨 조인트",
+      "nameEn": "GGIL In-Line Rotating Couplings",
+      "shortDescriptionKo": "인라인 회전 조인트, BSPP 1/4~1, 최대 400bar",
+      "shortDescriptionEn": "In-line rotating couplings, BSPP 1/4-1, up to 400 bar",
+      "descriptionKo": "호스 꼬임을 방지하는 인라인형 회전(스위벨) 조인트입니다. BSPP 1/4~1 사이즈에서 최대 유량 25~180l/min, 최대 압력 300~400bar(회전 중 100~200bar)입니다. 최대 회전 속도는 사이즈에 따라 100~212rpm입니다.",
+      "descriptionEn": "In-line rotating (swivel) couplings that prevent hose twisting. Sizes BSPP 1/4 to 1 with flows of 25 to 180 l/min and maximum pressures of 300-400 bar (100-200 bar while rotating). Maximum rotation speeds range from 100 to 212 rpm by size.",
+      "specs": {
+        "component_type": "rotating_coupling",
+        "thread_type": "BSPP",
+        "size_range": "BSPP 1/4 - 1",
+        "max_flow_lpm": "25-180 by size",
+        "max_pressure_bar": 400,
+        "weight_kg": "0.21-0.90"
+      },
+      "sourcePages": "262"
+    },
+    {
+      "slug": "oleoweb-gg90",
+      "modelNo": "GG90",
+      "categorySlug": "oleoweb-accessories",
+      "nameKo": "GG90 90° 스위벨 조인트",
+      "nameEn": "GG90 90-Degree Rotating Couplings",
+      "shortDescriptionKo": "90° 회전 조인트, BSPP 1/4~1, 최대 400bar",
+      "shortDescriptionEn": "90-degree rotating couplings, BSPP 1/4-1, up to 400 bar",
+      "descriptionKo": "직각 배관 구성이 가능한 90° 회전(스위벨) 조인트입니다. BSPP 1/4~1 사이즈에서 최대 유량 25~180l/min, 최대 압력 300~400bar(회전 중 100~200bar)입니다. 최대 회전 속도는 사이즈에 따라 100~212rpm입니다.",
+      "descriptionEn": "90-degree rotating (swivel) couplings for right-angle hose routing. Sizes BSPP 1/4 to 1 with flows of 25 to 180 l/min and maximum pressures of 300-400 bar (100-200 bar while rotating). Maximum rotation speeds range from 100 to 212 rpm by size.",
+      "specs": {
+        "component_type": "rotating_coupling",
+        "thread_type": "BSPP",
+        "size_range": "BSPP 1/4 - 1",
+        "max_flow_lpm": "25-180 by size",
+        "max_pressure_bar": 400,
+        "weight_kg": "0.31-1.25"
+      },
+      "sourcePages": "263"
+    },
+    {
+      "slug": "oleoweb-sov1400",
+      "modelNo": "SOV1400 / SOV1400FF / SOV1400MF",
+      "categorySlug": "oleoweb-accessories",
+      "nameKo": "SOV1400 인라인 압력계 차단 밸브",
+      "nameEn": "SOV1400 In-Line Pressure Gauge Shut-Off Valves",
+      "shortDescriptionKo": "인라인 게이지 아이솔레이터 콕, BSPP/BSPT 1/4, 400bar",
+      "shortDescriptionEn": "In-line gauge isolator cocks, BSPP/BSPT 1/4, 400 bar",
+      "descriptionKo": "압력계를 회로에서 분리·보호하는 인라인형 차단 밸브(게이지 아이솔레이터)입니다. BSPP 1/4 및 BSPT 1/4 조합의 3가지 포트 구성(SOV1400, FF, MF)이 있으며 최대 압력 400bar, 중량 약 0.15kg입니다.",
+      "descriptionEn": "In-line shut-off valves (gauge isolators) that isolate and protect pressure gauges from the circuit. Three port configurations (SOV1400, FF, MF) combining BSPP 1/4 and BSPT 1/4 threads, rated 400 bar, weighing about 0.15 kg.",
+      "specs": {
+        "component_type": "gauge_shutoff_valve",
+        "thread_type": "BSPP / BSPT",
+        "size_range": "1/4",
+        "max_pressure_bar": 400,
+        "weight_kg": "0.15"
+      },
+      "sourcePages": "264"
+    },
+    {
+      "slug": "oleoweb-sov1490",
+      "modelNo": "SOV1490 / SOV1490FF / SOV1490MF",
+      "categorySlug": "oleoweb-accessories",
+      "nameKo": "SOV1490 90° 압력계 차단 밸브",
+      "nameEn": "SOV1490 90-Degree Pressure Gauge Shut-Off Valves",
+      "shortDescriptionKo": "90° 게이지 아이솔레이터 콕, BSPP/BSPT 1/4, 400bar",
+      "shortDescriptionEn": "90-degree gauge isolator cocks, BSPP/BSPT 1/4, 400 bar",
+      "descriptionKo": "직각 배치용 90° 압력계 차단 밸브(게이지 아이솔레이터)입니다. BSPP 1/4 및 BSPT 1/4 조합의 3가지 포트 구성(SOV1490, FF, MF)이 있으며 최대 압력 400bar, 중량 약 0.15kg입니다.",
+      "descriptionEn": "90-degree pressure gauge shut-off valves (gauge isolators) for right-angle installation. Three port configurations (SOV1490, FF, MF) combining BSPP 1/4 and BSPT 1/4 threads, rated 400 bar, weighing about 0.15 kg.",
+      "specs": {
+        "component_type": "gauge_shutoff_valve",
+        "thread_type": "BSPP / BSPT",
+        "size_range": "1/4",
+        "max_pressure_bar": 400,
+        "weight_kg": "0.15"
+      },
+      "sourcePages": "265"
+    },
+    {
+      "slug": "oleoweb-mnp",
+      "modelNo": "MNP (BSPP / NPTF)",
+      "categorySlug": "oleoweb-accessories",
+      "nameKo": "MNP 압력 테스트 포인트 (미니프레스)",
+      "nameEn": "MNP Test Couplings for Pressure Checking",
+      "shortDescriptionKo": "M16x2 압력 테스트 커플링, 1/8~1/2, 최대 630bar",
+      "shortDescriptionEn": "M16x2 pressure test couplings, 1/8 to 1/2, up to 630 bar",
+      "descriptionKo": "운전 중 회로 압력을 측정하기 위한 M16x2 규격 압력 테스트 포인트(미니프레스)입니다. BSPP 및 NPTF 나사로 1/8~1/2 사이즈가 제공되며 최대 압력 630bar입니다. 조임 토크는 사이즈에 따라 20~80Nm입니다.",
+      "descriptionEn": "M16x2 test couplings (minipress points) for checking circuit pressure during operation. Available in BSPP and NPTF threads from 1/8 to 1/2, rated 630 bar. Tightening torques range from 20 to 80 Nm by size.",
+      "specs": {
+        "component_type": "test_coupling",
+        "thread_type": "BSPP / NPTF",
+        "size_range": "1/8 - 1/2",
+        "max_pressure_bar": 630,
+        "weight_kg": "0.07-0.13"
+      },
+      "sourcePages": "266-267"
+    }
+  ],
+  "notes": "Extracted from the OLELOWEB2.pdf text dump (assets-src/catalogs/extracted/_text/OLELOWEB2.txt); PDF visual rendering was unavailable in this environment (pdftoppm not installed), so all values come from the embedded text layer, which was complete for every family in pages 171-273. Granularity is one product per family; per-size data captured as range/text specs. Known catalogue typos observed and normalized: VARA01 flow printed as '40 (5075)' (interpreted as 40 l/min); RAS3100/RAS4100 flow printed as '150 (89.6)' (interpreted as 150 l/min ~ 39.6 USgpm); BM7 lists 320 (18.53) where the series pattern suggests 420 l/min B-dimension inconsistency - BM weights/values taken as printed. VMD90 table header mislabels the torque column as 'CILINDRATA'; value 60-65 Nm treated as tightening torque. Pages 188-189, 199-209 (cavity drawings), 208-209/268-269 (notes) and 233-234 (use/maintenance booklet) contain no product families. FCT end-stroke valves are grouped in the flow-diverters category following the catalogue's 'Hand pumps and flow diverters' chapter. Max-pressure spec values use the family maximum where models within a family differ (per-model values retained in optimal_pressure/description/text fields)."
+}
