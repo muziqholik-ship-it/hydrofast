@@ -443,7 +443,13 @@ function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (
       );
     }
 
-    case "specTable":
+    case "specTable": {
+      // Only band the header when the spans actually describe these columns —
+      // a column added later in /admin would otherwise misalign the whole head.
+      const groups =
+        block.groups && block.groups.reduce((n, g) => n + g.span, 0) === block.headers.length
+          ? block.groups
+          : null;
       return (
         <div>
           {block.title && (
@@ -456,9 +462,29 @@ function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (
           <div className="overflow-x-auto rounded-[var(--radius-card)] border border-[var(--color-border)]">
             <table className="w-full border-collapse text-sm">
               <thead>
+                {groups && (
+                  <tr style={{ backgroundColor: accent }}>
+                    {groups.map((g, i) => (
+                      <th
+                        key={i}
+                        colSpan={g.span}
+                        // Spanning cells get a divider so it reads as a band over
+                        // its columns rather than one run-on header.
+                        className={`whitespace-nowrap px-4 pt-3 pb-1 text-center text-xs font-bold uppercase tracking-wide text-white/90 ${
+                          i > 0 ? "border-l border-white/25" : ""
+                        }`}
+                      >
+                        {t(g.label)}
+                      </th>
+                    ))}
+                  </tr>
+                )}
                 <tr style={{ backgroundColor: accent }}>
                   {block.headers.map((h, i) => (
-                    <th key={i} className="px-4 py-3 text-left font-bold text-white">
+                    <th
+                      key={i}
+                      className={`whitespace-nowrap px-4 font-bold text-white ${groups ? "pb-3 pt-0 text-center" : "py-3 text-left"}`}
+                    >
                       {t(h)}
                     </th>
                   ))}
@@ -473,9 +499,9 @@ function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (
                     {row.map((cell, ci) => (
                       <td
                         key={ci}
-                        className={`border-t border-[var(--color-border)] px-4 py-3 ${
+                        className={`whitespace-nowrap border-t border-[var(--color-border)] px-4 py-3 ${
                           ci === 0 ? "font-semibold" : "text-[var(--color-ink-soft)]"
-                        }`}
+                        } ${groups && ci > 0 ? "text-center" : ""}`}
                       >
                         {t(cell)}
                       </td>
@@ -487,6 +513,7 @@ function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (
           </div>
         </div>
       );
+    }
 
     case "compare":
       return (

@@ -36,7 +36,19 @@ export type ContentBlock =
       reverse?: boolean;
     }
   | { kind: "gallery"; title?: Loc; subtitle?: Loc; columns?: 2 | 3 | 4; images: ContentImage[] }
-  | { kind: "specTable"; title?: Loc; headers: Loc[]; rows: Loc[][] }
+  /**
+   * `groups` adds a banded header row above `headers`, for tables whose columns
+   * fall into families (a pump's 유압 / 수압 / spray figures). Spans must total
+   * `headers.length`; the renderer drops back to a plain single header row if
+   * they don't, so a column added in /admin degrades instead of breaking.
+   */
+  | {
+      kind: "specTable";
+      title?: Loc;
+      groups?: { label?: Loc; span: number }[];
+      headers: Loc[];
+      rows: Loc[][];
+    }
   | {
       kind: "compare";
       title?: Loc;
@@ -624,19 +636,68 @@ export const BUSINESS_AREAS: BusinessAreaContent[] = [
           },
           {
             kind: "specTable",
-            title: { ko: "사양 구분", en: "Specifications" },
+            title: {
+              ko: "DYNASET HIGH PRESSURE WATER PUMP · 마력별 펌프 사양",
+              en: "DYNASET high-pressure water pump · specifications by motor rating",
+            },
+            // 모델명/모터용량 stand outside the bands, so the first group is a
+            // blank spacer over those two columns.
+            groups: [
+              { span: 2 },
+              { label: { ko: "유압", en: "Hydraulic" }, span: 3 },
+              { label: { ko: "수압", en: "Water" }, span: 2 },
+              { label: { ko: "온도제어 (0.08L/min)", en: "Temperature control (0.08L/min)" }, span: 2 },
+              { label: { ko: "방제분사 (0.12L/min)", en: "Treatment spray (0.12L/min)" }, span: 2 },
+            ],
             headers: [
-              { ko: "사양 구분", en: "Spec" },
-              { ko: "3HP" },
-              { ko: "15HP" },
+              { ko: "모델명", en: "Model" },
+              { ko: "모터용량", en: "Motor" },
+              { ko: "압력", en: "Pressure" },
+              { ko: "유량", en: "Flow" },
+              { ko: "용량(cc/rev)", en: "Displacement (cc/rev)" },
+              { ko: "토출압력", en: "Discharge pressure" },
+              { ko: "토출 유량", en: "Discharge flow" },
+              { ko: "노즐개수", en: "Nozzles" },
+              { ko: "평", en: "Pyeong" },
+              { ko: "노즐개수", en: "Nozzles" },
+              { ko: "평", en: "Pyeong" },
             ],
             rows: [
-              [{ ko: "사이즈 (cm)", en: "Size (cm)" }, { ko: "755 × 655 × 1192" }, { ko: "1,290 × 1,196 × 1,550" }],
-              [{ ko: "펌프 전원 & 마력", en: "Power & HP" }, { ko: "220V 단상 · 3HP (2.2kW)", en: "220V 1ph · 3HP (2.2kW)" }, { ko: "380V 3상 · 15HP (11kW)", en: "380V 3ph · 15HP (11kW)" }],
-              [{ ko: "펌프 토출 압력", en: "Discharge pressure" }, { ko: "MAX 90 bar" }, { ko: "MAX 90 bar" }],
-              [{ ko: "펌프 토출 직경", en: "Discharge dia." }, { ko: "약 8mm", en: "approx. 8mm" }, { ko: '1/2" (12.7mm)' }],
-              [{ ko: "노즐 수 (분사량 0.12L)", en: "Nozzles (0.12L)" }, { ko: "60개", en: "60" }, { ko: "1,700개", en: "1,700" }],
-              [{ ko: "노즐 수 (분사량 0.08L)", en: "Nozzles (0.08L)" }, { ko: "90개", en: "90" }, { ko: "2,100개", en: "2,100" }],
+              [
+                { ko: "HPW220/50-70 (NEW)" }, { ko: "15kW (20HP)" },
+                { ko: "110" }, { ko: "70" }, { ko: "40" },
+                { ko: "110" }, { ko: "50" },
+                { ko: "625" }, { ko: "625" },
+                { ko: "417" }, { ko: "625" },
+              ],
+              [
+                { ko: "HPW250/30-40" }, { ko: "9.5kW (15HP)" },
+                { ko: "100" }, { ko: "55" }, { ko: "31.5" },
+                { ko: "100" }, { ko: "39" },
+                { ko: "488" }, { ko: "488" },
+                { ko: "325" }, { ko: "488" },
+              ],
+              [
+                { ko: "HPW250/30-40 (NEW)" }, { ko: "7.5kW (10HP)" },
+                { ko: "100" }, { ko: "38.5" }, { ko: "22" },
+                { ko: "100" }, { ko: "28.5" },
+                { ko: "356" }, { ko: "356" },
+                { ko: "238" }, { ko: "356" },
+              ],
+              [
+                { ko: "HPW160/18-18 (NEW)" }, { ko: "4.2kW (5HP)" },
+                { ko: "130" }, { ko: "15" }, { ko: "8.5" },
+                { ko: "100" }, { ko: "15" },
+                { ko: "188" }, { ko: "188" },
+                { ko: "125" }, { ko: "188" },
+              ],
+              [
+                { ko: "HPW160/18-18" }, { ko: "2.2kW (3HP)" },
+                { ko: "100" }, { ko: "10.5" }, { ko: "6" },
+                { ko: "70" }, { ko: "10" },
+                { ko: "125" }, { ko: "125" },
+                { ko: "83" }, { ko: "125" },
+              ],
             ],
           },
           {
