@@ -243,12 +243,86 @@ function UprightRow({
   );
 }
 
-const BAND_COLUMNS = ["columns-1", "columns-1", "columns-1 sm:columns-2", "columns-2 lg:columns-3", "columns-2 lg:columns-4"];
+/** Ceiling on panorama height to prevent extreme aspect ratios from towering. */
+const PANORAMA_MAX_H = 420;
+
+interface RowLayout {
+  images: ContentImage[];
+  height: number;
+  isPanorama: boolean;
+}
 
 /**
- * Landscape images in a masonry band: every one runs at its natural height, so
- * the mixed ratios settle into balanced columns instead of a ragged grid, and
- * a panorama breaks out across the whole band rather than shrinking to a sliver.
+ * Pack landscape images into justified rows. Each row's height is solved so
+ * all images on it resolve to the same height, proportional to their aspect
+ * ratios. Panoramas (aspect >= PANORAMA_MIN) break out to their own centered
+ * row. Returns an array of row descriptors.
+ */
+function placeRows(images: ContentImage[], sizes: Record<string, ImageSize>, hint?: number): RowLayout[] {
+  const IDEAL_H = 300;
+  const MIN_H = 150;
+  const MAX_H = 400;
+
+  const marked = images.map((im) => {
+    const s = sizes[im.src];
+    const aspect = s?.aspect ?? 1.6;
+    const isPanorama = aspect >= PANORAMA_MIN;
+    return { image: im, aspect, isPanorama };
+  });
+
+  const rows: RowLayout[] = [];
+  let i = 0;
+
+  while (i < marked.length) {
+    const panos = marked.slice(i).filter((m) => m.isPanorama);
+    if (panos.length > 0) {
+      rows.push({
+        images: [panos[0].image],
+        height: Math.min(panos[0].aspect * 160, PANORAMA_MAX_H),
+        isPanorama: true,
+      });
+      i = marked.findIndex((m, idx) => idx >= i && m.image === panos[0].image) + 1;
+      continue;
+    }
+
+    let row: typeof marked = [];
+    let sumAspect = 0;
+    let rowStart = i;
+
+    while (i < marked.length && !marked[i].isPanorama) {
+      const item = marked[i];
+      sumAspect += item.aspect;
+      row.push(item);
+      const w = 1200;
+      const h = w / sumAspect;
+      if (h < MIN_H && row.length > 1) {
+        row.pop();
+        sumAspect -= item.aspect;
+        break;
+      }
+      if (h > MAX_H) break;
+      i++;
+    }
+
+    if (row.length === 0 && i < marked.length) {
+      row.push(marked[i]);
+      sumAspect = marked[i].aspect;
+      i++;
+    }
+
+    const w = 1200;
+    const h = Math.max(MIN_H, Math.min(MAX_H, w / sumAspect));
+    rows.push({ images: row.map((m) => m.image), height: h, isPanorama: false });
+  }
+
+  return rows;
+}
+
+/**
+ * Landscape images in justified rows: images on each row are resized so they
+ * all reach the same height, proportional to their aspect ratios. Panoramas
+ * break out to their own centred line. Every image is uncropped and never
+ * upscaled.
  */
 function ImageBand({
   images,
@@ -261,17 +335,42 @@ function ImageBand({
   sizes: Record<string, ImageSize>;
   columns?: number;
 }) {
-  const n = Math.min(columns ?? images.length, images.length, 4);
+  const rows = useMemo(() => placeRows(images, sizes, columns), [images, sizes, columns]);
+
+  if (images.length === 1) {
+    return (
+      <div className="mx-auto max-w-4xl">
+        <Img key={0} image={images[0]} t={t} imgClassName="h-auto w-full" />
+      </div>
+    );
+  }
+
   return (
-    <div className={`gap-3 ${BAND_COLUMNS[Math.max(n, 1)]} ${images.length === 1 ? "mx-auto max-w-4xl" : ""}`}>
-      {images.map((im, i) => (
-        <Img
-          key={i}
-          image={im}
-          t={t}
-          className={`mb-3 break-inside-avoid ${(sizes[im.src]?.aspect ?? 0) >= PANORAMA_MIN ? "[column-span:all]" : ""}`}
-          imgClassName="h-auto w-full"
-        />
+    <div className="flex flex-col gap-3">
+      {rows.map((row, ri) => (
+        <div
+          key={ri}
+          className={row.isPanorama ? "flex justify-center" : "flex gap-3"}
+          style={row.isPanorama ? {} : { height: `${row.height}px` }}
+        >
+          {row.images.map((im, ii) => {
+            const s = sizes[im.src];
+            const aspect = s?.aspect ?? 1.6;
+            return (
+              <Img
+                key={ii}
+                image={im}
+                t={t}
+                style={
+                  row.isPanorama
+                    ? { width: "auto", height: `${row.height}px`, maxWidth: "100%" }
+                    : { flexGrow: aspect, flexBasis: 0, aspectRatio: aspect }
+                }
+                imgClassName={row.isPanorama ? "h-full w-auto object-contain" : "h-full w-full object-cover"}
+              />
+            );
+          })}
+        </div>
       ))}
     </div>
   );
