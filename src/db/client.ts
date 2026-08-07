@@ -19,6 +19,15 @@ function getDb(): DrizzleDb {
 
   // `prepare: false` is required against Supabase's transaction-mode pooler (pgbouncer),
   // which does not support prepared statements.
+  //
+  // Resist the urge to tune the pool here. Build-time prerender stalls look like
+  // connection pressure (postgres.js opens up to `max: 10` per worker process), but
+  // narrowing the pool is actively unsafe against this pooler: `max: 3` plus
+  // `idle_timeout` was measured returning one query's rows to a *different* caller —
+  // getAllAreas() came back with 18 rows from a 5-row table — while other queries hung
+  // until the prerender budget expired. Idle reaping evidently races queries queued
+  // behind a narrow pool. Fix query pile-ups at the call site instead (see
+  // src/lib/areas.ts), not by reshaping the pool.
   const client = postgres(connectionString, { prepare: false });
   cached = drizzle(client, { schema });
   return cached;
