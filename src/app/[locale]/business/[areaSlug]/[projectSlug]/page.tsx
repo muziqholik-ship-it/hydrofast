@@ -5,7 +5,6 @@ import { Link } from "@/i18n/navigation";
 import { getAreaContent } from "@/lib/areas";
 import { getCustomProject, getAreaProjects } from "@/content/custom-projects";
 import { ContentSections } from "@/components/marketing/business-content";
-import { measureSectionImages } from "@/lib/content-images";
 import { JsonLd } from "@/components/json-ld";
 import { pageMetadata, localeUrl } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
@@ -45,11 +44,7 @@ export default async function CustomProjectPage({
   if (!project) notFound();
 
   const locale = (await getLocale()) as Locale;
-  // Measured server-side so each image band is justified on first paint.
-  const [area, imageSizes] = await Promise.all([
-    getAreaContent(areaSlug),
-    measureSectionImages(project.sections),
-  ]);
+  const area = await getAreaContent(areaSlug);
   if (!area) notFound();
 
   const L = (l: { ko: string; en?: string }) => (locale === "ko" ? l.ko : l.en ?? l.ko);
@@ -114,12 +109,7 @@ export default async function CustomProjectPage({
       </section>
 
       {/* Rich content */}
-      <ContentSections
-        sections={project.sections}
-        accent={area.accent}
-        locale={locale}
-        imageSizes={imageSizes}
-      />
+      <ContentSections sections={project.sections} accent={area.accent} locale={locale} />
 
       {/* Other custom projects in this area */}
       {siblings.length > 0 && (
