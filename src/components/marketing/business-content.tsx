@@ -11,7 +11,7 @@ import type {
   Loc,
 } from "@/content/business-areas";
 import type { Locale } from "@/i18n/routing";
-import { contentImageUrl } from "@/lib/image-url";
+import { contentImageUrl, type ContentImageSize, type ContentImageSizes } from "@/lib/image-url";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -29,8 +29,18 @@ function useT(locale: Locale) {
 }
 
 /* eslint-disable @next/next/no-img-element */
-export function BusinessContent({ area, locale }: { area: BusinessAreaContent; locale: Locale }) {
-  return <ContentSections sections={area.sections} accent={area.accent} locale={locale} />;
+export function BusinessContent({
+  area,
+  locale,
+  imageSizes,
+}: {
+  area: BusinessAreaContent;
+  locale: Locale;
+  imageSizes?: ContentImageSizes;
+}) {
+  return (
+    <ContentSections sections={area.sections} accent={area.accent} locale={locale} imageSizes={imageSizes} />
+  );
 }
 
 /** Standalone section renderer — also used by pages (e.g. custom-project details) that aren't a full business area. */
@@ -38,17 +48,27 @@ export function ContentSections({
   sections,
   accent,
   locale,
+  imageSizes,
 }: {
   sections: ContentSection[];
   accent: string;
   locale: Locale;
+  /** Server-measured intrinsic sizes, so blocks lay out correctly on first paint. */
+  imageSizes?: ContentImageSizes;
 }) {
   const t = useT(locale);
 
   return (
     <div className="flex flex-col">
       {sections.map((section, i) => (
-        <Section key={i} section={section} accent={accent} t={t} shaded={i % 2 === 1} />
+        <Section
+          key={i}
+          section={section}
+          accent={accent}
+          t={t}
+          shaded={i % 2 === 1}
+          imageSizes={imageSizes}
+        />
       ))}
     </div>
   );
@@ -59,11 +79,13 @@ function Section({
   accent,
   t,
   shaded,
+  imageSizes,
 }: {
   section: ContentSection;
   accent: string;
   t: (l?: Loc) => string;
   shaded: boolean;
+  imageSizes?: ContentImageSizes;
 }) {
   return (
     <section className={shaded ? "bg-[var(--color-surface-alt)]" : ""}>
@@ -100,7 +122,7 @@ function Section({
         >
           {section.blocks.map((block, i) => (
             <motion.div key={i} variants={item}>
-              <Block block={block} accent={accent} t={t} />
+              <Block block={block} accent={accent} t={t} imageSizes={imageSizes} />
             </motion.div>
           ))}
         </motion.div>
@@ -109,24 +131,64 @@ function Section({
   );
 }
 
-/* ── Uncropped image layout ────────────────────────────────────────────────
+/* ── Justified, uncropped image layout ─────────────────────────────────────
  *
- * Content ratios here run from a 6.4:1 product strip to a 1:2.3 rebar shot, so
- * no fixed frame can hold them: `object-cover` amputated the ends of the wide
- * ones and the top and bottom of the tall ones. Nothing below crops. Instead
- * each figure hugs its photo, and the *layout* adapts to the photo's shape —
- * uprights stand beside the copy, landscapes flow in a masonry band under it,
- * and panoramas take the full width of that band.
+ * Content ratios here run from a 6.4:1 product strip to a 1:2.3 rebar shot, and
+ * resolutions from a 126px brochure crop to a 1920px photo, so no fixed frame
+ * can hold them: `object-cover` amputates the ends of the wide ones, and giving
+ * every image its natural height leaves ragged rows of mismatched thumbnails.
+ *
+ * Nothing below crops and nothing is forced to a common shape. Instead each
+ * *row* is justified: figures on one line share a single height, and their
+ * widths come out proportional to their own aspect ratios. Wide photos get more
+ * width, tall ones less, edges line up top and bottom. The row height itself is
+ * derived per block from how many images it holds, the `columns` the author
+ * asked for, and — critically — how many real pixels the smallest source has,
+ * so a group of tiny cut-outs settles at its own modest scale instead of being
+ * blown up to match a group of full-bleed photos elsewhere on the page.
  */
 
-/** Under this ratio an image reads as upright and belongs beside the copy. */
+/** Under this ratio an image reads as upright and can stand beside the copy. */
 const UPRIGHT_MAX = 1.15;
-/** At or over this an image is a panorama; it spans every column of its band. */
-const PANORAMA_MIN = 2.2;
-/** Ceiling on an upright image, so a 1:2.3 photo can't take over the section. */
-const UPRIGHT_CAP = "clamp(220px, 48vh, 520px)";
+/**
+ * At or over this an image is a panorama and takes a line of its own. Set above
+ * the merely-wide 2:1 photos — those still sit happily in a row beside a 4:3,
+ * and breaking every one of them out would leave the page a stack of bands.
+ */
+const PANORAMA_MIN = 2.6;
+/** Assumed shape for an image whose size isn't known yet (uploaded assets). */
+const FALLBACK_ASPECT = 1.5;
 
-type ImageSize = { aspect: number; height: number };
+/** `gap-3`, in px — the row maths has to agree with the class on the container. */
+const GAP = 12;
+/** Content width of a section at the `max-w-[1400px] px-6` container. */
+const FULL_W = 1352;
+/** One half of the two-column feature split (`lg:grid-cols-2 gap-8`). */
+const SIDE_W = 660;
+
+/** Row height a band aims for before the per-block adjustments below. */
+const IDEAL_H = { full: 300, side: 330 };
+/** Hard bounds, so one image can neither vanish nor take over the viewport. */
+const MIN_H = 150;
+const MAX_H = { full: 400, side: 440 };
+/** How far past the computed height a short final row may grow before it caps. */
+const GROW = 1.15;
+/** Slightly under-declaring the basis lets flex pack the intended row count. */
+const BASIS = 0.9;
+/** Upscaling past this much of a source's own pixels reads as blur. */
+const UPSCALE = 1.7;
+/** …but a group of genuinely tiny cut-outs still needs a usable minimum. */
+const UPSCALE_FLOOR = 200;
+/** Panoramas sit on their own line, so they get their own upscale allowance. */
+const PANO_UPSCALE = 1.4;
+/**
+ * …and their own height ceiling. Left to the full section width, the shallowest
+ * panorama (a 2.6:1 photo) would stand half again as tall as the justified row
+ * above it and read as the point of the section, which it rarely is.
+ */
+const PANO_MAX_H = 420;
+
+type ImageSize = ContentImageSize;
 
 /**
  * Intrinsic sizes for a block's images, by `src`.
@@ -134,8 +196,9 @@ type ImageSize = { aspect: number; height: number };
  * Measured off a detached `Image()` at low fetch priority rather than the
  * rendered `<img>`: the layout has to know the shape *before* a lazy image
  * scrolls into view, or the block would visibly re-flow under the reader. The
- * warm cache means the real `<img>` then paints instantly. Until a size lands
- * the image is treated as landscape, which is the uncropped fallback anyway.
+ * warm cache means the real `<img>` then paints instantly. Brochure assets are
+ * already measured server-side and skip this entirely — only uploaded images,
+ * which live in Storage and can't be `stat`ed at render time, land here.
  */
 function useImageSizes(srcs: string[]): Record<string, ImageSize> {
   const [sizes, setSizes] = useState<Record<string, ImageSize>>({});
@@ -204,75 +267,132 @@ function Img({
   );
 }
 
-/**
- * Upright images standing side by side. Each figure is given the photo's own
- * ratio and a height of `min(cap, natural)` — so it is exactly the shape of its
- * contents (no letterbox), never crops, and never upscales a small source past
- * its real pixels.
- */
-function UprightRow({
-  images,
-  t,
-  sizes,
-}: {
-  images: ContentImage[];
-  t: (l?: Loc) => string;
-  sizes: Record<string, ImageSize>;
-}) {
-  return (
-    <div className="flex flex-wrap items-center justify-center gap-3">
-      {images.map((im, i) => {
-        const size = sizes[im.src];
-        return (
-          <Img
-            key={i}
-            image={im}
-            t={t}
-            className="max-w-full"
-            style={
-              size ? { height: `min(${UPRIGHT_CAP}, ${size.height}px)`, aspectRatio: size.aspect } : undefined
-            }
-            // `contain` inside a frame that already has the image's ratio is a
-            // no-op; it only engages if `max-w-full` clamps a very wide frame on
-            // a narrow screen, where a hairline letterbox beats a distorted photo.
-            imgClassName="h-full w-full object-contain"
-          />
-        );
-      })}
-    </div>
-  );
+type Placed = {
+  image: ContentImage;
+  aspect: number;
+  /** Intrinsic height in px, when known — the upscale guard needs real pixels. */
+  height?: number;
+  panorama: boolean;
+};
+
+function place(images: ContentImage[], sizes: Record<string, ImageSize>): Placed[] {
+  return images.map((image) => {
+    const size = sizes[image.src];
+    const aspect = size?.aspect ?? FALLBACK_ASPECT;
+    return { image, aspect, height: size?.height, panorama: aspect >= PANORAMA_MIN };
+  });
 }
 
-const BAND_COLUMNS = ["columns-1", "columns-1", "columns-1 sm:columns-2", "columns-2 lg:columns-3", "columns-2 lg:columns-4"];
+/**
+ * The row height a band of images should settle at.
+ *
+ * Picks the number of rows that lands closest to the ideal height for the
+ * container, then solves for the height that justifies exactly that many rows —
+ * so three 16:9 photos fill one line, twelve 3:2 thumbnails fall into three
+ * clean rows of four, and a lone portrait doesn't stretch to the viewport.
+ * `columns` (set by the content author on gallery blocks) steers the ideal, and
+ * the source resolution caps the result.
+ */
+function rowHeight(flow: Placed[], columns: number | undefined, side: boolean) {
+  const n = flow.length;
+  if (n === 0) return { target: 0, cap: 0 };
+
+  const width = side ? SIDE_W : FULL_W;
+  const sum = flow.reduce((acc, p) => acc + p.aspect, 0);
+  // A four-column hint on a two-image gallery would ask for quarter-width
+  // figures with nothing to fill the rest of the line.
+  const cols = columns ? Math.min(columns, n) : undefined;
+  const ideal = cols
+    ? (width - GAP * (cols - 1)) / cols / (sum / n)
+    : IDEAL_H[side ? "side" : "full"];
+
+  const rows = Math.max(1, Math.round((sum * ideal) / width));
+  // width * rows of usable line length, less one gap for every image that isn't
+  // the first on its row.
+  let target = (width * rows - GAP * (n - rows)) / sum;
+  target = Math.min(Math.max(target, MIN_H), MAX_H[side ? "side" : "full"]);
+
+  const measured = flow.map((p) => p.height).filter((h): h is number => h !== undefined);
+  if (measured.length > 0) {
+    target = Math.min(target, Math.max(UPSCALE_FLOOR, Math.min(...measured) * UPSCALE));
+  }
+  return { target, cap: target * GROW };
+}
 
 /**
- * Landscape images in a masonry band: every one runs at its natural height, so
- * the mixed ratios settle into balanced columns instead of a ragged grid, and
- * a panorama breaks out across the whole band rather than shrinking to a sliver.
+ * A band of images laid out in justified rows.
+ *
+ * Every figure carries its own `aspect-ratio` and a `flex-grow` equal to that
+ * ratio, so flex hands each one width in proportion to how wide it is — which
+ * makes every figure on a line resolve to the same height without a single one
+ * being cropped or stretched. `flex-shrink: 0` plus a `max-width` of `100%`
+ * keeps a wide image from squeezing its neighbour on a phone: it drops to a line
+ * of its own instead. The same `max-width` caps how far a short trailing row can
+ * grow, so two leftovers don't balloon to twice the height of the rows above.
  */
 function ImageBand({
   images,
   t,
   sizes,
   columns,
+  side = false,
 }: {
   images: ContentImage[];
   t: (l?: Loc) => string;
   sizes: Record<string, ImageSize>;
   columns?: number;
+  side?: boolean;
 }) {
-  const n = Math.min(columns ?? images.length, images.length, 4);
+  const placed = place(images, sizes);
+  const { target, cap } = rowHeight(
+    placed.filter((p) => !p.panorama),
+    columns,
+    side,
+  );
+
   return (
-    <div className={`gap-3 ${BAND_COLUMNS[Math.max(n, 1)]} ${images.length === 1 ? "mx-auto max-w-4xl" : ""}`}>
-      {images.map((im, i) => (
-        <Img
-          key={i}
-          image={im}
-          t={t}
-          className={`mb-3 break-inside-avoid ${(sizes[im.src]?.aspect ?? 0) >= PANORAMA_MIN ? "[column-span:all]" : ""}`}
-          imgClassName="h-auto w-full"
-        />
-      ))}
+    <div className="flex flex-wrap items-center justify-center gap-3">
+      {placed.map((p, i) =>
+        p.panorama ? (
+          // A 6:1 strip sharing a row would shrink its neighbours to stamps, so
+          // it gets a line to itself — centred and held to whichever comes
+          // first: the section width, its own pixels, or the height ceiling.
+          <div key={i} className="w-full basis-full">
+            <Img
+              image={p.image}
+              t={t}
+              className="mx-auto"
+              style={{
+                aspectRatio: p.aspect,
+                maxWidth: `min(100%, ${Math.round(
+                  Math.min(
+                    p.aspect * PANO_MAX_H,
+                    p.height ? p.aspect * p.height * PANO_UPSCALE : Infinity,
+                  ),
+                )}px)`,
+              }}
+              imgClassName="h-full w-full object-contain"
+            />
+          </div>
+        ) : (
+          <Img
+            key={i}
+            image={p.image}
+            t={t}
+            style={{
+              flexGrow: p.aspect,
+              flexShrink: 0,
+              flexBasis: `${Math.round(p.aspect * target * BASIS)}px`,
+              aspectRatio: p.aspect,
+              maxWidth: `min(100%, ${Math.round(p.aspect * cap)}px)`,
+            }}
+            // `contain` inside a frame that already has the image's ratio is a
+            // no-op; it only engages when `max-width: 100%` clamps a wide frame
+            // on a narrow screen, where a hairline letterbox beats distortion.
+            imgClassName="h-full w-full object-contain"
+          />
+        ),
+      )}
     </div>
   );
 }
@@ -284,17 +404,36 @@ function blockImageSrcs(block: ContentBlock): string[] {
   return [];
 }
 
-function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (l?: Loc) => string }) {
-  const srcs = useMemo(() => blockImageSrcs(block), [block]);
-  const sizes = useImageSizes(srcs);
+function Block({
+  block,
+  accent,
+  t,
+  imageSizes,
+}: {
+  block: ContentBlock;
+  accent: string;
+  t: (l?: Loc) => string;
+  imageSizes?: ContentImageSizes;
+}) {
+  // Only chase what the server couldn't measure — brochure assets arrive sized.
+  const unmeasured = useMemo(
+    () => blockImageSrcs(block).filter((src) => !imageSizes?.[src]),
+    [block, imageSizes],
+  );
+  const probed = useImageSizes(unmeasured);
+  const sizes = useMemo(() => ({ ...imageSizes, ...probed }), [imageSizes, probed]);
 
   switch (block.kind) {
     case "feature": {
       const images = block.images ?? [];
-      // Unmeasured images default to the band, which is uncropped either way.
-      const upright = images.filter((im) => (sizes[im.src]?.aspect ?? Infinity) < UPRIGHT_MAX);
-      const band = images.filter((im) => (sizes[im.src]?.aspect ?? Infinity) >= UPRIGHT_MAX);
-      const split = upright.length > 0;
+      const placed = place(images, sizes);
+      const flow = placed.filter((p) => !p.panorama);
+      // A pair of uprights reads well flanking the copy. Anything else — a
+      // landscape, a third image, a panorama on its own — wants the full width
+      // of the band below, where the copy isn't competing for the same line.
+      const split = flow.length > 0 && flow.length <= 2 && flow.every((p) => p.aspect < UPRIGHT_MAX);
+      const beside = split ? flow.map((p) => p.image) : [];
+      const band = split ? placed.filter((p) => p.panorama).map((p) => p.image) : images;
       return (
         <div className="flex flex-col gap-8">
           <div className={`grid gap-8 ${split ? "lg:grid-cols-2 lg:items-center" : ""}`}>
@@ -327,12 +466,12 @@ function Block({ block, accent, t }: { block: ContentBlock; accent: string; t: (
             </div>
             {split && (
               <div className={block.reverse ? "lg:order-1" : ""}>
-                <UprightRow images={upright} t={t} sizes={sizes} />
+                <ImageBand images={beside} t={t} sizes={sizes} side />
               </div>
             )}
           </div>
-          {/* Landscapes drop below the copy, where they get the full column width
-              instead of being squeezed into the half beside it. */}
+          {/* Whatever didn't stand beside the copy drops below it, where it gets
+              the full section width instead of the half column. */}
           {band.length > 0 && <ImageBand images={band} t={t} sizes={sizes} />}
         </div>
       );

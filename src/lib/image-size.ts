@@ -14,13 +14,15 @@ import sharp from "sharp";
  * `sharp().metadata()` only reads the header, and results are memoised for the
  * life of the process — these files are immutable build assets.
  */
-const cache = new Map<string, number | undefined>();
+const cache = new Map<string, { width: number; height: number } | undefined>();
 
-export async function localImageAspect(src: string | null | undefined): Promise<number | undefined> {
+export async function localImageSize(
+  src: string | null | undefined,
+): Promise<{ width: number; height: number } | undefined> {
   if (!src || !src.startsWith("/") || src.startsWith("//")) return undefined;
   if (cache.has(src)) return cache.get(src);
 
-  let aspect: number | undefined;
+  let size: { width: number; height: number } | undefined;
   try {
     // Reject anything that escapes public/ before touching the filesystem.
     const file = path.join(process.cwd(), "public", path.normalize(src));
@@ -28,11 +30,16 @@ export async function localImageAspect(src: string | null | undefined): Promise<
     if (!file.startsWith(root + path.sep)) throw new Error("outside public/");
     await stat(file);
     const { width, height } = await sharp(file).metadata();
-    if (width && height) aspect = width / height;
+    if (width && height) size = { width, height };
   } catch {
-    aspect = undefined;
+    size = undefined;
   }
 
-  cache.set(src, aspect);
-  return aspect;
+  cache.set(src, size);
+  return size;
+}
+
+export async function localImageAspect(src: string | null | undefined): Promise<number | undefined> {
+  const size = await localImageSize(src);
+  return size ? size.width / size.height : undefined;
 }

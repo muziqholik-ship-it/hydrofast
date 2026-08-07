@@ -3,6 +3,15 @@
 // components can compute preview/display URLs without dragging server-only
 // code into the client bundle.
 
+/**
+ * Intrinsic shape of a content image. `height` rides along with `aspect`
+ * because the layout needs to know not just the proportions but how many real
+ * pixels there are — a 126px-tall brochure crop must not be blown up to the
+ * same row height as a 1600px photo standing next to it.
+ */
+export type ContentImageSize = { aspect: number; height: number };
+export type ContentImageSizes = Record<string, ContentImageSize>;
+
 export type ImageBucket =
   | "product-images"
   | "case-study-images"

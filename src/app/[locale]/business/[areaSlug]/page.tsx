@@ -7,6 +7,7 @@ import { BusinessContent } from "@/components/marketing/business-content";
 import { JsonLd } from "@/components/json-ld";
 import { pageMetadata, localeUrl } from "@/lib/seo";
 import { localImageAspect } from "@/lib/image-size";
+import { measureSectionImages } from "@/lib/content-images";
 import type { Locale } from "@/i18n/routing";
 
 // Content is CMS-managed (business_areas.content_json), so render per-request
@@ -47,9 +48,13 @@ export default async function BusinessAreaPage({
   const L = (l: { ko: string; en?: string }) => (locale === "ko" ? l.ko : l.en ?? l.ko);
   const others = all.filter((a) => a.slug !== area.slug);
 
-  // Resolved server-side so the hero picks its layout before first paint.
-  // Unknown (uploaded) images fall back to the landscape backdrop treatment.
-  const heroAspect = await localImageAspect(area.heroImage);
+  // Resolved server-side so the hero and every content band pick their layout
+  // before first paint. Unknown (uploaded) images fall back to the landscape
+  // backdrop treatment, and the client re-measures them for the content bands.
+  const [heroAspect, imageSizes] = await Promise.all([
+    localImageAspect(area.heroImage),
+    measureSectionImages(area.sections),
+  ]);
   const uprightHero = Boolean(area.heroImage) && heroAspect !== undefined && heroAspect < 1.15;
 
   const breadcrumbJsonLd = {
@@ -100,7 +105,7 @@ export default async function BusinessAreaPage({
       </section>
 
       {/* Rich content */}
-      <BusinessContent area={area} locale={locale} />
+      <BusinessContent area={area} locale={locale} imageSizes={imageSizes} />
 
       {/* Cross-links to other areas */}
       {others.length > 0 && (
