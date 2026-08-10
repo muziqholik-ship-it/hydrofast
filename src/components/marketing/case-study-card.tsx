@@ -9,27 +9,22 @@ export function CaseStudyCard({
   caseStudy,
   title,
   description,
-  imageCount = 0,
+  imagePath = caseStudy.imagePath,
   href,
 }: {
   caseStudy: CaseStudy;
   title: string;
   description: string | null;
-  /** Total gallery size; a "+N" badge appears when the project has more photos than the cover. */
-  imageCount?: number;
+  /** Which photo of the project to show — one card per gallery image. Defaults to the cover. */
+  imagePath?: string | null;
   /** When set the whole card becomes a link (e.g. "/cases#case-<id>" from the homepage). */
   href?: string;
 }) {
   const aspect = caseStudy.aspectRatio.replace("-", "/");
-  const imageUrl = caseStudy.imagePath ? publicImageUrl("case-study-images", caseStudy.imagePath) : null;
+  const imageUrl = publicImageUrl("case-study-images", imagePath);
 
   const inner = (
     <div className="relative w-full overflow-hidden bg-[var(--color-surface-alt)]" style={{ aspectRatio: aspect }}>
-      {imageCount > 1 && (
-        <span className="absolute right-2 top-2 z-10 rounded-[var(--radius-card)] bg-black/60 px-1.5 py-0.5 text-xs font-semibold text-white">
-          +{imageCount - 1}
-        </span>
-      )}
       {imageUrl && (
         /* The wrapper is the scrub-parallax target (see CaseCardParallax) so
            the CSS hover zoom on the <img> composes instead of being clobbered

@@ -4,7 +4,7 @@ import { caseStudies, certifications, clientLogos, manufacturers } from "@/db/sc
 import type { CaseStudy } from "@/db/schema";
 import { asc, desc, eq } from "drizzle-orm";
 import { getNumericSettings } from "@/lib/settings";
-import { getCaseStudyImageCounts } from "@/lib/case-study-images";
+import { caseStudyPhotoPaths, getCaseStudyGalleries } from "@/lib/case-study-images";
 import { getHeroSlots, getVideoSlot } from "@/lib/videos";
 import { HomeHero } from "@/components/marketing/home-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
@@ -82,7 +82,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   ]);
 
   const highlightCases = dedupeCaseStudies(recentCases, 6);
-  const caseImageCounts = await getCaseStudyImageCounts(highlightCases.map((c) => c.id));
+  const caseGalleries = await getCaseStudyGalleries(highlightCases.map((c) => c.id));
   const yearsInBusiness = new Date().getFullYear() - stats.founded_year;
   // Patents stay on /about; the homepage band shows certifications/qualifications only.
   const homepageCerts = certRows.filter((c) => c.category !== "patent");
@@ -148,17 +148,26 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           {/* Rise + image-settle is scrub-linked per card (report §3), so no
               batch reveal here — the parallax IS the entrance. */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {highlightCases.map((cs) => (
-              <CaseCardParallax key={cs.id}>
-                <CaseStudyCard
-                  caseStudy={cs}
-                  title={locale === "ko" ? cs.titleKo : cs.titleEn ?? cs.titleKo}
-                  description={locale === "ko" ? cs.descriptionKo : cs.descriptionEn ?? cs.descriptionKo}
-                  imageCount={caseImageCounts[cs.id] ?? 0}
-                  href={`/cases#case-${cs.id}`}
-                />
-              </CaseCardParallax>
-            ))}
+            {highlightCases.flatMap((cs) => {
+              const photos = caseStudyPhotoPaths(cs.imagePath, caseGalleries[cs.id]);
+              // A project with no photo at all still gets its text-only card.
+              return (photos.length > 0 ? photos : [null]).map((path, i) => {
+                // The cover keeps the bare case id so the anchor matches the
+                // corresponding tile on /cases.
+                const tileId = i === 0 ? cs.id : `${cs.id}--${i}`;
+                return (
+                  <CaseCardParallax key={tileId}>
+                    <CaseStudyCard
+                      caseStudy={cs}
+                      title={locale === "ko" ? cs.titleKo : cs.titleEn ?? cs.titleKo}
+                      description={locale === "ko" ? cs.descriptionKo : cs.descriptionEn ?? cs.descriptionKo}
+                      imagePath={path}
+                      href={`/cases#case-${tileId}`}
+                    />
+                  </CaseCardParallax>
+                );
+              });
+            })}
           </div>
           <div className="mt-8 text-center">
             <Link href="/cases" className="text-sm font-semibold text-[var(--color-steel-light)]">

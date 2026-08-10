@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "
 import { motion } from "framer-motion";
 import { MOTION_LEVEL, useHydrated, useMediaQuery } from "@/lib/motion";
 
+/** One photo of one project — a project with a gallery contributes several. */
 export type CollageItem = {
   id: string;
   clientName: string;
@@ -12,8 +13,6 @@ export type CollageItem = {
   imageUrl: string | null;
   /** Editorial ratio from the DB — the estimate used until the file reports its own. */
   aspect?: number;
-  /** Gallery size; drives the "+N" badge. */
-  imageCount: number;
 };
 
 /** Gap between tiles, in px. Mirrors the `gap-2` class used pre-hydration. */
@@ -244,15 +243,6 @@ function Tile({
         style={{ opacity: isDimmed ? 1 : 0, transition: fade }}
       />
       <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-
-      {item.imageCount > 1 && (
-        <span
-          className="absolute right-2 top-2 z-10 rounded-[var(--radius-card)] bg-black/60 px-1.5 py-0.5 text-xs font-semibold text-white"
-          style={{ opacity: isDimmed ? 0 : 1, transition: fade }}
-        >
-          +{item.imageCount - 1}
-        </span>
-      )}
 
       <span
         className="pointer-events-none absolute inset-x-0 bottom-0 block p-4 text-white"
