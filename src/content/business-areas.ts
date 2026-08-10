@@ -210,8 +210,8 @@ export const BUSINESS_AREAS: BusinessAreaContent[] = [
             },
             images: [
               b("/content/fluidgas/hydrogas_main1.jpg"),
-              b("/content/fluidgas/hydrogas_unit1.jpg", { ko: "가스 부스터 유니트", en: "Gas booster unit" }),
-              b("/content/fluidgas/hydrogas_unit2.webp", { ko: "펌프 유니트", en: "Pump unit" }),
+              b("/content/fluidgas/hydrogas_unit2.webp", { ko: "가스 부스터 유니트", en: "Gas booster unit" }),
+              b("/content/fluidgas/hydrogas_unit1.jpg", { ko: "펌프 유니트", en: "Pump unit" }),
             ],
             imageLayout: "row",
           },
