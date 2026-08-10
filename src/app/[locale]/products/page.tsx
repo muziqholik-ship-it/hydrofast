@@ -48,14 +48,30 @@ function buildHref(params: Record<string, string | undefined>) {
   return qs ? `/products?${qs}` : "/products";
 }
 
-/** Page numbers to render: first, last, and a window around the current page, with gaps. */
+/** How many numbered pages the window holds. */
+const PAGE_WINDOW = 10;
+
+/**
+ * Page numbers to render: a ten-wide window that slides with the current page,
+ * with the first and last page always reachable and a "…" standing in for
+ * whatever the window skipped. From page 1 of 26 that reads 1–10 … 26.
+ */
 function pageNumbers(current: number, total: number): (number | "gap")[] {
-  const wanted = new Set([1, total, current - 1, current, current + 1]);
-  const sorted = [...wanted].filter((p) => p >= 1 && p <= total).sort((a, b) => a - b);
+  // Anchor the window on the current page, then pull it back inside the range
+  // so it stays PAGE_WINDOW wide at both ends.
+  const end = Math.min(total, Math.max(1, current - Math.floor((PAGE_WINDOW - 1) / 2)) + PAGE_WINDOW - 1);
+  const start = Math.max(1, end - PAGE_WINDOW + 1);
+
+  const wanted = new Set([1, total]);
+  for (let p = start; p <= end; p++) wanted.add(p);
+
   const out: (number | "gap")[] = [];
   let prev = 0;
-  for (const p of sorted) {
-    if (prev && p - prev > 1) out.push("gap");
+  for (const p of [...wanted].sort((a, b) => a - b)) {
+    // A "…" standing for exactly one page costs the same width as the page
+    // itself, so render the page.
+    if (prev && p - prev === 2) out.push(prev + 1);
+    else if (prev && p - prev > 2) out.push("gap");
     out.push(p);
     prev = p;
   }

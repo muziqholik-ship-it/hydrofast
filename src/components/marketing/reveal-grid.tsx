@@ -1,5 +1,6 @@
 "use client";
 
+import { Children, isValidElement, type ReactNode } from "react";
 import { motion, type Variants } from "framer-motion";
 import { MOTION_LEVEL } from "@/lib/motion";
 
@@ -12,6 +13,27 @@ const item: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
 };
+
+/**
+ * Identity of the current child set.
+ *
+ * `whileInView` fires once and then stops observing, and framer-motion hands
+ * the resulting "show" variant only to the children that were mounted when it
+ * fired. A client-side navigation that swaps the children *without* remounting
+ * this component leaves the new ones sitting on the inherited "hidden" variant
+ * — laid out, hoverable, and fully transparent — with no gesture left to
+ * release them. That is every query-only navigation on /products: pagination,
+ * a new search, a filter change, the card/list toggle.
+ *
+ * Keying the motion element on the child list remounts the reveal, so a new
+ * set of cards animates in exactly as it does on a fresh page load. Identical
+ * children keep the same key and never remount.
+ */
+function childSetKey(children: ReactNode) {
+  return Children.toArray(children)
+    .map((child) => (isValidElement(child) ? String(child.key) : ""))
+    .join("|");
+}
 
 /** Staggered card-cascade reveal used for grids across the site (business areas, products, partners). */
 export function RevealGrid({
@@ -28,6 +50,7 @@ export function RevealGrid({
   }
   return (
     <motion.div
+      key={childSetKey(children)}
       variants={container}
       initial="hidden"
       whileInView="show"
