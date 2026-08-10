@@ -2,12 +2,15 @@
 
 import { db } from "@/db/client";
 import { products, productImages, productCategories, manufacturers } from "@/db/schema";
+import type { ProductCategory, Manufacturer } from "@/db/schema";
+import type { SpecFieldDef } from "@/db/schema/product-categories";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { uploadImageVariants, deleteImageVariants } from "@/lib/images";
 import { parseSpecsFromFormData } from "@/lib/spec-schema";
 import { buildSearchText } from "@/lib/search";
+import { slugify, keyify, uniqueSlug } from "@/lib/slug";
 
 async function buildProductRow(formData: FormData) {
   const categoryId = String(formData.get("categoryId") ?? "") || null;
@@ -128,6 +131,114 @@ export async function deleteProduct(id: string) {
 
   await db.delete(products).where(eq(products.id, id));
   revalidatePath("/admin/products");
+}
+
+/*
+ * Quick-add actions — called directly (not via <form action>) from the product
+ * form so an admin can create a missing category / manufacturer / spec field
+ * without leaving a half-filled product form. Each returns the created row so
+ * the client can select it immediately; the full-featured editors under
+ * /admin/categories and /admin/manufacturers stay the place to fill in the
+ * remaining fields.
+ */
+
+export async function quickCreateCategory(input: {
+  nameKo: string;
+  nameEn?: string;
+  businessAreaId?: string;
+}): Promise<ProductCategory> {
+  const nameKo = input.nameKo.trim();
+  const nameEn = input.nameEn?.trim() || null;
+  if (!nameKo) throw new Error("분류명(한글)을 입력해주세요.");
+
+  const existing = await db
+    .select({ slug: productCategories.slug, sortOrder: productCategories.sortOrder })
+    .from(productCategories);
+
+  const [created] = await db
+    .insert(productCategories)
+    .values({
+      slug: uniqueSlug(slugify(nameEn ?? nameKo), "category", existing.map((c) => c.slug)),
+      nameKo,
+      nameEn,
+      businessAreaId: input.businessAreaId || null,
+      sortOrder: existing.reduce((max, c) => Math.max(max, c.sortOrder), -1) + 1,
+      specSchema: [],
+    })
+    .returning();
+
+  revalidatePath("/admin/categories");
+  return created;
+}
+
+export async function quickCreateManufacturer(input: {
+  name: string;
+  country?: string;
+}): Promise<Manufacturer> {
+  const name = input.name.trim();
+  if (!name) throw new Error("제조사명을 입력해주세요.");
+
+  const existing = await db
+    .select({ slug: manufacturers.slug, sortOrder: manufacturers.sortOrder })
+    .from(manufacturers);
+
+  const [created] = await db
+    .insert(manufacturers)
+    .values({
+      slug: uniqueSlug(slugify(name), "manufacturer", existing.map((m) => m.slug)),
+      name,
+      country: input.country?.trim() || null,
+      sortOrder: existing.reduce((max, m) => Math.max(max, m.sortOrder), -1) + 1,
+    })
+    .returning();
+
+  revalidatePath("/admin/manufacturers");
+  return created;
+}
+
+/**
+ * Appends one field to a category's spec_schema and returns the new schema.
+ * A product's specs are keyed against its category's schema, so a spec item
+ * only exists — and only renders on the public detail page — once it is part
+ * of that schema. Never marked required: the field is added mid-edit and every
+ * other product in the category would start failing validation.
+ */
+export async function quickAddSpecField(
+  categoryId: string,
+  input: { labelKo: string; labelEn?: string; dataType: "text" | "number"; unit?: string }
+): Promise<SpecFieldDef[]> {
+  const labelKo = input.labelKo.trim();
+  const labelEn = input.labelEn?.trim() || "";
+  const unit = input.unit?.trim() || "";
+  if (!labelKo) throw new Error("사양 항목명(한글)을 입력해주세요.");
+
+  const [category] = await db
+    .select()
+    .from(productCategories)
+    .where(eq(productCategories.id, categoryId));
+  if (!category) throw new Error("제품 분류를 찾을 수 없습니다.");
+
+  const schema = category.specSchema ?? [];
+  const field: SpecFieldDef = {
+    key: uniqueSlug(keyify(labelEn || labelKo), "spec", schema.map((f) => f.key), "_"),
+    labelKo,
+    labelEn,
+    dataType: input.dataType === "number" && unit ? "unit_value" : input.dataType,
+    unit,
+    options: [],
+    required: false,
+    sortOrder: schema.length,
+    showInCardTeaser: false,
+  };
+
+  const specSchema = [...schema, field];
+  await db
+    .update(productCategories)
+    .set({ specSchema, updatedAt: new Date() })
+    .where(eq(productCategories.id, categoryId));
+
+  revalidatePath("/admin/categories");
+  return specSchema;
 }
 
 export async function deleteGalleryImage(imageId: string, productId: string) {
