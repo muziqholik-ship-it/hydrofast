@@ -12,7 +12,12 @@
     "db:seed-content": "tsx scripts/seed-business-content.ts",
     "db:seed-logos": "tsx scripts/seed-brand-logos.ts",
     "db:migrate-legacy": "tsx scripts/migrate-legacy-content.ts",
-    "db:merge-case-studies": "tsx scripts/merge-duplicate-case-studies.ts"
+    "db:merge-case-studies": "tsx scripts/merge-duplicate-case-studies.ts",
+    "images:extract": "python -W ignore scripts/extract-product-images.py",
+    "images:fetch-web": "python -W ignore scripts/fetch-manufacturer-images.py",
+    "images:review": "python scripts/build-product-image-review.py",
+    "images:apply-review": "python scripts/build-product-image-review.py --apply",
+    "images:upload": "tsx scripts/upload-product-images.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",

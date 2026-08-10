@@ -1,0 +1,386 @@
+{
+ "gemels-g3k": {
+  "file": "alt/gemels-g3k--p445-x3760.webp",
+  "rejected": false
+ },
+ "gemels-g4k": {
+  "file": "alt/gemels-g4k--p449-x3778.webp",
+  "rejected": false
+ },
+ "gemels-gpk2": {
+  "file": "alt/gemels-gpk2--p453-x3809.webp",
+  "rejected": false
+ },
+ "gemels-gpk3": {
+  "file": "alt/gemels-gpk3--p456-x3834.webp",
+  "rejected": false
+ },
+ "gemels-ghp": {
+  "file": "alt/gemels-ghp--p471-x3898.webp",
+  "rejected": false
+ },
+ "gemels-grc": {
+  "file": "alt/gemels-grc--p461-x3862.webp",
+  "rejected": false
+ },
+ "moveco-rr-61": {
+  "file": "alt/moveco-rr-61--p4-x78.webp",
+  "rejected": false
+ },
+ "moveco-rr-78": {
+  "file": "alt/moveco-rr-78--p4-x80.webp",
+  "rejected": false
+ },
+ "moveco-rm-48": {
+  "file": "alt/moveco-rm-48--p6-x134.webp",
+  "rejected": false
+ },
+ "moveco-rl-44": {
+  "file": "alt/moveco-rl-44--p7-x178.webp",
+  "rejected": false
+ },
+ "moveco-rl-60": {
+  "file": "alt/moveco-rl-60--p7-x178.webp",
+  "rejected": false
+ },
+ "moveco-rl-67": {
+  "file": "alt/moveco-rl-67--p7-x178.webp",
+  "rejected": false
+ },
+ "moveco-rl-78": {
+  "file": "alt/moveco-rl-78--p7-x178.webp",
+  "rejected": false
+ },
+ "moveco-rb-54": {
+  "file": "alt/moveco-rb-54--p8-x213.webp",
+  "rejected": false
+ },
+ "oleoweb-scf-dcf-dcm-dcv": {
+  "file": "alt/oleoweb-scf-dcf-dcm-dcv--p10-x205.webp",
+  "rejected": false
+ },
+ "water-hydraulics-p6-desal": {
+  "file": "alt/water-hydraulics-p6-desal--p27-x170.webp",
+  "rejected": false
+ },
+ "moveco-rm-29": {
+  "file": "alt/moveco-rm-29--p6-x134.webp",
+  "rejected": false
+ },
+ "moveco-rl-32": {
+  "file": "alt/moveco-rl-32--p7-x178.webp",
+  "rejected": false
+ },
+ "water-hydraulics-223brrw": {
+  "file": "alt/water-hydraulics-223brrw--p85-x1285.webp",
+  "rejected": false
+ },
+ "water-hydraulics-225brrw": {
+  "file": "alt/water-hydraulics-225brrw--p96-x1358.webp",
+  "rejected": false
+ },
+ "water-hydraulics-m3": {
+  "file": "alt/water-hydraulics-m3--p133-x1742.webp",
+  "rejected": false
+ },
+ "water-hydraulics-500-dn25-manifold": {
+  "file": "alt/water-hydraulics-500-dn25-manifold--p117-x1515.webp",
+  "rejected": false
+ },
+ "water-hydraulics-212bgsw": {
+  "file": "alt/water-hydraulics-212bgsw--p111-x1484.webp",
+  "rejected": false
+ },
+ "water-hydraulics-201e-dn16-pilot": {
+  "file": "alt/water-hydraulics-201e-dn16-pilot--p122-x1541.webp",
+  "rejected": false
+ },
+ "water-hydraulics-203e-dn16-pilot": {
+  "file": "alt/water-hydraulics-203e-dn16-pilot--p122-x1541.webp",
+  "rejected": false
+ },
+ "water-hydraulics-pd-gauges": {
+  "file": "alt/water-hydraulics-pd-gauges--p151-x1878.webp",
+  "rejected": false
+ },
+ "gemels-ge3": {
+  "file": "alt/gemels-ge3--p355-x6484.webp",
+  "rejected": false
+ },
+ "gemels-ge3k": {
+  "file": "alt/gemels-ge3k--p379-x6516.webp",
+  "rejected": false
+ },
+ "gemels-tandem": {
+  "file": "alt/gemels-tandem--p398-x3481.webp",
+  "rejected": false
+ },
+ "gemels-jda": {
+  "file": "alt/gemels-jda--p651-x5296.webp",
+  "rejected": false
+ },
+ "gemels-jsr": {
+  "file": "alt/gemels-jsr--p656-x5349.webp",
+  "rejected": false
+ },
+ "gemels-da-rack-pinion": {
+  "file": "alt/gemels-da-rack-pinion--p660-x6840.webp",
+  "rejected": false
+ },
+ "gemels-sr-rack-pinion": {
+  "file": "alt/gemels-sr-rack-pinion--p662-x6840.webp",
+  "rejected": false
+ },
+ "gemels-flat-face": {
+  "file": "alt/gemels-flat-face--p91-x1420.webp",
+  "rejected": false
+ },
+ "gemels-n": {
+  "file": "alt/gemels-n--p203-x2086.webp",
+  "rejected": false
+ },
+ "water-hydraulics-p3": {
+  "file": "alt/water-hydraulics-p3--p3-x13.webp",
+  "rejected": false
+ },
+ "water-hydraulics-204axxw": {
+  "file": "alt/water-hydraulics-204axxw--p81-x533.webp",
+  "rejected": false
+ },
+ "water-hydraulics-204bxxw": {
+  "file": "alt/water-hydraulics-204bxxw--p81-x533.webp",
+  "rejected": false
+ },
+ "water-hydraulics-216bxsw": {
+  "file": "alt/water-hydraulics-216bxsw--p125-x1575.webp",
+  "rejected": false
+ },
+ "gemels-electric-motors": {
+  "file": "alt/gemels-electric-motors--p637-x5164.webp",
+  "rejected": false
+ },
+ "gemels-gh2": {
+  "file": "alt/gemels-gh2--p317-x2912.webp",
+  "rejected": false
+ },
+ "gemels-ge1": {
+  "file": "alt/gemels-ge1--p327-x2989.webp",
+  "rejected": false
+ },
+ "gemels-ge2": {
+  "file": "alt/gemels-ge2--p331-x3015.webp",
+  "rejected": false
+ },
+ "gemels-ge2-hc": {
+  "file": "alt/gemels-ge2-hc--p339-x3066.webp",
+  "rejected": false
+ },
+ "gemels-ge3-hc": {
+  "file": "alt/gemels-ge3-hc--p347-x3154.webp",
+  "rejected": false
+ },
+ "gemels-ge5": {
+  "file": "alt/gemels-ge5--p371-x3319.webp",
+  "rejected": false
+ },
+ "gemels-gb3": {
+  "file": "alt/gemels-gb3--p409-x3547.webp",
+  "rejected": false
+ },
+ "gemels-gvs": {
+  "file": "alt/gemels-gvs--p425-x3624.webp",
+  "rejected": false
+ },
+ "gemels-gvs-flanged": {
+  "file": "alt/gemels-gvs-flanged--p429-x3642.webp",
+  "rejected": false
+ },
+ "gemels-gv2": {
+  "file": "alt/gemels-gv2--p433-x3671.webp",
+  "rejected": false
+ },
+ "gemels-gv3": {
+  "file": "alt/gemels-gv3--p437-x3703.webp",
+  "rejected": false
+ },
+ "gemels-gv3k": {
+  "file": "alt/gemels-gv3k--p441-x3739.webp",
+  "rejected": false
+ },
+ "gemels-vap": {
+  "file": "alt/gemels-vap--p557-x4700.webp",
+  "rejected": false
+ },
+ "gemels-rfm-bdm": {
+  "file": "alt/gemels-rfm-bdm--p533-x4502.webp",
+  "rejected": false
+ },
+ "gemels-rf": {
+  "file": "alt/gemels-rf--p535-x4515.webp",
+  "rejected": false
+ },
+ "gemels-bd": {
+  "file": "alt/gemels-bd--p539-x4537.webp",
+  "rejected": false
+ },
+ "gemels-vu": {
+  "file": "alt/gemels-vu--p543-x4568.webp",
+  "rejected": false
+ },
+ "gemels-vuf-vus": {
+  "file": "alt/gemels-vuf-vus--p547-x4612.webp",
+  "rejected": false
+ },
+ "gemels-gev": {
+  "file": "alt/gemels-gev--p551-x4650.webp",
+  "rejected": false
+ },
+ "gemels-ddf3-a": {
+  "file": "alt/gemels-ddf3-a--p563-x4747.webp",
+  "rejected": false
+ },
+ "gemels-gn-hc": {
+  "file": "alt/gemels-gn-hc--p571-x4828.webp",
+  "rejected": false
+ },
+ "gemels-gn": {
+  "file": "alt/gemels-gn--p579-x4874.webp",
+  "rejected": false
+ },
+ "gemels-gm": {
+  "file": "alt/gemels-gm--p591-x4914.webp",
+  "rejected": false
+ },
+ "gemels-sbf": {
+  "file": "alt/gemels-sbf--p603-x4983.webp",
+  "rejected": false
+ },
+ "gemels-sbt": {
+  "file": "alt/gemels-sbt--p613-x5037.webp",
+  "rejected": false
+ },
+ "gemels-dbb": {
+  "file": "alt/gemels-dbb--p627-x5108.webp",
+  "rejected": false
+ },
+ "gemels-multi-couplings": {
+  "file": "alt/gemels-multi-couplings--p47-x1033.webp",
+  "rejected": false
+ },
+ "gemels-uqd": {
+  "file": "alt/gemels-uqd--p71-x1263.webp",
+  "rejected": false
+ },
+ "gemels-nvqd": {
+  "file": "alt/gemels-nvqd--p83-x1370.webp",
+  "rejected": false
+ },
+ "gemels-mgw": {
+  "file": "alt/gemels-mgw--p135-x1652.webp",
+  "rejected": false
+ },
+ "gemels-push-pull-agri": {
+  "file": "alt/gemels-push-pull-agri--p153-x1768.webp",
+  "rejected": false
+ },
+ "gemels-push-pull-agri-dv": {
+  "file": "alt/gemels-push-pull-agri-dv--p157-x1795.webp",
+  "rejected": false
+ },
+ "gemels-push-pull-n": {
+  "file": "alt/gemels-push-pull-n--p169-x1861.webp",
+  "rejected": false
+ },
+ "gemels-push-pull-nv": {
+  "file": "alt/gemels-push-pull-nv--p175-x1904.webp",
+  "rejected": false
+ },
+ "gemels-vgn": {
+  "file": "alt/gemels-vgn--p179-x1928.webp",
+  "rejected": false
+ },
+ "gemels-push-pull-dv": {
+  "file": "alt/gemels-push-pull-dv--p183-x1957.webp",
+  "rejected": false
+ },
+ "gemels-nv": {
+  "file": "alt/gemels-nv--p207-x2111.webp",
+  "rejected": false
+ },
+ "gemels-bgf": {
+  "file": "alt/gemels-bgf--p211-x2139.webp",
+  "rejected": false
+ },
+ "gemels-gus": {
+  "file": "alt/gemels-gus--p247-x2351.webp",
+  "rejected": false
+ },
+ "moveco-rl-26": {
+  "file": "alt/moveco-rl-26--p7-x178.webp",
+  "rejected": false
+ },
+ "moveco-rm-53": {
+  "file": "alt/moveco-rm-53--p6-x134.webp",
+  "rejected": false
+ },
+ "gemels-sj": {
+  "file": "alt/gemels-sj--p487-x4026.webp",
+  "rejected": false
+ },
+ "gemels-sj-hd": {
+  "file": "alt/gemels-sj-hd--p491-x4065.webp",
+  "rejected": false
+ },
+ "gemels-vose": {
+  "file": "alt/gemels-vose--p511-x4294.webp",
+  "rejected": false
+ },
+ "gemels-vode": {
+  "file": "alt/gemels-vode--p515-x4356.webp",
+  "rejected": false
+ },
+ "gemels-vrc": {
+  "file": "alt/gemels-vrc--p519-x4396.webp",
+  "rejected": false
+ },
+ "gemels-vrm": {
+  "file": "alt/gemels-vrm--p523-x4421.webp",
+  "rejected": false
+ },
+ "gemels-vbp": {
+  "file": "alt/gemels-vbp--p527-x4443.webp",
+  "rejected": false
+ },
+ "gemels-vb-vuba": {
+  "file": "alt/gemels-vb-vuba--p559-x4716.webp",
+  "rejected": false
+ },
+ "gemels-gns": {
+  "file": "alt/gemels-gns--p87-x1392.webp",
+  "rejected": false
+ },
+ "water-hydraulics-591-007": {
+  "file": "alt/water-hydraulics-591-007--p124-x1565.webp",
+  "rejected": false
+ },
+ "moveco-rl-14": {
+  "file": "alt/moveco-rl-14--p7-x178.webp",
+  "rejected": false
+ },
+ "moveco-rl-36": {
+  "file": "alt/moveco-rl-36--p7-x178.webp",
+  "rejected": false
+ },
+ "moveco-rb-47": {
+  "file": "alt/moveco-rb-47--p8-x215.webp",
+  "rejected": false
+ },
+ "moveco-rr-46": {
+  "file": "alt/moveco-rr-46--p4-x78.webp",
+  "rejected": false
+ },
+ "water-hydraulics-ss130-element": {
+  "file": "alt/water-hydraulics-ss130-element--p157-x1925.webp",
+  "rejected": false
+ }
+}

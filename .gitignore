@@ -44,6 +44,23 @@ yarn-error.log*
 # scripts/migrate-legacy-content.ts — not needed once that script has run
 /legacy-content
 
+# Product image build artefacts (scripts/extract-product-images.py and friends).
+# All regenerable from the catalog PDFs, which are tracked. Kept out because
+# they are big enough to be a nuisance in an agent's context window:
+# manifest.json is ~700KB of per-candidate scoring, review.html ~500KB, and the
+# runner-up crops alone are ~900 files. What is committed instead is
+# review-decisions.json (the human review, not regenerable) and
+# image-provenance.tsv (~46KB, one greppable line per product recording where
+# its live image came from).
+/assets-src/product-images/**/*.webp
+/assets-src/product-images/alt/
+/assets-src/product-images/web/
+/assets-src/product-images/review.html
+/assets-src/product-images/manifest.json
+
+# python bytecode from the scripts/ helpers
+__pycache__/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

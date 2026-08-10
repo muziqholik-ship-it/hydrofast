@@ -152,7 +152,7 @@ export default async function ProductDetailPage({
               <img
                 src={publicImageUrl("product-images", product.primaryImagePath) ?? undefined}
                 alt={name}
-                className="h-full w-full object-cover"
+                className="h-full w-full bg-white object-contain"
               />
             )}
           </div>

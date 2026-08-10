@@ -15,13 +15,15 @@ export function ProductListItem({ product }: { product: ProductListItemData }) {
     >
       <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-md bg-[var(--color-surface-alt)] sm:h-20 sm:w-20">
         {imageUrl ? (
+          // contain, not cover: catalog crops are the product centred on white, so
+          // cropping to fill would eat the ends of a long valve body
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={imageUrl}
             alt={product.name}
             loading="lazy"
             decoding="async"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full bg-white object-contain transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <span className="text-[10px] text-[var(--color-ink-soft)]">No Image</span>

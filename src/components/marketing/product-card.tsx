@@ -19,13 +19,15 @@ export function ProductCard({ product }: { product: ProductCardData }) {
     >
       <div className="relative flex h-40 w-full items-center justify-center overflow-hidden bg-[var(--color-surface-alt)]">
         {imageUrl ? (
+          // contain, not cover: catalog crops are the product centred on white, so
+          // cropping to fill would eat the ends of a long valve body
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={imageUrl}
             alt={product.name}
             loading="lazy"
             decoding="async"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full bg-white object-contain transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <span className="text-xs text-[var(--color-ink-soft)]">No Image</span>
