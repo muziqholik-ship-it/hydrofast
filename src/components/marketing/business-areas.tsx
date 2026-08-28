@@ -9,9 +9,6 @@ import { gsap, MOTION_LEVEL, useHydrated, useIsomorphicLayoutEffect, useMediaQue
 import type { ScrollTrigger } from "@/lib/motion";
 import { FluidText, type FluidLevelSource } from "@/components/motion/fluid-text";
 import { VideoLoop } from "@/components/media/video-loop";
-import { SectionHeading } from "@/components/marketing/section-heading";
-import { ScrollRevealGrid, ScrollRevealItem } from "@/components/motion/scroll-reveal-grid";
-import { AreaCard } from "@/components/marketing/area-card";
 
 type LevelEmitter = FluidLevelSource & { set(v: number): void };
 
@@ -38,9 +35,9 @@ function createLevelEmitter(): LevelEmitter {
  * distance from center (fills approaching, drains leaving — bidirectional
  * with the scrub). Only the active ±1 panels' videos play.
  *
- * Everything else (mobile, lite/off, reduced motion, SSR/no-JS) renders the
- * existing vertical card grid — cards pick up video posters as thumbnails
- * where clips exist.
+ * Lite/off motion, reduced-motion, and SSR/no-JS keep the same full-bleed
+ * panels in a vertical
+ * stack instead of reverting to the legacy card grid.
  */
 export function BusinessAreas({
   title,
@@ -54,10 +51,9 @@ export function BusinessAreas({
   videos: Record<string, VideoRendition | null>;
 }) {
   const hydrated = useHydrated();
-  const lgViewport = useMediaQuery("(min-width: 1024px)");
   const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const horizontal =
-    hydrated && lgViewport && !reducedMotion && MOTION_LEVEL === "full" && areas.length > 1;
+    hydrated && !reducedMotion && MOTION_LEVEL === "full" && areas.length > 1;
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -132,24 +128,12 @@ export function BusinessAreas({
   const summary = (area: BusinessAreaContent) =>
     locale === "ko" ? area.summary.ko : (area.summary.en ?? area.summary.ko);
 
-  if (!horizontal) {
-    return (
-      <section className="mx-auto max-w-[1400px] px-6 py-20">
-        <SectionHeading title={title} fluid />
-        <ScrollRevealGrid className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {areas.map((area) => (
-            <ScrollRevealItem key={area.slug}>
-              <AreaCard area={area} locale={locale} poster={videos[area.slug]?.poster ?? null} />
-            </ScrollRevealItem>
-          ))}
-        </ScrollRevealGrid>
-      </section>
-    );
-  }
-
   return (
     <section className="py-20">
-      <div ref={sectionRef} className="relative overflow-hidden bg-[var(--color-ink)]">
+      <div
+        ref={sectionRef}
+        className={`relative bg-[var(--color-ink)] ${horizontal ? "overflow-hidden" : "overflow-clip"}`}
+      >
         {/* Section title floats pinned at the top-left of the panels, above
             the sliding track, staying put through the whole horizontal scrub. */}
         <div className="pointer-events-none absolute inset-x-0 top-0 z-20">
@@ -159,11 +143,16 @@ export function BusinessAreas({
             </h2>
           </div>
         </div>
-        <div ref={trackRef} className="flex h-screen w-max">
+        <div
+          ref={trackRef}
+          className={horizontal ? "flex h-screen w-max" : "flex w-full flex-col"}
+        >
           {areas.map((area, i) => (
             <article
               key={area.slug}
-              className="relative flex h-full w-screen shrink-0 items-end overflow-hidden"
+              className={`relative flex shrink-0 items-end overflow-hidden ${
+                horizontal ? "h-screen w-screen" : "min-h-screen w-full"
+              }`}
             >
               {/* Per-panel loop: lazy, and only the active ±1 panels play.
                   Until a clip (or its poster) exists, the panel keeps the
