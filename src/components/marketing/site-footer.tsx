@@ -30,6 +30,8 @@ export function SiteFooter() {
             />
           </div>
           <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed">
+            <span className="font-semibold text-[var(--color-ink)]">(주)하이드로훼스트</span>
+            <br />
             {t("ceo", { value: ko ? COMPANY.ceoKo : COMPANY.ceoEn })}
             <br />
             {t("registration", { value: COMPANY.registrationNumber })}
