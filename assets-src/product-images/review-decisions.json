@@ -382,41 +382,5 @@
  "water-hydraulics-ss130-element": {
   "file": "alt/water-hydraulics-ss130-element--p157-x1925.webp",
   "rejected": false
- },
- "technofast-ezitite-hydraulic-nut": {
-  "file": "alt/technofast-ezitite-hydraulic-nut--p10-x210.webp",
-  "rejected": false
- },
- "technofast-ezitite-tr-high-temperature-nut": {
-  "file": "alt/technofast-ezitite-tr-high-temperature-nut--p12-x265.webp",
-  "rejected": false
- },
- "technofast-ezitite-hydraulic-bolt": {
-  "file": "alt/technofast-ezitite-hydraulic-bolt--p16-x376.webp",
-  "rejected": false
- },
- "technofast-ezitite-hydraulic-head-nut": {
-  "file": "alt/technofast-ezitite-hydraulic-head-nut--p18-x461.webp",
-  "rejected": false
- },
- "technofast-camnut": {
-  "file": "alt/technofast-camnut--p20-x517.webp",
-  "rejected": false
- },
- "technofast-ezijac-b2": {
-  "file": "alt/technofast-ezijac-b2--p23-x598.webp",
-  "rejected": false
- },
- "technofast-ezijac-x2-y2": {
-  "file": "alt/technofast-ezijac-x2-y2--p28-x695.webp",
-  "rejected": false
- },
- "technofast-lightweight-hand-pump": {
-  "file": "alt/technofast-lightweight-hand-pump--p36-x863.webp",
-  "rejected": false
- },
- "technofast-preassembled-hydraulic-hoses": {
-  "file": "alt/technofast-preassembled-hydraulic-hoses--manual-p37.webp",
-  "rejected": false
  }
 }

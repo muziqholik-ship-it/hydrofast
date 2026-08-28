@@ -16,12 +16,63 @@
       "descriptionKo": "정밀 체결, 고온 설비, 베어링 장착 및 파쇄기용 유압 너트·볼트 제품군입니다.",
       "descriptionEn": "Hydraulic nuts and bolts for precision fastening, high-temperature equipment, bearing installation and crusher applications.",
       "specSchema": [
-        { "key": "thread_range", "labelKo": "나사 범위", "labelEn": "Thread Range", "dataType": "text", "required": false, "sortOrder": 1, "showInCardTeaser": true },
-        { "key": "max_force_kn", "labelKo": "최대 발생력", "labelEn": "Maximum Force", "dataType": "unit_value", "unit": "kN", "required": false, "sortOrder": 2, "showInCardTeaser": true },
-        { "key": "max_pressure_bar", "labelKo": "최대 작동 압력", "labelEn": "Maximum Operating Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 3, "showInCardTeaser": true },
-        { "key": "stroke_mm", "labelKo": "스트로크", "labelEn": "Stroke", "dataType": "text", "unit": "mm", "required": false, "sortOrder": 4, "showInCardTeaser": false },
-        { "key": "temperature_range", "labelKo": "사용 온도", "labelEn": "Temperature Range", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false },
-        { "key": "material", "labelKo": "재질", "labelEn": "Material", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false }
+        {
+          "key": "thread_range",
+          "labelKo": "나사 범위",
+          "labelEn": "Thread Range",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 1,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_force_kn",
+          "labelKo": "최대 발생력",
+          "labelEn": "Maximum Force",
+          "dataType": "unit_value",
+          "unit": "kN",
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 작동 압력",
+          "labelEn": "Maximum Operating Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "stroke_mm",
+          "labelKo": "스트로크",
+          "labelEn": "Stroke",
+          "dataType": "text",
+          "unit": "mm",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "temperature_range",
+          "labelKo": "사용 온도",
+          "labelEn": "Temperature Range",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "material",
+          "labelKo": "재질",
+          "labelEn": "Material",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
       ]
     },
     {
@@ -31,12 +82,63 @@
       "descriptionKo": "전용형, 모듈형, 스프링 리턴 및 협소 공간용 유압 볼트 텐셔너 제품군입니다.",
       "descriptionEn": "Dedicated, modular, spring-return and restricted-access hydraulic bolt tensioners.",
       "specSchema": [
-        { "key": "thread_range", "labelKo": "볼트 나사 범위", "labelEn": "Bolt Thread Range", "dataType": "text", "required": false, "sortOrder": 1, "showInCardTeaser": true },
-        { "key": "max_force_kn", "labelKo": "최대 발생력", "labelEn": "Maximum Force", "dataType": "unit_value", "unit": "kN", "required": false, "sortOrder": 2, "showInCardTeaser": true },
-        { "key": "max_pressure_bar", "labelKo": "최대 작동 압력", "labelEn": "Maximum Operating Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 3, "showInCardTeaser": true },
-        { "key": "stroke_mm", "labelKo": "스트로크", "labelEn": "Stroke", "dataType": "text", "unit": "mm", "required": false, "sortOrder": 4, "showInCardTeaser": false },
-        { "key": "return_type", "labelKo": "복귀 방식", "labelEn": "Return Type", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false },
-        { "key": "configuration", "labelKo": "구성", "labelEn": "Configuration", "dataType": "text", "required": false, "sortOrder": 6, "showInCardTeaser": false }
+        {
+          "key": "thread_range",
+          "labelKo": "볼트 나사 범위",
+          "labelEn": "Bolt Thread Range",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 1,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_force_kn",
+          "labelKo": "최대 발생력",
+          "labelEn": "Maximum Force",
+          "dataType": "unit_value",
+          "unit": "kN",
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 작동 압력",
+          "labelEn": "Maximum Operating Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "stroke_mm",
+          "labelKo": "스트로크",
+          "labelEn": "Stroke",
+          "dataType": "text",
+          "unit": "mm",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "return_type",
+          "labelKo": "복귀 방식",
+          "labelEn": "Return Type",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "configuration",
+          "labelKo": "구성",
+          "labelEn": "Configuration",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 6,
+          "showInCardTeaser": false
+        }
       ]
     },
     {
@@ -46,9 +148,33 @@
       "descriptionKo": "대형 산업 하중을 정밀하고 동기화하여 인양하는 고압 유압 잭입니다.",
       "descriptionEn": "High-pressure hydraulic jacks for precise and synchronized lifting of large industrial loads.",
       "specSchema": [
-        { "key": "action", "labelKo": "작동 방식", "labelEn": "Action", "dataType": "text", "required": false, "sortOrder": 1, "showInCardTeaser": true },
-        { "key": "construction", "labelKo": "구조", "labelEn": "Construction", "dataType": "text", "required": false, "sortOrder": 2, "showInCardTeaser": true },
-        { "key": "custom_options", "labelKo": "맞춤 옵션", "labelEn": "Custom Options", "dataType": "text", "required": false, "sortOrder": 3, "showInCardTeaser": false }
+        {
+          "key": "action",
+          "labelKo": "작동 방식",
+          "labelEn": "Action",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 1,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "construction",
+          "labelKo": "구조",
+          "labelEn": "Construction",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "custom_options",
+          "labelKo": "맞춤 옵션",
+          "labelEn": "Custom Options",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": false
+        }
       ]
     },
     {
@@ -58,11 +184,55 @@
       "descriptionKo": "볼트 텐셔닝과 리프팅을 위한 공압·전동·수동 고압 유압 펌프입니다.",
       "descriptionEn": "Air, electric and hand-operated high-pressure hydraulic pumps for bolt tensioning and lifting.",
       "specSchema": [
-        { "key": "drive_type", "labelKo": "구동 방식", "labelEn": "Drive Type", "dataType": "text", "required": false, "sortOrder": 1, "showInCardTeaser": true },
-        { "key": "pressure_range_bar", "labelKo": "작동 압력 범위", "labelEn": "Operating Pressure Range", "dataType": "text", "unit": "bar", "required": false, "sortOrder": 2, "showInCardTeaser": true },
-        { "key": "reservoir_capacity_l", "labelKo": "탱크 용량", "labelEn": "Reservoir Capacity", "dataType": "text", "unit": "L", "required": false, "sortOrder": 3, "showInCardTeaser": false },
-        { "key": "flow_rate_lpm", "labelKo": "유량", "labelEn": "Flow Rate", "dataType": "text", "unit": "L/min", "required": false, "sortOrder": 4, "showInCardTeaser": false },
-        { "key": "weight_range_kg", "labelKo": "중량", "labelEn": "Weight Range", "dataType": "text", "unit": "kg", "required": false, "sortOrder": 5, "showInCardTeaser": false }
+        {
+          "key": "drive_type",
+          "labelKo": "구동 방식",
+          "labelEn": "Drive Type",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 1,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "pressure_range_bar",
+          "labelKo": "작동 압력 범위",
+          "labelEn": "Operating Pressure Range",
+          "dataType": "text",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "reservoir_capacity_l",
+          "labelKo": "탱크 용량",
+          "labelEn": "Reservoir Capacity",
+          "dataType": "text",
+          "unit": "L",
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "flow_rate_lpm",
+          "labelKo": "유량",
+          "labelEn": "Flow Rate",
+          "dataType": "text",
+          "unit": "L/min",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "weight_range_kg",
+          "labelKo": "중량",
+          "labelEn": "Weight Range",
+          "dataType": "text",
+          "unit": "kg",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": false
+        }
       ]
     },
     {
@@ -72,237 +242,481 @@
       "descriptionKo": "고압 텐셔닝 시스템용 조립 호스, 매니폴드, 스패너 및 CEJN 피팅입니다.",
       "descriptionEn": "Pre-assembled hoses, manifolds, spanners and CEJN fittings for high-pressure tensioning systems.",
       "specSchema": [
-        { "key": "product_type", "labelKo": "제품 유형", "labelEn": "Product Type", "dataType": "text", "required": false, "sortOrder": 1, "showInCardTeaser": true },
-        { "key": "max_pressure_bar", "labelKo": "최대 작동 압력", "labelEn": "Maximum Working Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 2, "showInCardTeaser": true },
-        { "key": "burst_pressure_bar", "labelKo": "최소 파열 압력", "labelEn": "Minimum Burst Pressure", "dataType": "unit_value", "unit": "bar", "required": false, "sortOrder": 3, "showInCardTeaser": false },
-        { "key": "length_range_m", "labelKo": "길이 범위", "labelEn": "Length Range", "dataType": "text", "unit": "m", "required": false, "sortOrder": 4, "showInCardTeaser": false },
-        { "key": "connection", "labelKo": "연결 구성", "labelEn": "Connection Configuration", "dataType": "text", "required": false, "sortOrder": 5, "showInCardTeaser": false }
+        {
+          "key": "product_type",
+          "labelKo": "제품 유형",
+          "labelEn": "Product Type",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 1,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "max_pressure_bar",
+          "labelKo": "최대 작동 압력",
+          "labelEn": "Maximum Working Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 2,
+          "showInCardTeaser": true
+        },
+        {
+          "key": "burst_pressure_bar",
+          "labelKo": "최소 파열 압력",
+          "labelEn": "Minimum Burst Pressure",
+          "dataType": "unit_value",
+          "unit": "bar",
+          "required": false,
+          "sortOrder": 3,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "length_range_m",
+          "labelKo": "길이 범위",
+          "labelEn": "Length Range",
+          "dataType": "text",
+          "unit": "m",
+          "required": false,
+          "sortOrder": 4,
+          "showInCardTeaser": false
+        },
+        {
+          "key": "connection",
+          "labelKo": "연결 구성",
+          "labelEn": "Connection Configuration",
+          "dataType": "text",
+          "required": false,
+          "sortOrder": 5,
+          "showInCardTeaser": false
+        }
       ]
     }
   ],
   "products": [
     {
-      "slug": "technofast-ezitite-hydraulic-nut",
-      "modelNo": "EziTite Hydraulic Nut",
-      "categorySlug": "technofast-hydraulic-nuts",
-      "nameKo": "EziTite 유압 너트",
-      "nameEn": "EziTite Hydraulic Nut",
-      "shortDescriptionKo": "최대 1,000 bar에서 정밀하고 반복 가능한 동시 볼트 텐셔닝을 제공하는 특허 유압 너트입니다.",
-      "shortDescriptionEn": "Patented hydraulic nut for precise, repeatable and simultaneous bolt tensioning at up to 1,000 bar.",
-      "descriptionKo": "EziTite 유압 너트는 기존 너트를 대체해 볼트에 직접 체결되며, 유압으로 볼트를 신장한 뒤 잠금 링이 하중을 기계적으로 유지합니다. 합금강 또는 스테인리스강으로 제공되고 구면 자동 정렬 와셔와 CEJN 퀵 커플링이 기본 적용되어 정비 시간을 줄이고 안전성과 체결 정확도를 높입니다.",
-      "descriptionEn": "The EziTite Hydraulic Nut replaces a conventional nut and stretches the bolt hydraulically before a threaded lockring mechanically retains the induced load. Available in alloy or stainless steel, it includes a spherical self-aligning washer and CEJN quick coupling for faster maintenance, improved safety and accurate multi-bolt tensioning.",
-      "specs": { "thread_range": "M24-M80 / 1-3 in", "max_force_kn": 1770.3, "max_pressure_bar": 1000, "stroke_mm": "6-20", "material": "Alloy steel or stainless steel" },
-      "sourcePages": "10-11"
-    },
-    {
-      "slug": "technofast-ezitite-tr-high-temperature-nut",
-      "modelNo": "EziTite TR",
-      "categorySlug": "technofast-hydraulic-nuts",
-      "nameKo": "EziTite TR 고온용 유압 너트",
-      "nameEn": "EziTite TR High Temperature Hydraulic Nut",
-      "shortDescriptionKo": "550°C 이상의 고온 환경을 위한 금속 대 금속 씰 방식의 유압 너트입니다.",
-      "shortDescriptionEn": "Metal-to-metal sealed hydraulic nut for high-temperature service at 550°C and above.",
-      "descriptionKo": "EziTite TR은 특허받은 금속 대 금속 씰, 컴팩트한 구조와 보조 희생 링 해제 장치를 갖춰 정유, 제철, 압력용기 및 터빈 설비의 고온 체결에 적합합니다. 여러 볼트를 동시에 균일하게 텐셔닝하며 조립·분해 시간을 단축합니다.",
-      "descriptionEn": "EziTite TR combines patented metal-to-metal seals, compact dimensions and a sacrificial-ring secondary release system for refineries, steelworks, pressure vessels and turbine joints. It supports simultaneous even tensioning and rapid assembly or disassembly in extreme heat.",
-      "specs": { "thread_range": "M24-M80 / 1-3.5 in", "max_force_kn": 2468.6, "stroke_mm": "8-10", "temperature_range": "550°C+", "material": "High-temperature metal-to-metal seal design" },
-      "sourcePages": "12-13"
-    },
-    {
-      "slug": "technofast-ezitite-bearing-setter",
-      "modelNo": "EziTite Bearing Setter",
-      "categorySlug": "technofast-hydraulic-nuts",
-      "nameKo": "EziTite 베어링 세터",
-      "nameEn": "EziTite Bearing Setter",
-      "shortDescriptionKo": "M60부터 TR400까지 베어링을 정확한 프리로드로 장착하는 유압식 세팅 공구입니다.",
-      "shortDescriptionEn": "Hydraulic bearing installation tool covering M60 through TR400 with controlled, repeatable preload.",
-      "descriptionKo": "EziTite 베어링 세터는 축 또는 어댑터 슬리브에 체결한 뒤 유압 피스톤으로 베어링 내륜을 정확한 위치까지 밀어 넣습니다. 스트로크 표시기, 다이얼 게이지 장착부와 선택형 분할 구조를 통해 협소한 공간에서도 반복 가능한 장착과 프리로드 리셋을 지원합니다.",
-      "descriptionEn": "The EziTite Bearing Setter threads onto a shaft or adapter sleeve and hydraulically drives the bearing inner race to its controlled position. A stroke indicator, dial-gauge mounting point and optional split design support repeatable installation and preload resets in confined machinery.",
-      "specs": { "thread_range": "M60-TR400 / 2.36-15.745 in", "max_force_kn": 1804.7, "max_pressure_bar": 700, "stroke_mm": "7-16" },
-      "sourcePages": "14-15"
-    },
-    {
-      "slug": "technofast-ezitite-hydraulic-bolt",
-      "modelNo": "EziTite Hydraulic Bolt",
-      "categorySlug": "technofast-hydraulic-nuts",
-      "nameKo": "EziTite 유압 볼트",
-      "nameEn": "EziTite Hydraulic Bolt",
-      "shortDescriptionKo": "진동과 충격 하중에 강하고 비틀림 없이 하중을 유지하는 일체형 유압 볼트입니다.",
-      "shortDescriptionEn": "Integrated hydraulic bolt that resists vibration and shock while retaining load without torsional stress.",
-      "descriptionKo": "EziTite 유압 볼트는 일반 체결재를 대체하는 유압 텐셔닝 일체형 볼트입니다. 유압으로 볼트를 신장한 후 고유 잠금 링이 하중을 유지하므로 나사 갈링과 비틀림 응력을 방지하며, 진동 스크린, 기초 볼트, 배관 플랜지 및 반응기 조인트에 적합합니다.",
-      "descriptionEn": "The EziTite Hydraulic Bolt replaces a standard fastener with an integrated hydraulic tensioning mechanism. Its lockring retains the induced load without thread galling or torsional stress, making it suitable for vibrating screens, foundation bolts, piping flanges and reactor joints.",
-      "specs": { "thread_range": "20-100 mm standard range", "max_pressure_bar": 1000, "material": "Alloy steel or stainless steel" },
-      "sourcePages": "16"
-    },
-    {
-      "slug": "technofast-ezitite-hydraulic-clamp-nut",
-      "modelNo": "EziTite Hydraulic Clamp Nut",
-      "categorySlug": "technofast-hydraulic-nuts",
-      "nameKo": "EziTite 유압 클램프 너트",
-      "nameEn": "EziTite Hydraulic Clamp Nut",
-      "shortDescriptionKo": "50~300 mm 축 나사에 정밀하고 반복 가능한 공구 클램핑력을 제공하는 유압 너트입니다.",
-      "shortDescriptionEn": "Hydraulic nut providing precise, repeatable tool-clamping force for shaft threads from 50 to 300 mm.",
-      "descriptionKo": "토크 방식 너트를 대체하여 유압으로 지정된 클램핑력을 적용하고 잠금 링으로 하중을 유지합니다. 대형 축 베어링과 회전 충격이 있는 공구 클램핑에서 제품 편차와 정비 시간을 줄이도록 설계되었습니다.",
-      "descriptionEn": "This clamp nut replaces torque-loaded threaded nuts, applies a specified clamping force hydraulically and retains it with a lockring. It is designed for large shaft bearings and impact-prone tooling where repeatability and fast maintenance are essential.",
-      "specs": { "thread_range": "50-300 mm", "material": "Application-specific alloy construction" },
-      "sourcePages": "17"
-    },
-    {
-      "slug": "technofast-ezitite-hydraulic-head-nut",
-      "modelNo": "EziTite Hydraulic Head Nut",
-      "categorySlug": "technofast-hydraulic-nuts",
-      "nameKo": "EziTite 유압 헤드 너트",
-      "nameEn": "EziTite Hydraulic Head Nut",
-      "shortDescriptionKo": "자이러토리 크러셔 맨틀을 해머 없이 안전하게 장착·분리하는 유압 헤드 너트입니다.",
-      "shortDescriptionEn": "Hydraulic head nut for safe hammer-free installation and removal of gyratory-crusher mantles.",
-      "descriptionKo": "크러셔 축에 손으로 체결한 뒤 유압으로 맨틀을 테이퍼에 정확히 안착시키고 기계식 잠금 스크류 또는 링으로 하중을 유지합니다. 해머 타격과 화염 절단을 제거하며 마모 환경에 맞춘 희생 커버를 적용할 수 있습니다.",
-      "descriptionEn": "The head nut threads onto the crusher shaft, hydraulically seats the mantle on its taper and retains the load with mechanical locking screws or rings. It eliminates hammering and flame cutting and can be configured with an abrasion-resistant sacrificial cover.",
-      "specs": { "thread_range": "Custom to crusher shaft", "material": "Custom abrasion-resistant configuration" },
-      "sourcePages": "18"
-    },
-    {
-      "slug": "technofast-camnut",
-      "modelNo": "CamNut H1/H2",
-      "categorySlug": "technofast-hydraulic-nuts",
-      "nameKo": "CamNut H1/H2 텐셔닝 시스템",
-      "nameEn": "CamNut H1/H2 Tensioning System",
-      "shortDescriptionKo": "짧은 볼트 돌출부와 -40~650°C 환경에서 사용하는 모듈형 직접 텐셔닝 너트입니다.",
-      "shortDescriptionEn": "Modular direct-tensioning nut for short bolt projections and temperatures from -40°C to 650°C.",
-      "descriptionKo": "CamNut은 기존 육각 너트를 대체해 별도 유압 텐셔너의 직접 연결점이 되며, OEM 볼트와 스폿 페이스를 변경하지 않고 정밀 텐셔닝을 구현합니다. H1은 표준 고온 설비, H2는 최대 650°C의 극한 환경에 대응합니다.",
-      "descriptionEn": "CamNut replaces the standard hex nut and acts as the direct attachment for a removable hydraulic tensioner, avoiding changes to OEM studs or spot faces. H1 serves standard high-temperature hardware while H2 extends operation to extreme environments up to 650°C.",
-      "specs": { "thread_range": "1.75-6 in", "max_force_kn": 7088.87, "temperature_range": "-40°C to +650°C" },
-      "sourcePages": "20-21"
-    },
-    {
       "slug": "technofast-ezijac-b2",
       "modelNo": "EziJac B2 Series",
       "categorySlug": "technofast-bolt-tensioners",
       "nameKo": "EziJac B2 전용형 유압 볼트 텐셔너",
-      "nameEn": "EziJac B2 Dedicated Hydraulic Bolt Tensioner",
+      "nameEn": "B2 EziJac Bolt Tensioner",
       "shortDescriptionKo": "각 볼트 규격에 최적화된 1,500 bar 전용형 수동 복귀 텐셔너입니다.",
-      "shortDescriptionEn": "Dedicated 1,500-bar manual-return tensioner optimized for each bolt size and thread.",
+      "shortDescriptionEn": "The B2 Series is a manual return EziJac which is part of our dedicated series of tools that each tool is designed to tension 1 bolt sizes.",
       "descriptionKo": "B2 시리즈는 특정 볼트 크기와 나사에 맞춘 경제적인 전용 텐셔너입니다. 컴팩트한 본체, 저마찰 씰, 스트로크 표시기와 선택형 두 번째 포트를 갖추며 여러 공구를 연결해 플랜지를 동시에 균일하게 텐셔닝할 수 있습니다.",
-      "descriptionEn": "The B2 Series is an economical dedicated tensioner sized for a specific bolt and thread. Its compact body, low-friction seals, stroke indicator and optional second port allow multiple tools to be linked for accurate simultaneous flange tensioning.",
-      "specs": { "thread_range": "M24-M100 / 7/8-4 in", "max_force_kn": 4605.3, "max_pressure_bar": 1500, "stroke_mm": "15", "return_type": "Manual return", "configuration": "Dedicated tool" },
-      "sourcePages": "22-23"
+      "descriptionEn": "The B2 Series is a manual return EziJac which is part of our dedicated series of tools that each tool is designed to tension 1 bolt sizes. The B2 EziJac Stud Tensioner utilizes the power of hydraulic pressure to produce the force necessary to tension bolts and studs accurately & safely. The B2 EziJac Dedicated Stud Tensioners provide the answer to many of the fitting problems associated with using larger tensioning equipment. They are also ideal for single task applications which do not require interchangeability of thread sizes. Any number of B2 EziJacs can be interlinked to provide simultaneous tension over multiple studs or bolts as required. Features: Stroke Indicator. Long Stroke. Leak-free Low-friction seals. Nitrided components to increase the tool life. Manual return. Optional second port. Quality assured. Benefits: Reduces maintenance down time. Improves safety on the job by eliminating hammer tightening. Give reliable and precise tensioning. Is user friendly - fast to fit and remove. Requires little physical effort. Ideal for confined spaces or difficult locations. Ideal applications: Accurate and repeatable loading is required. Irrational or torsional stresses are a problem. Regular maintenance requires repeated adjustments or removal of nuts. Confined and difficult nut locations. Simultaneous tensioning of bolts is required. (eg: Flanges)",
+      "specs": {
+        "thread_range": "M24-M100 / 7/8-4 in",
+        "max_force_kn": 4605.3,
+        "max_pressure_bar": 1500,
+        "stroke_mm": "15",
+        "return_type": "Manual return",
+        "configuration": "Dedicated tool"
+      },
+      "sourceUrl": "https://www.technofast.com/product/b2-ezijac-bolt-tensioner/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/product-1.png",
+      "sourceImageWidth": 900,
+      "sourceImageHeight": 900
+    },
+    {
+      "slug": "technofast-ezijac-b3m",
+      "modelNo": "EziJac B3M Series",
+      "nameKo": "EziJac B3M 모듈식 볼트 텐셔너",
+      "shortDescriptionKo": "교체식 어댑터 키트와 수동 복귀 구조를 갖춘 모듈식 유압 볼트 텐셔너입니다.",
+      "descriptionKo": "B3M은 하나의 로드 셀에 여러 교체식 어댑터를 결합하여 다양한 나사 크기에 대응합니다. 긴 스트로크, 스트로크 표시기, 저마찰 씰 및 선택형 두 번째 포트로 정확한 다점 동시 체결을 지원합니다.",
+      "specs": {
+        "thread_range": "M20-M100 / 3/4-4 in",
+        "max_pressure_bar": 1500,
+        "stroke_mm": "15",
+        "return_type": "Manual return",
+        "configuration": "Modular interchangeable adaptor kits"
+      },
+      "categorySlug": "technofast-bolt-tensioners",
+      "nameEn": "B3M EziJac Bolt Tensioner",
+      "shortDescriptionEn": "The B3M Series is a MANUAL return EziJac which is part of our modular series allowing multiple adaptor kits to be interchanged with the one load cell.",
+      "descriptionEn": "The B3M Series is a MANUAL return EziJac which is part of our modular series allowing multiple adaptor kits to be interchanged with the one load cell. Safe Easy to Operate Manual Return Accurate Bolt Tensioning The EziJac uses hydraulic pressure to tension the bolt to the exact load required. Once the bolt has been tensioned, the nut is wound down the thread to retain the load. The EziJac is then de-pressurised, released and ready to use again. Features: Stroke indicator. Long Stroke. Interchangeable Adaptor Kits. Leak-free Lo-friction seals. Nitrided components to increase the tool life. Optional second port. Quality assured. Benefits: Reduce assembly time for critical jointing applications. Multi-point tensioning for even gasket compression. Reduced labour input. Requires little physical effort. Improves safety on the job by eliminating hammer tightening. No pinch points, unlike power wrenches. Remote pumping, no operators in close work area. User friendly; fast to fit and remove. Ideal applications: Accurate and repeatable loading is required. Irrational or torsional stresses are a problem. Regular maintenance requires repeated adjustments or removal of nuts. Confined and difficult nut locations. Simultaneous tensioning of bolts is required. (eg: Flanges",
+      "sourceUrl": "https://www.technofast.com/product/b3m-ezijac-bolt-tensioner/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/B3S.png",
+      "sourceImageWidth": 1350,
+      "sourceImageHeight": 1080
     },
     {
       "slug": "technofast-ezijac-b3s",
       "modelNo": "EziJac B3S Series",
       "categorySlug": "technofast-bolt-tensioners",
       "nameKo": "EziJac B3S 모듈형 스프링 리턴 텐셔너",
-      "nameEn": "EziJac B3S Modular Spring Return Bolt Tensioner",
+      "nameEn": "B3S EziJac Bolt Tensioner",
       "shortDescriptionKo": "교체식 어댑터 키트와 자동 스프링 리턴을 갖춘 1,500 bar 모듈형 텐셔너입니다.",
-      "shortDescriptionEn": "Modular 1,500-bar tensioner with interchangeable adaptor kits and automatic spring return.",
+      "shortDescriptionEn": "The B3S Series is an AUTOMATIC spring return EziJac Bolt Tensioner which is part of our modular series allowing multiple adaptor kits to be interchanged with the one load cell. SAFE. EASY TO OPERATE. SPRING RETURN. ENSURES ACCURATE BOLT TENSIONING.",
       "descriptionKo": "B3S는 하나의 로드 셀에 여러 어댑터 키트를 조합하는 모듈형 텐셔너입니다. 감압 시 스프링이 피스톤을 자동 복귀시키며, 원격 펌핑과 다중 공구 연결을 통해 작업자를 위험 구역에서 분리하고 플랜지를 균일하게 체결합니다.",
-      "descriptionEn": "B3S combines one load cell with interchangeable adaptor kits. Its spring automatically retracts the piston after depressurisation, while remote pumping and multi-tool interconnection keep operators clear and provide even flange loading.",
-      "specs": { "thread_range": "M24-M100 / 7/8-4 in", "max_force_kn": 4929, "max_pressure_bar": 1500, "stroke_mm": "15", "return_type": "Automatic spring return", "configuration": "B3S-L2 to B3S-L12 modular load cells" },
-      "sourcePages": "24-25"
+      "descriptionEn": "The B3S Series is an AUTOMATIC spring return EziJac Bolt Tensioner which is part of our modular series allowing multiple adaptor kits to be interchanged with the one load cell. SAFE. EASY TO OPERATE. SPRING RETURN. ENSURES ACCURATE BOLT TENSIONING. The EziJac uses hydraulic pressure to tension the bolt to the exact load required. Once the bolt has been tensioned, the nut is wound down the thread to retain the load. The EziJac is then de-pressurised, released and ready to use again. Features: Stroke indicator. Long Stroke. Spring return piston. Interchangeable Adaptor Kits. Leak-free Lo-friction seals. Nitrided components to increase the tool life. Optional second port. Quality assured. Benefits: Reduce assembly time for critical jointing applications. Multi-point tensioning for even gasket compression. Reduced labour input. Requires little physical effort. Improves safety on the job by eliminating hammer tightening. No pinch points, unlike power wrenches. Remote pumping, no operators in close work area. User friendly; fast to fit and remove. Spring Return models for automatic retraction. Ideal applications: Accurate and repeatable loading is required. Irrational or torsional stresses are a problem. Regular maintenance requires repeated adjustments or removal of nuts. Confined and difficult nut locations. Simultaneous tensioning of bolts is required. (eg: Flanges)",
+      "specs": {
+        "thread_range": "M24-M100 / 7/8-4 in",
+        "max_force_kn": 4929,
+        "max_pressure_bar": 1500,
+        "stroke_mm": "15",
+        "return_type": "Automatic spring return",
+        "configuration": "B3S-L2 to B3S-L12 modular load cells"
+      },
+      "sourceUrl": "https://www.technofast.com/product/b3s-ezijac-bolt-tensioner/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/B3S.png",
+      "sourceImageWidth": 1350,
+      "sourceImageHeight": 1080
     },
     {
-      "slug": "technofast-ezijac-c3s",
-      "modelNo": "EziJac C3S Series",
-      "categorySlug": "technofast-bolt-tensioners",
-      "nameKo": "EziJac C3S 모듈형 스프링 리턴 텐셔너",
-      "nameEn": "EziJac C3S Modular Spring Return Bolt Tensioner",
-      "shortDescriptionKo": "협소한 너트 위치를 위한 교체식 어댑터 및 자동 복귀형 모듈 텐셔너입니다.",
-      "shortDescriptionEn": "Automatic-return modular tensioner with interchangeable adaptors for difficult nut locations.",
-      "descriptionKo": "C3S 시리즈는 협소하거나 접근이 어려운 체결 위치에서 정밀한 다점 텐셔닝을 수행하도록 설계되었습니다. 모듈형 어댑터, 스트로크 표시기, 저마찰 씰과 자동 스프링 리턴을 갖춰 빠르고 반복 가능한 작업 사이클을 제공합니다.",
-      "descriptionEn": "The C3S Series is designed for precise multi-point tensioning in confined or difficult nut locations. Modular adaptors, a stroke indicator, low-friction seals and automatic spring return provide a fast and repeatable operating cycle.",
-      "specs": { "thread_range": "M24-M100 / 7/8-4 in", "max_force_kn": 4929, "max_pressure_bar": 1500, "stroke_mm": "15", "return_type": "Automatic spring return", "configuration": "Modular load cell and adaptor kits" },
-      "sourcePages": "26-27"
+      "slug": "technofast-blue-rhino-electric-tensioner-pumps",
+      "modelNo": "Blue Rhino",
+      "nameKo": "Blue Rhino 전동 유압 텐셔너 펌프",
+      "shortDescriptionKo": "가혹한 현장과 높은 듀티 사이클을 위해 설계된 고유량 전동 유압 텐셔너 펌프입니다.",
+      "descriptionKo": "Blue Rhino는 산업용 전동 모터, 비상 정지 기능이 있는 저전압 핸드 펜던트, 보호 프레임과 고급 여과 시스템을 갖춥니다. 오일 쿨러, 디지털 게이지, 대용량 탱크와 수글리콜 호환 옵션을 선택할 수 있습니다.",
+      "specs": {
+        "drive_type": "Industrial electric motor",
+        "pressure_range_bar": "Up to 2068 (30,000 psi option)",
+        "reservoir_capacity_l": "Configurable",
+        "flow_rate_lpm": "High-flow configuration available",
+        "weight_range_kg": "Compact portable frame"
+      },
+      "categorySlug": "technofast-hydraulic-pumps",
+      "nameEn": "Blue Rhino Electric-Hydraulic Tensioner Pumps",
+      "shortDescriptionEn": "The Blue Rhino series of electric hydraulic pumps is engineered to deliver reliable, high-pressure power for critical hydraulic bolt tensioning applications in harsh field conditions.",
+      "descriptionEn": "The Blue Rhino series of electric hydraulic pumps is engineered to deliver reliable, high-pressure power for critical hydraulic bolt tensioning applications in harsh field conditions. Designed specifically to excel under unstable site conditions, each robust electric hydraulic pump provides the extreme precision required to eliminate the variables of traditional torquing methods. Built for maximum durability, these high-performance tensioner pumps feature low-voltage tolerance, are cycle-tested for industrial endurance, and are capable of reaching operating pressures up to 30,000 psi. Whether executing complex wind turbine assembly or heavy industrial plant maintenance, the Blue Rhino series ensures safe, efficient, and highly predictable joint clamping. Features: Industrial Electric Motor : Built with a robust motor designed to handle heat and low voltage challenges. Low-Voltage Hand Pendant : Features a control circuit with an integrated Emergency Stop button located directly on the pendant. Standard Protective Frame : Supplied with an external frame to protect the unit from rough handling. Advanced Filtration : Equipped with a filtration system designed to protect the internal hydraulics from contamination. Optimised Hydraulic Circuit : Engineered to generate less heat and support system life. Compact Design : Built with a low overall weight and size profile, featuring controls configured for bolting operations. Configurable Product Options : Available with optional oil coolers, digital gauges, larger reservoir sizes, higher horsepower models, and water-glycol fluid compatibility. Benefits: Operator Safety : Reduces electrical hazards during operation by utilizing a low-voltage control circuit on the hand pendant. Verified Reliability : Performance and reliability are verified before deployment through rigourous cycle testing on every unit. Component Longevity : The combination of advanced filtration and a low-heat hydraulic circuit helps protect the system against dirt, wear, and thermal degradation. Increased Flow Speed : Higher motor horsepower provides more flow at working pressure to support the efficiency of bolt tensioning tasks. On-Site Handling : The compact size and low weight make the unit easier for operators to transport and position in demanding environments. Application Flexibility : The available options allow the pump system to be configured for higher-pressure requirements up to 30,000 psi or double-acting tensioner circuits on request.",
+      "sourceUrl": "https://www.technofast.com/product/blue-rhino-electric-tensioner-pumps/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/CroppedImage450450-IMG-2140.jpg",
+      "sourceImageWidth": 450,
+      "sourceImageHeight": 450
     },
     {
-      "slug": "technofast-ezijac-x2-y2",
-      "modelNo": "EziJac X2 & Y2 Series",
-      "categorySlug": "technofast-bolt-tensioners",
-      "nameKo": "EziJac X2/Y2 2단 볼트 텐셔너",
-      "nameEn": "EziJac X2/Y2 Two-Stage Bolt Tensioners",
-      "shortDescriptionKo": "협소 공간에서 높은 텐셔닝 힘을 제공하는 슬림형 2단 스프링 리턴 텐셔너입니다.",
-      "shortDescriptionEn": "Slim two-stage spring-return tensioners delivering high force in restricted-access applications.",
-      "descriptionKo": "X2/Y2 시리즈는 표준 공구가 들어가지 않는 좁은 공간을 위한 다단 텐셔너입니다. 자동 스프링 복귀, 오버스트로크 방지, 스트로크 표시기와 선택형 1/2인치 소켓 구동 기어를 적용해 제한된 접근 조건에서도 안전하고 정확하게 작업합니다.",
-      "descriptionEn": "X2/Y2 are multi-stage tensioners for locations where conventional tools cannot fit. Automatic spring return, over-stroke prevention, a stroke indicator and an optional half-inch socket-driven gear enable safe, accurate work in restricted access.",
-      "specs": { "thread_range": "Custom to application", "return_type": "Automatic spring return", "configuration": "Slim two-stage X2 and Y2" },
-      "sourcePages": "28"
+      "slug": "technofast-camnut",
+      "modelNo": "CamNut H1/H2",
+      "categorySlug": "technofast-hydraulic-nuts",
+      "nameKo": "CamNut H1/H2 텐셔닝 시스템",
+      "nameEn": "CamNut",
+      "shortDescriptionKo": "짧은 볼트 돌출부와 -40~650°C 환경에서 사용하는 모듈형 직접 텐셔닝 너트입니다.",
+      "shortDescriptionEn": "The CamNut EziJac is an innovative hydraulic bolt tensioning nut engineered to provide accurate, reliable clamping loads on components where traditional fasteners fail.",
+      "descriptionKo": "CamNut은 기존 육각 너트를 대체해 별도 유압 텐셔너의 직접 연결점이 되며, OEM 볼트와 스폿 페이스를 변경하지 않고 정밀 텐셔닝을 구현합니다. H1은 표준 고온 설비, H2는 최대 650°C의 극한 환경에 대응합니다.",
+      "descriptionEn": "The CamNut EziJac is an innovative hydraulic bolt tensioning nut engineered to provide accurate, reliable clamping loads on components where traditional fasteners fail. This high-performance CamNut EziJac tensioning system is specifically designed for applications where standard stud lengths do not leave enough protruding thread for conventional tensioner tools to grip. By utilising a specialised internal mechanism, the CamNut EziJac solves the common industrial challenge of short grip lengths, eliminating the need for expensive, time-consuming stud replacements across heavy machinery joints Features: Zero Thread Protrusion Needed : Fits directly onto existing studs with no available exposed thread above the nut, eliminating costly stud extensions. Rapid Installation Cycle : Designed for incredibly fast tool fitting and removal sequences, dramatically improving maintenance loop efficiency. Extreme Temperature Resilience : Built from premium high-tensile alloys to operate reliably across severe thermal parameters from –40°C up to +650°C.Modular, Lightweight Construction : Utilises a smart multi-piece design that separates individual component weights to minimise physical lifting stress. Benefits: Eliminates Stud Replacement Costs : Saves substantial capital outlays by tensioning original, short-grip fasteners without requiring longer replacement studs. Reduces Plant Downtime : Speeds up major turnarounds via intuitive operation, swift pressure engagement, and immediate tool breakdown. Prevents Operator Handling Injuries : Eliminates pinch points and heavy striking tool hazards, drastically decreasing potential worker safety incidents. Reliable First-Time Tensioning : Bypasses up to 90% of thread friction losses to guarantee a uniform, predictable, and leak-free joint seal from the first pull. Ideal applications: Short Stud Clearances : Tensioning critical mechanical joints where there is insufficient thread protrusion for standard hydraulic tensioners. Severe Thermal Cycling : Secures heavy-duty high-temperature connections operating in environments ranging from –40°C up to +650°C. High-Vibration Machinery : Preventing loosening on large-diameter fasteners subjected to continuous operational or vibrational stresses. Frequent Maintenance Routines : Speeding up procedures on industrial components requiring repeated, rapid tool adjustments or frequent nut removals.",
+      "specs": {
+        "thread_range": "1.75-6 in",
+        "max_force_kn": 7088.87,
+        "temperature_range": "-40°C to +650°C"
+      },
+      "sourceUrl": "https://www.technofast.com/product/camnut/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/CamNut.png",
+      "sourceImageWidth": 1350,
+      "sourceImageHeight": 1080
+    },
+    {
+      "slug": "technofast-ezitite-hydraulic-clamp-nut",
+      "modelNo": "EziTite Hydraulic Clamp Nut",
+      "categorySlug": "technofast-hydraulic-nuts",
+      "nameKo": "EziTite 유압 클램프 너트",
+      "nameEn": "EziTite® Hydraulic Clamp Nut",
+      "shortDescriptionKo": "50~300 mm 축 나사에 정밀하고 반복 가능한 공구 클램핑력을 제공하는 유압 너트입니다.",
+      "shortDescriptionEn": "The EziTite® Hydraulic Clamp Nut replaces conventional torque-loaded threaded fasteners to transform industrial shaft tensioning and precise bearing setting into a simple, safe, and efficient hydraulically assisted operation.",
+      "descriptionKo": "토크 방식 너트를 대체하여 유압으로 지정된 클램핑력을 적용하고 잠금 링으로 하중을 유지합니다. 대형 축 베어링과 회전 충격이 있는 공구 클램핑에서 제품 편차와 정비 시간을 줄이도록 설계되었습니다.",
+      "descriptionEn": "The EziTite® Hydraulic Clamp Nut replaces conventional torque-loaded threaded fasteners to transform industrial shaft tensioning and precise bearing setting into a simple, safe, and efficient hydraulically assisted operation. By providing repeatable tensioning accuracy, this advanced hydraulic clamp nut system eliminates product variation, vastly reduces maintenance downtime, and extends overall tool life across demanding environments. Manufactured in an extensive standard range to suit thread sizes from 50 mm to 300 mm, with custom design dimensions available on request, the EziTite® series ensures reliable loading parameters without compromising component or product quality. Features: Threaded Locking Collar : Features an integrated mechanical ring that effectively counteracts the severe loosening forces of impact on rotating shafts. Vastly Reduces Downtime : Minimises complex maintenance problems on-site, directly leading to improved plant productivity and faster processing throughput. User-Friendly Architecture : Exceptionally fast and easy to fit by hand, helping operations achieve an optimised tool lifecycle with minimal manual labor. Mitigates Mechanical Risk : Minimises the hazard of personal injury and severe collateral damage to capital equipment during high-risk blade and tool changes. Exceptional Repeatable Accuracy : Standardises the precision of your shaft tensioning sequences, which drastically slashes structural variations across final product runs. Benefits: Accurate Hydraulic Loading : Delivers precise, predictable force distribution directly to the joint, completely bypassing the extreme energy losses common to torque. Positive Locking Ring : Relies on a heavy-duty mechanical ring collar to positively lock and retain the fully calculated tension load permanently in place. Eliminates Primitive Tooling : Completely replaces outdated, high-risk lug wrench and striking hammer tightening methods to protect delicate machinery faces. Maximises Worker Safety : Substantially increases operator safety parameters while decreasing workplace injury potential inside tight, restrictive machinery areas Ideal applications: Precision Tool Loading : Demanding applications where highly accurate, uniform, and thoroughly reliable loading forces are required on critical machine bolting layouts. High-Vibration Environments : Industrial environments where severe vibrational, rotational, or torsional stresses present a continuous threat to fastener security. Frequent Fastener Adjustments : Busy production schedules where regular plant maintenance requires repeated adjustments or the rapid, frequent removal of joint nuts. Restricted Workspace Layouts : Confined, high-load machinery spaces or awkward locations where difficult nut positioning severely restricts standard tooling access. Heavy Rotating Shafts : Executing swift blade, tool, or cutter alterations on industrial rotating axles without risking misalignment or loose components",
+      "specs": {
+        "thread_range": "50-300 mm",
+        "material": "Application-specific alloy construction"
+      },
+      "sourceUrl": "https://www.technofast.com/product/clamp-nut/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/ResizedImage498385-pretty-clamp-nut.jpg",
+      "sourceImageWidth": 368,
+      "sourceImageHeight": 368
+    },
+    {
+      "slug": "technofast-ezitite-bearing-setter",
+      "modelNo": "EziTite Bearing Setter",
+      "categorySlug": "technofast-hydraulic-nuts",
+      "nameKo": "EziTite 베어링 세터",
+      "nameEn": "EziTite® Bearing Setter",
+      "shortDescriptionKo": "M60부터 TR400까지 베어링을 정확한 프리로드로 장착하는 유압식 세팅 공구입니다.",
+      "shortDescriptionEn": "The EziTite® bearing setter is a high-pressure, specialised hydraulic installation tool designed to mount heavy industrial bearings onto shafts with completely repeatable accuracy.",
+      "descriptionKo": "EziTite 베어링 세터는 축 또는 어댑터 슬리브에 체결한 뒤 유압 피스톤으로 베어링 내륜을 정확한 위치까지 밀어 넣습니다. 스트로크 표시기, 다이얼 게이지 장착부와 선택형 분할 구조를 통해 협소한 공간에서도 반복 가능한 장착과 프리로드 리셋을 지원합니다.",
+      "descriptionEn": "The EziTite® bearing setter is a high-pressure, specialised hydraulic installation tool designed to mount heavy industrial bearings onto shafts with completely repeatable accuracy. Did you know that roughly 16% of all industrial bearings fail prematurely due to poor or improper fitting? By replacing slow, inaccurate mechanical hitting and driving methods with precise hydraulic force, this tool applies the exact force required to achieve optimum bearing seating. It provides maintenance teams in mining, oil and gas, and heavy manufacturing with a reliable solution to eliminate installation errors and drastically extend bearing service life. What is a Bearing Setter? An industrial hydraulic bearing setter is a specialized precision installation tool that uses controlled hydraulic pressure to drive a bearing onto a shaft seating. Unlike basic retail race drivers, this heavy-duty tool is engineered to apply an exact, highly repeatable preload force directly to the bearing inner ring, eliminating the risk of internal component distortion during the mounting phase. How the Bearing Setter Works Position the Tool: Slide the tool over the shaft thread and butt it firmly against the face of the bearing inner ring assembly (Fig. 1a & 1b.) Apply Hydraulic Pressure & Monitor the Travel: Hook up your high-pressure pump lines and gradually inject fluid into the tool’s pressure chamber. Watch the tool’s visible maximum stroke indicator line and track structural movement precisely using the built-in dial gauge mounting point (Fig. 2) Lock the Seating: Once the exact bearing preload target is achieved, the hydraulic pressure is safely vented, the tool is removed, and a standard locking nut and washer are installed to hold the bearing permanently in its seating (Fig. 3) If your layout requires a specialised dimension setup, link directly with our engineering workshop to map out a custom configuration. You can also explore our broader high-pressure products in our Hydraulic Nut and Hydraulic Bolt Tensioner range. Enquire here or email: sales@technofast.com Features: The EziTite® technology delivers specific mechanical features designed to outperform standard mechanical locknuts: Dial Gauge Mounting Point : Allows technicians to fit high-precision measuring indicators to track bearing travel to the exact millimetre. Visible Maximum Stroke Indicator : A built-in physical visual safety reference that alerts operators before over-stroking the hydraulic piston. Custom Thread Sizes : Custom-machined inside our workshops to screw directly onto any specific imperial or metric shaft arrangement. Unique Split Designs : Available in segmented formats to wrap securely around continuous shafts without major component disassembly. Benefits: Implementing this hydraulic system on your site delivers direct commercial advantages : Accurate Mounting: Drastically reduces premature bearing failures caused by loose seating or internal ring scarring. Hydraulic Efficiency: Replaces heavy manual sledging with smooth, effortlessly controlled pump pressure. Reduced Costs: Lowers maintenance overheads by extending component runtimes and speeding up machine rebuild schedules. Space Efficient: Features a compact profile ideal for installing heavy bearings inside tight, enclosed machine housings. Ideal applications: The EziTite® bearing setter is engineered for safety-critical industrial installations where accurate bearing mounting and high repeatability are essential to prevent premature component failure. By utilizing smooth hydraulic power instead of erratic manual force, this tool provides the exact bearing preload required by major bearing manufacturers. Our high-pressure hydraulic setups are ideal for: Precision Preload Resets: Achieving optimum bearing seating parameters without relying on inaccurate mechanical locking methods. Confined Space Bearing Fitting: Operating effortlessly in highly restricted or difficult machine envelopes where traditional physical tools cannot fit. Repeatable Installation Routines: Providing consistent, trouble-free mounting performance across standard shafts and adaptor sleeves. Bespoke Heavy Assemblies: Tailoring specialized tool footprints to accommodate custom, large-scale industrial machinery dimensions. If the standard range in the table below does not suit your requirements or you require specialised thread and sizing, reach out to our friendly staff at sales@technofast.com to discuss modifications and designs to suit your application.",
+      "specs": {
+        "thread_range": "M60-TR400 / 2.36-15.745 in",
+        "max_force_kn": 1804.7,
+        "max_pressure_bar": 700,
+        "stroke_mm": "7-16"
+      },
+      "sourceUrl": "https://www.technofast.com/product/bearing-setter/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/BEARING-PUSHER.png",
+      "sourceImageWidth": 1350,
+      "sourceImageHeight": 1080
+    },
+    {
+      "slug": "technofast-ezitite-hydraulic-bolt",
+      "modelNo": "EziTite Hydraulic Bolt",
+      "categorySlug": "technofast-hydraulic-nuts",
+      "nameKo": "EziTite 유압 볼트",
+      "nameEn": "EziTite® Hydraulic Bolts",
+      "shortDescriptionKo": "진동과 충격 하중에 강하고 비틀림 없이 하중을 유지하는 일체형 유압 볼트입니다.",
+      "shortDescriptionEn": "EziTite® Hydraulic Bolts: Precision Hydraulic Fasteners for Heavy Industry EziTite® Hydraulic Bolts are precision-engineered, high-performance, hydraulically operated fasteners that incorporate advanced mechanisms for direct bolt tensioning .",
+      "descriptionKo": "EziTite 유압 볼트는 일반 체결재를 대체하는 유압 텐셔닝 일체형 볼트입니다. 유압으로 볼트를 신장한 후 고유 잠금 링이 하중을 유지하므로 나사 갈링과 비틀림 응력을 방지하며, 진동 스크린, 기초 볼트, 배관 플랜지 및 반응기 조인트에 적합합니다.",
+      "descriptionEn": "EziTite® Hydraulic Bolts: Precision Hydraulic Fasteners for Heavy Industry EziTite® Hydraulic Bolts are precision-engineered, high-performance, hydraulically operated fasteners that incorporate advanced mechanisms for direct bolt tensioning . These specialised fasteners minimise the time required to execute critical bolting procedures while delivering extreme resistance to vibration and shock loads. Manufactured from high-grade alloy or stainless steels to meet exact application requirements, they can be rapidly fitted and pressurised using standard pumping equipment, including Technofast hand-operated, electric-hydraulic, or air-hydraulic pumps . What Are EziTite® Hydraulic Bolts? Standard torque tightening relies on friction, which can lead to inaccurate joint loading. In contrast, EziTite® Hydraulic Bolts utilise direct hydraulic pressure to eliminate friction guesswork entirely. These high-tensile fasteners feature a unique lockring thread technology that mechanically secures the stretched bolt, ensuring maximum retained load across critical joints. To accommodate complex industrial operating environments, they are available with optional protective covers, specialised surface treatments, and custom-designed seal profiles to match distinct temperature and pressure profiles. Features: Diameter Range : Available in standard sizes from 20mm (7/8”) up to 100mm (4”) bolt diameters Lockring Thread : Uses mechanical thread technology to secure and lock the retained load Spherical Washer : Supplied as standard to ensure proper alignment with the joint face Standard Fittings : Pre-fitted with CEJN-type male snap fittings and 1/8″ BSPP porting Pressure Capacity : Rated up to a maximum pressure of 100 MPa for standard models Stroke Indicator : Built-in visual indicator to monitor bolt elongation during tensioning Bleed Plugs: Integrated into the assembly for safe, controlled pressure release Material Options : Manufactured from alloy or stainless steels based on application demands Benefits: Vibration Resistance : Eliminates fastening failure on machinery subjected to heavy shock loads Frictionless Loading : Removes the torque-loss guesswork by stretching the bolt axially Time Savings : Minimises labor hours required to secure or open critical industrial joints Confined Access : Enables reliable tightening in tight, restricted, or awkward physical locations Repeatable Maintenance : Simplifies regular inspections where repeated adjustments are required Custom Engineering : Scalable beyond standard limits for unique temperature or pressure needs Pump Compatibility : Operates seamlessly with standard hand, electric, or air-hydraulic pumps. Ideal applications: Precise Pre-loading : Ideal when highly accurate and reliable loading is required on bolting assemblies Stress Management : Engineered for joints where severe vibrational or torsional stresses pose a problem Repeated Access : Maximises efficiency where regular maintenance requires repeated adjustment or removal of fasteners Restricted Access : Built specifically for environments where fasteners may be in confined or difficult locations Heavy Processing Machinery : Highly suited for securing vibrating screens and sieves High-Pressure Containment : Purpose-built for critical piping flanges, reactor joints, and vessel covers Heavy Infrastructure : Perfectly configured for anchoring autoclaves and structural foundation bolts.",
+      "specs": {
+        "thread_range": "20-100 mm standard range",
+        "max_pressure_bar": 1000,
+        "material": "Alloy steel or stainless steel"
+      },
+      "sourceUrl": "https://www.technofast.com/product/ezitite-hydraulic-bolts/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/ezitite-bolt-scaled.jpg",
+      "sourceImageWidth": 1326,
+      "sourceImageHeight": 2560
+    },
+    {
+      "slug": "technofast-ezitite-hydraulic-head-nut",
+      "modelNo": "EziTite Hydraulic Head Nut",
+      "categorySlug": "technofast-hydraulic-nuts",
+      "nameKo": "EziTite 유압 헤드 너트",
+      "nameEn": "EziTite® Hydraulic Head Nut",
+      "shortDescriptionKo": "자이러토리 크러셔 맨틀을 해머 없이 안전하게 장착·분리하는 유압 헤드 너트입니다.",
+      "shortDescriptionEn": "The EziTite® Hydraulic Head Nut by Technofast Industries replaces standard mantle head nuts on gyratory crushers, delivering a precise and significantly safer tightening solution for the quarrying industry.",
+      "descriptionKo": "크러셔 축에 손으로 체결한 뒤 유압으로 맨틀을 테이퍼에 정확히 안착시키고 기계식 잠금 스크류 또는 링으로 하중을 유지합니다. 해머 타격과 화염 절단을 제거하며 마모 환경에 맞춘 희생 커버를 적용할 수 있습니다.",
+      "descriptionEn": "The EziTite® Hydraulic Head Nut by Technofast Industries replaces standard mantle head nuts on gyratory crushers, delivering a precise and significantly safer tightening solution for the quarrying industry. The design eliminates the manual hammering methods that commonly cause operator strike or shrapnel injuries. Precise clamping forces are generated via hydraulic pressure and securely held by mechanical locking rings. Built for harsh processing environments, the nut includes an integrated sacrificial protective cover customized to match the abrasive nature of the material being crushed. Features: Hydraulic Clamping Nut: Generates precise clamping forces by hydraulic pressure acting on a constrained area within the assembly Mechanical Locking Rings/Screws: Fitted to the assembly to retain tensile loads Integral Sacrificial Protective Cover: Can be constructed according to the abrasive nature of the material being crushed Threaded Locking Collar: Counteracts loosening forces of impact on rotating shafts Nipple Fitting: Located on top of the nut body to apply hydraulic pressure into the sealed chamber Benefits: Improved Site Safety: Protects operators from strike or shrapnel injuries by eliminating the need for large hammers and flame cutting Reduced Downtime: Vastly reduces downtime and maintenance problems Increased Productivity: Improves productivity and achieves faster throughput without compromising product quality Enhanced Tool Life: Greatly enhances tool life and minimises collateral damage to capital equipment Repeatable Accuracy: Accuracy of the tensioning operation reduces product variation Low Level of Skill: Requires low level of skill for operation as the assembly is screwed on and removed by hand Ideal applications: Mantle Head Nut; Gyratory Crushers. See a successful installation completed by Minprovise International. Technofast Industries complete a large scope of works with Terex Jaques for all their crusher units; such as the Cedarapids Classic LJay54” Crusher.",
+      "specs": {
+        "thread_range": "Custom to crusher shaft",
+        "material": "Custom abrasion-resistant configuration"
+      },
+      "sourceUrl": "https://www.technofast.com/product/ezitite-head-nut/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/CroppedImage450450-EZI-HNG35-000-EXPLODED.jpg",
+      "sourceImageWidth": 450,
+      "sourceImageHeight": 450
+    },
+    {
+      "slug": "technofast-ezitite-hydraulic-nut",
+      "modelNo": "EziTite Hydraulic Nut",
+      "categorySlug": "technofast-hydraulic-nuts",
+      "nameKo": "EziTite 유압 너트",
+      "nameEn": "EziTite® Hydraulic Nut",
+      "shortDescriptionKo": "최대 1,000 bar에서 정밀하고 반복 가능한 동시 볼트 텐셔닝을 제공하는 특허 유압 너트입니다.",
+      "shortDescriptionEn": "Technofast designs and manufactures the innovative EziTite® range of hydraulic nuts to eliminate the costly variables and unreliability of traditional torque tightening methods.",
+      "descriptionKo": "EziTite 유압 너트는 기존 너트를 대체해 볼트에 직접 체결되며, 유압으로 볼트를 신장한 뒤 잠금 링이 하중을 기계적으로 유지합니다. 합금강 또는 스테인리스강으로 제공되고 구면 자동 정렬 와셔와 CEJN 퀵 커플링이 기본 적용되어 정비 시간을 줄이고 안전성과 체결 정확도를 높입니다.",
+      "descriptionEn": "Technofast designs and manufactures the innovative EziTite® range of hydraulic nuts to eliminate the costly variables and unreliability of traditional torque tightening methods. By replacing standard hex nuts with these advanced hydraulic tensioning nuts, heavy industries can streamline complex shaft and joint tensioning configurations into a controlled, highly efficient mechanical procedure. As a global pioneer in joint integrity, Technofast provides high-performance components manufactured directly in-house, alongside our custom-design engineering services. Whether you require standard thread sizes or entirely tailored industrial dimensions, our premium product lineup is built from the ground up to deliver unparalleled precision. Engineered for Critical Industrial Loads Watch the EziTite® Hydraulic Nut demonstration video below to see our bolt tensioning technology in action! Features: Direct Axial Loading : Stretches the bolt or stud purely along its axis, completely eliminating the thread friction and dangerous torsional stress caused by manual torquing. Mechanical Lock Ring : Utilises an integrated mechanical locking collar to retain the exact pre-calculated tension firmly in place once fluid pressure is released. Low-Profile Footprint : Features a highly compact structural footprint engineered to fit easily into restricted or confined joint spaces. In-House Engineering : Manufactured to strict quality standards with customised thread profiles and high-tensile material options available on request. Benefits: Unmatched Joint Precision : Achieves ultimate load accuracy across your machinery components by bypassing up to 90% of friction losses. Improved Operator Safety : Operates via remote high-pressure hydraulic lines, keeping hands completely clear of heavy impact tools and slugging hammers. Minimised Maintenance Downtime : Fast installation, simple operation, and rapid pressure venting drastically speed up equipment assembly turnarounds. Eliminates Component Damage : Prevents expensive thread galling, scoring, and flange face damage, significantly extending the service life of your fasteners. Ideal applications: High-Vibration Environments : Secures heavy machinery joints prone to loosening from severe operational or vibrational stresses. Torsional Stress Reduction : Protects critical structural connections by completely eliminating dangerous twisting forces on the bolt thread. Frequent Maintenance Routines: Speeds up processes requiring regular, repeated adjustment or fast removal of joint nuts. Confined Spaces : Installs easily into restricted or difficult locations where standard torque tooling cannot physically fit.",
+      "specs": {
+        "thread_range": "M24-M80 / 1-3 in",
+        "max_force_kn": 1770.3,
+        "max_pressure_bar": 1000,
+        "stroke_mm": "6-20",
+        "material": "Alloy steel or stainless steel"
+      },
+      "sourceUrl": "https://www.technofast.com/product/ezitite-hydraulic-nuts/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/Hyd-Nut.png",
+      "sourceImageWidth": 1350,
+      "sourceImageHeight": 1080
+    },
+    {
+      "slug": "technofast-ezitite-tr-high-temperature-nut",
+      "modelNo": "EziTite TR",
+      "categorySlug": "technofast-hydraulic-nuts",
+      "nameKo": "EziTite TR 고온용 유압 너트",
+      "nameEn": "EziTite® TR High Temperature Hydraulic Nut",
+      "shortDescriptionKo": "550°C 이상의 고온 환경을 위한 금속 대 금속 씰 방식의 유압 너트입니다.",
+      "shortDescriptionEn": "The EziTite® TR High Temp Nut is a patented, specialised tensioning device designed for simultaneous multiple bolt tensioning in high-pressure and extreme-temperature environments.",
+      "descriptionKo": "EziTite TR은 특허받은 금속 대 금속 씰, 컴팩트한 구조와 보조 희생 링 해제 장치를 갖춰 정유, 제철, 압력용기 및 터빈 설비의 고온 체결에 적합합니다. 여러 볼트를 동시에 균일하게 텐셔닝하며 조립·분해 시간을 단축합니다.",
+      "descriptionEn": "The EziTite® TR High Temp Nut is a patented, specialised tensioning device designed for simultaneous multiple bolt tensioning in high-pressure and extreme-temperature environments. It is engineered to operate reliably in conditions reaching 550°C and higher, making it suitable for applications such as refineries, steelworks, autoclaves, boilers, steam turbine half-joints, gas turbine casings, and flange makeup. The design utilizes high-pressure hydraulics to apply precise, even bolt loads with minimal physical effort, and it incorporates a unique sacrificial ring as a secondary backup release mechanism to ensure safe removal if service damage or misalignment occurs. Features: Patented Metal-to-Metal Seals : Engineered to deliver superior technical efficiency and reliable sealing performance in extreme environments. High-Temperature Resistance : Specifically built to withstand operating temperatures up to 550°C and higher. Secondary Backup Release Mechanism : Features a unique sacrificial ring that can be split and removed to allow normal retraction and safe removal in the event of service damage or misalignment. Load Loss Elimination : Designed with a smart internal configuration engineered to completely eliminate load losses during the tensioning process. Compact Footprint : Built with a compact design profile suitable for installation in confined spaces. Simultaneous Multi-Tensioning : Configured to tension multiple fasteners at the same time to ensure uniform bolt loads. Benefits: Reduced Operational Downtime : The simultaneous tensioning capability streamlines asset assembly and significantly reduces disassembly downtime. Precise Fastener Seating : Eliminating load losses ensures a precise, highly reliable fit without requiring extensive physical effort from installation crews. Enhanced Service Safety : The sacrificial ring mechanism provides a dependable extraction path, preventing tools from becoming permanently stuck or compromised due to severe thermal service damage. Cost and Technical Efficiency : The patented metal-to-metal sealing and load retention systems offer distinct technical and cost/benefit advantages over alternative tensioning devices. Application Versatility : Provides a dedicated bolting solution across critical processing and heavy industrial sectors where high thermal and pressure stress are constant variables. Ideal applications: Pressure vessel closures : Providing uniform sealing and easy extraction on heavy industrial autoclaves and boilers. Flange makeup : Ensuring precise, even bolt loads across high-pressure pipeline and equipment flanges to prevent leaks. Turbine joints : Securing critical split-line casings on both gas turbines and steam turbines where thermal movement is extreme. High-temperature applications : Operating reliably in environments reaching 550°C and higher where standard elastomeric seals would fail.",
+      "specs": {
+        "thread_range": "M24-M80 / 1-3.5 in",
+        "max_force_kn": 2468.6,
+        "stroke_mm": "8-10",
+        "temperature_range": "550°C+",
+        "material": "High-temperature metal-to-metal seal design"
+      },
+      "sourceUrl": "https://www.technofast.com/product/ezitite-tr-hydraulic-nut/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/HI-TEMPT-NUT.png",
+      "sourceImageWidth": 1350,
+      "sourceImageHeight": 1080
+    },
+    {
+      "slug": "technofast-ezitite-hydraulic-washer",
+      "modelNo": "EW-330-436-000",
+      "nameKo": "EziTite 유압 와셔",
+      "shortDescriptionKo": "평행한 두 면 사이에 정밀한 축력을 가하는 비나사식 유압 와셔입니다.",
+      "descriptionKo": "EziTite 유압 와셔는 나사식 몸체 대신 비나사 보어를 사용해 공구 상·하면으로 하중을 전달합니다. 대구경 볼트 또는 두 평행면 사이의 매우 정확한 텐셔닝이 필요한 용도에 적합합니다.",
+      "specs": {
+        "thread_range": "330 mm bore",
+        "max_force_kn": 10014.7,
+        "stroke_mm": "10",
+        "material": "Non-threaded hydraulic washer; OD 436 mm; height 69 mm; weight 33.7 kg"
+      },
+      "categorySlug": "technofast-hydraulic-nuts",
+      "nameEn": "EziTite®Hydraulic Washer",
+      "shortDescriptionEn": "The EziTite® Hydraulic Washer is a variation of the EziTite® Hydraulic Nut. Instead of a threaded Nut Body, the EziTite® Hydraulic Washer features a non-threaded bore.",
+      "descriptionEn": "The EziTite® Hydraulic Washer is a variation of the EziTite® Hydraulic Nut. Instead of a threaded Nut Body, the EziTite® Hydraulic Washer features a non-threaded bore. Consequently, the load on the EziTite® Hydraulic Washer is exerted on the top and bottom faces on the tool, which makes the EziTite® Hydraulic Washer ideal for tensioning two parallel surfaces.",
+      "sourceUrl": "https://www.technofast.com/product/ezitite-washer/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/CroppedImage450450-EW-400-230-000-Copy.jpg",
+      "sourceImageWidth": 450,
+      "sourceImageHeight": 450
     },
     {
       "slug": "technofast-fastajac",
       "modelNo": "FastaJac",
       "categorySlug": "technofast-bolt-tensioners",
       "nameKo": "FastaJac 판형 열교환기 볼트 텐셔너",
-      "nameEn": "FastaJac Plate Heat Exchanger Bolt Tensioner",
+      "nameEn": "FastaJac",
       "shortDescriptionKo": "특허 Tri-Nut으로 판형 열교환기의 플레이트와 가스켓을 동시에 균일 압축하는 텐셔너입니다.",
-      "shortDescriptionEn": "Tensioner using a patented Tri-Nut to compress plate-heat-exchanger plates and gaskets evenly and simultaneously.",
+      "shortDescriptionEn": "Technofast’s FastaJac saves on Production, Labor and Maintenance Costs for Manufacturers and End Users of Plate Heat Exchangers.",
       "descriptionKo": "FastaJac은 나사산을 따라 길게 돌릴 필요 없이 Tri-Nut을 밀어 넣고 회전해 즉시 체결합니다. 여러 경량 중공 실린더가 플레이트와 가스켓을 동시에 균일하게 압축하며 캠 잠금 구조는 모든 설치 방향에서 너트를 안전하게 유지합니다.",
-      "descriptionEn": "FastaJac slides its Tri-Nut over the thread and locks with a short rotation instead of running a nut along the full stud. Multiple lightweight hollow cylinders compress plates and gaskets evenly, while the cam lock secures the nut in any orientation.",
-      "specs": { "thread_range": "M24-M52 / 1-2 in", "max_force_kn": 639.2, "max_pressure_bar": 700, "stroke_mm": "90-100", "return_type": "Hydraulic", "configuration": "FJ-C27, C39, C46 and C52 load cells" },
-      "sourcePages": "29"
+      "descriptionEn": "Technofast’s FastaJac saves on Production, Labor and Maintenance Costs for Manufacturers and End Users of Plate Heat Exchangers. The use of a lightweight hollow cylinder jack in conjunction with the patented ‘Tri Nut’ allows the compression of plates to be carried out evenly, squarely and efficiently. The hydraulic cylinders simultaneously compress the plates. The Tri-Nut is designed to fit over the major diameter of the thread until it engages into it’s spherical seat. Then the nut closes onto the thread and the nut is screwed home as normal. This facilitates speedy fitting and removal of the tools, removing the need for ‘running down’ the Tensioner retaining nut over the full length of the thread. You can download a copy of our brochure here. Features: The Patented ‘Tri Nut’ allows the Tensioner to be removed and installed on the exchanger quickly. The hydraulic cylinders simultaneously compress the plates so compression of plates carried out evenly, squarely and efficiently. Unique cam lock design. Tri nut locks into tool, even in upside down position. Quick connect fittings No Pinch Points Benefits: Quickfitting with Tri-Nut Rapid change to alternative sizes. Long working stroke. Dual action hydraulic advance/retract. Power coated finish for durability. Ideal applications: Plate Heat Exchangers Pre and Post Tensioning Applications",
+      "specs": {
+        "thread_range": "M24-M52 / 1-2 in",
+        "max_force_kn": 639.2,
+        "max_pressure_bar": 700,
+        "stroke_mm": "90-100",
+        "return_type": "Hydraulic",
+        "configuration": "FJ-C27, C39, C46 and C52 load cells"
+      },
+      "sourceUrl": "https://www.technofast.com/product/fastajac/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/FASTAJAC.png",
+      "sourceImageWidth": 1350,
+      "sourceImageHeight": 1080
     },
     {
-      "slug": "technofast-liftajac",
-      "modelNo": "LiftaJac",
-      "categorySlug": "technofast-lifting",
-      "nameKo": "LiftaJac 고압 유압 리프팅 잭",
-      "nameEn": "LiftaJac High-Pressure Hydraulic Lifting Jack",
-      "shortDescriptionKo": "대형 하중을 동기 인양하는 컴팩트 고강도 단동·복동식 유압 잭입니다.",
-      "shortDescriptionEn": "Compact high-strength single- or double-acting hydraulic jack for synchronized heavy lifting.",
-      "descriptionKo": "LiftaJac은 고강도 합금강 본체로 높은 하중 대비 낮은 크기와 중량을 구현합니다. 단동·복동, 중공·솔리드, 단·장 스트로크 구성이 가능하며 인터링크 포트로 여러 잭을 연결해 대형 구조물을 동기 인양할 수 있습니다.",
-      "descriptionEn": "LiftaJac uses a high-strength alloy-steel body to achieve a high load-to-size ratio. Single- or double-acting, hollow or solid, and short- or long-stroke versions are available, with interlink ports for synchronized lifting of large structures.",
-      "specs": { "action": "Single or double acting", "construction": "High-strength alloy steel; hollow or solid", "custom_options": "Load, stroke length, finish and configuration" },
-      "sourcePages": "31"
+      "slug": "technofast-high-pressure-fittings",
+      "modelNo": "HNCP Series",
+      "nameKo": "Technofast 고압 유압 피팅",
+      "shortDescriptionKo": "CEJN Series 116 커플러, 어댑터, T-블록과 5방향 매니폴드 제품군입니다.",
+      "descriptionKo": "Technofast 고압 피팅 제품군은 니플, 스냅 커플러, 연장 어댑터, 스위블, T-블록 및 5방향 매니폴드를 포함합니다. 1/8인치 및 1/4인치 BSP 연결과 CEJN Series 116 시스템을 지원합니다.",
+      "shortDescriptionEn": "High-pressure CEJN Series 116 couplings, adaptors, T-blocks and five-way manifolds.",
+      "descriptionEn": "Technofast's hydraulic fitting range includes Series 116 nipples and snap couplers, extension adaptors, BSP plugs, swivel couplers, T-blocks and five-way manifolds for connecting high-pressure bolt-tensioning systems.",
+      "specs": {
+        "product_type": "Couplings, adaptors, swivels, T-blocks and manifolds",
+        "max_pressure_bar": 1500,
+        "connection": "CEJN Series 116; 1/8 and 1/4 in BSP"
+      },
+      "categorySlug": "technofast-hoses-ancillaries",
+      "nameEn": "Fittings",
+      "sourceUrl": "https://www.technofast.com/product/fittings/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/HNCP214-scaled.png",
+      "sourceImageWidth": 2560,
+      "sourceImageHeight": 2048
     },
     {
-      "slug": "technofast-high-pressure-hydraulic-pumps",
+      "slug": "technofast-high-pressure-air-hydraulic-pumps",
       "modelNo": "PU-AH / PU-EH Series",
       "categorySlug": "technofast-hydraulic-pumps",
       "nameKo": "고압 공압·전동 유압 펌프",
-      "nameEn": "High-Pressure Air and Electric Hydraulic Pumps",
+      "nameEn": "High Pressure Air Hydraulic Pumps",
       "shortDescriptionKo": "2,000~4,000 bar 텐셔닝과 리프팅 작업을 위한 조립·시험 완료 공압 및 전동 펌프입니다.",
-      "shortDescriptionEn": "Fully assembled and tested air and electric pumps for tensioning and lifting from 2,000 to 4,000 bar.",
+      "shortDescriptionEn": "An air hydraulic pump is a specialized compressed-air-driven power unit designed to generate extreme hydraulic pressures for industrial bolt tensioning and torque tooling.",
       "descriptionKo": "Technofast 고압 펌프는 공압 구동 모델과 240V 단상 전동 모델로 제공되며 정밀 압력계, 릴리프 밸브, 보호 롤 케이지를 갖춥니다. 복동 리프팅 시스템과 FastaJac용 구성, 5 m 원격 펜던트 및 현장 맞춤형 펌핑 시스템을 선택할 수 있습니다.",
-      "descriptionEn": "Technofast high-pressure pumps are available as air-driven and 240 V single-phase electric units with precision gauges, relief valves and protective roll cages. Options include double-acting lifting and FastaJac circuits, a 5 m remote pendant and engineered site-specific pumping systems.",
-      "specs": { "drive_type": "Air or 240 V electric", "pressure_range_bar": "2000-4000", "reservoir_capacity_l": "4-25", "flow_rate_lpm": "0.1-2.0", "weight_range_kg": "17.6-44.5" },
-      "sourcePages": "34-35"
-    },
-    {
-      "slug": "technofast-lightweight-hand-pump",
-      "modelNo": "PU-SHP / PU-HP Series",
-      "categorySlug": "technofast-hydraulic-pumps",
-      "nameKo": "경량 고압 수동 펌프",
-      "nameEn": "Lightweight High-Pressure Hand Pump",
-      "shortDescriptionKo": "항공 등급 경합금으로 제작된 700~1,800 bar 2단식 경량 수동 펌프입니다.",
-      "shortDescriptionEn": "Lightweight two-stage 700-1,800 bar hand pump manufactured from aviation-grade light alloy.",
-      "descriptionKo": "기존 강재 펌프보다 50% 이상 가벼운 고강도 경합금 펌프로, 저압에서 빠른 토출과 고압에서 효율적인 가압을 제공합니다. 진공 오일 탱크로 모든 각도에서 작동하며 조절식 릴리프 밸브, CEJN 호스와 운반 손잡이를 갖춥니다.",
-      "descriptionEn": "Built from high-strength light alloy, this pump is more than 50 percent lighter than traditional steel units. Its two-stage cylinder delivers fast low-pressure output and efficient high-pressure operation, with an all-angle vacuum reservoir, adjustable relief valves, CEJN connections and carry handle.",
-      "specs": { "drive_type": "Manual two-stage", "pressure_range_bar": "700-1800", "reservoir_capacity_l": "1.3-2.3", "weight_range_kg": "5-10" },
-      "sourcePages": "36"
+      "descriptionEn": "An air hydraulic pump is a specialized compressed-air-driven power unit designed to generate extreme hydraulic pressures for industrial bolt tensioning and torque tooling. Heavy-industry operators routinely select air hydraulic pumps over manual hand pumps to execute high-volume flange tensioning with significantly faster cycle times and far less manual physical exertion. Built to operate optimally in rugged on-site conditions, this high-pressure power source delivers the consistent fluid delivery required to guarantee uniform, repeatable mechanical load retention across critical joints. Features: Premium Internal Pump Unit: Incorporates high-specification air-driven internal mechanisms for exceptionally stable pressure buildup. Stainless Steel Oil Tank : Outfitted with a corrosion-resistant steel fluid reservoir to prevent structural fluid contamination. Heavy-Duty External Roll Cage: Enclosed in a rugged steel frame that protects vital components from accidental field impacts. Safety Pressure Relief Valve : Features an integrated mechanical bypass switch to protect operators from over-pressurisation hazards. Inline Air Lubricator Assembly : Automatically feeds vital lubrication to internal air drive pistons, extending tool service life Benefits: Zero Electrical Ignition Risk: Powered completely by compressed air, eliminating dangerous electrical sparks in hazardous oil, gas, or mining zones. Minimised Maintenance Downtime : Delivers highly rapid multi-tool pressure cycles, drastically accelerating critical plant turnaround schedules. Prevents Operator Fatigue : Eradicates the gruelling physical labour of manual leverage bar pumping, promoting a safer, more productive workplace. Perfect Clamping Repeatability : Retains consistent hydraulic outputs, ensuring every interconnected stud achieves its identical pre-calculated tension. Highly Economical Power Draw : Holds maximum target pressures flawlessly without consuming extra operational energy when stalled in sequence. Technical Specifications: Ideal applications: High-Volume Flange Makeup : Speeding up complex multi-bolt tightening configurations on large structural pipe joints and industrial vessels. Hazardous Hazardous Environments : Operating safely inside explosive oil, gas, or underground mining zones where electrical power is strictly prohibited. Repetitive Plant Maintenance : Executing rapid, continuous tool pressure cycles during busy refinery or power station turnaround schedules. Powering Heavy Tensioners : Supplying stable hydraulic pressures up to 4000 bar to drive multiple interconnected EziJac bolt tensioners and EziTite hydraulic nuts.",
+      "specs": {
+        "drive_type": "Air or 240 V electric",
+        "pressure_range_bar": "2000-4000",
+        "reservoir_capacity_l": "4-25",
+        "flow_rate_lpm": "0.1-2.0",
+        "weight_range_kg": "17.6-44.5"
+      },
+      "sourceUrl": "https://www.technofast.com/product/high-pressure-air-hydraulic-pumps/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/CroppedImage450450-PU-AH2500H-FA-ISO.jpg",
+      "sourceImageWidth": 450,
+      "sourceImageHeight": 450
     },
     {
       "slug": "technofast-preassembled-hydraulic-hoses",
       "modelNo": "PU-HG Series",
       "categorySlug": "technofast-hoses-ancillaries",
       "nameKo": "조립형 고압 유압 호스",
-      "nameEn": "Pre-Assembled High-Pressure Hydraulic Hoses",
+      "nameEn": "Hydraulic Hoses and Hose Packages",
       "shortDescriptionKo": "1,500 bar 작동 압력과 CEJN 커플러를 갖춘 링크·인터커넥트·T-블록 호스입니다.",
-      "shortDescriptionEn": "Link, interconnect and T-block hoses rated to 1,500 bar with factory-fitted CEJN couplers.",
+      "shortDescriptionEn": "Hydraulic Hoses and Hose Packages Hoses are essential for any high-pressure setup. Technofast offers a full range of high-performance hydraulic hoses designed to suit all industrial tensioning and lifting applications.",
       "descriptionKo": "광산, 건설 및 중공업 현장을 위해 완전 조립·압력 시험된 호스입니다. 단일 공구 연결부터 여러 텐셔너의 동시 작동까지 지원하도록 세 가지 커플러 구성이 제공되며, 맞춤 길이와 더 높은 압력 등급도 제작할 수 있습니다.",
-      "descriptionEn": "These hoses are fully assembled and pressure-tested for mining, construction and heavy engineering. Three coupling configurations cover single-tool and multi-tensioner systems, while custom lengths and higher pressure ratings are available.",
-      "specs": { "product_type": "Link, interconnect and T-block hoses", "max_pressure_bar": 1500, "burst_pressure_bar": 3000, "length_range_m": "0.9-8.0", "connection": "CEJN male/female configurations" },
-      "sourcePages": "37-38"
+      "descriptionEn": "Hydraulic Hoses and Hose Packages Hoses are essential for any high-pressure setup. Technofast offers a full range of high-performance hydraulic hoses designed to suit all industrial tensioning and lifting applications. All product packages sold by Technofast are supplied fully assembled with CEJN fittings and tested ready for operation. Read more about the range of Hoses we offer. Link Hose Hose comes fitted with CEJN 1x Male and 1 x Female Coupler. → Shop our complete Hose range Inter-connect Hose Hose comes fitted with CEJN 2 x Female couplers. → Shop our complete Hose range T-Blocked Hose Hose comes fitted with CEJN 1 x Male and 2 x Female couplers. → Shop our complete Hose range Read more about the range of Hoses we offer.",
+      "specs": {
+        "product_type": "Link, interconnect and T-block hoses",
+        "max_pressure_bar": 1500,
+        "burst_pressure_bar": 3000,
+        "length_range_m": "0.9-8.0",
+        "connection": "CEJN male/female configurations"
+      },
+      "sourceUrl": "https://www.technofast.com/product/hoses/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/UHP-hosekit-150MPa-DOF-CEJN-scaled-e1782183170894.jpg",
+      "sourceImageWidth": 2560,
+      "sourceImageHeight": 1630
     },
     {
-      "slug": "technofast-hydraulic-ancillaries",
-      "modelNo": "Technofast Ancillaries",
+      "slug": "technofast-liftajac",
+      "modelNo": "LiftaJac",
+      "categorySlug": "technofast-lifting",
+      "nameKo": "LiftaJac 고압 유압 리프팅 잭",
+      "nameEn": "LiftaJac",
+      "shortDescriptionKo": "대형 하중을 동기 인양하는 컴팩트 고강도 단동·복동식 유압 잭입니다.",
+      "shortDescriptionEn": "The LiftaJac is a precision-engineered hydraulic lifting system developed by Technofast Industries to deliver significant, controlled force for heavy and industrial applications.",
+      "descriptionKo": "LiftaJac은 고강도 합금강 본체로 높은 하중 대비 낮은 크기와 중량을 구현합니다. 단동·복동, 중공·솔리드, 단·장 스트로크 구성이 가능하며 인터링크 포트로 여러 잭을 연결해 대형 구조물을 동기 인양할 수 있습니다.",
+      "descriptionEn": "The LiftaJac is a precision-engineered hydraulic lifting system developed by Technofast Industries to deliver significant, controlled force for heavy and industrial applications. Built from high-strength alloy steel, its compact layout achieves an optimal load capacity while maintaining minimal physical size and a low weight-to-load ratio. Designed to replace standard manual lifting methods with fluid-pressure power, the system operates via high-pressure hydraulic cylinders driven by efficient air or electric hydraulic pump units. The LiftaJac can be tailored with customised lift heights, capacities, or specialized coatings, and is available in single or double-acting, hollow or solid, and short or long-stroke configurations to fit the specific parameters of any demanding site environment. You can download a copy of our brochure here. Features: Diverse Configurations : Available in single or double-acting configurations with a wide selection of sizes, lifting capacities, and stroke lengths. High-Strength Construction : Manufactured from high-strength alloy steel to withstand strict, repeated use in harsh operational conditions. Ergonomic Handling : Equipped with removable eye bolts or handles to ensure easy, precise positioning on-site. Advanced Materials : Built using a compact, user-friendly design that maximises lifting strength while minimizing the overall equipment weight. Integrated Protective Systems : Accompanied by air or electric pump units featuring modern safety mechanisms designed to prevent systemic overloading. Flexible Engineering : Offers customisable internal geometries (hollow or solid) alongside optional custom finishes and specialised protective coatings upon request Benefits: Operational Efficiency : Converts high hydraulic pressure into heavy-lifting capability, reducing asset downtime and streamlining complex maintenance procedures. Enhanced Site Safety : Replaces unpredictable lifting methods with controlled fluid pressure, utilizing built-in safety features to safeguard operators during high-load tasks. Broad Industry Versatility : Serves as an adaptable solution across diverse sectors, handling heavy resource maintenance on mining excavators, conveyor supporting structures, pipeline installations, offshore platforms, and power generation turbine components. Environmental Sustainability : Features energy-efficient pumps and cylinders engineered to reduce operational costs, lower carbon footprints, and support eco-friendly industrial operations. Tailored Problem Solving : Delivers exact modifications for unique challenges, allowing engineering teams to secure bespoke configurations for non-standard project requirements. Full Lifecycle Support : Backed by a comprehensive Technofast support network providing certified operator training, routine maintenance, and local technical assistance Ideal applications: HEAVY RESOURCE AND MINING OPERATIONS Heavy earthmovers : Lifting excavators, haul trucks, and loaders for servicing. Fixed plant : Maintaining crushing plant components, crusher framing, and jaw crusher tie-rods. Bulk handling : Raising conveyor belts and their supporting structures for replacement. Draglines : Lifting massive dragline parts, including buckets and booms. OIL, GAS AND OFFSHORE INFRASTRUCTURE Drilling infrastructure : Lifting drilling rig components during rig setup, takedown, or maintenance. Pipeline logistics : Sectional pipeline lifting for inspections, repairs, and installations. Wellheads : Safe lifting of wellhead components during maintenance and repair turnarounds. Offshore platforms : Handling heavy equipment servicing in harsh marine environments. POWER GENERATION FACILITIES Turbines : Lifting and inspecting turbine components in both fossil fuel and nuclear power plants. Generators : Precision positioning and handling of generator parts during overhauls. Boilers & transformers : Lifting heavy boiler sections and substation transformers for installation or mechanical repair.",
+      "specs": {
+        "action": "Single or double acting",
+        "construction": "High-strength alloy steel; hollow or solid",
+        "custom_options": "Load, stroke length, finish and configuration"
+      },
+      "sourceUrl": "https://www.technofast.com/product/liftajac/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/CroppedImage450450-Single-acting-long-stroke.jpg",
+      "sourceImageWidth": 450,
+      "sourceImageHeight": 450
+    },
+    {
+      "slug": "technofast-lightweight-hand-pump",
+      "modelNo": "PU-SHP / PU-HP Series",
+      "categorySlug": "technofast-hydraulic-pumps",
+      "nameKo": "경량 고압 수동 펌프",
+      "nameEn": "Lightweight Hand Pump",
+      "shortDescriptionKo": "항공 등급 경합금으로 제작된 700~1,800 bar 2단식 경량 수동 펌프입니다.",
+      "shortDescriptionEn": "Technofast recommends the use of its pumps with hydraulic tensioning products. For simple applications, the lightweight Hand Pump is suggested.",
+      "descriptionKo": "기존 강재 펌프보다 50% 이상 가벼운 고강도 경합금 펌프로, 저압에서 빠른 토출과 고압에서 효율적인 가압을 제공합니다. 진공 오일 탱크로 모든 각도에서 작동하며 조절식 릴리프 밸브, CEJN 호스와 운반 손잡이를 갖춥니다.",
+      "descriptionEn": "Technofast recommends the use of its pumps with hydraulic tensioning products. For simple applications, the lightweight Hand Pump is suggested. These products are made from light alloy metal that is normally used in the aviation field due to its durability and strength, and are half the weight of comparative steel-bodied pumps. Another important feature is the low handle effort required to achieve the typically high hydraulic pressures needed for bolt tensioning operations. Hand Pump Features: Double Stage. Externally adjustable low & high pressure Relief valves. Carry handle & fixing holes. Hand Pump Accessories: Roll Cage. Gauges and Gauge Adaptors. Fittings. Spare parts. Hand Pump Technical Specifications: Operator training is available and servicing of pumps supported by Technofast Industries.",
+      "specs": {
+        "drive_type": "Manual two-stage",
+        "pressure_range_bar": "700-1800",
+        "reservoir_capacity_l": "1.3-2.3",
+        "weight_range_kg": "5-10"
+      },
+      "sourceUrl": "https://www.technofast.com/product/lightweight-hand-pumps/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/hand-pumps.jpg",
+      "sourceImageWidth": 340,
+      "sourceImageHeight": 169
+    },
+    {
+      "slug": "technofast-spanners",
+      "modelNo": "Walter / TB Series",
+      "nameKo": "C-스패너 및 핀 스패너",
+      "shortDescriptionKo": "유압 너트와 텐셔너 설치용 고강도 C-스패너 및 핀 스패너 제품군입니다.",
+      "descriptionKo": "C-스패너는 직경 68~220 mm의 원형 너트와 실린더 회전에 사용합니다. 경화강 핀 스패너는 직경 6~14 mm 구멍에 대응하며 EziJac 너트 로테이터와 유압 너트 설치를 지원합니다.",
+      "specs": {
+        "product_type": "C-spanners and hardened-steel pin spanners",
+        "connection": "C-spanner diameter 68-220 mm; pin diameter 6-14 mm"
+      },
       "categorySlug": "technofast-hoses-ancillaries",
-      "nameKo": "고압 유압 시스템 부속품",
-      "nameEn": "High-Pressure Hydraulic System Ancillaries",
-      "shortDescriptionKo": "텐셔닝 시스템용 C-스패너, 핀 스패너, CEJN 피팅, T-블록 및 5방향 매니폴드입니다.",
-      "shortDescriptionEn": "C-spanners, pin spanners, CEJN fittings, T-blocks and five-way manifolds for tensioning systems.",
-      "descriptionKo": "Technofast 유압 너트와 텐셔너의 설치·연결을 위한 전용 부속품 제품군입니다. 68~220 mm용 C-스패너, 6~14 mm 홀용 핀 스패너, 116 시리즈 퀵 커플링과 어댑터, T-블록 및 다중 공구용 5방향 매니폴드를 포함합니다.",
-      "descriptionEn": "A dedicated accessory range for installing and connecting Technofast hydraulic nuts and tensioners. It includes C-spanners for 68-220 mm diameters, pin spanners for 6-14 mm holes, Series 116 quick couplings and adaptors, T-blocks and five-way manifolds.",
-      "specs": { "product_type": "Spanners, fittings, T-blocks and manifolds", "connection": "CEJN Series 116; 1/8 and 1/4 in BSP adaptors" },
-      "sourcePages": "39"
+      "nameEn": "Spanners: C-Spanners & Pin Spanners",
+      "shortDescriptionEn": "Technofast Industries offer a vast range of ancillary items including high-strength spanners and specialised hand tools to assist with the installation of our various Hydraulic Bolt Tensioning Products .",
+      "descriptionEn": "Technofast Industries offer a vast range of ancillary items including high-strength spanners and specialised hand tools to assist with the installation of our various Hydraulic Bolt Tensioning Products . C-Spanners for Industrial Fasteners The C-Spanner is a tool used to assist with installation of round nuts, hydraulic nuts & cylinders and makes rotating the nut a simple task. The C-Spanner is available in a wide range of sizes and is a valued add-on with the purchase of EziTite Hydraulic Nuts . → Shop our complete range of industrial C-Spanners Pin Spanners & Nut Rotators The Pin Spanner is a tool used to rotate hydraulic nuts, round nuts, cylinders & nut rotators on the EziJac range of Bolt Tensioners . The Pin Spanner is made from high-quality steel and hardened to make an extremely strong bend resistant pin. → Shop our heavy-duty industrial Pin Spanners",
+      "sourceUrl": "https://www.technofast.com/product/ancillary-items/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/Ancillary-Banner-scaled-e1782100560848.png",
+      "sourceImageWidth": 2060,
+      "sourceImageHeight": 1440
+    },
+    {
+      "slug": "technofast-ezijac-x2-y2",
+      "modelNo": "EziJac X2 & Y2 Series",
+      "categorySlug": "technofast-bolt-tensioners",
+      "nameKo": "EziJac X2/Y2 2단 볼트 텐셔너",
+      "nameEn": "Y2 & X2 – 2 Stage Tensioning",
+      "shortDescriptionKo": "협소 공간에서 높은 텐셔닝 힘을 제공하는 슬림형 2단 스프링 리턴 텐셔너입니다.",
+      "shortDescriptionEn": "Technofast’s X2 & Y2 2-Stage EziJacs encompass a large range of slim bodied tensioners to complete maintenance on any application with restricted space.",
+      "descriptionKo": "X2/Y2 시리즈는 표준 공구가 들어가지 않는 좁은 공간을 위한 다단 텐셔너입니다. 자동 스프링 복귀, 오버스트로크 방지, 스트로크 표시기와 선택형 1/2인치 소켓 구동 기어를 적용해 제한된 접근 조건에서도 안전하고 정확하게 작업합니다.",
+      "descriptionEn": "Technofast’s X2 & Y2 2-Stage EziJacs encompass a large range of slim bodied tensioners to complete maintenance on any application with restricted space. The 2-Stage series of hydraulic Tensioners are a lightweight, user friendly range of Tensioners, which are quickly and easily fitted in restricted spaces. These Tensioners are powerful & provide accurate and versatile tensioning of bolts and studs whilst being fast, simple and safe to use. Features: Stroke Indicator. Long Stroke. Spring return piston. Over stroke prevetion. Slim fit design. Leak-free Lo-friction seals. Nitrided components. Optional side gear box. Quality assured. Technofast's X2 and Y2 Multistage Bolt Tensioners may be fitted with an optional Gear Drive to rotate the retaining nut without the use of a Pin Spanner. The drive is operated using a standard 1/2\" socket wrench. The feature optimises the speed of operation and allows the tools to be used in restricted spaces where a Pin Spanner drive could not be employed. An Integral idler gear is used to ensure that the drive tool and nut rotations are in the same direction.",
+      "specs": {
+        "thread_range": "Custom to application",
+        "return_type": "Automatic spring return",
+        "configuration": "Slim two-stage X2 and Y2"
+      },
+      "sourceUrl": "https://www.technofast.com/product/y2-x2-2-stage-tensioning/",
+      "sourceImageUrl": "https://www.technofast.com/wp-content/uploads/X2-TENSIONER.png",
+      "sourceImageWidth": 1350,
+      "sourceImageHeight": 1080
     }
   ],
-  "notes": "Extracted from the 2026 Technofast Product Brochure. Website products represent catalog product families; individual dimensional part numbers remain summarized as ranges in specifications.",
-  "extractedAt": "2026-08-28"
+  "notes": "Current official Technofast product range, descriptions and original featured media; technical ranges cross-checked against the 2026 brochure.",
+  "extractedAt": "2026-08-28",
+  "sourceWebsite": "https://www.technofast.com/products/"
 }

@@ -19,6 +19,7 @@ import {
 } from "../src/db/schema";
 import type { SpecFieldDef } from "../src/db/schema/product-categories";
 import { buildSearchText } from "../src/lib/search";
+import { deleteImageVariants } from "../src/lib/image-upload";
 
 interface CatalogCategory {
   slug: string;
@@ -68,8 +69,8 @@ async function main() {
   if (catalog.manufacturer.slug !== "technofast") {
     throw new Error("Refusing to seed a non-Technofast catalog");
   }
-  if (catalog.products.length !== 17) {
-    throw new Error(`Expected 17 Technofast products, found ${catalog.products.length}`);
+  if (catalog.products.length !== 20) {
+    throw new Error(`Expected 20 Technofast products, found ${catalog.products.length}`);
   }
 
   const [area] = await db
@@ -104,6 +105,24 @@ async function main() {
     .insert(manufacturerBusinessAreas)
     .values({ manufacturerId: manufacturer.id, businessAreaId: area.id })
     .onConflictDoNothing();
+
+  const currentSlugs = new Set(catalog.products.map((product) => product.slug));
+  const previousProducts = await db
+    .select()
+    .from(products)
+    .where(eq(products.manufacturerId, manufacturer.id));
+  for (const previous of previousProducts) {
+    if (currentSlugs.has(previous.slug)) continue;
+    const previousImages = await db
+      .select()
+      .from(productImages)
+      .where(eq(productImages.productId, previous.id));
+    for (const image of previousImages) {
+      await deleteImageVariants("product-images", image.storagePath);
+    }
+    await db.delete(products).where(eq(products.id, previous.id));
+    console.log(`Removed obsolete Technofast product: ${previous.slug}`);
+  }
 
   const categoriesBySlug = new Map<string, typeof productCategories.$inferSelect>();
   for (const [index, category] of catalog.categories.entries()) {
