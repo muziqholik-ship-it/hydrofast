@@ -64,6 +64,7 @@ PDF_FOR = {
     "oleoweb2-supplement.json": "OLELOWEB2.pdf",
     "water-hydraulics-part1.json": "Water Hydraulic catalog-하이드로훼스트.pdf",
     "water-hydraulics-part2.json": "Water Hydraulic catalog-하이드로훼스트.pdf",
+    "technofast.json": "2026-Technofast-Product-Brochure.pdf",
     "webtec.json": "WEBTEC.pdf",
 }
 
@@ -84,6 +85,7 @@ MANUFACTURER_FOR.update({
     "oleoweb2-supplement.json": "oleoweb",
     "water-hydraulics-part1.json": "water-hydraulics",
     "water-hydraulics-part2.json": "water-hydraulics",
+    "technofast.json": "technofast",
 })
 
 # The DYNASET brochure is a scan: each page is one full-bleed raster, so there

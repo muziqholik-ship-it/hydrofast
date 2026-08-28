@@ -47,6 +47,7 @@ BUSINESS_AREA = {
     "webtec": "hydraulic-engineering",
     "dynaset": "hydraulic-engineering",
     "water-hydraulics": "fluid-gas",
+    "technofast": "bolting-torque",
 }
 
 def load_files():

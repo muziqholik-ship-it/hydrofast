@@ -10,6 +10,7 @@
     "db:generate": "drizzle-kit generate",
     "db:seed": "tsx scripts/seed-starter-data.ts",
     "db:seed-content": "tsx scripts/seed-business-content.ts",
+    "db:seed-technofast": "tsx scripts/seed-technofast-catalog.ts",
     "db:seed-logos": "tsx scripts/seed-brand-logos.ts",
     "db:migrate-legacy": "tsx scripts/migrate-legacy-content.ts",
     "db:merge-case-studies": "tsx scripts/merge-duplicate-case-studies.ts",
